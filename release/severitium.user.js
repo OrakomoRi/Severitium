@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.0-alpha
+// @version			1.6.0-alpha2
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -10,6 +10,7 @@
 // @match			https://*.tankionline.com/play/*
 
 // @connect			raw.githubusercontent.com
+// @connect			github.com
 // @connect			cdn.jsdelivr.net
 
 // @updateURL		https://github.com/OrakomoRi/Severitium/blob/main/release/severitium.user.js?raw=true
