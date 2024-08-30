@@ -1,0 +1,126 @@
+/* Skip opening container for hotkey & text */
+
+.AnimationOpenContainerComponentStyle-controlButton .DeviceButtonComponentStyle-blockAlterations {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
+	width: auto;
+	height: auto;
+}
+
+/* Skip opening hotkey */
+
+.AnimationOpenContainerComponentStyle-controlButton .DeviceButtonComponentStyle-blockAlterations > [class*="hotkey"i] {
+	background: transparent;
+	color: var(--severitium-dark-white-text-color);
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: .1em;
+	margin: 0;
+}
+
+/* Skip opening text */
+
+.AnimationOpenContainerComponentStyle-controlButton .DeviceButtonComponentStyle-blockAlterations > h2 {
+	color: var(--severitium-extra-light-gray-text-color);
+	margin: 0;
+	padding: 0;
+	pointer-events: none;
+	transition: color .2s ease;
+}
+
+/* Skip opening text on container hover */
+
+.AnimationOpenContainerComponentStyle-controlButton .DeviceButtonComponentStyle-blockAlterations:hover > h2 {
+	color: var(--severitium-white-text-color);
+}
+
+/* Rewards container & all elements inside it */
+
+.AnimationOpenContainerComponentStyle-rewardContainer,
+.AnimationOpenContainerComponentStyle-rewardContainer * {
+	box-sizing: border-box;
+}
+
+/* Current reward's container */
+
+.AnimationOpenContainerComponentStyle-rewardContainer > div {
+	position: relative;
+	outline: none;
+	box-shadow: none;
+	background: none;
+	background-color: var(--severitium-dark-transparent-background2);
+	border: .1em solid var(--severitium-gray-color);
+	border-radius: var(--severitium-border-radius);
+	-webkit-backdrop-filter: blur(.5em);
+			backdrop-filter: blur(.5em);
+}
+
+/* Current reward's rarity (on edge) */
+
+.AnimationOpenContainerComponentStyle-rewardContainer > div > div:first-child {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-top-left-radius: var(--severitium-border-radius);
+}
+
+/* Opened containers rewards block & all elements inside it */
+
+.ReceivedRewardsComponentStyle-rewards,
+.ReceivedRewardsComponentStyle-rewards * {
+	box-sizing: border-box;
+}
+
+/* Opened containers rewards block */
+
+.ReceivedRewardsComponentStyle-rewards {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+}
+
+/* Opened containers rewards header */
+
+.ReceivedRewardsComponentStyle-rewards > h2 {
+	margin: 0;
+	font-size: 1.25em;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: var(--severitium-white-text-color);
+}
+
+/* Opened containers rewards inner container */
+
+.ReceivedRewardsComponentStyle-rewards .ReceivedRewardsComponentStyle-stringRewards {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	gap: .5em;
+}
+
+/* Opened containers single reward */
+
+.ReceivedRewardsComponentStyle-rewards .ReceivedRewardsComponentStyle-stringRewards > div {
+	position: relative;
+	outline: none;
+	box-shadow: none;
+	background: none;
+	background-color: var(--severitium-dark-transparent-background2);
+	border: .1em solid var(--severitium-gray-color);
+	border-radius: var(--severitium-border-radius);
+	-webkit-backdrop-filter: blur(.5em);
+			backdrop-filter: blur(.5em);
+	margin: 0;
+}
+
+/* Opened containers single reward's rarity (on edge) */
+
+.ReceivedRewardsComponentStyle-rewards .ReceivedRewardsComponentStyle-stringRewards > div .RewardCardComponentStyle-cornerBlock > div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-top-left-radius: var(--severitium-border-radius);
+}

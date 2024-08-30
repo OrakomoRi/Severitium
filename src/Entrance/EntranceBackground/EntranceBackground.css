@@ -1,0 +1,23 @@
+/* Starting entrance background and all changing backgrounds */
+.Common-changingBackground,
+.Common-container.Common-entranceBackground,
+.Common-background.SystemMessageStyle-container,
+.Common-container:has(.Common-entranceGradient) {
+	background: none;
+	background-color: rgb(0, 0, 0);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+/* Container for gradient (vignette effect) */
+
+.Common-entranceGradient {
+	background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+}
+
+/* Hide original changing backgrounds */
+
+.Common-container:has(.Common-entranceGradient) > .Common-changingBackground {
+	display: none;
+}

@@ -1,0 +1,63 @@
+/* Container with cards inside */
+
+.BattlePickComponentStyle-modeCards {
+	width: auto;
+	height: auto;
+}
+
+/* Single card */
+
+.BattlePickComponentStyle-commonStyleBlock {
+	background: none;
+	box-shadow: 0 0 0 .075em var(--severitium-main-color);
+	transition: box-shadow .2s ease;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Single card on hover */
+
+.BattlePickComponentStyle-commonStyleBlock:hover {
+	box-shadow: 0 0 0 .2em var(--severitium-main-color);
+}
+
+/* Single card image */
+
+.BattlePickComponentStyle-commonStyleBlock > div:first-child {
+	border-radius: 0;
+	transition: -webkit-transform .2s ease;
+	transition: transform .2s ease;
+	transition: transform .2s ease, -webkit-transform .2s ease;
+}
+
+/* Single card image on card hover */
+
+.BattlePickComponentStyle-commonStyleBlock:hover > div:first-child {
+	-webkit-transform: scale(1.1, 1.1);
+			transform: scale(1.1, 1.1);
+}
+
+/* Type's description container */
+
+.BattlePickComponentStyle-commonStyleBlock .BattlePickComponentStyle-descriptionBattle {
+	width: 100%;
+	height: auto;
+	display: flex;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(transparent 0%, var(--severitium-black-color) 100%);
+}
+
+/* Type's description text */
+
+.BattlePickComponentStyle-commonStyleBlock .BattlePickComponentStyle-descriptionBattle > * {
+	color: var(--severitium-main-color);
+	margin: .5em 1em;
+	width: auto;
+}
+
+/* Timers inside the cards */
+
+.BattlePickComponentStyle-commonStyleBlock div[class*='timer'i] {
+	background-color: var(--severitium-main-color);
+	color: var(--severitium-black-text-color);
+}

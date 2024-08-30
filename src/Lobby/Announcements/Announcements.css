@@ -1,0 +1,126 @@
+/* Announcements container */
+
+.AnnouncementHomeScreenComponentStyle-mainContainer {
+	bottom: 1.5em;
+	right: 4em;
+	background-color: transparent;
+	-webkit-backdrop-filter: blur(.25em);
+			backdrop-filter: blur(.25em);
+	border: none;
+	border-radius: var(--severitium-border-radius);
+	box-shadow: 0 0 0 .075em var(--severitium-main-color);
+	transition: none;
+	transition: box-shadow .2s ease;
+}
+
+/* Announcements container on hover */
+
+.AnnouncementHomeScreenComponentStyle-mainContainer:hover {
+	border: none;
+	box-shadow: 0 0 0 .1em var(--severitium-main-color);
+}
+
+/* Announcements pseudo elements for corner border hover animation */
+
+.AnnouncementHomeScreenComponentStyle-mainContainer::before,
+.AnnouncementHomeScreenComponentStyle-mainContainer::after {
+	content: '';
+	position: absolute;
+	width: 3em;
+	height: 3em;
+	opacity: 0;
+	z-index: -1;
+	border-radius: var(--severitium-border-radius);
+	pointer-events: none;
+	transition: all .2s ease;
+}
+
+/* Announcements before pseudo element (top-right corner) */
+
+.AnnouncementHomeScreenComponentStyle-mainContainer::before {
+	content: '';
+	right: -1em;
+	top: -1em;
+	border-top: var(--severitium-main-color) solid .4em;
+	border-right: var(--severitium-main-color) solid .4em;
+	-webkit-transform: translate(100%, -50%);
+			transform: translate(100%, -50%);
+}
+
+/* Announcements after pseudo element (bottom-left corner) */
+
+.AnnouncementHomeScreenComponentStyle-mainContainer::after {
+	content: '';
+	left: -1em;
+	bottom: -1em;
+	border-bottom: var(--severitium-main-color) solid .4em;
+	border-left: var(--severitium-main-color) solid .4em;
+	-webkit-transform: translate(-100%, 50%);
+			transform: translate(-100%, 50%);
+}
+
+/* Announcements pseudo elements on hover */
+
+.AnnouncementHomeScreenComponentStyle-mainContainer:hover::before,
+.AnnouncementHomeScreenComponentStyle-mainContainer:hover::after {
+	-webkit-transform: translate(0,0);
+			transform: translate(0,0);
+	opacity: 1;
+}
+
+/* Announcement background container */
+
+.AnnouncementHomeScreenComponentStyle-mainBackGroundContainer > div:first-child > div {
+	border-radius: 0;
+}
+
+/* Timer of an announcement */
+
+.AnnouncementHomeScreenComponentStyle-headerTimer {
+	background-color: var(--severitium-main-color);
+	color: var(--severitium-black-text-color);
+}
+
+/* Announcement on card's bottom container */
+
+.AnnouncementHomeScreenComponentStyle-announceContainer {
+	background: linear-gradient(transparent 0%, var(--severitium-black-color) 100%);
+}
+
+/* Announcement on card's bottom text */
+
+.AnnouncementHomeScreenComponentStyle-announceContainer > h3 {
+	color: var(--severitium-white-text-color);
+}
+
+/* Announcement bottom panel */
+
+.AnnouncementHomeScreenComponentStyle-mainBackGroundContainer + div {
+	background-color: var(--severitium-dark-transparent-background1);
+}
+
+/* Announcement bottom panel hotkey blocks */
+
+.AnnouncementHomeScreenComponentStyle-mainBackGroundContainer + div div[class*='button'i] {
+	background: transparent;
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: .1em;
+}
+
+/* Announcement bottom panel hotkey blocks text */
+
+.AnnouncementHomeScreenComponentStyle-mainBackGroundContainer + div div[class*='button'i] > span {
+	color: var(--severitium-dark-white-text-color);
+}
+
+/* Announcement bottom panel common point */
+
+.AnnouncementHomeScreenComponentStyle-navigationLabelPoint {
+	background-color: var(--severitium-gray-color);
+}
+
+/* Announcement bottom panel selected point */
+
+.AnnouncementHomeScreenComponentStyle-selectedNavigationLabelPoint {
+	background-color: var(--severitium-main-color);
+}

@@ -1,0 +1,26 @@
+/* The main container everywhere */
+
+.Common-container {
+	background: none;
+	background-color: black;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: unset;
+}
+
+/* The main container everywhere except the lobby */
+
+.Common-container:not(:has(> [class*="mainscreen" i])):not(:has(> [class*="garagecontainer" i])) {
+	z-index: 0;
+}
+
+/* Canvas for custom background */
+
+.severitium-gear-canvas {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	z-index: 0;
+}

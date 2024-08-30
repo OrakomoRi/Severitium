@@ -1,0 +1,240 @@
+/* Main pause container (fullscreen) */
+
+.BattlePauseMenuComponentStyle-blackGlobalWrapper {
+	background: none;
+	background-color: var(--severitium-dark-transparent-background4);
+	-webkit-backdrop-filter: blur(.25em);
+			backdrop-filter: blur(.25em);
+}
+
+/* Pause wrapper */
+
+.BattlePauseMenuDialogComponentStyle-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: auto;
+	max-width: auto;
+}
+
+/* Pause main content container */
+
+.BattlePauseMenuDialogComponentStyle-content {
+	display: flex;
+	flex-direction: column-reverse;
+	position: relative;
+	box-sizing: border-box;
+	gap: 2em;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	padding: 2em 1em;
+	border-radius: var(--severitium-border-radius);
+	background-color: var(--severitium-dark-transparent-background2);
+}
+
+/* Pseudo-elements for pause content container */
+
+.BattlePauseMenuDialogComponentStyle-content::before,
+.BattlePauseMenuDialogComponentStyle-content::after {
+	box-sizing: inherit;
+	content: '';
+	position: absolute;
+	border: .1em solid transparent;
+	border-radius: var(--severitium-border-radius);
+	width: 0;
+	height: 0;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
+
+/* Pseudo-element 'before' for pause content container */
+
+.BattlePauseMenuDialogComponentStyle-content::before {
+	border-top-color: var(--severitium-extra-light-gray-color);
+	border-right-color: var(--severitium-extra-light-gray-color);
+	-webkit-animation: pausebeforeborder 0.5s ease-out forwards;
+			animation: pausebeforeborder 0.5s ease-out forwards;
+}
+
+/* Animation for 'before' pause content container element */
+
+@-webkit-keyframes pausebeforeborder {
+	0% {
+		width: 0;
+		height: 0;
+	}
+	50% {
+		width: 100%;
+		height: 0;
+	}
+	100% {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@keyframes pausebeforeborder {
+	0% {
+		width: 0;
+		height: 0;
+	}
+	50% {
+		width: 100%;
+		height: 0;
+	}
+	100% {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+/* Pseudo-element 'after' for pause content container */
+
+.BattlePauseMenuDialogComponentStyle-content::after {
+	border-bottom-color: var(--severitium-extra-light-gray-color);
+	border-left-color: var(--severitium-extra-light-gray-color);
+	-webkit-animation: pauseafterborder 0.5s ease-out forwards;
+			animation: pauseafterborder 0.5s ease-out forwards;
+}
+
+/* Animation for 'after' pause content container element */
+
+@-webkit-keyframes pauseafterborder {
+	0% {
+		width: 0;
+		height: 0;
+	}
+	50% {
+		width: 0;
+		height: 100%;
+	}
+	100% {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@keyframes pauseafterborder {
+	0% {
+		width: 0;
+		height: 0;
+	}
+	50% {
+		width: 0;
+		height: 100%;
+	}
+	100% {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+/* Pause timer's container */
+
+.BattlePauseMenuDialogComponentStyle-timer {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+}
+
+/* Pause timer text */
+
+.BattlePauseMenuDialogComponentStyle-timer span[id*="timer"i] {
+	color: var(--severitium-main-color);
+}
+
+/* Pause subcontent container */
+
+.BattlePauseMenuComponentStyle-containerWrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Pause buttons container */
+
+.BattlePauseMenuComponentStyle-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
+	margin: 0;
+	padding: 0;
+}
+
+/* Pause void block */
+
+.BattlePauseMenuComponentStyle-void {
+	display: none;
+}
+
+/* Second pause block (empty) */
+
+.BattlePauseMenuComponentStyle-container:last-child {
+	display: none;
+}
+
+/* Pause enabled/disabled buttons */
+
+.BattlePauseMenuComponentStyle-enabledButton,
+.BattlePauseMenuComponentStyle-disabledButton {
+	background: none;
+	background-color: transparent;
+	padding: 1em .5em;
+	border: none;
+	border-radius: var(--severitium-border-radius);
+	background-color: var(--severitium-light-transparent-background3);
+	transition: background-color .2s ease;
+}
+
+/* Hotkey block of the button */
+
+.BattlePauseMenuComponentStyle-enabledButton div[class*="hotkey"i] {
+	background: transparent;
+	color: var(--severitium-dark-white-text-color);
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: .1em;
+}
+
+/* Pause enabled buttons on hover (except leave red button) */
+
+.BattlePauseMenuComponentStyle-enabledButton.BattlePauseMenuComponentStyle-menuButton:hover {
+	background-color: var(--severitium-gray-button-background);
+}
+
+/* Pause enabled red button on hover */
+
+.BattlePauseMenuComponentStyle-enabledButton.BattlePauseMenuComponentStyle-redMenuButton:hover {
+	background-color: var(--severitium-red-button-background);
+}
+
+/* Pause disabled buttons on hover */
+
+.BattlePauseMenuComponentStyle-disabledButton:hover {
+	pointer-events: none;
+	background: none;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	box-shadow: none;
+}
+
+/* Pause buttons' texts */
+
+.BattlePauseMenuComponentStyle-menuButton span,
+.BattlePauseMenuComponentStyle-enabledButton span {
+	font-size: 1.25em;
+	line-height: normal;
+}
+
+/* Pause red button (leave) */
+
+.BattlePauseMenuComponentStyle-redMenuButton {
+	border: none;
+}

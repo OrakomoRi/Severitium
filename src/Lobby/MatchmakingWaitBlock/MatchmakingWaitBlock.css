@@ -1,0 +1,115 @@
+/* Waiting block container */
+
+.MatchmakingWaitComponentStyle-container {
+	top: 0;
+	right: 0;
+	height: auto;
+	width: auto;
+	z-index: 10;
+	background-image: none;
+	background-color: var(--severitium-dark-transparent-background4);
+	border-bottom-left-radius: var(--severitium-border-radius);
+	border-left: var(--severitium-main-color) solid .1em;
+	border-bottom: var(--severitium-main-color) solid .1em;
+	-webkit-backdrop-filter: blur(.1em);
+			backdrop-filter: blur(.1em);
+}
+
+/* Shadow background of the button */
+
+.MatchmakingWaitComponentStyle-container > div:first-child {
+	display: none;
+}
+
+/* Block with information */
+
+.MatchmakingWaitComponentStyle-contentContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: .5em;
+	margin: 0;
+	height: auto;
+	width: auto;
+	padding: 1.5em 3em;
+	width: 20em;
+	border-right: var(--severitium-main-color) solid .1em;
+}
+
+/* Header of the info block (battle mode) */
+
+.MatchmakingWaitComponentStyle-battleModeLabel {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+/* Header text of the info block */
+
+.MatchmakingWaitComponentStyle-battleModeLabel > span {
+	color: var(--severitium-main-color);
+}
+
+/* Average waiting time block */
+
+.MatchmakingWaitComponentStyle-averageTimeContainer {
+	width: 100%;
+	margin: 0;
+}
+
+/* Average waiting time text label */
+
+.MatchmakingWaitComponentStyle-waitingTimeLabel {
+	color: var(--severitium-white-text-color);
+}
+
+/* Average waiting time text value */
+
+.MatchmakingWaitComponentStyle-averageWaitingTimeValue {
+	color: var(--severitium-main-color);
+}
+
+/* Current waiting time block */
+
+.MatchmakingWaitComponentStyle-currentTimeContainer {
+	width: 100%;
+	margin: 0;
+}
+
+/* Current waiting time text label */
+
+.MatchmakingWaitComponentStyle-waitingTimeLabel {
+	color: var(--severitium-white-text-color);
+}
+
+/* Current waiting time text value */
+
+.MatchmakingWaitComponentStyle-currentTimeContainer .MatchmakingWaitComponentStyle-waitingTimeValue.MatchmakingWaitComponentStyle-waitingTimeValue > span {
+	color: var(--severitium-main-color);
+	text-shadow: none;
+}
+
+/* Cancel battle search button */
+
+.MatchmakingWaitComponentStyle-cancelButton {
+	margin: 0;
+	width: auto;
+	height: auto;
+	border: none;
+}
+
+/* Cancel battle search button text */
+
+.MatchmakingWaitComponentStyle-cancelButton > span {
+	margin: 0;
+	padding: 1em 2em;
+	font-size: 1.25em;
+	font-weight: bold;
+	color: var(--severitium-white-text-color);
+	transition: color .2s ease;
+}
+
+/* Cancel battle search button text on button's hover */
+
+.MatchmakingWaitComponentStyle-cancelButton:hover > span {
+	color: var(--severitium-red-text-color);
+}

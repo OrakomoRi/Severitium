@@ -1,0 +1,1 @@
+.Common-container{background:0 0;background-color:#000;background-position:center;background-repeat:no-repeat;background-size:cover;z-index:unset}.Common-container:not(:has(>[class*=mainscreen i])):not(:has(>[class*=garagecontainer i])){z-index:0}.severitium-gear-canvas{position:absolute;height:100%;width:100%;overflow:hidden;z-index:0}

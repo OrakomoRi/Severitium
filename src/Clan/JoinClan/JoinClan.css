@@ -1,0 +1,348 @@
+/* Join (send request/incoming requests) container */
+
+.ClanCommonStyle-content {
+	background: none;
+}
+
+/* Input */
+
+.ClanCommonStyle-center .ClanCommonStyle-information .SearchInputComponentStyle-searchInput input {
+	box-shadow: none;
+	border-radius: 0;
+	border-bottom: .1em solid var(--severitium-light-gray-color);
+	color: var(--severitium-white-text-color);
+}
+
+/* Input on hover */
+
+.ClanCommonStyle-center .ClanCommonStyle-information .SearchInputComponentStyle-searchInput input:hover {
+	box-shadow: none;
+}
+
+/* Input on focus */
+
+.ClanCommonStyle-center .ClanCommonStyle-information .SearchInputComponentStyle-searchInput input:focus {
+	border-color: var(--severitium-white-color);
+}
+
+/* Incorrect input */
+
+.ClanCommonStyle-center .ClanCommonStyle-information > div:has(+ div[class*='button'i][class*='disabled'i]:not([class*='decline'i])) .SearchInputComponentStyle-searchInput input:has(+ div[class*='image'i]),
+.ClanCommonStyle-center .ClanCommonStyle-information > div:has(+ div[class*='button'i][class*='disabled'i]:not([class*='decline'i])) .SearchInputComponentStyle-searchInput input:has(+ div[class*='image'i]):focus {
+	border-color: var(--severitium-red-color);
+	color: var(--severitium-red-text-color);
+}
+
+/* Correct input */
+
+.ClanCommonStyle-center .ClanCommonStyle-information > div:has(+ div[class*='button'i]:not([class*='disabled'i]):not([class*='decline'i])) .SearchInputComponentStyle-searchInput input:has(+ div[class*='image'i]),
+.ClanCommonStyle-center .ClanCommonStyle-information > div:has(+ div[class*='button'i]:not([class*='disabled'i]):not([class*='decline'i])) .SearchInputComponentStyle-searchInput input:has(+ div[class*='image'i]):focus {
+	border-color: var(--severitium-green-color);
+	color: var(--severitium-green-text-color);
+}
+
+/* Input's placeholder */
+
+.ClanCommonStyle-center .ClanCommonStyle-information .SearchInputComponentStyle-searchInput input::-webkit-input-placeholder {
+	color: var(--severitium-light-gray-text-color);
+	-webkit-transition: color .2s ease;
+	transition: color .2s ease;
+}
+
+.ClanCommonStyle-center .ClanCommonStyle-information .SearchInputComponentStyle-searchInput input:-ms-input-placeholder {
+	color: var(--severitium-light-gray-text-color);
+	-ms-transition: color .2s ease;
+	transition: color .2s ease;
+}
+
+.ClanCommonStyle-center .ClanCommonStyle-information .SearchInputComponentStyle-searchInput input::placeholder {
+	color: var(--severitium-light-gray-text-color);
+	transition: color .2s ease;
+}
+
+/* Placeholder of the input on input container hover & input on focus */
+
+.ClanCommonStyle-center .ClanCommonStyle-information .SearchInputComponentStyle-searchInput:hover input::-webkit-input-placeholder, .ClanCreateComponentStyle-blockLicense .SearchInputComponentStyle-searchInput input:focus::-webkit-input-placeholder {
+	color: var(--severitium-white-text-color);
+}
+
+.ClanCommonStyle-center .ClanCommonStyle-information .SearchInputComponentStyle-searchInput:hover input:-ms-input-placeholder, .ClanCreateComponentStyle-blockLicense .SearchInputComponentStyle-searchInput input:focus:-ms-input-placeholder {
+	color: var(--severitium-white-text-color);
+}
+
+.ClanCommonStyle-center .ClanCommonStyle-information .SearchInputComponentStyle-searchInput:hover input::-webkit-input-placeholder, .ClanCommonStyle-center .ClanCommonStyle-information .SearchInputComponentStyle-searchInput input:focus::-webkit-input-placeholder {
+	color: var(--severitium-white-text-color);
+}
+
+.ClanCommonStyle-center .ClanCommonStyle-information .SearchInputComponentStyle-searchInput:hover input:-ms-input-placeholder, .ClanCommonStyle-center .ClanCommonStyle-information .SearchInputComponentStyle-searchInput input:focus:-ms-input-placeholder {
+	color: var(--severitium-white-text-color);
+}
+
+/* Placeholder on input focus and on hover */
+
+.ClanCommonStyle-center .ClanCommonStyle-information .SearchInputComponentStyle-searchInput:hover input::placeholder,
+.ClanCommonStyle-center .ClanCommonStyle-information .SearchInputComponentStyle-searchInput input:focus::placeholder {
+	color: var(--severitium-white-text-color);
+}
+
+/* Icon when input has some text */
+
+.ClanCommonStyle-center .ClanCommonStyle-information .SearchInputComponentStyle-searchInput input + div[class*='image'i] {
+	right: .5em;
+	height: 1.25em;
+	width: 1.25em;
+	background-image: none;
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+}
+
+/* Icon if the input is incorrect */
+
+.ClanCommonStyle-center .ClanCommonStyle-information > div:has(+ div[class*='button'i][class*='disabled'i]:not([class*='decline'i])) .SearchInputComponentStyle-searchInput input + div[class*='image'i] {
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path d="M250.26 166.05L256 288l5.73-121.95a5.74 5.74 0 00-5.79-6h0a5.74 5.74 0 00-5.68 6z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 367.91a20 20 0 1120-20 20 20 0 01-20 20z" fill="currentColor"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path d="M250.26 166.05L256 288l5.73-121.95a5.74 5.74 0 00-5.79-6h0a5.74 5.74 0 00-5.68 6z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 367.91a20 20 0 1120-20 20 20 0 01-20 20z" fill="currentColor"/></svg>');
+	background-color: var(--severitium-red-color);
+}
+
+/* Icon if the input is correct */
+
+.ClanCommonStyle-center .ClanCommonStyle-information > div:has(+ div[class*='button'i]:not([class*='disabled'i]):not([class*='decline'i])) .SearchInputComponentStyle-searchInput input + div[class*='image'i] {
+	-webkit-mask-image: url('data:image/svg+xml,<svg width="8" height="8" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="4" fill="white"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg width="8" height="8" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="4" fill="white"/></svg>');
+	background-color: var(--severitium-green-color);
+}
+
+/* Text if the input is incorrect */
+
+.ClanCommonStyle-center .ClanCommonStyle-information .SearchInputComponentStyle-searchInput + span {
+	color: var(--severitium-red-text-color);
+}
+
+/* Disabled button */
+
+.ClanCommonStyle-center .ClanCommonStyle-information div[class*='button'i][class*='disabled'i] {
+	background-color: var(--severitium-dark-transparent-background1);
+	border-radius: var(--severitium-border-radius);
+	border: none;
+	outline: none;
+	box-shadow: none;
+}
+
+/* Disabled button's text */
+
+.ClanCommonStyle-center .ClanCommonStyle-information div[class*='button'i][class*='disabled'i] span {
+	color: var(--severitium-white-text-color);
+	text-shadow: none;
+	opacity: .25;
+}
+
+/* Active button 'send' request to join the clan */
+
+/* Button */
+
+.ClanCommonStyle-center .ClanCommonStyle-information div.ClanCommonStyle-buttonSendRequest:not([class*='disabled'i]):not([class*='cancel'i]) {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.ClanCommonStyle-center .ClanCommonStyle-information div.ClanCommonStyle-buttonSendRequest:not([class*='disabled'i]):not([class*='cancel'i]):hover {
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.ClanCommonStyle-center .ClanCommonStyle-information div.ClanCommonStyle-buttonSendRequest:not([class*='disabled'i]):not([class*='cancel'i]) > span {
+	color: var(--severitium-green-button-color);
+}
+
+/* Active button 'cancel all' requests to join the clan */
+
+/* Button */
+
+.ClanCommonStyle-center .ClanCommonStyle-information div.ClanCommonStyle-buttonSendRequest[class*='cancel'i]:not([class*='disabled'i]) {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-red-button-background);
+	border: var(--severitium-red-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.ClanCommonStyle-center .ClanCommonStyle-information div.ClanCommonStyle-buttonSendRequest[class*='cancel'i]:not([class*='disabled'i]):hover {
+	border: var(--severitium-red-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.ClanCommonStyle-center .ClanCommonStyle-information div.ClanCommonStyle-buttonSendRequest[class*='cancel'i]:not([class*='disabled'i]) > span {
+	color: var(--severitium-red-button-color);
+}
+
+/* Active button 'decline all' incoming requests */
+
+/* Button */
+
+.ClanCommonStyle-center .ClanCommonStyle-information div.ClanInvitationsComponentStyle-buttonDeclineAll:not([class*='disabled'i]) {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-red-button-background);
+	border: var(--severitium-red-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.ClanCommonStyle-center .ClanCommonStyle-information div.ClanInvitationsComponentStyle-buttonDeclineAll:not([class*='disabled'i]):hover {
+	border: var(--severitium-red-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.ClanCommonStyle-center .ClanCommonStyle-information div.ClanInvitationsComponentStyle-buttonDeclineAll:not([class*='disabled'i]) > span {
+	color: var(--severitium-red-button-color);
+}
+
+/* Both tables of outcoming and incoming requests */
+
+/* Table header */
+
+/* Table header cell */
+
+.ClanCommonStyle-members .TableComponentStyle-table thead tr th {
+	background-color: var(--severitium-dark-transparent-background1);
+	border-radius: 0;
+}
+
+/* Table header cell's text */
+
+.ClanCommonStyle-members .TableComponentStyle-table thead tr th h2 {
+	color: var(--severitium-white-text-color);
+}
+
+/* Table body */
+
+/* Table body container */
+
+.ClanCommonStyle-members .TableComponentStyle-tBody {
+	background-color: transparent;
+}
+
+/* Empty row */
+
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanCommonStyle-rowEmpty {
+	background-color: transparent;
+	opacity: 1;
+}
+
+/* Filled row */
+
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanCommonStyle-row {
+	background-color: var(--severitium-dark-transparent-background1);
+	opacity: 1;
+}
+
+/* Texts in a row (clan's name, founder's nickname, players count) */
+
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfRequestsItemComponentStyle-nameCell > span,
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfRequestsItemComponentStyle-founderCell > span,
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfRequestsItemComponentStyle-playersCell > span,
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfInvitationsItemComponentStyle-nameCell > span,
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfInvitationsItemComponentStyle-founderCell > span,
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfInvitationsItemComponentStyle-playersCell > span {
+	color: var(--severitium-white-text-color);
+}
+
+/* Tag name text */
+
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfRequestsItemComponentStyle-tagCell > span,
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfInvitationsItemComponentStyle-tagCell > span {
+	color: var(--severitium-main-color);
+}
+
+/* Cancel outcoming (your) request button to get in the clan */
+
+/* Button */
+
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfRequestsItemComponentStyle-creationDateCell .ClanInvitationsItemComponentStyle-buttonReject {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-red-button-background);
+	border: var(--severitium-red-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfRequestsItemComponentStyle-creationDateCell .ClanInvitationsItemComponentStyle-buttonReject:hover {
+	border: var(--severitium-red-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfRequestsItemComponentStyle-creationDateCell .ClanInvitationsItemComponentStyle-buttonReject > span {
+	color: var(--severitium-red-button-color);
+}
+
+/* Reject incoming request button to get in the clan */
+
+/* Button */
+
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfRequestsItemComponentStyle-marginCellDeclineAccept > div[class*='button'i]:first-child {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-red-button-background);
+	border: var(--severitium-red-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfRequestsItemComponentStyle-marginCellDeclineAccept > div[class*='button'i]:first-child:hover {
+	border: var(--severitium-red-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfRequestsItemComponentStyle-marginCellDeclineAccept > div[class*='button'i]:first-child > span {
+	color: var(--severitium-red-button-color);
+}
+
+/* Confirm incoming request button to get in the clan */
+
+/* Button */
+
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfRequestsItemComponentStyle-marginCellDeclineAccept > div[class*='button'i]:nth-child(2) {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfRequestsItemComponentStyle-marginCellDeclineAccept > div[class*='button'i]:nth-child(2):hover {
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.ClanCommonStyle-members .TableComponentStyle-tBody .ClanSelfRequestsItemComponentStyle-marginCellDeclineAccept > div[class*='button'i]:nth-child(2) > span {
+	color: var(--severitium-green-button-color);
+}

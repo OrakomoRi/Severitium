@@ -1,0 +1,132 @@
+/* Scrolling area with cards */
+
+.ScrollingCardsComponentStyle-scrollCardPick {
+	min-width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	gap: 1em;
+	padding: .25em 1em 1em 1em;
+	margin: 2em 0 1em 0;
+}
+
+/* Single card */
+
+.ScrollingCardsComponentStyle-scrollCard {
+	background: none;
+	box-shadow: 0 0 0 .075em var(--severitium-main-color);
+	transition: box-shadow .2s ease;
+	border-radius: var(--severitium-border-radius);
+	margin: 0;
+}
+
+/* Single card on hover */
+
+.ScrollingCardsComponentStyle-scrollCard:hover {
+	box-shadow: 0 0 0 .2em var(--severitium-main-color);
+}
+
+/* Card background */
+
+.ScrollingCardsComponentStyle-scrollCard .Common-backgroundImageCover {
+	-webkit-filter: saturate(1.5);
+			filter: saturate(1.5);
+	border-radius: 0;
+	transition: -webkit-transform .2s ease;
+	transition: transform .2s ease;
+	transition: transform .2s ease, -webkit-transform .2s ease;
+}
+
+/* First/Last cards */
+
+.ScrollingCardsComponentStyle-scrollCard:first-child,
+.ScrollingCardsComponentStyle-scrollCard:last-child {
+	margin: 0;
+}
+
+/* Card background on card hover */
+
+.ScrollingCardsComponentStyle-scrollCard:hover .Common-backgroundImageCover {
+	-webkit-transform: scale(1.1, 1.1);
+			transform: scale(1.1, 1.1);
+}
+
+/* Card name container */
+
+.ScrollingCardsComponentStyle-scrollCard .ScrollingCardsComponentStyle-cardName {
+	background: none;
+	width: 100%;
+	height: auto;
+}
+
+/* Card name */
+
+.ScrollingCardsComponentStyle-cardName > h2 {
+	color: var(--severitium-light-gray-text-color);
+	transition: color .2s ease;
+}
+
+/* Card name on card hover */
+
+.ScrollingCardsComponentStyle-scrollCard:hover .ScrollingCardsComponentStyle-cardName > h2 {
+	color: var(--severitium-white-text-color);
+}
+
+/* Count of items of such type */
+
+.ScrollingCardsComponentStyle-cardCount {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+}
+
+/* All count elements that are NOT equal to zero */
+
+.ScrollingCardsComponentStyle-cardCount:not([class*='ksc'i]),
+.ScrollingCardsComponentStyle-cardName[class*='ksc'i] .ScrollingCardsComponentStyle-cardCount {
+	background-color: var(--severitium-main-color);
+}
+
+/* All count elements that are equal to zero */
+
+.ScrollingCardsComponentStyle-cardCount[class*='ksc'i] {
+	background-color: var(--severitium-gray-color);
+}
+
+/* Count of items of such type, text */
+
+.ScrollingCardsComponentStyle-cardCount p {
+	font-size: 1em;
+	color: var(--severitium-black-text-color);
+}
+
+/* Card description */
+
+.ScrollingCardsComponentStyle-cardDescription p {
+	opacity: 1;
+	font-size: .9em;
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* "Select" button-like element */
+
+.ScrollingCardsComponentStyle-selectCard {
+	border-top: .1em solid var(--severitium-gray-color);
+}
+
+/* "Select" button-like element's text */
+
+.ScrollingCardsComponentStyle-selectCard h2,
+.ScrollingCardsComponentStyle-selectCard span[id*="timer"i] {
+	color: var(--severitium-white-text-color);
+	transition: color .2s ease;
+}
+
+/* "Select" button-like element's text on card hover */
+
+.ScrollingCardsComponentStyle-scrollCard:hover .ScrollingCardsComponentStyle-selectCard h2,
+.ScrollingCardsComponentStyle-scrollCard:hover .ScrollingCardsComponentStyle-selectCard span[id*="timer"i] {
+	color: var(--severitium-main-color);
+}
