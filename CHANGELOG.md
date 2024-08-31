@@ -119,7 +119,7 @@ The project has been publicly released! :tada:
 ## Added
 
 - :tada: Changelog :tada:
-- :tada: Script auto-update :tada:
+- :tada: Script's auto-update :tada:
 
 ### Changed
 
@@ -229,7 +229,6 @@ The project has been publicly released! :tada:
 - Variables
 - Background for CommonContainer
 - Project management (paths to files)
-- Project management for additional filex (paths to files)
 
 ---
 
@@ -398,7 +397,6 @@ The project has been publicly released! :tada:
 - Lobby/FooterMenu
 - Variables
 - Additional functions folder's path
-- Now all `.js` files for additional theme logic is also inside `(function() {})()` to avoid global namespace
 
 ### Fixed
 
