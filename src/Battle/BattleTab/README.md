@@ -1,4 +1,4 @@
-# :sparkles: Clan
+# :sparkles: Battle Tab
 
 All modules related to battle "Tab" window are stored here.
 

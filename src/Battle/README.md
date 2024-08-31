@@ -1,4 +1,4 @@
-# :sparkles: Clan
+# :sparkles: Battle
 
 All modules for battles related items and events are stored here.
 
