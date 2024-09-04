@@ -206,6 +206,7 @@
 	border-radius: var(--severitium-border-radius);
 	background: var(--severitium-green-button-background);
 	border: var(--severitium-green-button-border-color) solid .1em;
+	border-radius: var(--severitium-border-radius);
 	transition: border .2s ease;
 }
 
@@ -245,9 +246,9 @@
 .FriendListComponentStyle-buttonCloseAddFriends {
 	outline: none;
 	box-shadow: none;
-	border-radius: var(--severitium-border-radius);
 	background: var(--severitium-gray-button-background);
 	border: var(--severitium-gray-button-border-color) solid .1em;
+	border-radius: var(--severitium-border-radius);
 	transition: border .2s ease;
 }
 

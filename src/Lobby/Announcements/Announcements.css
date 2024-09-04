@@ -71,7 +71,8 @@
 /* Announcement background container */
 
 .AnnouncementHomeScreenComponentStyle-mainBackGroundContainer > div:first-child > div {
-	border-radius: 0;
+	border-top-left-radius: var(--severitium-border-radius);
+	border-top-right-radius: var(--severitium-border-radius);
 }
 
 /* Timer of an announcement */
@@ -97,6 +98,8 @@
 
 .AnnouncementHomeScreenComponentStyle-mainBackGroundContainer + div {
 	background-color: var(--severitium-dark-transparent-background1);
+	border-bottom-left-radius: var(--severitium-border-radius);
+	border-bottom-right-radius: var(--severitium-border-radius);
 }
 
 /* Announcement bottom panel hotkey blocks */
