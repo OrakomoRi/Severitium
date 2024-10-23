@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Scrolling Cards
-// @version			1.0.8
+// @version			1.0.9
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 
