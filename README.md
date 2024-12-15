@@ -10,6 +10,8 @@ Modern animations, custom colors, original bug fixes: it's all possible!
 
 To find out compatibility, check [browser compatibility](#-browser-compatibility)
 
+Check the [preview](https://youtu.be/pFkgSHNhcug) of the Severitium theme.
+
 See the [changelog](CHANGELOG.md)
 
 ```javascript
