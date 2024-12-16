@@ -244,7 +244,7 @@
 
 
 
-	// Links to images as Base64
+	// Links to images and corresponding CSS styles
 	const imageLinks = [
 		{
 			url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/.images/png/General/CommonContainer.png?raw=true',
@@ -263,9 +263,8 @@
 	function applyStyles(imageUrl, styleTemplate) {
 		const styledBackground = styleTemplate.replace('SEVERITIUM_PLACEHOLDER', imageUrl);
 		
-		const styleElement = document.createElement('style');
-		styleElement.textContent = styledBackground;
-		document.body.appendChild(styleElement);
+		// Use GM_addStyle to apply the styles
+		GM_addStyle(styledBackground);
 	}
 
 	function fetchImageUrl(url, styleTemplate) {
@@ -273,7 +272,7 @@
 			method: 'GET',
 			url: url,
 			responseType: 'blob',
-			onload: function(response) {
+			onload: function (response) {
 				if (response.status === 200) {
 					const imageUrl = URL.createObjectURL(response.response);
 					applyStyles(imageUrl, styleTemplate);
@@ -281,7 +280,7 @@
 					console.error('SEVERITIUM: Failed to load image from:', url);
 				}
 			},
-			onerror: function(error) {
+			onerror: function (error) {
 				console.error('SEVERITIUM: Failed to load PNG file:', error);
 			}
 		});
