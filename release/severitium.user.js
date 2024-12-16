@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.0-alpha7
+// @version			1.6.0-alpha8
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -34,7 +34,6 @@
 // @grant			GM_getValue
 // @grant			GM_setValue
 // @grant			GM_openInTab
-// @grant			GM_addStyle
 
 // @require			https://cdn.jsdelivr.net/npm/sweetalert2@11
 // @require			https://cdn.jsdelivr.net/gh/OrakomoRi/CompareVersions@main/JS/compareversions.min.js
@@ -245,48 +244,66 @@
 
 
 
-	// Links to images and corresponding CSS styles
-	const imageLinks = [
-		{
-			url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/.images/png/General/CommonContainer.png?raw=true',
-			style: '.Common-container:not(.Common-entranceBackground){background-image:url(SEVERITIUM_PLACEHOLDER)}'
-		},
-		{
-			url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/.images/png/Lobby/PlayButton.png?raw=true',
-			style: '.MainScreenComponentStyle-playButtonContainer{background-image:url(SEVERITIUM_PLACEHOLDER)}'
-		},
-		{
-			url: `https://github.com/OrakomoRi/Severitium/blob/main/src/.images/png/Entrance/${_getSeason()}.png?raw=true`,
-			style: '.Common-container.Common-entranceBackground, .Common-background.SystemMessageStyle-container, .Common-container:has(.Common-changingBackground){background-image:url(SEVERITIUM_PLACEHOLDER)}'
-		},
-	];
-
-	function applyStyles(imageUrl, styleTemplate) {
-		const styledBackground = styleTemplate.replace('SEVERITIUM_PLACEHOLDER', imageUrl);
-		
-		// Use GM_addStyle to apply the styles
-		GM_addStyle(styledBackground);
+	const createPattern = url => new RegExp(url.replace(/[.*+?^${}()|[\\]\]/g, '\\$&'));
+	const resourcesParam = new URLSearchParams(window.location.search).get('resources');
+	const resourcesURL = resourcesParam ?
+		new URL(resourcesParam, window.location.origin).href :
+		window.location.hostname === '3dtank.com' ?
+		'https://res.3dtank.com' :
+		window.location.hostname === 'tankionline.com' ?
+		'https://s.eu.tankionline.com' :
+		undefined;
+	if (!resourcesURL) {
+		console.error("[Overrider] Cant find resource server");
+		return;
 	}
-
-	function fetchImageUrl(url, styleTemplate) {
-		GM_xmlhttpRequest({
-			method: 'GET',
-			url: url,
-			responseType: 'blob',
-			onload: function (response) {
-				if (response.status === 200) {
-					const imageUrl = URL.createObjectURL(response.response);
-					applyStyles(imageUrl, styleTemplate);
-				} else {
-					console.error('SEVERITIUM: Failed to load image from:', url);
-				}
-			},
-			onerror: function (error) {
-				console.error('SEVERITIUM: Failed to load PNG file:', error);
+	const resourcesOverrider = [];
+	const originalFetch = unsafeWindow.fetch;
+	unsafeWindow.fetch = async (url, options) => {
+		const override = resourcesOverrider.find(override => createPattern(override.from).test(url));
+		if (override) {
+			try {
+				const response = await new Promise((resolve, reject) => {
+					GM_xmlhttpRequest({
+						method: 'GET',
+						url: override.to,
+						responseType: 'blob',
+						onload: (res) => res.status === 200 ? resolve(res) : reject(res),
+						onerror: reject
+					});
+				});
+				console.info(`[Overrider] Resource overridden successfully.\nFrom: ${override.from}\nTo: ${override.to}\nComment: ${override.comment}`);
+				return new Response(response.response, {
+					status: 200,
+					statusText: 'OK',
+					headers: { 'Content-Type': response.response.type }
+				});
+			} catch (error) {
+				console.error(`[Overrider] Failed to load resource.\nLink: ${override.to}\nComment: ${override.comment}\nStatus: ${error.status}`);
+				throw error;
 			}
-		});
-	}
+		}
+		return await originalFetch(url, options);
+	};
 
-	// Iterate over each image link and apply the corresponding style
-	imageLinks.forEach(({ url, style }) => fetchImageUrl(url, style));
+	const overrideCustom = ({from, to, comment = "---"}) => {
+		resourcesOverrider.push({
+			from: from,
+			to: to,
+			comment: comment
+		});
+	};
+
+	// Define overrides
+	overrideCustom({
+		from: 'https://tankionline.com/play/static/images/videoplay.79570900.gif',
+		to: 'https://github.com/OrakomoRi/Severitium/blob/main/src/.images/png/Lobby/PlayButton.png?raw=true',
+		comment: 'Override Play Button Image'
+	});
+
+	overrideCustom({
+		from: 'https://tankionline.com/play/static/images/background.fc2779c1.webp',
+		to: `https://github.com/OrakomoRi/Severitium/blob/main/src/.images/png/Entrance/${_getSeason()}.png?raw=true`,
+		comment: 'Override Entrance Background Image'
+	});
 })();
