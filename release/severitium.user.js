@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.0-alpha6
+// @version			1.6.0-alpha7
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -29,11 +29,12 @@
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Quests/QuestsScreen/QuestsScreen.min.js?raw=true
 
 // @run-at			document-start
-// @grant			GM_xmlhttpRequest
 // @grant			unsafeWindow
+// @grant			GM_xmlhttpRequest
 // @grant			GM_getValue
 // @grant			GM_setValue
 // @grant			GM_openInTab
+// @grant			GM_addStyle
 
 // @require			https://cdn.jsdelivr.net/npm/sweetalert2@11
 // @require			https://cdn.jsdelivr.net/gh/OrakomoRi/CompareVersions@main/JS/compareversions.min.js
