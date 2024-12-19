@@ -318,14 +318,15 @@
   
 	// Function to load all images and apply styles
 	async function loadAllImages() {
-		const promises = imageLinks.map(async ({ url, style }) => {
-			try {
-				const base64data = await fetchImageAsBase64(url);
-				applyStyles(base64data, style);
-				console.log(`SEVERITIUM: Successfully loaded image from ${url}`);
-			} catch {
-				console.error(`SEVERITIUM: Error applying style for ${url}`);
-			}
+		const promises = imageLinks.map(({ url, style }) => {
+			return fetchImageAsBase64(url)
+				.then(base64data => {
+					applyStyles(base64data, style);
+					console.log(`SEVERITIUM: Successfully loaded image from ${url}`);
+				})
+				.catch(error => {
+					console.error(`SEVERITIUM: Error applying style for ${url}`, error);
+				});
 		});
   
 		await Promise.all(promises);
