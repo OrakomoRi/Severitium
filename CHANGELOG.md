@@ -1,380 +1,472 @@
 # CHANGELOG
 
-## 1.6.0 (30.08.2024)
+## [1.6.0] - 2024-08-30
 
-The project has been publicly released! :tada:
+### Added
 
-## Changed
+- First public release of the project! :tada:
+
+### Changed
 
 - Battle/BattleChat
 - General/TopMenu
 - Quests/ContractsScreen
 - Quests/QuestsScreen
 
-## Fixed
+### Fixed
 
 - Image loading logic for single modules
 - Canvas adding logic for common container
 
-## 1.5.0 (12.08.2024)
+## [1.5.0] - 2024-08-12
 
-## Added
+### Added
 
-- Containers/ContainersOpening
-- Containers/ContainersScreen
-- Containers/PossibleRewardsScreen
-- Quests/ContractsScreen
-- Quests/QuestsScreen
+- Containers
+	- ContainersOpening
+	- ContainersScreen
+	- PossibleRewardsScreen
+- Quests
+	- ContractsScreen
+	- QuestsScreen
 - Logic for new animated wallpapers
 - New custom icons
-- Screenshots of the standard view and the theme view
-- :tada: Information and/or screenshots in all readme files
-- Added logic for loading images by link when loading tampermonkey script, followed by auto-conversion to base64
+- Screenshots of the standard and theme views :tada:
+- Information and/or screenshots in all readme files :tada:
+- Logic for loading images by link when loading the Tampermonkey script, followed by auto-conversion to base64
 
-## Changed
+### Changed
 
-- Battle/BattleChat
-- Battle/BattlePause
-- Battle/BattleTab/ColorfulResists
-- Battle/BattleTab/TabContainer
-- Clan/ClanModal
-- Clan/ExistingClan
-- Clan/JoinClan
-- Entrance/EntranceBackground
-- Entrance/EntranceForms
-- Entrance/EntranceIcons
-- Entrance/EntranceLinks
-- Friends/FriendsScreen
-- Friends/InviteScreen
-- General/CommonContainer
-- General/Dropdown
-- General/LoadingScreen
-- General/Modal
-- General/NotificatorIcon
-- General/PlayerContextMenu
-- General/ScrollingCards
-- General/TopMenu
-- General/TopPanel
-- General/XP
-- Lobby/Announcements
-- Lobby/BattleSelect/BattleMode
-- Lobby/BattleSelect/BattleType
-- Lobby/Challenges/CommonChallenges
-- Lobby/Challenges/EliteChallenges
-- Lobby/ChatWindow
-- Lobby/FooterMenu
-- Lobby/MainMenu
-- Lobby/MatchmaikingWaitBlock
-- Lobby/NewsWindow
-- Lobby/PlayButton
+- Battle
+	- BattleChat
+	- BattlePause
+	- BattleTab
+		- ColorfulResists
+		- TabContainer
+- Clan
+	- ClanModal
+	- ExistingClan
+	- JoinClan
+- Entrance
+	- EntranceBackground
+	- EntranceForms
+	- EntranceIcons
+	- EntranceLinks
+- Friends
+	- FriendsScreen
+	- InviteScreen
+- General
+	- CommonContainer
+	- Dropdown
+	- LoadingScreen
+	- Modal
+	- NotificatorIcon
+	- PlayerContextMenu
+	- ScrollingCards
+	- TopMenu
+	- TopPanel
+	- XP
+- Lobby
+	- Announcements
+	- BattleSelect
+		- BattleMode
+		- BattleType
+	- Challenges
+		- CommonChallenges
+		- EliteChallenges
+	- ChatWindow
+	- FooterMenu
+	- MainMenu
+	- MatchmaikingWaitBlock
+	- NewsWindow
+	- PlayButton
 - Variables
 - All `svg` format images are now stored in the `.images/svg/` folder instead of `.images/`
-- All used png images are now stored not as base64, but as regular `.png` files in the `.images/png/` folder
+- All used png images are now stored as regular `.png` files in the `.images/png/` folder
 - Background for CommonContainer
 - Minor fixes to auto-check versions
 
 ---
 
-## 1.4.1 (03.07.2024)
+## [1.4.1] - 2024-07-03
 
-## Added
+### Added
 
 - All source icons
 
 ### Changed
 
-- Battle/Pause -> Battle/BattlePause
-- Battle/BattleTab/TabContainer
-- Clan/ClanModal
-- Clan/ExistingClan
-- Clan/JoinClan
-- Entrance/EntranceForms
-- Friends/FriendsScreen
-- Friends/InviteScreen
-- General/CommonContainer
-- General/Dropdown
-- General/LoadingScreen
-- General/Modal
-- General/NotificatorIcon
-- General/PlayerContextMenu
-- General/TopPanel
-- General/XP
-- Lobby/Announcements
-- Lobby/Challenges/CommonChallenges
-- Lobby/Challenges/EliteChallenges
-- Lobby/FooterMenu
-- Lobby/MainMenu
-- Lobby/MatchmaikingWaitBlock
-- Lobby/PlayButton
+- Battle
+	- Pause -> BattlePause
+	- BattleTab
+		- TabContainer
+- Clan
+	- ClanModal
+	- ExistingClan
+	- JoinClan
+- Entrance
+	- EntranceForms
+- Friends
+	- FriendsScreen
+	- InviteScreen
+- General
+	- CommonContainer
+	- Dropdown
+	- LoadingScreen
+	- Modal
+	- NotificatorIcon
+	- PlayerContextMenu
+	- TopPanel
+	- XP
+- Lobby
+	- Announcements
+	- Challenges
+		- CommonChallenges
+		- EliteChallenges
+	- FooterMenu
+	- MainMenu
+	- MatchmaikingWaitBlock
+	- NewsWindow
+	- PlayButton
 - Variables
 
-## Fixed
+### Fixed
 
-- Script's auto-update
+- Script's auto-update :tada:
 
 ---
 
-## 1.4.0 (04.06.2024)
+## [1.4.0] - 2024-06-04
 
-## Added
+### Added
 
-- :tada: Changelog :tada:
-- :tada: Script's auto-update :tada:
+- Changelog :tada:
+- Script's auto-update :tada:
 
 ### Changed
 
-- Battle/Pause
-- Entrance/EntranceBackground
-- Entrance/EntranceForms
-- Entrance/EntranceLinks
-- Friends/FriendsScreen
-- Friends/InviteScreen
-- General/Dropdown
-- General/LoadingScreen
-- General/NotificatorIcon
-- General/TopMenu
-- General/TopPanel
-- General/PlayerContextMenu
-- General/ScrollingCards
-- General/XP
-- Lobby/ChatWindow
-- Lobby/MainMenu
-- Lobby/PlayButton
+- Battle
+	- Pause
+- Entrance
+	- EntranceBackground
+	- EntranceForms
+	- EntranceLinks
+- Friends
+	- FriendsScreen
+	- InviteScreen
+- General
+	- Dropdown
+	- LoadingScreen
+	- NotificatorIcon
+	- PlayerContextMenu
+	- ScrollingCards
+	- TopMenu
+	- TopPanel
+	- XP
+- Lobby
+	- ChatWindow
+	- MainMenu
+	- PlayButton
 - Variables
 - Background for CommonContainer
 
 ---
 
-## 1.3.4 (28.05.2024)
+## [1.3.4] - 2024-05-28
 
 ### Changed
 
-- Clan/ExistingClan
-- Entrance/EntranceIcons
-- Entrance/EntranceLinks
-- Friends/FriendsScreen
-- General/LoadingScreen
-- General/NotificatorIcon
-- ProBattles/BattleModes -> General/ScrollingCards
+- Clan
+	- ExistingClan
+- Entrance
+	- EntranceIcons
+	- EntranceLinks
+- Friends
+	- FriendsScreen
+- General
+	- LoadingScreen
+	- NotificatorIcon
+- ProBattles
+	- BattleModes -> General/ScrollingCards
 
 ---
 
-## 1.3.3 (27.05.2024)
+## [1.3.3] - 2024-05-27
 
 ### Added
 
-- ProBattles/BattleModes
+- ProBattles
+	- BattleModes
 
 ### Changed
 
-- Battle/BattleTab/TabContainer
-- Battle/Pause
-- Clan/ExistingClan
-- Entrance/EntranceLinks
-- General/Dropdown
-- General/Modal
-- General/PlayerContextMenu
-- Lobby/BattleSelect/BattleMode
-- Lobby/BattleSelect/BattleType
-- Lobby/ChatWindow
+- Battle
+	- BattleTab
+		- TabContainer
+- Battle
+	- Pause
+- Clan
+	- ExistingClan
+- Entrance
+	- EntranceLinks
+- General
+	- Dropdown
+	- Modal
+	- PlayerContextMenu
+- Lobby
+	- BattleSelect
+	- BattleMode
+		- BattleType
+	- ChatWindow
 - Variables
 
 ---
 
-## 1.3.2 (24.05.2024)
+## [1.3.2] - 2024-05-24
 
 ### Added
 
-- Battle/Pause
+- Battle
+	- Pause
 
 ### Changed
 
-- Lobby/Announcements
-- Lobby/Challenges/CommonChallenges
-- Lobby/Challenges/EliteChallenges
-- Lobby/FooterMenu
-- Lobby/MainMenu
-- Lobby/MatchmakingWaitBlock
-- Lobby/PlayButton
+- Lobby
+	- Announcements
+	- Challenges
+		- CommonChallenges
+		- EliteChallenges
+	- FooterMenu
+	- MainMenu
+	- MatchmakingWaitBlock
+	- PlayButton
 - Variables
 
 ---
 
-## 1.3.1 (22.05.2024)
+## [1.3.1] - 2024-05-22
 
 ### Added
 
-- Lobby/MatchmakingWaitBlock
+- Lobby
+	- MatchmakingWaitBlock
 
 ### Changed
 
-- General/Dropdown
-- General/PlayerContextMenu
-- Lobby/ChatWindow
+- General
+	- Dropdown
+	- PlayerContextMenu
+- Lobby
+	- ChatWindow
 
 ---
 
-## 1.3.0 (21.04.2024)
+## [1.3.0] - 2024-04-21
 
 ### Changed
 
-- Clan/ExistingClan
-- Clan/JoinClan
-- Entrance/EntranceLinks
-- Friends/FriendsScreen
-- Friends/InviteScreen
-- General/CommonContainer
-- General/Modal
-- Lobby/FooterMenu
+- Clan
+	- ExistingClan
+	- JoinClan
+- Entrance
+	- EntranceLinks
+- Friends
+	- FriendsScreen
+	- InviteScreen
+- General
+	- CommonContainer
+	- Modal
+- Lobby
+	- FooterMenu
 - Variables
 - Background for CommonContainer
-- Project management (paths to files)
+- Project management (file paths)
 
 ---
 
-## 1.2.1 (16.03.2024)
+## [1.2.1] - 2024-03-16
 
 ### Changed
 
-- Clan/ClanModal
-- Clan/ExistingClan
-- Clan/JoinClan
-- Entrance/EntranceBackground
+- Clan
+	- ClanModal
+	- ExistingClan
+	- JoinClan
+- Entrance
+	- EntranceBackground
 - Variables
 
 ---
 
-## 1.2.0 (15.03.2024)
+## [1.2.0] - 2024-03-15
 
 ### Added
 
-- Clan/ClanModal
-- Clan/ExistingClan
-- Clan/JoinClan
+- Clan
+	- ClanModal
+	- ExistingClan
+	- JoinClan
 
 ### Changed
 
-- Battle/BattleTab/TabContainer
-- Entrance/EntranceForms
-- Friends/FriendsScreen
-- General/Modal
-- General/TopMenu
-- General/XP
-- Lobby/ChatWindow
+- Battle
+	- BattleTab
+		- TabContainer
+- Entrance
+	- EntranceForms
+- Friends
+	- FriendsScreen
+- General
+	- Modal
+	- TopMenu
+	- XP
+- Lobby
+	- ChatWindow
 
 ---
 
-## 1.1.2 (15.03.2024)
+## [1.1.2] - 2024-03-15
 
 ### Changed
 
-- Battle/BattleTab/ColorfulResists
-- Battle/BattleTab/TabContainer
-- Friends/FriendsScreen
-- General/CommonContainer
-- General/Modal
-- General/PlayerContextMenu
-- Lobby/Challenges/CommonChallenges
-- Lobby/ChatWindow
+- Battle
+	- BattleTab
+		- ColorfulResists
+		- TabContainer
+- Friends
+	- FriendsScreen
+- General
+	- CommonContainer
+	- Modal
+	- PlayerContextMenu
+- Lobby
+	- Challenges
+		- CommonChallenges
+- Lobby
+	- ChatWindow
 - Variables
 
 ---
 
-## 1.1.1 (12.03.2024)
+## [1.1.1] - 2024-03-12
 
 ### Added
 
-- General/PlayerContextMenu
-- General/XP
+- General
+	- PlayerContextMenu
+- General
+	- XP
 
 ### Changed
 
-- General/CommonContainer
-- General/NotificatorIcon
+- General
+	- CommonContainer
+	- NotificatorIcon
 - Background for CommonContainer
 
 ---
 
-## 1.1.0 (12.03.2024)
+## [1.1.0] - 2024-03-12
 
 ### Added
 
-- Friends/InviteScreen
-- General/CommonContainer
+- Friends
+	- InviteScreen
+- General
+	- CommonContainer
 - Background for CommonContainer
 
 ### Changed
 
-- Battle/BattleTab
-- Battle/BattleTab/ColorfulResists
-- Entrance/EntranceForms
-- Entrance/EntranceIcons
-- Entrance/EntranceLinks
-- Friends/FriendsScreen
-- General/Dropdown
-- General/LoadingScreen
-- General/Modal
-- General/NotificatorIcon
-- General/TopMenu
-- General/TopPanel
-- Lobby/Announcements
-- Lobby/BattleSelect/BattleMode
-- Lobby/BattleSelect/BattleType
-- Lobby/Challenges/CommonChallenges
-- Lobby/Challenges/EliteChallenges
-- Lobby/ChatWindow
-- Lobby/FooterMenu
-- Lobby/MainMenu
-- Lobby/NewsWindow
-- Lobby/PlayButton
+- Battle
+	- BattleTab
+	- BattleTab/ColorfulResists
+- Entrance
+	- EntranceForms
+	- EntranceIcons
+	- EntranceLinks
+- Friends
+	- FriendsScreen
+- General
+	- Dropdown
+	- LoadingScreen
+	- Modal
+	- NotificatorIcon
+	- TopMenu
+	- TopPanel
+- Lobby
+	- Announcements
+	- BattleSelect
+		- BattleMode
+		- BattleType
+	- Challenges
+		- CommonChallenges
+		- EliteChallenges
+	- ChatWindow
+	- FooterMenu
+	- MainMenu
+	- NewsWindow
+	- PlayButton
 - Variables
 
 ---
 
-## 1.0.3 (12.03.2024)
+## [1.0.3] - 2024-03-12
 
 ### Added
 
-- Friends/FriendsScreen
-- General/TopMenu
-- Lobby/BattleSelect/BattleMode
-- Lobby/BattleSelect/BattleType
+- Friends
+	- FriendsScreen
+- General
+	- TopMenu
+- Lobby
+	- BattleSelect
+		- BattleMode
+		- BattleType
 
 ### Changed
 
-- General/Modal
-- General/TopPanel
-- Lobby/Announcements
-- Lobby/Challenges/CommonChallenges
-- Lobby/Challenges/EliteChallenges
-- Lobby/FooterMenu
-- Lobby/MainMenu
-- Lobby/PlayButton
+- General
+	- Modal
+	- TopPanel
+- Lobby
+	- Announcements
+	- Challenges
+		- CommonChallenges
+		- EliteChallenges
+	- FooterMenu
+	- MainMenu
+	- PlayButton
 - Variables
 
 ---
 
-## 1.0.2 (11.03.2024)
+## [1.0.2] - 2024-03-11
 
 ### Added
 
-- Lobby/Announcements
-- Lobby/Challenges/CommonChallenges
-- Lobby/Challenges/EliteChallenges
+- Lobby
+	- Announcements
+	- Challenges
+		- CommonChallenges
+		- EliteChallenges
 
 ### Changed
 
-- Entrance/EntranceBackground
-- Entrance/EntranceIcons
-- General/Modal
-- General/NotificatorIcon
-- General/TopPanel
-- Lobby/ChatWindow
-- Lobby/FooterMenu
-- Lobby/NewsWindow
-- Lobby/PlayButton
+- Entrance
+	- EntranceBackground
+	- EntranceIcons
+- General
+	- Modal
+	- NotificatorIcon
+	- TopPanel
+- Lobby
+	- ChatWindow
+	- FooterMenu
+	- NewsWindow
+	- PlayButton
 - Variables
-- Main theme file
+- Main file of the theme
 
 ### Removed
 
@@ -382,21 +474,25 @@ The project has been publicly released! :tada:
 
 ---
 
-## 1.0.1 (07.03.2024)
+## [1.0.1] - 2024-03-07
 
 ### Added
 
-- Lobby/ChatWindow
-- Lobby/NewsWindow
+- Lobby
+	- ChatWindow
+	- NewsWindow
 
 ### Changed
 
-- Entrance/EntranceLinks
-- General/LoadingScreen
-- General/Modal
-- Lobby/FooterMenu
+- Entrance
+	- EntranceLinks
+- General
+	- LoadingScreen
+	- Modal
+- Lobby
+	- FooterMenu
 - Variables
-- Additional functions folder's path
+- Path to the folder with additional functions
 
 ### Fixed
 
@@ -404,57 +500,63 @@ The project has been publicly released! :tada:
 
 ---
 
-## 1.0.0 (06.03.2024)
-
-### Added
+## [1.0.0] - 2024-03-06
 
 - NodeJS to combine all `.css` and `.js` together
-- :tada: Main theme file :tada:
+- Main file of the theme :tada:
 
 ### Changed
 
-- Battle/BattleTab/ClassedTab
-- Battle/BattleTab/ColorfulResists
-- Entrance/EntranceForms
-- Entrance/EntranceIcons
-- Entrance/EntranceLinks
-- General/LoadingScreen
-- General/Modal
-- General/NotificatorIcon
-- General/TopPanel
-- Lobby/FooterMenu
-- Lobby/PlayButton
+- Battle
+	- ClassedTab
+	- ColorfulResists
+- Entrance
+	- EntranceForms
+	- EntranceIcons
+	- EntranceLinks
+- General
+	- LoadingScreen
+	- Modal
+	- NotificatorIcon
+	- TopPanel
+- Lobby
+	- FooterMenu
+	- PlayButton
 
 ### Fixed
 
-- Now all `.js` files for theme logic is inside `(function() {})()` to avoid global namespace
+- Now all `.js` files for theme logic are inside `(function() {})()` to avoid global namespace
 
 ---
 
-## Initial (06.03.2024)
+## [Initial] - 2024-03-06
 
 ### Added
 
-- Battle/BattleChat
-- Battle/BattleTab
-- Battle/ClassedTab
-- Battle/ColorfulResists
-- Entrance/EntranceBackground
-- Entrance/EntranceForms
-- Entrance/EntranceIcons
-- Entrance/EntranceLinks
-- General/Dropdown
-- General/LoadingScreen
-- General/Modal
-- General/NotificatorIcon
-- General/TopPanel
-- Lobby/FooterMenu
-- Lobby/MainMenu
-- Lobby/PlayButton
-- Settings folder
-- Shop folder
-- CSS Variables
+- Battle
+	- BattleChat
+	- BattleTab
+	- ClassedTab
+	- ColorfulResists
+- Entrance
+	- EntranceBackground
+	- EntranceForms
+	- EntranceIcons
+	- EntranceLinks
+- General
+	- Dropdown
+	- LoadingScreen
+	- Modal
+	- NotificatorIcon
+	- TopPanel
+- Lobby
+	- FooterMenu
+	- MainMenu
+	- PlayButton
+- Settings
+- Shop
+- Variables
 - Entrance backgrounds
 - Play button's background
-- Logic for image to base64 converting from link
+- Logic for image to base64 conversion from link
 - Logic for getting current season
