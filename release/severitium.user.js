@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.0-alpha12
+// @version			1.6.0-alpha13
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -57,6 +57,12 @@
 	 * @param {Boolean} hasIgnoredUpdate - Used for the updater
 	 * 
 	 * @param {String} GITHUB_SCRIPT_URL - Link to the script to update
+	 * 
+	 * @param {Array} Severitium - Array with catched data
+	 * Catches all CSS, images based on main userscript's version
+	 * @param {Array} Severitium.CSS - array with CSS
+	 * @param {Array} Severitium.images - array with images
+	 * @param {String} Severitium.images - version of the main userscript
 	*/
 	
 	const updateCheck = true;
@@ -67,6 +73,12 @@
 	};
 
 	const GITHUB_SCRIPT_URL = GM_info.script.updateURL;
+
+	const Severitium = {
+		CSS: {},
+		images: {},
+		version: GM_info.script.version,
+	}
 
 	/**
 	 * Function to check if the script is updated 
@@ -172,108 +184,52 @@
 
 	const variables = 'https://github.com/OrakomoRi/Severitium/blob/main/src/Variables/Variables.min.css?raw=true';
 
-	const linksCSS = [
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/General/CommonContainer/CommonContainer.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceBackground/EntranceBackground.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceForms/EntranceForms.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceIcons/EntranceIcons.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceLinks/EntranceLinks.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/General/LoadingScreen/LoadingScreen.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/General/Modal/Modal.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/General/Dropdown/Dropdown.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/General/NotificatorIcon/NotificatorIcon.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/General/TopPanel/TopPanel.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Battle/BattleChat/BattleChat.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Battle/BattleTab/TabContainer/TabContainer.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/FooterMenu/FooterMenu.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/MainMenu/MainMenu.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/PlayButton/PlayButton.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/NewsWindow/NewsWindow.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/ChatWindow/ChatWindow.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/Challenges/CommonChallenges/CommonChallenges.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/Challenges/EliteChallenges/EliteChallenges.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/Announcements/Announcements.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/BattleSelect/BattleType/BattleType.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/BattleSelect/BattleMode/BattleMode.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/General/TopMenu/TopMenu.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Friends/FriendsScreen/FriendsScreen.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Friends/InviteScreen/InviteScreen.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/General/PlayerContextMenu/PlayerContextMenu.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Clan/ClanModal/ClanModal.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Clan/ExistingClan/ExistingClan.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Clan/JoinClan/JoinClan.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/General/XP/XP.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/MatchmakingWaitBlock/MatchmakingWaitBlock.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Battle/BattlePause/BattlePause.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/General/ScrollingCards/ScrollingCards.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Containers/PossibleRewardsScreen/PossibleRewardsScreen.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Containers/ContainersScreen/ContainersScreen.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Containers/ContainersOpening/ContainersOpening.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Quests/ContractsScreen/ContractsScreen.min.css?raw=true',
-		'https://github.com/OrakomoRi/Severitium/blob/main/src/Quests/QuestsScreen/QuestsScreen.min.css?raw=true',
-	];
-  
-	// Function to inject CSS
-	function injectCSS(url, attributes = []) {
-		return new Promise((resolve, reject) => {
-			GM_xmlhttpRequest({
-				method: 'GET',
-				url: url,
-				responseType: 'text',
-				onload: function(response) {
-					if (response.status === 200) {
-						const cssText = response.responseText;
-						// Create a <style> element
-						const styleElement = document.createElement('style');
-						// Set attributes
-						for (const attribute of attributes) {
-							styleElement.setAttribute(attribute.name, attribute.value);
-						}
-						// Add the contents of the styles
-						styleElement.textContent = cssText;
-						// Attaching styles to a document
-						document.body.appendChild(styleElement);
-						console.log(`SEVERITIUM: Successfully loaded ${url}`);
-						resolve();
-					} else {
-						console.error(`SEVERITIUM: Failed to load CSS from ${url}, status: ${response.status}`);
-						reject(new Error(`Failed to load CSS from ${url}`));
-					}
-				},
-				onerror: function(error) {
-					console.error(`SEVERITIUM: Error while loading CSS from ${url}`, error);
-					reject(error);
-				}
-			});
-		});
-	}
-  
-	// Function for loading all styles
-	async function loadAllCSS() {
-		const promises = [];
-  
-		// Add a variable
-		promises.push(injectCSS(variables, [{ name: 'data-module', value: 'SeveritiumVariables' }]));
-  
-		// Add the rest of the styles
-		for (const link of linksCSS) {
-			promises.push(injectCSS(link))
-		}
-  
-		// Wait for all downloads to complete
-		await Promise.all(promises);
-		console.log('SEVERITIUM: All styles loaded.');
-	}
-  
-	loadAllCSS();
-  
-  
-  
+	const CSSLinks = [
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/General/CommonContainer/CommonContainer.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceBackground/EntranceBackground.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceForms/EntranceForms.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceIcons/EntranceIcons.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceLinks/EntranceLinks.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/General/LoadingScreen/LoadingScreen.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/General/Modal/Modal.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/General/Dropdown/Dropdown.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/General/NotificatorIcon/NotificatorIcon.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/General/TopPanel/TopPanel.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Battle/BattleChat/BattleChat.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Battle/BattleTab/TabContainer/TabContainer.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/FooterMenu/FooterMenu.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/MainMenu/MainMenu.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/PlayButton/PlayButton.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/NewsWindow/NewsWindow.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/ChatWindow/ChatWindow.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/Challenges/CommonChallenges/CommonChallenges.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/Challenges/EliteChallenges/EliteChallenges.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/Announcements/Announcements.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/BattleSelect/BattleType/BattleType.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/BattleSelect/BattleMode/BattleMode.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/General/TopMenu/TopMenu.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Friends/FriendsScreen/FriendsScreen.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Friends/InviteScreen/InviteScreen.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/General/PlayerContextMenu/PlayerContextMenu.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Clan/ClanModal/ClanModal.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Clan/ExistingClan/ExistingClan.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Clan/JoinClan/JoinClan.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/General/XP/XP.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/MatchmakingWaitBlock/MatchmakingWaitBlock.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Battle/BattlePause/BattlePause.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/General/ScrollingCards/ScrollingCards.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Containers/PossibleRewardsScreen/PossibleRewardsScreen.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Containers/ContainersScreen/ContainersScreen.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Containers/ContainersOpening/ContainersOpening.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Quests/ContractsScreen/ContractsScreen.min.css?raw=true' },
+		{ url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/Quests/QuestsScreen/QuestsScreen.min.css?raw=true' },
+	];	
+
 	// Links to images
 	const imageLinks = [
 		{
 			url: `https://github.com/OrakomoRi/Severitium/blob/main/src/.images/webp/Entrance/${_getSeason()}.webp?raw=true`,
-			style: '.Common-container.Common-entranceBackground, .Common-background.SystemMessageStyle-container, .Common-container:has(.Common-changingBackground){background-image:url(data:image/webp;base64,SEVERITIUM_PLACEHOLDER)}'
+			style: '.Common-container.Common-container.Common-entranceBackground, .Common-background.Common-container.SystemMessageStyle-container, .Common-container.Common-container:has(.Common-changingBackground){background-image:url(data:image/webp;base64,SEVERITIUM_PLACEHOLDER)}'
 		},
 		{
 			url: 'https://github.com/OrakomoRi/Severitium/blob/main/src/.images/webp/General/CommonContainer.webp?raw=true',
@@ -284,62 +240,104 @@
 			style: '.MainScreenComponentStyle-playButtonContainer{background-image:url(data:image/webp;base64,SEVERITIUM_PLACEHOLDER)}'
 		},
 	];
-  
-	function applyStyles(base64data, styleTemplate) {
-		const styledBackground = styleTemplate.replace('SEVERITIUM_PLACEHOLDER', base64data);
-		
-		var styleElement = document.createElement('style');
-		styleElement.textContent = styledBackground;
-		document.body.appendChild(styleElement);
-	}
-  
-	function fetchImageAsBase64(url) {
+
+	async function fetchAsText(url) {
 		return new Promise((resolve, reject) => {
 			GM_xmlhttpRequest({
 				method: 'GET',
-				url: url,
-				responseType: 'blob',
-				onload: function(response) {
+				url,
+				onload: (response) => {
 					if (response.status === 200) {
-						const blob = response.response;
-						const reader = new FileReader();
+						resolve(response.responseText);
+					} else {
+						reject(new Error(`Failed to fetch resource from ${url}`));
+					}
+				},
+				onerror: (error) => reject(error),
+			});
+		});
+	}
 
-						reader.onloadend = function() {
-							const base64data = reader.result.split(',')[1];
-							resolve(base64data);
-						};
-		
-						reader.readAsDataURL(blob);
+	async function fetchImageAsBase64(url) {
+		return new Promise((resolve, reject) => {
+			GM_xmlhttpRequest({
+				method: 'GET',
+				url,
+				responseType: 'blob',
+				onload: (response) => {
+					if (response.status === 200) {
+						const reader = new FileReader();
+						reader.onloadend = () => resolve(reader.result.split(',')[1]);
+						reader.readAsDataURL(response.response);
 					} else {
 						console.error(`SEVERITIUM: Failed to fetch image from ${url}, status: ${response.status}`);
 						reject(new Error(`Failed to fetch image from ${url}`));
 					}
 				},
-				onerror: function(error) {
-					console.error(`SEVERITIUM: Error while fetching image from ${url}`, error);
-					reject(error);
-				}
+				onerror: (error) => reject(error),
 			});
 		});
 	}
-  
-	// Function to load all images and apply styles
-	async function loadAllImages() {
-		const promises = imageLinks.map(({ url, style }) => {
-			return fetchImageAsBase64(url)
-				.then(base64data => {
-					applyStyles(base64data, style);
-					console.log(`SEVERITIUM: Successfully loaded image from ${url}`);
-				})
-				.catch(error => {
-					console.error(`SEVERITIUM: Error applying style for ${url}`, error);
-				});
-		});
-  
-		await Promise.all(promises);
-		console.log('SEVERITIUM: All images loaded.');
+
+	async function loadResources() {
+		const cachedVersion = GM_getValue('SeveritiumVersion', '');
+		if (cachedVersion === Severitium.version) {
+			console.log('SEVERITIUM: Loading resources from cache.');
+			Severitium.CSS = GM_getValue('SeveritiumCSS', {});
+			Severitium.images = GM_getValue('SeveritiumImages', {});
+		} else {
+			console.log('SEVERITIUM: Fetching new resources.');
+			for (const { url } of [ { url: variables }, ...CSSLinks ]) {
+				Severitium.CSS[url] = await fetchAsText(url);
+			}
+			for (const { url } of imageLinks) {
+				Severitium.images[url] = await fetchImageAsBase64(url);
+			}
+			GM_setValue('SeveritiumCSS', Severitium.CSS);
+			GM_setValue('SeveritiumImages', Severitium.images);
+			GM_setValue('SeveritiumVersion', Severitium.version);
+		}
+		console.log('SEVERITIUM: Resources loaded.');
 	}
-  
-	// Load all used images
-	loadAllImages();  
+
+	function injectCSS(url, attributes = []) {
+		const style = document.createElement('style');
+		style.textContent = Severitium.CSS[url];
+		attributes.forEach(attr => style.setAttribute(attr.name, attr.value));
+		document.body.appendChild(style);
+		// console.log(`SEVERITIUM: Applied CSS from ${url}`);
+	}
+
+	function applyCSS() {
+		injectCSS(variables, [{ name: 'data-module', value: 'SeveritiumVariables' }]);
+		for (const { url } of CSSLinks) {
+			injectCSS(url);
+		}
+	}
+
+	function applyImages() {
+		for (const { url, style } of imageLinks) {
+			const processedStyle = style.replace('SEVERITIUM_PLACEHOLDER', Severitium.images[url]);
+			const styleElement = document.createElement('style');
+			styleElement.textContent = processedStyle;
+			document.body.appendChild(styleElement);
+			// console.log(`SEVERITIUM: Applied image from ${url}`);
+		}
+	}
+
+	async function reloadResources() {
+		console.log('SEVERITIUM: Manually reloading resources.');
+		GM_setValue('SeveritiumVersion', ''); // Force a reload
+		await loadResources();
+		applyCSS();
+		applyImages();
+	}
+
+	unsafeWindow.reloadSeveritiumResources = reloadResources;
+
+	(async () => {
+		await loadResources();
+		applyCSS();
+		applyImages();
+	})();
 })();
