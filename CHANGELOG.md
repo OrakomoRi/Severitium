@@ -132,7 +132,7 @@
 
 ### Fixed
 
-- Script's auto-update :tada:
+- Script's auto-update
 
 ---
 
@@ -408,6 +408,10 @@
 	- NewsWindow
 	- PlayButton
 - Variables
+
+### Removed
+
+- NodeJS. Now the project is fully modular :tada:
 
 ---
 
