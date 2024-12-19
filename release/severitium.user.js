@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.0-alpha9
+// @version			1.6.0-alpha10
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -212,53 +212,63 @@
 		'https://github.com/OrakomoRi/Severitium/blob/main/src/Quests/ContractsScreen/ContractsScreen.min.css?raw=true',
 		'https://github.com/OrakomoRi/Severitium/blob/main/src/Quests/QuestsScreen/QuestsScreen.min.css?raw=true',
 	];
-
+  
 	// Function to inject CSS
-	async function injectCSS(url, attributes = []) {
-		try {
-			const response = await fetch(url);
-			if (!response.ok) {
-				throw new Error(`HTTP error! status: ${response.status}`);
-			}
-	
-			const cssText = await response.text();
-			// Create a <style> element
-			const styleElement = document.createElement('style');
-			// Set attributes
-			for (const attribute of attributes) {
-				styleElement.setAttribute(attribute.name, attribute.value);
-			}
-			// Add the contents of the styles
-			styleElement.textContent = cssText;
-			// Attaching styles to a document
-			document.body.appendChild(styleElement);
-			console.log(`SEVERITIUM: Successfully loaded ${url}`);
-		} catch (error) {
-			console.error(`SEVERITIUM: Failed to load CSS from ${url}`, error);
-		}
+	function injectCSS(url, attributes = []) {
+		return new Promise((resolve, reject) => {
+			GM_xmlhttpRequest({
+				method: 'GET',
+				url: url,
+				responseType: 'text',
+				onload: function(response) {
+					if (response.status === 200) {
+						const cssText = response.responseText;
+						// Create a <style> element
+						const styleElement = document.createElement('style');
+						// Set attributes
+						for (const attribute of attributes) {
+							styleElement.setAttribute(attribute.name, attribute.value);
+						}
+						// Add the contents of the styles
+						styleElement.textContent = cssText;
+						// Attaching styles to a document
+						document.body.appendChild(styleElement);
+						console.log(`SEVERITIUM: Successfully loaded ${url}`);
+						resolve();
+					} else {
+						console.error(`SEVERITIUM: Failed to load CSS from ${url}, status: ${response.status}`);
+						reject(new Error(`Failed to load CSS from ${url}`));
+					}
+				},
+				onerror: function(error) {
+					console.error(`SEVERITIUM: Error while loading CSS from ${url}`, error);
+					reject(error);
+				}
+			});
+		});
 	}
-
+  
 	// Function for loading all styles
 	async function loadAllCSS() {
 		const promises = [];
-
+  
 		// Add a variable
 		promises.push(injectCSS(variables, [{ name: 'data-module', value: 'SeveritiumVariables' }]));
-
+  
 		// Add the rest of the styles
 		for (const link of linksCSS) {
 			promises.push(injectCSS(link))
 		}
-
+  
 		// Wait for all downloads to complete
 		await Promise.all(promises);
 		console.log('SEVERITIUM: All styles loaded.');
 	}
-
+  
 	loadAllCSS();
-
-
-
+  
+  
+  
 	// Links to images
 	const imageLinks = [
 		{
@@ -274,7 +284,7 @@
 			style: '.MainScreenComponentStyle-playButtonContainer{background-image:url(data:image/webp;base64,SEVERITIUM_PLACEHOLDER)}'
 		},
 	];
-
+  
 	function applyStyles(base64data, styleTemplate) {
 		const styledBackground = styleTemplate.replace('SEVERITIUM_PLACEHOLDER', base64data);
 		
@@ -282,30 +292,30 @@
 		styleElement.textContent = styledBackground;
 		document.body.appendChild(styleElement);
 	}
-
-	async function fetchImageAsBase64(url) {
-		try {
-			const response = await fetch(url);
-			if (!response.ok) {
-				throw new Error(`Failed to fetch image: ${response.statusText}`);
-			}
-	
-			const blob = await response.blob();
-			return new Promise((resolve, reject) => {
-				const reader = new FileReader();
-				reader.onloadend = () => {
-					const base64data = reader.result.split(',')[1];
-					resolve(base64data);
-				};
-				reader.onerror = reject;
-				reader.readAsDataURL(blob);
+  
+	function fetchImageAsBase64(url) {
+		return new Promise((resolve, reject) => {
+			GM_xmlhttpRequest({
+				method: 'GET',
+				url: url,
+				responseType: 'arraybuffer',
+				onload: function(response) {
+					if (response.status === 200) {
+						const base64data = btoa(String.fromCharCode(...new Uint8Array(response.response)));
+						resolve(base64data);
+					} else {
+						console.error(`SEVERITIUM: Failed to fetch image from ${url}, status: ${response.status}`);
+						reject(new Error(`Failed to fetch image from ${url}`));
+					}
+				},
+				onerror: function(error) {
+					console.error(`SEVERITIUM: Error while fetching image from ${url}`, error);
+					reject(error);
+				}
 			});
-		} catch (error) {
-			console.error(`SEVERITIUM: Failed to fetch image from ${url}`, error);
-			throw error;
-		}
+		});
 	}
-
+  
 	// Function to load all images and apply styles
 	async function loadAllImages() {
 		const promises = imageLinks.map(async ({ url, style }) => {
@@ -317,11 +327,11 @@
 				console.error(`SEVERITIUM: Error applying style for ${url}`);
 			}
 		});
-
+  
 		await Promise.all(promises);
 		console.log('SEVERITIUM: All images loaded.');
 	}
-
+  
 	// Load all used images
-	loadAllImages();
+	loadAllImages();  
 })();
