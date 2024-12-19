@@ -8,10 +8,13 @@
 
 ### Changed
 
-- Battle/BattleChat
-- General/TopMenu
-- Quests/ContractsScreen
-- Quests/QuestsScreen
+- Battle
+	- BattleChat
+- General
+	- TopMenu
+- Quests
+	- ContractsScreen
+	- QuestsScreen
 
 ### Fixed
 

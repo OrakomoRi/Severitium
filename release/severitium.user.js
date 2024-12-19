@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.0-alpha13
+// @version			1.6.0-alpha14
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -115,7 +115,9 @@
 						promptUpdate(githubVersion);
 						break;
 					case 0:
-						console.log(`You are using the latest stable version.`);
+						console.log(/[-+]/.test(githubVersion + currentVersion)
+							? `You are using some version that is based on the latest stable.`
+							: `You are using the latest stable version.`);
 						break;
 					case -1:
 						console.log(`You are using a version newer than the one on GitHub.`);
