@@ -34,6 +34,8 @@ See the [changelog](CHANGELOG.md)
 
 2. Add or update [script](https://github.com/OrakomoRi/Severitium/blob/main/release/severitium.user.js?raw=true) in Tampermonkey
 
+Keep in mind that when you first load or update the script, it takes some time for the interface to load.
+
 ## :rocket: Browser Compatibility
 
 Here's the list of browsers and their versions which support the code. On the other side for simple script using is needed Tampermonkey extension.
