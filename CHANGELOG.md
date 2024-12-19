@@ -1,5 +1,21 @@
 # CHANGELOG
 
+## [1.6.1] - 2024-12-20
+
+### Added
+
+- Resource caching
+
+### Changed
+
+- Friends
+	- FriendsScreen
+- General
+	- ScrollingCards
+- Lobby
+	- Announcements
+- Optimized & updated images (added `.webp` format)
+
 ## [1.6.0] - 2024-08-30
 
 ### Added
@@ -87,6 +103,9 @@
 - All `svg` format images are now stored in the `.images/svg/` folder instead of `.images/`
 - All used png images are now stored as regular `.png` files in the `.images/png/` folder
 - Background for CommonContainer
+
+### Fixed
+
 - Minor fixes to auto-check versions
 
 ---
