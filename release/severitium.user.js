@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.0-alpha11
+// @version			1.6.0-alpha12
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -298,11 +298,18 @@
 			GM_xmlhttpRequest({
 				method: 'GET',
 				url: url,
-				responseType: 'arraybuffer',
+				responseType: 'blob',
 				onload: function(response) {
 					if (response.status === 200) {
-						const base64data = btoa(String.fromCharCode(...new Uint8Array(response.response)));
-						resolve(base64data);
+						const blob = response.response;
+						const reader = new FileReader();
+
+						reader.onloadend = function() {
+							const base64data = reader.result.split(',')[1];
+							resolve(base64data);
+						};
+		
+						reader.readAsDataURL(blob);
 					} else {
 						console.error(`SEVERITIUM: Failed to fetch image from ${url}, status: ${response.status}`);
 						reject(new Error(`Failed to fetch image from ${url}`));
