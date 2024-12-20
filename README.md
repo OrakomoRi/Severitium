@@ -30,11 +30,11 @@ See the [changelog](CHANGELOG.md)
 
 ## :bulb: Getting Started
 
+Keep in mind that when you first load or update the script, it takes some time for the interface to load.
+
 1. Download [Tampermonkey](https://www.tampermonkey.net/)
 
 2. Add or update [script](https://github.com/OrakomoRi/Severitium/blob/main/release/severitium.user.js?raw=true) in Tampermonkey
-
-Keep in mind that when you first load or update the script, it takes some time for the interface to load.
 
 ## :rocket: Browser Compatibility
 
@@ -96,10 +96,11 @@ Any donations would be appreciated
 - **USDT (Tron)**: *TQj3EjdQXv8fhRsf3eXWowxz7YpYvYEoLU*
 - **USDT (Solana)**: *2UKZe2J4TohqFsF1kQRqmCXqwCcdUJkAvcM6ByZiqds8*
 
-## License
+## :page_facing_up: License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-## Acknowledgments
+## :star: Acknowledgments
 
-* [CSS Autoprefixer](https://autoprefixer.github.io/)
+- [CSS Autoprefixer](https://autoprefixer.github.io/)
+- [Tampermonkey Docs](https://www.tampermonkey.net/documentation.php?locale=en)
