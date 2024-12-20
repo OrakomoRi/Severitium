@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.1+build4
+// @version			1.6.1+build5
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 

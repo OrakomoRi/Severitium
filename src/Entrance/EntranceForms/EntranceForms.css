@@ -594,8 +594,11 @@
 
 /* Error message container */
 
-.HeaderComponentStyle-commonBlockContentPanel .HeaderComponentStyle-messageContainer {
+.HeaderComponentStyle-commonBlockContentPanel .HeaderComponentStyle-messageContainer,
+div:has(> .HeaderComponentStyle-messageTitle) {
 	position: absolute;
+	top: auto;
+	left: auto;
 	bottom: 2em;
 	right: 2em;
 	display: flex;
@@ -616,7 +619,8 @@
 
 /* Error message header */
 
-.HeaderComponentStyle-commonBlockContentPanel .HeaderComponentStyle-messageContainer .HeaderComponentStyle-messageTitle {
+.HeaderComponentStyle-commonBlockContentPanel .HeaderComponentStyle-messageContainer .HeaderComponentStyle-messageTitle,
+div > .HeaderComponentStyle-messageTitle {
 	width: auto;
 	height: auto;
 	margin: 0;
@@ -628,7 +632,8 @@
 
 /* Error message text */
 
-.HeaderComponentStyle-commonBlockContentPanel .HeaderComponentStyle-messageContainer  .HeaderComponentStyle-messageBody {
+.HeaderComponentStyle-commonBlockContentPanel .HeaderComponentStyle-messageContainer .HeaderComponentStyle-messageBody,
+div > .HeaderComponentStyle-messageBody {
 	width: auto;
 	min-width: 15em;
 	max-width: 25em;
