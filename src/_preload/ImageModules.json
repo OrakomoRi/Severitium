@@ -1,0 +1,14 @@
+[
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/.images/webp/Entrance/SEASON_PLACEHOLDER.webp?raw=true",
+		"style": ".Common-container.Common-container.Common-entranceBackground, .Common-background.Common-container.SystemMessageStyle-container, .Common-container.Common-container:has(.Common-changingBackground){background-image:url(data:image/webp;base64,SEVERITIUM_PLACEHOLDER)}"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/.images/webp/General/CommonContainer.webp?raw=true",
+		"style": ".Common-container:not(.Common-entranceBackground){background-image:url(data:image/webp;base64,SEVERITIUM_PLACEHOLDER)}"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/.images/webp/Lobby/PlayButton.webp?raw=true",
+		"style": ".MainScreenComponentStyle-playButtonContainer{background-image:url(data:image/webp;base64,SEVERITIUM_PLACEHOLDER)}"
+	}
+]

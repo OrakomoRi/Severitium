@@ -1,0 +1,125 @@
+[
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Variables/Variables.min.css?raw=true",
+		"attributes": [
+			{
+				"name": "data-module",
+				"value": "SeveritiumVariables"
+			}
+		]
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/General/CommonContainer/CommonContainer.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceBackground/EntranceBackground.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceForms/EntranceForms.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceIcons/EntranceIcons.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceLinks/EntranceLinks.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/General/LoadingScreen/LoadingScreen.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/General/Modal/Modal.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/General/Dropdown/Dropdown.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/General/NotificatorIcon/NotificatorIcon.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/General/TopPanel/TopPanel.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Battle/BattleChat/BattleChat.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Battle/BattleTab/TabContainer/TabContainer.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/FooterMenu/FooterMenu.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/MainMenu/MainMenu.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/PlayButton/PlayButton.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/NewsWindow/NewsWindow.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/ChatWindow/ChatWindow.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/Challenges/CommonChallenges/CommonChallenges.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/Challenges/EliteChallenges/EliteChallenges.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/Announcements/Announcements.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/BattleSelect/BattleType/BattleType.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/BattleSelect/BattleMode/BattleMode.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/General/TopMenu/TopMenu.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Friends/FriendsScreen/FriendsScreen.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Friends/InviteScreen/InviteScreen.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/General/PlayerContextMenu/PlayerContextMenu.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Clan/ClanModal/ClanModal.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Clan/ExistingClan/ExistingClan.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Clan/JoinClan/JoinClan.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/General/XP/XP.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/MatchmakingWaitBlock/MatchmakingWaitBlock.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Battle/BattlePause/BattlePause.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/General/ScrollingCards/ScrollingCards.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Containers/PossibleRewardsScreen/PossibleRewardsScreen.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Containers/ContainersScreen/ContainersScreen.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Containers/ContainersOpening/ContainersOpening.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Quests/ContractsScreen/ContractsScreen.min.css?raw=true"
+	},
+	{
+		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/Quests/QuestsScreen/QuestsScreen.min.css?raw=true"
+	}
+]
