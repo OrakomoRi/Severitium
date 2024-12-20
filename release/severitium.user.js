@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.1+build2
+// @version			1.6.1+build3
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -302,28 +302,57 @@
 		console.log('SEVERITIUM: Resources loaded.');
 	}
 
+	function removeInjectedCSS() {
+		const styles = document.querySelectorAll(
+			'style[data-resource="SeveritiumCSS"]'
+		);
+		for (const el of styles) {
+			el.remove();
+		}
+	}
+
+	function removeInjectedImages() {
+		const styles = document.querySelectorAll(
+			'style[data-resource="SeveritiumImage"]'
+		);
+		for (const el of styles) {
+			el.remove();
+		}
+	}
+
 	function injectCSS(url, attributes = []) {
 		const style = document.createElement('style');
 		style.textContent = Severitium.CSS[url];
-		attributes.forEach(attr => style.setAttribute(attr.name, attr.value));
+		for (const attr of attributes) {
+			style.setAttribute(attr.name, attr.value);
+		}
 		document.body.appendChild(style);
 		// console.log(`SEVERITIUM: Applied CSS from ${url}`);
 	}
 
+	function injectImage(url, style, attributes = []) {
+		const processedStyle = style.replace('SEVERITIUM_PLACEHOLDER', Severitium.images[url]);
+		const styleElement = document.createElement('style');
+		styleElement.textContent = processedStyle;
+		for (const attr of attributes) {
+			style.setAttribute(attr.name, attr.value);
+		}
+		document.body.appendChild(styleElement);
+		// console.log(`SEVERITIUM: Applied image from ${url}`);
+	}
+
 	function applyCSS() {
-		injectCSS(variables, [{ name: 'data-module', value: 'SeveritiumVariables' }]);
+		removeInjectedCSS();
+		injectCSS(variables, [{ name: 'data-module', value: 'SeveritiumVariables' }, { name: 'data-resource', value: 'SeveritiumCSS' }]);
 		for (const { url } of CSSLinks) {
-			injectCSS(url);
+			injectCSS(url, [{ name: 'data-resource', value: 'SeveritiumCSS' }]);
 		}
 	}
 
 	function applyImages() {
+		removeInjectedImages();
 		for (const { url, style } of imageLinks) {
-			const processedStyle = style.replace('SEVERITIUM_PLACEHOLDER', Severitium.images[url]);
-			const styleElement = document.createElement('style');
-			styleElement.textContent = processedStyle;
-			document.body.appendChild(styleElement);
-			// console.log(`SEVERITIUM: Applied image from ${url}`);
+			injectImage(url, style, [{ name: 'data-resource', value: 'SeveritiumImage' }])
 		}
 	}
 
@@ -337,8 +366,7 @@
 	unsafeWindow.reloadSeveritiumResources = reloadResources;
 
 	(async () => {
-		const isCacheDisabled = navigator.onLine && (performance.navigation.type === performance.navigation.TYPE_RELOAD);
-		await loadResources(isCacheDisabled);
+		await loadResources(false);
 		applyCSS();
 		applyImages();
 	})();
