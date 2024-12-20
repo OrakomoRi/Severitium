@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.1+build3
+// @version			1.6.1+build4
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -17,6 +17,7 @@
 // @downloadURL		https://github.com/OrakomoRi/Severitium/blob/main/release/severitium.user.js?raw=true
 
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_getSeason.min.js?raw=true
+// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_loadingScreen.min.js?raw=true
 
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/General/LoadingScreen/LoadingScreen.min.js?raw=true
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceForms/EntranceForms.min.js?raw=true
@@ -282,24 +283,29 @@
 	}
 
 	async function loadResources(forceReload = false) {
-		const cachedVersion = GM_getValue('SeveritiumVersion', '');
-		if (!forceReload && cachedVersion === Severitium.version) {
-			console.log('SEVERITIUM: Loading resources from cache.');
-			Severitium.CSS = GM_getValue('SeveritiumCSS', {});
-			Severitium.images = GM_getValue('SeveritiumImages', {});
-		} else {
-			console.log('SEVERITIUM: Fetching new resources.');
-			for (const { url } of [ { url: variables }, ...CSSLinks ]) {
-				Severitium.CSS[url] = await fetchAsText(url);
+		createSeveritiumLoadingScreen();
+		try {
+			const cachedVersion = GM_getValue('SeveritiumVersion', '');
+			if (!forceReload && cachedVersion === Severitium.version) {
+				console.log('SEVERITIUM: Loading resources from cache.');
+				Severitium.CSS = GM_getValue('SeveritiumCSS', {});
+				Severitium.images = GM_getValue('SeveritiumImages', {});
+			} else {
+				console.log('SEVERITIUM: Fetching new resources.');
+				for (const { url } of [ { url: variables }, ...CSSLinks ]) {
+					Severitium.CSS[url] = await fetchAsText(url);
+				}
+				for (const { url } of imageLinks) {
+					Severitium.images[url] = await fetchImageAsBase64(url);
+				}
+				GM_setValue('SeveritiumCSS', Severitium.CSS);
+				GM_setValue('SeveritiumImages', Severitium.images);
+				GM_setValue('SeveritiumVersion', Severitium.version);
 			}
-			for (const { url } of imageLinks) {
-				Severitium.images[url] = await fetchImageAsBase64(url);
-			}
-			GM_setValue('SeveritiumCSS', Severitium.CSS);
-			GM_setValue('SeveritiumImages', Severitium.images);
-			GM_setValue('SeveritiumVersion', Severitium.version);
+			console.log('SEVERITIUM: Resources loaded.');
+		} finally {
+			removeSeveritiumLoadingScreen();
 		}
-		console.log('SEVERITIUM: Resources loaded.');
 	}
 
 	function removeInjectedCSS() {

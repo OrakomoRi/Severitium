@@ -41,3 +41,26 @@ imageToBase64('imageUrl', function (base64Image) {
 Creates canvas to draw image there. When the image is fully loaded it converts the image into Base64 Data URI in callback function argument.
 
 ---
+
+## :package: Loading Screen
+
+A set of functions for creating and removing a custom loading screen. This can be used to display a loading screen while waiting for resources to load.
+
+### :bulb: How to use
+
+```js
+// Create and display the loading screen
+createSeveritiumLoadingScreen();
+
+// Remove the loading screen when resources are ready
+removeSeveritiumLoadingScreen();
+```
+
+### :mag: Description
+
+- `createSeveritiumLoadingScreen()`: This function creates and displays a full-screen loading overlay
+- `removeSeveritiumLoadingScreen()`: This function removes the loading screen from the page once resources are loaded or when you no longer need the loading indicator
+
+The loading screen is added using a unique class `severitium-loading-screen` and a custom data attribute `data-module="SeveritiumLoadingScreen"`, which ensures that it won't conflict with other elements on the page.
+
+---
