@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.1
+// @version			1.6.1+build2
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -281,9 +281,9 @@
 		});
 	}
 
-	async function loadResources() {
+	async function loadResources(forceReload = false) {
 		const cachedVersion = GM_getValue('SeveritiumVersion', '');
-		if (cachedVersion === Severitium.version) {
+		if (!forceReload && cachedVersion === Severitium.version) {
 			console.log('SEVERITIUM: Loading resources from cache.');
 			Severitium.CSS = GM_getValue('SeveritiumCSS', {});
 			Severitium.images = GM_getValue('SeveritiumImages', {});
@@ -329,8 +329,7 @@
 
 	async function reloadResources() {
 		console.log('SEVERITIUM: Manually reloading resources.');
-		GM_setValue('SeveritiumVersion', ''); // Force a reload
-		await loadResources();
+		await loadResources(true);
 		applyCSS();
 		applyImages();
 	}
@@ -338,7 +337,8 @@
 	unsafeWindow.reloadSeveritiumResources = reloadResources;
 
 	(async () => {
-		await loadResources();
+		const isCacheDisabled = navigator.onLine && (performance.navigation.type === performance.navigation.TYPE_RELOAD);
+		await loadResources(isCacheDisabled);
 		applyCSS();
 		applyImages();
 	})();
