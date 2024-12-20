@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.1+build5
+// @version			1.6.1+build6
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -336,14 +336,14 @@
 		// console.log(`SEVERITIUM: Applied CSS from ${url}`);
 	}
 
-	function injectImage(url, style, attributes = []) {
-		const processedStyle = style.replace('SEVERITIUM_PLACEHOLDER', Severitium.images[url]);
-		const styleElement = document.createElement('style');
-		styleElement.textContent = processedStyle;
+	function injectImage(url, styleTemplate, attributes = []) {
+		const processedStyle = styleTemplate.replace('SEVERITIUM_PLACEHOLDER', Severitium.images[url]);
+		const style = document.createElement('style');
+		style.textContent = processedStyle;
 		for (const attr of attributes) {
 			style.setAttribute(attr.name, attr.value);
 		}
-		document.body.appendChild(styleElement);
+		document.body.appendChild(style);
 		// console.log(`SEVERITIUM: Applied image from ${url}`);
 	}
 
