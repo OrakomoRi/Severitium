@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.1+build9
+// @version			1.6.1+build10
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -18,6 +18,8 @@
 
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_getSeason.min.js?raw=true
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_loadingScreen.min.js?raw=true
+// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_imageInjection.min.js?raw=true
+// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_styleInjection.min.js?raw=true
 
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/General/LoadingScreen/LoadingScreen.min.js?raw=true
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceForms/EntranceForms.min.js?raw=true
@@ -246,7 +248,7 @@
 	}
 
 	async function loadResources(forceReload = false) {
-		_createSeveritiumLoadingScreen();
+		_createSeveritiumLoadingScreen(GM_info.script.name);
 		try {
 			const cachedVersion = GM_getValue('SeveritiumVersion', '');
 			if (!forceReload && cachedVersion === Severitium.version) {
@@ -278,80 +280,18 @@
 		}
 	}
 
-	function removeInjectedCSS() {
-		const styles = document.querySelectorAll(
-			'style[data-resource="SeveritiumCSS"]'
-		);
-		for (const el of styles) {
-			el.remove();
-		}
-	}
-
-	function removeInjectedImages() {
-		const styles = document.querySelectorAll(
-			'style[data-resource="SeveritiumImage"]'
-		);
-		for (const el of styles) {
-			el.remove();
-		}
-	}
-
-	function injectCSS(url, attributes = []) {
-		const style = document.createElement('style');
-		style.textContent = Severitium.CSS[url];
-		for (const attr of attributes) {
-			style.setAttribute(attr.name, attr.value);
-		}
-		document.body.appendChild(style);
-		// console.log(`SEVERITIUM: Applied CSS from ${url}`);
-	}
-
-	function injectImage(url, styleTemplate, attributes = []) {
-		const processedStyle = styleTemplate.replace('SEVERITIUM_PLACEHOLDER', Severitium.images[url]);
-		const style = document.createElement('style');
-		style.textContent = processedStyle;
-		for (const attr of attributes) {
-			style.setAttribute(attr.name, attr.value);
-		}
-		document.body.appendChild(style);
-		// console.log(`SEVERITIUM: Applied image from ${url}`);
-	}
-
-	function applyCSS() {
-		removeInjectedCSS();
-
-		const defaultAttributes = { name: 'data-resource', value: 'SeveritiumCSS' };
-
-		for (const { url, attributes = [] } of CSSLinks) {
-			const updatedAttributes = attributes.some(attr => attr.name === 'data-resource') ? attributes : [defaultAttributes, ...attributes];
-			injectCSS(url, updatedAttributes);
-		}
-	}
-
-	function applyImages() {
-		removeInjectedImages();
-
-		const defaultAttributes = { name: 'data-resource', value: 'SeveritiumImage' };
-
-		for (const { url, style, attributes = [] } of imageLinks) {
-			const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason());
-			const updatedAttributes = attributes.some(attr => attr.name === 'data-resource') ? attributes : [defaultAttributes, ...attributes];
-			injectImage(formattedUrl, style, updatedAttributes)
-		}
-	}
-
 	async function reloadResources() {
 		console.log('SEVERITIUM: Manually reloading resources.');
 		await loadResources(true);
-		applyCSS();
-		applyImages();
+		SeveritiumCSS._applySeveritiumCSS(CSSLinks);
+		SeveritiumImages._applySeveritiumImages(imageLinks);
 	}
 
 	unsafeWindow.reloadSeveritiumResources = reloadResources;
 
 	(async () => {
 		await loadResources(false);
-		applyCSS();
-		applyImages();
+		SeveritiumCSS._applySeveritiumCSS(CSSLinks);
+		SeveritiumImages._applySeveritiumImages(imageLinks);
 	})();
 })();

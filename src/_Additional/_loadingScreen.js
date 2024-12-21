@@ -1,5 +1,5 @@
 // Function to create and display the loading screen
-function _createSeveritiumLoadingScreen() {
+function _createSeveritiumLoadingScreen(name) {
 	// Define the CSS styles for the loading screen
 	const loadingScreenStyles = `
 		position: absolute;
@@ -13,6 +13,7 @@ function _createSeveritiumLoadingScreen() {
 		justify-content: center;
 		align-items: center;
 		z-index: 9999;
+		font-size: 2em;
 	`;
 
 	// Create a new div element for the loading screen
@@ -22,7 +23,7 @@ function _createSeveritiumLoadingScreen() {
 	loadingScreen.style.cssText = loadingScreenStyles;  // Apply the styles to the element
 
 	// Set the text content for the loading screen
-	loadingScreen.textContent = 'Loading resources, please wait...';
+	loadingScreen.textContent = `[${name}] Loading resources, please wait...`;
 
 	// Append the loading screen to the body of the document
 	document.body.appendChild(loadingScreen);
