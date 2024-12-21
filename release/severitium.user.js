@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.1+build18
+// @version			1.6.1+build19
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -263,6 +263,8 @@
 					fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/CSSModules.json?raw=true').then(data => data || []),
 					fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/ImageModules.json?raw=true').then(data => data || [])
 				]);
+
+				let promises = [];
 
 				for (const { url } of CSSLinks) {
 					promises.push(
