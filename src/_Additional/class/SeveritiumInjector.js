@@ -52,7 +52,7 @@ class SeveritiumInjector {
 	 */
 	applyCSS(links) {
 		// Remove existing Severitium-injected styles
-		removeInjectedCSS();
+		this.removeInjectedCSS();
 
 		// Default attribute to identify Severitium-injected styles
 		const defaultAttributes = { name: 'data-resource', value: 'SeveritiumCSS' };
@@ -63,7 +63,7 @@ class SeveritiumInjector {
 			const updatedAttributes = attributes.some(attr => attr.name === 'data-resource')
 				? attributes
 				: [defaultAttributes, ...attributes];
-			injectCSS(url, updatedAttributes);
+			this.injectCSS(url, updatedAttributes);
 		}
 	}
 
@@ -109,7 +109,7 @@ class SeveritiumInjector {
 	 */
 	applyImages(links) {
 		// Remove existing Severitium-injected image styles
-		removeInjectedImages();
+		this.removeInjectedImages();
 
 		// Default attribute to identify Severitium-injected image styles
 		const defaultAttributes = { name: 'data-resource', value: 'SeveritiumImage' };
@@ -122,7 +122,7 @@ class SeveritiumInjector {
 			const updatedAttributes = attributes.some(attr => attr.name === 'data-resource')
 				? attributes
 				: [defaultAttributes, ...attributes];
-			injectImage(formattedUrl, style, updatedAttributes);
+			this.injectImage(formattedUrl, style, updatedAttributes);
 		}
 	}
 }
