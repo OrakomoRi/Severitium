@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.1+build8
+// @version			1.6.1+build9
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -334,7 +334,7 @@
 		const defaultAttributes = { name: 'data-resource', value: 'SeveritiumImage' };
 
 		for (const { url, style, attributes = [] } of imageLinks) {
-			const formattedUrl = url.replace('SEASON_PLACEHOLDER', getSeason());
+			const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason());
 			const updatedAttributes = attributes.some(attr => attr.name === 'data-resource') ? attributes : [defaultAttributes, ...attributes];
 			injectImage(formattedUrl, style, updatedAttributes)
 		}
