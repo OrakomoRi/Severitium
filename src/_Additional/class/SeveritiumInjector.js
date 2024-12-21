@@ -35,7 +35,7 @@ class SeveritiumInjector {
 	 */
 	injectCSS(url, attributes = []) {
 		const style = document.createElement('style');
-		style.textContent = Severitium.CSS[url]; // Assumes Severitium.CSS is a predefined object containing CSS strings.
+		style.textContent = this.Severitium.CSS[url]; // Assumes Severitium.CSS is a predefined object containing CSS strings.
 		for (const attr of attributes) {
 			style.setAttribute(attr.name, attr.value);
 		}
