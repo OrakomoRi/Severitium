@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.1+build19
+// @version			1.6.1+build20
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -294,8 +294,8 @@
 			console.error('SEVERITIUM: Error loading resources:', error);
 		} finally {
 			severitiumInjector.updateSeveritium(Severitium);
-			severitiumInjector.applyCSS(CSSLinks);
-			severitiumInjector.applyImages(imageLinks);
+			severitiumInjector.applyCSS(Severitium.CSS);
+			severitiumInjector.applyImages(Severitium.images);
 			_removeSeveritiumLoadingScreen();
 		}
 	}
