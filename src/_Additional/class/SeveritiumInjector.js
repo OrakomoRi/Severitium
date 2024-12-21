@@ -50,7 +50,11 @@ class SeveritiumInjector {
 	 * @param {Array<{ url: string, attributes?: Array<{ name: string, value: string }> }>} links - 
 	 *        An array of objects containing the URL key to retrieve CSS content and optional attributes for the <style> element.
 	 */
-	applyCSS(links) {
+	applyCSS(links = null) {
+		if (!links) {
+			return;
+		}
+
 		// Remove existing Severitium-injected styles
 		this.removeInjectedCSS();
 
@@ -107,7 +111,11 @@ class SeveritiumInjector {
 	 *        An array of objects containing the URL key to retrieve the image, the style template, 
 	 *        and optional attributes for the <style> element.
 	 */
-	applyImages(links) {
+	applyImages(links = null) {
+		if (!links) {
+			return;
+		}
+
 		// Remove existing Severitium-injected image styles
 		this.removeInjectedImages();
 

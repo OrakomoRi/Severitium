@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.1+build17
+// @version			1.6.1+build18
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -259,35 +259,37 @@
 			} else {
 				console.log('SEVERITIUM: Fetching new resources.');
 
-				const [cssLinks, imgLinks] = await Promise.all([
-					fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/CSSModules.json?raw=true'),
-					fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/ImageModules.json?raw=true')
+				[CSSLinks, imageLinks] = await Promise.all([
+					fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/CSSModules.json?raw=true').then(data => data || []),
+					fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/ImageModules.json?raw=true').then(data => data || [])
 				]);
 
-				CSSLinks = cssLinks;
-            	imageLinks = imgLinks;
-
-				const cssPromises = CSSLinks.map(({ url }) => fetchAsText(url));
-				const cssResults = await Promise.all(cssPromises);
-				for (const { link, index } of CSSLinks) {
-					Severitium.CSS[link.url] = cssResults[index];
+				for (const { url } of CSSLinks) {
+					promises.push(
+						fetchAsText(url).then(css => {
+							Severitium.CSS[url] = css;
+						})
+					);
 				}
 
-				const imgPromises = imageLinks.map(({ url }) => {
+				for (const { url } of imageLinks) {
 					const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason());
-					return fetchImageAsBase64(formattedUrl);
-				});
-				const imgResults = await Promise.all(imgPromises);
-				for (const { link, index } of imageLinks) {
-					const formattedUrl = link.url.replace('SEASON_PLACEHOLDER', _getSeason());
-					Severitium.images[formattedUrl] = imgResults[index];
+					promises.push(
+						fetchImageAsBase64(formattedUrl).then(image => {
+							Severitium.images[formattedUrl] = image;
+						})
+					);
 				}
+
+				await Promise.all(promises);
 
 				GM_setValue('SeveritiumCSS', Severitium.CSS);
 				GM_setValue('SeveritiumImages', Severitium.images);
 				GM_setValue('SeveritiumVersion', Severitium.version);
 			}
 			console.log('SEVERITIUM: Resources loaded.');
+		} catch (error) {
+			console.error('SEVERITIUM: Error loading resources:', error);
 		} finally {
 			severitiumInjector.updateSeveritium(Severitium);
 			severitiumInjector.applyCSS(CSSLinks);
