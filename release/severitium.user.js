@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.1+build11
+// @version			1.6.1+build12
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -18,8 +18,8 @@
 
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_getSeason.min.js?raw=true
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_loadingScreen.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_imageInjection.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_styleInjection.min.js?raw=true
+
+// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/class/SeveritiumInjector.min.js?raw=true
 
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/General/LoadingScreen/LoadingScreen.min.js?raw=true
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceForms/EntranceForms.min.js?raw=true
@@ -188,6 +188,7 @@
 
 
 	let imageLinks, CSSLinks;
+	const severitiumInjector = new SeveritiumInjector(Severitium);
 
 	async function fetchAsText(url) {
 		return new Promise((resolve, reject) => {
@@ -276,6 +277,7 @@
 			}
 			console.log('SEVERITIUM: Resources loaded.');
 		} finally {
+			severitiumInjector.updateSeveritium(Severitium);
 			_removeSeveritiumLoadingScreen();
 		}
 	}
@@ -283,15 +285,15 @@
 	async function reloadResources() {
 		console.log('SEVERITIUM: Manually reloading resources.');
 		await loadResources(true);
-		SeveritiumCSS._applySeveritiumCSS(CSSLinks);
-		SeveritiumImages._applySeveritiumImages(imageLinks);
+		severitiumInjector.applyCSS(CSSLinks);
+		severitiumInjector.applyImages(imageLinks);
 	}
 
 	unsafeWindow.reloadSeveritiumResources = reloadResources;
 
 	(async () => {
 		await loadResources(false);
-		SeveritiumCSS._applySeveritiumCSS(CSSLinks);
-		SeveritiumImages._applySeveritiumImages(imageLinks);
+		severitiumInjector.applyCSS(CSSLinks);
+		severitiumInjector.applyImages(imageLinks);
 	})();
 })();
