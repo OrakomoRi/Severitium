@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.1+build16
+// @version			1.6.1+build17
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -43,7 +43,7 @@
 
 // ==/UserScript==
 
-(function() {
+(function () {
 	'use strict';
 
 	/**
@@ -67,7 +67,7 @@
 	 * @param {Array} Severitium.images - array with images
 	 * @param {String} Severitium.images - version of the main userscript
 	*/
-	
+
 	const updateCheck = true;
 
 	const customModal = {
@@ -90,7 +90,7 @@
 		GM_xmlhttpRequest({
 			method: 'GET',
 			url: GITHUB_SCRIPT_URL,
-			onload: function(response) {
+			onload: function (response) {
 				// Script from GitHub
 				const data = response.responseText;
 
@@ -111,7 +111,7 @@
 
 				console.log(`========\n`);
 				console.log(`${GM_info.script.name}\n`);
-				
+
 				switch (compareResult) {
 					case 1:
 						console.log(`A new version is available. Please update your script.\n`);
@@ -133,7 +133,7 @@
 				console.log(`Your × GitHub:\n${currentVersion} × ${githubVersion}`);
 				console.log(`\n========`);
 			},
-			onerror: function(error) {
+			onerror: function (error) {
 				console.error('Failed to check for updates:', error);
 			}
 		});
@@ -259,16 +259,28 @@
 			} else {
 				console.log('SEVERITIUM: Fetching new resources.');
 
-				CSSLinks = await fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/CSSModules.json?raw=true');
-            	imageLinks = await fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/ImageModules.json?raw=true');
+				const [cssLinks, imgLinks] = await Promise.all([
+					fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/CSSModules.json?raw=true'),
+					fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/ImageModules.json?raw=true')
+				]);
 
-				for (const { url } of CSSLinks) {
-					Severitium.CSS[url] = await fetchAsText(url);
+				CSSLinks = cssLinks;
+            	imageLinks = imgLinks;
+
+				const cssPromises = CSSLinks.map(({ url }) => fetchAsText(url));
+				const cssResults = await Promise.all(cssPromises);
+				for (const { link, index } of CSSLinks) {
+					Severitium.CSS[link.url] = cssResults[index];
 				}
 
-				for (const { url } of imageLinks) {
+				const imgPromises = imageLinks.map(({ url }) => {
 					const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason());
-					Severitium.images[formattedUrl] = await fetchImageAsBase64(formattedUrl);
+					return fetchImageAsBase64(formattedUrl);
+				});
+				const imgResults = await Promise.all(imgPromises);
+				for (const { link, index } of imageLinks) {
+					const formattedUrl = link.url.replace('SEASON_PLACEHOLDER', _getSeason());
+					Severitium.images[formattedUrl] = imgResults[index];
 				}
 
 				GM_setValue('SeveritiumCSS', Severitium.CSS);
