@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.1+build20
+// @version			1.6.1+build21
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -251,18 +251,20 @@
 	async function loadResources(forceReload = false) {
 		_createSeveritiumLoadingScreen(GM_info.script.name);
 		try {
+			
 			const cachedVersion = GM_getValue('SeveritiumVersion', '');
+
+			[CSSLinks, imageLinks] = await Promise.all([
+				fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/CSSModules.json?raw=true').then(data => data || []),
+				fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/ImageModules.json?raw=true').then(data => data || [])
+			]);
+
 			if (!forceReload && cachedVersion === Severitium.version) {
 				console.log('SEVERITIUM: Loading resources from cache.');
 				Severitium.CSS = GM_getValue('SeveritiumCSS', {});
 				Severitium.images = GM_getValue('SeveritiumImages', {});
 			} else {
 				console.log('SEVERITIUM: Fetching new resources.');
-
-				[CSSLinks, imageLinks] = await Promise.all([
-					fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/CSSModules.json?raw=true').then(data => data || []),
-					fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/ImageModules.json?raw=true').then(data => data || [])
-				]);
 
 				let promises = [];
 
@@ -273,7 +275,7 @@
 						})
 					);
 				}
-
+	
 				for (const { url } of imageLinks) {
 					const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason());
 					promises.push(
@@ -282,7 +284,7 @@
 						})
 					);
 				}
-
+	
 				await Promise.all(promises);
 
 				GM_setValue('SeveritiumCSS', Severitium.CSS);
@@ -294,8 +296,8 @@
 			console.error('SEVERITIUM: Error loading resources:', error);
 		} finally {
 			severitiumInjector.updateSeveritium(Severitium);
-			severitiumInjector.applyCSS(Severitium.CSS);
-			severitiumInjector.applyImages(Severitium.images);
+			severitiumInjector.applyCSS(CSSLinks);
+			severitiumInjector.applyImages(imageLinks);
 			_removeSeveritiumLoadingScreen();
 		}
 	}
