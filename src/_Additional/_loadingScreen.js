@@ -1,5 +1,5 @@
 // Function to create and display the loading screen
-function createSeveritiumLoadingScreen() {
+function _createSeveritiumLoadingScreen() {
 	// Define the CSS styles for the loading screen
 	const loadingScreenStyles = `
 		position: absolute;
@@ -29,7 +29,7 @@ function createSeveritiumLoadingScreen() {
 }
 
 // Function to remove the loading screen from the page
-function removeSeveritiumLoadingScreen() {
+function _removeSeveritiumLoadingScreen() {
 	// Find the loading screen element by its id
 	const loadingScreen = document.querySelector('.severitium-loading-screen[data-module*="SeveritiumLoadingScreen"i]');
 

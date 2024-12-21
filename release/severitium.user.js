@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.1+build7
+// @version			1.6.1+build8
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -246,7 +246,7 @@
 	}
 
 	async function loadResources(forceReload = false) {
-		createSeveritiumLoadingScreen();
+		_createSeveritiumLoadingScreen();
 		try {
 			const cachedVersion = GM_getValue('SeveritiumVersion', '');
 			if (!forceReload && cachedVersion === Severitium.version) {
@@ -264,7 +264,7 @@
 				}
 
 				for (const { url } of imageLinks) {
-					const formattedUrl = url.replace('SEASON_PLACEHOLDER', getSeason());
+					const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason());
 					Severitium.images[formattedUrl] = await fetchImageAsBase64(formattedUrl);
 				}
 
@@ -274,7 +274,7 @@
 			}
 			console.log('SEVERITIUM: Resources loaded.');
 		} finally {
-			removeSeveritiumLoadingScreen();
+			_removeSeveritiumLoadingScreen();
 		}
 	}
 
