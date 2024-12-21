@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Severitium
-// @version			1.6.1+build15
+// @version			1.6.1+build16
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -275,11 +275,11 @@
 				GM_setValue('SeveritiumImages', Severitium.images);
 				GM_setValue('SeveritiumVersion', Severitium.version);
 			}
-			severitiumInjector.applyCSS(CSSLinks);
-			severitiumInjector.applyImages(imageLinks);
 			console.log('SEVERITIUM: Resources loaded.');
 		} finally {
 			severitiumInjector.updateSeveritium(Severitium);
+			severitiumInjector.applyCSS(CSSLinks);
+			severitiumInjector.applyImages(imageLinks);
 			_removeSeveritiumLoadingScreen();
 		}
 	}
