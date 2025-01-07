@@ -4,9 +4,7 @@
 	position: relative;
 	box-sizing: border-box;
 	width: 100%;
-	height: -webkit-fit-content;
-	height: -moz-fit-content;
-	height: fit-content;
+	height: auto;
 }
 
 /* All items inside chat container */
