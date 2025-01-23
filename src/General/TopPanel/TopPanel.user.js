@@ -22,7 +22,7 @@
 	'use strict';
 
 	// Link to raw CSS file
-	const link = 'https://github.com/OrakomoRi/Severitium/blob/main/src/General/TopMenu/TopMenu.min.css?raw=true';
+	const link = 'https://github.com/OrakomoRi/Severitium/blob/main/src/General/TopPanel/TopPanel.min.css?raw=true';
 
 	// Make an AJAX request to fetch the CSS file
 	GM_xmlhttpRequest({
