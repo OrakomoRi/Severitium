@@ -220,3 +220,23 @@
 .ContractCardComponentStyle-card:not(:has([class*="hotkey"i])) > div:last-child:hover > span {
 	color: var(--severitium-main-color) !important;
 }
+
+/* Empty quest container header */
+
+.QuestsComponentStyle-content > [class*="QuestsComponentStyle-emptyList" i] h2 {
+	width: auto;
+	height: auto;
+	background-color: var(--severitium-main-color);
+	color: var(--severitium-black-text-color);
+	font-size: 1.25em;
+	margin: 0;
+	padding: .1em .25em;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Empty quest container text */
+
+.QuestsComponentStyle-content > [class*="QuestsComponentStyle-emptyList" i] p {
+	color: var(--severitium-white-text-color);
+	font-size: 1em;
+}
