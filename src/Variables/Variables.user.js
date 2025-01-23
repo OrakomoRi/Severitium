@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Variables
-// @version			1.4.1
+// @version			1.4.2
 // @description		Injects CSS variables into the page
 // @author			OrakomoRi
 

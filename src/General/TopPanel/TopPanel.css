@@ -37,7 +37,7 @@
 .UserInfoContainerStyle-userTitleContainer > div:nth-child(1) > [class*="image"i] {
 	background: none;
 	background-image: none;
-	background-color: var(--severitium-gold-color);
+	background-color: var(--severitium-yellow-color);
 	width: 2em;
 	height: 2em;
 	-webkit-mask-image: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.65197 22.4339C3.85532 23.3489 4.66695 24 5.60434 24H26.3957C27.3331 24 28.1447 23.3489 28.348 22.4339L32 6L24 12L16 0L8 12L0 6L3.65197 22.4339ZM16 19C14.3431 19 13 17.6569 13 16C13 14.3431 14.3431 13 16 13C17.6569 13 19 14.3431 19 16C19 17.6569 17.6569 19 16 19Z" fill="white"/><path d="M4 26.6667C4 26.2985 4.29848 26 4.66667 26H27.3333C27.7015 26 28 26.2985 28 26.6667V29.3333C28 29.7015 27.7015 30 27.3333 30H4.66667C4.29848 30 4 29.7015 4 29.3333V26.6667Z" fill="white"/></svg>');
@@ -245,8 +245,10 @@
 
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*="coin"i]),
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*="crystal"i]),
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="ruby"i]),
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i]),
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i]) {
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i]),
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i]) {
 	position: relative;
 	background-color: transparent;
 	transition: background-color .2s ease;
@@ -256,17 +258,42 @@
 
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*="coin"i]):hover,
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*="crystal"i]):hover,
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="ruby"i]):hover,
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i]):hover,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i]):hover {
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i]):hover,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i]):hover {
 	background-color: linear-gradient(270deg, var(--severitium-light-transparent-background3) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* Text on coin button */
+
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="coin"i]) > span,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i]) > span {
+	color: var(--severitium-yellow-text-color);
+}
+
+/* Text on crystal button */
+
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="crystal"i]) > span,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i]) > span {
+	color: var(--severitium-blue-text-color);
+}
+
+/* Text on ruby button */
+
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="ruby"i]) > span,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i]) > span {
+	color: var(--severitium-red-text-color);
 }
 
 /* Original plus sign icons on currency buttons */
 
 .UserScoreComponentStyle-blockRightPanel div> img[src*="coin"i][src*="add"i],
 .UserScoreComponentStyle-blockRightPanel div> img[src*="crystal"i][src*="add"i],
+.UserScoreComponentStyle-blockRightPanel div> img[src*="ruby"i][src*="add"i],
 .BreadcrumbsComponentStyle-rightButtonsContainer div> img[src*="coin"i][src*="add"i],
-.BreadcrumbsComponentStyle-rightButtonsContainer div> img[src*="crystal"i][src*="add"i] {
+.BreadcrumbsComponentStyle-rightButtonsContainer div> img[src*="crystal"i][src*="add"i],
+.BreadcrumbsComponentStyle-rightButtonsContainer div> img[src*="ruby"i][src*="add"i] {
 	display: none;
 }
 
@@ -274,8 +301,10 @@
 
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*="coin"i][src*="add"i])::after,
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*="crystal"i][src*="add"i])::after,
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="ruby"i][src*="add"i])::after,
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i][src*="add"i])::after,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i][src*="add"i])::after {
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i][src*="add"i])::after,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i][src*="add"i])::after {
 	content: '';
 	position: absolute;
 	top: 50%;
@@ -300,7 +329,7 @@
 
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*="coin"i][src*="add"i]):hover::after,
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i][src*="add"i]):hover::after {
-	background-color: var(--severitium-gold-color);
+	background-color: var(--severitium-yellow-color);
 }
 
 /* Custom plus sign icon on crystal button hover */
@@ -310,25 +339,32 @@
 	background-color: var(--severitium-light-blue-color);
 }
 
+/* Custom plus sign icon on ruby button hover */
+
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="ruby"i][src*="add"i]):hover::after,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i][src*="add"i]):hover::after {
+	background-color: var(--severitium-red-color);
+}
+
 /* Full screen button */
 
-.UserScoreComponentStyle-blockRightPanel > div:nth-child(2),
-.BreadcrumbsComponentStyle-rightButtonsContainer > div:nth-child(2) {
+.UserScoreComponentStyle-blockRightPanel > div:nth-last-child(2),
+.BreadcrumbsComponentStyle-rightButtonsContainer > div:nth-last-child(2) {
 	background-color: transparent;
 	transition: background-color .2s ease;
 }
 
 /* Full screen button on hover */
 
-.UserScoreComponentStyle-blockRightPanel > div:nth-child(2):hover,
-.BreadcrumbsComponentStyle-rightButtonsContainer > div:nth-child(2):hover {
+.UserScoreComponentStyle-blockRightPanel > div:nth-last-child(2):hover,
+.BreadcrumbsComponentStyle-rightButtonsContainer > div:nth-last-child(2):hover {
 	background-color: var(--severitium-light-transparent-background3);
 }
 
 /* Icon of the full screen button */
 
-.UserScoreComponentStyle-blockRightPanel > div:nth-child(2) > div,
-.BreadcrumbsComponentStyle-rightButtonsContainer > div:nth-child(2) > div {
+.UserScoreComponentStyle-blockRightPanel > div:nth-last-child(2) > div,
+.BreadcrumbsComponentStyle-rightButtonsContainer > div:nth-last-child(2) > div {
 	width: 1.5em;
 	height: 1.5em;
 	-webkit-mask-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 2C0 0.895431 0.89543 0 2 0H7.5L0 7.5V2Z" fill="white"/><path d="M0 22C0 23.1046 0.89543 24 2 24H7.5L0 16.5V22Z" fill="white"/><path d="M22 24C23.1046 24 24 23.1046 24 22V16.5L16.5 24H22Z" fill="white"/><path d="M24 2C24 0.895431 23.1046 0 22 0H16.5L24 7.5V2Z" fill="white"/></svg>');
@@ -346,8 +382,8 @@
 
 /* Icon of the full screen button on button's hover */
 
-.UserScoreComponentStyle-blockRightPanel > div:nth-child(2):hover > div,
-.BreadcrumbsComponentStyle-rightButtonsContainer > div:nth-child(2):hover > div {
+.UserScoreComponentStyle-blockRightPanel > div:nth-last-child(2):hover > div,
+.BreadcrumbsComponentStyle-rightButtonsContainer > div:nth-last-child(2):hover > div {
 	background-color: var(--severitium-white-color);
 }
 
