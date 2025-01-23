@@ -16,6 +16,19 @@ function _createSeveritiumLoadingScreen(name) {
 		font-size: 2em;
 	`;
 
+	// Create a <style> tag for temporary body styles
+	const temporaryBodyStyles = document.createElement('style');
+	temporaryBodyStyles.setAttribute('data-module', 'SeveritiumLoadingBodyStyles');
+	temporaryBodyStyles.textContent = `
+		body {
+			height: 100% !important;
+			width: 100% !important;
+		}
+	`;
+
+	// Append the <style> tag to the body
+	document.body.appendChild(temporaryBodyStyles);
+
 	// Create a new div element for the loading screen
 	const loadingScreen = document.createElement('div');
 	loadingScreen.className = 'severitium-loading-screen';  // Set the class name for the element
@@ -37,5 +50,11 @@ function _removeSeveritiumLoadingScreen() {
 	// If the loading screen exists, remove it from the DOM
 	if (loadingScreen) {
 		loadingScreen.remove();
+	}
+
+	// Find the temporary style tag and remove it
+	const temporaryBodyStyles = document.querySelector('style[data-module*="SeveritiumLoadingBodyStyles"i]');
+	if (temporaryBodyStyles) {
+		temporaryBodyStyles.remove();
 	}
 }
