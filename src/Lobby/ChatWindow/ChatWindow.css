@@ -109,7 +109,7 @@
 /* Text of the selected option */
 
 .severitium-custom-dropdown .severitium-selected-text {
-	font-family: RubikBold;
+	font-family: BaseFontBold, FallbackFontBold;
 	font-weight: 500;
 	font-size: 1.05em;
 	color: var(--severitium-main-color);
