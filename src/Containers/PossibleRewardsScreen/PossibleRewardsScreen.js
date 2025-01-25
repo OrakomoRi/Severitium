@@ -31,8 +31,10 @@
 	 * Handle click event on an element.
 	 * @param {MouseEvent} event - The click event.
 	 */
-	function handleElementClick(event) {
-		const clickedElement = event.currentTarget;
+	document.body.addEventListener('click', function (event) {
+		const clickedElement = event.target.closest(selector);
+		if (!clickedElement) return;
+
 		const elements = document.querySelectorAll(selector);
 
 		// Apply inactive styles to all elements except the clicked one
@@ -40,7 +42,7 @@
 			const isActive = element === clickedElement;
 			applyStyles(element, isActive);
 		}
-	}
+	});
 
 	/**
 	 * Process a new element to apply styles and attach event listeners.
@@ -52,12 +54,6 @@
 		// Check if the element is active based on its box-shadow
 		const isActive = window.getComputedStyle(element).boxShadow.includes(activeColor);
 		applyStyles(element, isActive);
-
-		// Ensure the click event listener is attached only once
-		if (!element.dataset.eventAttached) {
-			element.addEventListener('click', handleElementClick);
-			element.dataset.eventAttached = 'true';
-		}
 	}
 
 	/**
