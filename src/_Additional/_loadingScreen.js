@@ -21,8 +21,9 @@ function _createSeveritiumLoadingScreen(name) {
 	temporaryBodyStyles.setAttribute('data-module', 'SeveritiumLoadingBodyStyles');
 	temporaryBodyStyles.textContent = `
 		body {
-			height: 100% !important;
-			width: 100% !important;
+			position: relative;
+			height: 100wh !important;
+			width: 100vw !important;
 			margin: 0;
 			overflow: hidden;
 		}
