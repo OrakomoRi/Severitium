@@ -1,4 +1,4 @@
-(function() {
+(function () {
 	/**
 	 * Represents a gear with properties and methods for updating and drawing
 	*/
@@ -31,7 +31,7 @@
 			// Define the shape of the figure (just a path from svg)
 			this.path = new Path2D('M.44 0 .38.15S.36.15.35.16L.2.1.11.19l.06.15s0 .02-.01.03L0 .44v.13l.15.06c0 .01 0 .02.01.03L.1.81.19.9.34.84s.02 0 .03.01L.43 1h.13L.62.85C.63.85.64.85.65.84L.8.9.89.81.83.66s0-.02.01-.03L.99.57V.44L.84.38C.84.37.84.36.83.35L.89.2.8.11.65.17S.63.17.62.16L.56 0H.43Zm.03.31c.1-.02.2.05.22.15V.5a.19.19 0 1 1-.38 0C.31.41.37.33.46.31');
 		}
-	
+
 		/**
 		 * Updates the angle of the gear based on its speed and direction
 		*/
@@ -39,7 +39,7 @@
 			// Update the angle based on speed and direction
 			this.angle += this.direction ? this.speed : -this.speed;
 		}
-	
+
 		/**
 		 * Draws the gear on the given canvas context
 		 * 
@@ -90,9 +90,9 @@
 			canvas.width = window.innerWidth; // Set canvas width to window width
 			canvas.height = window.innerHeight; // Set canvas height to window height
 			groups = []; // Reset the groups array
-	
+
 			let targetGroups = getRandomNumber(4, 20, 12); // Determine the number of groups to generate
-	
+
 			// Generate groups until the desired number is reached
 			while (groups.length < targetGroups) {
 				const group = generateGroup(); // Generate a new group
@@ -105,7 +105,7 @@
 
 		// Reinitialize gears on window resize
 		window.onresize = initialize;
-		
+
 		/**
 		 * Generates a random number of gears based on weighted probabilities
 		 * 
@@ -118,19 +118,19 @@
 				const weight = 1 / (distance + 1); // Calculate the weight based on the distance
 				numbers.push({ number: i, weight }); // Add the number and its weight to the array
 			}
-		
+
 			const totalInitialWeight = numbers.reduce((acc, item) => acc + item.weight, 0); // Calculate the total initial weight
 			const targetWeightForTwo = totalInitialWeight * 0.05; // Target weight for the min number
 			const currentWeightForTwo = numbers.find(item => item.number === min).weight; // Current weight for the min number
 			const weightAdjustmentFactor = targetWeightForTwo / currentWeightForTwo; // Calculate the weight adjustment factor
-		
+
 			numbers.forEach(item => {
 				item.weight = (item.number === min) ? targetWeightForTwo : item.weight / weightAdjustmentFactor; // Adjust weights
 			});
-		
+
 			const totalWeight = numbers.reduce((acc, item) => acc + item.weight, 0); // Calculate the total weight
 			let randomWeight = Math.random() * totalWeight; // Generate a random weight
-		
+
 			// Select a number based on the random weight
 			for (const item of numbers) {
 				randomWeight -= item.weight;
@@ -170,11 +170,11 @@
 
 				// Create a new gear with calculated properties
 				const newGear = new Gear(
-					x, 
-					y, 
-					size, 
-					radius, 
-					speed, 
+					x,
+					y,
+					size,
+					radius,
+					speed,
 					prevGear ? !prevGear.direction : group.length % 2 === 0
 				);
 
@@ -233,21 +233,21 @@
 				newGear.y - newGear.radius >= 0 &&
 				newGear.y + newGear.radius <= canvas.height &&
 				gears.every(gear => {
-						const dx = newGear.x - gear.x;
-						const dy = newGear.y - gear.y;
-						const distance = Math.sqrt(dx * dx + dy * dy);
-						const isValidDistance = distance >= newGear.radius + gear.radius + 1;
+					const dx = newGear.x - gear.x;
+					const dy = newGear.y - gear.y;
+					const distance = Math.sqrt(dx * dx + dy * dy);
+					const isValidDistance = distance >= newGear.radius + gear.radius + 1;
 
-						const adjacentGears = gears.filter(otherGear => {
-							const otherDx = newGear.x - otherGear.x;
-							const otherDy = newGear.y - otherGear.y;
-							const otherDistance = Math.sqrt(otherDx * otherDx + otherDy * otherDy);
-							return otherDistance < standardSize / 4;
-						});
-						
-						const invalidAdjacentGears = adjacentGears.filter(otherGear => otherGear.direction === newGear.direction);
+					const adjacentGears = gears.filter(otherGear => {
+						const otherDx = newGear.x - otherGear.x;
+						const otherDy = newGear.y - otherGear.y;
+						const otherDistance = Math.sqrt(otherDx * otherDx + otherDy * otherDy);
+						return otherDistance < standardSize / 4;
+					});
 
-						return isValidDistance && invalidAdjacentGears.length < 2;
+					const invalidAdjacentGears = adjacentGears.filter(otherGear => otherGear.direction === newGear.direction);
+
+					return isValidDistance && invalidAdjacentGears.length < 2;
 				});
 		}
 
@@ -303,10 +303,10 @@
 	 * Create a new instance of MutationObserver with a callback function
 	 * to observe changes in the DOM 
 	*/
-	const observer = new MutationObserver(function(mutations) {
+	const observer = new MutationObserver(function (mutations) {
 		const selector = '.Common-container:not(.Common-entranceBackground):not(:has(.Common-entranceGradient)):not(:has(.MainScreenComponentStyle-playButtonContainer))';
 
-		mutations.forEach(function(mutation) {
+		mutations.forEach(function (mutation) {
 			if (mutation.type === 'childList') { // If the change is of type childList
 				mutation.addedNodes.forEach(function (node) { // Iterate through added nodes
 					if (node.nodeType === Node.ELEMENT_NODE) { // If it's an element node
@@ -316,8 +316,8 @@
 						}
 					}
 				});
-				
-				mutation.removedNodes.forEach(function(node) { // Iterate through removed nodes
+
+				mutation.removedNodes.forEach(function (node) { // Iterate through removed nodes
 					if (node.nodeType === Node.ELEMENT_NODE) { // If it's an element node
 						// Check if the added node itself matches the selector or any descendant matches the selector
 						if (node.matches(selector) || node.querySelector(selector)) {
