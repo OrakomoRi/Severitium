@@ -23,6 +23,54 @@
 	};
 
 	/**
+	 * Generates a unique UUID that is not already used by existing sort elements.
+	 * @returns {string} - A unique UUID.
+	 */
+	function generateUniqueUUID() {
+		let uuid;
+		const existingUUIDs = new Set(
+			Array.from(document.querySelectorAll('.TableComponentStyle-commonSort')).map(el => el.getAttribute('data-sort-id'))
+		);
+		do {
+			uuid = crypto.randomUUID();
+		} while (existingUUIDs.has(uuid));
+		return uuid;
+	}
+
+	/**
+	 * Adds unique styles for each sort element using the provided UUID.
+	 * @param {HTMLElement} element - The sortElement to apply styles to.
+	 */
+	function addStylesForSortElement(element) {
+		const uuid = generateUniqueUUID();
+		element.setAttribute('data-sort-id', uuid);
+
+		const newCSSForArrows = `
+			/* Inactive sorting icon */
+			div.TableComponentStyle-commonSort[data-sort-state*="neutral"i][data-sort-id="${uuid}"] .TableComponentStyle-sortIndicatorUpDown,
+			div.TableComponentStyle-commonSort[data-sort-state*="down"i][data-sort-id="${uuid}"] .TableComponentStyle-sortIndicatorUpDown:first-of-type,
+			div.TableComponentStyle-commonSort[data-sort-state*="up"i][data-sort-id="${uuid}"] .TableComponentStyle-sortIndicatorUpDown:last-of-type {
+				background-color: var(--severitium-light-gray-color);
+			}
+
+			/* Active sorting down */
+			div.TableComponentStyle-commonSort[data-sort-state*="down"i][data-sort-id="${uuid}"] .TableComponentStyle-sortIndicatorUpDown:last-of-type {
+				background-color: var(--severitium-main-color);
+			}
+
+			/* Active sorting up */
+			div.TableComponentStyle-commonSort[data-sort-state*="up"i][data-sort-id="${uuid}"] .TableComponentStyle-sortIndicatorUpDown:first-of-type {
+				background-color: var(--severitium-main-color);
+			}
+		`;
+
+		const styleSheet = document.createElement('style');
+		styleSheet.textContent = newCSSForArrows;
+		// Insert the styleSheet as the first child of the element
+		element.prepend(styleSheet);
+	}
+
+	/**
 	 * Create a new instance of MutationObserver with a callback function
 	 * to observe changes in the DOM and track the addition of sort containers.
 	 */
@@ -42,6 +90,8 @@
 						initializeSortState(sortElement);
 						// Add a click event listener to the new sort container
 						sortElement.addEventListener('click', handleSortClick);
+						// Add custom styles for this sort element
+						addStylesForSortElement(sortElement);
 					}
 				}
 			}

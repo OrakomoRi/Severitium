@@ -24,26 +24,6 @@ div.TableComponentStyle-commonSort .TableComponentStyle-sortIndicatorUpDown {
 			mask-size: 100%;
 }
 
-/* Active sorting down */
-
-div.TableComponentStyle-commonSort[data-sort-state*="down"i] .TableComponentStyle-sortIndicatorUpDown:last-child {
-	background-color: var(--severitium-main-color);
-}
-
-/* Active sorting up */
-
-div.TableComponentStyle-commonSort[data-sort-state*="up"i] .TableComponentStyle-sortIndicatorUpDown:first-child {
-	background-color: var(--severitium-main-color);
-}
-
-/* Inactive sorting icon */
-
-div.TableComponentStyle-commonSort[data-sort-state*="neutral"i] .TableComponentStyle-sortIndicatorUpDown,
-div.TableComponentStyle-commonSort[data-sort-state*="down"i] .TableComponentStyle-sortIndicatorUpDown:first-child,
-div.TableComponentStyle-commonSort[data-sort-state*="up"i] .TableComponentStyle-sortIndicatorUpDown:last-child {
-	background-color: var(--severitium-light-gray-color);
-}
-
 /* Arrow up of the sorting icon */
 
 div.TableComponentStyle-commonSort .TableComponentStyle-sortIndicatorUpDown:first-child {

@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Common Sort
-// @version			1.0.1
+// @version			1.0.2
 // @description		Restyles the common look of the common sort
 // @author			OrakomoRi
 
