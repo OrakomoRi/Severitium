@@ -1,0 +1,59 @@
+/* Sorting icon's container */
+
+div.TableComponentStyle-commonSort {
+	width: auto;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	gap: .25em;
+	margin: 0;
+	padding: .5em;
+}
+
+/* Each individual sorting icon (both up & down arrows) */
+
+div.TableComponentStyle-commonSort .TableComponentStyle-sortIndicatorUpDown {
+	background-image: none;
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: 100%;
+			mask-size: 100%;
+}
+
+/* Active sorting down */
+
+div.TableComponentStyle-commonSort[data-sort-state*="down"i] .TableComponentStyle-sortIndicatorUpDown:last-child {
+	background-color: var(--severitium-main-color);
+}
+
+/* Active sorting up */
+
+div.TableComponentStyle-commonSort[data-sort-state*="up"i] .TableComponentStyle-sortIndicatorUpDown:first-child {
+	background-color: var(--severitium-main-color);
+}
+
+/* Inactive sorting icon */
+
+div.TableComponentStyle-commonSort[data-sort-state*="neutral"i] .TableComponentStyle-sortIndicatorUpDown,
+div.TableComponentStyle-commonSort[data-sort-state*="down"i] .TableComponentStyle-sortIndicatorUpDown:first-child,
+div.TableComponentStyle-commonSort[data-sort-state*="up"i] .TableComponentStyle-sortIndicatorUpDown:last-child {
+	background-color: var(--severitium-light-gray-color);
+}
+
+/* Arrow up of the sorting icon */
+
+div.TableComponentStyle-commonSort .TableComponentStyle-sortIndicatorUpDown:first-child {
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.707 9.207a1 1 0 0 1-1.414 0L6 4.914 1.707 9.207A1 1 0 1 1 .293 7.793l5-5a1 1 0 0 1 1.414 0l5 5a1 1 0 0 1 0 1.414" xmlns="http://www.w3.org/2000/svg"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.707 9.207a1 1 0 0 1-1.414 0L6 4.914 1.707 9.207A1 1 0 1 1 .293 7.793l5-5a1 1 0 0 1 1.414 0l5 5a1 1 0 0 1 0 1.414" xmlns="http://www.w3.org/2000/svg"/></svg>');
+}
+
+/* Arrow down of the sorting icon */
+
+div.TableComponentStyle-commonSort .TableComponentStyle-sortIndicatorUpDown:last-child {
+	-webkit-mask-image: url('data:image/svg+xml,<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M.293 2.793a1 1 0 0 1 1.414 0L6 7.086l4.293-4.293a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 0-1.414"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M.293 2.793a1 1 0 0 1 1.414 0L6 7.086l4.293-4.293a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 0-1.414"/></svg>');
+}
