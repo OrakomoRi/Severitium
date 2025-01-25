@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Possible Rewards Screen
-// @version			1.0.2
+// @version			1.1.0
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 
@@ -11,6 +11,8 @@
 
 // @connect			raw.githubusercontent.com
 // @connect			cdn.jsdelivr.net
+
+// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Containers/PossibleRewardsScreen/PossibleRewardsScreen.min.js?raw=true
 
 // @run-at			document-start
 // @grant			GM_xmlhttpRequest

@@ -177,22 +177,11 @@
 	height: calc(25% - 1em);
 	margin: 0;
 	outline: none;
-	box-shadow: none;
 	background: none;
-	background-color: var(--severitium-dark-transparent-background2);
-	border: .1em solid var(--severitium-gray-color);
 	border-radius: var(--severitium-border-radius);
 	-webkit-backdrop-filter: blur(.25em);
 			backdrop-filter: blur(.25em);
 	transition: border-color .2s ease, background-color .2s ease;
-}
-
-/* Selected item */
-
-.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div.selected {
-	background-color: var(--severitium-light-transparent-background3);
-	border: .1em solid var(--severitium-light-gray-color);
-	pointer-events: none;
 }
 
 /* Item of possible rewards on hover */
