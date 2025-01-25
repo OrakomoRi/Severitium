@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Common Sort
-// @version			1.0.0
+// @version			1.0.1
 // @description		Restyles the common look of the common sort
 // @author			OrakomoRi
 
@@ -11,6 +11,8 @@
 
 // @connect			raw.githubusercontent.com
 // @connect			cdn.jsdelivr.net
+
+// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/General/CommonSort/CommonSort.min.js?raw=true
 
 // @run-at			document-start
 // @grant			GM_xmlhttpRequest
