@@ -23,6 +23,8 @@ function _createSeveritiumLoadingScreen(name) {
 		body {
 			height: 100% !important;
 			width: 100% !important;
+			margin: 0;
+			overflow: hidden;
 		}
 	`;
 

@@ -248,20 +248,20 @@
 
 /* Foreign clan's report button */
 
-.ClanInfoComponentStyle-clanForeignActions > div:first-child:has(> span) {
+.ClanInfoComponentStyle-clanForeignActions > div:first-child:has(> span:not(.ClanInfoComponentStyle-clanActionDescription)) {
 	background: var(--severitium-red-button-background);
 	border: var(--severitium-red-button-border-color) solid .1em;
 }
 
 /* Button on hover */
 
-.ClanInfoComponentStyle-clanForeignActions > div:first-child:has(> span):hover {
+.ClanInfoComponentStyle-clanForeignActions > div:first-child:has(> span:not(.ClanInfoComponentStyle-clanActionDescription)):hover {
 	border: var(--severitium-red-button-border-color-hover) solid .1em;
 }
 
 /* Button text */
 
-.ClanInfoComponentStyle-clanForeignActions > div:first-child:has(> span) > span {
+.ClanInfoComponentStyle-clanForeignActions > div:first-child:has(> span:not(.ClanInfoComponentStyle-clanActionDescription)) > span {
 	color: var(--severitium-red-button-color);
 }
 
