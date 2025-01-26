@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace       TankiOnline
-// @version			1.6.1+build36
+// @version			1.6.1+build37
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -121,7 +121,7 @@
 						promptUpdate(githubVersion);
 						break;
 					case 0:
-						console.log(/[-+]/.test(githubVersion + currentVersion)
+						console.log(/[-+]/.test(currentVersion)
 							? `You are using some version that is based on the latest stable.`
 							: `You are using the latest stable version.`);
 						break;
