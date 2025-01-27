@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.6.1+build40
+// @version			1.6.1+build41
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -150,40 +150,43 @@
 	}
 
 	/**
-	 * Найти последнюю версию
-	 * @param {Array} versions - Массив стабильных версий
+	 * Find the latest version
+	 * @param {Array} versions - Array of stable versions
+	 * @returns {Object|null} - The object representing the latest version, or `null` if the array is empty or invalid
 	 */
 	function getLatestVersion(versions) {
+		// Check if the input is a valid array with at least one element
 		if (!Array.isArray(versions) || versions.length === 0) return null;
 
+		// Use `reduce` to iterate through the array and determine the latest version
 		return versions.reduce((latest, current) =>
 			compareVersions(current.version, latest.version) > 0 ? current : latest
 		);
 	}
 
 	/**
-	 * Check for updates by parsing stable.json with multiple versions
-	 */
+ * Check for updates by parsing stable.json with multiple versions
+ */
 	async function findLatestStableVersion(githubVersion) {
 		try {
+			// Fetch the stable.json file containing all available stable versions
 			const stableData = await fetchJSON(STABLE_JSON_URL);
+
+			// Determine the latest stable version from the list of versions in stable.json (should return the most recent one)
 			const latestVersionData = getLatestVersion(stableData.versions);
 
-			if (!latestVersionData) {
-				console.log(`${(script.name).toUpperCase()}: No valid stable versions found.`);
-				promptUpdate(githubVersion, GITHUB_SCRIPT_URL);
-				return;
-			}
+			// Destructure version and link from the latest version data, if available
+			const { version: latestVersion, link: latestLink } = latestVersionData || {};
 
-			const { version: latestVersion, link: latestLink } = latestVersionData;
-
-			if (compareVersions(latestVersion, script.version) > 0) {
-				promptUpdate(latestVersion, latestLink);
+			// Compare the latest stable version with the current script version
+			if (latestVersionData && compareVersions(latestVersion, script.version) > 0) {
+				promptUpdate(latestVersion, latestLink); // Prompt update if a newer stable version is found
 			} else {
-				promptUpdate(githubVersion, GITHUB_SCRIPT_URL);
+				console.log(`${script.name.toUpperCase()}: No valid stable versions found.`);
+				promptUpdate(githubVersion, GITHUB_SCRIPT_URL); // Fallback to GitHub version
 			}
 		} catch (error) {
-			console.error(`${(script.name).toUpperCase()}: Failed to fetch stable versions.`, error);
+			console.error(`${script.name.toUpperCase()}: Failed to fetch stable versions.`, error);
 		}
 	}
 
