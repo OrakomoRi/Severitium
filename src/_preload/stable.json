@@ -1,0 +1,12 @@
+{
+	"versions": [
+		{
+			"version": "1.6.0",
+			"link": "https://github.com/OrakomoRi/Severitium/blob/2798d61ad9f6a900025ce41819ad8db8b003b8ac/release/severitium.user.js?raw=true"
+		},
+		{
+			"version": "1.6.1",
+			"link": "https://github.com/OrakomoRi/Severitium/blob/d236aaf6c6ad159e5a68e41a6e0246d2c1e23820/release/severitium.user.js?raw=true"
+		}
+	]
+}
