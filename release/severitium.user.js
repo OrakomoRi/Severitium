@@ -1,8 +1,8 @@
 // ==UserScript==
 
 // @name			Severitium
-// @namespace       TankiOnline
-// @version			1.6.1+build39
+// @namespace		TankiOnline
+// @version			1.6.1+build40
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -63,7 +63,7 @@
 	 * @param {Boolean} hasIgnoredUpdate - Used for the updater
 	 * 
 	 * @param {String} GITHUB_SCRIPT_URL - Link to the script to update
-	 * @param {String} GITHUB_COMMITS_URL - Link to the commits to find latest stale version
+	 * @param {String} STABLE_JSON_URL - Link to the JSON with stable versions and their links
 	 * 
 	 * @param {Array} script - Array with catched data
 	 * Catches all CSS, images based on main userscript's version
@@ -81,7 +81,7 @@
 	};
 
 	const GITHUB_SCRIPT_URL = GM_info.script.updateURL;
-	const GITHUB_COMMITS_URL = 'https://github.com/OrakomoRi/Severitium/commits/main/release/severitium.user.js.atom';
+	const STABLE_JSON_URL = 'https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/stable.json?raw=true';
 
 	const script = {
 		CSS: {},
@@ -90,11 +90,12 @@
 		name: GM_info.script.name,
 	}
 
+
+
 	/**
 	 * Function to check if the script is updated 
 	 */
 	function checkForUpdates() {
-		console.log(`${(script.name).toUpperCase()}: Checking for updates...`);
 		GM_xmlhttpRequest({
 			method: 'GET',
 			url: GITHUB_SCRIPT_URL,
@@ -103,7 +104,7 @@
 					console.error(`${(script.name).toUpperCase()}: Failed to fetch GitHub script:`, response.status);
 					return;
 				}
-				
+
 				// Script from GitHub
 				const data = response.responseText;
 				// Try to extract version from the script on GitHub
@@ -119,19 +120,12 @@
 				const compareResult = compareVersions(githubVersion, script.version);
 
 				console.log(`========\n`);
-				console.log(`${(script.name).toUpperCase()}\n`);
+				console.log(`${(script.name)}\n`);
 
 				switch (compareResult) {
 					case 1:
 						console.log(`A new version is available on GitHub: ${githubVersion}. Checking for stable version...`);
-						findLatestStableVersion(githubVersion, (stableVersionData) => {
-							if (stableVersionData) {
-								promptUpdate(stableVersionData.version, stableVersionData.link);
-							} else {
-								console.log('No stable version found. Falling back to GitHub version.');
-								promptUpdate(githubVersion, GITHUB_SCRIPT_URL);
-							}
-						});
+						findLatestStableVersion(githubVersion);
 						break;
 					case 0:
 						console.log(/[-+]/.test(script.version)
@@ -156,68 +150,41 @@
 	}
 
 	/**
-	 * Find the latest stable version from the commits RSS feed
+	 * Найти последнюю версию
+	 * @param {Array} versions - Массив стабильных версий
 	 */
-	function findLatestStableVersion(latestVersion, callback) {
-		GM_xmlhttpRequest({
-			method: 'GET',
-			url: GITHUB_COMMITS_URL,
-			onload: function (response) {
-				if (response.status !== 200) {
-					console.error(`${(script.name).toUpperCase()}: Failed to fetch commits feed:`, response.status);
-					callback(null);
-					return;
-				}
+	function getLatestVersion(versions) {
+		if (!Array.isArray(versions) || versions.length === 0) return null;
 
-				const parser = new DOMParser();
-				const xmlDoc = parser.parseFromString(response.responseText, 'text/xml');
-				const entries = xmlDoc.getElementsByTagName('entry');
-
-				for (let entry of entries) {
-					const commitUrl = entry.getElementsByTagName('link')[0]?.getAttribute('href');
-					if (!commitUrl) continue;
-
-					const rawUrl = commitUrl
-						.replace('github.com', 'raw.githubusercontent.com')
-						.replace('/commit/', '/')
-						.concat('/release/severitium.user.js');
-
-					fetchVersionFromRaw(rawUrl, (version) => {
-						if (version && compareVersions(version, latestVersion) === 0 && !/[-+]/.test(version)) {
-							callback({ version, link: rawUrl });
-						}
-					});
-					return;
-				}
-				callback(null);
-			},
-			onerror: function (error) {
-				console.error(`${(script.name).toUpperCase()}: Error fetching stable version:`, error);
-				callback(null);
-			},
-		});
+		return versions.reduce((latest, current) =>
+			compareVersions(current.version, latest.version) > 0 ? current : latest
+		);
 	}
 
 	/**
-	 * Extract version from the raw file URL
+	 * Check for updates by parsing stable.json with multiple versions
 	 */
-	function fetchVersionFromRaw(url, callback) {
-		GM_xmlhttpRequest({
-			method: 'GET',
-			url: url,
-			onload: function (response) {
-				if (response.status !== 200) {
-					callback(null);
-					return;
-				}
+	async function findLatestStableVersion(githubVersion) {
+		try {
+			const stableData = await fetchJSON(STABLE_JSON_URL);
+			const latestVersionData = getLatestVersion(stableData.versions);
 
-				const match = response.responseText.match(/@version\s+([\w.+-]+)/);
-				callback(match ? match[1] : null);
-			},
-			onerror: function () {
-				callback(null);
-			},
-		});
+			if (!latestVersionData) {
+				console.log(`${(script.name).toUpperCase()}: No valid stable versions found.`);
+				promptUpdate(githubVersion, GITHUB_SCRIPT_URL);
+				return;
+			}
+
+			const { version: latestVersion, link: latestLink } = latestVersionData;
+
+			if (compareVersions(latestVersion, script.version) > 0) {
+				promptUpdate(latestVersion, latestLink);
+			} else {
+				promptUpdate(githubVersion, GITHUB_SCRIPT_URL);
+			}
+		} catch (error) {
+			console.error(`${(script.name).toUpperCase()}: Failed to fetch stable versions.`, error);
+		}
 	}
 
 	function promptUpdate(newVersion, downloadUrl) {
@@ -226,7 +193,7 @@
 
 		if (customModal.enable) {
 			const style = document.createElement('style');
-			style.textContent = '.swal2-container { z-index: 8888; } .swal2-container h1, .swal2-container h2, .swal2-container h3, .swal2-container h4, .swal2-container span, .swal2-container p { color: #000000; } ';
+			style.textContent = '.swal2-container { z-index: 10000; } .swal2-container h1, .swal2-container h2, .swal2-container h3, .swal2-container h4, .swal2-container span, .swal2-container p { color: #000000; } ';
 			document.head.appendChild(style);
 
 			Swal.fire({
@@ -315,16 +282,17 @@
 				method: 'GET',
 				url: url,
 				onload(response) {
+					if (response.status !== 200) {
+						reject(new Error(`${(script.name).toUpperCase()}: Failed to fetch: ${response.status}`));
+						return;
+					}
 					try {
-						const data = JSON.parse(response.responseText);
-						resolve(data);
+						resolve(JSON.parse(response.responseText));
 					} catch (error) {
 						reject(`Failed to parse JSON from ${url}: ${error}`);
 					}
 				},
-				onerror(error) {
-					reject(`Failed to fetch ${url}: ${error}`);
-				}
+				onerror: (error) => reject(error),
 			});
 		});
 	}
@@ -332,7 +300,7 @@
 	async function loadResources(forceReload = false) {
 		_createSeveritiumLoadingScreen(script.name);
 		try {
-			
+
 			const cachedVersion = GM_getValue('SeveritiumVersion', '');
 
 			[CSSLinks, imageLinks] = await Promise.all([
@@ -356,7 +324,7 @@
 						})
 					);
 				}
-	
+
 				for (const { url } of imageLinks) {
 					const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason());
 					promises.push(
@@ -365,7 +333,7 @@
 						})
 					);
 				}
-	
+
 				await Promise.all(promises);
 
 				GM_setValue('SeveritiumCSS', script.CSS);
