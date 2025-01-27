@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace       TankiOnline
-// @version			1.6.1+build38
+// @version			1.6.1+build39
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -63,12 +63,14 @@
 	 * @param {Boolean} hasIgnoredUpdate - Used for the updater
 	 * 
 	 * @param {String} GITHUB_SCRIPT_URL - Link to the script to update
+	 * @param {String} GITHUB_COMMITS_URL - Link to the commits to find latest stale version
 	 * 
-	 * @param {Array} Severitium - Array with catched data
+	 * @param {Array} script - Array with catched data
 	 * Catches all CSS, images based on main userscript's version
-	 * @param {Array} Severitium.CSS - array with CSS
-	 * @param {Array} Severitium.images - array with images
-	 * @param {String} Severitium.images - version of the main userscript
+	 * @param {Array} script.CSS - array with CSS
+	 * @param {Array} script.images - array with images
+	 * @param {String} script.version - version of the main userscript
+	 * @param {String} script.name - name of the main userscript
 	*/
 
 	const updateCheck = true;
@@ -79,49 +81,60 @@
 	};
 
 	const GITHUB_SCRIPT_URL = GM_info.script.updateURL;
+	const GITHUB_COMMITS_URL = 'https://github.com/OrakomoRi/Severitium/commits/main/release/severitium.user.js.atom';
 
-	const Severitium = {
+	const script = {
 		CSS: {},
 		images: {},
 		version: GM_info.script.version,
+		name: GM_info.script.name,
 	}
 
 	/**
 	 * Function to check if the script is updated 
-	*/
+	 */
 	function checkForUpdates() {
+		console.log(`${(script.name).toUpperCase()}: Checking for updates...`);
 		GM_xmlhttpRequest({
 			method: 'GET',
 			url: GITHUB_SCRIPT_URL,
 			onload: function (response) {
+				if (response.status !== 200) {
+					console.error(`${(script.name).toUpperCase()}: Failed to fetch GitHub script:`, response.status);
+					return;
+				}
+				
 				// Script from GitHub
 				const data = response.responseText;
-
 				// Try to extract version from the script on GitHub
-				const match = data.match(/@version\s+([\w.-]+)/);
+				const match = data.match(/@version\s+([\w.+-]+)/);
 				if (!match) {
-					console.log(`========\n${GM_info.script.name}\nUnable to extract version from the GitHub script.\n========`);
+					console.log(`========\n${(script.name).toUpperCase()}\nUnable to extract version from the GitHub script.\n========`);
 					return;
 				}
 
 				// Version on GitHub
 				const githubVersion = match[1];
-				// Current version
-				const currentVersion = GM_info.script.version;
-
 				// Compare versions
-				const compareResult = compareVersions(githubVersion, currentVersion);
+				const compareResult = compareVersions(githubVersion, script.version);
 
 				console.log(`========\n`);
-				console.log(`${GM_info.script.name}\n`);
+				console.log(`${(script.name).toUpperCase()}\n`);
 
 				switch (compareResult) {
 					case 1:
-						console.log(`A new version is available. Please update your script.\n`);
-						promptUpdate(githubVersion);
+						console.log(`A new version is available on GitHub: ${githubVersion}. Checking for stable version...`);
+						findLatestStableVersion(githubVersion, (stableVersionData) => {
+							if (stableVersionData) {
+								promptUpdate(stableVersionData.version, stableVersionData.link);
+							} else {
+								console.log('No stable version found. Falling back to GitHub version.');
+								promptUpdate(githubVersion, GITHUB_SCRIPT_URL);
+							}
+						});
 						break;
 					case 0:
-						console.log(/[-+]/.test(currentVersion)
+						console.log(/[-+]/.test(script.version)
 							? `You are using some version that is based on the latest stable.`
 							: `You are using the latest stable version.`);
 						break;
@@ -133,7 +146,7 @@
 						break;
 				}
 
-				console.log(`Your × GitHub:\n${currentVersion} × ${githubVersion}`);
+				console.log(`Your × GitHub:\n${script.version} × ${githubVersion}`);
 				console.log(`\n========`);
 			},
 			onerror: function (error) {
@@ -142,7 +155,72 @@
 		});
 	}
 
-	function promptUpdate(newVersion) {
+	/**
+	 * Find the latest stable version from the commits RSS feed
+	 */
+	function findLatestStableVersion(latestVersion, callback) {
+		GM_xmlhttpRequest({
+			method: 'GET',
+			url: GITHUB_COMMITS_URL,
+			onload: function (response) {
+				if (response.status !== 200) {
+					console.error(`${(script.name).toUpperCase()}: Failed to fetch commits feed:`, response.status);
+					callback(null);
+					return;
+				}
+
+				const parser = new DOMParser();
+				const xmlDoc = parser.parseFromString(response.responseText, 'text/xml');
+				const entries = xmlDoc.getElementsByTagName('entry');
+
+				for (let entry of entries) {
+					const commitUrl = entry.getElementsByTagName('link')[0]?.getAttribute('href');
+					if (!commitUrl) continue;
+
+					const rawUrl = commitUrl
+						.replace('github.com', 'raw.githubusercontent.com')
+						.replace('/commit/', '/')
+						.concat('/release/severitium.user.js');
+
+					fetchVersionFromRaw(rawUrl, (version) => {
+						if (version && compareVersions(version, latestVersion) === 0 && !/[-+]/.test(version)) {
+							callback({ version, link: rawUrl });
+						}
+					});
+					return;
+				}
+				callback(null);
+			},
+			onerror: function (error) {
+				console.error(`${(script.name).toUpperCase()}: Error fetching stable version:`, error);
+				callback(null);
+			},
+		});
+	}
+
+	/**
+	 * Extract version from the raw file URL
+	 */
+	function fetchVersionFromRaw(url, callback) {
+		GM_xmlhttpRequest({
+			method: 'GET',
+			url: url,
+			onload: function (response) {
+				if (response.status !== 200) {
+					callback(null);
+					return;
+				}
+
+				const match = response.responseText.match(/@version\s+([\w.+-]+)/);
+				callback(match ? match[1] : null);
+			},
+			onerror: function () {
+				callback(null);
+			},
+		});
+	}
+
+	function promptUpdate(newVersion, downloadUrl) {
 		const skippedVersion = GM_getValue('skippedVersion', '');
 		if (skippedVersion === newVersion) return;
 
@@ -156,7 +234,7 @@
 				backdrop: false,
 				color: "#000000",
 				background: "#ffffff",
-				title: `${GM_info.script.name}: new version is available!`,
+				title: `${script.name}: new version is available!`,
 				text: `Do you want to update to version ${newVersion}?`,
 				icon: 'info',
 				showCancelButton: true,
@@ -172,26 +250,26 @@
 				}
 			}).then((result) => {
 				if (result.isConfirmed) {
-					GM_openInTab(GITHUB_SCRIPT_URL, { active: true });
+					GM_openInTab(downloadUrl, { active: true });
 				} else if (result.isDenied) {
 					GM_setValue('skippedVersion', newVersion);
 				}
 			});
 		} else {
-			var result = window.confirm(`${GM_info.script.name}: A new version is available. Please update your script.`);
-
-			if (result) {
-				GM_openInTab(GITHUB_SCRIPT_URL, { active: true });
+			if (confirm(`${script.name}: A new stable version is available. Update now?`)) {
+				GM_openInTab(downloadUrl, { active: true });
 			}
 		}
 	}
 
-	if (updateCheck) { checkForUpdates(); }
+	if (updateCheck) {
+		checkForUpdates();
+	}
 
 
 
 	let imageLinks, CSSLinks;
-	const severitiumInjector = new SeveritiumInjector(Severitium);
+	const severitiumInjector = new SeveritiumInjector(script);
 
 	async function fetchAsText(url) {
 		return new Promise((resolve, reject) => {
@@ -222,7 +300,7 @@
 						reader.onloadend = () => resolve(reader.result.split(',')[1]);
 						reader.readAsDataURL(response.response);
 					} else {
-						console.error(`SEVERITIUM: Failed to fetch image from ${url}, status: ${response.status}`);
+						console.error(`${(script.name).toUpperCase()}: Failed to fetch image from ${url}, status: ${response.status}`);
 						reject(new Error(`Failed to fetch image from ${url}`));
 					}
 				},
@@ -252,7 +330,7 @@
 	}
 
 	async function loadResources(forceReload = false) {
-		_createSeveritiumLoadingScreen(GM_info.script.name);
+		_createSeveritiumLoadingScreen(script.name);
 		try {
 			
 			const cachedVersion = GM_getValue('SeveritiumVersion', '');
@@ -262,19 +340,19 @@
 				fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/ImageModules.json?raw=true').then(data => data || [])
 			]);
 
-			if (!forceReload && cachedVersion === Severitium.version) {
-				console.log('SEVERITIUM: Loading resources from cache.');
-				Severitium.CSS = GM_getValue('SeveritiumCSS', {});
-				Severitium.images = GM_getValue('SeveritiumImages', {});
+			if (!forceReload && cachedVersion === script.version) {
+				console.log(`${(script.name).toUpperCase()}: Loading resources from cache.`);
+				script.CSS = GM_getValue('SeveritiumCSS', {});
+				script.images = GM_getValue('SeveritiumImages', {});
 			} else {
-				console.log('SEVERITIUM: Fetching new resources.');
+				console.log(`${(script.name).toUpperCase()}: Fetching new resources.`);
 
 				let promises = [];
 
 				for (const { url } of CSSLinks) {
 					promises.push(
 						fetchAsText(url).then(css => {
-							Severitium.CSS[url] = css;
+							script.CSS[url] = css;
 						})
 					);
 				}
@@ -283,22 +361,22 @@
 					const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason());
 					promises.push(
 						fetchImageAsBase64(formattedUrl).then(image => {
-							Severitium.images[formattedUrl] = image;
+							script.images[formattedUrl] = image;
 						})
 					);
 				}
 	
 				await Promise.all(promises);
 
-				GM_setValue('SeveritiumCSS', Severitium.CSS);
-				GM_setValue('SeveritiumImages', Severitium.images);
-				GM_setValue('SeveritiumVersion', Severitium.version);
+				GM_setValue('SeveritiumCSS', script.CSS);
+				GM_setValue('SeveritiumImages', script.images);
+				GM_setValue('SeveritiumVersion', script.version);
 			}
-			console.log('SEVERITIUM: Resources loaded.');
+			console.log(`${(script.name).toUpperCase()}: Resources loaded.`);
 		} catch (error) {
-			console.error('SEVERITIUM: Error loading resources:', error);
+			console.error(`${(script.name).toUpperCase()}: Error loading resources:`, error);
 		} finally {
-			severitiumInjector.updateSeveritium(Severitium);
+			severitiumInjector.updateSeveritium(script);
 			severitiumInjector.applyCSS(CSSLinks);
 			severitiumInjector.applyImages(imageLinks);
 			_removeSeveritiumLoadingScreen();
@@ -306,7 +384,7 @@
 	}
 
 	async function reloadResources() {
-		console.log('SEVERITIUM: Manually reloading resources.');
+		console.log(`${(script.name).toUpperCase()}: Manually reloading resources.`);
 		await loadResources(true);
 	}
 
