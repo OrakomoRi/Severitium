@@ -10,21 +10,21 @@
 		// Extract the options from the original select
 		const options = Array.from(originalSelect.options).map(option => ({
 			name: option.textContent,
-			code: option.value
+			value: option.value
 		}));
 
 		// Take selected option as default option
 		const defaultOption = {
-			name: originalSelect.options[originalSelect.selectedIndex].textContent,
-			value: originalSelect.value
+			name: originalSelect.options[originalSelect.selectedIndex]?.textContent || '',
+			value: originalSelect.value || ''
 		};
 
 		// Create an instance of BreeziumSelect
 		const breeziumSelect = new BreeziumSelect(
 			options,
-			(selectedCode) => {
+			(selectedValue) => {
 				// Update the value of the original select
-				originalSelect.value = selectedCode;
+				originalSelect.value = selectedValue;
 				originalSelect.dispatchEvent(new Event('change', { bubbles: true }));
 			},
 			defaultOption
