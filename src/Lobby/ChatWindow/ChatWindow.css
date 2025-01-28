@@ -218,6 +218,8 @@
 /* Single chat message */
 
 .ChatComponentStyle-messageRow {
+	margin: .1em 1em;
+	padding: .25em .5em;
 	background-color: var(--severitium-light-transparent-background3);
 	border-radius: var(--severitium-border-radius);
 }
@@ -225,9 +227,26 @@
 /* Chat system message */
 
 .ChatComponentStyle-systemMessage {
-	margin: .5em 0;
-	padding: 0 1em;
-	color: var(--severitium-orange-text-color);
+	font-weight: normal;
+	margin: .5em 1em;
+	padding: .25em .5em;
+	color: var(--severitium-yellow-text-color);
+}
+
+/* Chat system message link */
+
+.ChatComponentStyle-systemMessage a {
+	font-weight: bold;
+	color: var(--severitium-main-color);
+	-webkit-text-decoration: underline;
+			text-decoration: underline;
+	transition: color .2s ease;
+}
+
+/* Chat system message link on hover */
+
+.ChatComponentStyle-systemMessage a:hover {
+	color: var(--severitium-white-text-color);
 }
 
 /* Message header, user nickname */
@@ -244,28 +263,42 @@
 	color: var(--severitium-main-color);
 }
 
+/* Line container 'from' - 'to' */
+
+.ChatComponentStyle-arrowForPrivateMessage {
+	margin: 0 .5em;
+	width: auto;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 /* Line in the message 'from' - 'to' */
 
 .ChatComponentStyle-arrowForPrivateMessage::before {
+	content: '-';
 	color: var(--severitium-orange-text-color);
 }
 
 /* Message text */
 
 .ChatComponentStyle-messageRow .ChatComponentStyle-message {
+	font-weight: normal;
 	color: var(--severitium-white-text-color);
 }
 
-/* Link in the chat message */
+/* Link of the chat message */
 
 .ChatComponentStyle-messageRow .ChatComponentStyle-message a {
+	font-weight: bold;
 	color: var(--severitium-main-color);
-	-webkit-text-decoration: dashed;
-			text-decoration: dashed;
+	-webkit-text-decoration: underline;
+			text-decoration: underline;
 	transition: color .2s ease;
 }
 
-/* Link in the chat message */
+/* Link of the chat message on hover */
 
 .ChatComponentStyle-messageRow .ChatComponentStyle-message a:hover {
 	color: var(--severitium-white-text-color);
