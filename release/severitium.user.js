@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.6.1+build53
+// @version			1.6.1+build54
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -43,7 +43,7 @@
 
 // @require			https://cdn.jsdelivr.net/npm/sweetalert2@11
 // @require			https://cdn.jsdelivr.net/gh/OrakomoRi/CompareVersions@main/JS/compareversions.min.js
-// @require			https://cdn.jsdelivr.net/gh/OrakomoRi/Breezium@main/modules/BreeziumSelect/js/BreeziumSelect.min.js
+// @require			https://cdn.jsdelivr.net/gh/OrakomoRi/Breezium@latest/modules/BreeziumSelect/js/BreeziumSelect.min.js
 
 // ==/UserScript==
 
