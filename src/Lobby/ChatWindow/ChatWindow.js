@@ -1,84 +1,35 @@
-(function() {
+(function () {
 	/**
-	 * Replaces the original select element with a custom dropdown menu.
-	 * Adds event listeners to handle selection changes and dropdown display.
-	*/
+	 * Replaces the original select element with a custom dropdown menu
+	 */
 	function customChatLogic() {
 		// Find the original select container and select element
 		const originalSelectContainer = document.querySelector('.ChatComponentStyle-channels .ChatComponentStyle-channelsSelect');
 		const originalSelect = originalSelectContainer.querySelector('select');
 
-		// Create elements for the custom dropdown menu
-		const selectorContainer = document.createElement('div');
-		selectorContainer.classList.add('severitium-selector-container');
+		// Extract the options from the original select
+		const options = Array.from(originalSelect.options).map(option => ({
+			name: option.textContent,
+			code: option.value
+		}));
 
-		const selectorArrow = document.createElement('div');
-		selectorArrow.classList.add('severitium-selector-arrow');
+		// Create an instance of BreeziumSelect
+		const breeziumSelect = new BreeziumSelect(options, (selectedCode) => {
+			// Update the value of the original select
+			originalSelect.value = selectedCode;
+			originalSelect.dispatchEvent(new Event('change', { bubbles: true }))
+		}, originalSelect.options[originalSelect.selectedIndex].textContent);
 
-		const customDropdown = document.createElement('div');
-		customDropdown.classList.add('severitium-custom-dropdown');
+		// Insert a custom select into the DOM
+		breeziumSelect.render(originalSelectContainer.parentNode, originalSelectContainer.nextSibling);
 
-		// Append elements to the selector container
-		selectorContainer.appendChild(customDropdown);
-		selectorContainer.appendChild(selectorArrow);
-
-		// Insert the selector container after the original select container
-		originalSelectContainer.parentNode.insertBefore(selectorContainer, originalSelectContainer.nextSibling);
-
-		// Create and display the currently selected option
-		const selectedText = document.createElement('span');
-		selectedText.classList.add('severitium-selected-text');
-		selectedText.textContent = originalSelect.options[originalSelect.selectedIndex].textContent;
-		customDropdown.appendChild(selectedText);
-
-		// Create and populate the custom dropdown list
-		const customList = document.createElement('div');
-
-		originalSelect.querySelectorAll('option').forEach(option => {
-			const listItem = document.createElement('span');
-			listItem.textContent = option.textContent;
-			listItem.dataset.value = option.value;
-			customList.appendChild(listItem);
-
-			// Add event listener for option selection
-			listItem.addEventListener('click', (event) => {
-				event.stopPropagation();
-				originalSelect.value = option.value;
-				customDropdown.querySelector('.severitium-selected-text').textContent = option.textContent;
-				selectorContainer.classList.remove('show');
-
-				// Trigger change event on original select
-				originalSelect.dispatchEvent(new Event('change', { bubbles: true }));
-			});
-		});
-
-		customDropdown.appendChild(customList);
-
-		// Add event listener to toggle dropdown display
-		customDropdown.addEventListener('click', (event) => {
-			event.stopPropagation();
-
-			const selectedOptionText = customDropdown.querySelector('.severitium-selected-text').textContent;
-			originalSelect.querySelectorAll('option').forEach(option => {
-				if (option.textContent === selectedOptionText) {
-					originalSelect.value = option.value;
-					originalSelect.dispatchEvent(new Event('change', { bubbles: true }));
-				}
-			});
-
-			// Check clan button if the clan chat is opened
-			const clanChannel = document.querySelector('.ChatComponentStyle-channels .ChatComponentStyle-clanChannel');
+		// Add a click handler for the custom selector
+		const customDropdown = breeziumSelect.container.querySelector('.breezium-selected');
+		customDropdown.addEventListener('click', () => {
+			// Check if clan chat is open
 			if (clanChannel && clanChannel.dataset.state === 'selected') {
 				clanChannel.dataset.state = '';
-			} else {
-				selectorContainer.classList.toggle('show');
-			}
-		});
-
-		// Close dropdown when clicking outside of it
-		document.addEventListener('mousedown', (event) => {
-			if (!selectorContainer.contains(event.target) && !event.target.closest('.severitium-selector-container')) {
-				selectorContainer.classList.remove('show');
+				breeziumSelect.container.classList.remove('show');
 			}
 		});
 
@@ -92,12 +43,20 @@
 				}
 			});
 		}
+
+		// Supposed to add this custom event listener since game has own preventDefault somewhere
+		const chat = document.querySelector('.ChatComponentStyle-chatWindow');
+		chat.addEventListener('click', (event) => {
+			if (!breeziumSelect.container.contains(event.target) && breeziumSelect.container.classList.contains('show')) {
+				breeziumSelect.container.classList.remove('show');
+			}
+		});
 	}
 
 	/**
 	 * Create a new instance of MutationObserver with a callback function
 	 * to observe changes in the DOM 
-	*/
+	 */
 	const observer = new MutationObserver(function (mutations) {
 		mutations.forEach(function (mutation) {
 			if (mutation.type === 'childList') { // If the change is of type childList

@@ -9,6 +9,15 @@
 		]
 	},
 	{
+		"url": "https://github.com/OrakomoRi/Breezium/blob/main/modules/BreeziumSelect/css/BreeziumSelect.min.css?raw=true",
+		"attributes": [
+			{
+				"name": "data-module",
+				"value": "BreeziumSelect"
+			}
+		]
+	},
+	{
 		"url": "https://github.com/OrakomoRi/Severitium/blob/main/src/General/CommonContainer/CommonContainer.min.css?raw=true"
 	},
 	{

@@ -11,6 +11,17 @@
 	let baseAcceleration = 0.5;
 
 	/**
+	 * @param {Array} starSettings - Array with data
+	 * 
+	 * @param {Array} starSettings.colors - Array with possible colors
+	 * @param {Path2D} starSettings.path - SVG path of star
+	 */
+	const starSettings = {
+		colors: ['#ffffff', '#fec777', '#498fb3', '#77fee1', '#fa8072'],
+		path: new Path2D('M1 .5C.72.5.5.28.5 0 .5.28.28.5 0 .5.28.5.5.72.5 1 .5.72.72.5 1 .5'),
+	};
+
+	/**
 	 * Represents a star with properties and methods for updating and drawing.
 	 */
 	class Star {
@@ -43,11 +54,10 @@
 			this.ID = index;
 
 			// Choose random color for the star
-			const colors = ['#ffffff', '#fec777', '#498fb3', '#77fee1', '#fa8072'];
-			this.C = colors[Math.floor(Math.random() * colors.length)];
+			this.C = starSettings.colors[Math.floor(Math.random() * starSettings.colors.length)];
 
 			// Define the shape of the star (just a path from svg)
-			this.path = new Path2D('M1 .5C.72.5.5.28.5 0 .5.28.28.5 0 .5.28.5.5.72.5 1 .5.72.72.5 1 .5');
+			this.path = starSettings.path;
 
 			// Random scale for the star
 			this.scale = randomNum(2, 8, 2);
@@ -57,8 +67,9 @@
 		 * Draws the star on the canvas
 		 * 
 		 * @param {number} delta - Time elapsed since the last frame, in seconds
+		 * @param {CanvasRenderingContext2D} ctx - The 2D context of the canvas
 		 */
-		draw(delta) {
+		draw(delta, ctx) {
 			if (!this.canvas) return;
 
 			// Make animation "60fps"
@@ -82,9 +93,6 @@
 				delete stars[this.ID];
 				count--;
 			}
-
-			// Get canvas 2D context to draw the star
-			let ctx = this.canvas.getContext('2d');
 
 			// Save the canvas position, scale, etc.
 			ctx.save();
@@ -123,16 +131,15 @@
 		backgroundElement.appendChild(canvasContainer);
 		canvasContainer.appendChild(canvas);
 
-		// Fill the canvas background
-		canvas.getContext('2d').fillStyle = 'rgba(0, 0, 0, .8)';
-		canvas.getContext('2d').fillRect(0, 0, canvas.width, canvas.height);
-
 		// Set canvas dimensions
 		canvas.width = backgroundElement.clientWidth;
 		canvas.height = backgroundElement.clientHeight;
 
+		// Get canvas 2D context to draw
+		const ctx = canvas.getContext('2d');
+
 		// Calculate number of stars to draw
-		let starsToDraw = (canvas.width * canvas.height) / 5000;
+		let starsToDraw = (canvas.width * canvas.height) / 8000;
 
 		let lastTime = performance.now();
 
@@ -147,10 +154,8 @@
 			}
 
 			// Resize canvas if needed
-			if (canvas.width !== backgroundElement.clientWidth) {
+			if (canvas.width !== backgroundElement.clientWidth || canvas.height !== backgroundElement.clientHeight) {
 				canvas.width = backgroundElement.clientWidth;
-			}
-			if (canvas.height !== backgroundElement.clientHeight) {
 				canvas.height = backgroundElement.clientHeight;
 			}
 
@@ -158,9 +163,10 @@
 			const delta = (currentTime - lastTime) / 1000; // Delta time in seconds
 			lastTime = currentTime;
 
-			// Fill the canvas every frame
-			canvas.getContext('2d').fillStyle = 'rgba(0, 0, 0, .8)';
-			canvas.getContext('2d').fillRect(0, 0, canvas.width, canvas.height);
+			// Clear and fill the canvas every frame
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.fillStyle = 'rgba(0, 0, 0, .8)';
+			ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 			// Add new stars and draw existing stars
 			for (let i = count; i < starsToDraw; i++) {
@@ -169,7 +175,7 @@
 			}
 
 			for (const star in stars) {
-				stars[star].draw(delta);
+				stars[star].draw(delta, ctx);
 			}
 
 			// Request the next animation frame
@@ -190,8 +196,10 @@
 
 		// Stop old animation
 		const animationId = backgroundElement.dataset.animationId;
-		cancelAnimationFrame(animationId);
-		backgroundElement.dataset.animationId = null;
+		if (animationId) {
+			cancelAnimationFrame(animationId);
+			backgroundElement.dataset.animationId = null;
+		}
 
 		// Reset global variables
 		resetAnimationState();

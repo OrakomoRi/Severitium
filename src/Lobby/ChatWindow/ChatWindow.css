@@ -54,6 +54,33 @@
 
 /* Chat channel custom selector */
 
+/* Breezium container */
+
+.breezium-select {
+	--breezium-bg-color: var(--severitium-dark-transparent-background3);
+	--breezium-hover-bg-color: var(--severitium-light-transparent-background3);
+	--breezium-border-width: .075em;
+	--breezium-border-radius: var(--severitium-border-radius);
+	--breezium-border-color: var(--severitium-gray-color);
+	--breezium-backdrop-filter: blur(.5em);
+}
+
+/* Breezium selected item */
+
+.breezium-select .breezium-selected {
+	width: 17.5em;
+	font-family: BaseFontBold, FallbackFontBold;
+	font-size: 1.05em;
+	color: var(--severitium-main-color);
+}
+
+/* Breezium option */
+
+.breezium-select .breezium-option {
+	font-family: BaseFontBold, FallbackFontBold;
+	color: var(--severitium-white-text-color);
+}
+
 /* Selector container and all elements inside it */
 
 .severitium-selector-container,
