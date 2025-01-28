@@ -1,7 +1,7 @@
 (function () {
 	/**
 	 * Represents a gear with properties and methods for updating and drawing
-	*/
+	 */
 	class Gear {
 		/**
 		 * Creates a new gear
@@ -12,7 +12,7 @@
 		 * @param {number} radius - The radius of the gear
 		 * @param {number} speed - The rotation speed of the gear
 		 * @param {boolean} direction - The rotation direction (true for clockwise, false for counter-clockwise)
-		*/
+		 */
 		constructor(x, y, size, radius, speed, direction) {
 			this.x = x;  // X-coordinate of the gear's center
 			this.y = y;  // Y-coordinate of the gear's center
@@ -34,17 +34,19 @@
 
 		/**
 		 * Updates the angle of the gear based on its speed and direction
-		*/
-		update() {
-			// Update the angle based on speed and direction
-			this.angle += this.direction ? this.speed : -this.speed;
+		 * 
+		 * @param {number} delta - Time elapsed since the last frame, in seconds
+		 */
+		update(delta) {
+			// Update the angle based on speed, direction, and delta
+			this.angle += (this.direction ? this.speed : -this.speed) * delta * 60;
 		}
 
 		/**
 		 * Draws the gear on the given canvas context
 		 * 
-		 * @param {CanvasRenderingContext2D} ctx - The canvas rendering context.
-		*/
+		 * @param {CanvasRenderingContext2D} ctx - The canvas rendering context
+		 */
 		draw(ctx) {
 			ctx.save(); // Save the current canvas state
 			ctx.fillStyle = this.C; // Set the fill color
@@ -61,7 +63,7 @@
 	 * Initializes the animated background with stars
 	 * 
 	 * @param {HTMLElement} backgroundElement - The element to append the canvas to
-	*/
+	 */
 	function animatedBackground(backgroundElement) {
 		if (!backgroundElement) return;
 
@@ -82,10 +84,11 @@
 
 		// A variable storing groups of gears
 		let groups = [];
+		let lastTime = performance.now();
 
 		/**
 		 * Initializes the canvas and generates gear groups
-		*/
+		 */
 		function initialize() {
 			canvas.width = window.innerWidth; // Set canvas width to window width
 			canvas.height = window.innerHeight; // Set canvas height to window height
@@ -110,7 +113,7 @@
 		 * Generates a random number of gears based on weighted probabilities
 		 * 
 		 * @returns {number} - A random number of gears
-		*/
+		 */
 		function getRandomNumber(min, max, mode) {
 			const numbers = []; // Array to hold numbers and their weights
 			for (let i = min; i <= max; i++) { // Generate numbers from min number to max number
@@ -144,7 +147,7 @@
 		 * Generates a new group of gears
 		 * 
 		 * @returns {Gear[]} - An array representing the group of gears
-		*/
+		 */
 		function generateGroup() {
 			const group = []; // Array to hold the gears in the group
 			const baseSpeed = parseFloat((Math.random() * 0.01 + 0.05).toFixed(2)); // Random base speed for the group
@@ -193,7 +196,7 @@
 		 * 
 		 * @param {number} index - The current number of gears in the group
 		 * @returns {number} - The probability of generating another gear
-		*/
+		 */
 		function getGearGenerationProbability(index) {
 			// Probabilities for generating more gears
 			const probabilities = [1, 1, 0.975, 0.95, 0.9, 0.85, 0.75, 0.65, 0.575, 0.5, 0.375, 0.25, 0.175, 0.10];
@@ -255,54 +258,56 @@
 		 * Updates and draws a gear on the canvas
 		 * 
 		 * @param {Gear} gear - The gear to be drawn
-		*/
-		function drawGear(gear) {
-			gear.update(); // Update the gear's angle
+		 * @param {number} delta - Time elapsed since the last frame, in seconds
+		 */
+		function drawGear(gear, delta) {
+			gear.update(delta); // Update the gear's angle
 			gear.draw(ctx); // Draw the gear on the canvas
 		}
 
 		/**
 		 * Animates the gears by clearing the canvas and redrawing them
-		*/
-		function animate() {
+		 * 
+		 * @param {number} timestamp - Current timestamp provided by requestAnimationFrame
+		 */
+		function animate(timestamp) {
+			const delta = (timestamp - lastTime) / 1000; // Calculate time delta
+			lastTime = timestamp; // Update lastTime
+
 			ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
 			groups.forEach(group => {
-				group.forEach(gear => drawGear(gear)); // Draw each gear in each group
+				group.forEach(gear => drawGear(gear, delta)); // Draw each gear in each group
 			});
+
+			// Request the next animation frame
+			requestAnimationFrame(animate);
 		}
 
 		initialize(); // Initialize the canvas and generate the gears
 
-		// Interval to repeat the function
-		const interval = setInterval(animate, 1000 / 60); // Animate at 60 FPS
-
-		// Save references to the canvas and interval ID for later use
-		backgroundElement._gearCanvas = canvas;
-		backgroundElement._gearIntervalId = interval;
+		// Start the animation
+		requestAnimationFrame(animate);
 	}
 
 	/**
 	 * Removes the animated background canvas from the DOM
 	 * 
 	 * @param {HTMLElement} backgroundElement - The element containing the canvas
-	*/
+	 */
 	function animatedBackgroundDelete(backgroundElement) {
 		if (!backgroundElement) return;
 
-		// Clear the interval to stop the animation
-		clearInterval(backgroundElement._gearIntervalId);
-
 		// Remove the canvas element
-		if (backgroundElement._gearCanvas) {
-			backgroundElement.removeChild(backgroundElement._gearCanvas);
-			backgroundElement._gearCanvas = null;
+		const canvas = backgroundElement.querySelector('.severitium-gear-canvas');
+		if (canvas) {
+			backgroundElement.removeChild(canvas);
 		}
 	}
 
 	/**
 	 * Create a new instance of MutationObserver with a callback function
 	 * to observe changes in the DOM 
-	*/
+	 */
 	const observer = new MutationObserver(function (mutations) {
 		const selector = '.Common-container:not(.Common-entranceBackground):not(:has(.Common-entranceGradient)):not(:has(.MainScreenComponentStyle-playButtonContainer))';
 
@@ -311,8 +316,10 @@
 				mutation.addedNodes.forEach(function (node) { // Iterate through added nodes
 					if (node.nodeType === Node.ELEMENT_NODE) { // If it's an element node
 						// Check if the added node itself matches the selector or any descendant matches the selector
-						if (node.matches(selector) || node.querySelector(selector)) {
+						if (node.matches(selector)) {
 							animatedBackground(node);
+						} else if (node.querySelector(selector)) {
+							animatedBackground(node.querySelector(selector));
 						}
 					}
 				});

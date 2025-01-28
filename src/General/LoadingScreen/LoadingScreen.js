@@ -10,13 +10,13 @@
 
 	/**
 	 * Represents a star with properties and methods for updating and drawing.
-	*/
+	 */
 	class Star {
 		/**
 		 * Creates a new star
 		 * 
 		 * @param {HTMLElement} canvas - The canvas element to draw the star on
-		*/
+		 */
 		constructor(canvas) {
 			// Use the global canvas
 			this.canvas = canvas;
@@ -52,18 +52,20 @@
 		}
 
 		/**
-		 * Draws the star on the canvas.
-		*/
-		draw() {
+		 * Draws the star on the canvas
+		 * 
+		 * @param {number} delta - Time elapsed since the last frame, in seconds
+		 */
+		draw(delta) {
 			if (!this.canvas) return;
 
-			// Update position based on velocity
-			this.X += this.SX;
-			this.Y += this.SY;
+			// Update position based on velocity and delta
+			this.X += this.SX * delta * 60;
+			this.Y += this.SY * delta * 60;
 
 			// Update velocity with acceleration
-			this.SX += this.SX / (50 / acceleration);
-			this.SY += this.SY / (50 / acceleration);
+			this.SX += (this.SX / (50 / acceleration)) * delta * 60;
+			this.SY += (this.SY / (50 / acceleration)) * delta * 60;
 
 			// Check if star is out of bounds
 			if (
@@ -98,7 +100,7 @@
 	 * Initializes the animated background with stars
 	 * 
 	 * @param {HTMLElement} backgroundElement - The element to append the canvas to
-	*/
+	 */
 	function animatedBackground(backgroundElement) {
 		if (!backgroundElement) return;
 
@@ -127,17 +129,15 @@
 		// Calculate number of stars to draw
 		let starsToDraw = (canvas.width * canvas.height) / 5000;
 
-		/**
-		 * Function to draw stars on canvas.
-		*/
-		function draw() {
-			if (!canvas) {
-				clearInterval(interval);
-				return;
-			}
+		let lastTime = performance.now();
 
-			if (!canvas.getContext) {
-				clearInterval(interval);
+		/**
+		 * Animates the gears by clearing the canvas and redrawing them
+		 * 
+		 * @param {number} timestamp - Current timestamp provided by requestAnimationFrame
+		 */
+		function draw(timestamp) {
+			if (!canvas || !canvas.getContext) {
 				return;
 			}
 
@@ -148,6 +148,10 @@
 			if (canvas.height !== backgroundElement.clientHeight) {
 				canvas.height = backgroundElement.clientHeight;
 			}
+
+			// Calculate time delta
+			const delta = (timestamp - lastTime) / 1000; // Delta time in seconds
+			lastTime = timestamp;
 
 			// Fill the canvas every frame
 			canvas.getContext('2d').fillStyle = 'rgba(0, 0, 0, .8)';
@@ -160,49 +164,38 @@
 			}
 
 			for (const star in stars) {
-				stars[star].draw();
+				stars[star].draw(delta);
 			}
+
+			// Request the next animation frame
+			requestAnimationFrame(draw);
 		}
 
-		// Interval to repeat the function
-		const interval = setInterval(draw, 20);
-
-		// Storing interval and canvas selector
-		backgroundElement.dataset.interval = interval;
-		backgroundElement.dataset.canvasClass = canvas.className;
+		// Start the animation
+		requestAnimationFrame(draw);
 	}
 
 	/**
 	 * Removes the animated background canvas from the DOM
 	 * 
 	 * @param {HTMLElement} backgroundElement - The element containing the canvas
-	*/
+	 */
 	function animatedBackgroundDelete(backgroundElement) {
 		if (!backgroundElement) return;
 
-		// Get stored values
-		const interval = backgroundElement.dataset.interval;
-		const canvasClass = backgroundElement.dataset.canvasClass;
+		// Get the canvas element
+		const canvas = backgroundElement.querySelector('.severitium-star-canvas');
 
-		// Clear interval and remove canvas element
-		clearInterval(interval);
-
-		if (canvasClass) {
-			const canvas = document.querySelector(canvasClass);
-			if (canvas) {
-				canvas.parentNode.remove();
-			}
+		if (canvas) {
+			canvas.parentNode.remove();
 		}
-
-		delete backgroundElement.dataset.interval;
-		delete backgroundElement.dataset.canvasClass;
 	}
 
 	/**
 	 * Replaces the original progress bar with a custom one
 	 * 
 	 * @param {HTMLElement} element - The original progress bar element
-	*/
+	 */
 	function replaceOriginalProgress(element) {
 		// New progress div
 		const newProgress = document.createElement('div');
@@ -225,7 +218,7 @@
 	 * @param {number} max - The maximum value
 	 * @param {number} precision - The number of digits after the point
 	 * @returns {number} - A random number
-	*/
+	 */
 	function randomNum(min, max, precision) {
 		return Math.max((Math.random() * max), min).toFixed(precision);
 	}
@@ -233,7 +226,7 @@
 	/**
 	 * Create a new instance of MutationObserver with a callback function
 	 * to observe changes in the DOM 
-	*/
+	 */
 	const observer = new MutationObserver(function (mutations) {
 		mutations.forEach(function (mutation) {
 			if (mutation.type === 'childList' && mutation.addedNodes.length > 0) { // If the change is of type childList

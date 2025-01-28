@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Common Container
-// @version			2.0.3
+// @version			2.1.0
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 
@@ -12,6 +12,8 @@
 // @connect			raw.githubusercontent.com
 // @connect			i.imgur.com
 // @connect			cdn.jsdelivr.net
+
+// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/General/CommonContainer/CommonContainer.min.js?raw=true
 
 // @run-at			document-start
 // @grant			GM_xmlhttpRequest
