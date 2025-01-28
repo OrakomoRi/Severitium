@@ -88,8 +88,6 @@
 					for (const sortElement of sortElements) {
 						// Initialize the sort state for the new sort container
 						initializeSortState(sortElement);
-						// Add a click event listener to the new sort container
-						sortElement.addEventListener('click', handleSortClick);
 						// Add custom styles for this sort element
 						addStylesForSortElement(sortElement);
 					}
@@ -134,9 +132,7 @@
 	 * 
 	 * @param {MouseEvent} event - The click event object.
 	 */
-	function handleSortClick(event) {
-		const sortElement = event.currentTarget;
-
+	function handleSortClick(sortElement) {
 		// Reset the sort state of all other sort containers
 		document.querySelectorAll('.TableComponentStyle-commonSort').forEach((element) => {
 			if (element !== sortElement) {
@@ -153,4 +149,20 @@
 			sortElement.setAttribute(customProperty, customPropertyStates.down);
 		}
 	}
+
+	// Add event listener on body to delegate click event for th
+	document.body.addEventListener('click', (event) => {
+		// If the click was inside th
+		const thElement = event.target.closest('th');
+		// Return if not
+		if (!thElement) return;
+	
+		// If the th element has element with needed selector inside it
+		const sortElement = thElement.querySelector('.TableComponentStyle-commonSort');
+		if (sortElement) {
+			// Call the function
+			handleSortClick(sortElement);
+		}
+	});
+	
 })();
