@@ -62,12 +62,12 @@
 			if (!this.canvas) return;
 
 			// Update position based on velocity and delta
-			this.X += this.SX * delta * 60;
-			this.Y += this.SY * delta * 60;
+			this.X += this.SX * delta;
+			this.Y += this.SY * delta;
 
 			// Update velocity with acceleration
-			this.SX += (this.SX / (smoothnessFactor / baseAcceleration)) * delta * 60;
-			this.SY += (this.SY / (smoothnessFactor / baseAcceleration)) * delta * 60;
+			this.SX += (this.SX / (smoothnessFactor / baseAcceleration)) * delta;
+			this.SY += (this.SY / (smoothnessFactor / baseAcceleration)) * delta;
 
 			// Check if star is out of bounds
 			if (
@@ -136,9 +136,9 @@
 		/**
 		 * Animates the gears by clearing the canvas and redrawing them
 		 * 
-		 * @param {number} timestamp - Current timestamp provided by requestAnimationFrame
+		 * @param {number} currentTime - Current timestamp provided by requestAnimationFrame
 		 */
-		function draw(timestamp) {
+		function draw(currentTime) {
 			if (!canvas || !canvas.getContext) {
 				return;
 			}
@@ -152,8 +152,8 @@
 			}
 
 			// Calculate time delta
-			const delta = (timestamp - lastTime) / 1000; // Delta time in seconds
-			lastTime = timestamp;
+			const delta = (currentTime - lastTime) / 1000; // Delta time in seconds
+			lastTime = currentTime;
 
 			// Fill the canvas every frame
 			canvas.getContext('2d').fillStyle = 'rgba(0, 0, 0, .8)';
@@ -166,11 +166,11 @@
 			}
 
 			for (const star in stars) {
-				stars[star].draw(delta);
+				stars[star].draw(Math.max(delta, 0.001));
 			}
 
 			// Request the next animation frame
-			requestAnimationFrame(draw);
+			backgroundElement.dataset.animationId = requestAnimationFrame(draw);
 		}
 
 		// Storing animation id
@@ -188,6 +188,7 @@
 		// Stop old animation
 		const animationId = backgroundElement.dataset.animationId;
 		cancelAnimationFrame(animationId);
+		backgroundElement.dataset.animationId = null;
 
 		// Reset global variables
 		resetAnimationState();
