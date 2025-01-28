@@ -24,15 +24,15 @@
 		breeziumSelect.render(originalSelectContainer.parentNode, originalSelectContainer.nextSibling);
 
 		// Add a click handler for the custom selector
-		const customDropdown = breeziumSelect.container.querySelector('.breezium-selected');
-		customDropdown.addEventListener('click', () => {
+		const selectedOption = breeziumSelect.container.querySelector('.breezium-selected');
+		selectedOption.addEventListener('click', () => {
 			// Check if clan chat is open
 			if (clanChannel && clanChannel.dataset.state === 'selected') {
 				// Find option with "selected" text and activate
-				const selectedOptionText = customDropdown.querySelector('.severitium-selected-text').textContent;
+				const selectedOptionText = selectedOption.textContent;
 				for (const option of originalSelect.options) {
 					if (option.textContent === selectedOptionText) {
-						originalSelect.value = matchingOption.value;
+						originalSelect.value = option.value;
 						originalSelect.dispatchEvent(new Event('change', { bubbles: true }));
 						break;
 					}
