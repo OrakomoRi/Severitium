@@ -8,7 +8,7 @@
 	// Represents the coefficient for acceleration smoothing
 	const smoothnessFactor = 50;
 	// Represents the basic acceleration of stars
-	let baseAcceleration = 0.05;
+	let baseAcceleration = 0.1;
 
 	/**
 	 * Represents a star with properties and methods for updating and drawing.
@@ -173,8 +173,8 @@
 			requestAnimationFrame(draw);
 		}
 
-		// Start the animation
-		requestAnimationFrame(draw);
+		// Storing animation id
+		backgroundElement.dataset.animationId = requestAnimationFrame(draw);
 	}
 
 	/**
@@ -185,6 +185,13 @@
 	function animatedBackgroundDelete(backgroundElement) {
 		if (!backgroundElement) return;
 
+		// Stop old animation
+		const animationId = backgroundElement.dataset.animationId;
+		cancelAnimationFrame(animationId);
+
+		// Reset global variables
+		resetAnimationState();
+
 		// Get the canvas element
 		const canvas = backgroundElement.querySelector('.severitium-star-canvas');
 
@@ -192,6 +199,12 @@
 			canvas.parentNode.remove();
 		}
 	}
+
+	function resetAnimationState() {
+		stars = {};
+		index = 0;
+		count = 0;
+	}	
 
 	/**
 	 * Replaces the original progress bar with a custom one
