@@ -71,6 +71,12 @@
 	width: 17.5em;
 	font-family: BaseFontBold, FallbackFontBold;
 	font-size: 1.05em;
+	color: var(--severitium-white-text-color);
+}
+
+/* Active selected item (not opened clan chat) */
+
+.breezium-select .breezium-selected[data-state='selected'] {
 	color: var(--severitium-main-color);
 }
 

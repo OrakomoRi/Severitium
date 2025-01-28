@@ -13,34 +13,42 @@
 			code: option.value
 		}));
 
+		// Take selected option as default option
+		const defaultOption = {
+			name: originalSelect.options[originalSelect.selectedIndex].textContent,
+			value: originalSelect.value
+		};
+
 		// Create an instance of BreeziumSelect
-		const breeziumSelect = new BreeziumSelect(options, (selectedCode) => {
-			// Update the value of the original select
-			originalSelect.value = selectedCode;
-			originalSelect.dispatchEvent(new Event('change', { bubbles: true }))
-		}, originalSelect.options[originalSelect.selectedIndex].textContent);
+		const breeziumSelect = new BreeziumSelect(
+			options,
+			(selectedCode) => {
+				// Update the value of the original select
+				originalSelect.value = selectedCode;
+				originalSelect.dispatchEvent(new Event('change', { bubbles: true }));
+			},
+			defaultOption
+		);
 
 		// Insert a custom select into the DOM
 		breeziumSelect.render(originalSelectContainer.parentNode, originalSelectContainer.nextSibling);
 
+		const selectedOption = breeziumSelect.selected;
+		selectedOption.dataset.state = 'selected';
+
 		// Add a click handler for the custom selector
-		const selectedOption = breeziumSelect.container.querySelector('.breezium-selected');
 		selectedOption.addEventListener('click', () => {
 			// Check if clan chat is open
 			if (clanChannel && clanChannel.dataset.state === 'selected') {
-				// Find option with "selected" text and activate
-				const selectedOptionText = selectedOption.textContent;
-				for (const option of originalSelect.options) {
-					if (option.textContent === selectedOptionText) {
-						originalSelect.value = option.value;
-						originalSelect.dispatchEvent(new Event('change', { bubbles: true }));
-						break;
-					}
-				}
+				// Find select active option
+				originalSelect.value = selectedOption.dataset.value;
+				originalSelect.dispatchEvent(new Event('change', { bubbles: true }));
 
 				// Clan channel should be closed, and custom select should not open
 				clanChannel.dataset.state = '';
 				breeziumSelect.container.classList.remove('show');
+
+				selectedOption.dataset.state = 'selected';
 			}
 		});
 
@@ -51,6 +59,7 @@
 			clanChannel.addEventListener('click', () => {
 				if (clanChannel.dataset.state !== 'selected') {
 					clanChannel.dataset.state = 'selected';
+					selectedOption.dataset.state = '';
 				}
 			});
 		}
