@@ -216,9 +216,22 @@
 	color: var(--severitium-white-text-color);
 }
 
+/* Clan channel button when selected chat clan tab */
+
 .ChatComponentStyle-channels .ChatComponentStyle-clanChannel[data-state='selected'] {
 	color: var(--severitium-main-color);
 	pointer-events: none;
+}
+
+/* Chat messages container */
+
+.ChatComponentStyle-messagesContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-end;
+	margin: 0;
+	margin-right: .5em;
 }
 
 /* Single chat message */
