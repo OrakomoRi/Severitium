@@ -8,7 +8,7 @@
 	// Represents the coefficient for acceleration smoothing
 	const smoothnessFactor = 50;
 	// Represents the basic acceleration of stars
-	let baseAcceleration = 0.1;
+	let baseAcceleration = 0.5;
 
 	/**
 	 * Represents a star with properties and methods for updating and drawing.
@@ -60,6 +60,9 @@
 		 */
 		draw(delta) {
 			if (!this.canvas) return;
+
+			// Make animation "60fps"
+			delta *= 60;
 
 			// Update position based on velocity and delta
 			this.X += this.SX * delta;
@@ -166,7 +169,7 @@
 			}
 
 			for (const star in stars) {
-				stars[star].draw(Math.max(delta, 0.001));
+				stars[star].draw(delta);
 			}
 
 			// Request the next animation frame
