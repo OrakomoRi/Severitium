@@ -28,6 +28,17 @@
 		customDropdown.addEventListener('click', () => {
 			// Check if clan chat is open
 			if (clanChannel && clanChannel.dataset.state === 'selected') {
+				// Find option with "selected" text and activate
+				const selectedOptionText = customDropdown.querySelector('.severitium-selected-text').textContent;
+				for (const option of originalSelect.options) {
+					if (option.textContent === selectedOptionText) {
+						originalSelect.value = matchingOption.value;
+						originalSelect.dispatchEvent(new Event('change', { bubbles: true }));
+						break;
+					}
+				}
+
+				// Clan channel should be closed, and custom select should not open
 				clanChannel.dataset.state = '';
 				breeziumSelect.container.classList.remove('show');
 			}
