@@ -5,8 +5,10 @@
 	let index = 0;
 	// Represents the count of stars currently present
 	let count = 0;
-	// Represents the acceleration factor for star movement
-	let acceleration = 0.5;
+	// Represents the coefficient for acceleration smoothing
+	const smoothnessFactor = 50;
+	// Represents the basic acceleration of stars
+	let baseAcceleration = 0.05;
 
 	/**
 	 * Represents a star with properties and methods for updating and drawing.
@@ -64,8 +66,8 @@
 			this.Y += this.SY * delta * 60;
 
 			// Update velocity with acceleration
-			this.SX += (this.SX / (50 / acceleration)) * delta * 60;
-			this.SY += (this.SY / (50 / acceleration)) * delta * 60;
+			this.SX += (this.SX / (smoothnessFactor / baseAcceleration)) * delta * 60;
+			this.SY += (this.SY / (smoothnessFactor / baseAcceleration)) * delta * 60;
 
 			// Check if star is out of bounds
 			if (
