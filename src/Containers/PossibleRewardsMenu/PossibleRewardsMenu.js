@@ -98,12 +98,12 @@
 	}
 
 	/**
-	 * Navigate to the previous card.
-	 */
+ * Navigate to the previous card.
+ */
 	function navigateToPreviousCard() {
-		const elements = document.querySelectorAll(cardSelector);
+		const elements = Array.from(document.querySelectorAll(cardSelector));
 		const activeElement = document.querySelector(`${cardSelector}[data-state="active"]`);
-		let activeIndex = Array.from(elements).indexOf(activeElement);
+		let activeIndex = elements.indexOf(activeElement);
 
 		if (activeIndex === -1) {
 			activeIndex = 0;
@@ -111,11 +111,8 @@
 			activeIndex = (activeIndex - 1 + elements.length) % elements.length;
 		}
 
-		applyDataState(elements[activeIndex], true);
 		elements.forEach((element, index) => {
-			if (index !== activeIndex) {
-				applyDataState(element, false);
-			}
+			applyDataState(element, index === activeIndex);
 		});
 	}
 
@@ -123,9 +120,9 @@
 	 * Navigate to the next card.
 	 */
 	function navigateToNextCard() {
-		const elements = document.querySelectorAll(cardSelector);
+		const elements = Array.from(document.querySelectorAll(cardSelector));
 		const activeElement = document.querySelector(`${cardSelector}[data-state="active"]`);
-		let activeIndex = Array.from(elements).indexOf(activeElement);
+		let activeIndex = elements.indexOf(activeElement);
 
 		if (activeIndex === -1) {
 			activeIndex = 0;
@@ -133,13 +130,11 @@
 			activeIndex = (activeIndex + 1) % elements.length;
 		}
 
-		applyDataState(elements[activeIndex], true);
 		elements.forEach((element, index) => {
-			if (index !== activeIndex) {
-				applyDataState(element, false);
-			}
+			applyDataState(element, index === activeIndex);
 		});
 	}
+
 
 	/**
 	 * Add event listeners for click and keydown events.
@@ -186,7 +181,7 @@
 					if ((node.matches && node.matches(cardSelector)) || (node.querySelector && node.querySelector(rewardsContainerSelector))) {
 						addEventListeners(); // Add event listeners if the container is present
 					}
-					
+
 					// Process the added node if it matches the selector
 					if (node.matches && node.matches(cardSelector)) {
 						processElement(node);
