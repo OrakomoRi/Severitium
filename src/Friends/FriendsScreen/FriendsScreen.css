@@ -200,7 +200,7 @@
 
 /* Button */
 
-.FriendListComponentStyle-buttonAddFriends {
+.FriendListComponentStyle-buttonAddFriends.FriendListComponentStyle-buttonAddFriends {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -212,14 +212,14 @@
 
 /* Button on hover */
 
-.FriendListComponentStyle-buttonAddFriends:hover {
+.FriendListComponentStyle-buttonAddFriends.FriendListComponentStyle-buttonAddFriends:hover {
 	box-shadow: none;
 	border: var(--severitium-green-button-border-color-hover) solid .1em;
 }
 
 /* Button's icon (add friends) */
 
-.FriendListComponentStyle-buttonAddFriends > span {
+.FriendListComponentStyle-buttonAddFriends.FriendListComponentStyle-buttonAddFriends > span {
 	height: 1.5em;
 	width: 3em;
 	background-color: var(--severitium-green-button-color);
@@ -235,7 +235,7 @@
 
 /* Button's original image */
 
-.FriendListComponentStyle-buttonAddFriends > img {
+.FriendListComponentStyle-buttonAddFriends.FriendListComponentStyle-buttonAddFriends > img {
 	display: none;
 }
 
@@ -243,7 +243,7 @@
 
 /* Button */
 
-.FriendListComponentStyle-buttonCloseAddFriends {
+.FriendListComponentStyle-buttonCloseAddFriends.FriendListComponentStyle-buttonCloseAddFriends {
 	outline: none;
 	box-shadow: none;
 	background: var(--severitium-gray-button-background);
@@ -254,7 +254,7 @@
 
 /* Button on hover */
 
-.FriendListComponentStyle-buttonCloseAddFriends:hover {
+.FriendListComponentStyle-buttonCloseAddFriends.FriendListComponentStyle-buttonCloseAddFriends:hover {
 	box-shadow: none;
 	background: var(--severitium-gray-button-background);
 	border: var(--severitium-gray-button-border-color-hover) solid .1em;
@@ -262,7 +262,7 @@
 
 /* Button icon (cross) */
 
-.FriendListComponentStyle-buttonCloseAddFriends > span {
+.FriendListComponentStyle-buttonCloseAddFriends.FriendListComponentStyle-buttonCloseAddFriends > span {
 	height: 1.5em;
 	width: 1.5em;
 	background-color: var(--severitium-gray-button-color);
@@ -278,7 +278,7 @@
 
 /* Button's original image */
 
-.FriendListComponentStyle-buttonCloseAddFriends > img {
+.FriendListComponentStyle-buttonCloseAddFriends.FriendListComponentStyle-buttonCloseAddFriends > img {
 	display: none;
 }
 
@@ -286,7 +286,7 @@
 
 /* Disabled button */
 
-.FriendListComponentStyle-containerButtonFriends[class*='disabled'i] {
+.FriendListComponentStyle-containerButtonFriends.FriendListComponentStyle-containerButtonFriends[class*='disabled'i] {
 	background-color: var(--severitium-dark-transparent-background1);
 	color: var(--severitium-white-text-color);
 	border: none;
@@ -298,7 +298,7 @@
 
 /* Button */
 
-.FriendListComponentStyle-containerButtonFriends[class*='nofound'i] {
+.FriendListComponentStyle-containerButtonFriends.FriendListComponentStyle-containerButtonFriends[class*='nofound'i] {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -309,7 +309,7 @@
 
 /* Button on hover */
 
-.FriendListComponentStyle-containerButtonFriends[class*='nofound'i]:hover {
+.FriendListComponentStyle-containerButtonFriends.FriendListComponentStyle-containerButtonFriends[class*='nofound'i]:hover {
 	background: var(--severitium-red-button-background);
 	border: var(--severitium-red-button-border-color-hover) solid .1em;
 }
@@ -318,7 +318,7 @@
 
 /* Button */
 
-.FriendListComponentStyle-containerButtonFriends[class*='foundadd'i] {
+.FriendListComponentStyle-containerButtonFriends.FriendListComponentStyle-containerButtonFriends[class*='foundadd'i] {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -329,14 +329,14 @@
 
 /* Button on hover */
 
-.FriendListComponentStyle-containerButtonFriends[class*='foundadd'i]:hover {
+.FriendListComponentStyle-containerButtonFriends.FriendListComponentStyle-containerButtonFriends[class*='foundadd'i]:hover {
 	background: var(--severitium-green-button-background);
 	border: var(--severitium-green-button-border-color-hover) solid .1em;
 }
 
 /* Button's icon */
 
-.FriendListComponentStyle-containerButtonFriends > span {
+.FriendListComponentStyle-containerButtonFriends.FriendListComponentStyle-containerButtonFriends > span {
 	-webkit-mask-position: center center;
 			mask-position: center center;
 	-webkit-mask-repeat: no-repeat;
@@ -347,7 +347,7 @@
 
 /* Disabled button icon (add friends) */
 
-.FriendListComponentStyle-containerButtonFriends[class*='disabled'i] > span {
+.FriendListComponentStyle-containerButtonFriends.FriendListComponentStyle-containerButtonFriends[class*='disabled'i] > span {
 	height: 1.5em;
 	width: 3em;
 	background-color: var(--severitium-gray-button-color);
@@ -357,7 +357,7 @@
 
 /* No user button's icon (cross) */
 
-.FriendListComponentStyle-containerButtonFriends[class*='nofound'i] > span {
+.FriendListComponentStyle-containerButtonFriends.FriendListComponentStyle-containerButtonFriends[class*='nofound'i] > span {
 	height: 2em;
 	width: 2em;
 	background-color: var(--severitium-red-button-color);
@@ -367,7 +367,7 @@
 
 /* Can add button's icon (checkmark) */
 
-.FriendListComponentStyle-containerButtonFriends[class*='foundadd'i] > span {
+.FriendListComponentStyle-containerButtonFriends.FriendListComponentStyle-containerButtonFriends[class*='foundadd'i] > span {
 	height: 2em;
 	width: 2em;
 	background-color: var(--severitium-green-button-color);
@@ -377,7 +377,7 @@
 
 /* Button's original image */
 
-.FriendListComponentStyle-containerButtonFriends > img {
+.FriendListComponentStyle-containerButtonFriends.FriendListComponentStyle-containerButtonFriends > img {
 	display: none;
 }
 

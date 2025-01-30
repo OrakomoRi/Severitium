@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Friends Screen
-// @version			1.1.7
+// @version			1.1.8
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 
