@@ -90,9 +90,9 @@
 	 * @param {KeyboardEvent} event - The keyboard event.
 	 */
 	function handleKeydown(event) {
-		if (event.key === 'q' || event.key === 'Q') {
+		if (event.code === 'KeyQ') {
 			navigateToPreviousCard();
-		} else if (event.key === 'e' || event.key === 'E') {
+		} else if (event.code === 'KeyE') {
 			navigateToNextCard();
 		}
 	}

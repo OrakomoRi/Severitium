@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Possible Rewards Menu
-// @version			1.0.0
+// @version			1.0.1
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 
@@ -12,7 +12,7 @@
 // @connect			raw.githubusercontent.com
 // @connect			cdn.jsdelivr.net
 
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Containers/PossibleRewardsScreen/PossibleRewardsMenu.min.js?raw=true
+// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Containers/PossibleRewardsMenu/PossibleRewardsMenu.min.js?raw=true
 
 // @run-at			document-start
 // @grant			GM_xmlhttpRequest
