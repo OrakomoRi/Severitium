@@ -6,25 +6,12 @@
 	const selector = '.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div';
 
 	/**
-	 * Apply styles to an element based on its active state.
-	 * @param {HTMLElement} element - The element to style.
+	 * Apply data-state attribute to an element based on its active state.
+	 * @param {HTMLElement} element - The element to update.
 	 * @param {boolean} isActive - Whether the element is active.
 	 */
-	function applyStyles(element, isActive) {
-		const styles = isActive
-			? `
-				box-shadow: none;
-                background-color: var(--severitium-light-transparent-background3);
-                border: .1em solid var(--severitium-light-gray-color);
-                pointer-events: none;
-            `
-			: `
-				box-shadow: none;
-                background-color: var(--severitium-dark-transparent-background2);
-                border: .1em solid var(--severitium-gray-color);
-            `;
-
-		element.setAttribute('style', styles);
+	function applyDataState(element, isActive) {
+		element.setAttribute('data-state', isActive ? 'active' : 'inactive');
 	}
 
 	/**
@@ -37,15 +24,15 @@
 
 		const elements = document.querySelectorAll(selector);
 
-		// Apply inactive styles to all elements except the clicked one
+		// Apply inactive state to all elements except the clicked one
 		for (const element of elements) {
 			const isActive = element === clickedElement;
-			applyStyles(element, isActive);
+			applyDataState(element, isActive);
 		}
 	});
 
 	/**
-	 * Process a new element to apply styles and attach event listeners.
+	 * Process a new element to apply data-state and attach event listeners.
 	 * @param {HTMLElement} element - The new element to process.
 	 */
 	function processElement(element) {
@@ -53,7 +40,7 @@
 
 		// Check if the element is active based on its box-shadow
 		const isActive = window.getComputedStyle(element).boxShadow.includes(activeColor);
-		applyStyles(element, isActive);
+		applyDataState(element, isActive);
 	}
 
 	/**

@@ -179,15 +179,36 @@
 	outline: none;
 	background: none;
 	border-radius: var(--severitium-border-radius);
+	border-width: .1em;
+	border-style: solid;
 	-webkit-backdrop-filter: blur(.25em);
 			backdrop-filter: blur(.25em);
 	transition: border-color .2s ease, background-color .2s ease;
 }
 
+/* Styles for the active item */
+
+.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div[data-state="active"] {
+    box-shadow: none;
+    background-color: var(--severitium-light-transparent-background3);
+    border-color: var(--severitium-light-gray-color);
+    pointer-events: none;
+}
+
+/* Styles for inactive item */
+
+.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div[data-state="inactive"] {
+    box-shadow: none;
+    background-color: var(--severitium-dark-transparent-background2);
+    border-color: var(--severitium-gray-color);
+}
+
 /* Item of possible rewards on hover */
 
 .ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div:hover {
-	border: .1em solid var(--severitium-main-color);
+	border-width: .1em;
+	border-style: solid;
+	border-color: var(--severitium-main-color);
 }
 
 /* Item probability block */
