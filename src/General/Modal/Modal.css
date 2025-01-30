@@ -295,5 +295,13 @@
 /* Tooltip inner text */
 
 .TooltipStyle-tooltip > div > span {
+	font-size: 1em;
+	color: var(--severitium-white-text-color);
+}
+
+/* Tooltip content (e.g. text) */
+
+.TooltipStyle-tooltip p.TooltipStyle-content {
+	font-size: 1em;
 	color: var(--severitium-white-text-color);
 }
