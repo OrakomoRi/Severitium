@@ -16,6 +16,8 @@
 	--severitium-green-text-color: rgb(110, 255, 100);
 	--severitium-blue-text-color: rgb(100, 170, 255);
 	--severitium-orange-text-color: rgb(255, 150, 100);
+	--severitium-purple-text-color: rgb(200, 115, 225);
+	--severitium-light-blue-text-color: rgb(120, 190, 225);
 
 	/* Some highlighting colors */
 
@@ -48,6 +50,8 @@
 	--severitium-red-color: rgb(225, 75, 75);
 	--severitium-yellow-color: rgb(225, 205, 75);
 	--severitium-light-blue-color: rgb(75, 162, 225);
+	--severitium-purple-color: rgb(165, 30, 200);
+	--severitium-blue-color: rgb(110, 100, 255);
 
 
 

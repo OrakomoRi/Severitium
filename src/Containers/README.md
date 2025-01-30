@@ -7,3 +7,4 @@ Stylization of all windows related to containers and their opening. The appearan
 - [Containers opening](/src/Containers/ContainersOpening/README.md)
 - [Containers screen](/src/Containers/ContainersScreen/README.md)
 - [Possible rewards screen](/src/Containers/PossibleRewardsScreen/README.md)
+- [Possible rewards menu](/src/Containers/PossibleRewardsMenu/README.md)
