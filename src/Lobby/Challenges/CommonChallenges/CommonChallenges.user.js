@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Common Challenges
-// @version			1.1.6
+// @version			1.1.7
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 
