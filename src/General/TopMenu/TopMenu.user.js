@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Top Menu
-// @version			1.3.1
+// @version			1.3.2
 // @description		Restyles the common look of the top menu
 // @author			OrakomoRi
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Clan Modal
-// @version			1.2.2
+// @version			1.2.3
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 

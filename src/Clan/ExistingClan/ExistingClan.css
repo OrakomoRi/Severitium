@@ -826,8 +826,8 @@
 /* Icon if the input is correct */
 
 .ClanProfileEditComponentStyle-editProfile .SearchInputComponentStyle-searchInput:not(:has(+ span)) input:has(+ div[class*='image'i]) + div[class*='image'i] {
-	-webkit-mask-image: url('data:image/svg+xml,<svg width="8" height="8" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="4" fill="white"/></svg>');
-			mask-image: url('data:image/svg+xml,<svg width="8" height="8" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="4" fill="white"/></svg>');
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4"/></svg>');
 	background-color: var(--severitium-green-color);
 }
 

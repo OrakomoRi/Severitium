@@ -177,7 +177,7 @@ div:has(> .MenuComponentStyle-mainMenuItem) {
 	margin: 0 1em;
 	color: var(--severitium-white-text-color);
 	cursor: pointer;
-	transition: all .2s ease;
+	transition: color .2s ease;
 }
 
 /* Single item of a menu on hover */
