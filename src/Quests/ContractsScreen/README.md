@@ -2,6 +2,8 @@
 
 Stylizes the original contract cards.
 
+## :heavy_exclamation_mark: Note
+
 The peculiarity of the module is that the original html code of contracts is very poor and broken, it contains inline-styles (`<element style="">`), so you have to override them with `!important`.
 
 ## :bulb: Single module

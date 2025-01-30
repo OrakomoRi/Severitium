@@ -1,3 +1,7 @@
-# :sparkles: Shop
+# :sparkles: Entrance
 
-Here are stored all modules for 'shop' elements / events.
+This is where all the logic and styling for store or store-related elements is stored.
+
+## :file_folder: Modules
+
+- [Successful purchase](/src/Shop/SuccessfulPurchase/README.md)
