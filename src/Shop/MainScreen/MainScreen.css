@@ -1,0 +1,155 @@
+/* Main shop screen main container with section cards */
+
+.ShopSelectedSectionComponentStyle-scrollContainerShop.ShopSelectedSectionComponentStyle-scrollContainerShop {
+	min-width: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	gap: 1em;
+	padding: .25em 1em 1em 1em;
+	margin: 2em 0 1em 0;
+	scrollbar-color: var(--severitium-light-transparent-background2) transparent;
+	scrollbar-width: thin;
+}
+
+/* Limited section single card */
+
+.ShopSelectedSectionComponentStyle-limitedOffersCommon {
+	position: relative;
+	background: none;
+	box-shadow: 0 0 0 0 var(--severitium-main-color);
+	border-radius: var(--severitium-border-radius);
+	margin: 0;
+	padding: 0;
+	transition: box-shadow .2s ease;
+}
+
+/* Limited section single card on hover */
+
+.ShopSelectedSectionComponentStyle-limitedOffersCommon:hover {
+	background-image: none;
+	background-color: transparent;
+	box-shadow: 0 0 0 .2em var(--severitium-main-color);
+}
+
+/* Limited section card pseudo-elements */
+
+.ShopSelectedSectionComponentStyle-limitedOffersCommon::before,
+.ShopSelectedSectionComponentStyle-limitedOffersCommon::after {
+	display: none;
+}
+
+/* Limited section card gradient */
+
+.ShopSelectedSectionComponentStyle-limitedOffersCommon > div[class*="gradient"i][class*="section"i] {
+	display: none;
+}
+
+/* Limited section card background image */
+
+.ShopSelectedSectionComponentStyle-limitedOffersCommon > div[class*="backgroundimage"i] {
+	border-radius: var(--severitium-border-radius);
+	transition: -webkit-transform .2s ease, -webkit-filter .2s ease;
+	transition: transform .2s ease, filter .2s ease;
+	transition: transform .2s ease, filter .2s ease, -webkit-transform .2s ease, -webkit-filter .2s ease;
+}
+
+/* Limited section card background image on card hover */
+
+.ShopSelectedSectionComponentStyle-limitedOffersCommon:hover > div[class*="backgroundimage"i] {
+	-webkit-transform: scale(1.1);
+	        transform: scale(1.1);
+	-webkit-filter: saturate(1.25);
+	        filter: saturate(1.25);
+}
+
+/* Limited section card text */
+
+.ShopSelectedSectionComponentStyle-limitedOffersCommon > span {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	margin: 0;
+	padding: .5em 0;
+	text-align: center;
+	font-size: 1.25em;
+	color: var(--severitium-extra-light-gray-text-color);
+	background-color: var(--severitium-dark-transparent-background1);
+	transition: color .2s ease;
+}
+
+/* Limited section card text on hover */
+
+.ShopSelectedSectionComponentStyle-limitedOffersCommon:hover > span {
+	color: var(--severitium-white-text-color);
+}
+
+/* Common section single card */
+
+.ShopSelectedSectionComponentStyle-commonCard {
+	position: relative;
+	background: none;
+	box-shadow: 0 0 0 0 var(--severitium-main-color);
+	border-radius: var(--severitium-border-radius);
+	margin: 0;
+	padding: 0;
+	transition: box-shadow .2s ease;
+}
+
+/* Common section single card on hover */
+
+.ShopSelectedSectionComponentStyle-commonCard:hover {
+	background-image: none;
+	background-color: transparent;
+	box-shadow: 0 0 0 .2em var(--severitium-main-color);
+}
+
+/* Common section card pseudo-elements */
+
+.ShopSelectedSectionComponentStyle-commonCard::before,
+.ShopSelectedSectionComponentStyle-commonCard::after {
+	display: none;
+}
+
+/* Common section card background image */
+
+.ShopSelectedSectionComponentStyle-commonCard > div[class*="backgroundimage"i] {
+	border-radius: var(--severitium-border-radius);
+	transition: -webkit-transform .2s ease, -webkit-filter .2s ease;
+	transition: transform .2s ease, filter .2s ease;
+	transition: transform .2s ease, filter .2s ease, -webkit-transform .2s ease, -webkit-filter .2s ease;
+}
+
+/* Common section card background image on card hover */
+
+.ShopSelectedSectionComponentStyle-commonCard:hover > div[class*="backgroundimage"i] {
+	-webkit-transform: scale(1.1);
+	        transform: scale(1.1);
+	-webkit-filter: saturate(1.25);
+	        filter: saturate(1.25);
+}
+
+/* Common section card text */
+
+.ShopSelectedSectionComponentStyle-commonCard > span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	margin: 0;
+	padding: .5em 0;
+	text-align: center;
+	font-size: 1.25em;
+	color: var(--severitium-extra-light-gray-text-color);
+	background-color: var(--severitium-dark-transparent-background1);
+	transition: color .2s ease;
+}
+
+/* Common section card text on hover */
+
+.ShopSelectedSectionComponentStyle-commonCard:hover > span {
+	color: var(--severitium-white-text-color);
+}

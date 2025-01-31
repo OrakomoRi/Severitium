@@ -16,9 +16,9 @@
 .ScrollingCardsComponentStyle-scrollCard {
 	background: none;
 	box-shadow: 0 0 0 .075em var(--severitium-main-color);
-	transition: box-shadow .2s ease;
 	border-radius: var(--severitium-border-radius);
 	margin: 0;
+	transition: box-shadow .2s ease;
 }
 
 /* Single card on hover */

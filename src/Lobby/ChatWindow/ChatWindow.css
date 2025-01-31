@@ -57,8 +57,9 @@
 /* Breezium container */
 
 .breezium-select {
-	--breezium-bg-color: var(--severitium-dark-transparent-background3);
+	--breezium-bg-color: var(--severitium-dark-transparent-background2);
 	--breezium-hover-bg-color: var(--severitium-light-transparent-background3);
+	--breezium-option-bg-color: transparent;
 	--breezium-border-width: .075em;
 	--breezium-border-radius: var(--severitium-border-radius);
 	--breezium-border-color: var(--severitium-gray-color);
