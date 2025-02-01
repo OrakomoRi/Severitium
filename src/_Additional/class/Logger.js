@@ -28,7 +28,7 @@ class Logger {
 			debug: 'color: purple'
 		};
 
-		console.log(`%c${this.scriptName.toUpperCase()} log:%c ${message}`, 'color: white; font-weight: bold', styles[type] || styles.log);
+		console.log(`%c${this.scriptName} log:\n%c${message}`, 'color: white; font-weight: bold', styles[type] || styles.log);
 	}
 
 	/**
@@ -40,7 +40,6 @@ class Logger {
 	 */
 	logVersionComparison(compareResult, currentVersion, githubVersion) {
 		this.logging = true;
-		this.log(`========\n`);
 
 		switch (compareResult) {
 			case 1:
@@ -62,7 +61,6 @@ class Logger {
 		}
 
 		this.log(`Your × GitHub:\n${currentVersion} × ${githubVersion}`, 'info');
-		this.log(`\n========`);
 		this.logging = false;
 	}
 

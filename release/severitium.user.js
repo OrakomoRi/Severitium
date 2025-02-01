@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.6.1+build71
+// @version			1.6.1+build72
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -75,7 +75,7 @@
 	 * @param {string} script.version - Version of the main userscript
 	 * @param {string} script.name - Name of the main userscript
 	 * 
-	 * @type {Logger} - Instance of the Logger class used for structured logging.
+	 * @type {Logger} - Instance of the Logger class used for structured logging
 	*/
 
 	const updateCheck = true;
@@ -138,12 +138,12 @@
 
 	/**
 	 * Find the latest version
-	 * @param {array} versions - array of stable versions
+	 * @param {array} versions - Array of stable versions
 	 * @returns {Object|null} - The object representing the latest version, or `null` if the array is empty or invalid
 	 */
 	function getLatestVersion(versions) {
 		// Check if the input is a valid array with at least one element
-		if (!array.isarray(versions) || versions.length === 0) return null;
+		if (!Array.isArray(versions) || versions.length === 0) return null;
 
 		// Use `reduce` to iterate through the array and determine the latest version
 		return versions.reduce((latest, current) =>
@@ -245,12 +245,12 @@
 						logger.log(`[END] ${new Date().toISOstring()} (Time: ${duration}s)\n${fileName} ${fileType}`, 'debug');
 						resolve(response.responseText);
 					} else {
-						logger.log(`[ERROR] ${fileName} ${fileType}: Failed to fetch (${response.status})`, 'debug');
+						logger.log(`[ERROR] ${fileName} ${fileType}: Failed to fetch (${response.status})`, 'error');
 						reject(new Error(`Failed to fetch resource from ${url}`));
 					}
 				},
 				onerror: (error) => {
-					logger.log(`[ERROR] ${fileName} ${fileType}: ${error}`, 'debug');
+					logger.log(`[ERROR] ${fileName} ${fileType}: ${error}`, 'error');
 					reject(error);
 				}
 			});
@@ -260,7 +260,7 @@
 	async function fetchImageAsBase64(url) {
 		const { fileName, fileType } = extractFileName(url);
 		const startTime = performance.now();
-		logger.log(`[START] ${new Date().toISOstring()}\n${fileName} ${fileType}`, 'debug');
+		logger.log(`[START] ${new Date().toISOString()}\n${fileName} ${fileType}`, 'debug');
 
 		return new Promise((resolve, reject) => {
 			GM_xmlhttpRequest({
@@ -271,20 +271,26 @@
 					const endTime = performance.now();
 					const duration = ((endTime - startTime) / 1000).toFixed(3);
 
-					if (response.status === 200) {
+					if (response.status === 200 && response.response) {
 						const reader = new FileReader();
 						reader.onloadend = () => {
-							logger.log(`[END] ${new Date().toISOstring()} (Time: ${duration}s)\n${fileName} ${fileType}`, 'debug');
-							resolve(reader.result.split(',')[1]);
+							const base64Data = reader.result.split(',')[1];
+							if (!base64Data) {
+								logger.log(`[ERROR] ${fileName} ${fileType}: Base64 data is empty`, 'error');
+								reject(new Error(`Base64 data is empty for ${url}`));
+							} else {
+								logger.log(`[END] ${new Date().toISOString()} (Time: ${duration}s)\n${fileName} ${fileType}`, 'debug');
+								resolve(base64Data);
+							}
 						};
 						reader.readAsDataURL(response.response);
 					} else {
-						logger.log(`[ERROR] ${fileName} ${fileType}: Failed to fetch (${response.status})`, 'debug');
-						reject(new Error(`Failed to fetch image from ${url}`));
+						logger.log(`[ERROR] ${fileName} ${fileType}: Failed to fetch (${response.status})`, 'error');
+						reject(new Error(`Failed to fetch image from ${url}, Status: ${response.status}`));
 					}
 				},
 				onerror: (error) => {
-					logger.log(`[ERROR] ${fileName} ${fileType}: ${error}`, 'debug');
+					logger.log(`[ERROR] ${fileName} ${fileType}: ${error}`, 'error');
 					reject(error);
 				}
 			});
@@ -330,9 +336,13 @@
 						return;
 					}
 					try {
-						resolve(JSON.parse(response.responseText));
+						const jsonData = JSON.parse(response.responseText);
+						if (typeof jsonData !== 'object' || jsonData === null) {
+							throw new Error('Parsed JSON is not an object');
+						}
+						resolve(jsonData);
 					} catch (error) {
-						reject(`Failed to parse JSON from ${url}: ${error}`);
+						reject(new Error(`Failed to parse JSON from ${url}: ${error.message}`));
 					}
 				},
 				onerror: (error) => reject(error),
@@ -370,7 +380,7 @@
 					});
 				});
 
-				const results = await Promise.allSettled([...cssPromises, ...imagePromises]);
+				const results = await Promise.all([...cssPromises, ...imagePromises]);
 
 				results.forEach((result, index) => {
 					if (result.status === 'rejected') {
