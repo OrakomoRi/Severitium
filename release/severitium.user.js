@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.6.1+build68
+// @version			1.6.1+build69
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -19,6 +19,7 @@
 
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_getSeason.min.js?raw=true
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_loadingScreen.min.js?raw=true
+// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/logging.min.js?raw=true
 
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/class/SeveritiumInjector.min.js?raw=true
 
@@ -54,25 +55,27 @@
 	/**
 	 * Configs
 	 * 
-	 * @param {Boolean} updateCheck - Checks for userscript updates
+	 * @param {boolean} updateCheck - Checks for userscript updates
 	 * 
-	 * @param {Array} customModal - Enable custom modal
+	 * @param {array} customModal - Enable custom modal
 	 * Uses SweetAlert2 library (https://cdn.jsdelivr.net/npm/sweetalert2@11) for the modal
-	 * @param {Boolean} customModal.enable - When set to false, the default modal will be used
+	 * @param {boolean} customModal.enable - When set to false, the default modal will be used
 	 * @param {*} customModal.timer - Can be set (number | false): used to set the time
 	 * the custom modal should wait for response untill it closes
 	 * 
-	 * @param {Boolean} hasIgnoredUpdate - Used for the updater
+	 * @param {boolean} hasIgnoredUpdate - Used for the updater
 	 * 
-	 * @param {String} GITHUB_SCRIPT_URL - Link to the script to update
-	 * @param {String} STABLE_JSON_URL - Link to the JSON with stable versions and their links
+	 * @param {string} GITHUB_SCRIPT_URL - Link to the script to update
+	 * @param {string} STABLE_JSON_URL - Link to the JSON with stable versions and their links
 	 * 
-	 * @param {Array} script - Array with catched data
+	 * @param {array} script - Array with catched data
 	 * Catches all CSS, images based on main userscript's version
-	 * @param {Array} script.CSS - array with CSS
-	 * @param {Array} script.images - array with images
-	 * @param {String} script.version - version of the main userscript
-	 * @param {String} script.name - name of the main userscript
+	 * @param {array} script.CSS - Array with CSS
+	 * @param {array} script.images - Array with images
+	 * @param {string} script.version - Version of the main userscript
+	 * @param {string} script.name - Name of the main userscript
+	 * 
+	 * @type {Logger} - Instance of the Logger class used for structured logging.
 	*/
 
 	const updateCheck = true;
@@ -92,6 +95,8 @@
 		name: GM_info.script.name,
 	}
 
+	const logger = new Logger(script.name);
+
 
 
 	/**
@@ -103,7 +108,7 @@
 			url: GITHUB_SCRIPT_URL,
 			onload: function (response) {
 				if (response.status !== 200) {
-					console.error(`${(script.name).toUpperCase()}: Failed to fetch GitHub script:`, response.status);
+					logger.log(`Failed to fetch GitHub script:\n${response.status}`, 'error');
 					return;
 				}
 
@@ -112,7 +117,7 @@
 				// Try to extract version from the script on GitHub
 				const match = data.match(/@version\s+([\w.+-]+)/);
 				if (!match) {
-					console.log(`========\n${(script.name).toUpperCase()}\nUnable to extract version from the GitHub script.\n========`);
+					logger.log(`========\nUnable to extract version from the GitHub script.\n========`);
 					return;
 				}
 
@@ -121,44 +126,24 @@
 				// Compare versions
 				const compareResult = compareVersions(githubVersion, script.version);
 
-				console.log(`========\n`);
-				console.log(`${(script.name)}\n`);
+				logger.logVersionComparison(compareResult, githubVersion);
 
-				switch (compareResult) {
-					case 1:
-						console.log(`A new version is available on GitHub: ${githubVersion}. Checking for stable version...`);
-						findLatestStableVersion(githubVersion);
-						break;
-					case 0:
-						console.log(/[-+]/.test(script.version)
-							? `You are using some version that is based on the latest stable.`
-							: `You are using the latest stable version.`);
-						break;
-					case -1:
-						console.log(`You are using a version newer than the one on GitHub.`);
-						break;
-					case -2:
-						console.log(`Error comparing versions.`);
-						break;
-				}
-
-				console.log(`Your × GitHub:\n${script.version} × ${githubVersion}`);
-				console.log(`\n========`);
+				if (compareResult === 1) findLatestStableVersion(githubVersion);
 			},
 			onerror: function (error) {
-				console.error('Failed to check for updates:', error);
+				logger.log(`Failed to check for updates:\n${error}`, 'error');
 			}
 		});
 	}
 
 	/**
 	 * Find the latest version
-	 * @param {Array} versions - Array of stable versions
+	 * @param {array} versions - array of stable versions
 	 * @returns {Object|null} - The object representing the latest version, or `null` if the array is empty or invalid
 	 */
 	function getLatestVersion(versions) {
 		// Check if the input is a valid array with at least one element
-		if (!Array.isArray(versions) || versions.length === 0) return null;
+		if (!array.isarray(versions) || versions.length === 0) return null;
 
 		// Use `reduce` to iterate through the array and determine the latest version
 		return versions.reduce((latest, current) =>
@@ -184,11 +169,11 @@
 			if (latestVersionData && compareVersions(latestVersion, script.version) > 0) {
 				promptUpdate(latestVersion, latestLink); // Prompt update if a newer stable version is found
 			} else {
-				console.log(`${script.name.toUpperCase()}: No valid stable versions found.`);
+				logger.log(`${script.name.toUpperCase()}: No valid stable versions found.`, 'warn');
 				promptUpdate(githubVersion, GITHUB_SCRIPT_URL); // Fallback to GitHub version
 			}
 		} catch (error) {
-			console.error(`${script.name.toUpperCase()}: Failed to fetch stable versions.`, error);
+			logger.log(`${script.name.toUpperCase()}: Failed to fetch stable versions.\n${error}`, 'error');
 		}
 	}
 
@@ -244,41 +229,94 @@
 	const severitiumInjector = new SeveritiumInjector(script);
 
 	async function fetchAsText(url) {
+		const { fileName, fileType } = extractFileName(url);
+		const startTime = performance.now();
+		logger.log(`[START] ${new Date().toISOstring()}\n${fileName} ${fileType}`, 'debug');
+
 		return new Promise((resolve, reject) => {
 			GM_xmlhttpRequest({
 				method: 'GET',
 				url,
 				onload: (response) => {
+					const endTime = performance.now();
+					const duration = ((endTime - startTime) / 1000).toFixed(3);
+
 					if (response.status === 200) {
+						logger.log(`[END] ${new Date().toISOstring()} (Time: ${duration}s)\n${fileName} ${fileType}`, 'debug');
 						resolve(response.responseText);
 					} else {
+						logger.log(`[ERROR] ${fileName} ${fileType}: Failed to fetch (${response.status})`, 'debug');
 						reject(new Error(`Failed to fetch resource from ${url}`));
 					}
 				},
-				onerror: (error) => reject(error),
+				onerror: (error) => {
+					logger.log(`[ERROR] ${fileName} ${fileType}: ${error}`, 'debug');
+					reject(error);
+				}
 			});
 		});
 	}
 
 	async function fetchImageAsBase64(url) {
+		const { fileName, fileType } = extractFileName(url);
+		const startTime = performance.now();
+		logger.log(`[START] ${new Date().toISOstring()}\n${fileName} ${fileType}`, 'debug');
+
 		return new Promise((resolve, reject) => {
 			GM_xmlhttpRequest({
 				method: 'GET',
 				url,
 				responseType: 'blob',
 				onload: (response) => {
+					const endTime = performance.now();
+					const duration = ((endTime - startTime) / 1000).toFixed(3);
+
 					if (response.status === 200) {
 						const reader = new FileReader();
-						reader.onloadend = () => resolve(reader.result.split(',')[1]);
+						reader.onloadend = () => {
+							logger.log(`[END] ${new Date().toISOstring()} (Time: ${duration}s)\n${fileName} ${fileType}`, 'debug');
+							resolve(reader.result.split(',')[1]);
+						};
 						reader.readAsDataURL(response.response);
 					} else {
-						console.error(`${(script.name).toUpperCase()}: Failed to fetch image from ${url}, status: ${response.status}`);
+						logger.log(`[ERROR] ${fileName} ${fileType}: Failed to fetch (${response.status})`, 'debug');
 						reject(new Error(`Failed to fetch image from ${url}`));
 					}
 				},
-				onerror: (error) => reject(error),
+				onerror: (error) => {
+					logger.log(`[ERROR] ${fileName} ${fileType}: ${error}`, 'debug');
+					reject(error);
+				}
 			});
 		});
+	}
+
+	/**
+	 * Extracts the file name from the URL in the format "Folder/FileName"
+	 * and determines the file type (CSS or image).
+	 * 
+	 * @param {string} url - The full URL of the file
+	 * @returns {{fileName: string, fileType: string}} - Extracted file name and type
+	 */
+	function extractFileName(url) {
+		let match;
+		let fileType = '(Unknown)';
+
+		// Check if the URL is an image
+		if (url.includes('/src/.images/')) {
+			match = url.match(/\/src\/\.images\/[^/]+\/([^/]+\/[^/.]+)/);
+			fileType = '(image)';
+		}
+		// Otherwise, assume it's a CSS file
+		else {
+			match = url.match(/\/src\/([^/]+(?:\/[^/]+)*)\//);
+			fileType = '(CSS)';
+		}
+
+		return {
+			fileName: match ? match[1] : "Unknown",
+			fileType
+		};
 	}
 
 	function fetchJSON(url) {
@@ -305,7 +343,6 @@
 	async function loadResources(forceReload = false) {
 		_createSeveritiumLoadingScreen(script.name);
 		try {
-
 			const cachedVersion = GM_getValue('SeveritiumVersion', '');
 
 			[CSSLinks, imageLinks] = await Promise.all([
@@ -314,40 +351,41 @@
 			]);
 
 			if (!forceReload && cachedVersion === script.version) {
-				console.log(`${(script.name).toUpperCase()}: Loading resources from cache.`);
+				logger.log(`Loading resources from cache.`, 'info');
 				script.CSS = GM_getValue('SeveritiumCSS', {});
 				script.images = GM_getValue('SeveritiumImages', {});
 			} else {
-				console.log(`${(script.name).toUpperCase()}: Fetching new resources.`);
+				logger.log(`Fetching new resources.`, 'info');
 
-				let promises = [];
+				const cssPromises = CSSLinks.map(({ url }) =>
+					fetchAsText(url).then(css => {
+						script.CSS[url] = css;
+					})
+				);
 
-				for (const { url } of CSSLinks) {
-					promises.push(
-						fetchAsText(url).then(css => {
-							script.CSS[url] = css;
-						})
-					);
-				}
-
-				for (const { url } of imageLinks) {
+				const imagePromises = imageLinks.map(({ url }) => {
 					const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason());
-					promises.push(
-						fetchImageAsBase64(formattedUrl).then(image => {
-							script.images[formattedUrl] = image;
-						})
-					);
-				}
+					return fetchImageAsBase64(formattedUrl).then(img => {
+						script.images[formattedUrl] = img;
+					});
+				});
 
-				await Promise.all(promises);
+				const results = await Promise.allSettled([...cssPromises, ...imagePromises]);
+
+				results.forEach((result, index) => {
+					if (result.status === 'rejected') {
+						logger.log(`Error in resource #${index}:\n${result.reason}`, 'error');
+					}
+				});
 
 				GM_setValue('SeveritiumCSS', script.CSS);
 				GM_setValue('SeveritiumImages', script.images);
 				GM_setValue('SeveritiumVersion', script.version);
+
+				logger.log(`Resources loaded.`, 'success');
 			}
-			console.log(`${(script.name).toUpperCase()}: Resources loaded.`);
 		} catch (error) {
-			console.error(`${(script.name).toUpperCase()}: Error loading resources:`, error);
+			logger.log(`Error loading resources:\n${error}`, 'error');
 		} finally {
 			severitiumInjector.updateSeveritium(script);
 			severitiumInjector.applyCSS(CSSLinks);
@@ -357,7 +395,7 @@
 	}
 
 	async function reloadResources() {
-		console.log(`${(script.name).toUpperCase()}: Manually reloading resources.`);
+		logger.log(`Manually reloading resources.`, 'info');
 		await loadResources(true);
 	}
 
