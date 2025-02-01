@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.6.1+build72
+// @version			1.6.1+build73
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -19,8 +19,8 @@
 
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_getSeason.min.js?raw=true
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_loadingScreen.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/class/Logger.min.js?raw=true
 
+// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/class/Logger.min.js?raw=true
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/class/SeveritiumInjector.min.js?raw=true
 
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/General/LoadingScreen/LoadingScreen.min.js?raw=true
@@ -231,28 +231,23 @@
 	async function fetchAsText(url) {
 		const { fileName, fileType } = extractFileName(url);
 		const startTime = performance.now();
-		logger.log(`[START] ${new Date().toISOstring()}\n${fileName} ${fileType}`, 'debug');
-
+		logger.log(`[START] ${new Date().toISOString()}\n${fileName} ${fileType}`, 'debug');
 		return new Promise((resolve, reject) => {
 			GM_xmlhttpRequest({
 				method: 'GET',
 				url,
 				onload: (response) => {
-					const endTime = performance.now();
-					const duration = ((endTime - startTime) / 1000).toFixed(3);
-
 					if (response.status === 200) {
-						logger.log(`[END] ${new Date().toISOstring()} (Time: ${duration}s)\n${fileName} ${fileType}`, 'debug');
+						const endTime = performance.now();
+						const duration = ((endTime - startTime) / 1000).toFixed(3);
+						logger.log(`[END] ${new Date().toISOString()} (Time: ${duration}s)\n${fileName} ${fileType}`, 'debug');
 						resolve(response.responseText);
 					} else {
 						logger.log(`[ERROR] ${fileName} ${fileType}: Failed to fetch (${response.status})`, 'error');
 						reject(new Error(`Failed to fetch resource from ${url}`));
 					}
 				},
-				onerror: (error) => {
-					logger.log(`[ERROR] ${fileName} ${fileType}: ${error}`, 'error');
-					reject(error);
-				}
+				onerror: (error) => reject(error),
 			});
 		});
 	}
@@ -261,38 +256,25 @@
 		const { fileName, fileType } = extractFileName(url);
 		const startTime = performance.now();
 		logger.log(`[START] ${new Date().toISOString()}\n${fileName} ${fileType}`, 'debug');
-
 		return new Promise((resolve, reject) => {
 			GM_xmlhttpRequest({
 				method: 'GET',
 				url,
 				responseType: 'blob',
 				onload: (response) => {
-					const endTime = performance.now();
-					const duration = ((endTime - startTime) / 1000).toFixed(3);
-
-					if (response.status === 200 && response.response) {
+					if (response.status === 200) {
 						const reader = new FileReader();
-						reader.onloadend = () => {
-							const base64Data = reader.result.split(',')[1];
-							if (!base64Data) {
-								logger.log(`[ERROR] ${fileName} ${fileType}: Base64 data is empty`, 'error');
-								reject(new Error(`Base64 data is empty for ${url}`));
-							} else {
-								logger.log(`[END] ${new Date().toISOString()} (Time: ${duration}s)\n${fileName} ${fileType}`, 'debug');
-								resolve(base64Data);
-							}
-						};
+						const endTime = performance.now();
+						const duration = ((endTime - startTime) / 1000).toFixed(3);
+						logger.log(`[END] ${new Date().toISOString()} (Time: ${duration}s)\n${fileName} ${fileType}`, 'debug');
+						reader.onloadend = () => resolve(reader.result.split(',')[1]);
 						reader.readAsDataURL(response.response);
 					} else {
 						logger.log(`[ERROR] ${fileName} ${fileType}: Failed to fetch (${response.status})`, 'error');
-						reject(new Error(`Failed to fetch image from ${url}, Status: ${response.status}`));
+						reject(new Error(`Failed to fetch image from ${url}`));
 					}
 				},
-				onerror: (error) => {
-					logger.log(`[ERROR] ${fileName} ${fileType}: ${error}`, 'error');
-					reject(error);
-				}
+				onerror: (error) => reject(error),
 			});
 		});
 	}
@@ -352,6 +334,7 @@
 
 	async function loadResources(forceReload = false) {
 		_createSeveritiumLoadingScreen(script.name);
+		logger.log(`Load resources started.`, 'debug');
 		try {
 			const cachedVersion = GM_getValue('SeveritiumVersion', '');
 
@@ -380,7 +363,7 @@
 					});
 				});
 
-				const results = await Promise.all([...cssPromises, ...imagePromises]);
+				const results = await Promise.allSettled([...cssPromises, ...imagePromises]);
 
 				results.forEach((result, index) => {
 					if (result.status === 'rejected') {

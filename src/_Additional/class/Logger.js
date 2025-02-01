@@ -8,6 +8,7 @@ class Logger {
 	constructor(scriptName, logging = false) {
 		this.scriptName = scriptName;
 		this.logging = logging;
+		this.isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 	}
 
 	/**
@@ -19,14 +20,25 @@ class Logger {
 	log(message, type = 'log') {
 		if (!this.logging) return;
 
-		const styles = {
+		const darkStyles = {
 			log: 'color: white',
-			info: 'color: blue',
-			warn: 'color: orange',
-			error: 'color: red',
-			success: 'color: green',
-			debug: 'color: purple'
+			info: 'color: #5ea9ff',
+			warn: 'color: #ffa500',
+			error: 'color: #ff4c4c',
+			success: 'color: #4cff4c',
+			debug: 'color: #c77dff'
 		};
+
+		const lightStyles = {
+			log: 'color: black',
+			info: 'color: #004085',
+			warn: 'color: #856404',
+			error: 'color: #721c24',
+			success: 'color: #155724',
+			debug: 'color: #6a0572'
+		};
+
+		const styles = this.isDarkMode ? darkStyles : lightStyles;
 
 		console.log(`%c${this.scriptName} log:\n%c${message}`, 'color: white; font-weight: bold', styles[type] || styles.log);
 	}
@@ -39,8 +51,12 @@ class Logger {
 	 * @param {string} githubVersion - The latest version from GitHub.
 	 */
 	logVersionComparison(compareResult, currentVersion, githubVersion) {
-		this.logging = true;
-
+		const state = false;
+		if (!this.logging) {
+			this.logging = true;
+			state = true;
+		}
+		
 		switch (compareResult) {
 			case 1:
 				this.log(`A new version is available on GitHub: ${githubVersion}. Checking for stable version...`, 'info');
@@ -60,8 +76,11 @@ class Logger {
 				this.log(`Default case`);
 		}
 
+		if (state) {
+			this.logging = false;
+		}
+
 		this.log(`Your × GitHub:\n${currentVersion} × ${githubVersion}`, 'info');
-		this.logging = false;
 	}
 
 	/**
