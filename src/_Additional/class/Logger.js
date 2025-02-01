@@ -35,9 +35,10 @@ class Logger {
 	 * Logs the result of the version comparison.
 	 *
 	 * @param {number} compareResult - The result of the version comparison.
+	 * @param {string} githubVersion - The current version of the script.
 	 * @param {string} githubVersion - The latest version from GitHub.
 	 */
-	logVersionComparison(compareResult, githubVersion) {
+	logVersionComparison(compareResult, currentVersion, githubVersion) {
 		this.logging = true;
 		this.log(`========\n`);
 
@@ -46,7 +47,7 @@ class Logger {
 				this.log(`A new version is available on GitHub: ${githubVersion}. Checking for stable version...`, 'info');
 				break;
 			case 0:
-				this.log(/[-+]/.test(script.version)
+				this.log(/[-+]/.test(currentVersion)
 					? `You are using some version that is based on the latest stable.`
 					: `You are using the latest stable version.`, 'info');
 				break;
@@ -60,7 +61,7 @@ class Logger {
 				this.log(`Default case`);
 		}
 
-		this.log(`Your × GitHub:\n${script.version} × ${githubVersion}`, 'info');
+		this.log(`Your × GitHub:\n${currentVersion} × ${githubVersion}`, 'info');
 		this.log(`\n========`);
 		this.logging = false;
 	}

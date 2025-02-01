@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.6.1+build70
+// @version			1.6.1+build71
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -126,7 +126,7 @@
 				// Compare versions
 				const compareResult = compareVersions(githubVersion, script.version);
 
-				logger.logVersionComparison(compareResult, githubVersion);
+				logger.logVersionComparison(compareResult, script.version, githubVersion);
 
 				if (compareResult === 1) findLatestStableVersion(githubVersion);
 			},
