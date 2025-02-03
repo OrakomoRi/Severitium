@@ -1,4 +1,7 @@
 (function () {
+	// Lobby chat category select selector
+	const chatSelectSelector = '.ChatComponentStyle-channels .ChatComponentStyle-channelsSelect';
+
 	/**
 	 * Replaces the original select element with a custom dropdown menu
 	 */
@@ -85,7 +88,7 @@
 				mutations.forEach((mutation) => {
 					if (mutation.type === 'childList') {
 						mutation.addedNodes.forEach((node) => {
-							if (node.nodeType === Node.ELEMENT_NODE && (node.matches(nodeSelector) || node.querySelector(nodeSelector))) {
+							if (node.nodeType === Node.ELEMENT_NODE && (node.matches(chatSelectSelector) || node.querySelector(chatSelectSelector))) {
 								customChatLogic();
 							}
 						});
@@ -100,7 +103,7 @@
 		mutations.forEach((mutation) => {
 			if (mutation.type === 'childList') {
 				mutation.addedNodes.forEach((node) => {
-					if (node.nodeType === Node.ELEMENT_NODE && (node.matches(nodeSelector) || node.querySelector(nodeSelector))) {
+					if (node.nodeType === Node.ELEMENT_NODE && (node.matches(chatSelectSelector) || node.querySelector(chatSelectSelector))) {
 						customChatLogic();
 					}
 				});
