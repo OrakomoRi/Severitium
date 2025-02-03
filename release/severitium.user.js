@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.6.1+build73
+// @version			1.6.1+build74
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -152,8 +152,8 @@
 	}
 
 	/**
- * Check for updates by parsing stable.json with multiple versions
- */
+	 * Check for updates by parsing stable.json with multiple versions
+	 */
 	async function findLatestStableVersion(githubVersion) {
 		try {
 			// Fetch the stable.json file containing all available stable versions
@@ -166,11 +166,11 @@
 			const { version: latestVersion, link: latestLink } = latestVersionData || {};
 
 			// Compare the latest stable version with the current script version
-			if (latestVersionData && compareVersions(latestVersion, script.version) > 0) {
+			if (latestVersionData && compareVersions(latestVersion, script.version) === 1) {
 				promptUpdate(latestVersion, latestLink); // Prompt update if a newer stable version is found
 			} else {
 				logger.log(`${script.name.toUpperCase()}: No valid stable versions found.`, 'warn');
-				promptUpdate(githubVersion, GITHUB_SCRIPT_URL); // Fallback to GitHub version
+				// promptUpdate(githubVersion, GITHUB_SCRIPT_URL); // Fallback to GitHub version
 			}
 		} catch (error) {
 			logger.log(`${script.name.toUpperCase()}: Failed to fetch stable versions.\n${error}`, 'error');
@@ -229,7 +229,7 @@
 	const severitiumInjector = new SeveritiumInjector(script);
 
 	async function fetchAsText(url) {
-		const { fileName, fileType } = extractFileName(url);
+		const { fileName, fileType } = _extractFileName(url);
 		const startTime = performance.now();
 		logger.log(`[START] ${new Date().toISOString()}\n${fileName} ${fileType}`, 'debug');
 		return new Promise((resolve, reject) => {
@@ -253,7 +253,7 @@
 	}
 
 	async function fetchImageAsBase64(url) {
-		const { fileName, fileType } = extractFileName(url);
+		const { fileName, fileType } = _extractFileName(url);
 		const startTime = performance.now();
 		logger.log(`[START] ${new Date().toISOString()}\n${fileName} ${fileType}`, 'debug');
 		return new Promise((resolve, reject) => {
@@ -277,34 +277,6 @@
 				onerror: (error) => reject(error),
 			});
 		});
-	}
-
-	/**
-	 * Extracts the file name from the URL in the format "Folder/FileName"
-	 * and determines the file type (CSS or image).
-	 * 
-	 * @param {string} url - The full URL of the file
-	 * @returns {{fileName: string, fileType: string}} - Extracted file name and type
-	 */
-	function extractFileName(url) {
-		let match;
-		let fileType = '(Unknown)';
-
-		// Check if the URL is an image
-		if (url.includes('/src/.images/')) {
-			match = url.match(/\/src\/\.images\/[^/]+\/([^/]+\/[^/.]+)/);
-			fileType = '(image)';
-		}
-		// Otherwise, assume it's a CSS file
-		else {
-			match = url.match(/\/src\/([^/]+(?:\/[^/]+)*)\//);
-			fileType = '(CSS)';
-		}
-
-		return {
-			fileName: match ? match[1] : "Unknown",
-			fileType
-		};
 	}
 
 	function fetchJSON(url) {
