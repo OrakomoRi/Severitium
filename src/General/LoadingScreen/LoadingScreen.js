@@ -210,7 +210,7 @@
 	observer.observe(document.body, { childList: true, subtree: true })
 
 	// Initial check for progress bars when the script runs
-	const progress = node.matches(progressSelector) ? node : node.querySelector(progressSelector);
+	const progress = document.querySelector(progressSelector);
 	if (progress) {
 		replaceOriginalProgress(progress);
 	}
