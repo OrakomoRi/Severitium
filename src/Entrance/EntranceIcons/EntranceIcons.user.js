@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Entrance Icons
-// @version			1.2.2
+// @version			1.3.0
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 

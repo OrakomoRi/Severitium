@@ -1,13 +1,12 @@
 (function () {
+	const progressSelector = '.ApplicationLoaderComponentStyle-loader, .progress, .LobbyLoaderComponentStyle-loaderContainer img, #preloader .progress';
+	const loaderSelector = '.ApplicationLoaderComponentStyle-container, .LobbyLoaderComponentStyle-container';
+
 	// Represents a collection of stars and their properties
 	let stars = {};
-	// Represents the index of the stars collection
 	let index = 0;
-	// Represents the count of stars currently present
 	let count = 0;
-	// Represents the coefficient for acceleration smoothing
 	const smoothnessFactor = 50;
-	// Represents the basic acceleration of stars
 	let baseAcceleration = 0.5;
 
 	/**
@@ -22,200 +21,128 @@
 	};
 
 	/**
-	 * Represents a star with properties and methods for updating and drawing.
+	 * Represents a star with properties and methods for updating and drawing
 	 */
 	class Star {
-		/**
-		 * Creates a new star
-		 * 
-		 * @param {HTMLElement} canvas - The canvas element to draw the star on
-		 */
 		constructor(canvas) {
-			// Use the global canvas
 			this.canvas = canvas;
-
-			// Initial position and velocity of the star
-			// By the start X & Y are the center of the canvas
 			this.X = this.canvas.width / 2;
 			this.Y = this.canvas.height / 2;
-			// Random factor to set the star on canvas
 			this.SX = Math.random() * 10 - 5;
 			this.SY = Math.random() * 10 - 5;
 
-			// Adjust position based on canvas dimensions
-			const start = this.canvas.width > this.canvas.height ? this.canvas.width : this.canvas.height;
-			// X & Y are changed to meet the random position
+			const start = Math.max(this.canvas.width, this.canvas.height);
 			this.X += (this.SX * start) / 10;
 			this.Y += (this.SY * start) / 10;
 
-			// Assign an ID to the star
 			index++;
 			stars[index] = this;
 			this.ID = index;
 
-			// Choose random color for the star
 			this.C = starSettings.colors[Math.floor(Math.random() * starSettings.colors.length)];
-
-			// Define the shape of the star (just a path from svg)
-			this.path = starSettings.path;
-
-			// Random scale for the star
 			this.scale = randomNum(2, 8, 2);
+
+			this.path = starSettings.path;
 		}
 
-		/**
-		 * Draws the star on the canvas
-		 * 
-		 * @param {number} delta - Time elapsed since the last frame, in seconds
-		 * @param {CanvasRenderingContext2D} ctx - The 2D context of the canvas
-		 */
 		draw(delta, ctx) {
 			if (!this.canvas) return;
-
-			// Make animation "60fps"
 			delta *= 60;
-
-			// Update position based on velocity and delta
 			this.X += this.SX * delta;
 			this.Y += this.SY * delta;
 
-			// Update velocity with acceleration
 			this.SX += (this.SX / (smoothnessFactor / baseAcceleration)) * delta;
 			this.SY += (this.SY / (smoothnessFactor / baseAcceleration)) * delta;
 
-			// Check if star is out of bounds
 			if (
-				this.X < 0 - this.scale * 10 ||
-				this.X > this.canvas.width ||
-				this.Y < 0 - this.scale * 10 ||
-				this.Y > this.canvas.height
+				this.X < -this.scale * 10 || this.X > this.canvas.width ||
+				this.Y < -this.scale * 10 || this.Y > this.canvas.height
 			) {
 				delete stars[this.ID];
 				count--;
 			}
 
-			// Save the canvas position, scale, etc.
 			ctx.save();
-
-			// Translate, scale, stroke, and fill the star path
 			ctx.fillStyle = this.C;
 			ctx.translate(this.X, this.Y);
 			ctx.scale(this.scale, this.scale);
 			ctx.stroke(this.path);
 			ctx.fill(this.path);
-
-			// Restore the canvas
 			ctx.restore();
 		}
 	}
 
 	/**
 	 * Initializes the animated background with stars
-	 * 
-	 * @param {HTMLElement} backgroundElement - The element to append the canvas to
 	 */
 	function animatedBackground(backgroundElement) {
 		if (!backgroundElement) return;
 
-		let canvas;
-
-		// Create canvas element
-		canvas = document.createElement('canvas');
+		let canvas = document.createElement('canvas');
 		canvas.className = 'severitium-star-canvas';
 
-		// Create container to store the canvas
 		const canvasContainer = document.createElement('div');
 		canvasContainer.className = 'severitium-star-canvas-container';
 
-		// Place the container into the parent element and the canvas into the container
-		backgroundElement.appendChild(canvasContainer);
-		canvasContainer.appendChild(canvas);
+		backgroundElement.append(canvasContainer);
+		canvasContainer.append(canvas);
 
-		// Set canvas dimensions
 		canvas.width = backgroundElement.clientWidth;
 		canvas.height = backgroundElement.clientHeight;
 
-		// Get canvas 2D context to draw
 		const ctx = canvas.getContext('2d');
-
-		// Calculate number of stars to draw
 		let starsToDraw = (canvas.width * canvas.height) / 8000;
-
 		let lastTime = performance.now();
 
-		/**
-		 * Animates the gears by clearing the canvas and redrawing them
-		 * 
-		 * @param {number} currentTime - Current timestamp provided by requestAnimationFrame
-		 */
 		function draw(currentTime) {
-			if (!canvas || !canvas.getContext) {
-				return;
-			}
+			if (!canvas || !canvas.getContext) return;
 
-			// Resize canvas if needed
 			if (canvas.width !== backgroundElement.clientWidth || canvas.height !== backgroundElement.clientHeight) {
 				canvas.width = backgroundElement.clientWidth;
 				canvas.height = backgroundElement.clientHeight;
 			}
 
-			// Calculate time delta
-			const delta = (currentTime - lastTime) / 1000; // Delta time in seconds
+			const delta = (currentTime - lastTime) / 1000;
 			lastTime = currentTime;
 
-			// Clear and fill the canvas every frame
 			ctx.fillStyle = 'rgba(0, 0, 0, 1)';
 			ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-			// Add new stars and draw existing stars
-			for (let i = count; i < starsToDraw; i++) {
+			while (count < starsToDraw) {
 				new Star(canvas);
 				count++;
 			}
 
-			for (const star in stars) {
-				stars[star].draw(delta, ctx);
-			}
+			Object.values(stars).forEach(star => star.draw(delta, ctx));
 
-			// Request the next animation frame
 			backgroundElement.dataset.animationId = requestAnimationFrame(draw);
 		}
 
-		// Storing animation id
 		backgroundElement.dataset.animationId = requestAnimationFrame(draw);
 	}
 
 	/**
 	 * Removes the animated background canvas from the DOM
-	 * 
-	 * @param {HTMLElement} backgroundElement - The element containing the canvas
 	 */
 	function animatedBackgroundDelete(backgroundElement) {
 		if (!backgroundElement) return;
 
-		// Stop old animation
 		const animationId = backgroundElement.dataset.animationId;
 		if (animationId) {
 			cancelAnimationFrame(animationId);
 			backgroundElement.dataset.animationId = null;
 		}
 
-		// Reset global variables
 		resetAnimationState();
-
-		// Get the canvas element
 		const canvas = backgroundElement.querySelector('.severitium-star-canvas');
-
-		if (canvas) {
-			canvas.parentNode.remove();
-		}
+		if (canvas) canvas.parentNode.remove();
 	}
 
 	function resetAnimationState() {
 		stars = {};
 		index = 0;
 		count = 0;
-	}	
+	}
 
 	/**
 	 * Replaces the original progress bar with a custom one
@@ -223,76 +150,67 @@
 	 * @param {HTMLElement} element - The original progress bar element
 	 */
 	function replaceOriginalProgress(element) {
-		// New progress div
 		const newProgress = document.createElement('div');
-		// Inner of the new progress
 		const progressInner = document.createElement('div');
-		// Set the class of the new progrss
 		newProgress.className = 'severitium-progress';
-		// Set the bottom position (to replace the old one)
 		newProgress.style.bottom = element.style.bottom;
-		// Append the inner to the new progrss
-		newProgress.appendChild(progressInner);
+		newProgress.append(progressInner);
 
-		// Replace original progress element with the custom one
 		element.replaceWith(newProgress);
 	}
 
 	/**
 	 * Generates a random number between min and max
-	 * @param {number} min - The minimum value
-	 * @param {number} max - The maximum value
-	 * @param {number} precision - The number of digits after the point
-	 * @returns {number} - A random number
 	 */
 	function randomNum(min, max, precision) {
-		return Math.max((Math.random() * max), min).toFixed(precision);
+		return parseFloat((Math.random() * (max - min) + min).toFixed(precision));
 	}
 
+	// Creates a new MutationObserver instance to track changes in the DOM
+	const observer = new MutationObserver(mutations => {
+		if (typeof requestAnimationFrame === 'function') {
+			requestAnimationFrame(() => mutations.forEach(processMutation));
+		} else {
+			mutations.forEach(processMutation);
+		}
+	})
+
 	/**
-	 * Create a new instance of MutationObserver with a callback function
-	 * to observe changes in the DOM 
+	 * Processes added and removed nodes to manage background animations and progress bars
+	 * 
+	 * @param {MutationRecord} mutation - Mutation record containing added and removed nodes
+	 * @param {NodeList} mutation.addedNodes - List of nodes added to the DOM
+	 * @param {NodeList} mutation.removedNodes - List of nodes removed from the DOM
 	 */
-	const observer = new MutationObserver(function (mutations) {
-		mutations.forEach(function (mutation) {
-			if (mutation.type === 'childList' && mutation.addedNodes.length > 0) { // If the change is of type childList
-				mutation.addedNodes.forEach(function (node) { // Iterate through added nodes
-					if (node.nodeType === Node.ELEMENT_NODE) { // If it's an element node
-						// Find an element with the needed selector in the added node
-						const check = node.classList.contains('ApplicationLoaderComponentStyle-container') || node.classList.contains('LobbyLoaderComponentStyle-container');
-						if (check) { // If found
-							animatedBackground(node);
-						}
+	function processMutation({ addedNodes, removedNodes }) {
+		addedNodes.forEach(node => {
+			if (node.nodeType !== Node.ELEMENT_NODE) return;
 
-						// Find a progress element
-						const progress = document.querySelector('.ApplicationLoaderComponentStyle-loader, .progress, .LobbyLoaderComponentStyle-loaderContainer img, #preloader .progress');
-						if (progress) { // If found
-							replaceOriginalProgress(progress);
-						}
-					}
-				});
-			} else if (mutation.type === 'childList' && mutation.removedNodes.length > 0) {
-				mutation.removedNodes.forEach(function (node) { // Iterate through removed nodes
-					if (node.nodeType === Node.ELEMENT_NODE) { // If it's an element node
-						// Find an element with the needed selector in the added node
-						const check = node.classList.contains('ApplicationLoaderComponentStyle-container') || node.classList.contains('LobbyLoaderComponentStyle-container');
-						if (check) { // If found
-							animatedBackgroundDelete(node);
-						}
-					}
-				});
+			// Check for background animation elements
+			if (node.matches(loaderSelector)) {
+				node.matches(loaderSelector) ? animatedBackground(node) : animatedBackground(node.querySelector(loaderSelector));
 			}
-		});
-	});
 
-	// Configuration for the mutation observer
-	const observerConfig = { childList: true, subtree: true };
+			// Check for progress bar elements
+			const progress = node.matches(progressSelector) ? node : node.querySelector(progressSelector);
+			if (progress) {
+				replaceOriginalProgress(progress);
+			}
+		})
 
-	// Start observing mutations in the document body
-	observer.observe(document.body, observerConfig);
+		removedNodes.forEach(node => {
+			if (node.nodeType !== Node.ELEMENT_NODE) return;
 
-	// Check a progress element immediately after the page loads
-	const progress = document.querySelector('.ApplicationLoaderComponentStyle-loader, .progress, .LobbyLoaderComponentStyle-loaderContainer img, #preloader .progress');
+			if (node.matches(loaderSelector) || node.querySelector(loaderSelector)) {
+				node.matches(loaderSelector) ? animatedBackgroundDelete(node) : animatedBackgroundDelete(node.querySelector(loaderSelector));
+			}
+		})
+	}
+
+	observer.observe(document.body, { childList: true, subtree: true })
+
+	// Initial check for progress bars when the script runs
+	const progress = node.matches(progressSelector) ? node : node.querySelector(progressSelector);
 	if (progress) {
 		replaceOriginalProgress(progress);
 	}

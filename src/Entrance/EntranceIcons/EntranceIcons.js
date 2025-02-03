@@ -9,111 +9,76 @@
 	};
 
 	/**
-	 * Function to replace entrance icons in buttons with SVG icons (big circles, center)
-	*/
-	function replaceEntranceIcons() {
-		// Select all buttons
-		const buttons = document.querySelectorAll('.MainEntranceComponentStyle-container > div');
+	 * Replaces image icons with dynamic SVGs inside the specified button
+	 * 
+	 * @param {HTMLElement} button - The button element containing an icon
+	 */
+	function replaceIcons(button) {
+		const icon = button.querySelector(`img[class*='icon'i]`);
+		if (!icon) return;
 
-		// Iterate over each button
-		for (const button of buttons) {
-			// Find the icon and text within the button
-			const icon = button.querySelector(`img[class*='icon'i]`);
-			const text = button.querySelector(`span[class*='buttontext'i]`).innerText;
+		const src = icon.getAttribute('src')
+		for (const key in SVGs) {
+			if (src.includes(key)) {
+				const text = button.querySelector(`span[class*='buttontext'i]`)?.innerText || '';
 
-			// If the icon exists
-			if (icon) {
-				// Get the icon's source
-				const src = icon.getAttribute('src');
-				// Iterate over SVGs object keys
-				for (const linkPart in SVGs) {
-					// If the source contains the current SVG key
-					if (src.includes(linkPart)) {
-						// Replace the button's HTML with SVG icon and text
-						const svg = `
-							<div class="severitium-entrance-icon">
-								<div>
-									<svg viewBox="0 0 200 200" fill="none" class="border-visuals"><circle cx="100" cy="100" r="96"/></svg>
-									${SVGs[linkPart]}
-								</div>
-								<span>${text}</span>
-							</div>
-						`;
-						button.innerHTML = svg;
+				// Create a new wrapper div for the SVG and text
+				const wrapper = document.createElement('div');
+				wrapper.className = 'severitium-entrance-icon';
+				wrapper.innerHTML = `
+					<div>
+						<svg viewBox="0 0 200 200" fill="none" class="border-visuals">
+							<circle cx="100" cy="100" r="96"/>
+						</svg>
+						${SVGs[key]}
+					</div>
+					${text ? `<span>${text}</span>` : ''}
+				`;
 
-						break;
-					}
-				}
+				button.innerHTML = '';
+				button.appendChild(wrapper);
+				break;
 			}
 		}
 	}
 
 	/**
-	 * Function to replace static image icons from the registration screen to dynamic SVGs (small circles, bottom-right)
-	*/
-	function replaceRegistrationIcons() {
-		// Select all buttons
-		const buttons = document.querySelectorAll('.HeaderComponentStyle-headerLinkBar .SocialNetworksComponentStyle-container > div');
+	 * Processes added nodes and replaces static icons with SVGs
+	 * 
+	 * @param {MutationRecord} mutation - Mutation record containing added nodes
+	 * @param {NodeList} mutation.addedNodes - List of nodes added to the DOM
+	 */
+	function processMutation({ addedNodes }) {
+		addedNodes.forEach(node => {
+			if (node.nodeType !== Node.ELEMENT_NODE) return;
 
-		// Iterate over each button
-		for (const button of buttons) {
-			// Find the icon
-			const icon = button.querySelector(`img[class*='icon'i]`);
+			// Check entrance buttons
+			const entranceButtons = node.matches('.MainEntranceComponentStyle-container > div')
+				? [node]
+				: node.querySelectorAll('.MainEntranceComponentStyle-container > div');
 
-			// If the icon exists
-			if (icon) {
-				// Get the icon's source
-				const src = icon.getAttribute('src');
-				// Iterate over SVGs object keys
-				for (const linkPart in SVGs) {
-					// If the source contains the current SVG key
-					if (src.includes(linkPart)) {
-						// Replace the button's HTML with SVG icon and text
-						const svg = `
-						<div class="severitium-entrance-icon">
-							<div>
-								<svg viewBox="0 0 200 200" fill="none" class="border-visuals"><circle cx="100" cy="100" r="96"/></svg>
-								${SVGs[linkPart]}
-							</div>
-						</div>
-						`;
-						button.innerHTML = svg;
+			// Check registration buttons
+			const registrationButtons = node.matches('.HeaderComponentStyle-headerLinkBar .SocialNetworksComponentStyle-container > div')
+				? [node]
+				: node.querySelectorAll('.HeaderComponentStyle-headerLinkBar .SocialNetworksComponentStyle-container > div');
 
-						break;
-					}
-				}
-			}
-		}
-	}
-
-	/**
-	 * Create a new instance of MutationObserver with a callback function
-	 * to observe changes in the DOM 
-	*/
-	const observer = new MutationObserver(function (mutations) {
-		mutations.forEach(function (mutation) {
-			if (mutation.type === 'childList') { // If the change is of type childList
-				mutation.addedNodes.forEach(function (node) { // Iterate through added nodes
-					if (node.nodeType === Node.ELEMENT_NODE) { // If it's an element node
-						// Find an element with the selector '.MainEntranceComponentStyle-container > div' in the added node
-						const entrance = node.querySelector(`.MainEntranceComponentStyle-container > div`);
-						if (entrance) { // If found
-							replaceEntranceIcons();
-						}
-						// Find an element with the selector '.HeaderComponentStyle-headerLinkBar .SocialNetworksComponentStyle-container > div' in the added node
-						const registration = node.querySelector('.HeaderComponentStyle-headerLinkBar .SocialNetworksComponentStyle-container > div')
-						if (registration) { // If found
-							replaceRegistrationIcons();
-						}
-					}
-				});
-			}
+			// Replace icons in all found buttons
+			[...entranceButtons, ...registrationButtons].forEach(replaceIcons);
 		});
+	}
+
+	// Creates a new MutationObserver instance to track changes in the DOM
+	const observer = new MutationObserver(mutations => {
+		if (typeof requestAnimationFrame === 'function') {
+			requestAnimationFrame(() => mutations.forEach(processMutation));
+		} else {
+			mutations.forEach(processMutation);
+		}
 	});
 
-	// Configuration for the mutation observer
-	const observerConfig = { childList: true, subtree: true };
+	observer.observe(document.body, { childList: true, subtree: true });
 
-	// Start observing mutations in the document body
-	observer.observe(document.body, observerConfig);
+	// Initial replacement of icons already present in the DOM
+	document.querySelectorAll('.MainEntranceComponentStyle-container > div, .HeaderComponentStyle-headerLinkBar .SocialNetworksComponentStyle-container > div')
+		.forEach(replaceIcons);
 })();

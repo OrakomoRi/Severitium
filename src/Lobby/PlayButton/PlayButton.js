@@ -23,25 +23,45 @@
 	}
 
 	/**
-	 * Applies background animation to the specified element
+	 * Applies background animation using requestAnimationFrame
 	 * 
 	 * @param {HTMLElement} disabledButton - The element to which the animation will be applied
 	*/
 	function applyAnimation(disabledButton) {
-		let prevX = state.prevX || 10; // Previous value of X
-		let prevY = state.prevY || 25; // Previous value of Y
+		let { prevX, prevY } = state;
 
-		const intervalId = setInterval(function () {
+		// If animation already running, do nothing
+		if (disabledButton.dataset.animationRunning) return;
+
+		disabledButton.dataset.animationRunning = "true"; // Mark animation as running
+
+		function animate() {
+			// If the element no longer has the class, stop animation
+			if (!disabledButton.classList.contains('MainScreenComponentStyle-disabledButtonPlay')) {
+				delete disabledButton.dataset.animationRunning;
+				return;
+			}
+
+			// Generate new random background position
 			const randomX = getRandomInRange(0, 100, prevX, 35); // Random value between 0 and 100 for X
 			const randomY = getRandomInRange(0, 100, prevY, 35); // Random value between 0 and 100 for Y
+
+			// Apply styles
 			disabledButton.style.transition = "background-position 0.75s ease"; // Apply smooth animation
 			disabledButton.style.backgroundPosition = `${randomX}% ${randomY}%`; // Set new background position
+
+			// Update state
 			state.prevX = randomX; // Update previous value of X in dataset
 			state.prevY = randomY; // Update previous value of Y in dataset
-		}, 1250); // Update position every 1.25 seconds
 
-		// Save interval identifier in the element's dataset
-		disabledButton.dataset.animationIntervalId = intervalId;
+			// Schedule next frame with delay
+			setTimeout(() => {
+				disabledButton.dataset.animationFrameId = requestAnimationFrame(animate);
+			}, 1250);
+		}
+
+		// Start animation
+		disabledButton.dataset.animationFrameId = requestAnimationFrame(animate);
 	}
 
 	/**
@@ -50,46 +70,58 @@
 	 * @param {HTMLElement} disabledButton - The element from which the animation will be stopped
 	*/
 	function stopAnimation(disabledButton) {
-		// Get the interval identifier from the element's dataset
-		const intervalId = disabledButton.dataset.animationIntervalId;
-		if (intervalId) {
-			// If the interval exists, clear it
-			clearInterval(intervalId);
-			// Remove dataset attribute from the element
-			delete disabledButton.dataset.animationIntervalId;
-			// Assign the last background position to the parent element MainScreenComponentStyle-playButtonContainer
-			const playButton = document.querySelector('.MainScreenComponentStyle-playButtonContainer');
-			if (playButton) {
-				// Set the background position of the parent container
-				playButton.style.backgroundPosition = `${state.prevX}% ${state.prevY}%`;
-			}
+		// Cancel the scheduled animation frame if it exists
+		if (disabledButton.dataset.animationFrameId) {
+			cancelAnimationFrame(Number(disabledButton.dataset.animationFrameId));
+			delete disabledButton.dataset.animationFrameId;
+		}
+		
+		// Remove animation flag
+		delete disabledButton.dataset.animationRunning;
+
+		// Assign the last background position to the parent element
+		const playButton = document.querySelector('.MainScreenComponentStyle-playButtonContainer');
+		if (playButton) {
+			playButton.style.backgroundPosition = `${state.prevX}% ${state.prevY}%`;
 		}
 	}
 
-	// Create a new instance of MutationObserver
-	const observer = new MutationObserver(function (mutationsList) {
-		// Iterate through all mutations
-		for (const mutation of mutationsList) {
-			// Check if the mutation is done with some child
+	/**
+	 * Handles mutations efficiently
+	 */
+	const observer = new MutationObserver((mutations) => {
+		if (typeof requestAnimationFrame === 'function') {
+			requestAnimationFrame(() => processMutations(mutations));
+			return;
+		}
+		
+		// Fallback: Process changes immediately if `requestAnimationFrame` is not supported
+		processMutations(mutations);
+	});
+
+	function processMutations(mutations) {
+		for (const mutation of mutations) {
 			if (mutation.type === 'childList') {
 				for (const node of mutation.addedNodes) {
-					if (node.nodeType === node.ELEMENT_NODE) {
-						// Check if the added node or its descendants contain the target class
-						const targetNode = node.classList && node.classList.contains('MainScreenComponentStyle-playButtonContainer') 
+					if (node.nodeType === Node.ELEMENT_NODE) {
+						// Check if added node or its descendants contain the target element
+						const targetNode = node.matches('.MainScreenComponentStyle-playButtonContainer') 
 							? node 
 							: node.querySelector('.MainScreenComponentStyle-playButtonContainer');
-						if (targetNode && targetNode.classList.contains('MainScreenComponentStyle-disabledButtonPlay')) {
+						
+						if (targetNode?.classList.contains('MainScreenComponentStyle-disabledButtonPlay')) {
 							applyAnimation(targetNode);
 						}
 					}
 				}
 
 				for (const node of mutation.removedNodes) {
-					if (node.nodeType === node.ELEMENT_NODE) {
-						// Check if the removed node or its descendants contain the target class
-						const targetNode = node.classList && node.classList.contains('MainScreenComponentStyle-playButtonContainer') 
+					if (node.nodeType === Node.ELEMENT_NODE) {
+						// Check if removed node or its descendants contain the target element
+						const targetNode = node.matches('.MainScreenComponentStyle-playButtonContainer') 
 							? node 
 							: node.querySelector('.MainScreenComponentStyle-playButtonContainer');
+						
 						if (targetNode) {
 							stopAnimation(targetNode);
 						}
@@ -97,25 +129,20 @@
 				}
 			}
 
-			// Check if the mutation is an attribute change
+			// Optimize attribute mutation handling
 			if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-				// Check if the element is a .MainScreenComponentStyle-playButtonContainer
 				const target = mutation.target;
 				if (target.classList.contains('MainScreenComponentStyle-playButtonContainer')) {
-					// Check if the .MainScreenComponentStyle-disabledButtonPlay class is added
 					if (target.classList.contains('MainScreenComponentStyle-disabledButtonPlay')) {
-						// If yes, apply animation to the element
 						applyAnimation(target);
 					} else {
-						// If the .MainScreenComponentStyle-disabledButtonPlay class is removed, stop the animation
 						stopAnimation(target);
-						// Leave the background position as it is
 					}
 				}
 			}
 		}
-	});
+	}
 
-	// Set up observation for changes in the document
+	// Start observing document body for changes
 	observer.observe(document.body, { attributes: true, childList: true, subtree: true });
 })();

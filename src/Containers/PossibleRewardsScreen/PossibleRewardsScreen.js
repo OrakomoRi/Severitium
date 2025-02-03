@@ -1,70 +1,69 @@
 (function () {
 	// Defines the active color used to determine the current state of the card
 	const activeColor = 'rgb(191, 213, 255)';
-
+	// Possible reward container selector
+	const containerSelector = '.ContainerInfoComponentStyle-possibleRewardsContainer';
 	// Possible reward card selector
-	const selector = '.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div';
+	const cardSelector = '.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div';
 
 	/**
-	 * Apply data-state attribute to an element based on its active state.
-	 * @param {HTMLElement} element - The element to update.
-	 * @param {boolean} isActive - Whether the element is active.
+	 * Handles click event on the reward container to update active states
+	 * 
+	 * @param {MouseEvent} event - The click event
 	 */
-	function applyDataState(element, isActive) {
-		element.setAttribute('data-state', isActive ? 'active' : 'inactive');
-	}
-
-	/**
-	 * Handle click event on an element.
-	 * @param {MouseEvent} event - The click event.
-	 */
-	document.body.addEventListener('click', function (event) {
-		const clickedElement = event.target.closest(selector);
+	function handleClick(event) {
+		const clickedElement = event.target.closest(cardSelector);
 		if (!clickedElement) return;
 
-		const elements = document.querySelectorAll(selector);
-
-		// Apply inactive state to all elements except the clicked one
-		for (const element of elements) {
-			const isActive = element === clickedElement;
-			applyDataState(element, isActive);
-		}
-	});
+		// Update state for all elements
+		for (const element of document.querySelectorAll(cardSelector)) {
+			element.setAttribute('data-state', element === clickedElement ? 'active' : 'inactive');
+		};
+	}
 
 	/**
 	 * Process a new element to apply data-state and attach event listeners.
 	 * @param {HTMLElement} element - The new element to process.
 	 */
 	function processElement(element) {
-		if (!element.matches(selector)) return;
+		if (!element.matches(cardSelector)) return;
 
 		// Check if the element is active based on its box-shadow
 		const isActive = window.getComputedStyle(element).boxShadow.includes(activeColor);
-		applyDataState(element, isActive);
+		element.setAttribute('data-state', isActive ? 'active' : 'inactive');
 	}
 
 	/**
-	 * Create a new instance of MutationObserver with a callback function
-	 * to observe changes in the DOM and track the addition of reward cards.
+	 * Creates a new `MutationObserver` instance to track DOM changes
 	 */
-	const observer = new MutationObserver((mutationsList) => {
-		for (const mutation of mutationsList) {
-			for (const node of mutation.addedNodes) {
-				if (node.nodeType === Node.ELEMENT_NODE) {
-					// Process the added node if it matches the selector
-					if (node.matches && node.matches(selector)) {
-						processElement(node);
-					}
-
-					// If the added node contains child elements, process them recursively
-					if (node.querySelectorAll) {
-						node.querySelectorAll(selector).forEach(processElement);
-					}
-				}
-			}
-		}
+	const observer = new MutationObserver(mutations => {
+		requestAnimationFrame(() => processMutations(mutations));
 	});
 
-	// Set up observation for changes in the document
+	/**
+	 * Processes mutations efficiently
+	 * 
+	 * @param {MutationRecord[]} mutations - List of mutations
+	 */
+	function processMutations(mutations) {
+		mutations.forEach(({ addedNodes, removedNodes }) => {
+			addedNodes.forEach(node => {
+				if (node.nodeType !== Node.ELEMENT_NODE) return;
+				if (node.matches?.(containerSelector) || node.querySelectorAll?.(containerSelector)) {
+					document.body.addEventListener('click', handleClick);
+				}
+				if (node.matches?.(cardSelector)) processElement(node); // Process the node if it matches the selector
+				node.querySelectorAll?.(cardSelector)?.forEach(processElement); // Process child elements recursively
+			});
+			removedNodes.forEach(node => {
+				if (node.nodeType !== Node.ELEMENT_NODE) return;
+				if (node.matches?.(containerSelector) || node.querySelectorAll?.(containerSelector)) {
+					document.body.removeEventListener('click', handleClick);
+				}
+			});
+		});
+	}
+
+	// Start observing changes in the document
 	observer.observe(document.body, { childList: true, subtree: true });
 })();

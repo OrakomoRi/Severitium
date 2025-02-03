@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Player Context Menu
-// @version			1.2.8
+// @version			1.3.0
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 

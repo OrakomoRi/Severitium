@@ -5,12 +5,15 @@
 	function customChatLogic() {
 		// Find the original select container and select element
 		const originalSelectContainer = document.querySelector('.ChatComponentStyle-channels .ChatComponentStyle-channelsSelect');
-		const originalSelect = originalSelectContainer.querySelector('select');
+		if (!originalSelectContainer) return; // Prevent errors if element is missing
 
-		// Extract the options from the original select
+		const originalSelect = originalSelectContainer.querySelector('select');
+		if (!originalSelect) return;
+
+		// Extract options from the original select
 		const options = Array.from(originalSelect.options).map(option => ({
-			name: option.textContent,
-			value: option.value
+			name: option.textContent || '',
+			value: option.value || ''
 		}));
 
 		// Take selected option as default option
@@ -38,8 +41,9 @@
 
 		// Add a click handler for the custom selector
 		selectedOption.addEventListener('click', () => {
+			const clanChannel = document.querySelector('.ChatComponentStyle-channels .ChatComponentStyle-clanChannel');
 			// Check if clan chat is open
-			if (clanChannel && clanChannel.dataset.state === 'selected') {
+			if (clanChannel?.dataset.state === 'selected') {
 				// Find select active option
 				originalSelect.value = selectedOption.dataset.value;
 				originalSelect.dispatchEvent(new Event('change', { bubbles: true }));
@@ -52,21 +56,18 @@
 			}
 		});
 
-		// Handle clicks on '.ChatComponentStyle-channels .ChatComponentStyle-clanChannel'
+		// Handle clicks on the clan channel button
 		const clanChannel = document.querySelector('.ChatComponentStyle-channels .ChatComponentStyle-clanChannel');
-		// Check if the clan channel exists to the user
 		if (clanChannel) {
 			clanChannel.addEventListener('click', () => {
-				if (clanChannel.dataset.state !== 'selected') {
-					clanChannel.dataset.state = 'selected';
-					selectedOption.dataset.state = '';
-				}
+				const isSelected = clanChannel.dataset.state === 'selected';
+				clanChannel.dataset.state = isSelected ? '' : 'selected';
+				selectedOption.dataset.state = isSelected ? 'selected' : '';
 			});
 		}
 
-		// Supposed to add this custom event listener since game has own preventDefault somewhere
-		const chat = document.querySelector('.ChatComponentStyle-chatWindow');
-		chat.addEventListener('click', (event) => {
+		// Close dropdown when clicking outside
+		document.querySelector('.ChatComponentStyle-chatWindow')?.addEventListener('click', (event) => {
 			if (!breeziumSelect.container.contains(event.target) && breeziumSelect.container.classList.contains('show')) {
 				breeziumSelect.container.classList.remove('show');
 			}
@@ -75,18 +76,32 @@
 
 	/**
 	 * Create a new instance of MutationObserver with a callback function
-	 * to observe changes in the DOM 
+	 * to observe changes in the DOM.
 	 */
-	const observer = new MutationObserver(function (mutations) {
-		mutations.forEach(function (mutation) {
-			if (mutation.type === 'childList') { // If the change is of type childList
-				mutation.addedNodes.forEach(function (node) { // Iterate through added nodes
-					if (node.nodeType === Node.ELEMENT_NODE) { // If it's an element node
-						// Find an element with the selector in the added node
-						const select = node.querySelector('.ChatComponentStyle-channels .ChatComponentStyle-channelsSelect');
-						if (select) { // If found
-							customChatLogic();
-						}
+	const observer = new MutationObserver((mutations) => {
+		if (typeof requestAnimationFrame === 'function') {
+			// Use requestAnimationFrame to optimize DOM changes processing
+			requestAnimationFrame(() => {
+				mutations.forEach((mutation) => {
+					if (mutation.type === 'childList') {
+						mutation.addedNodes.forEach((node) => {
+							if (node.nodeType === Node.ELEMENT_NODE && (node.matches(nodeSelector) || node.querySelector(nodeSelector))) {
+								customChatLogic();
+							}
+						});
+					}
+				});
+			});
+
+			return;
+		}
+
+		// Fallback: Execute immediately if requestAnimationFrame is not available
+		mutations.forEach((mutation) => {
+			if (mutation.type === 'childList') {
+				mutation.addedNodes.forEach((node) => {
+					if (node.nodeType === Node.ELEMENT_NODE && (node.matches(nodeSelector) || node.querySelector(nodeSelector))) {
+						customChatLogic();
 					}
 				});
 			}
