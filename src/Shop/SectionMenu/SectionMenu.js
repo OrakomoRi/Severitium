@@ -2,7 +2,7 @@
 	// Defines the active color used to determine the current state of the menu item
 	const activeColor = 'rgba(255, 204, 0, 0.25)';
 	// Possible reward card selector
-	const itemSelector = 'div > div';
+	const itemSelector = `div > div:has(> div[class*='section'i][class*='category'i])`;
 	// Shop section menu selector
 	const menuSelector = '.NewShopCommonComponentStyle-commonBlockMenuShop';
 
