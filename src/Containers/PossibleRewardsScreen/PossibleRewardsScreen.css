@@ -208,7 +208,7 @@
 .ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div:hover {
 	border-width: .1em;
 	border-style: solid;
-	border-color: var(--severitium-main-color);
+	border-color: var(--severitium-white-color);
 }
 
 /* Item probability block */

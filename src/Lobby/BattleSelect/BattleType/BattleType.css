@@ -8,11 +8,11 @@
 /* Single card */
 
 .BattlePickComponentStyle-commonStyleBlock {
+	position: relative;
 	background: none;
 	box-shadow: 0 0 0 .075em var(--severitium-main-color);
 	transition: box-shadow .2s ease;
 	border-radius: var(--severitium-border-radius);
-	position: relative;
 }
 
 /* Single card on hover */
@@ -44,6 +44,7 @@
 
 .BattlePickComponentStyle-commonStyleBlock > div:first-child {
 	border-radius: 0;
+	background-size: cover;
 	transition: -webkit-transform .2s ease;
 	transition: transform .2s ease;
 	transition: transform .2s ease, -webkit-transform .2s ease;
@@ -59,11 +60,13 @@
 /* Type's description container */
 
 .BattlePickComponentStyle-commonStyleBlock .BattlePickComponentStyle-descriptionBattle {
+	position: absolute;
 	width: 100%;
 	height: auto;
-	display: flex;
 	bottom: 0;
 	left: 0;
+	display: flex;
+	flex-direction: column;
 	background: linear-gradient(transparent 0%, var(--severitium-black-color) 100%);
 }
 
@@ -92,11 +95,48 @@
 	width: auto;
 }
 
+/* Last (event) card gradient */
+
+.BattlePickComponentStyle-commonStyleBlock:last-of-type > div:first-child + div[class*="ksc"i] {
+	display: none;
+}
+
 /* Timers inside the cards */
 
 .BattlePickComponentStyle-commonStyleBlock div[class*='timer'i] {
+	position: absolute;
+	width: auto;
+	height: auto;
+	bottom: 3.5em;
+	left: 1.5em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1em;
+	margin: 0;
+	padding: .25em .5em;
 	background-color: var(--severitium-main-color);
+}
+
+/* Timer text */
+
+.BattlePickComponentStyle-commonStyleBlock div[class*='timer'i] > span {
+	margin: 0;
+	padding: 0;
+	font-size: 1.25em;
 	color: var(--severitium-black-text-color);
+}
+
+/* Container for cristals and exp amount on pro-battles card */
+
+.BattlePickComponentStyle-blockForCrystalXP {
+	width: calc(100% - calc(2em * 1.5));
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	min-height: auto;
+	height: auto;
+	margin: 0 calc(1em * 1.5) 1em calc(1em * 1.5);
 }
 
 /* Crystal text amount on pro-battles card */
