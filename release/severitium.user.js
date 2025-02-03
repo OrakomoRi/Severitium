@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.6.1+build81
+// @version			1.6.1+build82
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -98,7 +98,7 @@
 	}
 
 	const logger = new Logger(script.name);
-
+	// logger.enableLogging();
 
 
 	/**

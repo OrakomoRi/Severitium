@@ -194,6 +194,7 @@
 /* Button on hover */
 
 .ClanInfoComponentStyle-buttonEditProfile:hover {
+	background-color: var(--severitium-green-button-background);
 	outline: none;
 	box-shadow: none;
 	border: var(--severitium-green-button-border-color-hover) solid .1em;
@@ -256,6 +257,7 @@
 /* Button on hover */
 
 .ClanInfoComponentStyle-clanForeignActions > div:first-child:has(> span:not(.ClanInfoComponentStyle-clanActionDescription)):hover {
+	background-color: var(--severitium-gray-button-background);
 	border: var(--severitium-red-button-border-color-hover) solid .1em;
 }
 
@@ -275,6 +277,7 @@
 /* Button on hover */
 
 .ClanInfoComponentStyle-clanForeignActions > div:last-child > div:has(> span):hover {
+	background-color: var(--severitium-gray-button-background);
 	border: var(--severitium-gray-button-border-color-hover) solid .1em;
 }
 
@@ -298,6 +301,7 @@
 /* Input on hover */
 
 .FriendListComponentStyle-containerMembers .ClanCommonStyle-information .SearchInputComponentStyle-searchInput input:hover {
+	background-color: transparent;
 	box-shadow: none;
 }
 
@@ -486,6 +490,7 @@
 /* Button on hover */
 
 .ClanCommonStyle-information .ClanMembersListComponentStyle-buyClanPlaceButton:not(.ButtonComponentStyle-disabled):hover {
+	background-color: var(--severitium-green-button-background);
 	outline: none;
 	box-shadow: none;
 	border: var(--severitium-green-button-border-color-hover) solid .1em;
@@ -513,6 +518,7 @@
 /* Button on hover */
 
 .ClanCommonStyle-information .ClanCommonStyle-buttonInvite:not(.ButtonComponentStyle-disabled):hover {
+	background-color: var(--severitium-green-button-background);
 	outline: none;
 	box-shadow: none;
 	border: var(--severitium-green-button-border-color-hover) solid .1em;
@@ -648,6 +654,7 @@
 /* Button on hover */
 
 .FriendListComponentStyle-containerMembers .ClanCommonStyle-members .TableComponentStyle-tBody .ClanRequestsItemComponentStyle-actionsCell .ClanInvitationsItemComponentStyle-buttonReject:first-child:hover {
+	background-color: var(--severitium-red-button-background);
 	border: var(--severitium-red-button-border-color-hover) solid .1em;
 }
 
@@ -669,6 +676,7 @@
 /* Button on hover */
 
 .FriendListComponentStyle-containerMembers .ClanCommonStyle-members .TableComponentStyle-tBody .ClanRequestsItemComponentStyle-actionsCell .ClanInvitationsItemComponentStyle-buttonReject:last-child:hover {
+	background-color: var(--severitium-green-button-background);
 	border: var(--severitium-green-button-border-color-hover) solid .1em;
 }
 
@@ -899,6 +907,7 @@
 /* Button on hover */
 
 .ClanProfileEditComponentStyle-buttonCancel:hover {
+	background-color: var(--severitium-gray-button-background);
 	outline: none;
 	box-shadow: none;
 	border: var(--severitium-gray-button-border-color-hover) solid .1em;
@@ -940,6 +949,7 @@
 /* Button on hover */
 
 .ClanProfileEditComponentStyle-buttonSave:not([class*='disabled'i]):hover {
+	background-color: var(--severitium-green-button-background);
 	outline: none;
 	box-shadow: none;
 	border: var(--severitium-green-button-border-color-hover) solid .1em;
