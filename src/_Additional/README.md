@@ -62,3 +62,42 @@ _removeSeveritiumLoadingScreen();
 - `_removeSeveritiumLoadingScreen()`: This function removes the loading screen from the page once resources are loaded or when you no longer need the loading indicator
 
 The loading screen is added using a unique class `severitium-loading-screen` and a custom data attribute `data-module="SeveritiumLoadingScreen"`, which ensures that it won't conflict with other elements on the page.
+
+---
+
+## :capital_abcd: Extract File Name and Type
+
+Extracts the file name from a given `repository` URL and determines if it is a CSS file or an image.
+
+### :warning: Warning
+
+The function is useful only for the this repository.
+
+### :bulb:  How to use
+
+```js
+_extractFileName(url);
+
+// For example: 
+_extractFileName('/src/.images/icons/logo.png');
+```
+
+### :mag: Description
+
+Returns an object with the extracted file name and its type.
+
+```js
+{
+	fileName: "icons/logo",
+	fileType: "(image)"
+}
+```
+
+- The function checks if the given URL contains `/src/.images/` to determine if it refers to an image.
+- If it is an image, it extracts the file path within `.images/` and labels it as `"(image)"`.
+- Otherwise, it assumes the file is a CSS file and extracts its path, labeling it as `"(CSS)"`.
+- If the pattern doesn’t match, it returns `"Unknown"` as the file name and `"(Unknown)"` as the type.
+
+This function is useful for categorizing and handling file types dynamically.
+
+---
