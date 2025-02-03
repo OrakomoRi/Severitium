@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			Colorful Resists
-// @version			1.4.12
+// @version			1.5.0
 // @description		Module that changes color of resists in Tab
 // @author			OrakomoRi
 
