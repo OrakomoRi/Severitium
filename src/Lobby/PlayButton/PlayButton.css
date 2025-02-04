@@ -82,8 +82,9 @@
 /* Button text */
 
 .MainScreenComponentStyle-playButtonContainer span {
+	font-family: BaseFontBold, FallbackFontBold;
 	color: var(--severitium-dark-white-text-color);
-	-webkit-text-stroke: .025em var(--severitium-black-color);
+	/* -webkit-text-stroke: .025em var(--severitium-black-color); */
 	text-shadow: 0 0 .5em var(--severitium-black-color);
 	transition: color .2s ease;
 }

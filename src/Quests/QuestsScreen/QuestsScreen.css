@@ -511,7 +511,6 @@
 .QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission + div .TableMainQuestComponentStyle-backgroundIconTable:has(img[src*="shop"i]) {
 	margin: 0;
 	padding: 0;
-	width: -webkit-max-content;
 }
 
 /* Quest card's description */

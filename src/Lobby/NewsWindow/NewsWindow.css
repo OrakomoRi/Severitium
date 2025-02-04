@@ -54,10 +54,16 @@
 	position: relative;
 }
 
+/* Single block header new mark */
+
+.NewsComponentStyle-newsItemHeader .NewsComponentStyle-newsItemHeaderNewMark {
+	background-color: var(--severitium-main-color);
+}
+
 /* Single block header read mark */
 
 .NewsComponentStyle-newsItemHeader .NewsComponentStyle-newsItemHeaderReadMark {
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-gray-color);
 }
 
 /* Single block header title */
