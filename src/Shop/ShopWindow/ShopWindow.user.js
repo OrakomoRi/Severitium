@@ -1,8 +1,8 @@
 // ==UserScript==
 
-// @name			CSS Variables
-// @version			1.4.4
-// @description		Injects CSS variables into the page
+// @name			CSS Shop Window
+// @version			1.0.0
+// @description		Injects CSS code into the page
 // @author			OrakomoRi
 
 // @icon			https://i.imgur.com/InNLwvb.png
@@ -22,7 +22,7 @@
 	'use strict';
 
 	// Link to raw CSS file
-	const link = 'https://github.com/OrakomoRi/Severitium/blob/main/src/Variables/Variables.min.css?raw=true';
+	const link = 'https://github.com/OrakomoRi/Severitium/blob/main/src/Shop/ShopWindow/ShopWindow.min.css?raw=true';
 
 	// Make an AJAX request to fetch the CSS file
 	GM_xmlhttpRequest({
@@ -32,8 +32,6 @@
 			// Inject CSS into the page
 			// Create a <style> element
 			var styleElement = document.createElement('style');
-			// Set the class for the element to detect the 'container' with variables
-			styleElement.setAttribute('data-module', 'SeveritiumVariables');
 			// Set the CSS text to styles
 			styleElement.textContent = response.responseText;
 			// Apply styles to body end (to override initial styles)

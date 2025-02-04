@@ -82,6 +82,7 @@
 .EventBattlePassLobbyComponentStyle-buttonEventBattlePass .ChallengeTimerComponentStyle-textTime {
 	background-color: var(--severitium-main-color);
 	color: var(--severitium-black-text-color);
+	border-radius: var(--severitium-border-radius);
 }
 
 /* Progressbar circle */

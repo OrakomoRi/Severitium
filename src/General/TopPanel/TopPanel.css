@@ -265,25 +265,25 @@
 	background-color: linear-gradient(270deg, var(--severitium-light-transparent-background3) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-/* Text on coin button */
+/* Text on tancoin button */
 
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*="coin"i]) > span,
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i]) > span {
-	color: var(--severitium-yellow-text-color);
+	color: var(--severitium-tancoin-color);
 }
 
 /* Text on crystal button */
 
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*="crystal"i]) > span,
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i]) > span {
-	color: var(--severitium-blue-text-color);
+	color: var(--severitium-crystal-color);
 }
 
 /* Text on ruby button */
 
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*="ruby"i]) > span,
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i]) > span {
-	color: var(--severitium-red-text-color);
+	color: var(--severitium-ruby-color);
 }
 
 /* Original plus sign icons on currency buttons */
@@ -329,21 +329,21 @@
 
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*="coin"i][src*="add"i]):hover::after,
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i][src*="add"i]):hover::after {
-	background-color: var(--severitium-yellow-color);
+	background-color: var(--severitium-tancoin-color);
 }
 
 /* Custom plus sign icon on crystal button hover */
 
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*="crystal"i][src*="add"i]):hover::after,
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i][src*="add"i]):hover::after {
-	background-color: var(--severitium-light-blue-color);
+	background-color: var(--severitium-crystal-color);
 }
 
 /* Custom plus sign icon on ruby button hover */
 
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*="ruby"i][src*="add"i]):hover::after,
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i][src*="add"i]):hover::after {
-	background-color: var(--severitium-red-color);
+	background-color: var(--severitium-ruby-color);
 }
 
 /* Full screen button */

@@ -116,6 +116,7 @@
 	margin: 0;
 	padding: .25em .5em;
 	background-color: var(--severitium-main-color);
+	border-radius: var(--severitium-border-radius);
 }
 
 /* Timer text */
@@ -142,7 +143,7 @@
 /* Crystal text amount on pro-battles card */
 
 .BattlePickComponentStyle-descriptionBattle div:has(> img[src*="crystal"i]) > span {
-	color: var(--severitium-blue-text-color);
+	color: var(--severitium-crystal-color);
 }
 
 /* Unavailable card lock */

@@ -22,6 +22,9 @@
 	/* Some highlighting colors */
 
 	--severitium-friend-color: rgb(170, 99, 183);
+	--severitium-crystal-color: rgb(100, 185, 225);
+	--severitium-tancoin-color: rgb(225, 190, 85);
+	--severitium-ruby-color: rgb(255, 125, 125);
 
 	/* Theme backgrounds */
 
@@ -77,7 +80,6 @@
 	--severitium-gold-button-color: rgb(255, 226, 169);
 	--severitium-gold-button-border-color: rgba(242, 192, 27, .25);
 	--severitium-gold-button-border-color-hover: rgba(242, 192, 27, .75);
-
 
 
 	/* Theme colors for battle tab */
