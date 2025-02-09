@@ -86,8 +86,8 @@ class LoadingScreen {
 	 */
 	updateGradient() {
 		const gradient = this.ctx.createLinearGradient(0, 0, 0, this.canvas.height);
-		gradient.addColorStop(0, `rgba(11, 26, 42, 1`);
-		gradient.addColorStop(1, `rgba(17, 34, 64, 1`);
+		gradient.addColorStop(0, `rgb(10, 15, 30)`);
+		gradient.addColorStop(1, `rgb(10, 25, 50)`);
 		this.ctx.fillStyle = gradient;
 		this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 	}
