@@ -2,13 +2,14 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.6.1+build84
+// @version			1.6.1+build85
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
 // @icon			https://i.imgur.com/Srv1szX.png
 
 // @match			https://*.tankionline.com/play/*
+// @include			https://*test*.tankionline.com/*
 
 // @connect			raw.githubusercontent.com
 // @connect			github.com
@@ -18,9 +19,9 @@
 // @downloadURL		https://github.com/OrakomoRi/Severitium/blob/main/release/severitium.user.js?raw=true
 
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_getSeason.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_loadingScreen.min.js?raw=true
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_extractFileName.min.js?raw=true
 
+// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/class/LoadingScreen.min.js?raw=true
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/class/Logger.min.js?raw=true
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/class/SeveritiumInjector.min.js?raw=true
 
@@ -307,7 +308,7 @@
 	}
 
 	async function loadResources(forceReload = false) {
-		_createSeveritiumLoadingScreen(script.name);
+		const loadingScreen = LoadingScreen.add('script.name');
 		logger.log(`Load resources started.`, 'debug');
 		try {
 			const cachedVersion = GM_getValue('SeveritiumVersion', '');
@@ -357,7 +358,7 @@
 			severitiumInjector.updateSeveritium(script);
 			severitiumInjector.applyCSS(CSSLinks);
 			severitiumInjector.applyImages(imageLinks);
-			_removeSeveritiumLoadingScreen();
+			LoadingScreen.remove(loadingScreen);
 		}
 	}
 
