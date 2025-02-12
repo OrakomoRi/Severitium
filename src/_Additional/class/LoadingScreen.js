@@ -13,12 +13,76 @@ class LoadingScreen {
 		this.ctx = null; // Rendering context for the canvas element
 		this.starCount = 150; // Number of stars displayed in the night sky animation
 		this.lastFrameTime = performance.now(); // Timestamp of the last animation frame (used for smooth FPS control)
+		this.language = this.detectLanguage(); // Language for text
+		this.translations = this.getTranslations(); // Text translations
+	}
+
+	/**
+	 * Detects the language from localStorage or browser settings
+	 * 
+	 * @returns {string} ISO-639-1 language code
+	 */
+	detectLanguage() {
+		const storedLang = localStorage.getItem('language_store_key');
+		if (storedLang) return storedLang.toLowerCase();
+		return navigator.language.split('-')[0].toLowerCase();
+	}
+
+	/**
+	 * Provides translations based on detected language
+	 * 
+	 * @returns {Object} Translation dictionary
+	 */
+	getTranslations() {
+		const translations = {
+			en: {
+				loading: "Loading resources, please wait...",
+				wait: "It can take up to a few minutes to load."
+			},
+			ru: {
+				loading: "Загрузка ресурсов, пожалуйста, подождите...",
+				wait: "Это может занять несколько минут."
+			},
+			uk: {
+				loading: "Завантаження ресурсів, будь ласка, зачекайте...",
+				wait: "Це може зайняти кілька хвилин."
+			},
+			nl: {
+				loading: "Bronnen laden, even geduld...",
+				wait: "Het kan een paar minuten duren om te laden."
+			},
+			pl: {
+				loading: "Ładowanie zasobów, proszę czekać...",
+				wait: "Może to potrwać kilka minut."
+			},
+			pt: {
+				loading: "Carregando recursos, por favor, aguarde...",
+				wait: "Isso pode levar alguns minutos para carregar."
+			},
+			de: {
+				loading: "Ressourcen werden geladen, bitte warten...",
+				wait: "Das Laden kann einige Minuten dauern."
+			},
+			ja: {
+				loading: "リソースを読み込んでいます。お待ちください...",
+				wait: "読み込みには数分かかる場合があります。"
+			},
+			es: {
+				loading: "Cargando recursos, por favor espere...",
+				wait: "Puede tardar hasta unos minutos en cargar."
+			},
+			fr: {
+				loading: "Chargement des ressources, veuillez patienter...",
+				wait: "Cela peut prendre quelques minutes."
+			}
+		};
+		return translations[this.language] || translations.en;
 	}
 
 	/**
 	 * Creates and initializes a new LoadingScreen instance
-	 * @param {string} name - Unique identifier for the loading screen elements
 	 * 
+	 * @param {string} name - Unique identifier for the loading screen elements 
 	 * @returns {LoadingScreen} The instance of the created loading screen
 	 */
 	static add(name) {
@@ -36,7 +100,7 @@ class LoadingScreen {
 
 
 		loadingScreenElement.innerHTML = `
-			<canvas class="${this.name}--night-sky"></canvas><div class="${this.name}--loading-banner"><h3 class="${this.name}--loading-header">${this.name}</h3><p class="${this.name}--loading-text">Loading resources, please wait...</p><p class="${this.name}--loading-text">It can take up to a few minutes to load.</p></div>
+			<canvas class="${this.name}--night-sky"></canvas><div class="${this.name}--loading-banner"><h3 class="${this.name}--loading-header">${this.name}</h3><p class="${this.name}--loading-text">${this.translations.loading}</p><p class="${this.name}--loading-text">${this.translations.wait}</p></div>
 			<style>.${this.name}--loading-screen,.${this.name}--loading-screen *{margin:0;padding:0;box-sizing:border-box;}.${this.name}--loading-screen{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;z-index:9999;}.${this.name}--loading-banner{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;text-align:center;padding:.5rem 1rem;background-color:rgba(0,0,0,.25);color:#fff;border:.1rem solid rgb(75,75,75);border-radius:.25rem;backdrop-filter:blur(.5rem);z-index:10000;overflow:hidden;animation:${this.name}--banner-appear ${1 / this.fadeSpeed}s ease-in-out}.${this.name}--loading-header{font-size:2.5rem;font-weight:bold}.${this.name}--loading-text{font-size:1.5rem;font-weight:normal}@keyframes ${this.name}--banner-appear{0%{transform:translateX(-100vw) scale(.7);opacity:.7}80%{transform:translateX(0) scale(.7);opacity:.7}100%{transform:scale(1);opacity:1}}@keyframes ${this.name}--banner-disappear{0%{transform:scale(1);opacity:1}20%{transform:translateX(0) scale(.7);opacity:.7}100%{transform:translateX(100vw) scale(.7);opacity:.7}}body{position:relative;height:100wh!important;width:100vw!important;margin:0;overflow:hidden}</style>
 		`;
 
