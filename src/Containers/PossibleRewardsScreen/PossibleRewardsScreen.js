@@ -29,7 +29,7 @@
 		if (!element.matches(selector)) return;
 
 		// Check if the element is active based on its box-shadow
-		const isActive = window.getComputedStyle(element).boxShadow.includes(activeColor);
+		let isActive = window.getComputedStyle(element).boxShadow.includes(activeColor);
 		element.setAttribute('data-state', isActive ? 'active' : 'inactive');
 	}
 
