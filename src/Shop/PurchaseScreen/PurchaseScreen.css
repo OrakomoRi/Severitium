@@ -1,0 +1,189 @@
+/* Main container */
+
+.BasePaymentComponentStyle-commonContainerForChoiceAndButton {
+	scrollbar-color: var(--severitium-light-transparent-background2) transparent;
+	scrollbar-width: thin;
+}
+
+/* Header with information */
+
+.BasePaymentComponentStyle-commonContainerForChoiceAndButton .PaymentInformationComponentStyle-commonBlock {
+	width: 100%;
+	-webkit-backdrop-filter: blur(.25em);
+			backdrop-filter: blur(.25em);
+	border: none;
+	border-bottom: .1em solid var(--severitium-gray-color);
+}
+
+/* Header text */
+
+.BasePaymentComponentStyle-commonContainerForChoiceAndButton .PaymentInformationComponentStyle-commonBlock > [class*="header"i] {
+	font-size: 1.5em;
+	color: var(--severitium-white-text-color);
+}
+
+/* Cards container */
+
+.CoinPaymentComponentStyle-itemsContainer.CoinPaymentComponentStyle-itemsContainer {
+	scrollbar-color: var(--severitium-light-transparent-background2) transparent;
+	scrollbar-width: thin;
+}
+
+/* Single card */
+
+.CoinPaymentComponentStyle-itemsContainer > div {
+	position: relative;
+	background: none;
+	background-color: var(--severitium-dark-transparent-background1);
+	box-shadow: none;
+	-webkit-backdrop-filter: blur(.25em);
+	        backdrop-filter: blur(.25em);
+	border: .1em solid var(--severitium-gray-color);
+	border-radius: var(--severitium-border-radius);
+	padding: 0;
+	pointer-events: none;
+}
+
+/* Card amount container */
+
+.CoinPaymentComponentStyle-itemsContainer > div > div[class*="amount"i] {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
+}
+
+/* Amount on card */
+
+.CoinPaymentComponentStyle-itemsContainer > div > span[class*="amount"i],
+.CoinPaymentComponentStyle-itemsContainer > div .PaymentInfoComponentStyle-priceContainer > span[class*="amount"i],
+.CoinPaymentComponentStyle-itemsContainer > div > div[class*="amount"i] > span {
+	top: .5em;
+	left: .5em;
+	font-size: .9em;
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* Bonus amount on card */
+
+.CoinPaymentComponentStyle-itemsContainer > div > div[class*="amount"i] > [class*="bonus"i] {
+	background: none;
+	background-color: var(--severitium-main-color);
+	color: var(--severitium-black-text-color);
+	border: none;
+	outline: none;
+	box-shadow: none;
+	margin: 0;
+	font-size: .9em;
+	border-radius: calc(var(--severitium-border-radius) / 0.9);
+}
+
+/* Name on card */
+
+.CoinPaymentComponentStyle-itemsContainer > div > [class*="item"i][class*="name"i],
+.CoinPaymentComponentStyle-itemsContainer > div .PaymentInfoComponentStyle-priceContainer > [class*="item"i][class*="name"i] {
+	bottom: .5em;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 1em;
+	color: var(--severitium-white-text-color);
+}
+
+/* Button container */
+
+.BasePaymentComponentStyle-buttonContainer {
+	position: relative;
+}
+
+/* Button */
+
+.BasePaymentComponentStyle-buttonContainer > div {
+	background: none;
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Promocode enabled button */
+
+.BasePaymentComponentStyle-buttonContainer > div {
+	border-radius: var(--severitium-border-radius);
+	background-color: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.BasePaymentComponentStyle-buttonContainer > div:hover {
+	background-color: var(--severitium-green-button-background);
+	outline: none;
+	box-shadow: none;
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.BasePaymentComponentStyle-buttonContainer > div > span {
+	font-size: 1.5em;
+	color: var(--severitium-green-button-color);
+	margin-right: .5em;
+}
+
+/* Container for price icon and text */
+
+.BasePaymentComponentStyle-buttonContainer > div .ShopBuyButtonComponentStyle-container > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
+	margin: 0;
+}
+
+/* Button price icon */
+
+.BasePaymentComponentStyle-buttonContainer > div .ShopBuyButtonComponentStyle-container > div > div {
+	margin: 0;
+	-webkit-filter: grayscale(1) invert(1);
+	        filter: grayscale(1) invert(1);
+}
+
+/* Button price text */
+
+.BasePaymentComponentStyle-buttonContainer > div .ShopBuyButtonComponentStyle-container > div > h4,
+.BasePaymentComponentStyle-buttonContainer > div .ShopBuyButtonComponentStyle-container > h4 {
+	margin: 0;
+	color: var(--severitium-white-text-color);
+}
+
+/* Button hotkey container */
+
+.BasePaymentComponentStyle-buttonContainer > div h3[class*="hotkey"i] {
+	background: transparent;
+	color: var(--severitium-dark-white-text-color);
+	border: var(--severitium-light-gray-color) dashed .1em;
+	border-radius: .1em;
+}
+
+/* Button discount */
+
+.BasePaymentComponentStyle-buttonContainer > div .ShopBuyButtonComponentStyle-container > p {
+	background-color: var(--severitium-red-color);
+	border-radius: var(--severitium-border-radius);
+	color: var(--severitium-white-text-color);
+}
+
+/* Payment description (under button) */
+
+.BasePaymentComponentStyle-buttonContainer > .BasePaymentComponentStyle-description {
+	font-size: .85em;
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Warning text */
+
+.ChoosePaymentMethodComponentStyle-warningContainer > span {
+	font-size: .8em;
+	color: var(--severitium-light-gray-text-color);
+}

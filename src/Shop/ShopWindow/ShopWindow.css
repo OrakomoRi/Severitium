@@ -93,7 +93,7 @@
 	border: var(--severitium-gold-button-border-color-hover) solid .1em;
 }
 
-/* Button's text */
+/* Button text */
 
 .LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*="center"i] > span {
 	color: var(--severitium-gold-button-color);
@@ -205,7 +205,7 @@
 /* Single limited offer item text */
 
 .ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem > div > span {
-	color: var(--severitium-white-text-color);
+	color: var(--severitium-light-gray-text-color);
 }
 
 /* Price text for ruby currency */
@@ -293,7 +293,7 @@
 .ShopCategoryOfferSectionStyle-containerItem > div > div[class*="item"i] span.ShopItemComponentStyle-amount,
 .ShopCategoryOfferSectionStyle-containerCoin > div > div[class*="item"i] span.ShopItemComponentStyle-amount,
 .ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*="item"i] span.ShopItemComponentStyle-amount {
-	color: var(--severitium-white-text-color);
+	color: var(--severitium-light-gray-text-color);
 }
 
 /* Shop default small card bonus amount */
@@ -514,7 +514,7 @@
 	border: var(--severitium-green-button-border-color-hover) solid .1em;
 }
 
-/* Button's text */
+/* Button text */
 
 .PromoCodesComponentStyle-sendButton:not([class*='disabled'i]) > span {
 	color: var(--severitium-green-button-color);
@@ -530,7 +530,7 @@
 	pointer-events: none;
 }
 
-/* Button's text */
+/* Button text */
 
 .PromoCodesComponentStyle-sendButton[class*="disabled"i] > span {
 	color: var(--severitium-gray-button-color);

@@ -1,7 +1,7 @@
 // ==UserScript==
 
-// @name			CSS Shop Window
-// @version			1.0.2
+// @name			CSS Purchase Screen
+// @version			1.0.0
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 
@@ -22,7 +22,7 @@
 	'use strict';
 
 	// Link to raw CSS file
-	const link = 'https://github.com/OrakomoRi/Severitium/blob/main/src/Shop/ShopWindow/ShopWindow.min.css?raw=true';
+	const link = 'https://github.com/OrakomoRi/Severitium/blob/main/src/Shop/PurchaseScreen/PurchaseScreen.min.css?raw=true';
 
 	// Make an AJAX request to fetch the CSS file
 	GM_xmlhttpRequest({
