@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Possible Rewards Screen
-// @version			1.3.0
+// @version			1.3.1
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 
