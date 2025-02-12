@@ -137,6 +137,9 @@ div:hover > .severitium-entrance-icon svg.item-icon {
 .HeaderComponentStyle-headerLinkBar .SocialNetworksComponentStyle-container > div {
 	width: auto;
 	height: auto;
+	background: none;
+	border-radius: 0;
+	box-shadow: none;
 }
 
 /* Custom button visuals for small buttons (bottom-right corner) on registration */
@@ -144,4 +147,10 @@ div:hover > .severitium-entrance-icon svg.item-icon {
 .HeaderComponentStyle-headerLinkBar .SocialNetworksComponentStyle-container > div .severitium-entrance-icon > div {
 	width: 6em;
 	height: 6em;
+}
+
+/* Small button icon */
+
+.HeaderComponentStyle-headerLinkBar .SocialNetworksComponentStyle-container > div > .severitium-entrance-icon > div svg.item-icon {
+	fill: var(--severitium-extra-light-gray-color);
 }
