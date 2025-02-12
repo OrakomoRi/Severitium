@@ -1,8 +1,9 @@
 (function () {
 	// Defines the active color used to determine the current state of the card
 	const activeColor = 'rgba(255, 255, 255, 0.15)';
-	// Possible reward card selector
-	const cardSelector = '.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])';
+	// Possible reward menu button selector
+	const buttonSelector = '.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])';
+	// Rarity text selector
 	const textSelector = '.ContainersComponentStyle-navigationBlockForCategories .ContainerInfoComponentStyle-typeRewardsBlock .ContainerInfoComponentStyle-rewardText';
 	// Hotkey selectors
 	const firstHotkeySelector = '.ContainerInfoComponentStyle-rewardsMenu > div[class*="hotkey"i]:first-of-type';
@@ -55,9 +56,9 @@
 	 * @param {MouseEvent} event - The click event
 	 */
 	function handleClick(event) {
-		const clickedElement = event.target.closest(cardSelector);
+		const clickedElement = event.target.closest(buttonSelector);
 		if (clickedElement) {
-			const elements = document.querySelectorAll(cardSelector);
+			const elements = document.querySelectorAll(buttonSelector);
 
 			// Apply inactive state to all elements except the clicked one
 			for (const element of elements) {
@@ -96,8 +97,8 @@
 	 * Navigates to the previous reward card
 	 */
 	function navigateToPreviousCard() {
-		const elements = Array.from(document.querySelectorAll(cardSelector));
-		const activeElement = document.querySelector(`${cardSelector}[data-state="active"]`);
+		const elements = Array.from(document.querySelectorAll(buttonSelector));
+		const activeElement = document.querySelector(`${buttonSelector}[data-state="active"]`);
 		let index = elements.indexOf(activeElement);
 		index = index === -1 ? 0 : index > 0 ? index - 1 : elements.length - 1;
 
@@ -108,8 +109,8 @@
 	 * Navigates to the next reward card
 	 */
 	function navigateToNextCard() {
-		const elements = Array.from(document.querySelectorAll(cardSelector));
-		const activeElement = document.querySelector(`${cardSelector}[data-state="active"]`);
+		const elements = Array.from(document.querySelectorAll(buttonSelector));
+		const activeElement = document.querySelector(`${buttonSelector}[data-state="active"]`);
 		let index = elements.indexOf(activeElement);
 		index = index === -1 ? 0 : index < elements.length - 1 ? index + 1 : 0;
 
@@ -133,7 +134,7 @@
 	 * @param {HTMLElement} element - The new element to process
 	 */
 	function processElement(element) {
-		if (!element.matches(cardSelector)) return;
+		if (!element.matches(buttonSelector)) return;
 		applyDataState(element, window.getComputedStyle(element).backgroundColor.includes(activeColor));
 	}
 
@@ -152,18 +153,18 @@
 			addedNodes.forEach(node => {
 				if (node.nodeType === Node.ELEMENT_NODE) {
 					// Process the removed node if it matches the selector
-					if ((node.matches && node.matches(cardSelector)) || (node.querySelector && node.querySelector(rewardsContainerSelector))) {
+					if ((node.matches && node.matches(buttonSelector)) || (node.querySelector && node.querySelector(rewardsContainerSelector))) {
 						addEventListeners(); // Add event listeners if the container is present
 					}
 
 					// Process the added node if it matches the selector
-					if (node.matches && node.matches(cardSelector)) {
+					if (node.matches && node.matches(buttonSelector)) {
 						processElement(node);
 					}
 
 					// If the added node contains child elements, process them recursively
 					if (node.querySelectorAll) {
-						node.querySelectorAll(cardSelector).forEach(processElement);
+						node.querySelectorAll(buttonSelector).forEach(processElement);
 					}
 				}
 			});
@@ -171,7 +172,7 @@
 			removedNodes.forEach(node => {
 				if (node.nodeType === Node.ELEMENT_NODE) {
 					// Process the removed node if it matches the selector
-					if ((node.matches && node.matches(cardSelector)) || (node.querySelector && node.querySelector(rewardsContainerSelector))) {
+					if ((node.matches && node.matches(buttonSelector)) || (node.querySelector && node.querySelector(rewardsContainerSelector))) {
 						if (eventListenersActive) {
 							document.removeEventListener('click', handleClick);
 							document.removeEventListener('keydown', handleKeydown);
