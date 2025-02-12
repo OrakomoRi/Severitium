@@ -65,20 +65,6 @@
 	}
 
 	/**
-	 * Sets the initial state: the first element is active, the others are inactive
-	 */
-	function setInitialState() {
-		const elements = document.querySelectorAll(cardSelector);
-		if (elements.length === 0) return;
-
-		for (const element of elements) {
-			// Check if the element is active based on its box-shadow
-			const isActive = window.getComputedStyle(element).boxShadow.includes(activeColor);
-			element.setAttribute('data-state', isActive ? 'active' : 'inactive');
-		}
-	}
-
-	/**
 	 * Creates a new `MutationObserver` instance to track DOM changes
 	 */
 	const observer = new MutationObserver(mutations => {
@@ -95,7 +81,7 @@
 			addedNodes.forEach(node => {
 				if (node.nodeType !== Node.ELEMENT_NODE) return;
 				if (node.matches?.(containerSelector) || node.querySelector?.(containerSelector)) {
-					setInitialState();
+					updateToZeroState();
 					document.body.addEventListener('click', handleClick);
 					document.body.addEventListener('keyup', handleKeydown);
 				}
