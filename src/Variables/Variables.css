@@ -81,6 +81,11 @@
 	--severitium-gold-button-border-color: rgba(242, 192, 27, .25);
 	--severitium-gold-button-border-color-hover: rgba(242, 192, 27, .75);
 
+	--severitium-blue-button-background: rgba(27, 120, 242, 0.2);
+	--severitium-blue-button-color: rgb(169, 182, 255);
+	--severitium-blue-button-border-color: rgba(27, 120, 242, .25);
+	--severitium-blue-button-border-color-hover: rgba(27, 120, 242, .75);
+
 
 	/* Theme colors for battle tab */
 
