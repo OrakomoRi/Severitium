@@ -23,14 +23,16 @@
 /* Header of the modal window */
 
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) h1,
-.DialogContainerComponentStyle-header > h1 {
+.DialogContainerComponentStyle-header > h1,
+.HeadlineComponentStyle-popupHeadlineContent span {
 	color: var(--severitium-white-text-color);
 }
 
 /* Text of the modal window */
 
-.DialogContainerComponentStyle-contentContainer span {
-	color: var(--severitium-white-text-color);
+.DialogContainerComponentStyle-contentContainer span,
+.ModalStyle-rootHover > div > div:has(> [class*="head"i]) + div > div > div {
+	color: var(--severitium-white-text-color) !important;
 }
 
 /*
@@ -195,7 +197,8 @@
 
 /* Close (cross) icon of the modal container */
 
-.DialogContainerComponentStyle-imgClose {
+.DialogContainerComponentStyle-imgClose,
+.ConverterDialogComponentStyle-closeIcon {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -219,11 +222,18 @@
 
 /* Close (cross) icon of the modal container on hover */
 
-.DialogContainerComponentStyle-imgClose:hover {
+.DialogContainerComponentStyle-imgClose:hover,
+.ConverterDialogComponentStyle-closeIcon:hover {
 	width: 1.5em;
 	height: 1.5em;
 	background-image: none;
 	background-color: var(--severitium-red-color);
+}
+
+/* Convert dialog close icon */
+
+.ConverterDialogComponentStyle-closeIcon {
+	position: relative;
 }
 
 /* Links inside the modal window */
@@ -304,4 +314,202 @@
 .TooltipStyle-tooltip p.TooltipStyle-content {
 	font-size: 1em;
 	color: var(--severitium-white-text-color);
+}
+
+/* Ruby currency amount inside modal */
+
+.ModalStyle-rootHover > div > div:has(> [class*="head"i]) + div > div > div > img[src*="ruby"i] + span {
+	color: var(--severitium-ruby-color);
+}
+
+/* Tancoin currency amount inside modal */
+
+.ModalStyle-rootHover > div > div:has(> [class*="head"i]) + div > div > div > img[src*="coin"i] + span {
+	color: var(--severitium-tancoin-color);
+}
+
+/* Crystal currency amount inside modal */
+
+.ModalStyle-rootHover > div > div:has(> [class*="head"i]) + div > div > div > img[src*="crystal"i] + span {
+	color: var(--severitium-crystal-color);
+}
+
+/* Convert dialog right panel (balance amount ruby) */
+
+.ConverterDialogComponentStyle-rightPanel .ConverterDialogComponentStyle-balanceContainer > img[src*="ruby"] + span {
+	color: var(--severitium-ruby-color);
+}
+
+/* Convert dialog right panel (balance amount tancoin) */
+
+.ConverterDialogComponentStyle-rightPanel .ConverterDialogComponentStyle-balanceContainer > img[src*="coin"] + span {
+	color: var(--severitium-tancoin-color);
+}
+
+/* Convert dialog right panel (balance amount crystal) */
+
+.ConverterDialogComponentStyle-rightPanel .ConverterDialogComponentStyle-balanceContainer > img[src*="crystal"] + span {
+	color: var(--severitium-crystal-color);
+}
+
+/* Convert dialog description container */
+
+.ConverterDialogComponentStyle-mainContainer .ConverterDialogComponentStyle-descriptionContainer {
+	border-bottom: .1em solid var(--severitium-dark-gray-color);
+}
+
+/* Ruby name text */
+
+.ConverterDialogComponentStyle-rubiesText {
+	color: var(--severitium-ruby-color);
+}
+
+/* Coins name text */
+
+.ConverterDialogComponentStyle-coinsText {
+	color: var(--severitium-tancoin-color);
+}
+
+/* Currency amount text */
+
+.ConverterDialogComponentStyle-currencyValue {
+	color: var(--severitium-white-color);
+}
+
+/* Conversion container */
+
+.ConverterDialogComponentStyle-conversionContainer {
+	background: none;
+}
+
+/* Minus slider button */
+
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="minus"i]) {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-red-button-background);
+	border: var(--severitium-red-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="minus"i]):hover {
+	border: var(--severitium-red-button-border-color-hover) solid .1em;
+}
+
+/* Button original icon */
+
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton > img[src*="minus"i] {
+	display: none;
+}
+
+/* Button custom icon */
+
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="minus"i])::before {
+	content: '';
+	height: 1.5em;
+	width: 1.5em;
+	background-color: var(--severitium-red-button-color);
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 9.75v4.5H0v-4.5z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 9.75v4.5H0v-4.5z"/></svg>');
+}
+
+/* Plus slider button */
+
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="plus"i]) {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="plus"i]):hover {
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button original icon */
+
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton > img[src*="plus"i] {
+	display: none;
+}
+
+/* Button custom icon */
+
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="plus"i])::before {
+	content: '';
+	height: 1.5em;
+	width: 1.5em;
+	background-color: var(--severitium-green-button-color);
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M19.5 0h9v19.5H48v9H0v-9h19.5zm0 37.5 9-9V48h-9z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M19.5 0h9v19.5H48v9H0v-9h19.5zm0 37.5 9-9V48h-9z"/></svg>');
+}
+
+/* Max slider button */
+
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="max"i]) {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-blue-button-background);
+	border: var(--severitium-blue-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="max"i]):hover {
+	border: var(--severitium-blue-button-border-color-hover) solid .1em;
+}
+
+/* Button original icon */
+
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton > img[src*="max"i] {
+	display: none;
+}
+
+/* Button custom icon */
+
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="max"i])::before {
+	content: '';
+	height: 1.5em;
+	width: 1.5em;
+	background-color: var(--severitium-blue-button-color);
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="m18 21-6-6-6 6H0L12 9l12 12zm6-9h-6l-6-6-6 6H0L12 0z" clip-rule="evenodd"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="m18 21-6-6-6 6H0L12 9l12 12zm6-9h-6l-6-6-6 6H0L12 0z" clip-rule="evenodd"/></svg>');
+}
+
+/* Minimal amount */
+
+.ConverterDialogComponentStyle-minValue {
+	color: var(--severitium-white-color);
+}
+
+/* Maximal amount */
+
+.ConverterDialogComponentStyle-maxRangeValueContainer > span {
+	color: var(--severitium-white-color);
 }
