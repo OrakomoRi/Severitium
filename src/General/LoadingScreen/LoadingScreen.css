@@ -15,6 +15,7 @@ body {
 
 .Common-background + div > div[style*='background'i] {
 	display: none;
+	z-index: -1;
 }
 
 /* Loading in lobby */
