@@ -9,13 +9,13 @@ body {
 
 .ApplicationLoaderComponentStyle-container {
 	background-image: none;
+	z-index: -1;
 }
 
 /* Loading background after login/register overlaying container */
 
 .Common-background + div > div[style*='background'i] {
 	display: none;
-	z-index: -1;
 }
 
 /* Loading in lobby */
