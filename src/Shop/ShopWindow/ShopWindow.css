@@ -525,6 +525,7 @@
 .PromoCodesComponentStyle-sendButton[class*="disabled"i] {
 	outline: none;
 	box-shadow: none;
+	border: transparent solid .1em;
 	border-radius: var(--severitium-border-radius);
 	background-color: var(--severitium-gray-button-background);
 	pointer-events: none;

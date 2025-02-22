@@ -174,7 +174,7 @@
 	background: transparent;
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .1em;
-	border-radius: .1em;
+	border-radius: var(--severitium-border-radius);
 }
 
 /* Server restart timer */
@@ -315,6 +315,8 @@
 	font-size: 1em;
 	color: var(--severitium-white-text-color);
 }
+
+/* Convert dialog */
 
 /* Ruby currency amount inside modal */
 
@@ -505,11 +507,161 @@
 /* Minimal amount */
 
 .ConverterDialogComponentStyle-minValue {
+	width: auto;
 	color: var(--severitium-white-color);
+	margin: 0;
+	padding: 0;
+}
+
+/* Maximal amount container */
+
+.ConverterDialogComponentStyle-maxRangeValueContainer {
+	width: auto;
+	margin: 0;
+	padding: 0;
 }
 
 /* Maximal amount */
 
 .ConverterDialogComponentStyle-maxRangeValueContainer > span {
 	color: var(--severitium-white-color);
+}
+
+/* Convert dialog input text */
+
+.ConverterDialogComponentStyle-inputContainer .ConverterDialogComponentStyle-amountText {
+	font-size: 1.2em;
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* Convert dialog input inner container */
+
+.ConverterDialogComponentStyle-inputContainer .RegistrationComponentStyle-containerItem {
+	pointer-events: none;
+}
+
+/* Convert dialog input */
+
+.ConverterDialogComponentStyle-input {
+	position: relative;
+	pointer-events: all;
+	cursor: text;
+	background: none;
+	background-color: transparent;
+	backdrop-filter: blur(.5em);
+	box-shadow: inset var(--severitium-gray-color) 0 0 0 .1em;
+	border: 0;
+	outline: 0;
+	appearance: none;
+	border-radius: var(--severitium-border-radius);
+	padding: .5em .8em;
+	line-height: 1.4;
+	font-size: 1.2em;
+	font-weight: 400;
+	transition: box-shadow .2s ease, background-color .2s ease;
+}
+
+/* Input on hover */
+
+.ConverterDialogComponentStyle-input:hover {
+	box-shadow: 0 0 0 0 var(--severitium-white-color) inset, var(--severitium-main-color) 0 0 0 .1em;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+}
+
+/* Input on focus */
+
+.ConverterDialogComponentStyle-input:focus {
+	box-shadow: 0 0 0 0 var(--severitium-white-color) inset, var(--severitium-main-color) 0 0 0 .2em;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+}
+
+/* Not available amount */
+
+.ConverterDialogComponentStyle-input.ConverterDialogComponentStyle-notAvailableValue {
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* Available amount */
+
+.ConverterDialogComponentStyle-input:not(.ConverterDialogComponentStyle-notAvailableValue) {
+	color: var(--severitium-white-text-color);
+}
+
+/* Convert buttons container */
+
+.ConverterDialogComponentStyle-buttonsContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+}
+
+/* Button on the bottom of convert dialog */
+
+.ConverterDialogComponentStyle-buttonsContainer > div {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	transition: border .2s ease;
+}
+
+/* Cancel button */
+
+.ConverterDialogComponentStyle-buttonsContainer > div:first-of-type {
+	background: var(--severitium-gray-button-background);
+	border: var(--severitium-gray-button-border-color) solid .1em;
+}
+
+/* Button on hover */
+
+.ConverterDialogComponentStyle-buttonsContainer > div:first-of-type:hover {
+	outline: none;
+	box-shadow: none;
+	background-color: var(--severitium-gray-button-background);
+	border: var(--severitium-gray-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.ConverterDialogComponentStyle-buttonsContainer > div:first-of-type > span {
+	color: var(--severitium-gray-button-color);
+}
+
+/* Confirm button */
+
+.ConverterDialogComponentStyle-buttonsContainer > div:last-of-type {
+	background: var(--severitium-gold-button-background);
+	border: var(--severitium-gold-button-border-color) solid .1em;
+}
+
+/* Button on hover */
+
+.ConverterDialogComponentStyle-buttonsContainer > div:last-of-type:hover {
+	outline: none;
+	box-shadow: none;
+	background-color: var(--severitium-gold-button-background);
+	border: var(--severitium-gold-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.ConverterDialogComponentStyle-buttonsContainer > div:last-of-type > span {
+	color: var(--severitium-gold-button-color);
+}
+
+/* Disabled button */
+
+.ConverterDialogComponentStyle-buttonsContainer > div.ButtonComponentStyle-disabled {
+	background: var(--severitium-gray-button-background);
+	border: transparent solid .1em;
+	pointer-events: none;
+}
+
+/* Button's text */
+
+.ConverterDialogComponentStyle-buttonsContainer > div.ButtonComponentStyle-disabled > span {
+	color: var(--severitium-gray-button-color);
+	opacity: .5;
 }

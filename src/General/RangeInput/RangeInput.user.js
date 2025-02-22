@@ -1,7 +1,7 @@
 // ==UserScript==
 
-// @name			CSS Modal
-// @version			1.4.0
+// @name			CSS Range Input
+// @version			1.0.0
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 
@@ -11,6 +11,8 @@
 
 // @connect			raw.githubusercontent.com
 // @connect			cdn.jsdelivr.net
+
+// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/General/RangeInput/RangeInput.min.js?raw=true
 
 // @run-at			document-start
 // @grant			GM_xmlhttpRequest
@@ -22,7 +24,7 @@
 	'use strict';
 
 	// Link to raw CSS file
-	const link = 'https://github.com/OrakomoRi/Severitium/blob/main/src/General/Modal/Modal.min.css?raw=true';
+	const link = 'https://github.com/OrakomoRi/Severitium/blob/main/src/General/RangeInput/RangeInput.min.css?raw=true';
 
 	// Make an AJAX request to fetch the CSS file
 	GM_xmlhttpRequest({

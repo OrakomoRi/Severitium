@@ -127,7 +127,7 @@
 .ClanCommonStyle-center .ClanCommonStyle-information div[class*='button'i][class*='disabled'i] {
 	background-color: var(--severitium-dark-transparent-background1);
 	border-radius: var(--severitium-border-radius);
-	border: none;
+	border: transparent solid .1em;
 	outline: none;
 	box-shadow: none;
 }

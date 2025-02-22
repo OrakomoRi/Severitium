@@ -346,7 +346,7 @@
 .ClanInvitationsComponentStyle-sendButton[class*='disabled'i] {
 	background-color: var(--severitium-light-transparent-background3);
 	border-radius: var(--severitium-border-radius);
-	border: none;
+	border: transparent solid .1em;
 	outline: none;
 	box-shadow: none;
 }

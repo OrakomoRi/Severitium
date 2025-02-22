@@ -289,7 +289,7 @@
 .FriendListComponentStyle-containerButtonFriends.FriendListComponentStyle-containerButtonFriends[class*='disabled'i] {
 	background-color: var(--severitium-dark-transparent-background1);
 	color: var(--severitium-white-text-color);
-	border: none;
+	border: transparent solid .1em;
 	outline: none;
 	box-shadow: none;
 }
