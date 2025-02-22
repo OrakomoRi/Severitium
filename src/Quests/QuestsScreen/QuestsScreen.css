@@ -1171,6 +1171,7 @@
 .SuperMissionComponentStyle-descriptionSuperMission div.SuperMissionComponentStyle-buttonCollect {
 	position: relative;
 	width: 100%;
+	height: auto;
 	outline: none;
 	box-shadow: none;
 	padding: 2em 1em;

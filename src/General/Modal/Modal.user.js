@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Modal
-// @version			1.4.0
+// @version			1.4.1
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 

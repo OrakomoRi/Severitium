@@ -548,11 +548,13 @@
 	cursor: text;
 	background: none;
 	background-color: transparent;
-	backdrop-filter: blur(.5em);
+	-webkit-backdrop-filter: blur(.5em);
+	        backdrop-filter: blur(.5em);
 	box-shadow: inset var(--severitium-gray-color) 0 0 0 .1em;
 	border: 0;
 	outline: 0;
-	appearance: none;
+	-webkit-appearance: none;
+	        appearance: none;
 	border-radius: var(--severitium-border-radius);
 	padding: .5em .8em;
 	line-height: 1.4;
