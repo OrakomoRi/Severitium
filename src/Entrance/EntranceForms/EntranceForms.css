@@ -163,8 +163,8 @@
 
 /* Inputs for text and password */
 
-.EntranceComponentStyle-ContainerForm form input[type='text'],
-.EntranceComponentStyle-ContainerForm form input[type='password'] {
+.EntranceComponentStyle-ContainerForm form input[type="text"]:not(.ConverterDialogComponentStyle-input),
+.EntranceComponentStyle-ContainerForm form input[type="password"]:not(.ConverterDialogComponentStyle-input) {
 	background-color: var(--severitium-dark-transparent-background2);
 	border: .1em solid var(--severitium-light-gray-color);
 	border-radius: var(--severitium-border-radius);
@@ -178,12 +178,12 @@
 
 /* Inputs for text and password on hover */
 
-.RegistrationComponentStyle-containerItem:hover input[type='text'],
-.RegistrationComponentStyle-containerItem:hover input[type='password'],
-.EntranceComponentStyle-ContainerForm form input[type='text']:hover,
-.EntranceComponentStyle-ContainerForm form input[type='password']:hover,
-.EntranceComponentStyle-ContainerForm form input[type='text']:focus,
-.EntranceComponentStyle-ContainerForm form input[type='password']:focus {
+.RegistrationComponentStyle-containerItem:hover input[type="text"]:not(.ConverterDialogComponentStyle-input),
+.RegistrationComponentStyle-containerItem:hover input[type="password"]:not(.ConverterDialogComponentStyle-input),
+.EntranceComponentStyle-ContainerForm form input[type="text"]:not(.ConverterDialogComponentStyle-input):hover,
+.EntranceComponentStyle-ContainerForm form input[type="password"]:not(.ConverterDialogComponentStyle-input):hover,
+.EntranceComponentStyle-ContainerForm form input[type="text"]:not(.ConverterDialogComponentStyle-input):focus,
+.EntranceComponentStyle-ContainerForm form input[type="password"]:not(.ConverterDialogComponentStyle-input):focus {
 	background: none;
 	background-color: var(--severitium-light-transparent-background3);
 	color: var(--severitium-white-text-color);
@@ -191,8 +191,8 @@
 
 /* Invalid inputs for text and password */
 
-.EntranceComponentStyle-ContainerForm form input[type='text'][class*='invalid'],
-.EntranceComponentStyle-ContainerForm form input[type='password'][class*='invalid'] {
+.EntranceComponentStyle-ContainerForm form input[type="text"][class*="invalid"],
+.EntranceComponentStyle-ContainerForm form input[type="password"][class*="invalid"] {
 	background-color: var(--severitium-red-transparent-background1);
 	color: var(--severitium-red-text-color);
 	border-color: var(--severitium-red-color);
@@ -360,7 +360,7 @@
 
 /* Button of login/registration */
 
-.EntranceComponentStyle-ContainerForm form div[class*='EntranceComponentStyle-button'i] {
+.EntranceComponentStyle-ContainerForm form div[class*="EntranceComponentStyle-button"i] {
 	width: -webkit-fit-content;
 	width: -moz-fit-content;
 	width: fit-content;
@@ -376,8 +376,8 @@
 
 /* Disabled button (in forms or 'header' of the entrance page) */
 
-.EntranceComponentStyle-ContainerForm form div[class*='EntranceComponentStyle-button'i][class*='buttonnoactive'i],
-.HeaderComponentStyle-supportBlock div[class*='EntranceComponentStyle-button'i][class*='buttonnoactive'i] {
+.EntranceComponentStyle-ContainerForm form div[class*="EntranceComponentStyle-button"i][class*="buttonnoactive"i],
+.HeaderComponentStyle-supportBlock div[class*="EntranceComponentStyle-button"i][class*="buttonnoactive"i] {
 	margin: 0;
 	margin-top: 1em;
 	border-radius: var(--severitium-border-radius);
@@ -386,8 +386,8 @@
 
 /* Active button (in forms or 'header' of the entrance page) */
 
-.EntranceComponentStyle-ContainerForm form div[class*='EntranceComponentStyle-button'i][class*='buttonactive'i],
-.HeaderComponentStyle-supportBlock div[class*='EntranceComponentStyle-button'i][class*='buttonactive'i] {
+.EntranceComponentStyle-ContainerForm form div[class*="EntranceComponentStyle-button"i][class*="buttonactive"i],
+.HeaderComponentStyle-supportBlock div[class*="EntranceComponentStyle-button"i][class*="buttonactive"i] {
 	margin: 0;
 	background-color: var(--severitium-gray-button-background);
 	border: .1em solid var(--severitium-gray-button-border-color);
@@ -397,8 +397,8 @@
 
 /* Active button on hover (in forms or 'header' of the entrance page) */
 
-.EntranceComponentStyle-ContainerForm form div[class*='EntranceComponentStyle-button'i][class*='buttonactive'i]:hover,
-.HeaderComponentStyle-supportBlock div[class*='EntranceComponentStyle-button'i][class*='buttonactive'i]:hover {
+.EntranceComponentStyle-ContainerForm form div[class*="EntranceComponentStyle-button"i][class*="buttonactive"i]:hover,
+.HeaderComponentStyle-supportBlock div[class*="EntranceComponentStyle-button"i][class*="buttonactive"i]:hover {
 	background-color: var(--severitium-green-button-background);
 	border-color: var(--severitium-green-button-border-color-hover);
 	border-radius: var(--severitium-border-radius);
@@ -406,16 +406,16 @@
 
 /* Disabled button text (in forms or 'header' of the entrance page) */
 
-.EntranceComponentStyle-ContainerForm form div[class*='EntranceComponentStyle-button'i][class*='buttonnoactive'i] span,
-.HeaderComponentStyle-supportBlock div[class*='EntranceComponentStyle-button'i][class*='buttonnoactive'i] span {
+.EntranceComponentStyle-ContainerForm form div[class*="EntranceComponentStyle-button"i][class*="buttonnoactive"i] span,
+.HeaderComponentStyle-supportBlock div[class*="EntranceComponentStyle-button"i][class*="buttonnoactive"i] span {
 	color: var(--severitium-black-text-color);
 }
 
 
 /* Active button text (in forms or 'header' of the entrance page) */
 
-.EntranceComponentStyle-ContainerForm form div[class*='EntranceComponentStyle-button'i][class*='buttonactive'i] span,
-.HeaderComponentStyle-supportBlock div[class*='EntranceComponentStyle-button'i][class*='buttonactive'i] span {
+.EntranceComponentStyle-ContainerForm form div[class*="EntranceComponentStyle-button"i][class*="buttonactive"i] span,
+.HeaderComponentStyle-supportBlock div[class*="EntranceComponentStyle-button"i][class*="buttonactive"i] span {
 	color: var(--severitium-white-text-color);
 }
 

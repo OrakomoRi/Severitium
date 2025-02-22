@@ -40,7 +40,7 @@
 .ContainersComponentStyle-navigationBlockForCategories [class*="hotkey"i]:not([class*="component"i]) {
 	background: transparent;
 	border: var(--severitium-gray-color) dashed .1em;
-	border-radius: .1em;
+	border-radius: var(--severitium-border-radius);
 	color: var(--severitium-dark-white-text-color);
 }
 
@@ -240,7 +240,7 @@ div:has(> .MenuComponentStyle-mainMenuItem) {
 div[class*='menucomponent'i] .Common-buttonQE {
 	background: transparent;
 	border: var(--severitium-gray-color) dashed .1em;
-	border-radius: .1em;
+	border-radius: var(--severitium-border-radius);
 }
 
 /* Hotkey blocks' text inside the menu */

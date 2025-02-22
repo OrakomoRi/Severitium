@@ -148,7 +148,7 @@ body {
 .ApplicationLoaderComponentStyle-helpChangeKey {
 	background: transparent;
 	border: var(--severitium-gray-color) dashed .1em;
-	border-radius: .1em;
+	border-radius: var(--severitium-border-radius);
 }
 
 /* Help hotkey text */

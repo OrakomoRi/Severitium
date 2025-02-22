@@ -118,7 +118,7 @@
 	background: transparent;
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .1em;
-	border-radius: .1em;
+	border-radius: var(--severitium-border-radius);
 }
 
 /* Possible rewards "read more" text */
@@ -247,7 +247,7 @@
 			backdrop-filter: blur(.25em);
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .15em;
-	border-radius: .1em;
+	border-radius: var(--severitium-border-radius);
 	font-size: 1.25em;
 	font-weight: bold;
 	text-transform: uppercase;

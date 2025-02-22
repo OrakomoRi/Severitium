@@ -101,7 +101,7 @@
 .ClanCreateComponentStyle-rightBlockButtons > div > [class*='hotkey'i] {
 	background: transparent;
 	border: var(--severitium-gray-color) dashed .1em;
-	border-radius: .1em;
+	border-radius: var(--severitium-border-radius);
 	height: auto;
 	min-height: auto;
 	max-height: none;

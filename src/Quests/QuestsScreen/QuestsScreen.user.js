@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Quests Screen
-// @version			1.1.2
+// @version			1.1.3
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 

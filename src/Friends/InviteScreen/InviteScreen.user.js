@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Invite Screen
-// @version			1.1.5
+// @version			1.1.6
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 
