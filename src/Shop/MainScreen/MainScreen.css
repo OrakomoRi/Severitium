@@ -80,6 +80,19 @@
 	        filter: saturate(1.25);
 }
 
+/* Limited section card timer */
+
+.ShopSelectedSectionComponentStyle-limitedOffersCommon .TimeLeftComponentStyle-timeLeftContainer {
+	background-color: var(--severitium-main-color);
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Limited section card timer text */
+
+.ShopSelectedSectionComponentStyle-limitedOffersCommon .TimeLeftComponentStyle-timeLeftContainer .TimeLeftComponentStyle-timeLeft {
+	color: var(--severitium-black-text-color);
+}
+
 /* Limited section card text */
 
 .ShopSelectedSectionComponentStyle-limitedOffersCommon > span {

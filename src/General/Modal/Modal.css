@@ -316,8 +316,6 @@
 	color: var(--severitium-white-text-color);
 }
 
-/* Convert dialog */
-
 /* Ruby currency amount inside modal */
 
 .ModalStyle-rootHover > div > div:has(> [class*="head"i]) + div > div > div > img[src*="ruby"i] + span {
@@ -336,25 +334,27 @@
 	color: var(--severitium-crystal-color);
 }
 
-/* Convert dialog right panel (balance amount ruby) */
+/* Convert dialog */
+
+/* Conversion dialog right panel (balance amount ruby) */
 
 .ConverterDialogComponentStyle-rightPanel .ConverterDialogComponentStyle-balanceContainer > img[src*="ruby"] + span {
 	color: var(--severitium-ruby-color);
 }
 
-/* Convert dialog right panel (balance amount tancoin) */
+/* Conversion dialog right panel (balance amount tancoin) */
 
 .ConverterDialogComponentStyle-rightPanel .ConverterDialogComponentStyle-balanceContainer > img[src*="coin"] + span {
 	color: var(--severitium-tancoin-color);
 }
 
-/* Convert dialog right panel (balance amount crystal) */
+/* Conversion dialog right panel (balance amount crystal) */
 
 .ConverterDialogComponentStyle-rightPanel .ConverterDialogComponentStyle-balanceContainer > img[src*="crystal"] + span {
 	color: var(--severitium-crystal-color);
 }
 
-/* Convert dialog description container */
+/* Conversion dialog description container */
 
 .ConverterDialogComponentStyle-mainContainer .ConverterDialogComponentStyle-descriptionContainer {
 	border-bottom: .1em solid var(--severitium-dark-gray-color);
@@ -527,20 +527,20 @@
 	color: var(--severitium-white-color);
 }
 
-/* Convert dialog input text */
+/* Conversion dialog input text */
 
 .ConverterDialogComponentStyle-inputContainer .ConverterDialogComponentStyle-amountText {
 	font-size: 1.2em;
 	color: var(--severitium-light-gray-text-color);
 }
 
-/* Convert dialog input inner container */
+/* Conversion dialog input inner container */
 
 .ConverterDialogComponentStyle-inputContainer .RegistrationComponentStyle-containerItem {
 	pointer-events: none;
 }
 
-/* Convert dialog input */
+/* Conversion dialog input */
 
 .ConverterDialogComponentStyle-input {
 	position: relative;
@@ -591,7 +591,7 @@
 	color: var(--severitium-white-text-color);
 }
 
-/* Convert buttons container */
+/* Conversion buttons container */
 
 .ConverterDialogComponentStyle-buttonsContainer {
 	display: flex;
@@ -600,7 +600,7 @@
 	gap: 1em;
 }
 
-/* Button on the bottom of convert dialog */
+/* Button on the bottom of conversion dialog */
 
 .ConverterDialogComponentStyle-buttonsContainer > div {
 	outline: none;

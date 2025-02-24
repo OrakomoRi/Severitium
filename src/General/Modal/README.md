@@ -17,3 +17,13 @@ You can manually use this component by enabling the [script](https://github.com/
 #### New
 
 ![](/images/general/new/modal.png)
+
+### Conversion modal window
+
+#### Old
+
+![](/images/general/old/conversionmodal.png)
+
+#### New
+
+![](/images/general/new/conversionmodal.png)
