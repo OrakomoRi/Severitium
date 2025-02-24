@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.6.1+build104
+// @version			1.6.1+build105
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -309,7 +309,7 @@
 	}
 
 	async function loadResources(forceReload = false) {
-		const loadingScreen = LoadingScreen.add(`${script.name}`);
+		const loadingScreen = LoadingScreen.add(`${script.name}`, CSSLinks.length + imageLinks.length);
 		logger.log(`Load resources started.`, 'debug');
 		try {
 			const cachedVersion = GM_getValue('SeveritiumVersion', '');
@@ -329,6 +329,7 @@
 				const cssPromises = CSSLinks.map(({ url }) =>
 					fetchAsText(url).then(css => {
 						script.CSS[url] = css;
+						loadingScreen.updateProgress();
 					})
 				);
 
@@ -336,6 +337,7 @@
 					const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason());
 					return fetchImageAsBase64(formattedUrl).then(img => {
 						script.images[formattedUrl] = img;
+						loadingScreen.updateProgress();
 					});
 				});
 
