@@ -277,6 +277,14 @@
 	transition: color .2s ease;
 }
 
+/* Message header, user nickname for friends */
+
+.ChatComponentStyle-messageRow .ChatComponentStyle-chatUserLabel span.ChatComponentStyle-chatFriendUser {
+	color: var(--severitium-friend-color);
+	font-size: 1em;
+	transition: color .2s ease;
+}
+
 /* Message header, user nickname on hover */
 
 .ChatComponentStyle-messageRow .ChatComponentStyle-chatUserLabel span:hover {
@@ -306,6 +314,20 @@
 .ChatComponentStyle-messageRow .ChatComponentStyle-message {
 	font-weight: normal;
 	color: var(--severitium-white-text-color);
+}
+
+/* Message text for blue team */
+
+.ChatComponentStyle-messageRow .ChatComponentStyle-message[style="color: rgb(51, 187, 255);"] {
+	font-weight: normal;
+	color: var(--severitium-blue-text-color) !important;
+}
+
+/* Message text for red team */
+
+.ChatComponentStyle-messageRow .ChatComponentStyle-message[style="color: rgb(255, 102, 102);"] {
+	font-weight: normal;
+	color: var(--severitium-red-text-color) !important;
 }
 
 /* Link of the chat message */

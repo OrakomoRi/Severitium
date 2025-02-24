@@ -1,7 +1,7 @@
 :root {
 	/* Main theme colors */
 
-	--severitium-main-color: rgb(72, 232, 157);
+	--severitium-main-color: rgb(233, 67, 67);
 
 	/* Theme text colors */
 
@@ -21,7 +21,7 @@
 
 	/* Some highlighting colors */
 
-	--severitium-friend-color: rgb(170, 99, 183);
+	--severitium-friend-color: rgb(202, 104, 219);
 	--severitium-crystal-color: rgb(100, 185, 225);
 	--severitium-tancoin-color: rgb(225, 190, 85);
 	--severitium-ruby-color: rgb(255, 125, 125);
