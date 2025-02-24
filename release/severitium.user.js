@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.6.1+build106
+// @version			1.6.1+build107
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -309,6 +309,9 @@
 	}
 
 	async function loadResources(forceReload = false) {
+		logger.log(`Load resources started.`, 'debug');
+		const loadingScreen = LoadingScreen.add(`${script.name}`);
+
 		try {
 			const cachedVersion = GM_getValue('SeveritiumVersion', '');
 			
@@ -316,9 +319,8 @@
 				fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/CSSModules.json?raw=true').then(data => data || []),
 				fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/ImageModules.json?raw=true').then(data => data || [])
 			]);
-			
-			logger.log(`Load resources started.`, 'debug');
-			const loadingScreen = LoadingScreen.add(`${script.name}`, CSSLinks.length + imageLinks.length);
+
+			loadingScreen.setTotalModules(CSSLinks.length + imageLinks.length);
 
 			if (!forceReload && cachedVersion === script.version) {
 				logger.log(`Loading resources from cache.`, 'info');
