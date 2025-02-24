@@ -89,7 +89,6 @@ class LoadingScreen {
 	 */
 	static add(name) {
 		const instance = new LoadingScreen(name);
-		instance.totalModules = totalModules;
 		instance.init();
 		return instance;
 	}
