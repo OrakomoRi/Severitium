@@ -110,12 +110,16 @@ class LoadingScreen {
 			</div>
 
 			<style>
+				html {
+					font-size: 16px !important;
+				}
+
 				body {
 					position: relative;
 					height: 100wh !important;
 					width: 100vw !important;
 					margin: 0;
-					overflow: hidden
+					overflow: hidden;
 				}
 
 				.${this.name}--loading-screen,
@@ -158,7 +162,7 @@ class LoadingScreen {
 				
 				.${this.name}--loading-header {
 					font-size: 2.5rem;
-					font-weight: bold
+					font-weight: bold;
 				}
 				
 				.${this.name}--loading-text {
@@ -172,7 +176,15 @@ class LoadingScreen {
 					align-items: center;
 					justify-content: space-between;
 					gap: .5rem;
-					margin-top: .5rem
+					margin-top: .5rem;
+					opacity: 0;
+					transform: scale(0);
+					transition: opacity .2s ease, transform .2s ease;
+				}
+
+				.${this.name}--loading-progress-container.shown {
+					opacity: 1;
+					transform: scale(1);
 				}
 					
 				.${this.name}--loading-progress-bar-container {
@@ -180,14 +192,14 @@ class LoadingScreen {
 					height: .5rem;
 					background: rgba(255, 255, 255, .2);
 					border-radius: .25rem;
-					overflow: hidden
+					overflow: hidden;
 				}
 					
 				.${this.name}--loading-progress-bar-value {
 					width: 0;
 					height: 100%;
 					background:rgb(80, 150, 200);
-					transition: width .2s ease
+					transition: width .2s ease;
 				}
 					
 				.${this.name}--loading-progress-text {
@@ -202,30 +214,30 @@ class LoadingScreen {
 				@keyframes ${this.name}--banner-appear {
 					0% {
 						transform: translateX(-100vw) scale(.7);
-						opacity: .7
+						opacity: .7;
 					}
 					80% {
 						transform: translateX(0) scale(.7);
-						opacity: .7
+						opacity: .7;
 					}
 					100% {
 						transform: scale(1);
-						opacity: 1
+						opacity: 1;
 					}
 				}
 				
 				@keyframes ${this.name}--banner-disappear {
 					0% {
 						transform: scale(1);
-						opacity: 1
+						opacity: 1;
 					}
 					20% {
 						transform: translateX(0) scale(.7);
-						opacity: .7
+						opacity: .7;
 					}
 					100% {
 						transform: translateX(100vw) scale(.7);
-						opacity: .7
+						opacity: .7;
 					}
 				}
 			</style>
@@ -361,6 +373,11 @@ class LoadingScreen {
 		`;
 
 		loadingBanner.appendChild(progressContainer);
+
+		// Trigger animation after a short delay
+		setTimeout(() => {
+			progressContainer.classList.add('shown');
+		}, 10);
 	}
 
 	/**
