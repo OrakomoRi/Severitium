@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.6.1+build115
+// @version			1.6.1+build116
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -79,6 +79,11 @@
 	 * @param {string} script.version - Version of the main userscript
 	 * @param {string} script.name - Name of the main userscript
 	 * 
+	 * @param {array} imageLinks - Array of image links with attributes
+	 * @param {array} CSSLinks - Array of css styles links with attributes
+	 * 
+	 * @type {SeveritiumInjector} - Instance of the style/image injector
+	 * 
 	 * @type {Logger} - Instance of the Logger class used for structured logging
 	*/
 
@@ -98,6 +103,10 @@
 		version: GM_info.script.version,
 		name: GM_info.script.name,
 	}
+
+	let imageLinks, CSSLinks;
+
+	const severitiumInjector = new SeveritiumInjector(script);
 
 	const logger = new Logger(script.name);
 	// logger.enableLogging();
@@ -222,15 +231,6 @@
 			}
 		}
 	}
-
-	if (updateCheck) {
-		checkForUpdates();
-	}
-
-
-
-	let imageLinks, CSSLinks;
-	const severitiumInjector = new SeveritiumInjector(script);
 
 	async function fetchResource(url, asBase64 = false) {
 		const { fileName, fileType } = _extractFileName(url);
@@ -358,6 +358,10 @@
 	unsafeWindow.reloadSeveritiumResources = reloadResources;
 
 	(async () => {
+		if (updateCheck) {
+			checkForUpdates();
+		}
+
 		await loadResources(false);
 	})();
 })();
