@@ -51,7 +51,7 @@ class Logger {
 	 * @param {string} githubVersion - The latest version from GitHub.
 	 */
 	logVersionComparison(compareResult, currentVersion, githubVersion) {
-		const state = false;
+		let state = false;
 		if (!this.logging) {
 			this.logging = true;
 			state = true;
