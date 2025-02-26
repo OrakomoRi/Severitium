@@ -34,7 +34,7 @@ Keep in mind that when you first load or update the script, it takes some time f
 
 1. Download [Tampermonkey](https://www.tampermonkey.net/)
 
-2. Add or update [script](https://github.com/OrakomoRi/Severitium/blob/d236aaf6c6ad159e5a68e41a6e0246d2c1e23820/release/severitium.user.js?raw=true) in Tampermonkey
+2. Add or update [script](https://github.com/OrakomoRi/Severitium/blob/ee0221df9c445db069a4c9863737ed7043a3bb8f/release/severitium.user.js?raw=true) in Tampermonkey
 
 ## :rocket: Browser Compatibility
 
@@ -77,9 +77,9 @@ Samsung Internet|20+
 
 - Contributors to logic: [PancakeSoup](https://github.com/Senijs), [hopzy](https://github.com/hopzy1)
 
-- Contributors to design: [Mondstrahl](https://discordapp.com/users/637667487386959914)
+- Contributors to design: Mondstrahl
 
-- Additional ideas: [N3onTechF0X](https://github.com/N3onTechF0X), Maria4554, [reversedqq](https://discordapp.com/users/908113129010003978)
+- Additional ideas: [N3onTechF0X](https://github.com/N3onTechF0X), Maria4554, reversedqq
 
 ### :sunny: Inspiration
 
