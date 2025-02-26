@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.6.1+build114
+// @version			1.6.1+build115
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -302,14 +302,14 @@
 				fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/ImageModules.json?raw=true').then(data => data || [])
 			]);
 
-			loadingScreen.setTotalModules(CSSLinks.length + imageLinks.length);
-
 			if (!forceReload && cachedVersion === script.version) {
 				logger.log(`Loading resources from cache.`, 'info');
 				script.CSS = GM_getValue('SeveritiumCSS', {});
 				script.images = GM_getValue('SeveritiumImages', {});
 			} else {
 				logger.log(`Fetching new resources.`, 'info');
+
+				loadingScreen.setTotalModules(CSSLinks.length + imageLinks.length);
 
 				const cssPromises = CSSLinks.map(({ url }) =>
 					fetchResource(url).then(css => {
