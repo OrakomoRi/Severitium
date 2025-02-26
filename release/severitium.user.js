@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.6.1+build113
+// @version			1.6.1+build114
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -232,50 +232,32 @@
 	let imageLinks, CSSLinks;
 	const severitiumInjector = new SeveritiumInjector(script);
 
-	async function fetchAsText(url) {
+	async function fetchResource(url, asBase64 = false) {
 		const { fileName, fileType } = _extractFileName(url);
 		const startTime = performance.now();
 		logger.log(`[START] ${new Date().toISOString()}\n${fileName} ${fileType}`, 'debug');
+	
 		return new Promise((resolve, reject) => {
 			GM_xmlhttpRequest({
 				method: 'GET',
 				url,
+				responseType: asBase64 ? 'blob' : 'text',
 				onload: (response) => {
 					if (response.status === 200) {
 						const endTime = performance.now();
 						const duration = ((endTime - startTime) / 1000).toFixed(3);
 						logger.log(`[END] ${new Date().toISOString()} (Time: ${duration}s)\n${fileName} ${fileType}`, 'debug');
-						resolve(response.responseText);
+	
+						if (asBase64) {
+							const reader = new FileReader();
+							reader.onloadend = () => resolve(reader.result.split(',')[1]);
+							reader.readAsDataURL(response.response);
+						} else {
+							resolve(response.responseText);
+						}
 					} else {
 						logger.log(`[ERROR] ${fileName} ${fileType}: Failed to fetch (${response.status})`, 'error');
 						reject(new Error(`Failed to fetch resource from ${url}`));
-					}
-				},
-				onerror: (error) => reject(error),
-			});
-		});
-	}
-
-	async function fetchImageAsBase64(url) {
-		const { fileName, fileType } = _extractFileName(url);
-		const startTime = performance.now();
-		logger.log(`[START] ${new Date().toISOString()}\n${fileName} ${fileType}`, 'debug');
-		return new Promise((resolve, reject) => {
-			GM_xmlhttpRequest({
-				method: 'GET',
-				url,
-				responseType: 'blob',
-				onload: (response) => {
-					if (response.status === 200) {
-						const reader = new FileReader();
-						const endTime = performance.now();
-						const duration = ((endTime - startTime) / 1000).toFixed(3);
-						logger.log(`[END] ${new Date().toISOString()} (Time: ${duration}s)\n${fileName} ${fileType}`, 'debug');
-						reader.onloadend = () => resolve(reader.result.split(',')[1]);
-						reader.readAsDataURL(response.response);
-					} else {
-						logger.log(`[ERROR] ${fileName} ${fileType}: Failed to fetch (${response.status})`, 'error');
-						reject(new Error(`Failed to fetch image from ${url}`));
 					}
 				},
 				onerror: (error) => reject(error),
@@ -330,7 +312,7 @@
 				logger.log(`Fetching new resources.`, 'info');
 
 				const cssPromises = CSSLinks.map(({ url }) =>
-					fetchAsText(url).then(css => {
+					fetchResource(url).then(css => {
 						script.CSS[url] = css;
 						loadingScreen.updateProgress();
 					})
@@ -338,7 +320,7 @@
 
 				const imagePromises = imageLinks.map(({ url }) => {
 					const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason());
-					return fetchImageAsBase64(formattedUrl).then(img => {
+					return fetchResource(formattedUrl, true).then(img => {
 						script.images[formattedUrl] = img;
 						loadingScreen.updateProgress();
 					});
