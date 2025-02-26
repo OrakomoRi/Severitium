@@ -1,6 +1,6 @@
 # :sparkles: Section Menu
 
-Stylizes a modal window with a notification of a successful in-game purchase.
+Stylizes the section selection menu on the left in already open sections of the store.
 
 ## :bulb: Single module
 

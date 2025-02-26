@@ -1,6 +1,6 @@
 # :sparkles: Shop Window
 
-Stylizes a modal window with a notification of a successful in-game purchase.
+Styles the window of a section of the store with individual products: limited offers, regular products, promocodes.
 
 ## :bulb: Single module
 
