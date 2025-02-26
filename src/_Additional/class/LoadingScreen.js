@@ -102,8 +102,133 @@ class LoadingScreen {
 
 
 		loadingScreenElement.innerHTML = `
-			<canvas class="${this.name}--night-sky"></canvas><div class="${this.name}--loading-banner"><h3 class="${this.name}--loading-header">${this.name}</h3><p class="${this.name}--loading-text">${this.translations.loading}</p><p class="${this.name}--loading-text">${this.translations.wait}</p><div class="${this.name}--loading-progress-container"><div class="${this.name}--loading-progress-bar-container"><div class="${this.name}--loading-progress-bar-value"></div></div><p class="${this.name}--loading-progress-text">0/${this.totalModules}</p></div></div>
-			<style>.${this.name}--loading-screen,.${this.name}--loading-screen *{margin:0;padding:0;box-sizing:border-box;}.${this.name}--loading-screen{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;z-index:9999;}.${this.name}--loading-banner{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;text-align:center;padding:.5rem 1rem;background-color:rgba(0,0,0,.25);color:#fff;border:.1rem solid rgb(75,75,75);border-radius:.25rem;backdrop-filter:blur(.5rem);z-index:10000;overflow:hidden;animation:${this.name}--banner-appear ${1 / this.fadeSpeed}s ease-in-out}.${this.name}--loading-header{font-size:2.5rem;font-weight:bold}.${this.name}--loading-text{font-size:1.5rem;font-weight:normal}@keyframes ${this.name}--banner-appear{0%{transform:translateX(-100vw) scale(.7);opacity:.7}80%{transform:translateX(0) scale(.7);opacity:.7}100%{transform:scale(1);opacity:1}}@keyframes ${this.name}--banner-disappear{0%{transform:scale(1);opacity:1}20%{transform:translateX(0) scale(.7);opacity:.7}100%{transform:translateX(100vw) scale(.7);opacity:.7}}body{position:relative;height:100wh!important;width:100vw!important;margin:0;overflow:hidden}.${this.name}--loading-progress-container{display:flex;align-items:center;justify-content:space-between;gap:.5rem;width:100%;margin-top:.5rem}.${this.name}--loading-progress-bar-container{width:80%;height:.5rem;background:rgba(255,255,255,.2);border-radius:.25rem;overflow:hidden}.${this.name}--loading-progress-bar-value{width:0;height:100%;background:rgb(80, 150, 200);transition:width .2s ease}.${this.name}--loading-progress-text{text-align:center;color:#ffffff;max-width: 20%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}</style>
+			<canvas class="${this.name}--night-sky"></canvas>
+			<div class="${this.name}--loading-banner">
+				<h3 class="${this.name}--loading-header">${this.name}</h3>
+				<p class="${this.name}--loading-text">${this.translations.loading}</p>
+				<p class="${this.name}--loading-text">${this.translations.wait}</p>
+			</div>
+
+			<style>
+				body {
+					position: relative;
+					height: 100wh !important;
+					width: 100vw !important;
+					margin: 0;
+					overflow: hidden
+				}
+
+				.${this.name}--loading-screen,
+				.${this.name}--loading-screen * {
+					margin: 0;
+					padding: 0;
+					box-sizing: border-box;
+				}
+
+				.${this.name}--loading-screen {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					z-index: 9999;
+				}
+				
+				.${this.name}--loading-banner {
+					position: absolute;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					gap: 1rem;
+					text-align: center;
+					padding: .5rem 1rem;
+					background-color: rgba(0, 0, 0, .25);
+					color: rgb(255, 255, 255);
+					border: .1rem solid rgb(75, 75, 75);
+					border-radius: .25rem;
+					backdrop-filter: blur(.5rem);
+					z-index: 10000;
+					overflow: hidden;
+					animation: ${this.name}--banner-appear ${1 / this.fadeSpeed}s ease-in-out;
+				}
+				
+				.${this.name}--loading-header {
+					font-size: 2.5rem;
+					font-weight: bold
+				}
+				
+				.${this.name}--loading-text {
+					font-size: 1.5rem;
+					font-weight: normal;
+				}
+					
+				.${this.name}--loading-progress-container {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: .5rem;
+					margin-top: .5rem
+				}
+					
+				.${this.name}--loading-progress-bar-container {
+					width: 80%;
+					height: .5rem;
+					background: rgba(255, 255, 255, .2);
+					border-radius: .25rem;
+					overflow: hidden
+				}
+					
+				.${this.name}--loading-progress-bar-value {
+					width: 0;
+					height: 100%;
+					background:rgb(80, 150, 200);
+					transition: width .2s ease
+				}
+					
+				.${this.name}--loading-progress-text {
+					text-align: center;
+					color: rgb(255, 255, 255);
+					max-width: 20%;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+
+				@keyframes ${this.name}--banner-appear {
+					0% {
+						transform: translateX(-100vw) scale(.7);
+						opacity: .7
+					}
+					80% {
+						transform: translateX(0) scale(.7);
+						opacity: .7
+					}
+					100% {
+						transform: scale(1);
+						opacity: 1
+					}
+				}
+				
+				@keyframes ${this.name}--banner-disappear {
+					0% {
+						transform: scale(1);
+						opacity: 1
+					}
+					20% {
+						transform: translateX(0) scale(.7);
+						opacity: .7
+					}
+					100% {
+						transform: translateX(100vw) scale(.7);
+						opacity: .7
+					}
+				}
+			</style>
 		`;
 
 		document.body.appendChild(loadingScreenElement);
@@ -218,15 +343,24 @@ class LoadingScreen {
 	}
 
 	/**
-	 * Updates the total number of modules to load
+	 * Updates the total number of modules to load and adds the progress bar
 	 * @param {number} totalModules - Total number of modules to load
 	 */
 	setTotalModules(totalModules) {
 		this.totalModules = totalModules;
-		const progressText = document.querySelector(`.${this.name}--loading-progress-text`);
-		if (progressText) {
-			progressText.textContent = `0/${this.totalModules}`;
-		}
+		let loadingBanner = document.querySelector(`.${this.name}--loading-banner`);
+		if (!loadingBanner) return;
+
+		let progressContainer = document.createElement('div');
+		progressContainer.className = `${this.name}--loading-progress-container`;
+		progressContainer.innerHTML = `
+			<div class="${this.name}--loading-progress-bar-container">
+				<div class="${this.name}--loading-progress-bar-value"></div>
+			</div>
+			<p class="${this.name}--loading-progress-text">0/${this.totalModules}</p>
+		`;
+
+		loadingBanner.appendChild(progressContainer);
 	}
 
 	/**
