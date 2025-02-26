@@ -37,7 +37,6 @@
 - Containers
 	- PossibleRewardsScreen
 - Entrance
-	- EntranceBackground ++
 	- EntranceForms
 	- EntranceIcons
 	- EntranceLinks
@@ -52,7 +51,6 @@
 	- TopMenu
 	- TopPanel
 - Lobby
-	- Announcements ++
 	- BattleSelect
 		- BattleType
 	- Challenges
