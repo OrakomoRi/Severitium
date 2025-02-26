@@ -12,8 +12,20 @@ You can manually use this component by enabling the [script](https://github.com/
 
 #### Old
 
-![]()
+![](/images/quests/old/questsscreen.png)
 
 #### New
 
-![]()
+![](/images/quests/new/questsscreen.png)
+
+### Claim all button (left side block)
+
+❗GIF: may take several seconds to load
+
+#### Old
+
+![](/images/quests/old/claimbutton.gif)
+
+#### New
+
+![](/images/quests/new/claimbutton.gif)

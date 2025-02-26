@@ -14,6 +14,8 @@ You can manually use this component by enabling the [script](https://github.com/
 
 ### Play button default state
 
+❗GIF: may take several seconds to load
+
 #### Old
 
 ![](/images/lobby/old/playbutton-default.gif)
@@ -23,6 +25,8 @@ You can manually use this component by enabling the [script](https://github.com/
 ![](/images/lobby/new/playbutton-default.png)
 
 ### Play button search state
+
+❗GIF: may take several seconds to load
 
 #### Old
 

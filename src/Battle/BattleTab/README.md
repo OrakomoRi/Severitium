@@ -11,6 +11,8 @@ All modules related to battle "Tab" window are stored here.
 
 ### Battle tab
 
+❗GIF: may take several seconds to load
+
 #### Old
 
 ![](/images/battle/old/battletab.gif)

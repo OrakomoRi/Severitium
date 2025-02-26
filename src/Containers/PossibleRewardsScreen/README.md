@@ -10,10 +10,12 @@ You can manually use this component by enabling the [script](https://github.com/
 
 ### Possible rewards screen
 
+❗GIF: may take several seconds to load
+
 #### Old
 
-![]()
+![](/images/containers/old/possiblerewardsmenu.gif)
 
 #### New
 
-![]()
+![](/images/containers/new/possiblerewardsmenu.gif)

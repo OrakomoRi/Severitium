@@ -10,3 +10,10 @@ You can manually use this component by enabling the [script](https://github.com/
 
 ### Range input
 
+#### Old
+
+![](/images/general/old/rangeinput.png)
+
+#### New
+
+![](/images/general/new/rangeinput.png)

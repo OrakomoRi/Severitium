@@ -10,6 +10,8 @@ You can manually use this component by enabling the [script](https://github.com/
 
 ### Announcement card
 
+❗GIF: may take several seconds to load
+
 #### Old
 
 ![](/images/lobby/old/announcements.gif)

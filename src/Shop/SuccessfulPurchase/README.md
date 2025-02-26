@@ -16,8 +16,8 @@ You can manually use this component by enabling the [script](https://github.com/
 
 #### Old
 
-![]()
+![](/images/shop/old/successfulpurchase.png)
 
 #### New
 
-![]()
+![](/images/shop/new/successfulpurchase.png)

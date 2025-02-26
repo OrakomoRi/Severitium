@@ -10,6 +10,8 @@ You can manually use this component by enabling the [script](https://github.com/
 
 ### Player context menu
 
+❗GIF: may take several seconds to load
+
 #### Old
 
 ![](/images/general/old/playercontextmenu.gif)

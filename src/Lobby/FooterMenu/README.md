@@ -10,6 +10,8 @@ You can manually use this component by enabling the [script](https://github.com/
 
 ### Footer menu
 
+❗GIF: may take several seconds to load
+
 #### Old
 
 ![](/images/lobby/old/footermenu.gif)

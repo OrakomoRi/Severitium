@@ -20,6 +20,8 @@ You can manually use this component by enabling the [script](https://github.com/
 
 ### Notificator animation in lobby's footer menu
 
+❗GIF: may take several seconds to load
+
 #### Old
 
 ![](/images/general/old/notificatoriconfootermenu.png)

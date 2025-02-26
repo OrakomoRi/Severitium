@@ -10,10 +10,12 @@ You can manually use this component by enabling the [script](https://github.com/
 
 ### Section menu
 
+❗GIF: may take several seconds to load
+
 #### Old
 
-![]()
+![](/images/shop/old/sectionmenu.gif)
 
 #### New
 
-![]()
+![](/images/shop/new/sectionmenu.gif)

@@ -1,5 +1,87 @@
 # CHANGELOG
 
+## [1.7.0] - 2025-02-26
+
+### Added
+
+- Containers
+	- PossibleRewardsMenu
+- General
+	- CommonSort
+	- RangeInput
+- Shop
+	- MainScreen
+	- PurchaseScreen
+	- SectionMenu
+	- SuccessfulPurchase
+- `JSON` with stable versions so that auto-updates only occur for stable versions :tada:
+- `Logger` class designed for `userscript` logging; supports different logging modes :tada:
+- Few new `SVGs`
+- Loading screen while modules are loading with progress bar displayed; it also has translations into different languages :tada:
+- Missing screenshots/gifs for README of modules
+- Namespace for the main userscript
+- New way of loading modules; now modules are loaded from a separate `JSON`
+- Now the project is linked to my other project: '[Breezium](https://github.com/OrakomoRi/Breezium)'; I create a custom `select` elements using that project
+- The theme should now work for test servers as well :tada:
+
+### Changed
+
+- Battle
+	- BattleChat
+	- BattleTab
+		- ColorfulResists
+- Clan
+	- ClanModal
+	- ExistingClan
+	- JoinClan
+- Containers
+	- PossibleRewardsScreen
+- Entrance
+	- EntranceBackground ++
+	- EntranceForms
+	- EntranceIcons
+	- EntranceLinks
+- Friends
+	- FriendsScreen
+	- InviteScreen
+- General
+	- CommonContainer
+	- LoadingScreen
+	- Modal
+	- ScrollingCards
+	- TopMenu
+	- TopPanel
+- Lobby
+	- Announcements ++
+	- BattleSelect
+		- BattleType
+	- Challenges
+		- CommonChallenges
+	- ChatWindow
+	- NewsWindow
+	- PlayButton
+- Quests
+	- ContractsScreen
+	- QuestsScreen
+- Variables
+- Optimized main userscript
+- Optimized all `JS` files of modules
+- Some `READMEs` have been updated
+- Some `SVGs` were optimized and minified
+
+### Fixed
+
+- Entrance
+	- EntranceForms
+	- EntranceIcons
+- General
+	- TopPanel (currency support for shop screen)
+- Quests
+	- QuestsScreen
+ - Set default border radius for all hotkeys tooltips blocks
+
+---
+
 ## [1.6.1] - 2024-12-20
 
 ### Added
@@ -15,6 +97,8 @@
 - Lobby
 	- Announcements
 - Optimized & updated images (added `.webp` format)
+
+---
 
 ## [1.6.0] - 2024-08-30
 
@@ -36,6 +120,8 @@
 
 - Image loading logic for single modules
 - Canvas adding logic for common container
+
+---
 
 ## [1.5.0] - 2024-08-12
 

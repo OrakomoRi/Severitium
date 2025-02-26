@@ -30,4 +30,6 @@ You can manually use this component by enabling the [script](https://github.com/
 
 ### New button animation
 
+❗GIF: may take several seconds to load
+
 ![](/images/entrance/new/button-animation.gif)

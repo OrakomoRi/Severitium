@@ -16,8 +16,8 @@ You can manually use this component by enabling the [script](https://github.com/
 
 #### Old
 
-![]()
+![](/images/quests/old/contractsscreen.png)
 
 #### New
 
-![]()
+![](/images/quests/new/contractsscreen.png)

@@ -12,8 +12,8 @@ You can manually use this component by enabling the [script](https://github.com/
 
 #### Old
 
-![]()
+![](/images/shop/old/purchasescreen.png)
 
 #### New
 
-![]()
+![](/images/shop/new/purchasescreen.png)
