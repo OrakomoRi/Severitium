@@ -21,7 +21,7 @@
 - Missing screenshots/gifs for README of modules
 - Namespace for the main userscript
 - New way of loading modules; now modules are loaded from a separate `JSON`
-- Now the project is linked to my other project: '[Breezium](https://github.com/OrakomoRi/Breezium)'; I create a custom `select` elements using that project
+- Now the project is linked to my other project: [Breezium](https://github.com/OrakomoRi/Breezium); I create a custom `select` elements using that project
 - The theme should now work for test servers as well :tada:
 
 ### Changed
