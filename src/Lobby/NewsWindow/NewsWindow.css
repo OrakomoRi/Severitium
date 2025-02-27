@@ -3,7 +3,7 @@
 .NewsComponentStyle-newsWindow {
 	background: var(--severitium-dark-transparent-background1);
 	-webkit-backdrop-filter: blur(.5em);
-			backdrop-filter: blur(.5em);
+	backdrop-filter: blur(.5em);
 	border-right: .1em solid var(--severitium-gray-color);
 }
 
@@ -18,7 +18,7 @@
 
 /* Header text of the news window */
 
-.NewsComponentStyle-header > h1 {
+.NewsComponentStyle-header>h1 {
 	margin: 0;
 	font-size: 2em;
 	padding: .5em;
@@ -68,7 +68,7 @@
 
 /* Single block header title */
 
-.NewsComponentStyle-newsItemHeader > h1 {
+.NewsComponentStyle-newsItemHeader>h1 {
 	color: var(--severitium-white-text-color);
 }
 
@@ -83,7 +83,7 @@
 
 /* Single block date text */
 
-.NewsComponentStyle-newsItemHeader .NewsComponentStyle-newsItemDate > span {
+.NewsComponentStyle-newsItemHeader .NewsComponentStyle-newsItemDate>span {
 	margin: 0;
 	color: var(--severitium-light-gray-text-color);
 }
@@ -103,22 +103,23 @@
 
 /* Single block content container text */
 
-.NewsComponentStyle-newsItemBody > span {
+.NewsComponentStyle-newsItemBody>span {
 	color: var(--severitium-extra-light-gray-text-color);
 }
 
 /* Single block content container links in text */
 
-.NewsComponentStyle-newsItemBody > span > a {
+.NewsComponentStyle-newsItemBody>span>a,
+.NewsComponentStyle-newsItemBodyNew a {
 	color: var(--severitium-main-color);
 	-webkit-text-decoration: dashed;
-			text-decoration: dashed;
+	text-decoration: dashed;
 	transition: color .2s ease;
 }
 
 /* Single block content container links in text on hover */
 
-.NewsComponentStyle-newsItemBody > span > a:hover {
+.NewsComponentStyle-newsItemBody>span>a:hover {
 	color: var(--severitium-white-text-color);
 }
 
