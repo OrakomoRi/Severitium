@@ -257,7 +257,7 @@
 /* Button on hover */
 
 .ClanInfoComponentStyle-clanForeignActions > div:first-child:has(> span:not(.ClanInfoComponentStyle-clanActionDescription)):hover {
-	background-color: var(--severitium-gray-button-background);
+	background-color: var(--severitium-red-button-background);
 	border: var(--severitium-red-button-border-color-hover) solid .1em;
 }
 
