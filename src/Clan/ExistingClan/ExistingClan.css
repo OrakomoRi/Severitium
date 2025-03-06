@@ -17,6 +17,14 @@
 			backdrop-filter: blur(.2em);
 	border-radius: var(--severitium-border-radius);
 	border: .05em solid var(--severitium-gray-color);
+	user-select: text;
+}
+
+/* All selected text inside description container */
+
+.ClanInfoComponentStyle-messageClan > *::selection {
+	background-color: var(--severitium-main-color);
+	color: var(--severitium-black-text-color);
 }
 
 /* Clan name */
