@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.0+build3
+// @version			1.7.0+build4
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -82,6 +82,9 @@
 	 * @param {array} imageLinks - Array of image links with attributes
 	 * @param {array} CSSLinks - Array of css styles links with attributes
 	 * 
+	 * @param {string} lastSeason - Remembered season name
+	 * @param {string} currentSeason - Current season name
+	 * 
 	 * @type {SeveritiumInjector} - Instance of the style/image injector
 	 * 
 	 * @type {Logger} - Instance of the Logger class used for structured logging
@@ -105,6 +108,9 @@
 	}
 
 	let imageLinks, CSSLinks;
+
+	const lastSeason = GM_getValue('SeveritiumSeason', '');
+	const currentSeason = _getSeason();
 
 	const severitiumInjector = new SeveritiumInjector(script);
 
@@ -296,13 +302,16 @@
 
 		try {
 			const cachedVersion = GM_getValue('SeveritiumVersion', '');
+			const isSeasonChanged = lastSeason !== currentSeason;
+
+			logger.log(`Last season: ${lastSeason}; current season: ${currentSeason}. Season changed: ${isSeasonChanged ? 'yes' : 'no'}`, 'debug');
 			
 			[CSSLinks, imageLinks] = await Promise.all([
 				fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/CSSModules.json?raw=true').then(data => data || []),
 				fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/ImageModules.json?raw=true').then(data => data || [])
 			]);
 
-			if (!forceReload && cachedVersion === script.version) {
+			if (!forceReload && cachedVersion === script.version && !isSeasonChanged) {
 				logger.log(`Loading resources from cache.`, 'info');
 				script.CSS = GM_getValue('SeveritiumCSS', {});
 				script.images = GM_getValue('SeveritiumImages', {});
