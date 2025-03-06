@@ -1,5 +1,20 @@
 # CHANGELOG
 
+## [1.7.1] - 2025-03-06
+
+### Added
+
+- From now the script checks if the time of year has changed and, if it has, updates the resources
+
+### Changed
+
+- Clan
+	- ExistingClan
+- Lobby
+	- NewsWindow
+
+---
+
 ## [1.7.0] - 2025-02-26
 
 ### Added
