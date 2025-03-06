@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.0+build5
+// @version			1.7.0+build6
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -304,7 +304,7 @@
 			const cachedVersion = GM_getValue('SeveritiumVersion', '');
 			const isSeasonChanged = lastSeason !== currentSeason;
 
-			logger.log(`Last season: ${lastSeason}; current season: ${currentSeason}. Season changed: ${isSeasonChanged ? 'yes' : 'no'}`, 'debug');
+			logger.log(`Last season: ${lastSeason === '' ? 'null' : lastSeason}; current season: ${currentSeason}. Season changed: ${isSeasonChanged ? 'yes' : 'no'}`, 'debug');
 			
 			[CSSLinks, imageLinks] = await Promise.all([
 				fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/CSSModules.json?raw=true').then(data => data || []),
@@ -346,6 +346,7 @@
 				GM_setValue('SeveritiumCSS', script.CSS);
 				GM_setValue('SeveritiumImages', script.images);
 				GM_setValue('SeveritiumVersion', script.version);
+				GM_setValue('SeveritiumSeason', currentSeason);
 
 				logger.log(`Resources loaded.`, 'success');
 			}
