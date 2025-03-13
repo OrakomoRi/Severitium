@@ -22,6 +22,8 @@
 	background-color: transparent;
 	border-radius: var(--severitium-border-radius);
 	border: .1em solid var(--severitium-gray-color);
+	-webkit-filter: none;
+	        filter: none;
 	transition: background-color .2s ease;
 }
 
