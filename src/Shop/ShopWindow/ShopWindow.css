@@ -374,6 +374,11 @@
 /* Promocode container */
 
 .PromoCodesComponentStyle-controlsWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2em;
 	background: none;
 	background-color: var(--severitium-dark-transparent-background1);
 	box-shadow: none;
@@ -490,6 +495,7 @@
 /* Promocode button */
 
 .PromoCodesComponentStyle-sendButton {
+	margin: 0;
 	background: none;
 	outline: none;
 	box-shadow: none;
