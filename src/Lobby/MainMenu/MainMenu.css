@@ -26,6 +26,41 @@
 	transition: background-color .2s ease;
 }
 
+/* Highlighted single button */
+
+.MainScreenComponentStyle-blockMainMenu > ul > li[style*="animation"] {
+	-webkit-animation: none !important;
+	        animation: none !important;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Highlighted button text */
+
+.MainScreenComponentStyle-blockMainMenu > ul > li[style*="animation"] > span {
+	-webkit-animation: 1s ease 0s infinite normal none running severitium-highlight-text;
+	        animation: 1s ease 0s infinite normal none running severitium-highlight-text;
+}
+
+/* Text highlight animation */
+
+@-webkit-keyframes severitium-highlight-text {
+	0%, 100% {
+		color: var(--severitium-extra-light-gray-text-color);
+	}
+	50% {
+		color: var(--severitium-white-text-color);
+	}
+}
+
+@keyframes severitium-highlight-text {
+	0%, 100% {
+		color: var(--severitium-extra-light-gray-text-color);
+	}
+	50% {
+		color: var(--severitium-white-text-color);
+	}
+}
+
 /* Button on hover */
 
 .MainScreenComponentStyle-blockMainMenu > ul > li:hover {
