@@ -188,7 +188,8 @@
 .BreadcrumbsComponentStyle-headerContainer > div > div:has(> [class*="user"i][class*="group"i]) .UserGroupTitleButtonComponentStyle-commonBlockGroup > div:first-child {
 	top: 0;
 	left: 50%;
-	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
 }
 
 /* Second icon part */
@@ -251,7 +252,6 @@
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i]) {
 	position: relative;
 	background-color: transparent;
-	transition: background-color .2s ease;
 }
 
 /* Currency buttons on hover */
@@ -262,7 +262,47 @@
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i]):hover,
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i]):hover,
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i]):hover {
-	background-color: linear-gradient(270deg, var(--severitium-light-transparent-background3) 0%, rgba(255, 255, 255, 0) 100%);
+	background: none;
+}
+
+/* Pseudo element for hover highlight */
+
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="coin"i])::before,
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="crystal"i])::before,
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="ruby"i])::before,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i])::before,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i])::before,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i])::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	opacity: .15;
+	background: transparent;
+	transition: background .2s ease;
+}
+
+/* Pseudo element for ruby currency on hover */
+
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="ruby"i]):hover::before,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i]):hover::before {
+	background: linear-gradient(270deg, var(--severitium-ruby-color) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* Pseudo element for tancoin currency on hover */
+
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="coin"i]):hover::before,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i]):hover::before {
+	background: linear-gradient(270deg, var(--severitium-tancoin-color) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* Pseudo element for crystal currency on hover */
+
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="crystal"i]):hover::before,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i]):hover::before {
+	background: linear-gradient(270deg, var(--severitium-crystal-color) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 /* Text on tancoin button */
@@ -309,7 +349,8 @@
 	position: absolute;
 	top: 50%;
 	right: 1em;
-	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
 	width: 1em;
 	height: 1em;
 	background-color: var(--severitium-light-gray-color);
