@@ -1,0 +1,198 @@
+/* Payment screen header block */
+
+.PaymentInfoComponentStyle-commonBlock {
+	border-bottom: .1em solid var(--severitium-gray-color);
+}
+
+/* Header text */
+
+.PaymentInfoComponentStyle-commonBlock > .PaymentInfoComponentStyle-header {
+	color: var(--severitium-white-text-color)
+}
+
+/* Price amount text */
+
+.PaymentInfoComponentStyle-commonBlock .PaymentInfoComponentStyle-currency {
+	color: var(--severitium-main-color);
+}
+
+/* Sold amount container */
+
+.PaymentInfoComponentStyle-descriptionBlock .CoinPaymentComponentStyle-itemsContainer > .iconSold {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+}
+
+/* Sold amount icon */
+
+.PaymentInfoComponentStyle-descriptionBlock .CoinPaymentComponentStyle-itemsContainer > .iconSold > div {
+	margin: 0;
+	width: 2em;
+	height: 2em;
+	padding: 0;
+	margin: 0;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	background-color: var(--severitium-main-color);
+	-webkit-mask-image: url('data:image/svg+xml,<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="m26.862 6 1.982-6H32l-6.673 20.207A5.5 5.5 0 0 1 20.098 24H4v-3h16.098a2.5 2.5 0 0 0 2.377-1.724L22.896 18H4L0 6zM7 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6m16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="m26.862 6 1.982-6H32l-6.673 20.207A5.5 5.5 0 0 1 20.098 24H4v-3h16.098a2.5 2.5 0 0 0 2.377-1.724L22.896 18H4L0 6zM7 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6m16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/></svg>');
+}
+
+/* Sold amount text */
+
+.PaymentInfoComponentStyle-descriptionBlock .CoinPaymentComponentStyle-itemsContainer > .iconSold > h2 {
+	font-family: BaseFontMedium, FallbackFontMedium;
+	color: var(--severitium-main-color);
+}
+
+/* Cards container */
+
+.ChoosePaymentMethodComponentStyle-paymentModesContainer > .ChoosePaymentMethodComponentStyle-itemsContainer {
+	scrollbar-color: var(--severitium-light-transparent-background2) transparent;
+	scrollbar-width: thin;
+}
+
+/* Single card */
+
+.ChoosePaymentMethodComponentStyle-paymentModesContainer > .ChoosePaymentMethodComponentStyle-itemsContainer > div {
+	position: relative;
+	background: none;
+	background-color: var(--severitium-dark-transparent-background1);
+	box-shadow: none;
+	-webkit-backdrop-filter: blur(.25em);
+	        backdrop-filter: blur(.25em);
+	border: .1em solid var(--severitium-gray-color);
+	border-radius: var(--severitium-border-radius);
+	padding: 0;
+}
+
+/* Card image */
+
+.ChoosePaymentMethodComponentStyle-paymentModesContainer > .ChoosePaymentMethodComponentStyle-itemsContainer > div > img {
+	-webkit-filter: saturate(.25);
+	        filter: saturate(.25);
+	margin: 0;
+	transition: -webkit-transform .2s ease, -webkit-filter .2s ease;
+	transition: transform .2s ease, filter .2s ease;
+	transition: transform .2s ease, filter .2s ease, -webkit-transform .2s ease, -webkit-filter .2s ease;
+}
+
+/* Card image on card hover */
+
+.ChoosePaymentMethodComponentStyle-paymentModesContainer > .ChoosePaymentMethodComponentStyle-itemsContainer > div:hover > img {
+	-webkit-filter: saturate(1);
+	        filter: saturate(1);
+	-webkit-transform: translateY(-.5em);
+	        transform: translateY(-.5em);
+	margin: 0;
+}
+
+/* Card name */
+
+.ChoosePaymentMethodComponentStyle-paymentModesContainer > .ChoosePaymentMethodComponentStyle-itemsContainer > div > span {
+	color: var(--severitium-white-text-color);
+}
+
+/* Payment screen footer block */
+
+.ChoosePaymentMethodComponentStyle-instructionContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2em;
+	border-top: .1em solid var(--severitium-gray-color);
+}
+
+/* Footer single link container */
+
+.ChoosePaymentMethodComponentStyle-instructionContainer > span {
+	margin: 0;
+}
+
+/* Footer single link */
+
+.ChoosePaymentMethodComponentStyle-instructionContainer > span > a u {
+	color: var(--severitium-main-color);
+}
+
+/* Description for selected payment type */
+
+.CoinPaymentComponentStyle-commonContainer + span[class*="payment"i][class*="description"i],
+.BasePaymentComponentStyle-commonContainerForChoiceAndButton .SpecialConditionsComponentStyle-description {
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Compensation text */
+
+.BasePaymentComponentStyle-commonContainerForChoiceAndButton .SpecialConditionsComponentStyle-compensationDescription {
+	color: var(--severitium-extra-light-gray-text-color);
+	font-size: 1em;
+}
+
+/* Compensation currency amount */
+
+.BasePaymentComponentStyle-commonContainerForChoiceAndButton .SpecialConditionsComponentStyle-compensationDescription + span {
+	font-size: 1em;
+}
+
+/* Crystal amount */
+
+.BasePaymentComponentStyle-commonContainerForChoiceAndButton .SpecialConditionsComponentStyle-compensationDescription + span[class*="crystal"i] {
+	color: var(--severitium-crystal-color);
+}
+
+/* Tancoin amount */
+
+.BasePaymentComponentStyle-commonContainerForChoiceAndButton .SpecialConditionsComponentStyle-compensationDescription + span[class*="coins"i] {
+	color: var(--severitium-tancoin-color);
+}
+
+/* Ruby amount */
+
+.BasePaymentComponentStyle-commonContainerForChoiceAndButton .SpecialConditionsComponentStyle-compensationDescription + span[class*="ruby"i] {
+	color: var(--severitium-ruby-color);
+}
+
+/* Selected payment method card */
+
+.BasePaymentComponentStyle-commonContainerForChoiceAndButton .CoinPaymentComponentStyle-paymentMethod:has(> .ChoosePaymentMethodComponentStyle-paymentModePreview) {
+	background: none;
+	background-color: var(--severitium-dark-transparent-background1);
+	box-shadow: none;
+	-webkit-backdrop-filter: blur(.25em);
+	        backdrop-filter: blur(.25em);
+	border: .1em solid var(--severitium-gray-color);
+	border-radius: var(--severitium-border-radius);
+	padding: 0;
+}
+
+/* Selected payment method card header text */
+
+.BasePaymentComponentStyle-commonContainerForChoiceAndButton .CoinPaymentComponentStyle-paymentMethod > span {
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	border-radius: 0;
+	color: var(--severitium-white-text-color);
+}
+
+/* Special condition container */
+
+.BasePaymentComponentStyle-commonContainerForChoiceAndButton .SpecialConditionsComponentStyle-agreeContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+}
+
+/* Special condition text */
+
+.BasePaymentComponentStyle-commonContainerForChoiceAndButton .SpecialConditionsComponentStyle-agreeContainer > span {
+	color: var(--severitium-extra-light-gray-text-color);
+	margin: 0;
+}
