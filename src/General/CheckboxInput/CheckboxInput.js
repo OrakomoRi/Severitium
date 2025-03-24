@@ -1,0 +1,110 @@
+(function () {
+	const processedCheckboxes = new WeakSet();
+
+	/**
+	 * Checks if an element's class list contains "checkbox" (case-insensitive)
+	 * 
+	 * @param {Element} el - The element to check
+	 * 
+	 * @returns {boolean} True if class name contains "checkbox"
+	 */
+	function hasCheckboxClass(el) {
+		return el && el.classList && [...el.classList].some(cls => cls.toLowerCase().includes('checkbox'));
+	}
+
+	/**
+	 * Initializes a checkbox input by detecting its visual state from span::before background
+	 * 
+	 * @param {HTMLInputElement} input - The checkbox input to initialize
+	 */
+	function initializeCheckbox(input) {
+		if (processedCheckboxes.has(input)) return;
+
+		const label = input.closest('label');
+		if (!label) return;
+
+		const span = label.querySelector('span');
+		if (!span) return;
+
+		const computed = getComputedStyle(span, '::before');
+		const bg = computed.backgroundImage || '';
+
+		let state = 'off';
+		if (/\/incorrect[^\/]*\.svg["']?\)?$/.test(bg)) {
+			state = 'off';
+		} else {
+			state = 'on';
+		}
+
+		input.setAttribute('data-state', state);
+		input.checked = (state === 'on');
+		processedCheckboxes.add(input);
+	}
+
+	/**
+	 * Cleans up checkbox reference when it's removed
+	 * 
+	 * @param {HTMLInputElement} input - The checkbox input to clean up
+	 */
+	function cleanupCheckbox(input) {
+		if (processedCheckboxes.has(input)) {
+			processedCheckboxes.delete(input);
+		}
+	}
+
+	let lastClickedInput = null;
+
+	/**
+	 * Handles click events and toggles data-state on custom checkboxes
+	 */
+	function handleClick(e) {
+		const clickable = e.target.closest('[class*="checkbox" i]');
+		if (!clickable) return;
+
+		const input = clickable.querySelector('label > input[type="checkbox"]');
+		if (!input) return;
+
+		if (input === lastClickedInput) return;
+		lastClickedInput = input;
+
+		setTimeout(() => {
+			lastClickedInput = null;
+		}, 50);
+
+		const current = input.getAttribute('data-state') || 'off';
+		const next = current === 'on' ? 'off' : 'on';
+		input.setAttribute('data-state', next);
+	}
+
+	// Initialize existing checkboxes on load
+	document.querySelectorAll('input[type="checkbox"]').forEach(initializeCheckbox);
+
+	// Observe DOM for dynamically added/removed checkboxes
+	const observer = new MutationObserver((mutationsList) => {
+		for (const mutation of mutationsList) {
+			for (const node of mutation.addedNodes) {
+				if (node.nodeType !== 1) continue;
+
+				if (node.matches?.('input[type="checkbox"]')) {
+					initializeCheckbox(node);
+				} else {
+					node.querySelectorAll?.('input[type="checkbox"]').forEach(initializeCheckbox);
+				}
+			}
+
+			for (const node of mutation.removedNodes) {
+				if (node.nodeType !== 1) continue;
+
+				if (node.matches?.('input[type="checkbox"]')) {
+					cleanupCheckbox(node);
+				} else {
+					node.querySelectorAll?.('input[type="checkbox"]').forEach(cleanupCheckbox);
+				}
+			}
+		}
+	});
+
+	observer.observe(document.body, { childList: true, subtree: true });
+
+	document.addEventListener('click', handleClick);
+})();

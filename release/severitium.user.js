@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.1+build16
+// @version			1.7.1+build17
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -39,6 +39,7 @@
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Containers/PossibleRewardsMenu/PossibleRewardsMenu.min.js?raw=true
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Shop/SectionMenu/SectionMenu.min.js?raw=true
 // @require			https://github.com/OrakomoRi/Severitium/blob/main/src/General/RangeInput/RangeInput.min.js?raw=true
+// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/General/CheckboxInput/CheckboxInput.min.js?raw=true
 
 // @run-at			document-start
 // @grant			unsafeWindow
