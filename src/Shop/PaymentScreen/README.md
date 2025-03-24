@@ -8,12 +8,22 @@ You can manually use this component by enabling the [script](https://github.com/
 
 ## :information_source: Design
 
-### Shop window
+### Choise of payment type
 
 #### Old
 
-![](/images/shop/old/paymentscreen.png)
+![](/images/shop/old/paymentscreen1.png)
 
 #### New
 
-![](/images/shop/new/paymentscreen.png)
+![](/images/shop/new/paymentscreen1.png)
+
+### Chosen payment type
+
+#### Old
+
+![](/images/shop/old/paymentscreen2.png)
+
+#### New
+
+![](/images/shop/new/paymentscreen2.png)

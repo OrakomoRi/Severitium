@@ -8,7 +8,7 @@ You can manually use this component by enabling the [script](https://github.com/
 
 ## :information_source: Design
 
-### Range input
+### Checkbox input
 
 #### Old
 
