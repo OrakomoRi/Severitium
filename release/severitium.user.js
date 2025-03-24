@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.1+build9
+// @version			1.7.1+build10
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -303,30 +303,31 @@
 		try {
 			const cachedVersion = GM_getValue('SeveritiumVersion', '');
 			const isSeasonChanged = lastSeason !== currentSeason;
+			const isSameVersion = cachedVersion === script.version;
+			const loadOnlyImages = isSameVersion && isSeasonChanged;
+			const loadEverything = forceReload || !isSameVersion;
 
-			logger.log(`Last season: ${lastSeason === '' ? 'null' : lastSeason}; current season: ${currentSeason}. Season changed: ${isSeasonChanged ? 'yes' : 'no'}`, 'debug');
+			logger.log(`Last season: ${lastSeason || 'null'}; current season: ${currentSeason}. Season changed: ${isSeasonChanged ? 'yes' : 'no'}`, 'debug');
 			
 			[CSSLinks, imageLinks] = await Promise.all([
 				fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/CSSModules.json?raw=true').then(data => data || []),
 				fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/ImageModules.json?raw=true').then(data => data || [])
 			]);
 
-			if (!forceReload && cachedVersion === script.version && !isSeasonChanged) {
+			if (!loadEverything && !loadOnlyImages) {
 				logger.log(`Loading resources from cache.`, 'info');
 				script.CSS = GM_getValue('SeveritiumCSS', {});
 				script.images = GM_getValue('SeveritiumImages', {});
 			} else {
-				logger.log(`Fetching new resources.`, 'info');
+				logger.log(`Fetching ${loadOnlyImages ? 'only images' : 'all resources'}.`, 'info');
 
-				loadingScreen.setTotalModules((isSeasonChanged ? 0 : CSSLinks.length) + imageLinks.length);
-
-				const cssPromises = CSSLinks.map(({ url }) =>
+				const cssPromises = loadOnlyImages ? [] : CSSLinks.map(({ url }) =>
 					fetchResource(url).then(css => {
 						script.CSS[url] = css;
 						loadingScreen.updateProgress();
 					})
 				);
-
+			
 				const imagePromises = imageLinks.map(({ url }) => {
 					const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason());
 					return fetchResource(formattedUrl, true).then(img => {
@@ -334,11 +335,10 @@
 						loadingScreen.updateProgress();
 					});
 				});
+			
+				loadingScreen.setTotalModules(cssPromises.length + imagePromises.length);
 
-				const results = await Promise.allSettled([
-					...(isSeasonChanged ? [] : cssPromises),
-					...imagePromises
-				]);
+				const results = await Promise.allSettled([...cssPromises, ...imagePromises]);
 
 				results.forEach((result, index) => {
 					if (result.status === 'rejected') {
@@ -346,7 +346,8 @@
 					}
 				});
 
-				GM_setValue('SeveritiumCSS', script.CSS);
+				if (!loadOnlyImages) GM_setValue('SeveritiumCSS', script.CSS);
+				else script.CSS = GM_getValue('SeveritiumCSS', {});
 				GM_setValue('SeveritiumImages', script.images);
 				GM_setValue('SeveritiumVersion', script.version);
 				GM_setValue('SeveritiumSeason', currentSeason);
