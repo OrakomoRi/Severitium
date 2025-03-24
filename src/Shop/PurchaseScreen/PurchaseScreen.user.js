@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Purchase Screen
-// @version			1.0.1
+// @version			1.0.2
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 
