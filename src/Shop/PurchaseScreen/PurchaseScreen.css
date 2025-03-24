@@ -131,6 +131,25 @@
 	margin-right: .5em;
 }
 
+/* Disabled button */
+
+.BasePaymentComponentStyle-buttonContainer > div.ButtonComponentStyle-disabled {
+	outline: none;
+	box-shadow: none;
+	border: transparent solid .1em;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-gray-button-background);
+	pointer-events: none;
+}
+
+/* Button text */
+
+.BasePaymentComponentStyle-buttonContainer > div.ButtonComponentStyle-disabled > span {
+	font-size: 1.5em;
+	color: var(--severitium-gray-button-color);
+	opacity: .5;
+}
+
 /* Container for price icon and text */
 
 .BasePaymentComponentStyle-buttonContainer > div .ShopBuyButtonComponentStyle-container > div {
