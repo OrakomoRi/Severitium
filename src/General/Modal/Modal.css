@@ -11,6 +11,18 @@
 	border-radius: var(--severitium-border-radius);
 }
 
+.ModalStyle-rootHover > div:has(> .ReCaptchaComponentStyle-captchaBlock) {
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	border: none;
+	outline: none;
+	background: none;
+}
+
 /* Header container of the modal window */
 
 .DialogContainerComponentStyle-header {
