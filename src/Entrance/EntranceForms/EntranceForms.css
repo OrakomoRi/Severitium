@@ -693,6 +693,35 @@ div > .HeaderComponentStyle-messageBody {
 	padding: .25em .5em;
 }
 
+/* Pseudo element for button hover animation */
+
+.SocialNetworksComponentStyle-container > div::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--severitium-white-color);
+	border-radius: var(--severitium-border-radius);
+	opacity: .1;
+	-webkit-transform: scaleX(0);
+	        transform: scaleX(0);
+	-webkit-transform-origin: center;
+	        transform-origin: center;
+	transition: -webkit-transform .2s ease;
+	transition: transform .2s ease;
+	transition: transform .2s ease, -webkit-transform .2s ease;
+	z-index: 0;
+}
+
+/* Pseudo element on button hover */
+
+.SocialNetworksComponentStyle-container > div:hover::before {
+	-webkit-transform: scaleX(1);
+	        transform: scaleX(1);
+}
+
 /* Entrance bottom social network button original icon */
 
 .SocialNetworksComponentStyle-container > div > .SocialNetworkButtonComponentStyle-iconContainer > img {
