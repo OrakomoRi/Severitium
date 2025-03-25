@@ -681,3 +681,74 @@ div > .HeaderComponentStyle-messageBody {
 				transform: rotate(360deg);
 	}
 }
+
+/* Entrance bottom social network button container */
+
+.SocialNetworksComponentStyle-container > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
+	margin: 0;
+	padding: .25em .5em;
+}
+
+/* Entrance bottom social network button original icon */
+
+.SocialNetworksComponentStyle-container > div > .SocialNetworkButtonComponentStyle-iconContainer > img {
+	display: none;
+}
+
+/* Entrance bottom social network button custom icon */
+
+.SocialNetworksComponentStyle-container > div > .SocialNetworkButtonComponentStyle-iconContainer {
+	height: 2em;
+	width: 2em;
+	background-image: none;
+	background-color: var(--severitium-white-color);
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M24.3 6A11.2 11.2 0 0 0 16 9.3a11 11 0 0 0-3.5 8.2 2.5 2.5 0 0 0 5 0 6.5 6.5 0 0 1 2-4.7 6.2 6.2 0 0 1 4.7-1.8 6.5 6.5 0 0 1 1 12.9 4.4 4.4 0 0 0-3.7 4.4v3.2a2.5 2.5 0 0 0 5 0v-2.8a11.6 11.6 0 0 0 9-11.5A11.7 11.7 0 0 0 24.3 6"/><circle cx="24" cy="39.5" r="2.5"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M24.3 6A11.2 11.2 0 0 0 16 9.3a11 11 0 0 0-3.5 8.2 2.5 2.5 0 0 0 5 0 6.5 6.5 0 0 1 2-4.7 6.2 6.2 0 0 1 4.7-1.8 6.5 6.5 0 0 1 1 12.9 4.4 4.4 0 0 0-3.7 4.4v3.2a2.5 2.5 0 0 0 5 0v-2.8a11.6 11.6 0 0 0 9-11.5A11.7 11.7 0 0 0 24.3 6"/><circle cx="24" cy="39.5" r="2.5"/></svg>');
+	transition: background-color .2s ease;
+}
+
+/* Entrance bottom social network button custom icon on button hover */
+
+.SocialNetworksComponentStyle-container > div:hover > .SocialNetworkButtonComponentStyle-iconContainer {
+	background-color: var(--severitium-main-color);
+}
+
+/* Facebook custom icon */
+
+.SocialNetworksComponentStyle-container > div > .SocialNetworkButtonComponentStyle-iconContainer:has(> img[src*="facebook"i]) {
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12h-56.89v-64.77H221V208c0-56.13 33.45-87.16 84.61-87.16 24.51 0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81 0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291v156.54c107.1-16.81 189-109.48 189-221.31z" fill-rule="evenodd"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12h-56.89v-64.77H221V208c0-56.13 33.45-87.16 84.61-87.16 24.51 0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81 0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291v156.54c107.1-16.81 189-109.48 189-221.31z" fill-rule="evenodd"/></svg>');
+}
+
+/* Entrance bottom social network button text */
+
+.SocialNetworksComponentStyle-container > div > .SocialNetworkButtonComponentStyle-textContainer > span {
+	font-size: 1em;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: auto;
+	color: var(--severitium-white-text-color) !important;
+	transition: color .2s ease;
+}
+
+/* Entrance bottom social network button text on button hover */
+
+.SocialNetworksComponentStyle-container > div:hover > .SocialNetworkButtonComponentStyle-textContainer > span {
+	font-size: 1em;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: auto;
+	color: var(--severitium-main-color) !important;
+}
