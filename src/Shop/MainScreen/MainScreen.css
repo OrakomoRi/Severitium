@@ -147,6 +147,7 @@
 
 .ShopSelectedSectionComponentStyle-commonCard > div[class*="backgroundimage"i] {
 	border-radius: var(--severitium-border-radius);
+	background-color: var(--severitium-light-transparent-background3);
 	transition: -webkit-transform .2s ease, -webkit-filter .2s ease;
 	transition: transform .2s ease, filter .2s ease;
 	transition: transform .2s ease, filter .2s ease, -webkit-transform .2s ease, -webkit-filter .2s ease;

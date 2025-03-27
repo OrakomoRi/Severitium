@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Main Screen
-// @version			1.0.2
+// @version			1.0.3
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 
