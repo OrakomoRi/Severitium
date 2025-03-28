@@ -277,6 +277,7 @@
 			backdrop-filter: blur(.5em);
 	outline: var(--severitium-gray-color) solid .1em;
 	box-shadow: none;
+	border: none;
 	border-radius: var(--severitium-border-radius);
 	-webkit-animation: tooltipOpens .1s ease;
 			animation: tooltipOpens .1s ease;
@@ -307,6 +308,12 @@
 /* Padding of the tooltip inner */
 
 .TooltipStyle-tooltip > div {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -314,18 +321,28 @@
 	padding: .5em;
 }
 
+/* Tooltip inner header */
+
+.TooltipStyle-tooltip > div > h1 {
+	font-size: 1.125em;
+	color: var(--severitium-white-text-color);
+	text-align: center;
+}
+
 /* Tooltip inner text */
 
 .TooltipStyle-tooltip > div > span {
 	font-size: 1em;
-	color: var(--severitium-white-text-color);
+	color: var(--severitium-extra-light-gray-text-color);
+	text-align: center;
 }
 
 /* Tooltip content (e.g. text) */
 
 .TooltipStyle-tooltip p.TooltipStyle-content {
 	font-size: 1em;
-	color: var(--severitium-white-text-color);
+	color: var(--severitium-extra-light-gray-text-color);
+	text-align: center;
 }
 
 /* Ruby currency amount inside modal */
