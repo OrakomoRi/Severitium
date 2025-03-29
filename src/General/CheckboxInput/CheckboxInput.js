@@ -2,17 +2,6 @@
 	const processedCheckboxes = new WeakSet();
 
 	/**
-	 * Checks if an element's class list contains "checkbox" (case-insensitive)
-	 * 
-	 * @param {Element} el - The element to check
-	 * 
-	 * @returns {boolean} True if class name contains "checkbox"
-	 */
-	function hasCheckboxClass(el) {
-		return el && el.classList && [...el.classList].some(cls => cls.toLowerCase().includes('checkbox'));
-	}
-
-	/**
 	 * Initializes a checkbox input by detecting its visual state from span::before background
 	 * 
 	 * @param {HTMLInputElement} input - The checkbox input to initialize
