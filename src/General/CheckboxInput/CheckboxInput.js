@@ -74,20 +74,20 @@
 			for (const node of mutation.addedNodes) {
 				if (node.nodeType !== 1) continue;
 
-				if (node.matches?.('input[type="checkbox"]')) {
+				if (node.matches?.('.CheckBoxStyle-checkbox input[type="checkbox"]')) {
 					initializeCheckbox(node);
 				} else {
-					node.querySelectorAll?.('input[type="checkbox"]').forEach(initializeCheckbox);
+					node.querySelectorAll?.('.CheckBoxStyle-checkbox input[type="checkbox"]').forEach(initializeCheckbox);
 				}
 			}
 
 			for (const node of mutation.removedNodes) {
 				if (node.nodeType !== 1) continue;
 
-				if (node.matches?.('input[type="checkbox"]')) {
+				if (node.matches?.('.CheckBoxStyle-checkbox input[type="checkbox"]')) {
 					cleanupCheckbox(node);
 				} else {
-					node.querySelectorAll?.('input[type="checkbox"]').forEach(cleanupCheckbox);
+					node.querySelectorAll?.('.CheckBoxStyle-checkbox input[type="checkbox"]').forEach(cleanupCheckbox);
 				}
 			}
 		}
