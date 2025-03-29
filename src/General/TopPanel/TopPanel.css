@@ -226,7 +226,7 @@
 
 .UserInfoContainerStyle-userTitleContainer > div:has(> [class*="user"i][class*="group"i]) .UserGroupTitleButtonComponentStyle-commonBlockGroup > div:has(img[src*='ready'i]),
 .BreadcrumbsComponentStyle-headerContainer > div > div:has(> [class*="user"i][class*="group"i]) .UserGroupTitleButtonComponentStyle-commonBlockGroup > div:has(img[src*='ready'i]) {
-	background-color: var(--severitium-green-color);
+	background-color: var(--severitium-friend-color);
 }
 
 /* Rank button */
