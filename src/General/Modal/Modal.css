@@ -696,3 +696,168 @@
 	color: var(--severitium-gray-button-color);
 	opacity: .5;
 }
+
+/* Group invitation container */
+
+.InvitationWindowsComponentStyle-commonItem {
+	margin: 0;
+	margin-top: .5em;
+	background-color: var(--severitium-dark-transparent-background1);
+	-webkit-backdrop-filter: blur(.5em);
+	        backdrop-filter: blur(.5em);
+	border: .1em solid var(--severitium-gray-color);
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Inner container */
+
+.InvitationWindowsComponentStyle-commonItem > div {
+	background: none;
+	border: none;
+	transition: background-color .2s ease;
+}
+
+/* Inner container on hover */
+
+.InvitationWindowsComponentStyle-commonItem > div:hover {
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+}
+
+/* All inner containers excluding first */
+
+.InvitationWindowsComponentStyle-commonItem > div:nth-of-type(n+2) {
+	border-top: .1em solid var(--severitium-gray-color);
+}
+
+/* Icon of each group member */
+
+.InvitationWindowsComponentStyle-commonItem > div > div:nth-of-type(1) > div {
+	width: 1em;
+	height: 1em;
+	background: none;
+	background-image: none;
+	-webkit-mask: unset;
+	        mask: unset;
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+}
+
+/* Icon of group leader */
+
+.InvitationWindowsComponentStyle-commonItem > div:nth-of-type(1) > div:nth-of-type(1) > div {
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 12"><path fill-rule="evenodd" d="m0 3 2 9h12l2-9-4.5 3.5L8 0 4.5 6.5z" clip-rule="evenodd"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 12"><path fill-rule="evenodd" d="m0 3 2 9h12l2-9-4.5 3.5L8 0 4.5 6.5z" clip-rule="evenodd"/></svg>');
+	background-color: var(--severitium-main-color);
+}
+
+/* Icon of common player */
+
+.InvitationWindowsComponentStyle-commonItem > div:nth-of-type(n+2) > div:nth-of-type(1) > div {
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><circle cx="15" cy="15" r="8" fill="white"/><circle cx="15" cy="15" r="11.5" stroke="white" stroke-opacity="0.25" stroke-width="7"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><circle cx="15" cy="15" r="8" fill="white"/><circle cx="15" cy="15" r="11.5" stroke="white" stroke-opacity="0.25" stroke-width="7"/></svg>');
+	background: var(--severitium-light-gray-color);
+}
+
+/* Username of each group member */
+
+.InvitationWindowsComponentStyle-commonItem > div > div .InvitationWindowsComponentStyle-widthUserName > span {
+	font-size: 1em;
+	pointer-events: none;
+}
+
+/* Username of group leader */
+
+.InvitationWindowsComponentStyle-commonItem > div:nth-of-type(1) > div .InvitationWindowsComponentStyle-widthUserName > span {
+	color: var(--severitium-main-color);
+}
+
+/* Username of common member */
+
+.InvitationWindowsComponentStyle-commonItem > div:nth-of-type(n+2) > div .InvitationWindowsComponentStyle-widthUserName > span {
+	color: var(--severitium-white-color);
+}
+
+/* Equip text of each group member */
+
+.InvitationWindowsComponentStyle-commonItem > div > div .InvitationWindowsComponentStyle-widthUserName + span {
+	font-size: .9em;
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Action button */
+
+.InvitationWindowsComponentStyle-commonItem > div > div > .Common-backgroundImageContain {
+	width: 2em;
+	height: 2em;
+	opacity: 1;
+	background: none;
+	background-image: none;
+	-webkit-mask: unset;
+	        mask: unset;
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	background-color: var(--severitium-gray-color);
+	transition: background-color .2s ease;
+}
+
+/* Action button on hover */
+
+.InvitationWindowsComponentStyle-commonItem > div > div > .Common-backgroundImageContain:hover {
+	background: none;
+	background-image: none;
+	background-color: var(--severitium-light-gray-color);
+}
+
+/* Kick button */
+
+.InvitationWindowsComponentStyle-commonItem > div:nth-of-type(n+2) > div > .Common-backgroundImageContain {
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><path d="m84 0 12 12-48 48-36 36L0 84l36-36L0 12 12 0l36 36z"/><path d="M48 60h24l24 24-12 12z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><path d="m84 0 12 12-48 48-36 36L0 84l36-36L0 12 12 0l36 36z"/><path d="M48 60h24l24 24-12 12z"/></svg>');
+}
+
+/* Leave button */
+
+.InvitationWindowsComponentStyle-commonItem > div:nth-of-type(1) > div > .Common-backgroundImageContain,
+.InvitationWindowsComponentStyle-commonItem > div:has(.UserInfoContainerStyle-regularUser) > div > .Common-backgroundImageContain {
+	-webkit-mask-image: url('data:image/svg+xml,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v8.5h15L7.5 3H12l9 9-9 9H7.5l7.5-7.5H0V22a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v8.5h15L7.5 3H12l9 9-9 9H7.5l7.5-7.5H0V22a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/></svg>');
+}
+
+/* Invite member into group icon */
+
+.InvitationWindowsComponentStyle-commonItem > div > .InvitationWindowsComponentStyle-buttonAddUserGroup {
+	width: 2em;
+	height: 2em;
+	opacity: 1;
+	background: none;
+	background-image: none;
+	-webkit-mask: unset;
+	        mask: unset;
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M19.5 0h9v19.5H48v9H0v-9h19.5zm0 37.5 9-9V48h-9z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M19.5 0h9v19.5H48v9H0v-9h19.5zm0 37.5 9-9V48h-9z"/></svg>');
+	background-color: var(--severitium-light-gray-color);
+	transition: background-color .2s ease;
+}
+
+/* Invite member into group icon on button hover */
+
+.InvitationWindowsComponentStyle-commonItem > div:hover > .InvitationWindowsComponentStyle-buttonAddUserGroup {
+	background: none;
+	background-image: none;
+	background-color: var(--severitium-white-color);
+}
