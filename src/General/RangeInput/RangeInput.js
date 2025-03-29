@@ -47,7 +47,7 @@
 	}
 
 	// Initialize existing range inputs on page load
-	document.querySelectorAll('input[type="range"]').forEach(initializeRangeInput);
+	document.querySelectorAll('input[type="range"].InputRangeComponentStyle-range').forEach(initializeRangeInput);
 
 	/**
 	 * Observes the DOM for dynamically added and removed range inputs
@@ -57,10 +57,10 @@
 			// Handle added elements
 			for (const node of mutation.addedNodes) {
 				if (node.nodeType === 1) {
-					if (node.matches && node.matches('input[type="range"]')) {
+					if (node.matches && node.matches('input[type="range"].InputRangeComponentStyle-range')) {
 						initializeRangeInput(node);
 					} else {
-						node.querySelectorAll?.('input[type="range"]').forEach(initializeRangeInput);
+						node.querySelectorAll?.('input[type="range"].InputRangeComponentStyle-range').forEach(initializeRangeInput);
 					}
 				}
 			}
@@ -68,10 +68,10 @@
 			// Handle removed elements
 			for (const node of mutation.removedNodes) {
 				if (node.nodeType === 1) {
-					if (node.matches && node.matches('input[type="range"]')) {
+					if (node.matches && node.matches('input[type="range"].InputRangeComponentStyle-range')) {
 						cleanupRangeInput(node);
 					} else {
-						node.querySelectorAll?.('input[type="range"]').forEach(cleanupRangeInput);
+						node.querySelectorAll?.('input[type="range"].InputRangeComponentStyle-range').forEach(cleanupRangeInput);
 					}
 				}
 			}

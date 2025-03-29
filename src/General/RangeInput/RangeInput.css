@@ -2,7 +2,7 @@
 
 /* Input container */
 
-input[type="range"] {
+input[type="range"].InputRangeComponentStyle-range {
 	width: 100%;
 	height: .5em;
 	border-radius: var(--severitium-border-radius);
@@ -13,7 +13,7 @@ input[type="range"] {
 
 /* Track */
 
-input[type="range"]::-webkit-slider-runnable-track {
+input[type="range"].InputRangeComponentStyle-range::-webkit-slider-runnable-track {
 	height: .5em;
 	border-radius: var(--severitium-border-radius);
 	background: transparent;
@@ -21,7 +21,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 /* Thumb */
 
-input[type="range"]::-webkit-slider-thumb {
+input[type="range"].InputRangeComponentStyle-range::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	appearance: none;
 	width: 2em;
@@ -36,7 +36,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 /* Progress */
 
-input[type="range"]::-moz-range-progress {
+input[type="range"].InputRangeComponentStyle-range::-moz-range-progress {
 	background: var(--severitium-main-color);
 	height: .5em;
 	border-radius: var(--severitium-border-radius);
@@ -44,7 +44,7 @@ input[type="range"]::-moz-range-progress {
 
 /* Track */
 
-input[type="range"]::-moz-range-track {
+input[type="range"].InputRangeComponentStyle-range::-moz-range-track {
 	background: var(--severitium-gray-color);
 	height: .5em;
 	border-radius: var(--severitium-border-radius);
@@ -52,7 +52,7 @@ input[type="range"]::-moz-range-track {
 
 /* Thumb */
 
-input[type="range"]::-moz-range-thumb {
+input[type="range"].InputRangeComponentStyle-range::-moz-range-thumb {
 	width: 2em;
 	height: 1em;
 	background: var(--severitium-main-color);
