@@ -30,10 +30,6 @@
 		input.setAttribute('data-state', state);
 		input.checked = (state === 'on');
 		processedCheckboxes.add(input);
-
-		requestAnimationFrame(() => {
-			input.classList.remove('no-transition');
-		});
 	}
 
 	/**
@@ -58,6 +54,10 @@
 
 		const input = clickable.querySelector('label > input[type="checkbox"]');
 		if (!input) return;
+
+		if (input.classList.contains('no-transition')) {
+			input.classList.remove('no-transition');
+		}
 
 		if (input === lastClickedInput) return;
 		lastClickedInput = input;
