@@ -18,6 +18,8 @@
 		const computed = getComputedStyle(span, '::before');
 		const bg = computed.backgroundImage || '';
 
+		input.classList.add('no-transition');
+
 		let state = 'off';
 		if (/\/incorrect[^\/]*\.svg["']?\)?$/.test(bg)) {
 			state = 'off';
@@ -28,6 +30,10 @@
 		input.setAttribute('data-state', state);
 		input.checked = (state === 'on');
 		processedCheckboxes.add(input);
+
+		requestAnimationFrame(() => {
+			input.classList.remove('no-transition');
+		});
 	}
 
 	/**
@@ -95,5 +101,5 @@
 
 	observer.observe(document.body, { childList: true, subtree: true });
 
-	document.addEventListener('click', handleClick);
+	document.body.addEventListener('click', handleClick, true);
 })();
