@@ -443,7 +443,7 @@
 
 /* All svg card images */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > img[src*=".svg" i] {
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > img {
 	-webkit-filter: saturate(0);
 			filter: saturate(0);
 }
