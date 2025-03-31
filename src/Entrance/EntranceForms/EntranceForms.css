@@ -167,10 +167,11 @@
 	right: 3em;
 }
 
-/* Inputs for text and password */
+/* Inputs for text, password and email */
 
 .EntranceComponentStyle-ContainerForm form input[type="text"]:not(.ConverterDialogComponentStyle-input),
-.EntranceComponentStyle-ContainerForm form input[type="password"]:not(.ConverterDialogComponentStyle-input) {
+.EntranceComponentStyle-ContainerForm form input[type="password"]:not(.ConverterDialogComponentStyle-input),
+.EntranceComponentStyle-ContainerForm form input[type="email"]:not(.ConverterDialogComponentStyle-input) {
 	background-color: var(--severitium-dark-transparent-background2);
 	border: .1em solid var(--severitium-light-gray-color);
 	border-radius: var(--severitium-border-radius);
@@ -182,23 +183,26 @@
 	transition: background-color .2s ease;
 }
 
-/* Inputs for text and password on hover */
+/* Inputs for text, password and email on hover */
 
 .RegistrationComponentStyle-containerItem:hover input[type="text"]:not(.ConverterDialogComponentStyle-input),
 .RegistrationComponentStyle-containerItem:hover input[type="password"]:not(.ConverterDialogComponentStyle-input),
 .EntranceComponentStyle-ContainerForm form input[type="text"]:not(.ConverterDialogComponentStyle-input):hover,
 .EntranceComponentStyle-ContainerForm form input[type="password"]:not(.ConverterDialogComponentStyle-input):hover,
+.EntranceComponentStyle-ContainerForm form input[type="email"]:not(.ConverterDialogComponentStyle-input):hover,
 .EntranceComponentStyle-ContainerForm form input[type="text"]:not(.ConverterDialogComponentStyle-input):focus,
-.EntranceComponentStyle-ContainerForm form input[type="password"]:not(.ConverterDialogComponentStyle-input):focus {
+.EntranceComponentStyle-ContainerForm form input[type="password"]:not(.ConverterDialogComponentStyle-input):focus,
+.EntranceComponentStyle-ContainerForm form input[type="email"]:not(.ConverterDialogComponentStyle-input):focus {
 	background: none;
 	background-color: var(--severitium-light-transparent-background3);
 	color: var(--severitium-white-text-color);
 }
 
-/* Invalid inputs for text and password */
+/* Invalid inputs for text, password and email */
 
 .EntranceComponentStyle-ContainerForm form input[type="text"][class*="invalid"],
-.EntranceComponentStyle-ContainerForm form input[type="password"][class*="invalid"] {
+.EntranceComponentStyle-ContainerForm form input[type="password"][class*="invalid"],
+.EntranceComponentStyle-ContainerForm form input[type="email"][class*="invalid"] {
 	background-color: var(--severitium-red-transparent-background1);
 	color: var(--severitium-red-text-color);
 	border-color: var(--severitium-red-color);
