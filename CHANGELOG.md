@@ -1,5 +1,49 @@
 # CHANGELOG
 
+## [1.7.2] - 2025-04-01
+
+### Added
+
+- General
+	- CheckboxInput
+- Lobby
+	- GroupBlock
+- Shop
+	- PaymentScreen
+
+### Changed
+
+- Clan
+	- ExistingClan
+- Entrance
+	- EntranceForms
+- General
+	- Modal
+	- RangeInput
+	- TopPanel
+- Lobby
+	- BattleSelect
+		- BattleType
+	- MainMenu
+	- NewsWindow
+- Quests
+	- QuestsScreen
+- Shop
+	- MainScreen
+	- PurchaseScreen
+	- ShopWindow
+- Now when the seasons change, the main userscript will only update the images.
+
+
+### Fixed
+
+- Entrance
+	- EntranceForms (social media buttons)
+- General
+	- Modal (tooltips, captcha)
+
+---
+
 ## [1.7.1] - 2025-03-06
 
 ### Added
