@@ -498,7 +498,7 @@
 .EntranceComponentStyle-checkbox > .CheckBoxStyle-checkbox > label > input + .severitium-checkbox-icon rect {
 	fill: transparent;
 	stroke-width: .05em;
-	stroke: var(--severitium-green-color);
+	stroke: var(--severitium-light-gray-color);
 	transition: stroke .2 ease;
 }
 
