@@ -53,6 +53,6 @@
 	        transform: translateX(1.5em);
 }
 
-input[type="checkbox"].no-transition {
+input[type="checkbox"].no-transition + span::before {
 	transition: none;
 }
