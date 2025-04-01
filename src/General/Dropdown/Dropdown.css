@@ -11,7 +11,7 @@
 
 /* Dropdown outer container in entrance header */
 
-.DropDownStyle-dropdownRoot .HeaderComponentStyle-widthDropDown {
+.DropDownStyle-dropdownRoot .DropDownStyle-dropdownControl {
 	width: auto;
 	height: 2.5em;
 	min-width: auto;
@@ -30,13 +30,13 @@
 
 /* Dropdown outer container in entrance header on hover */
 
-.DropDownStyle-dropdownRoot .HeaderComponentStyle-widthDropDown:hover {
+.DropDownStyle-dropdownRoot .DropDownStyle-dropdownControl:hover {
 	background-color: var(--severitium-light-transparent-background3);
 }
 
 /* Arrow of a dropdown outer container in entrance header */
 
-.DropDownStyle-dropdownRoot .HeaderComponentStyle-widthDropDown .DropDownStyle-arrowDropDown {
+.DropDownStyle-dropdownRoot .DropDownStyle-dropdownControl .DropDownStyle-arrowDropDown {
 	-webkit-mask-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 2.79289C0.683417 2.40237 1.31658 2.40237 1.70711 2.79289L6 7.08579L10.2929 2.79289C10.6834 2.40237 11.3166 2.40237 11.7071 2.79289C12.0976 3.18342 12.0976 3.81658 11.7071 4.20711L6.70711 9.20711C6.31658 9.59763 5.68342 9.59763 5.29289 9.20711L0.292893 4.20711C-0.0976311 3.81658 -0.0976311 3.18342 0.292893 2.79289Z" fill="white"/></svg>');
 			mask-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 2.79289C0.683417 2.40237 1.31658 2.40237 1.70711 2.79289L6 7.08579L10.2929 2.79289C10.6834 2.40237 11.3166 2.40237 11.7071 2.79289C12.0976 3.18342 12.0976 3.81658 11.7071 4.20711L6.70711 9.20711C6.31658 9.59763 5.68342 9.59763 5.29289 9.20711L0.292893 4.20711C-0.0976311 3.81658 -0.0976311 3.18342 0.292893 2.79289Z" fill="white"/></svg>');
 	background-color: var(--severitium-light-gray-color);
@@ -50,7 +50,7 @@
 	transition: background-color .2s ease;
 }
 
-.DropDownStyle-dropdownRoot .HeaderComponentStyle-widthDropDown:hover .DropDownStyle-arrowDropDown {
+.DropDownStyle-dropdownRoot .DropDownStyle-dropdownControl:hover .DropDownStyle-arrowDropDown {
 	background-color: var(--severitium-white-color);
 }
 

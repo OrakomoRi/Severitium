@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Dropdown
-// @version			1.0.11
+// @version			1.0.12
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 
