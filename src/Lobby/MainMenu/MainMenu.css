@@ -163,6 +163,8 @@
 .MainScreenComponentStyle-blockMainMenu > ul > li:hover span[class*="discount"i] {
 	margin-right: .5em;
 	opacity: .25;
+	-webkit-transform: translateY(-50%) scale(.85);
+			transform: translateY(-50%) scale(.85);
 }
 
 /* Pseudo elements for beauty corner borders animation */

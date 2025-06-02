@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Main Menu
-// @version			1.1.0
+// @version			1.1.1
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 
