@@ -1,7 +1,7 @@
 // ==UserScript==
 
 // @name			CSS Shop Window
-// @version			1.0.4
+// @version			1.0.5
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 

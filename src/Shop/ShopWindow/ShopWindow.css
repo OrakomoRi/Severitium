@@ -194,6 +194,54 @@
 	border-radius: var(--severitium-border-radius);
 }
 
+/* First item */
+
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem > div:first-of-type {
+	width: 100%;
+	height: 100%;
+}
+
+/* First item when card has 3 items inside */
+
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(3)) > div:first-of-type {
+	width: calc(50% - .25em / 2);
+	height: 100%;
+}
+
+/* First item when card has 5 items inside */
+
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(5)) > div:first-of-type {
+	width: calc(50% - .25em / 1.33);
+	height: 100%;
+}
+
+
+/* First & second items when card has 2 items inside */
+
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(2)) > div:first-of-type,
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(2)) > div:last-of-type {
+	width: calc(50% - .25em / 2);
+	height: 100%;
+}
+
+/* 3 items */
+
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(3)) > div:nth-of-type(2),
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(3)) > div:nth-of-type(3) {
+	width: calc(50% - .25em / 2);
+	height: calc(50% - .25em / 2);
+}
+
+/* 5 items */
+
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(5)) > div:nth-of-type(2),
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(5)) > div:nth-of-type(3),
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(5)) > div:nth-of-type(4),
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(5)) > div:nth-of-type(5) {
+	width: calc(25% - .25em / 1.33);
+	height: calc(50% - .25em / 2);
+}
+
 /* Disabled single limited offer item */
 
 .ShopCategoryOfferSectionStyle-containerLimitOffers > div:has(> .ShowcaseItemComponentStyle-disabledBackground) {
