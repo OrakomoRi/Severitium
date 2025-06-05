@@ -215,7 +215,6 @@
 	height: 100%;
 }
 
-
 /* First & second items when card has 2 items inside */
 
 .ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(2)) > div:first-of-type,
