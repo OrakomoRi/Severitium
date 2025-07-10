@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build10
+// @version			1.7.2+build11
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -284,7 +284,7 @@
 
 	async function loadResources(forceReload = false) {
 		logger.log(`Load resources started.`, 'debug');
-		const loadingScreen = LoadingScreen.add(`${script.name} ~ ${script.version}`);
+		const loadingScreen = LoadingScreen.add(`${script.name}`);
 
 		try {
 			const cachedVersion = GM_getValue('SeveritiumVersion', '');
