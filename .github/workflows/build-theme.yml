@@ -24,21 +24,16 @@ jobs:
 
             - name: Build and minify JS
               run: |
-                  mkdir -p release
-                  find src -name "*.min.js" -exec cat {} + > release/script.release.min.js
-                  terser release/script.release.min.js -c -m -o release/script.release.min.js
+                  version="${{ github.ref_name }}"
+                  mkdir -p "release/data/$version"
+                  find src -name "*.min.js" -exec cat {} + > "release/data/$version/script.release.min.js"
+                  terser "release/data/$version/script.release.min.js" -c -m -o "release/data/$version/script.release.min.js"
 
             - name: Build and minify CSS
               run: |
-                  find src -name "*.min.css" -exec cat {} + > release/style.release.min.css
-                  cleancss -o release/style.release.min.css release/style.release.min.css
-
-            - name: Copy build artifacts to versioned folder
-              run: |
                   version="${{ github.ref_name }}"
-                  mkdir -p "release/data/$version"
-                  cp release/script.release.min.js "release/data/$version/"
-                  cp release/style.release.min.css "release/data/$version/"
+                  find src -name "*.min.css" -exec cat {} + > "release/data/$version/style.release.min.css"
+                  cleancss -o "release/data/$version/style.release.min.css" "release/data/$version/style.release.min.css"
 
             - name: Commit and push release
               run: |
