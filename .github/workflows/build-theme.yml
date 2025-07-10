@@ -25,13 +25,13 @@ jobs:
             - name: Build and minify CSS
               run: |
                   mkdir -p release
-                  find src -name "*.min.css" -exec cat {} + > release/style.release.css
-                  cleancss -o release/style.release.css release/style.release.css
+                  find src -name "*.min.css" -exec cat {} + > release/style.release.min.css
+                  cleancss -o release/style.release.min.css release/style.release.min.css
 
             - name: Build and minify JS
               run: |
-                  find src -name "*.min.js" -exec cat {} + > release/script.release.js
-                  terser release/script.release.js -c -m -o release/script.release.js
+                  find src -name "*.min.js" -exec cat {} + > release/script.release.min.js
+                  terser release/script.release.min.js -c -m -o release/script.release.min.js
 
             - name: Show final file list
               run: ls -lh release/
@@ -47,6 +47,6 @@ jobs:
 
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
-                  git add release/script.release.js release/style.release.css
+                  git add release/script.release.min.js release/style.release.min.css
                   git commit -F .git/COMMIT_EDITMSG
                   git push origin main
