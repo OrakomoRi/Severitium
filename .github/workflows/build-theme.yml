@@ -26,13 +26,15 @@ jobs:
               run: |
                   version="${{ github.ref_name }}"
                   mkdir -p "release/data/$version"
-                  find src -name "*.min.js" -exec cat {} + > "release/data/$version/script.release.min.js"
+                  find src -path "src/_Additional" -prune -o -name "*.min.js" -print \
+                    | xargs cat > "release/data/$version/script.release.min.js"
                   terser "release/data/$version/script.release.min.js" -c -m -o "release/data/$version/script.release.min.js"
 
             - name: Build and minify CSS
               run: |
                   version="${{ github.ref_name }}"
-                  find src -name "*.min.css" -exec cat {} + > "release/data/$version/style.release.min.css"
+                  find src -path "src/_Additional" -prune -o -name "*.min.css" -print \
+                    | xargs cat > "release/data/$version/style.release.min.css"
                   cleancss -o "release/data/$version/style.release.min.css" "release/data/$version/style.release.min.css"
 
             - name: Commit and push release
