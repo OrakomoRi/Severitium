@@ -43,6 +43,10 @@ jobs:
             - name: Commit and push release
               run: |
                   version="${{ github.ref_name }}"
+                  git fetch origin main
+                  git checkout main
+                  git pull
+
                   echo -e "$version\nbuild: update release js/css" > .git/COMMIT_EDITMSG
 
                   git config user.name "github-actions[bot]"
