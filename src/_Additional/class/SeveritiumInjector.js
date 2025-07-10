@@ -47,8 +47,8 @@ class SeveritiumInjector {
 	 * Applies multiple CSS styles to the document.
 	 * Removes existing styles injected by Severitium and injects new styles from the provided links.
 	 * 
-	 * @param {Array<{ url: string, attributes?: Array<{ name: string, value: string }> }>} links - 
-	 *        An array of objects containing the URL key to retrieve CSS content and optional attributes for the <style> element.
+	 * @param {string | Array<{ url: string, attributes?: Array<{ name: string, value: string }> }>} links -
+	 *        Either a single string key (e.g., 'main') or an array of objects with the URL key and optional script attributes.
 	 */
 	applyCSS(links = null) {
 		if (!links) {
@@ -61,13 +61,69 @@ class SeveritiumInjector {
 		// Default attribute to identify Severitium-injected styles
 		const defaultAttributes = { name: 'data-resource', value: 'SeveritiumCSS' };
 
+		const normalizedLinks = Array.isArray(links)
+			? links
+			: [{ url: links }];
+
 		// Process each link and inject CSS
-		for (const { url, attributes = [] } of links) {
+		for (const { url, attributes = [] } of normalizedLinks) {
 			// Ensure the `data-resource` attribute is included
 			const updatedAttributes = attributes.some(attr => attr.name === 'data-resource')
 				? attributes
 				: [defaultAttributes, ...attributes];
 			this.injectCSS(url, updatedAttributes);
+		}
+	}
+
+	/**
+	 * Removes all previously injected JavaScript scripts with the attribute `data-resource="SeveritiumJS"`.
+	 */
+	removeInjectedJS() {
+		const scripts = document.querySelectorAll('script[data-resource="SeveritiumJS"]');
+		for (const el of scripts) {
+			el.remove();
+		}
+	}
+
+	/**
+	 * Injects JavaScript code from the Severitium.JS object.
+	 * 
+	 * @param {string} url - The key to retrieve the JS code from Severitium.JS.
+	 * @param {Array<{ name: string, value: string }>} attributes - An array of attribute objects to apply to the <script> element.
+	 */
+	injectJS(url, attributes = []) {
+		const script = document.createElement('script');
+		script.textContent = this.Severitium.JS[url];
+		for (const attr of attributes) {
+			script.setAttribute(attr.name, attr.value);
+		}
+		document.body.appendChild(script);
+		// console.log(`SEVERITIUM: Applied JS from ${url}`);
+	}
+
+		/**
+	 * Applies one or multiple JavaScript modules to the document.
+	 * Removes previously injected scripts and injects new ones from the provided input.
+	 *
+	 * @param {string | Array<{ url: string, attributes?: Array<{ name: string, value: string }> }>} links -
+	 *        Either a single string key (e.g., 'main') or an array of objects with the URL key and optional script attributes.
+	 */
+	applyJS(links = null) {
+		if (!links) return;
+
+		this.removeInjectedJS();
+
+		const defaultAttributes = { name: 'data-resource', value: 'SeveritiumJS' };
+
+		const normalizedLinks = Array.isArray(links)
+			? links
+			: [{ url: links }];
+
+		for (const { url, attributes = [] } of normalizedLinks) {
+			const updatedAttributes = attributes.some(attr => attr.name === 'data-resource')
+				? attributes
+				: [defaultAttributes, ...attributes];
+			this.injectJS(url, updatedAttributes);
 		}
 	}
 

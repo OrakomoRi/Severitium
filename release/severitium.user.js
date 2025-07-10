@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build6
+// @version			1.7.2+build7
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -17,29 +17,6 @@
 
 // @updateURL		https://github.com/OrakomoRi/Severitium/blob/main/release/severitium.user.js?raw=true
 // @downloadURL		https://github.com/OrakomoRi/Severitium/blob/main/release/severitium.user.js?raw=true
-
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_getSeason.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_extractFileName.min.js?raw=true
-
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/class/LoadingScreen.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/class/Logger.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/class/SeveritiumInjector.min.js?raw=true
-
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/General/LoadingScreen/LoadingScreen.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceForms/EntranceForms.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceIcons/EntranceIcons.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceLinks/EntranceLinks.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Battle/BattleTab/ColorfulResists/ColorfulResists.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/PlayButton/PlayButton.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/ChatWindow/ChatWindow.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/General/PlayerContextMenu/PlayerContextMenu.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/General/CommonSort/CommonSort.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Quests/QuestsScreen/QuestsScreen.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Containers/PossibleRewardsScreen/PossibleRewardsScreen.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Containers/PossibleRewardsMenu/PossibleRewardsMenu.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/Shop/SectionMenu/SectionMenu.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/General/RangeInput/RangeInput.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/General/CheckboxInput/CheckboxInput.min.js?raw=true
 
 // @run-at			document-start
 // @grant			unsafeWindow
@@ -74,14 +51,14 @@
 	 * @param {string} STABLE_JSON_URL - Link to the JSON with stable versions and their links
 	 * 
 	 * @param {array} script - Array with catched data
-	 * Catches all CSS, images based on main userscript's version
+	 * Catches all CSS, JS, images based on main userscript's version
 	 * @param {array} script.CSS - Array with CSS
+	 * @param {array} script.JS - Array with JS
 	 * @param {array} script.images - Array with images
 	 * @param {string} script.version - Version of the main userscript
 	 * @param {string} script.name - Name of the main userscript
 	 * 
 	 * @param {array} imageLinks - Array of image links with attributes
-	 * @param {array} CSSLinks - Array of css styles links with attributes
 	 * 
 	 * @param {string} lastSeason - Remembered season name
 	 * @param {string} currentSeason - Current season name
@@ -103,12 +80,13 @@
 
 	const script = {
 		CSS: {},
+		JS: {},
 		images: {},
 		version: GM_info.script.version,
 		name: GM_info.script.name,
 	}
 
-	let imageLinks, CSSLinks;
+	let imageLinks;
 
 	const lastSeason = GM_getValue('SeveritiumSeason', '');
 	const currentSeason = _getSeason();
@@ -148,7 +126,7 @@
 
 				logger.logVersionComparison(compareResult, script.version, githubVersion);
 
-				if (compareResult === 1) findLatestStableVersion(githubVersion);
+				if (compareResult === 1) findLatestStableVersion();
 			},
 			onerror: function (error) {
 				logger.log(`Failed to check for updates:\n${error}`, 'error');
@@ -158,6 +136,7 @@
 
 	/**
 	 * Find the latest version
+	 * 
 	 * @param {array} versions - Array of stable versions
 	 * @returns {Object|null} - The object representing the latest version, or `null` if the array is empty or invalid
 	 */
@@ -174,7 +153,7 @@
 	/**
 	 * Check for updates by parsing stable.json with multiple versions
 	 */
-	async function findLatestStableVersion(githubVersion) {
+	async function findLatestStableVersion() {
 		try {
 			// Fetch the stable.json file containing all available stable versions
 			const stableData = await fetchJSON(STABLE_JSON_URL);
@@ -190,7 +169,6 @@
 				promptUpdate(latestVersion, latestLink); // Prompt update if a newer stable version is found
 			} else {
 				logger.log(`${script.name.toUpperCase()}: No valid stable versions found.`, 'warn');
-				// promptUpdate(githubVersion, GITHUB_SCRIPT_URL); // Fallback to GitHub version
 			}
 		} catch (error) {
 			logger.log(`${script.name.toUpperCase()}: Failed to fetch stable versions.\n${error}`, 'error');
@@ -299,7 +277,7 @@
 
 	async function loadResources(forceReload = false) {
 		logger.log(`Load resources started.`, 'debug');
-		const loadingScreen = LoadingScreen.add(`${script.name}`);
+		const loadingScreen = LoadingScreen.add(`${script.name} ~ ${script.version}`);
 
 		try {
 			const cachedVersion = GM_getValue('SeveritiumVersion', '');
@@ -308,12 +286,14 @@
 			const loadOnlyImages = isSameVersion && isSeasonChanged;
 			const loadEverything = forceReload || !isSameVersion;
 
+			const RELEASE_CSS_URL = `https://github.com/OrakomoRi/Severitium/blob/main/release/data/${script.version}/style.release.min.css?raw=true`;
+			const RELEASE_JS_URL = `https://github.com/OrakomoRi/Severitium/blob/main/release/data/${script.version}/script.release.min.js?raw=true`;
+			logger.log(`Resolved CSS path: ${RELEASE_CSS_URL}`, 'debug');
+			logger.log(`Resolved JS path: ${RELEASE_JS_URL}`, 'debug');
+
 			logger.log(`Last season: ${lastSeason || 'null'}; current season: ${currentSeason}. Season changed: ${isSeasonChanged ? 'yes' : 'no'}`, 'debug');
 			
-			[CSSLinks, imageLinks] = await Promise.all([
-				fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/CSSModules.json?raw=true').then(data => data || []),
-				fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/ImageModules.json?raw=true').then(data => data || [])
-			]);
+			imageLinks = await fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/ImageModules.json?raw=true').then(data => data || []);
 
 			if (!loadEverything && !loadOnlyImages) {
 				logger.log(`Loading resources from cache.`, 'info');
@@ -322,12 +302,20 @@
 			} else {
 				logger.log(`Fetching ${loadOnlyImages ? 'only images' : 'all resources'}.`, 'info');
 
-				const cssPromises = loadOnlyImages ? [] : CSSLinks.map(({ url }) =>
-					fetchResource(url).then(css => {
-						script.CSS[url] = css;
+				let cssPromise = null;
+				let jsPromise = null;
+
+				if (!loadOnlyImages) {
+					cssPromise = fetchResource(RELEASE_CSS_URL).then(css => {
+						script.CSS['main'] = css;
 						loadingScreen.updateProgress();
-					})
-				);
+					});
+
+					jsPromise = fetchResource(RELEASE_JS_URL).then(js => {
+						script.JS['main'] = js;
+						loadingScreen.updateProgress();
+					});
+				}
 			
 				const imagePromises = imageLinks.map(({ url }) => {
 					const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason());
@@ -336,10 +324,13 @@
 						loadingScreen.updateProgress();
 					});
 				});
-			
-				loadingScreen.setTotalModules(cssPromises.length + imagePromises.length);
 
-				const results = await Promise.allSettled([...cssPromises, ...imagePromises]);
+				const allPromises = [...imagePromises];
+				if (cssPromise) allPromises.push(cssPromise);
+				if (jsPromise) allPromises.push(jsPromise);
+			
+				loadingScreen.setTotalModules(allPromises.length);
+				const results = await Promise.allSettled(allPromises);
 
 				results.forEach((result, index) => {
 					if (result.status === 'rejected') {
@@ -347,8 +338,13 @@
 					}
 				});
 
-				if (!loadOnlyImages) GM_setValue('SeveritiumCSS', script.CSS);
-				else script.CSS = GM_getValue('SeveritiumCSS', {});
+				if (!loadOnlyImages) {
+					GM_setValue('SeveritiumCSS', script.CSS);
+					GM_setValue('SeveritiumJS', script.JS);
+				} else {
+					script.CSS = GM_getValue('SeveritiumCSS', {});
+					script.JS = GM_getValue('SeveritiumJS', {});
+				}
 				GM_setValue('SeveritiumImages', script.images);
 				GM_setValue('SeveritiumVersion', script.version);
 				GM_setValue('SeveritiumSeason', currentSeason);
@@ -359,7 +355,12 @@
 			logger.log(`Error loading resources:\n${error}`, 'error');
 		} finally {
 			severitiumInjector.updateSeveritium(script);
-			severitiumInjector.applyCSS(CSSLinks);
+			if (script.CSS['main']) {
+				severitiumInjector.applyCSS(script.CSS['main']);
+			}
+			if (script.JS['main']) {
+				severitiumInjector.applyJS(script.JS['main']);
+			}
 			severitiumInjector.applyImages(imageLinks);
 			LoadingScreen.remove(loadingScreen);
 		}
