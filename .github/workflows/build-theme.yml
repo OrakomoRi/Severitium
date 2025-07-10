@@ -1,0 +1,34 @@
+name: Build Theme
+
+on:
+    workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+
+            - name: Install minifiers
+              run: npm install -g clean-css-cli terser
+
+            - name: Build and minify CSS
+              run: |
+                  mkdir -p release
+                  find src -name "*.min.css" -exec cat {} + > release/style.release.css
+                  cleancss -o release/style.release.css release/style.release.css
+
+            - name: Build and minify JS
+              run: |
+                  find src -name "*.min.js" -exec cat {} + > release/script.release.js
+                  terser release/script.release.js -c -m -o release/script.release.js
+
+            - name: Show final file list
+              run: ls -lh release/
