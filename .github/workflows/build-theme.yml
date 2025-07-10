@@ -38,8 +38,15 @@ jobs:
 
             - name: Commit and push release files
               run: |
+                  git fetch origin main
+                  git checkout main
+                  git pull
+
+                  version="${{ github.ref_name }}"
+                  echo -e "$version\nbuild: update release js/css" > .git/COMMIT_EDITMSG
+
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
                   git add release/script.release.js release/style.release.css
-                  git commit -m "build: update release js/css"
+                  git commit -F .git/COMMIT_EDITMSG
                   git push origin main
