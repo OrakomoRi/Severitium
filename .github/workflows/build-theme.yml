@@ -2,6 +2,8 @@ name: Build Theme
 
 on:
     workflow_dispatch:
+    release:
+        types: [created]
 
 permissions:
     contents: write
