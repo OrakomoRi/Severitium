@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build11
+// @version			1.7.2+build12
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -305,6 +305,7 @@
 			if (!loadEverything && !loadOnlyImages) {
 				logger.log(`Loading resources from cache.`, 'info');
 				script.CSS = GM_getValue('SeveritiumCSS', {});
+				script.JS = GM_getValue('SeveritiumJS', {});
 				script.images = GM_getValue('SeveritiumImages', {});
 			} else {
 				logger.log(`Fetching ${loadOnlyImages ? 'only images' : 'all resources'}.`, 'info');
@@ -362,11 +363,14 @@
 			logger.log(`Error loading resources:\n${error}`, 'error');
 		} finally {
 			severitiumInjector.updateSeveritium(script);
+			logger.log(`CSS found: ${script.CSS['main'] ? 'yes' : 'no'}.\nJS found: ${script.JS['main'] ? 'yes' : 'no'}.`, 'debug');
 			if (script.CSS['main']) {
-				severitiumInjector.applyCSS(script.CSS['main']);
+				logger.log(typeof script.CSS['main'], 'debug');
+				severitiumInjector.applyCSS('main');
 			}
 			if (script.JS['main']) {
-				severitiumInjector.applyJS(script.JS['main']);
+				logger.log(typeof script.JS['main'], 'debug');
+				severitiumInjector.applyJS('main');
 			}
 			severitiumInjector.applyImages(imageLinks);
 			LoadingScreen.remove(loadingScreen);
