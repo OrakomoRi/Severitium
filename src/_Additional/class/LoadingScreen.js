@@ -116,6 +116,7 @@ class LoadingScreen {
 
 				body {
 					position: relative;
+					min-height: 100wh !important;
 					height: 100wh !important;
 					width: 100vw !important;
 					margin: 0;
@@ -134,7 +135,8 @@ class LoadingScreen {
 					top: 0;
 					left: 0;
 					width: 100%;
-					height: 100%;
+					min-height: 100vh;
+					height: 100vh;
 					display: flex;
 					justify-content: center;
 					align-items: center;

@@ -124,3 +124,39 @@
 	left: 0;
 	border-top-left-radius: var(--severitium-border-radius);
 }
+
+/* Open more button */
+
+.ClosedContainerStyle-moreButton {
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.ClosedContainerStyle-moreButton:hover {
+	background-color: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+	outline: none;
+	box-shadow: none;
+}
+
+/* Button text */
+
+.ClosedContainerStyle-moreButton > span {
+	color: var(--severitium-green-button-color);
+}
+
+/* Button hotkey */
+
+.ClosedContainerStyle-moreButton h3[class*="hotkey"i] {
+	background: transparent;
+	color: var(--severitium-dark-white-text-color);
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: var(--severitium-border-radius);
+	margin: 0;
+}

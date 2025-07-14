@@ -1,7 +1,7 @@
 // ==UserScript==
 
-// @name			CSS Pause
-// @version			1.1.4
+// @name			CSS Battle Pause
+// @version			1.1.5
 // @description		Injects CSS code into the page
 // @author			OrakomoRi
 

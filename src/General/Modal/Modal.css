@@ -663,8 +663,8 @@
 /* Confirm button */
 
 .ConverterDialogComponentStyle-buttonsContainer > div:last-of-type {
-	background: var(--severitium-gold-button-background);
-	border: var(--severitium-gold-button-border-color) solid .1em;
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
 }
 
 /* Button on hover */
@@ -672,14 +672,14 @@
 .ConverterDialogComponentStyle-buttonsContainer > div:last-of-type:hover {
 	outline: none;
 	box-shadow: none;
-	background-color: var(--severitium-gold-button-background);
-	border: var(--severitium-gold-button-border-color-hover) solid .1em;
+	background-color: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
 }
 
 /* Button text */
 
 .ConverterDialogComponentStyle-buttonsContainer > div:last-of-type > span {
-	color: var(--severitium-gold-button-color);
+	color: var(--severitium-green-button-color);
 }
 
 /* Disabled button */
