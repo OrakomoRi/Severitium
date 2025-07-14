@@ -72,7 +72,9 @@ jobs:
                   cp -r builds/$VERSION/* "release/data/$VERSION/"
 
                   git add release/data/$VERSION
-                  git commit -m "$VERSION\nbuild: release artifacts"
+
+                  echo -e "$VERSION\nbuild: release artifacts" > commit-msg.txt
+                  git commit -F commit-msg.txt
                   git push origin builds
 
             - name: Create GitHub release
