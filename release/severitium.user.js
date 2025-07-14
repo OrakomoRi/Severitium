@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build19
+// @version			1.7.2+build20
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -293,8 +293,8 @@
 			const loadOnlyImages = isSameVersion && isSeasonChanged;
 			const loadEverything = forceReload || !isSameVersion;
 
-			const RELEASE_CSS_URL = `https://github.com/OrakomoRi/Severitium/blob/main/release/data/${script.version}/style.release.min.css?raw=true`;
-			const RELEASE_JS_URL = `https://github.com/OrakomoRi/Severitium/blob/main/release/data/${script.version}/script.release.min.js?raw=true`;
+			const RELEASE_CSS_URL = `https://github.com/OrakomoRi/Severitium/blob/builds/${script.version}/style.release.min.css?raw=true`;
+			const RELEASE_JS_URL = `https://github.com/OrakomoRi/Severitium/blob/builds/${script.version}/script.release.min.js?raw=true`;
 			logger.log(`Resolved CSS path: ${RELEASE_CSS_URL}`, 'debug');
 			logger.log(`Resolved JS path: ${RELEASE_JS_URL}`, 'debug');
 
