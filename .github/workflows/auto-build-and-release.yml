@@ -68,10 +68,9 @@ jobs:
                   git fetch origin builds
                   git switch --create builds origin/builds || git switch builds
 
-                  mkdir -p "release/data/$VERSION"
-                  cp -r builds/$VERSION/* "release/data/$VERSION/"
+                  cp -r "builds/$VERSION" "./"
 
-                  git add release/data/$VERSION
+                  git add "$VERSION"
 
                   echo -e "$VERSION\nbuild: release artifacts" > commit-msg.txt
                   git commit -F commit-msg.txt
