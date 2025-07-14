@@ -2,23 +2,44 @@ name: Auto Build and Release
 
 on:
     push:
-        paths:
-            - "release/severitium.user.js"
         branches:
             - main
+        paths:
+            - "release/severitium.user.js"
 
 permissions:
     contents: write
 
 jobs:
-    build_and_release:
+    build-and-release:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Checkout main branch
+            - name: Checkout repository
               uses: actions/checkout@v4
-              with:
-                  ref: main
+
+            - name: Extract version from severitium.user.js
+              id: extract_version
+              run: |
+                  version=$(grep -oP '@version\s+\K[\w.+-]+' release/severitium.user.js)
+                  echo "VERSION=$version" >> $GITHUB_ENV
+                  echo "version=$version" >> $GITHUB_OUTPUT
+
+            - name: Check if release with this version already exists
+              id: check_release
+              run: |
+                  if gh release view "$VERSION" >/dev/null 2>&1; then
+                    echo "Release already exists, skipping."
+                    echo "exists=true" >> $GITHUB_OUTPUT
+                  else
+                    echo "exists=false" >> $GITHUB_OUTPUT
+                  fi
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Stop if release exists
+              if: steps.check_release.outputs.exists == 'true'
+              run: exit 0
 
             - name: Set up Node.js
               uses: actions/setup-node@v4
@@ -28,52 +49,37 @@ jobs:
             - name: Install minifiers
               run: npm install -g terser clean-css-cli
 
-            - name: Extract version from userscript
-              id: extract
+            - name: Build release files
               run: |
-                  version=$(grep -Po '@version\s+\K[\w.+-]+' release/severitium.user.js)
-                  echo "Detected version: $version"
-                  echo "version=$version" >> $GITHUB_OUTPUT
-
-            - name: Build JS and CSS into dist/
-              run: |
-                  version="${{ steps.extract.outputs.version }}"
-                  mkdir -p "dist/$version"
-
-                  # JS
+                  mkdir -p "builds/$VERSION"
                   find src -path "src/_Additional" -prune -o -name "*.min.js" -print \
-                    | xargs cat > "dist/$version/script.release.min.js"
-                  terser "dist/$version/script.release.min.js" -c -m -o "dist/$version/script.release.min.js"
+                    | xargs cat > "builds/$VERSION/script.release.min.js"
+                  terser "builds/$VERSION/script.release.min.js" -c -m -o "builds/$VERSION/script.release.min.js"
 
-                  # CSS
                   find src -path "src/_Additional" -prune -o -name "*.min.css" -print \
-                    | xargs cat > "dist/$version/style.release.min.css"
-                  cleancss -o "dist/$version/style.release.min.css" "dist/$version/style.release.min.css"
+                    | xargs cat > "builds/$VERSION/style.release.min.css"
+                  cleancss -o "builds/$VERSION/style.release.min.css" "builds/$VERSION/style.release.min.css"
 
-            - name: Checkout builds branch
-              uses: actions/checkout@v4
-              with:
-                  ref: builds
-                  path: builds
-
-            - name: Copy new build into builds branch
+            - name: Push to builds branch
               run: |
-                  version="${{ steps.extract.outputs.version }}"
-                  mkdir -p "builds/$version"
-                  cp -r "dist/$version/." "builds/$version/"
-
-            - name: Commit and push to builds branch
-              run: |
-                  cd builds
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
-                  git add .
-                  git commit -m "${{ steps.extract.outputs.version }}"$'\n'"build: release artifacts"
-                  git push origin HEAD:builds
 
-            - name: Create GitHub Release
+                  git fetch origin builds
+                  git switch --create builds origin/builds || git switch builds
+
+                  mkdir -p "release/data/$VERSION"
+                  cp -r builds/$VERSION/* "release/data/$VERSION/"
+
+                  git add release/data/$VERSION
+                  git commit -m "$VERSION\nbuild: release artifacts"
+                  git push origin builds
+
+            - name: Create GitHub release
               uses: softprops/action-gh-release@v2
               with:
-                  tag_name: ${{ steps.extract.outputs.version }}
-                  name: ${{ steps.extract.outputs.version }}
-                  body: "Auto release for version ${{ steps.extract.outputs.version }}. Triggered by changes in severitium.user.js."
+                  tag_name: ${{ env.VERSION }}
+                  name: ${{ env.VERSION }}
+                  generate_release_notes: true
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
