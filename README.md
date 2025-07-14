@@ -1,7 +1,5 @@
 # Builds branch
 
-# :building_construction: Severitium Builds
-
 This is the `builds` branch containing **compiled artifacts** for all stable versions of the **Severitium** theme.
 
 Each folder in the root represents a specific version and contains:
