@@ -301,6 +301,7 @@
 	        backdrop-filter: blur(.25em);
 	border: .1em solid var(--severitium-gray-color);
 	border-radius: var(--severitium-border-radius);
+	transition: background-color .2s ease, border-color .2s ease;
 }
 
 /* Shop default small card on hover */
