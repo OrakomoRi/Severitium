@@ -47,7 +47,7 @@ jobs:
                   node-version: "20"
 
             - name: Install minifiers
-              run: npm install -g terser clean-css-cli
+              run: npm install -g terser clean-css-cli jq
 
             - name: Build release files
               run: |
@@ -60,21 +60,57 @@ jobs:
                     | xargs cat > "builds/$VERSION/style.release.min.css"
                   cleancss -o "builds/$VERSION/style.release.min.css" "builds/$VERSION/style.release.min.css"
 
+            - name: Update versions.json
+              run: |
+                  git fetch origin builds
+                  git switch --create builds-temp origin/builds || git switch builds-temp
+                  
+                  mkdir -p versions
+                  
+                  if [ ! -f versions/versions.json ]; then
+                    echo "[]" > versions/versions.json
+                  fi
+                  
+                  git checkout main
+                  COMMIT_HASH=$(git rev-parse HEAD)
+                  COMMIT_DATE=$(git log -1 --format=%ad --date=short)
+                  COMMIT_MESSAGE=$(git log -1 --format=%s)
+                  
+                  git checkout builds-temp
+                  
+                  if ! grep -q "\"version\": \"$VERSION\"" versions/versions.json 2>/dev/null; then
+                    jq --arg version "$VERSION" \
+                       --arg date "$COMMIT_DATE" \
+                       --arg comment "$COMMIT_MESSAGE" \
+                       --arg hash "$COMMIT_HASH" \
+                       '. += [{"version": $version, "date": $date, "comment": $comment, "hash": $hash}]' \
+                       versions/versions.json > versions/versions_tmp.json
+                    mv versions/versions_tmp.json versions/versions.json
+                    
+                    git add versions/versions.json
+                    git commit -m "Auto-update versions.json: add $VERSION" || echo "No changes to commit"
+                  fi
+
             - name: Push to builds branch
               run: |
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
 
-                  git fetch origin builds
                   git switch --create builds origin/builds || git switch builds
 
                   cp -r "builds/$VERSION" "./"
+                  
+                  if [ -f versions/versions.json ]; then
+                    git checkout builds-temp -- versions/versions.json
+                  fi
 
-                  git add "$VERSION"
+                  git add "$VERSION" versions/versions.json
 
                   echo -e "$VERSION\nbuild: release artifacts" > commit-msg.txt
                   git commit -F commit-msg.txt
                   git push origin builds
+                  
+                  git branch -D builds-temp || true
 
             - name: Create GitHub release
               uses: softprops/action-gh-release@v2
