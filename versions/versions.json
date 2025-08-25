@@ -1330,5 +1330,11 @@
     "date": "2025-08-25",
     "comment": "1.7.2+build31 feat: updated group block buttons, autoprefixed retriation bonus css",
     "hash": "8583fc42f10c9c0dcc9b004ab2925207c4c4d9be"
+  },
+  {
+    "version": "1.7.2+build32",
+    "date": "2025-08-25",
+    "comment": "1.7.2+build32 feat: updated group icon on the top panel, added new color to the variables",
+    "hash": "a4083f7ff1d36dcbe710a57768de34ff1b73a3ee"
   }
 ]
