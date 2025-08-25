@@ -1,0 +1,102 @@
+/* Image block */
+
+.RepatriationBonusStyle-decorationBlock {
+	border: none;
+	border-radius: 0;
+	border-right: var(--severitium-gray-color) .1em solid;
+}
+
+/* Content block */
+
+.RepatriationBonusStyle-contentBlock {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: .75em;
+}
+
+/* Elements inside the block */
+
+.RepatriationBonusStyle-contentBlock > * {
+	margin: 0;
+}
+
+/* Header block */
+
+.RepatriationBonusStyle-contentBlock div:has(> .RepatriationBonusStyle-header) {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Header text */
+
+.RepatriationBonusStyle-contentBlock div > .RepatriationBonusStyle-header {
+	font-size: 1.5em;
+	font-weight: normal;
+	color: var(--severitium-white-text-color);
+}
+
+/* Content text */
+
+.RepatriationBonusStyle-contentBlock > p {
+	font-size: 1em;
+	font-weight: normal;
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Bonus items container */
+
+.RepatriationBonusStyle-contentBlock div:has(> .RepatriationBonusStyle-bonusItem) {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: .25em;
+}
+
+/* Bonus item */
+
+.RepatriationBonusStyle-contentBlock .RepatriationBonusStyle-bonusItem {
+	background: none;
+	background-color: var(--severitium-dark-transparent-background2);
+	border: var(--severitium-dark-gray-color) .1em solid;
+	border-radius: var(--severitium-border-radius);
+	backdrop-filter: none;
+	margin: 0;
+}
+
+/* Button */
+
+.RepatriationBonusStyle-buttonTake {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.RepatriationBonusStyle-buttonTake:hover {	
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.RepatriationBonusStyle-buttonTake > span {
+	color: var(--severitium-green-button-color);
+}
+
+/* Hotkey block on the button */
+
+.RepatriationBonusStyle-buttonTake h3[class*='hotkey'i] {
+	background: transparent;
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: var(--severitium-border-radius);
+	color: var(--severitium-dark-white-text-color);
+}
