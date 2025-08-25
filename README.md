@@ -7,6 +7,10 @@ Each folder in the root represents a specific version and contains:
 - `script.release.min.js` – minified JavaScript
 - `style.release.min.css` – minified CSS
 
+Additionally, the repository includes:
+
+- `versions/versions.json` – complete version history with full Git commit hashes, dates, comments, and version numbers for all releases
+
 Example structure:
 
 ```
