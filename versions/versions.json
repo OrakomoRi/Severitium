@@ -1170,12 +1170,6 @@
     "hash": "76117291551e5337c341c7bf9e11ffbbdc536f7f"
   },
   {
-    "version": "1.7.2+build3",
-    "date": "2025-06-06",
-    "comment": "1.7.2+build3 feat: updated shop window cards when they have many items inside",
-    "hash": "bafd304235deb3ba1e70246b466aa428606db376"
-  },
-  {
     "version": "1.7.2+build4",
     "date": "2025-07-10",
     "comment": "1.7.2+build4 feat: added css, js build",
@@ -1188,22 +1182,10 @@
     "hash": "b059e68964c43494491d5a1114d03ec3880306cb"
   },
   {
-    "version": "1.7.2+build5",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build5 build: update release js/css",
-    "hash": "4b39ae5d0089e39e8bab5b8b6b9134d947a7ea73"
-  },
-  {
     "version": "1.7.2+build6",
     "date": "2025-07-10",
     "comment": "1.7.2+build6 fix: fixed build",
     "hash": "b2cc436c223490d6f9282c74f6fb7a06eefe2cf3"
-  },
-  {
-    "version": "1.7.2+build6",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build6 build: update release js/css",
-    "hash": "61fb67933bf3c5a47474522a196fad0566d7369e"
   },
   {
     "version": "1.7.2+build7",
@@ -1218,22 +1200,10 @@
     "hash": "db2c50c148596cb68d02f2c3713caf5ebb6c35c8"
   },
   {
-    "version": "1.7.2+build8",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build8 build: update release js/css",
-    "hash": "5a1d4841f7563f6de806d6fa5d0ba67bca67179e"
-  },
-  {
     "version": "1.7.2+build9",
     "date": "2025-07-10",
     "comment": "1.7.2+build9 fix: fixed build",
     "hash": "2f92ef0441c014b43a853cc3cd8655f5b62f9a51"
-  },
-  {
-    "version": "1.7.2+build9",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build9 build: update release js/css",
-    "hash": "f7f04602e2e902140eae3d46236289396070df8d"
   },
   {
     "version": "1.7.2+build10",
@@ -1242,22 +1212,10 @@
     "hash": "4f1e82dd59d88981d60a8dd719b8b1ea17c63fd1"
   },
   {
-    "version": "1.7.2+build10",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build10 build: update release js/css",
-    "hash": "eeccf4df9f193c3e70979196b3aba0fdbcb9ab93"
-  },
-  {
     "version": "1.7.2+build11",
     "date": "2025-07-10",
     "comment": "1.7.2+build11 fix: main userscript",
     "hash": "ba9e5997e8983ca51a82923df242131c51d85a48"
-  },
-  {
-    "version": "1.7.2+build11",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build11 build: update release js/css",
-    "hash": "a40b12fec9b0feb0397389ebd41e1df9b72c9d1c"
   },
   {
     "version": "1.7.2+build12",
@@ -1272,22 +1230,10 @@
     "hash": "83511f9f4b3453d67a3a2d7b52cda5f554107451"
   },
   {
-    "version": "1.7.2+build13",
-    "date": "2025-07-13",
-    "comment": "1.7.2+build13 build: update release js/css",
-    "hash": "9ca3cb651f9116ebac2b3a01d8e23f71ff388b05"
-  },
-  {
     "version": "1.7.2+build14",
     "date": "2025-07-13",
     "comment": "1.7.2+build14 feat: deleted common container animation from public use",
     "hash": "248edd85e4ae46b3ab122bebb27def4c2b8e69d1"
-  },
-  {
-    "version": "1.7.2+build14",
-    "date": "2025-07-13",
-    "comment": "1.7.2+build14 build: update release js/css",
-    "hash": "1f386c04cbb31b5c306865890b18fd4f0e165066"
   },
   {
     "version": "1.7.2+build15",
@@ -1302,12 +1248,6 @@
     "hash": "d257c587db6f41a031675224ba589a1202eeca18"
   },
   {
-    "version": "1.7.2+build16",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build16\\nbuild: release artifacts",
-    "hash": "ea7cb1ea507220831c4b9e32cbef4b36c133002c"
-  },
-  {
     "version": "1.7.2+build17",
     "date": "2025-07-14",
     "comment": "1.7.2+build17 chore: remove release/data — moved to 'builds' branch",
@@ -1320,22 +1260,10 @@
     "hash": "3df45eeed8e6b37143c108677ef9897870a5a4b0"
   },
   {
-    "version": "1.7.2+build18",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build18\\nbuild: release artifacts",
-    "hash": "e3f5df420ba97dabff7ca69aac9594b2ffffead2"
-  },
-  {
     "version": "1.7.2+build19",
     "date": "2025-07-14",
     "comment": "1.7.2+build19 feat: updated auto-build-and-release",
     "hash": "279ee820ed0a44ba92af9f39f083984945b9bbcc"
-  },
-  {
-    "version": "1.7.2+build19",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build19 build: release artifacts",
-    "hash": "fe7eff7c4f38142bfc8e78eb41ed96e984ade08c"
   },
   {
     "version": "1.7.2+build20",
@@ -1344,22 +1272,10 @@
     "hash": "5faf7d6b896abc3568bc8af179eb3777a620cea0"
   },
   {
-    "version": "1.7.2+build20",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build20 build: release artifacts",
-    "hash": "1e1b9ba56c6d6b6867e06324ba6da4fc4b42acdc"
-  },
-  {
     "version": "1.7.2+build21",
     "date": "2025-07-14",
     "comment": "1.7.2+build21 feat: updated auto-build-and-release",
     "hash": "a33a3f3e3578f103c8a404479d6bd248449826ee"
-  },
-  {
-    "version": "1.7.2+build21",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build21 build: release artifacts",
-    "hash": "ad2b593ec9b9fb93f924823e3894e3b0937e066b"
   },
   {
     "version": "1.7.2+build22",
@@ -1368,22 +1284,10 @@
     "hash": "da7ca99cd4320b1c9b1bfac0e94703360a25ec74"
   },
   {
-    "version": "1.7.2+build22",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build22 build: release artifacts",
-    "hash": "42557b709529973d32472e82b4b1314bc99763f6"
-  },
-  {
     "version": "1.7.2+build23",
     "date": "2025-07-14",
     "comment": "1.7.2+build23 feat: updated PurchaseScreen",
     "hash": "5296233165cedc884813b1644acefaec684baa41"
-  },
-  {
-    "version": "1.7.2+build23",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build23 build: release artifacts",
-    "hash": "9f42c9edfec463f585ad5a13e8ae4171404e7950"
   },
   {
     "version": "1.7.2+build24",
@@ -1392,22 +1296,10 @@
     "hash": "b2cdc8c5c6ce35a0533ccce90b2ccab6b9c2fb09"
   },
   {
-    "version": "1.7.2+build24",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build24 build: release artifacts",
-    "hash": "4e45faf519cb819d4612d19c7244005a8e01bd99"
-  },
-  {
     "version": "1.7.2+build25",
     "date": "2025-07-14",
     "comment": "1.7.2+build25 docs: add detailed inline comments to main userscript functions for better code clarity",
     "hash": "7d895328227cc2ff9e950ae41d2e9ff21147b15b"
-  },
-  {
-    "version": "1.7.2+build25",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build25 build: release artifacts",
-    "hash": "e663a04c727a3427fb685eb20eaa54f748e44065"
   },
   {
     "version": "1.7.2+build26",
@@ -1416,15 +1308,9 @@
     "hash": "21b14fc33914a3ff48990766159c61e91583dcf7"
   },
   {
-    "version": "1.7.2+build26",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build26 build: release artifacts",
-    "hash": "0e1715762477c4f2532cdac25d785abbc56c29dd"
-  },
-  {
     "version": "1.7.2+build28",
     "date": "2025-08-25",
-    "comment": "1.7.2+build27 chore(release): trigger new release",
+    "comment": "1.7.2+build28 chore(release): trigger new release",
     "hash": "7925d8e30ef051566fdf13bf1922e9cb82814e21"
   },
   {
