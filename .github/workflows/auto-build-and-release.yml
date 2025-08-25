@@ -52,13 +52,18 @@ jobs:
             - name: Build release files
               run: |
                   mkdir -p "builds/$VERSION"
-                  find src -path "src/_Additional" -prune -o -name "*.min.js" -print \
-                    | xargs cat > "builds/$VERSION/script.release.min.js"
-                  terser "builds/$VERSION/script.release.min.js" -c -m -o "builds/$VERSION/script.release.min.js"
-
-                  find src -path "src/_Additional" -prune -o -name "*.min.css" -print \
-                    | xargs cat > "builds/$VERSION/style.release.min.css"
-                  cleancss -o "builds/$VERSION/style.release.min.css" "builds/$VERSION/style.release.min.css"
+                  
+                  # Collect and minify JavaScript files
+                  find src -path "src/_Additional" -prune -o -name "*.js" ! -name "*.user.js" ! -name "*.min.js" -print \
+                    | xargs cat > "builds/$VERSION/script.release.js"
+                  terser "builds/$VERSION/script.release.js" -c -m -o "builds/$VERSION/script.release.min.js"
+                  rm "builds/$VERSION/script.release.js"
+                  
+                  # Collect and minify CSS files
+                  find src -path "src/_Additional" -prune -o -name "*.css" ! -name "*.user.css" ! -name "*.min.css" -print \
+                    | xargs cat > "builds/$VERSION/style.release.css"
+                  cleancss -o "builds/$VERSION/style.release.min.css" "builds/$VERSION/style.release.css"
+                  rm "builds/$VERSION/style.release.css"
 
             - name: Update versions.json
               run: |
