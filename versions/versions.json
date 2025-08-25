@@ -1318,5 +1318,11 @@
     "date": "2025-08-25",
     "comment": "1.7.2+build29 build: remove prebuilt .min.css and .min.js files (now generated automatically after release)",
     "hash": "4ce8a17fcd5fb49b385f74c5690e6eed8b41bde8"
+  },
+  {
+    "version": "1.7.2+build30",
+    "date": "2025-08-25",
+    "comment": "1.7.2+build30 feat: add new Retriation Bonus styles",
+    "hash": "5e5da951772456fef84e4098b4929561b693fb34"
   }
 ]
