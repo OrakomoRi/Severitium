@@ -1,1430 +1,1430 @@
 [
-  {
-    "version": "1.6.0-alpha",
-    "date": "2024-08-30",
-    "comment": "1.6.0-alpha",
-    "hash": "2798d61"
-  },
-  {
-    "version": "1.6.0-alpha2",
-    "date": "2024-08-30",
-    "comment": "1.6.0-alpha2",
-    "hash": "c64488c"
-  },
-  {
-    "version": "1.6.0",
-    "date": "2024-08-31",
-    "comment": "Changelog fixes (latest: 1.6.0)",
-    "hash": "3d11fdd"
-  },
-  {
-    "version": "1.6.0",
-    "date": "2024-08-31",
-    "comment": "README fixes (latest 1.6.0)",
-    "hash": "e76a812"
-  },
-  {
-    "version": "1.6.0-alpha3",
-    "date": "2024-09-04",
-    "comment": "1.6.0-alpha3",
-    "hash": "9ac09d7"
-  },
-  {
-    "version": "1.6.0-alpha4",
-    "date": "2024-10-23",
-    "comment": "1.6.0-alpha4",
-    "hash": "1ddc39a"
-  },
-  {
-    "version": "1.6.0-alpha5",
-    "date": "2024-12-16",
-    "comment": "1.6.0-alpha5 feat: new image load method (not base64)",
-    "hash": "9b69de2"
-  },
-  {
-    "version": "1.6.0-alpha5",
-    "date": "2024-12-16",
-    "comment": "fix: changed script version to 1.6.0-alpha5",
-    "hash": "439a803"
-  },
-  {
-    "version": "1.6.0-alpha6",
-    "date": "2024-12-16",
-    "comment": "1.6.0-alpha6 fix: new image load method",
-    "hash": "366a560"
-  },
-  {
-    "version": "1.6.0-alpha6",
-    "date": "2024-12-16",
-    "comment": "fix: changed script version to 1.6.0-alpha6",
-    "hash": "561b3fd"
-  },
-  {
-    "version": "1.6.0-alpha7",
-    "date": "2024-12-16",
-    "comment": "1.6.0-alpha7 fix: new image load method",
-    "hash": "1882bf4"
-  },
-  {
-    "version": "1.6.0-alpha8",
-    "date": "2024-12-16",
-    "comment": "1.6.0-alpha8 fix: new image load method",
-    "hash": "fcdccc4"
-  },
-  {
-    "version": "1.6.0-alpha8",
-    "date": "2024-12-19",
-    "comment": "1.6.0-alpha8 fix: async styles & image load method; backup to base64 background-images; optimized & updated images (added webp format)",
-    "hash": "489dde2"
-  },
-  {
-    "version": "1.6.0-alpha9",
-    "date": "2024-12-19",
-    "comment": "1.6.0-alpha9 fix: async styles & image load method; backup to base64 background-images; optimized & updated images (added webp format)",
-    "hash": "2b0cb28"
-  },
-  {
-    "version": "1.6.0-alpha10",
-    "date": "2024-12-19",
-    "comment": "1.6.0-alpha10 fix: fixed loading of resources (GM_xmlhttpRequest instead of fetch)",
-    "hash": "1f25599"
-  },
-  {
-    "version": "1.6.0-alpha11",
-    "date": "2024-12-19",
-    "comment": "1.6.0-alpha11 fix: hotfix for image loading (error: \"Maximum call stack size exceeded\")",
-    "hash": "eea8b34"
-  },
-  {
-    "version": "1.6.0-alpha11",
-    "date": "2024-12-19",
-    "comment": "1.6.0-alpha11 fix: userscript version fix",
-    "hash": "51d5043"
-  },
-  {
-    "version": "1.6.0-alpha12",
-    "date": "2024-12-19",
-    "comment": "1.6.0-alpha12 fix: hotfix for image loading (error: \"Maximum call stack size exceeded\")",
-    "hash": "9e1b17c"
-  },
-  {
-    "version": "1.6.0-alpha13",
-    "date": "2024-12-19",
-    "comment": "1.6.0-alpha13 feat: added resource caching",
-    "hash": "6aa3a77"
-  },
-  {
-    "version": "1.6.0-alpha13",
-    "date": "2024-12-19",
-    "comment": "1.6.0-alpha13 feat: new console log message is user script's version has `-pre-release` or `+build` fix: some changelog entries",
-    "hash": "dec31b0"
-  },
-  {
-    "version": "1.6.1",
-    "date": "2024-12-20",
-    "comment": "1.6.1 New patch available, updated changelog",
-    "hash": "d236aaf"
-  },
-  {
-    "version": "1.6.1+build2",
-    "date": "2024-12-20",
-    "comment": "1.6.1+build2 feat: updated behavior on `Ctrl + F5` and when cache is disable (in `F12`)",
-    "hash": "b0da7db"
-  },
-  {
-    "version": "1.6.1+build3",
-    "date": "2024-12-20",
-    "comment": "1.6.1+build3 feat: backup behavior for `Ctrl + F5` and whe cache is disabled; updated logic for resource reload system",
-    "hash": "62a6d30"
-  },
-  {
-    "version": "1.6.1+build4",
-    "date": "2024-12-20",
-    "comment": "1.6.1+build4 feat: added loading screen (overlay) when loading/reloading theme resources",
-    "hash": "c8ee003"
-  },
-  {
-    "version": "1.6.1+build5",
-    "date": "2024-12-20",
-    "comment": "1.6.1+build5 fix: fixed error message styles on entrance screen",
-    "hash": "f07f04e"
-  },
-  {
-    "version": "1.6.1+build6",
-    "date": "2024-12-20",
-    "comment": "1.6.1+build6 feat: changed loading screen background to non-transparent black fix: fixed loading images logic which was not broken at stable 1.6.1",
-    "hash": "f80feda"
-  },
-  {
-    "version": "1.6.1+build6",
-    "date": "2024-12-21",
-    "comment": "1.6.1+build6 feat: new module load method and new resource reloading logic (with reloading needed modules too)",
-    "hash": "d132a7d"
-  },
-  {
-    "version": "1.6.1+build8",
-    "date": "2024-12-21",
-    "comment": "1.6.1+build8 fix: fixed \"helper\" functions",
-    "hash": "a2eccb8"
-  },
-  {
-    "version": "1.6.1+build8",
-    "date": "2024-12-21",
-    "comment": "1.6.1+build8 fix: fixed \"helper\" function calls inside main script",
-    "hash": "97d6bf7"
-  },
-  {
-    "version": "1.6.1+build10",
-    "date": "2024-12-21",
-    "comment": "1.6.1+build10 feat: image and css loading logic has been relegated to \"helper\" functions; changed resource loading screen styles",
-    "hash": "f50b5df"
-  },
-  {
-    "version": "1.6.1+build11",
-    "date": "2024-12-21",
-    "comment": "1.6.1+build11 fix: fixed new image & css loading objects",
-    "hash": "dcb1386"
-  },
-  {
-    "version": "1.6.1+build12",
-    "date": "2024-12-21",
-    "comment": "1.6.1+build12 feat: new class SeveritiumInjector that will contain the logic of injecting theme objects into the page; deleted old imageInjection & styleInjection",
-    "hash": "3a8d533"
-  },
-  {
-    "version": "1.6.1+build13",
-    "date": "2024-12-21",
-    "comment": "1.6.1+build13 fix: SeveritiumInjector class methods calls fixes inside the class itself",
-    "hash": "14cee71"
-  },
-  {
-    "version": "1.6.1+build14",
-    "date": "2024-12-21",
-    "comment": "1.6.1+build14 fix: SeveritiumInjector class variables",
-    "hash": "b689fb7"
-  },
-  {
-    "version": "1.6.1+build15",
-    "date": "2024-12-22",
-    "comment": "1.6.1+build15 fix: fixed logic for applying styles & images",
-    "hash": "b8bebb8"
-  },
-  {
-    "version": "1.6.1+build16",
-    "date": "2024-12-22",
-    "comment": "1.6.1+build16 fix: fixed logic for applying styles & images",
-    "hash": "8811b6f"
-  },
-  {
-    "version": "1.6.1+build17",
-    "date": "2024-12-22",
-    "comment": "1.6.1+build17 fix: fixed logic for applying styles & images",
-    "hash": "ef4697d"
-  },
-  {
-    "version": "1.6.1+build18",
-    "date": "2024-12-22",
-    "comment": "1.6.1+build18 fix: fixed logic for applying styles & images",
-    "hash": "cab3124"
-  },
-  {
-    "version": "1.6.1+build19",
-    "date": "2024-12-22",
-    "comment": "1.6.1+build19 fix: fixed logic for applying styles & images",
-    "hash": "09d2b76"
-  },
-  {
-    "version": "1.6.1+build20",
-    "date": "2024-12-22",
-    "comment": "1.6.1+build20 fix: fixed logic for applying styles & images",
-    "hash": "6c574fe"
-  },
-  {
-    "version": "1.6.1+build21",
-    "date": "2024-12-22",
-    "comment": "1.6.1+build21 fix: fixed logic for applying styles & images",
-    "hash": "96e4db8"
-  },
-  {
-    "version": "1.6.1+build22",
-    "date": "2025-01-07",
-    "comment": "1.6.1+build22 feat: added namespace for userscript; fixed in-battle chat input block position",
-    "hash": "7c2e9db"
-  },
-  {
-    "version": "1.6.1+build23",
-    "date": "2025-01-23",
-    "comment": "1.6.1+build23 feat: changed loading screen css",
-    "hash": "f55a7e1"
-  },
-  {
-    "version": "1.6.1+build24",
-    "date": "2025-01-23",
-    "comment": "1.6.1+build24 fix: fixed top panel bugs in new shop window feat: added support for ruby currency, changed colors for currency values' texts",
-    "hash": "6fdb31f"
-  },
-  {
-    "version": "1.6.1+build25",
-    "date": "2025-01-23",
-    "comment": "1.6.1+build25 feat: added body css on loading screen",
-    "hash": "acde640"
-  },
-  {
-    "version": "1.6.1+build26",
-    "date": "2025-01-23",
-    "comment": "1.6.1+build26 fix: fixed custom chat type select's text's font",
-    "hash": "f7bf318"
-  },
-  {
-    "version": "1.6.1+build27",
-    "date": "2025-01-23",
-    "comment": "1.6.1+build27 fix: fixed custom empy contracts screen (texts on center)",
-    "hash": "23c8d9c"
-  },
-  {
-    "version": "1.6.1+build28",
-    "date": "2025-01-24",
-    "comment": "1.6.1+build28 fix: fixed clan action buttons container, text and buttons",
-    "hash": "b82254f"
-  },
-  {
-    "version": "1.6.1+build29",
-    "date": "2025-01-25",
-    "comment": "1.6.1+build29 fix: fixed clans one button styles (broken since 1.6.1+build28) feat: added some new styles for body on loading screen event",
-    "hash": "7deea31"
-  },
-  {
-    "version": "1.6.1+build30",
-    "date": "2025-01-25",
-    "comment": "1.6.1+build30 fix: fixed shop icon for quests that require something to buy",
-    "hash": "286ed7b"
-  },
-  {
-    "version": "1.6.1+build31",
-    "date": "2025-01-25",
-    "comment": "1.6.1+build31 feat: added sorting icon restyling",
-    "hash": "38a3a9a"
-  },
-  {
-    "version": "1.6.1+build31",
-    "date": "2025-01-25",
-    "comment": "1.6.1+build31 fix: styles for sorting icon",
-    "hash": "7b0de34"
-  },
-  {
-    "version": "1.6.1+build32",
-    "date": "2025-01-25",
-    "comment": "1.6.1+build32 fix: styles for sorting icon",
-    "hash": "e796b3f"
-  },
-  {
-    "version": "1.6.1+build33",
-    "date": "2025-01-25",
-    "comment": "1.6.1+build33 feat: one more update for body styles on loading screen; removed load of broken logic for sort icon (-> to do)",
-    "hash": "ece3d44"
-  },
-  {
-    "version": "1.6.1+build34",
-    "date": "2025-01-25",
-    "comment": "1.6.1+build34 fix: fixed sort icon logic, now it should work correctly",
-    "hash": "4ab4374"
-  },
-  {
-    "version": "1.6.1+build35",
-    "date": "2025-01-26",
-    "comment": "1.6.1+build35 feat: added highlight for selected possible reward card in possible rewards screen",
-    "hash": "57f2e61"
-  },
-  {
-    "version": "1.6.1+build36",
-    "date": "2025-01-26",
-    "comment": "1.6.1+build36 feat: logic optimization for selected possible reward highlight",
-    "hash": "32fc801"
-  },
-  {
-    "version": "1.6.1+build37",
-    "date": "2025-01-26",
-    "comment": "1.6.1+build37 feat: minor userscript update",
-    "hash": "a40f398"
-  },
-  {
-    "version": "1.6.1+build38",
-    "date": "2025-01-27",
-    "comment": "1.6.1+build38 feat: styled scroll arrows on possible rewards screen",
-    "hash": "654464e"
-  },
-  {
-    "version": "1.6.1+build39",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build39 feat: main userscript refactoring; new logic for checking for new versions in the github and updating to a STABLE new version",
-    "hash": "6963ca4"
-  },
-  {
-    "version": "1.6.1+build40",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build40 feat: new logic for checking for new versions in the github and updating to a STABLE new version (changed & fixed) - manual stable.json file with fallback to severitium.user.js url in repo",
-    "hash": "41eb4d5"
-  },
-  {
-    "version": "1.6.1+build41",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build41 feat: some comments for main userscript",
-    "hash": "0b1da1c"
-  },
-  {
-    "version": "1.6.1+build42",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build42 feat: updated loading screen canvas logic to display correctly of each monitor (the same as common container canvas); added common container animated canvas to make backgrounds more interactive",
-    "hash": "25334bc"
-  },
-  {
-    "version": "1.6.1+build43",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build43 feat: gear canvas (common container) still has memory leak - removed; fixed acceleration for star canvas (loading screen)",
-    "hash": "309dba2"
-  },
-  {
-    "version": "1.6.1+build44",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build44 fix: fixed problems with loading screen canvas, hopefully it won't get faster and faster",
-    "hash": "7bce94c"
-  },
-  {
-    "version": "1.6.1+build45",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build45 fix: I pray to god that the loading screen kanvas works fine.",
-    "hash": "3c969d7"
-  },
-  {
-    "version": "1.6.1+build46",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build46 fix: the loading screen canvas is FIXED",
-    "hash": "2ca6341"
-  },
-  {
-    "version": "1.6.1+build47",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build47 feat: optimized loading screen canvas animations; used Breezium for the chat custom select in lobby",
-    "hash": "313dce1"
-  },
-  {
-    "version": "1.6.1+build48",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build48 fix: fixed loading screen semi-transparent background (not needed)",
-    "hash": "1974412"
-  },
-  {
-    "version": "1.6.1+build49",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build49 feat: upgraded styles for chat window (lobby) fix: fixed chat link for system messages",
-    "hash": "6fa3709"
-  },
-  {
-    "version": "1.6.1+build50",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build50 fix: fixed chat custom select behavior when clan tab is opened and user has clicked on select",
-    "hash": "adf4320"
-  },
-  {
-    "version": "1.6.1+build51",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build51 fix: minor fixed for chat window",
-    "hash": "fdcc4b8"
-  },
-  {
-    "version": "1.6.1+build52",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build52 feat: updated chat window BreeziumSelect usage",
-    "hash": "f94a7d2"
-  },
-  {
-    "version": "1.6.1+build52",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build52 MAIN USERSCRIPT",
-    "hash": "36ea2dd"
-  },
-  {
-    "version": "1.6.1+build53",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build53 feat: chat window js code minor refactor",
-    "hash": "b33e854"
-  },
-  {
-    "version": "1.6.1+build54",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build54 Use latest BreeziumSelect",
-    "hash": "1187271"
-  },
-  {
-    "version": "1.6.1+build55",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build55 feat: updated chat window styles fix: fixed common sort styles",
-    "hash": "21a61d0"
-  },
-  {
-    "version": "1.6.1+build56",
-    "date": "2025-01-28",
-    "comment": "1.6.1+build56 fix: fixed common sort activation logic",
-    "hash": "df54fed"
-  },
-  {
-    "version": "1.6.1+build57",
-    "date": "2025-01-30",
-    "comment": "1.6.1+build57 feat: updated some svg icons; because of that updated: ClanModal, ExistingClan, JoinClan, FriendsScreen, InviteScreen, Modal, TopPanel, CommonChallenges, QuestsScreen modules fixed: entrance links close icon; top menu item styles",
-    "hash": "bb8ac0c"
-  },
-  {
-    "version": "1.6.1+build58",
-    "date": "2025-01-30",
-    "comment": "1.6.1+build58 feat: updated possible rewards styles and script to detect active element fix: fixed General section README (common sort added); battle chat (wrong positioning)",
-    "hash": "a402b51"
-  },
-  {
-    "version": "1.6.1+build59",
-    "date": "2025-01-30",
-    "comment": "1.6.1+build59 feat: added new css variables; added new module: PossibleRewardsMenu - top menu with rarity buttons on possible rewards screen",
-    "hash": "d814805"
-  },
-  {
-    "version": "1.6.1+build60",
-    "date": "2025-01-30",
-    "comment": "1.6.1+build60 fix: fixed possible rewards menu logic",
-    "hash": "a49b7ea"
-  },
-  {
-    "version": "1.6.1+build61",
-    "date": "2025-01-30",
-    "comment": "1.6.1+build61 fix: fixed possible rewards menu logic (x2)",
-    "hash": "c569bf3"
-  },
-  {
-    "version": "1.6.1",
-    "date": "2025-01-30",
-    "comment": "README 1.6.1 stable",
-    "hash": "d507436"
-  },
-  {
-    "version": "1.6.1+build62",
-    "date": "2025-01-30",
-    "comment": "1.6.1+build62 feat: updated some svg icons; because of that updated: CommonChallenges, PlayButton modules",
-    "hash": "4be19a2"
-  },
-  {
-    "version": "1.6.1+build63",
-    "date": "2025-01-30",
-    "comment": "1.6.1+build63 feat: updated battle type styles (now works also for unavailable/special battle types)",
-    "hash": "5fd8337"
-  },
-  {
-    "version": "1.6.1+build63",
-    "date": "2025-01-30",
-    "comment": "1.6.1+build63 fix: fixed friend screen buttons",
-    "hash": "795fe3e"
-  },
-  {
-    "version": "1.6.1+build65",
-    "date": "2025-01-31",
-    "comment": "1.6.1+build65 feat: updated README for quests contracts screen; added new module called 'successful purchase' to the shop section",
-    "hash": "0d7a8a5"
-  },
-  {
-    "version": "1.6.1+build66",
-    "date": "2025-01-31",
-    "comment": "1.6.1+build66 feat: updated modal styles (tooltip)",
-    "hash": "b15bdb0"
-  },
-  {
-    "version": "1.6.1+build67",
-    "date": "2025-02-01",
-    "comment": "1.6.1+build67 feat: updated chat window styles; updated scrolling cards styles; added main shop screen styles; updated json to load css, added: Shop/SuccessfulPurchase, Shop/MainScreen",
-    "hash": "9b9cc54"
-  },
-  {
-    "version": "1.6.1+build68",
-    "date": "2025-02-01",
-    "comment": "1.6.1+build68 fix: fixed link in json to Shop/MainScreen CSS",
-    "hash": "a1df0cc"
-  },
-  {
-    "version": "1.6.1+build69",
-    "date": "2025-02-01",
-    "comment": "1.6.1+build69 feat: added logger to customize the console logs.",
-    "hash": "cf3544b"
-  },
-  {
-    "version": "1.6.1+build70",
-    "date": "2025-02-01",
-    "comment": "1.6.1+build70 fix: corrected the link to the logger",
-    "hash": "3a5f72f"
-  },
-  {
-    "version": "1.6.1+build71",
-    "date": "2025-02-01",
-    "comment": "1.6.1+build71 fix: fixed logger and it's usage",
-    "hash": "0fcc9aa"
-  },
-  {
-    "version": "1.6.1+build72",
-    "date": "2025-02-01",
-    "comment": "1.6.1+build72 feat: updated logger and just a bit improved the main userscript fix: fixed main userscript",
-    "hash": "443d779"
-  },
-  {
-    "version": "1.6.1+build73",
-    "date": "2025-02-01",
-    "comment": "1.6.1+build73 feat: updated logger fix: fixed main userscript",
-    "hash": "7e3ede3"
-  },
-  {
-    "version": "1.6.1+build74",
-    "date": "2025-02-03",
-    "comment": "1.6.1+build74 refactor: moved extractFileName to a separate module; updated related function calls fix: corrected version comparison logic in update check; disabled fallback update prompt style: fixed indentation in comments",
-    "hash": "cfced28"
-  },
-  {
-    "version": "1.6.1+build75",
-    "date": "2025-02-03",
-    "comment": "1.6.1+build75 feat: added SectionMenu module for shop navigation; integrated CSS and JS docs: added README for SectionMenu with usage details style: improved shop menu appearance with transparency and hover effects perf: optimized state handling for menu items",
-    "hash": "6692e2b"
-  },
-  {
-    "version": "1.6.1+build76",
-    "date": "2025-02-03",
-    "comment": "1.6.1+build76 feat: added shop footer section; improved battle type UI with additional elements fix: corrected border color for possible rewards hover effect style: adjusted shop layout heights and positioning for better alignment",
-    "hash": "8d21813"
-  },
-  {
-    "version": "1.6.1+build76",
-    "date": "2025-02-03",
-    "comment": "1.6.1+build76 userscript",
-    "hash": "3df5413"
-  },
-  {
-    "version": "1.6.1+build77",
-    "date": "2025-02-03",
-    "comment": "1.6.1+build77 refactor: replaced arrays with Maps for better performance and readability; optimized element tracking logic by using a MutationObserver instead of requestAnimationFrame",
-    "hash": "5d193dd"
-  },
-  {
-    "version": "1.6.1+build78",
-    "date": "2025-02-03",
-    "comment": "1.6.1+build78 perf: optimize code in multiple components: Containers/PossibleRewardsMenu/PossibleRewardsMenu, Containers/PossibleRewardsScreen/PossibleRewardsScreen, Entrance/EntranceForms, Entrance/EntranceIcons, Entrance/EntranceLinks, General/CommonSort, General/LoadingScreen, General/NotificatorIcon, General/PlayerContextMenu, Lobby/BattleSelect/BattleType, Lobby/ChatWindow, Lobby/PlayButton, Quests/QuestsScreen",
-    "hash": "b4a6553"
-  },
-  {
-    "version": "1.6.1+build79",
-    "date": "2025-02-03",
-    "comment": "1.6.1+build79 fix: fixed loading screen (since my optimization broke it)",
-    "hash": "bee95cf"
-  },
-  {
-    "version": "1.6.1+build80",
-    "date": "2025-02-03",
-    "comment": "1.6.1+build80 fix: fixed chat window select selector; fixed unitialized _extractFileName()",
-    "hash": "ff41168"
-  },
-  {
-    "version": "1.6.1+build81",
-    "date": "2025-02-03",
-    "comment": "1.6.1+build81 feat: created more complex selector for shop section menu items",
-    "hash": "5a84470"
-  },
-  {
-    "version": "1.6.1+build82",
-    "date": "2025-02-03",
-    "comment": "1.6.1+build82 fix: updated selector for shop section menu items, now should work fine; fixed existing clan buttons on hover",
-    "hash": "9cedd7f"
-  },
-  {
-    "version": "1.6.1+build83",
-    "date": "2025-02-04",
-    "comment": "1.6.1+build83 feat: added Shop/ShopWindow styles that restyles offers, buttons and more on the shop section screen; added new variables for in-game currencies (crystals, tancoins, rubies) fix: fixed border radius for all customized timers",
-    "hash": "92dc5fe"
-  },
-  {
-    "version": "1.6.1+build84",
-    "date": "2025-02-04",
-    "comment": "1.6.1+build84 feat: news: restyled read article and added new article marks; play button: finally restyled ugly button text; changed quests screen styles a bit",
-    "hash": "4ad79ad"
-  },
-  {
-    "version": "1.6.1+build85",
-    "date": "2025-02-09",
-    "comment": "1.6.1+build85 feat: restyled loading screen, created animations for the text block and the canvas for it; changed and prefixed shop window css code",
-    "hash": "d993214"
-  },
-  {
-    "version": "1.6.1+build86",
-    "date": "2025-02-09",
-    "comment": "1.6.1+build86 feat: updated gradient for the star canvas loading screen fix: loading screen usage fix in the main userscript",
-    "hash": "2b21a29"
-  },
-  {
-    "version": "1.6.1+build87",
-    "date": "2025-02-12",
-    "comment": "1.6.1+build87 feat: updated shop window styles; added purchase screen styling",
-    "hash": "f50d4e3"
-  },
-  {
-    "version": "1.6.1+build88",
-    "date": "2025-02-12",
-    "comment": "1.6.1+build88 fix: test fix for possible rewards screen",
-    "hash": "6eb1d1e"
-  },
-  {
-    "version": "1.6.1+build89",
-    "date": "2025-02-12",
-    "comment": "1.6.1+build89 fix: test fix for possible rewards screen (2)",
-    "hash": "a1fa50d"
-  },
-  {
-    "version": "1.6.1+build90",
-    "date": "2025-02-12",
-    "comment": "1.6.1+build90 feat: added translations for loading screen info banner",
-    "hash": "82dcb41"
-  },
-  {
-    "version": "1.6.1+build91",
-    "date": "2025-02-12",
-    "comment": "1.6.1+build91 fix: test fix for possible rewards screen (3)",
-    "hash": "2d0e008"
-  },
-  {
-    "version": "1.6.1+build92",
-    "date": "2025-02-12",
-    "comment": "1.6.1+build92 fix: fixed link to css purchase screen",
-    "hash": "35b54ad"
-  },
-  {
-    "version": "1.6.1+build93",
-    "date": "2025-02-12",
-    "comment": "1.6.1+build93 feat: little code refactoring for possible rewards menu (readability improve) fix: test fix for possible rewards screen (4)",
-    "hash": "786eb29"
-  },
-  {
-    "version": "1.6.1+build94",
-    "date": "2025-02-12",
-    "comment": "1.6.1+build94 fix: test fix for possible rewards screen (5)",
-    "hash": "5ec0813"
-  },
-  {
-    "version": "1.6.1+build95",
-    "date": "2025-02-13",
-    "comment": "1.6.1+build95 fix: fixed small entrance icons",
-    "hash": "95108f7"
-  },
-  {
-    "version": "1.6.1+build96",
-    "date": "2025-02-13",
-    "comment": "1.6.1+build96 feat: updated variables; added new svg icons",
-    "hash": "7401f69"
-  },
-  {
-    "version": "1.6.1+build97",
-    "date": "2025-02-16",
-    "comment": "1.6.1+build97 feat: partially updated interface of modal windows for currency exchange",
-    "hash": "c120c75"
-  },
-  {
-    "version": "1.6.1+build98",
-    "date": "2025-02-22",
-    "comment": "1.6.1+build98 fix: fixed superquest button container hight",
-    "hash": "a3c57e6"
-  },
-  {
-    "version": "1.6.1+build99",
-    "date": "2025-02-22",
-    "comment": "1.6.1+build99 fix: fixed loading screen background override",
-    "hash": "a3dc003"
-  },
-  {
-    "version": "1.6.1+build100",
-    "date": "2025-02-22",
-    "comment": "1.6.1+build100 feat: updated the value of border-radius for hotkey hint blocks everywhere to meet the theme variable",
-    "hash": "34885cd"
-  },
-  {
-    "version": "1.6.1+build101",
-    "date": "2025-02-22",
-    "comment": "1.6.1+build101 feat: added support for range inputs; changed all disabled buttons everywhere; updated modal styles to correctly display the convert modal",
-    "hash": "62237c8"
-  },
-  {
-    "version": "1.6.1+build102",
-    "date": "2025-02-22",
-    "comment": "1.6.1+build102 feat: optimized modal css; fixed superquest button (x2)",
-    "hash": "0328e1e"
-  },
-  {
-    "version": "1.6.1+build103",
-    "date": "2025-02-24",
-    "comment": "1.6.1+build103 feat: updated main theme color",
-    "hash": "4d8c4e8"
-  },
-  {
-    "version": "1.6.1+build104",
-    "date": "2025-02-24",
-    "comment": "1.6.1+build104 feat: updated main theme color (back); updated battle chat, and friend nickname in chat",
-    "hash": "98fd65d"
-  },
-  {
-    "version": "1.6.1+build105",
-    "date": "2025-02-24",
-    "comment": "1.6.1+build105 feat: updated loading screen - added loading bar to display the number of loaded modules",
-    "hash": "c6abe35"
-  },
-  {
-    "version": "1.6.1+build106",
-    "date": "2025-02-24",
-    "comment": "1.6.1+build106 fix: fixed loading screen module counting",
-    "hash": "49d18cf"
-  },
-  {
-    "version": "1.6.1+build107",
-    "date": "2025-02-24",
-    "comment": "1.6.1+build107 fix: fixed loading screen",
-    "hash": "aed03df"
-  },
-  {
-    "version": "1.6.1+build108",
-    "date": "2025-02-24",
-    "comment": "1.6.1+build108 fix: fixed loading screen",
-    "hash": "c1d0da4"
-  },
-  {
-    "version": "1.6.1+build109",
-    "date": "2025-02-24",
-    "comment": "1.6.1+build109 fix: fixed loading screen",
-    "hash": "3159e28"
-  },
-  {
-    "version": "1.6.1+build110",
-    "date": "2025-02-24",
-    "comment": "1.6.1+build110 fix: fixed loading screen",
-    "hash": "3cb2ec1"
-  },
-  {
-    "version": "1.6.1+build111",
-    "date": "2025-02-24",
-    "comment": "1.6.1+build111 fix: fixed loading screen",
-    "hash": "77735db"
-  },
-  {
-    "version": "1.6.1+build112",
-    "date": "2025-02-24",
-    "comment": "1.6.1+build112 fix: fixed loading screen",
-    "hash": "69c137e"
-  },
-  {
-    "version": "1.6.1+build113",
-    "date": "2025-02-25",
-    "comment": "1.6.1+build113 feat: shop main screen timer styles added fix: fixed css comments for modal",
-    "hash": "a4346a1"
-  },
-  {
-    "version": "1.6.1+build114",
-    "date": "2025-02-26",
-    "comment": "1.6.1+build114 feat: fetchAsText and fetchImageAsBase64 functions are combined into fetchResource",
-    "hash": "87d6d62"
-  },
-  {
-    "version": "1.6.1+build115",
-    "date": "2025-02-26",
-    "comment": "1.6.1+build115 feat: updated the behavior of loading screen",
-    "hash": "4b0e35b"
-  },
-  {
-    "version": "1.6.1+build116",
-    "date": "2025-02-26",
-    "comment": "1.6.1+build116 feat: optimized the main userscript",
-    "hash": "83d9a54"
-  },
-  {
-    "version": "1.6.1+build117",
-    "date": "2025-02-26",
-    "comment": "1.6.1+build117 feat: updated some READMEs fix: fixed PurchaseScreen userscript name",
-    "hash": "90ded2f"
-  },
-  {
-    "version": "1.6.1+build118",
-    "date": "2025-02-26",
-    "comment": "1.6.1+build118 feat: updated loading screen logic (for loading bar) and also prettified html and css inside js code",
-    "hash": "2f9c015"
-  },
-  {
-    "version": "1.6.1+build119",
-    "date": "2025-02-26",
-    "comment": "1.6.1+build119 feat: updated loading screen logic (for loading bar) (x2), added appreading animation",
-    "hash": "f35ba29"
-  },
-  {
-    "version": "1.7.0",
-    "date": "2025-02-26",
-    "comment": "1.7.0 New patch available",
-    "hash": "ee0221d"
-  },
-  {
-    "version": "1.7.0",
-    "date": "2025-02-26",
-    "comment": "1.7.0 Stable version update",
-    "hash": "a7a5e44"
-  },
-  {
-    "version": "1.7.0+build1",
-    "date": "2025-02-26",
-    "comment": "1.7.0+build1 fix: fixed Logger class",
-    "hash": "ab8c143"
-  },
-  {
-    "version": "1.7.0",
-    "date": "2025-02-26",
-    "comment": "1.7.0 Changelog fix",
-    "hash": "a6e3515"
-  },
-  {
-    "version": "1.7.0",
-    "date": "2025-02-26",
-    "comment": "1.7.0 Changelog fix",
-    "hash": "11a08fe"
-  },
-  {
-    "version": "1.7.0",
-    "date": "2025-02-26",
-    "comment": "1.7.0 README stable link update",
-    "hash": "30832f8"
-  },
-  {
-    "version": "1.7.0+build2",
-    "date": "2025-02-28",
-    "comment": "1.7.0+build2 fix: fixed links in NewsWindow",
-    "hash": "a0b8f84"
-  },
-  {
-    "version": "1.7.0+build3",
-    "date": "2025-02-28",
-    "comment": "1.7.0+build3 fix: fixed report clan button",
-    "hash": "d9f8f15"
-  },
-  {
-    "version": "1.7.0+build4",
-    "date": "2025-03-06",
-    "comment": "1.7.0+build4 feat: updated the main userscript loadResources logic to check if the season has changed",
-    "hash": "efb3749"
-  },
-  {
-    "version": "1.7.0+build5",
-    "date": "2025-03-06",
-    "comment": "1.7.0+build5 feat: updated minified logger version",
-    "hash": "132be6a"
-  },
-  {
-    "version": "1.7.0+build6",
-    "date": "2025-03-06",
-    "comment": "1.7.0+build6 feat: updated the main userscript loadResources logic to check if the season has changed (x2)",
-    "hash": "3100992"
-  },
-  {
-    "version": "1.7.1",
-    "date": "2025-03-06",
-    "comment": "1.7.1",
-    "hash": "23ec03b"
-  },
-  {
-    "version": "1.7.1",
-    "date": "2025-03-06",
-    "comment": "1.7.1",
-    "hash": "c53f963"
-  },
-  {
-    "version": "1.7.1+build1",
-    "date": "2025-03-06",
-    "comment": "1.7.1+build1 fix: fixed links in NewsWindow",
-    "hash": "77a19e8"
-  },
-  {
-    "version": "1.7.1+build2",
-    "date": "2025-03-06",
-    "comment": "1.7.1+build2 feat: made clan description texts are selectable",
-    "hash": "d0995ff"
-  },
-  {
-    "version": "1.7.1+build3",
-    "date": "2025-03-12",
-    "comment": "1.7.1+build3 feat: updated styles for disabled BattleType cards",
-    "hash": "c592a57"
-  },
-  {
-    "version": "1.7.1+build4",
-    "date": "2025-03-13",
-    "comment": "1.7.1+build4 feat: removed filters for sound button on entrance screen",
-    "hash": "2af67ad"
-  },
-  {
-    "version": "1.7.1+build5",
-    "date": "2025-03-14",
-    "comment": "1.7.1+build5 feat: restyled display of elements inside shop promocode activation container",
-    "hash": "3890ef6"
-  },
-  {
-    "version": "1.7.1+build6",
-    "date": "2025-03-22",
-    "comment": "1.7.1+build6 feat: added text highlight animation for lobbys main menu item",
-    "hash": "76f9f7c"
-  },
-  {
-    "version": "1.7.1+build7",
-    "date": "2025-03-24",
-    "comment": "1.7.1+build7 fix: fixed shop purchase screen to add the custom styles for payment screen",
-    "hash": "ad10fb5"
-  },
-  {
-    "version": "1.7.1+build8",
-    "date": "2025-03-24",
-    "comment": "1.7.1+build8 feat: changed the logic of resource refresh when season is changed - now only images will be reloaded",
-    "hash": "8883a5e"
-  },
-  {
-    "version": "1.7.1+build9",
-    "date": "2025-03-24",
-    "comment": "1.7.1+build9 fix: fixed shop purchase screen to add the custom styles for payment screen (2)",
-    "hash": "b78601a"
-  },
-  {
-    "version": "1.7.1+build10",
-    "date": "2025-03-24",
-    "comment": "1.7.1+build10 feat: changed the logic of resource refresh when season is changed - now only images will be reloaded (2)",
-    "hash": "78e616a"
-  },
-  {
-    "version": "1.7.1+build11",
-    "date": "2025-03-24",
-    "comment": "1.7.1+build11 fix: fixed modal container for ReCaptcha block",
-    "hash": "bd31534"
-  },
-  {
-    "version": "1.7.1+build12",
-    "date": "2025-03-24",
-    "comment": "1.7.1+build12 feat: styled disabled payment button",
-    "hash": "0608ec3"
-  },
-  {
-    "version": "1.7.1+build13",
-    "date": "2025-03-24",
-    "comment": "1.7.1+build13 feat: styled payment screen (choice of payment type and the choosen payment screen)",
-    "hash": "d861d05"
-  },
-  {
-    "version": "1.7.1+build14",
-    "date": "2025-03-24",
-    "comment": "1.7.1+build14 feat: updated payment screen",
-    "hash": "d303f8d"
-  },
-  {
-    "version": "1.7.1+build15",
-    "date": "2025-03-25",
-    "comment": "1.7.1+build15 feat: updated top panel",
-    "hash": "91ab709"
-  },
-  {
-    "version": "1.7.1+build16",
-    "date": "2025-03-25",
-    "comment": "1.7.1+build16 feat: updated payment screen",
-    "hash": "279cf65"
-  },
-  {
-    "version": "1.7.1+build17",
-    "date": "2025-03-25",
-    "comment": "1.7.1+build17 feat: added styles for checkbox inputs",
-    "hash": "19bda9c"
-  },
-  {
-    "version": "1.7.1+build18",
-    "date": "2025-03-25",
-    "comment": "1.7.1+build18 fix: fixed entrance forms - facebook button on the bottom of the page, added few custom icons (facebook and fallback question mark)",
-    "hash": "7fdcbde"
-  },
-  {
-    "version": "1.7.1+build19",
-    "date": "2025-03-25",
-    "comment": "1.7.1+build19 feat: updated entrance forms (2)",
-    "hash": "69448a0"
-  },
-  {
-    "version": "1.7.1+build20",
-    "date": "2025-03-25",
-    "comment": "1.7.1+build20 feat: updated entrance forms (3)",
-    "hash": "5cd2309"
-  },
-  {
-    "version": "1.7.1+build21",
-    "date": "2025-03-27",
-    "comment": "1.7.1+build21 feat: updated main shop screen",
-    "hash": "434c10f"
-  },
-  {
-    "version": "1.7.1+build22",
-    "date": "2025-03-28",
-    "comment": "1.7.1+build22 fix: fixed tooltips (modal)",
-    "hash": "ee60170"
-  },
-  {
-    "version": "1.7.1+build23",
-    "date": "2025-03-29",
-    "comment": "1.7.1+build23 feat: updated CheckboxInput",
-    "hash": "f4a7ac9"
-  },
-  {
-    "version": "1.7.1+build24",
-    "date": "2025-03-29",
-    "comment": "1.7.1+build24 feat: updated RangeInput (to observe game inputs only)",
-    "hash": "30a50f1"
-  },
-  {
-    "version": "1.7.1+build25",
-    "date": "2025-03-29",
-    "comment": "1.7.1+build25 feat: updated CheckboxInput (to observe game inputs only)",
-    "hash": "44375fe"
-  },
-  {
-    "version": "1.7.1+build26",
-    "date": "2025-03-29",
-    "comment": "1.7.1+build26 feat: optimized CheckboxInput",
-    "hash": "e4ae0b6"
-  },
-  {
-    "version": "1.7.1+build27",
-    "date": "2025-03-29",
-    "comment": "1.7.1+build27 feat: optimized CheckboxInput (2)",
-    "hash": "05664dc"
-  },
-  {
-    "version": "1.7.1+build28",
-    "date": "2025-03-29",
-    "comment": "1.7.1+build28 feat: updated TopPanel",
-    "hash": "de3739d"
-  },
-  {
-    "version": "1.7.1+build29",
-    "date": "2025-03-29",
-    "comment": "1.7.1+build29 feat: updated Modal (added group modal customization)",
-    "hash": "47338e0"
-  },
-  {
-    "version": "1.7.1+build30",
-    "date": "2025-03-30",
-    "comment": "1.7.1+build30 feat: updated QuestsScreen",
-    "hash": "051aee6"
-  },
-  {
-    "version": "1.7.1+build31",
-    "date": "2025-03-31",
-    "comment": "1.7.1+build31 feat: updated EntranceForms to stylize emal inputs",
-    "hash": "0b84ea7"
-  },
-  {
-    "version": "1.7.1+build32",
-    "date": "2025-03-31",
-    "comment": "1.7.1+build32 feat: updated EntranceForms (custom checkbox)",
-    "hash": "02315f2"
-  },
-  {
-    "version": "1.7.1+build33",
-    "date": "2025-03-31",
-    "comment": "1.7.1+build33 feat: updated CheckboxInput",
-    "hash": "463ffb5"
-  },
-  {
-    "version": "1.7.1+build34",
-    "date": "2025-04-01",
-    "comment": "1.7.1+build34 feat: added GroupBlock to stylize group modal window; updated Modal; updated TopPanel (css optimization)",
-    "hash": "184eb08"
-  },
-  {
-    "version": "1.7.2",
-    "date": "2025-04-01",
-    "comment": "1.7.2",
-    "hash": "9fec670"
-  },
-  {
-    "version": "1.7.2",
-    "date": "2025-04-01",
-    "comment": "1.7.2",
-    "hash": "77c5634"
-  },
-  {
-    "version": "1.7.2+build1",
-    "date": "2025-04-01",
-    "comment": "1.7.2+build1 feat: updated Dropdown",
-    "hash": "0a5dbb9"
-  },
-  {
-    "version": "1.7.2+build2",
-    "date": "2025-06-02",
-    "comment": "1.7.2+build2 feat: updated discount icon on hover on Main Menu",
-    "hash": "7a4ea65"
-  },
-  {
-    "version": "1.7.2+build3",
-    "date": "2025-06-02",
-    "comment": "1.7.2+build3 feat: updated shop window cards when they have many items inside",
-    "hash": "7611729"
-  },
-  {
-    "version": "1.7.2+build3",
-    "date": "2025-06-06",
-    "comment": "1.7.2+build3 feat: updated shop window cards when they have many items inside",
-    "hash": "bafd304"
-  },
-  {
-    "version": "1.7.2+build4",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build4 feat: added css, js build",
-    "hash": "d738955"
-  },
-  {
-    "version": "1.7.2+build5",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build5 fix: fixed build",
-    "hash": "b059e68"
-  },
-  {
-    "version": "1.7.2+build5",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build5 build: update release js/css",
-    "hash": "4b39ae5"
-  },
-  {
-    "version": "1.7.2+build6",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build6 fix: fixed build",
-    "hash": "b2cc436"
-  },
-  {
-    "version": "1.7.2+build6",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build6 build: update release js/css",
-    "hash": "61fb679"
-  },
-  {
-    "version": "1.7.2+build7",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build7 feat: updated build logic, updated main userscript, updated SeveritiumInjector",
-    "hash": "3192043"
-  },
-  {
-    "version": "1.7.2+build8",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build8 fix: fixed build",
-    "hash": "db2c50c"
-  },
-  {
-    "version": "1.7.2+build8",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build8 build: update release js/css",
-    "hash": "5a1d484"
-  },
-  {
-    "version": "1.7.2+build9",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build9 fix: fixed build",
-    "hash": "2f92ef0"
-  },
-  {
-    "version": "1.7.2+build9",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build9 build: update release js/css",
-    "hash": "f7f0460"
-  },
-  {
-    "version": "1.7.2+build10",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build10 fix: fixed build and main userscript",
-    "hash": "4f1e82d"
-  },
-  {
-    "version": "1.7.2+build10",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build10 build: update release js/css",
-    "hash": "eeccf4d"
-  },
-  {
-    "version": "1.7.2+build11",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build11 fix: main userscript",
-    "hash": "ba9e599"
-  },
-  {
-    "version": "1.7.2+build11",
-    "date": "2025-07-10",
-    "comment": "1.7.2+build11 build: update release js/css",
-    "hash": "a40b12f"
-  },
-  {
-    "version": "1.7.2+build12",
-    "date": "2025-07-13",
-    "comment": "1.7.2+build12 feat: enhanced file name extraction logic fix: fixed problems with packed files loading",
-    "hash": "7180f69"
-  },
-  {
-    "version": "1.7.2+build13",
-    "date": "2025-07-13",
-    "comment": "1.7.2+build13 feat: updated resource builder",
-    "hash": "83511f9"
-  },
-  {
-    "version": "1.7.2+build13",
-    "date": "2025-07-13",
-    "comment": "1.7.2+build13 build: update release js/css",
-    "hash": "9ca3cb6"
-  },
-  {
-    "version": "1.7.2+build14",
-    "date": "2025-07-13",
-    "comment": "1.7.2+build14 feat: deleted common container animation from public use",
-    "hash": "248edd8"
-  },
-  {
-    "version": "1.7.2+build14",
-    "date": "2025-07-13",
-    "comment": "1.7.2+build14 build: update release js/css",
-    "hash": "1f386c0"
-  },
-  {
-    "version": "1.7.2+build15",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build15 feat: created auto-release feature",
-    "hash": "78f0c7b"
-  },
-  {
-    "version": "1.7.2+build16",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build16 feat: moved auto-release and build-theme into one yml: auto-build-and-release",
-    "hash": "d257c58"
-  },
-  {
-    "version": "1.7.2+build16",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build16\\nbuild: release artifacts",
-    "hash": "ea7cb1e"
-  },
-  {
-    "version": "1.7.2+build17",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build17 chore: remove release/data — moved to 'builds' branch",
-    "hash": "2c516f6"
-  },
-  {
-    "version": "1.7.2+build18",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build18 feat: updated auto-build-and-release",
-    "hash": "3df45ee"
-  },
-  {
-    "version": "1.7.2+build18",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build18\\nbuild: release artifacts",
-    "hash": "e3f5df4"
-  },
-  {
-    "version": "1.7.2+build19",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build19 feat: updated auto-build-and-release",
-    "hash": "279ee82"
-  },
-  {
-    "version": "1.7.2+build19",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build19 build: release artifacts",
-    "hash": "fe7eff7"
-  },
-  {
-    "version": "1.7.2+build20",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build20 feat: updated main userscript to take built CSS and JS from 'builds' branch",
-    "hash": "5faf7d6"
-  },
-  {
-    "version": "1.7.2+build20",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build20 build: release artifacts",
-    "hash": "1e1b9ba"
-  },
-  {
-    "version": "1.7.2+build21",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build21 feat: updated auto-build-and-release",
-    "hash": "a33a3f3"
-  },
-  {
-    "version": "1.7.2+build21",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build21 build: release artifacts",
-    "hash": "ad2b593"
-  },
-  {
-    "version": "1.7.2+build22",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build22 feat: updated EntranceForms",
-    "hash": "da7ca99"
-  },
-  {
-    "version": "1.7.2+build22",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build22 build: release artifacts",
-    "hash": "42557b7"
-  },
-  {
-    "version": "1.7.2+build23",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build23 feat: updated PurchaseScreen",
-    "hash": "5296233"
-  },
-  {
-    "version": "1.7.2+build23",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build23 build: release artifacts",
-    "hash": "9f42c9e"
-  },
-  {
-    "version": "1.7.2+build24",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build24 feat: updated LoadingScreen, BattlePause, Modal (convert coins to rubies), ContainersOpening",
-    "hash": "b2cdc8c"
-  },
-  {
-    "version": "1.7.2+build24",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build24 build: release artifacts",
-    "hash": "4e45faf"
-  },
-  {
-    "version": "1.7.2+build25",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build25 docs: add detailed inline comments to main userscript functions for better code clarity",
-    "hash": "7d89532"
-  },
-  {
-    "version": "1.7.2+build25",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build25 build: release artifacts",
-    "hash": "e663a04"
-  },
-  {
-    "version": "1.7.2+build26",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build26 feat: updated link to logo inside main userscript",
-    "hash": "21b14fc"
-  },
-  {
-    "version": "1.7.2+build26",
-    "date": "2025-07-14",
-    "comment": "1.7.2+build26 build: release artifacts",
-    "hash": "0e17157"
-  },
-  {
-    "version": "1.7.2+build28",
-    "date": "2025-08-25",
-    "comment": "1.7.2+build27 chore(release): trigger new release",
-    "hash": "7925d8e30ef051566fdf13bf1922e9cb82814e21"
-  }
+	{
+		"version": "1.6.0-alpha",
+		"date": "2024-08-30",
+		"comment": "1.6.0-alpha",
+		"hash": "2798d61ad9f6a900025ce41819ad8db8b003b8ac"
+	},
+	{
+		"version": "1.6.0-alpha2",
+		"date": "2024-08-30",
+		"comment": "1.6.0-alpha2",
+		"hash": "c64488c3138380ab8bac13ee503374d034f2afdb"
+	},
+	{
+		"version": "1.6.0",
+		"date": "2024-08-31",
+		"comment": "Changelog fixes (latest: 1.6.0)",
+		"hash": "3d11fdd718cb5078469a229bed26c88ca3e8588f"
+	},
+	{
+		"version": "1.6.0",
+		"date": "2024-08-31",
+		"comment": "README fixes (latest 1.6.0)",
+		"hash": "e76a8125366572cccb812575d4767e853297fa07"
+	},
+	{
+		"version": "1.6.0-alpha3",
+		"date": "2024-09-04",
+		"comment": "1.6.0-alpha3",
+		"hash": "9ac09d7552dc3b26c2fb561698ae9f2636362f36"
+	},
+	{
+		"version": "1.6.0-alpha4",
+		"date": "2024-10-23",
+		"comment": "1.6.0-alpha4",
+		"hash": "1ddc39a83f5c1a1b9b7ac85edf50f7926719c578"
+	},
+	{
+		"version": "1.6.0-alpha5",
+		"date": "2024-12-16",
+		"comment": "1.6.0-alpha5 feat: new image load method (not base64)",
+		"hash": "9b69de2f0de90b60dc3ee305d272136d5160c2c0"
+	},
+	{
+		"version": "1.6.0-alpha5",
+		"date": "2024-12-16",
+		"comment": "fix: changed script version to 1.6.0-alpha5",
+		"hash": "439a8031c9dcfb66b91b8ec8a9737a0f9036746c"
+	},
+	{
+		"version": "1.6.0-alpha6",
+		"date": "2024-12-16",
+		"comment": "1.6.0-alpha6 fix: new image load method",
+		"hash": "366a560d21ef442c1ff9cf1818327dfa83bbe493"
+	},
+	{
+		"version": "1.6.0-alpha6",
+		"date": "2024-12-16",
+		"comment": "fix: changed script version to 1.6.0-alpha6",
+		"hash": "561b3fd5d0c472c84be6312f50b750e112b09b95"
+	},
+	{
+		"version": "1.6.0-alpha7",
+		"date": "2024-12-16",
+		"comment": "1.6.0-alpha7 fix: new image load method",
+		"hash": "1882bf4ebf196a951d90045ff94a4d03fd5cf0ee"
+	},
+	{
+		"version": "1.6.0-alpha8",
+		"date": "2024-12-16",
+		"comment": "1.6.0-alpha8 fix: new image load method",
+		"hash": "fcdccc43278c984627a062f7207a97b0958120d9"
+	},
+	{
+		"version": "1.6.0-alpha8",
+		"date": "2024-12-19",
+		"comment": "1.6.0-alpha8 fix: async styles & image load method; backup to base64 background-images; optimized & updated images (added webp format)",
+		"hash": "489dde203c545dbc2211dddff9af052bd602a886"
+	},
+	{
+		"version": "1.6.0-alpha9",
+		"date": "2024-12-19",
+		"comment": "1.6.0-alpha9 fix: async styles & image load method; backup to base64 background-images; optimized & updated images (added webp format)",
+		"hash": "2b0cb283e3d986ceafae5b89ce05569980427ea0"
+	},
+	{
+		"version": "1.6.0-alpha10",
+		"date": "2024-12-19",
+		"comment": "1.6.0-alpha10 fix: fixed loading of resources (GM_xmlhttpRequest instead of fetch)",
+		"hash": "1f255993097a22075542bb7de12478383e461dc1"
+	},
+	{
+		"version": "1.6.0-alpha11",
+		"date": "2024-12-19",
+		"comment": "1.6.0-alpha11 fix: hotfix for image loading (error: \"Maximum call stack size exceeded\")",
+		"hash": "eea8b3487c750cdf79fa62944c605ca719876fab"
+	},
+	{
+		"version": "1.6.0-alpha11",
+		"date": "2024-12-19",
+		"comment": "1.6.0-alpha11 fix: userscript version fix",
+		"hash": "51d50432128ad27f4ae4b4b56a9f3d8047a70a91"
+	},
+	{
+		"version": "1.6.0-alpha12",
+		"date": "2024-12-19",
+		"comment": "1.6.0-alpha12 fix: hotfix for image loading (error: \"Maximum call stack size exceeded\")",
+		"hash": "9e1b17ca7940ff5425fb8ee4bd17b024946b0643"
+	},
+	{
+		"version": "1.6.0-alpha13",
+		"date": "2024-12-19",
+		"comment": "1.6.0-alpha13 feat: added resource caching",
+		"hash": "6aa3a770ae90731c99e102899e1b701687ec315f"
+	},
+	{
+		"version": "1.6.0-alpha13",
+		"date": "2024-12-19",
+		"comment": "1.6.0-alpha13 feat: new console log message is user script's version has `-pre-release` or `+build` fix: some changelog entries",
+		"hash": "dec31b07a8a9b8b7eb81cdb8156a9125e71ec2e2"
+	},
+	{
+		"version": "1.6.1",
+		"date": "2024-12-20",
+		"comment": "1.6.1 New patch available, updated changelog",
+		"hash": "d236aaf6c6ad159e5a68e41a6e0246d2c1e23820"
+	},
+	{
+		"version": "1.6.1+build2",
+		"date": "2024-12-20",
+		"comment": "1.6.1+build2 feat: updated behavior on `Ctrl + F5` and when cache is disable (in `F12`)",
+		"hash": "b0da7dba76b190cd90af3644934fb06876197dd9"
+	},
+	{
+		"version": "1.6.1+build3",
+		"date": "2024-12-20",
+		"comment": "1.6.1+build3 feat: backup behavior for `Ctrl + F5` and whe cache is disabled; updated logic for resource reload system",
+		"hash": "62a6d3071f003db68467f0057082de0b21fd0d94"
+	},
+	{
+		"version": "1.6.1+build4",
+		"date": "2024-12-20",
+		"comment": "1.6.1+build4 feat: added loading screen (overlay) when loading/reloading theme resources",
+		"hash": "c8ee003181ca8bf651aa6497ea73da3cd387532d"
+	},
+	{
+		"version": "1.6.1+build5",
+		"date": "2024-12-20",
+		"comment": "1.6.1+build5 fix: fixed error message styles on entrance screen",
+		"hash": "f07f04eb5a6fd745d666d57a7dff7742b4480c5b"
+	},
+	{
+		"version": "1.6.1+build6",
+		"date": "2024-12-20",
+		"comment": "1.6.1+build6 feat: changed loading screen background to non-transparent black fix: fixed loading images logic which was not broken at stable 1.6.1",
+		"hash": "f80feda8e4edfd9675e94fc0c0ca8159da80b65c"
+	},
+	{
+		"version": "1.6.1+build6",
+		"date": "2024-12-21",
+		"comment": "1.6.1+build6 feat: new module load method and new resource reloading logic (with reloading needed modules too)",
+		"hash": "d132a7d3ec4ca383f40edc25c31b2e21d5db5020"
+	},
+	{
+		"version": "1.6.1+build8",
+		"date": "2024-12-21",
+		"comment": "1.6.1+build8 fix: fixed \"helper\" functions",
+		"hash": "a2eccb8dfe302875f4a332753c428ee21f32056b"
+	},
+	{
+		"version": "1.6.1+build8",
+		"date": "2024-12-21",
+		"comment": "1.6.1+build8 fix: fixed \"helper\" function calls inside main script",
+		"hash": "97d6bf79fe4180b0c7ae3f0f5528d25b466018a1"
+	},
+	{
+		"version": "1.6.1+build10",
+		"date": "2024-12-21",
+		"comment": "1.6.1+build10 feat: image and css loading logic has been relegated to \"helper\" functions; changed resource loading screen styles",
+		"hash": "f50b5df1c37fd5c862b97c272f29183d7763a780"
+	},
+	{
+		"version": "1.6.1+build11",
+		"date": "2024-12-21",
+		"comment": "1.6.1+build11 fix: fixed new image & css loading objects",
+		"hash": "dcb13865c737153b7c7a0573ca12c1684c8470bb"
+	},
+	{
+		"version": "1.6.1+build12",
+		"date": "2024-12-21",
+		"comment": "1.6.1+build12 feat: new class SeveritiumInjector that will contain the logic of injecting theme objects into the page; deleted old imageInjection & styleInjection",
+		"hash": "3a8d533f1191b69d0bdc410404351630aab31e1f"
+	},
+	{
+		"version": "1.6.1+build13",
+		"date": "2024-12-21",
+		"comment": "1.6.1+build13 fix: SeveritiumInjector class methods calls fixes inside the class itself",
+		"hash": "14cee71e9a86a33df592db7a5a65bddc54261891"
+	},
+	{
+		"version": "1.6.1+build14",
+		"date": "2024-12-21",
+		"comment": "1.6.1+build14 fix: SeveritiumInjector class variables",
+		"hash": "b689fb77af31a7523b6c2cb2defa27a63e613b8b"
+	},
+	{
+		"version": "1.6.1+build15",
+		"date": "2024-12-22",
+		"comment": "1.6.1+build15 fix: fixed logic for applying styles & images",
+		"hash": "b8bebb8b62ebae8279ba1ed37101ff54d639885a"
+	},
+	{
+		"version": "1.6.1+build16",
+		"date": "2024-12-22",
+		"comment": "1.6.1+build16 fix: fixed logic for applying styles & images",
+		"hash": "8811b6f822fb40506fd899f91302762400208748"
+	},
+	{
+		"version": "1.6.1+build17",
+		"date": "2024-12-22",
+		"comment": "1.6.1+build17 fix: fixed logic for applying styles & images",
+		"hash": "ef4697dd739f55dcba26ed678d57932f5ea5fe1a"
+	},
+	{
+		"version": "1.6.1+build18",
+		"date": "2024-12-22",
+		"comment": "1.6.1+build18 fix: fixed logic for applying styles & images",
+		"hash": "cab31243bb9f49c5571bd95cf88f26fbd818da3f"
+	},
+	{
+		"version": "1.6.1+build19",
+		"date": "2024-12-22",
+		"comment": "1.6.1+build19 fix: fixed logic for applying styles & images",
+		"hash": "09d2b7613fabcd4b368da3443265e68fa587384c"
+	},
+	{
+		"version": "1.6.1+build20",
+		"date": "2024-12-22",
+		"comment": "1.6.1+build20 fix: fixed logic for applying styles & images",
+		"hash": "6c574fed8b5c580492227abcf43e937daedb4cee"
+	},
+	{
+		"version": "1.6.1+build21",
+		"date": "2024-12-22",
+		"comment": "1.6.1+build21 fix: fixed logic for applying styles & images",
+		"hash": "96e4db8455489ab87bcb84968b7264d04dcf2551"
+	},
+	{
+		"version": "1.6.1+build22",
+		"date": "2025-01-07",
+		"comment": "1.6.1+build22 feat: added namespace for userscript; fixed in-battle chat input block position",
+		"hash": "7c2e9db06060c4e9ee81688ce93530e3d4ded895"
+	},
+	{
+		"version": "1.6.1+build23",
+		"date": "2025-01-23",
+		"comment": "1.6.1+build23 feat: changed loading screen css",
+		"hash": "f55a7e1fb089a31960f26090fa1b360c36ae7818"
+	},
+	{
+		"version": "1.6.1+build24",
+		"date": "2025-01-23",
+		"comment": "1.6.1+build24 fix: fixed top panel bugs in new shop window feat: added support for ruby currency, changed colors for currency values' texts",
+		"hash": "6fdb31fe2667a37882b225f26ee2c33eb868683e"
+	},
+	{
+		"version": "1.6.1+build25",
+		"date": "2025-01-23",
+		"comment": "1.6.1+build25 feat: added body css on loading screen",
+		"hash": "acde640aa17fde6cd20556ab88e4f738a7510353"
+	},
+	{
+		"version": "1.6.1+build26",
+		"date": "2025-01-23",
+		"comment": "1.6.1+build26 fix: fixed custom chat type select's text's font",
+		"hash": "f7bf318ab68e20c0123dcd3f615fb558ca6f6a53"
+	},
+	{
+		"version": "1.6.1+build27",
+		"date": "2025-01-23",
+		"comment": "1.6.1+build27 fix: fixed custom empy contracts screen (texts on center)",
+		"hash": "23c8d9c00025ed73ab5383c864471c136004a788"
+	},
+	{
+		"version": "1.6.1+build28",
+		"date": "2025-01-24",
+		"comment": "1.6.1+build28 fix: fixed clan action buttons container, text and buttons",
+		"hash": "b82254f656497174d427c6949c4e009cd02d2a9f"
+	},
+	{
+		"version": "1.6.1+build29",
+		"date": "2025-01-25",
+		"comment": "1.6.1+build29 fix: fixed clans one button styles (broken since 1.6.1+build28) feat: added some new styles for body on loading screen event",
+		"hash": "7deea3101674cc9068bf598a9c54fa75400dff12"
+	},
+	{
+		"version": "1.6.1+build30",
+		"date": "2025-01-25",
+		"comment": "1.6.1+build30 fix: fixed shop icon for quests that require something to buy",
+		"hash": "286ed7bdd59908808940447629564e805e815eca"
+	},
+	{
+		"version": "1.6.1+build31",
+		"date": "2025-01-25",
+		"comment": "1.6.1+build31 feat: added sorting icon restyling",
+		"hash": "38a3a9a250521e594ee97c3bf83a405aa2bbe17f"
+	},
+	{
+		"version": "1.6.1+build31",
+		"date": "2025-01-25",
+		"comment": "1.6.1+build31 fix: styles for sorting icon",
+		"hash": "7b0de345cab4615ed32de9d4189ec42523f87383"
+	},
+	{
+		"version": "1.6.1+build32",
+		"date": "2025-01-25",
+		"comment": "1.6.1+build32 fix: styles for sorting icon",
+		"hash": "e796b3f8bc8e19b9e78a33e15d81ccbc79a8f547"
+	},
+	{
+		"version": "1.6.1+build33",
+		"date": "2025-01-25",
+		"comment": "1.6.1+build33 feat: one more update for body styles on loading screen; removed load of broken logic for sort icon (-> to do)",
+		"hash": "ece3d4401d96b21faa31b7a8fb53c77300eca1a0"
+	},
+	{
+		"version": "1.6.1+build34",
+		"date": "2025-01-25",
+		"comment": "1.6.1+build34 fix: fixed sort icon logic, now it should work correctly",
+		"hash": "4ab4374b2e974dbe099c4157ae9760f8dfdc34fc"
+	},
+	{
+		"version": "1.6.1+build35",
+		"date": "2025-01-26",
+		"comment": "1.6.1+build35 feat: added highlight for selected possible reward card in possible rewards screen",
+		"hash": "57f2e6181aef435c2668488812ee45206f5c12fb"
+	},
+	{
+		"version": "1.6.1+build36",
+		"date": "2025-01-26",
+		"comment": "1.6.1+build36 feat: logic optimization for selected possible reward highlight",
+		"hash": "32fc801368b55f1e8b9d2a0b7b2b32fd0a1265bf"
+	},
+	{
+		"version": "1.6.1+build37",
+		"date": "2025-01-26",
+		"comment": "1.6.1+build37 feat: minor userscript update",
+		"hash": "a40f398979d43b49416373321e65bbfec86ba30d"
+	},
+	{
+		"version": "1.6.1+build38",
+		"date": "2025-01-27",
+		"comment": "1.6.1+build38 feat: styled scroll arrows on possible rewards screen",
+		"hash": "654464ead0634ec92d2dd6ea79447379ae04abce"
+	},
+	{
+		"version": "1.6.1+build39",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build39 feat: main userscript refactoring; new logic for checking for new versions in the github and updating to a STABLE new version",
+		"hash": "6963ca4f1301e74ba8308eb0f52293105cdd2feb"
+	},
+	{
+		"version": "1.6.1+build40",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build40 feat: new logic for checking for new versions in the github and updating to a STABLE new version (changed & fixed) - manual stable.json file with fallback to severitium.user.js url in repo",
+		"hash": "41eb4d5c97a930c6ecc46b3564212bc2e548b4a3"
+	},
+	{
+		"version": "1.6.1+build41",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build41 feat: some comments for main userscript",
+		"hash": "0b1da1c164a42d114e8aa189f478e00f153bfb69"
+	},
+	{
+		"version": "1.6.1+build42",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build42 feat: updated loading screen canvas logic to display correctly of each monitor (the same as common container canvas); added common container animated canvas to make backgrounds more interactive",
+		"hash": "25334bc1d4caeed548eb0b593999a33e8b1de832"
+	},
+	{
+		"version": "1.6.1+build43",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build43 feat: gear canvas (common container) still has memory leak - removed; fixed acceleration for star canvas (loading screen)",
+		"hash": "309dba2602ba7ae221c1c5394eae1ac9ef2edf85"
+	},
+	{
+		"version": "1.6.1+build44",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build44 fix: fixed problems with loading screen canvas, hopefully it won't get faster and faster",
+		"hash": "7bce94c3cf4e3fb622d478267973e753f4a4e27a"
+	},
+	{
+		"version": "1.6.1+build45",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build45 fix: I pray to god that the loading screen kanvas works fine.",
+		"hash": "3c969d756f207eed6e7d26d8d9298ae8e6ff9b06"
+	},
+	{
+		"version": "1.6.1+build46",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build46 fix: the loading screen canvas is FIXED",
+		"hash": "2ca63412efd5668e9b78ed07505748b3c8406804"
+	},
+	{
+		"version": "1.6.1+build47",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build47 feat: optimized loading screen canvas animations; used Breezium for the chat custom select in lobby",
+		"hash": "313dce15dd4bde31adca4d41eed3cab08b962d31"
+	},
+	{
+		"version": "1.6.1+build48",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build48 fix: fixed loading screen semi-transparent background (not needed)",
+		"hash": "19744122fdfbc66d22bc153e74562fb54d4b26a9"
+	},
+	{
+		"version": "1.6.1+build49",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build49 feat: upgraded styles for chat window (lobby) fix: fixed chat link for system messages",
+		"hash": "6fa370963654f3b3e56e3a1502714c83aff579af"
+	},
+	{
+		"version": "1.6.1+build50",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build50 fix: fixed chat custom select behavior when clan tab is opened and user has clicked on select",
+		"hash": "adf4320496d596f213dfc5f933bb08ddf8efb2f4"
+	},
+	{
+		"version": "1.6.1+build51",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build51 fix: minor fixed for chat window",
+		"hash": "fdcc4b82e84d9a037e30993878f08311c67fdce7"
+	},
+	{
+		"version": "1.6.1+build52",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build52 feat: updated chat window BreeziumSelect usage",
+		"hash": "f94a7d2fb1d3dd6ae8c221350e262883ff497889"
+	},
+	{
+		"version": "1.6.1+build52",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build52 MAIN USERSCRIPT",
+		"hash": "36ea2ddb5e9139529123792f202518ffd11d15a0"
+	},
+	{
+		"version": "1.6.1+build53",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build53 feat: chat window js code minor refactor",
+		"hash": "b33e854e6b466be8494d333c44dcb7be703a2296"
+	},
+	{
+		"version": "1.6.1+build54",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build54 Use latest BreeziumSelect",
+		"hash": "1187271a0b209abc40b5a587b13089524b5e5de5"
+	},
+	{
+		"version": "1.6.1+build55",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build55 feat: updated chat window styles fix: fixed common sort styles",
+		"hash": "21a61d0065671d82b34abf97a57f8511996b713b"
+	},
+	{
+		"version": "1.6.1+build56",
+		"date": "2025-01-28",
+		"comment": "1.6.1+build56 fix: fixed common sort activation logic",
+		"hash": "df54fed41cae25269e67c64d5110807714d3bcc9"
+	},
+	{
+		"version": "1.6.1+build57",
+		"date": "2025-01-30",
+		"comment": "1.6.1+build57 feat: updated some svg icons; because of that updated: ClanModal, ExistingClan, JoinClan, FriendsScreen, InviteScreen, Modal, TopPanel, CommonChallenges, QuestsScreen modules fixed: entrance links close icon; top menu item styles",
+		"hash": "bb8ac0cc33a7ea104b44f08b90565c60ccf231c9"
+	},
+	{
+		"version": "1.6.1+build58",
+		"date": "2025-01-30",
+		"comment": "1.6.1+build58 feat: updated possible rewards styles and script to detect active element fix: fixed General section README (common sort added); battle chat (wrong positioning)",
+		"hash": "a402b516470f999e2d643cdc9e564e2f151a111d"
+	},
+	{
+		"version": "1.6.1+build59",
+		"date": "2025-01-30",
+		"comment": "1.6.1+build59 feat: added new css variables; added new module: PossibleRewardsMenu - top menu with rarity buttons on possible rewards screen",
+		"hash": "d814805bb0cccb04c1d72deab930b3f789f4e9c7"
+	},
+	{
+		"version": "1.6.1+build60",
+		"date": "2025-01-30",
+		"comment": "1.6.1+build60 fix: fixed possible rewards menu logic",
+		"hash": "a49b7ead05d19dc55081556146b4d45dafa5e2e0"
+	},
+	{
+		"version": "1.6.1+build61",
+		"date": "2025-01-30",
+		"comment": "1.6.1+build61 fix: fixed possible rewards menu logic (x2)",
+		"hash": "c569bf326007c03d576ffecac4f43b94f3073e54"
+	},
+	{
+		"version": "1.6.1",
+		"date": "2025-01-30",
+		"comment": "README 1.6.1 stable",
+		"hash": "d5074369af541ce1ddc8df95250c12ba6cb47992"
+	},
+	{
+		"version": "1.6.1+build62",
+		"date": "2025-01-30",
+		"comment": "1.6.1+build62 feat: updated some svg icons; because of that updated: CommonChallenges, PlayButton modules",
+		"hash": "4be19a2d05e94482a56e32ad510c8999ac04a7ee"
+	},
+	{
+		"version": "1.6.1+build63",
+		"date": "2025-01-30",
+		"comment": "1.6.1+build63 feat: updated battle type styles (now works also for unavailable/special battle types)",
+		"hash": "5fd83373293b9780e0eeec35a85367e248370e8c"
+	},
+	{
+		"version": "1.6.1+build63",
+		"date": "2025-01-30",
+		"comment": "1.6.1+build63 fix: fixed friend screen buttons",
+		"hash": "795fe3e5f81fd71daef18d813acf70fd772b5aa6"
+	},
+	{
+		"version": "1.6.1+build65",
+		"date": "2025-01-31",
+		"comment": "1.6.1+build65 feat: updated README for quests contracts screen; added new module called 'successful purchase' to the shop section",
+		"hash": "0d7a8a59fdd93f502d49b311676bf94ecbf5703d"
+	},
+	{
+		"version": "1.6.1+build66",
+		"date": "2025-01-31",
+		"comment": "1.6.1+build66 feat: updated modal styles (tooltip)",
+		"hash": "b15bdb06a79f7bd1d1da0913cb043e04c494c05b"
+	},
+	{
+		"version": "1.6.1+build67",
+		"date": "2025-02-01",
+		"comment": "1.6.1+build67 feat: updated chat window styles; updated scrolling cards styles; added main shop screen styles; updated json to load css, added: Shop/SuccessfulPurchase, Shop/MainScreen",
+		"hash": "9b9cc5473ae13ae38261306ef8ed0261de5042e7"
+	},
+	{
+		"version": "1.6.1+build68",
+		"date": "2025-02-01",
+		"comment": "1.6.1+build68 fix: fixed link in json to Shop/MainScreen CSS",
+		"hash": "a1df0cc4f8c2069da9a369d2ba2be15bb3a4be47"
+	},
+	{
+		"version": "1.6.1+build69",
+		"date": "2025-02-01",
+		"comment": "1.6.1+build69 feat: added logger to customize the console logs.",
+		"hash": "cf3544b69e30ee60e3151e54668611ce43e3efd7"
+	},
+	{
+		"version": "1.6.1+build70",
+		"date": "2025-02-01",
+		"comment": "1.6.1+build70 fix: corrected the link to the logger",
+		"hash": "3a5f72fd5ccd4be47b5194ad4733d482f4e3cec1"
+	},
+	{
+		"version": "1.6.1+build71",
+		"date": "2025-02-01",
+		"comment": "1.6.1+build71 fix: fixed logger and it's usage",
+		"hash": "0fcc9aa474b783011ff390d0e4a697b16bbc7b37"
+	},
+	{
+		"version": "1.6.1+build72",
+		"date": "2025-02-01",
+		"comment": "1.6.1+build72 feat: updated logger and just a bit improved the main userscript fix: fixed main userscript",
+		"hash": "443d779d6c598f9d4cd19eb7c6a324677a59df53"
+	},
+	{
+		"version": "1.6.1+build73",
+		"date": "2025-02-01",
+		"comment": "1.6.1+build73 feat: updated logger fix: fixed main userscript",
+		"hash": "7e3ede319399b7904ce8dc9ce7edc77308fae319"
+	},
+	{
+		"version": "1.6.1+build74",
+		"date": "2025-02-03",
+		"comment": "1.6.1+build74 refactor: moved extractFileName to a separate module; updated related function calls fix: corrected version comparison logic in update check; disabled fallback update prompt style: fixed indentation in comments",
+		"hash": "cfced2836df700c2abbd85a27ec4ed0e84b4c56b"
+	},
+	{
+		"version": "1.6.1+build75",
+		"date": "2025-02-03",
+		"comment": "1.6.1+build75 feat: added SectionMenu module for shop navigation; integrated CSS and JS docs: added README for SectionMenu with usage details style: improved shop menu appearance with transparency and hover effects perf: optimized state handling for menu items",
+		"hash": "6692e2bdc0c53b2a4bcdd992d7df87810127480a"
+	},
+	{
+		"version": "1.6.1+build76",
+		"date": "2025-02-03",
+		"comment": "1.6.1+build76 feat: added shop footer section; improved battle type UI with additional elements fix: corrected border color for possible rewards hover effect style: adjusted shop layout heights and positioning for better alignment",
+		"hash": "8d218131550baa308b4614b786918aeca28dd5e2"
+	},
+	{
+		"version": "1.6.1+build76",
+		"date": "2025-02-03",
+		"comment": "1.6.1+build76 userscript",
+		"hash": "3df5413df038f0e67ba64aa064aa054b9fcaff51"
+	},
+	{
+		"version": "1.6.1+build77",
+		"date": "2025-02-03",
+		"comment": "1.6.1+build77 refactor: replaced arrays with Maps for better performance and readability; optimized element tracking logic by using a MutationObserver instead of requestAnimationFrame",
+		"hash": "5d193ddddfa112f738c6fbe44e57f9b4394f5b5e"
+	},
+	{
+		"version": "1.6.1+build78",
+		"date": "2025-02-03",
+		"comment": "1.6.1+build78 perf: optimize code in multiple components: Containers/PossibleRewardsMenu/PossibleRewardsMenu, Containers/PossibleRewardsScreen/PossibleRewardsScreen, Entrance/EntranceForms, Entrance/EntranceIcons, Entrance/EntranceLinks, General/CommonSort, General/LoadingScreen, General/NotificatorIcon, General/PlayerContextMenu, Lobby/BattleSelect/BattleType, Lobby/ChatWindow, Lobby/PlayButton, Quests/QuestsScreen",
+		"hash": "b4a65536bb5661b8da68a149de5a46c90299f82b"
+	},
+	{
+		"version": "1.6.1+build79",
+		"date": "2025-02-03",
+		"comment": "1.6.1+build79 fix: fixed loading screen (since my optimization broke it)",
+		"hash": "bee95cff352725edbd0b5674ecfc3f62c2811d85"
+	},
+	{
+		"version": "1.6.1+build80",
+		"date": "2025-02-03",
+		"comment": "1.6.1+build80 fix: fixed chat window select selector; fixed unitialized _extractFileName()",
+		"hash": "ff41168931296fe09e527b93513e264ae8db9184"
+	},
+	{
+		"version": "1.6.1+build81",
+		"date": "2025-02-03",
+		"comment": "1.6.1+build81 feat: created more complex selector for shop section menu items",
+		"hash": "5a84470ac593f25d8854d99840993cbe30f17d76"
+	},
+	{
+		"version": "1.6.1+build82",
+		"date": "2025-02-03",
+		"comment": "1.6.1+build82 fix: updated selector for shop section menu items, now should work fine; fixed existing clan buttons on hover",
+		"hash": "9cedd7f56905383155f9c75b6959aa56df7aaadb"
+	},
+	{
+		"version": "1.6.1+build83",
+		"date": "2025-02-04",
+		"comment": "1.6.1+build83 feat: added Shop/ShopWindow styles that restyles offers, buttons and more on the shop section screen; added new variables for in-game currencies (crystals, tancoins, rubies) fix: fixed border radius for all customized timers",
+		"hash": "92dc5fe2872fa926892278fb63b21341d18c384e"
+	},
+	{
+		"version": "1.6.1+build84",
+		"date": "2025-02-04",
+		"comment": "1.6.1+build84 feat: news: restyled read article and added new article marks; play button: finally restyled ugly button text; changed quests screen styles a bit",
+		"hash": "4ad79adf84feaf9a099bb3e6d6e04d755d54f5c9"
+	},
+	{
+		"version": "1.6.1+build85",
+		"date": "2025-02-09",
+		"comment": "1.6.1+build85 feat: restyled loading screen, created animations for the text block and the canvas for it; changed and prefixed shop window css code",
+		"hash": "d9932145eb6eb035e2031618dc585ba811aa4dd9"
+	},
+	{
+		"version": "1.6.1+build86",
+		"date": "2025-02-09",
+		"comment": "1.6.1+build86 feat: updated gradient for the star canvas loading screen fix: loading screen usage fix in the main userscript",
+		"hash": "2b21a2948ee2841132f72327777169b760d0765c"
+	},
+	{
+		"version": "1.6.1+build87",
+		"date": "2025-02-12",
+		"comment": "1.6.1+build87 feat: updated shop window styles; added purchase screen styling",
+		"hash": "f50d4e38b56e1146640cd5424c05032e87c0dd41"
+	},
+	{
+		"version": "1.6.1+build88",
+		"date": "2025-02-12",
+		"comment": "1.6.1+build88 fix: test fix for possible rewards screen",
+		"hash": "6eb1d1eb6da6658465971d2cd2fd9a915c96e0de"
+	},
+	{
+		"version": "1.6.1+build89",
+		"date": "2025-02-12",
+		"comment": "1.6.1+build89 fix: test fix for possible rewards screen (2)",
+		"hash": "a1fa50d445f7e57bfb480fd63aa17b887fc6b531"
+	},
+	{
+		"version": "1.6.1+build90",
+		"date": "2025-02-12",
+		"comment": "1.6.1+build90 feat: added translations for loading screen info banner",
+		"hash": "82dcb41d76935413fbd0ff030fbb3614d0c48e1f"
+	},
+	{
+		"version": "1.6.1+build91",
+		"date": "2025-02-12",
+		"comment": "1.6.1+build91 fix: test fix for possible rewards screen (3)",
+		"hash": "2d0e0089f73f909a37c84505cdf9df49a4c02704"
+	},
+	{
+		"version": "1.6.1+build92",
+		"date": "2025-02-12",
+		"comment": "1.6.1+build92 fix: fixed link to css purchase screen",
+		"hash": "35b54ad89581f0bc4690d581261773dd7031f7d4"
+	},
+	{
+		"version": "1.6.1+build93",
+		"date": "2025-02-12",
+		"comment": "1.6.1+build93 feat: little code refactoring for possible rewards menu (readability improve) fix: test fix for possible rewards screen (4)",
+		"hash": "786eb29567d63b786279989468643a0cbe7d1c1d"
+	},
+	{
+		"version": "1.6.1+build94",
+		"date": "2025-02-12",
+		"comment": "1.6.1+build94 fix: test fix for possible rewards screen (5)",
+		"hash": "5ec0813f980da7e9a458838b4c7f8d8938579646"
+	},
+	{
+		"version": "1.6.1+build95",
+		"date": "2025-02-13",
+		"comment": "1.6.1+build95 fix: fixed small entrance icons",
+		"hash": "95108f7513ddbfcd6c5ba273a1a2a8377a46ec0c"
+	},
+	{
+		"version": "1.6.1+build96",
+		"date": "2025-02-13",
+		"comment": "1.6.1+build96 feat: updated variables; added new svg icons",
+		"hash": "7401f69ffa627b2394ea72eb82d414be30e28329"
+	},
+	{
+		"version": "1.6.1+build97",
+		"date": "2025-02-16",
+		"comment": "1.6.1+build97 feat: partially updated interface of modal windows for currency exchange",
+		"hash": "c120c75b8f60552977ff9ed9dc7c8ef5b9557c76"
+	},
+	{
+		"version": "1.6.1+build98",
+		"date": "2025-02-22",
+		"comment": "1.6.1+build98 fix: fixed superquest button container hight",
+		"hash": "a3c57e673e0ca5a9f59d00f3530806f92ace2f13"
+	},
+	{
+		"version": "1.6.1+build99",
+		"date": "2025-02-22",
+		"comment": "1.6.1+build99 fix: fixed loading screen background override",
+		"hash": "a3dc003df721e50b69f0247d3353452824924cd7"
+	},
+	{
+		"version": "1.6.1+build100",
+		"date": "2025-02-22",
+		"comment": "1.6.1+build100 feat: updated the value of border-radius for hotkey hint blocks everywhere to meet the theme variable",
+		"hash": "34885cddb886975f70ec5b21acd7a3a02b7e0816"
+	},
+	{
+		"version": "1.6.1+build101",
+		"date": "2025-02-22",
+		"comment": "1.6.1+build101 feat: added support for range inputs; changed all disabled buttons everywhere; updated modal styles to correctly display the convert modal",
+		"hash": "62237c82eb645959b6dd3c15ec1a6ba28514014a"
+	},
+	{
+		"version": "1.6.1+build102",
+		"date": "2025-02-22",
+		"comment": "1.6.1+build102 feat: optimized modal css; fixed superquest button (x2)",
+		"hash": "0328e1e6552ec29c9f017664112eaaf94b9ba7f7"
+	},
+	{
+		"version": "1.6.1+build103",
+		"date": "2025-02-24",
+		"comment": "1.6.1+build103 feat: updated main theme color",
+		"hash": "4d8c4e8a50ab64b34b6f9e58880ffcbaafc37afa"
+	},
+	{
+		"version": "1.6.1+build104",
+		"date": "2025-02-24",
+		"comment": "1.6.1+build104 feat: updated main theme color (back); updated battle chat, and friend nickname in chat",
+		"hash": "98fd65d2d5661aef514fbd112a248f9851fe8c5b"
+	},
+	{
+		"version": "1.6.1+build105",
+		"date": "2025-02-24",
+		"comment": "1.6.1+build105 feat: updated loading screen - added loading bar to display the number of loaded modules",
+		"hash": "c6abe35f48e2a0dcef5283d407b219bbf9a0e680"
+	},
+	{
+		"version": "1.6.1+build106",
+		"date": "2025-02-24",
+		"comment": "1.6.1+build106 fix: fixed loading screen module counting",
+		"hash": "49d18cfe26a1aaf21beb4c33fe56f745a977796b"
+	},
+	{
+		"version": "1.6.1+build107",
+		"date": "2025-02-24",
+		"comment": "1.6.1+build107 fix: fixed loading screen",
+		"hash": "aed03df4f29965984a6cbe09aa68d26c3b8c531e"
+	},
+	{
+		"version": "1.6.1+build108",
+		"date": "2025-02-24",
+		"comment": "1.6.1+build108 fix: fixed loading screen",
+		"hash": "c1d0da4f1561406c3b3db77e3b40bad4297d71c9"
+	},
+	{
+		"version": "1.6.1+build109",
+		"date": "2025-02-24",
+		"comment": "1.6.1+build109 fix: fixed loading screen",
+		"hash": "3159e2838a195778b945c7c198a2b308e4209ad2"
+	},
+	{
+		"version": "1.6.1+build110",
+		"date": "2025-02-24",
+		"comment": "1.6.1+build110 fix: fixed loading screen",
+		"hash": "3cb2ec1cc44d0c0f54e6fcba89fed554d4a6ea38"
+	},
+	{
+		"version": "1.6.1+build111",
+		"date": "2025-02-24",
+		"comment": "1.6.1+build111 fix: fixed loading screen",
+		"hash": "77735db7a4a5c07bbc5c38b1834b0edb1b035fbf"
+	},
+	{
+		"version": "1.6.1+build112",
+		"date": "2025-02-24",
+		"comment": "1.6.1+build112 fix: fixed loading screen",
+		"hash": "69c137ef274265cd4e59d7689e76180a69310e80"
+	},
+	{
+		"version": "1.6.1+build113",
+		"date": "2025-02-25",
+		"comment": "1.6.1+build113 feat: shop main screen timer styles added fix: fixed css comments for modal",
+		"hash": "a4346a18d3724d151a9db55b0a6f0767cf8b4a37"
+	},
+	{
+		"version": "1.6.1+build114",
+		"date": "2025-02-26",
+		"comment": "1.6.1+build114 feat: fetchAsText and fetchImageAsBase64 functions are combined into fetchResource",
+		"hash": "87d6d6234395183698dd9a9f31b2994350c47c47"
+	},
+	{
+		"version": "1.6.1+build115",
+		"date": "2025-02-26",
+		"comment": "1.6.1+build115 feat: updated the behavior of loading screen",
+		"hash": "4b0e35beffae4b170a8118a0075876aa832c3558"
+	},
+	{
+		"version": "1.6.1+build116",
+		"date": "2025-02-26",
+		"comment": "1.6.1+build116 feat: optimized the main userscript",
+		"hash": "83d9a542a9da1329b20b3287be00318bf6d92c78"
+	},
+	{
+		"version": "1.6.1+build117",
+		"date": "2025-02-26",
+		"comment": "1.6.1+build117 feat: updated some READMEs fix: fixed PurchaseScreen userscript name",
+		"hash": "90ded2fd7dbc11fc51cab9eedc453bc4db5b90c1"
+	},
+	{
+		"version": "1.6.1+build118",
+		"date": "2025-02-26",
+		"comment": "1.6.1+build118 feat: updated loading screen logic (for loading bar) and also prettified html and css inside js code",
+		"hash": "2f9c015f553722e0d64334a7dcefd17513d61295"
+	},
+	{
+		"version": "1.6.1+build119",
+		"date": "2025-02-26",
+		"comment": "1.6.1+build119 feat: updated loading screen logic (for loading bar) (x2), added appreading animation",
+		"hash": "f35ba299c1093db2c6e0ae7839d17686aa24854d"
+	},
+	{
+		"version": "1.7.0",
+		"date": "2025-02-26",
+		"comment": "1.7.0 New patch available",
+		"hash": "ee0221df9c445db069a4c9863737ed7043a3bb8f"
+	},
+	{
+		"version": "1.7.0",
+		"date": "2025-02-26",
+		"comment": "1.7.0 Stable version update",
+		"hash": "a7a5e44ed53f9db7f18722de8033ab3fb4272461"
+	},
+	{
+		"version": "1.7.0+build1",
+		"date": "2025-02-26",
+		"comment": "1.7.0+build1 fix: fixed Logger class",
+		"hash": "ab8c143732a533e22feb6594b4664027ab8a3481"
+	},
+	{
+		"version": "1.7.0",
+		"date": "2025-02-26",
+		"comment": "1.7.0 Changelog fix",
+		"hash": "a6e35151fd9e3efa62e8ddde9facf91522afcb0e"
+	},
+	{
+		"version": "1.7.0",
+		"date": "2025-02-26",
+		"comment": "1.7.0 Changelog fix",
+		"hash": "11a08fed6128fde24970ed5e3cbfff99fc80a5f6"
+	},
+	{
+		"version": "1.7.0",
+		"date": "2025-02-26",
+		"comment": "1.7.0 README stable link update",
+		"hash": "30832f8befe3205968ad12c38902242804862762"
+	},
+	{
+		"version": "1.7.0+build2",
+		"date": "2025-02-28",
+		"comment": "1.7.0+build2 fix: fixed links in NewsWindow",
+		"hash": "a0b8f848b5ae432c8527c212aae2b9cb065b7f21"
+	},
+	{
+		"version": "1.7.0+build3",
+		"date": "2025-02-28",
+		"comment": "1.7.0+build3 fix: fixed report clan button",
+		"hash": "d9f8f15732ac8b7baed5991868b744ec0b12659b"
+	},
+	{
+		"version": "1.7.0+build4",
+		"date": "2025-03-06",
+		"comment": "1.7.0+build4 feat: updated the main userscript loadResources logic to check if the season has changed",
+		"hash": "efb3749b5e8bb8f53e9b6e11f7c8257596c52ae5"
+	},
+	{
+		"version": "1.7.0+build5",
+		"date": "2025-03-06",
+		"comment": "1.7.0+build5 feat: updated minified logger version",
+		"hash": "132be6a8524dac26c0bf704d27639a2dd4670a3b"
+	},
+	{
+		"version": "1.7.0+build6",
+		"date": "2025-03-06",
+		"comment": "1.7.0+build6 feat: updated the main userscript loadResources logic to check if the season has changed (x2)",
+		"hash": "3100992debdfc7f7479f9ee201d365dcfda5cd36"
+	},
+	{
+		"version": "1.7.1",
+		"date": "2025-03-06",
+		"comment": "1.7.1",
+		"hash": "23ec03baa82e58a4e20cff343abdae6fed3aa4f6"
+	},
+	{
+		"version": "1.7.1",
+		"date": "2025-03-06",
+		"comment": "1.7.1",
+		"hash": "c53f96334a61d06547ac581bbc91a41aa06ad0e4"
+	},
+	{
+		"version": "1.7.1+build1",
+		"date": "2025-03-06",
+		"comment": "1.7.1+build1 fix: fixed links in NewsWindow",
+		"hash": "77a19e8652d0aa1f994641346bdd0e5eddacaf1a"
+	},
+	{
+		"version": "1.7.1+build2",
+		"date": "2025-03-06",
+		"comment": "1.7.1+build2 feat: made clan description texts are selectable",
+		"hash": "d0995ffba49319b5c8fe76ccc162112fb28b38b3"
+	},
+	{
+		"version": "1.7.1+build3",
+		"date": "2025-03-12",
+		"comment": "1.7.1+build3 feat: updated styles for disabled BattleType cards",
+		"hash": "c592a57965bedbbb06a88efff97123f63378be20"
+	},
+	{
+		"version": "1.7.1+build4",
+		"date": "2025-03-13",
+		"comment": "1.7.1+build4 feat: removed filters for sound button on entrance screen",
+		"hash": "2af67ad27068059cf573befcf4ab70e94afa9859"
+	},
+	{
+		"version": "1.7.1+build5",
+		"date": "2025-03-14",
+		"comment": "1.7.1+build5 feat: restyled display of elements inside shop promocode activation container",
+		"hash": "3890ef6c6d7db77f26cd1a83cce34e16df1541b3"
+	},
+	{
+		"version": "1.7.1+build6",
+		"date": "2025-03-22",
+		"comment": "1.7.1+build6 feat: added text highlight animation for lobbys main menu item",
+		"hash": "76f9f7c58cf6696493ef9ed9c79e44c96a33efb9"
+	},
+	{
+		"version": "1.7.1+build7",
+		"date": "2025-03-24",
+		"comment": "1.7.1+build7 fix: fixed shop purchase screen to add the custom styles for payment screen",
+		"hash": "ad10fb54a82b93a32de0ba1a2a486fb71de30a86"
+	},
+	{
+		"version": "1.7.1+build8",
+		"date": "2025-03-24",
+		"comment": "1.7.1+build8 feat: changed the logic of resource refresh when season is changed - now only images will be reloaded",
+		"hash": "8883a5e894f224ffc674adf23cde78a6d9e29cf8"
+	},
+	{
+		"version": "1.7.1+build9",
+		"date": "2025-03-24",
+		"comment": "1.7.1+build9 fix: fixed shop purchase screen to add the custom styles for payment screen (2)",
+		"hash": "b78601a6efadf2a7713f7fc8e57c0142b152bbe5"
+	},
+	{
+		"version": "1.7.1+build10",
+		"date": "2025-03-24",
+		"comment": "1.7.1+build10 feat: changed the logic of resource refresh when season is changed - now only images will be reloaded (2)",
+		"hash": "78e616a919c292e68b0a9d17a5ba087e9c1c794a"
+	},
+	{
+		"version": "1.7.1+build11",
+		"date": "2025-03-24",
+		"comment": "1.7.1+build11 fix: fixed modal container for ReCaptcha block",
+		"hash": "bd3153471e3c33390aa2e4b0a4981e03b392ae73"
+	},
+	{
+		"version": "1.7.1+build12",
+		"date": "2025-03-24",
+		"comment": "1.7.1+build12 feat: styled disabled payment button",
+		"hash": "0608ec334e4f39424ed2692cad5327e2e9cab25e"
+	},
+	{
+		"version": "1.7.1+build13",
+		"date": "2025-03-24",
+		"comment": "1.7.1+build13 feat: styled payment screen (choice of payment type and the choosen payment screen)",
+		"hash": "d861d0574c5e49e0652dd44cd779c71a1488173a"
+	},
+	{
+		"version": "1.7.1+build14",
+		"date": "2025-03-24",
+		"comment": "1.7.1+build14 feat: updated payment screen",
+		"hash": "d303f8db69633063ed760e5610b12bee6d1ca077"
+	},
+	{
+		"version": "1.7.1+build15",
+		"date": "2025-03-25",
+		"comment": "1.7.1+build15 feat: updated top panel",
+		"hash": "91ab709f3970ea5aa971a130433aa500d06480a7"
+	},
+	{
+		"version": "1.7.1+build16",
+		"date": "2025-03-25",
+		"comment": "1.7.1+build16 feat: updated payment screen",
+		"hash": "279cf65dfc73294bdff7cdf0e4ae53a342a72ce9"
+	},
+	{
+		"version": "1.7.1+build17",
+		"date": "2025-03-25",
+		"comment": "1.7.1+build17 feat: added styles for checkbox inputs",
+		"hash": "19bda9c65a6b717e21cbb9a62efa08471c9c6b74"
+	},
+	{
+		"version": "1.7.1+build18",
+		"date": "2025-03-25",
+		"comment": "1.7.1+build18 fix: fixed entrance forms - facebook button on the bottom of the page, added few custom icons (facebook and fallback question mark)",
+		"hash": "7fdcbdeab10d793b4f901a863105b2c424b69d29"
+	},
+	{
+		"version": "1.7.1+build19",
+		"date": "2025-03-25",
+		"comment": "1.7.1+build19 feat: updated entrance forms (2)",
+		"hash": "69448a04bf6d65a81dbe0b6e1d67e1fbffd6dfbc"
+	},
+	{
+		"version": "1.7.1+build20",
+		"date": "2025-03-25",
+		"comment": "1.7.1+build20 feat: updated entrance forms (3)",
+		"hash": "5cd2309cac78016acca49d6a6f120273119e8f23"
+	},
+	{
+		"version": "1.7.1+build21",
+		"date": "2025-03-27",
+		"comment": "1.7.1+build21 feat: updated main shop screen",
+		"hash": "434c10f15242190385dbff4cfafa87419fafaec6"
+	},
+	{
+		"version": "1.7.1+build22",
+		"date": "2025-03-28",
+		"comment": "1.7.1+build22 fix: fixed tooltips (modal)",
+		"hash": "ee6017060a3fae4ee1825a3cb3cb13a363826244"
+	},
+	{
+		"version": "1.7.1+build23",
+		"date": "2025-03-29",
+		"comment": "1.7.1+build23 feat: updated CheckboxInput",
+		"hash": "f4a7ac9d3c2b4337bb43c469caf892c6e34150ce"
+	},
+	{
+		"version": "1.7.1+build24",
+		"date": "2025-03-29",
+		"comment": "1.7.1+build24 feat: updated RangeInput (to observe game inputs only)",
+		"hash": "30a50f17dbf6082d45b03f61a4697cbcfb23d251"
+	},
+	{
+		"version": "1.7.1+build25",
+		"date": "2025-03-29",
+		"comment": "1.7.1+build25 feat: updated CheckboxInput (to observe game inputs only)",
+		"hash": "44375fe171a58e503a25841704a282188e83d3e4"
+	},
+	{
+		"version": "1.7.1+build26",
+		"date": "2025-03-29",
+		"comment": "1.7.1+build26 feat: optimized CheckboxInput",
+		"hash": "e4ae0b6c46758f8edb7836559aed9e509566e11e"
+	},
+	{
+		"version": "1.7.1+build27",
+		"date": "2025-03-29",
+		"comment": "1.7.1+build27 feat: optimized CheckboxInput (2)",
+		"hash": "05664dc932997471ddfd4dff9deb6876fdb533bc"
+	},
+	{
+		"version": "1.7.1+build28",
+		"date": "2025-03-29",
+		"comment": "1.7.1+build28 feat: updated TopPanel",
+		"hash": "de3739d1a1bdc0b5dccdd6c7fad1c4864b0ef86b"
+	},
+	{
+		"version": "1.7.1+build29",
+		"date": "2025-03-29",
+		"comment": "1.7.1+build29 feat: updated Modal (added group modal customization)",
+		"hash": "47338e0c93635e033c9b6cacf4de64108baf611b"
+	},
+	{
+		"version": "1.7.1+build30",
+		"date": "2025-03-30",
+		"comment": "1.7.1+build30 feat: updated QuestsScreen",
+		"hash": "051aee6bfec270f42ce64e23d81872cd32d3d87c"
+	},
+	{
+		"version": "1.7.1+build31",
+		"date": "2025-03-31",
+		"comment": "1.7.1+build31 feat: updated EntranceForms to stylize emal inputs",
+		"hash": "0b84ea7c692d57051c2ce2558401133119d0051f"
+	},
+	{
+		"version": "1.7.1+build32",
+		"date": "2025-03-31",
+		"comment": "1.7.1+build32 feat: updated EntranceForms (custom checkbox)",
+		"hash": "02315f2671ba2f72a1832ea0a51282a71784ecb9"
+	},
+	{
+		"version": "1.7.1+build33",
+		"date": "2025-03-31",
+		"comment": "1.7.1+build33 feat: updated CheckboxInput",
+		"hash": "463ffb51f7a09d5ef5426c0e88979ce54bad6d87"
+	},
+	{
+		"version": "1.7.1+build34",
+		"date": "2025-04-01",
+		"comment": "1.7.1+build34 feat: added GroupBlock to stylize group modal window; updated Modal; updated TopPanel (css optimization)",
+		"hash": "184eb08c594f93906c3cdf767b767732dc1eab8a"
+	},
+	{
+		"version": "1.7.2",
+		"date": "2025-04-01",
+		"comment": "1.7.2",
+		"hash": "9fec6705f66b8f2045d531c1b45e73b696daf927"
+	},
+	{
+		"version": "1.7.2",
+		"date": "2025-04-01",
+		"comment": "1.7.2",
+		"hash": "77c5634db347a9998960b67ca319647124b79b6c"
+	},
+	{
+		"version": "1.7.2+build1",
+		"date": "2025-04-01",
+		"comment": "1.7.2+build1 feat: updated Dropdown",
+		"hash": "0a5dbb9277b657488840548bb321e29ef1e0ef48"
+	},
+	{
+		"version": "1.7.2+build2",
+		"date": "2025-06-02",
+		"comment": "1.7.2+build2 feat: updated discount icon on hover on Main Menu",
+		"hash": "7a4ea654dfd11247e1b84adc180a60993363ed85"
+	},
+	{
+		"version": "1.7.2+build3",
+		"date": "2025-06-02",
+		"comment": "1.7.2+build3 feat: updated shop window cards when they have many items inside",
+		"hash": "76117291551e5337c341c7bf9e11ffbbdc536f7f"
+	},
+	{
+		"version": "1.7.2+build3",
+		"date": "2025-06-06",
+		"comment": "1.7.2+build3 feat: updated shop window cards when they have many items inside",
+		"hash": "bafd304235deb3ba1e70246b466aa428606db376"
+	},
+	{
+		"version": "1.7.2+build4",
+		"date": "2025-07-10",
+		"comment": "1.7.2+build4 feat: added css, js build",
+		"hash": "d7389551d796869d1938d09391ab34463b3c6e4f"
+	},
+	{
+		"version": "1.7.2+build5",
+		"date": "2025-07-10",
+		"comment": "1.7.2+build5 fix: fixed build",
+		"hash": "b059e68964c43494491d5a1114d03ec3880306cb"
+	},
+	{
+		"version": "1.7.2+build5",
+		"date": "2025-07-10",
+		"comment": "1.7.2+build5 build: update release js/css",
+		"hash": "4b39ae5d0089e39e8bab5b8b6b9134d947a7ea73"
+	},
+	{
+		"version": "1.7.2+build6",
+		"date": "2025-07-10",
+		"comment": "1.7.2+build6 fix: fixed build",
+		"hash": "b2cc436c223490d6f9282c74f6fb7a06eefe2cf3"
+	},
+	{
+		"version": "1.7.2+build6",
+		"date": "2025-07-10",
+		"comment": "1.7.2+build6 build: update release js/css",
+		"hash": "61fb67933bf3c5a47474522a196fad0566d7369e"
+	},
+	{
+		"version": "1.7.2+build7",
+		"date": "2025-07-10",
+		"comment": "1.7.2+build7 feat: updated build logic, updated main userscript, updated SeveritiumInjector",
+		"hash": "31920434431eccea10e05501956556c8ebcf8873"
+	},
+	{
+		"version": "1.7.2+build8",
+		"date": "2025-07-10",
+		"comment": "1.7.2+build8 fix: fixed build",
+		"hash": "db2c50c148596cb68d02f2c3713caf5ebb6c35c8"
+	},
+	{
+		"version": "1.7.2+build8",
+		"date": "2025-07-10",
+		"comment": "1.7.2+build8 build: update release js/css",
+		"hash": "5a1d4841f7563f6de806d6fa5d0ba67bca67179e"
+	},
+	{
+		"version": "1.7.2+build9",
+		"date": "2025-07-10",
+		"comment": "1.7.2+build9 fix: fixed build",
+		"hash": "2f92ef0441c014b43a853cc3cd8655f5b62f9a51"
+	},
+	{
+		"version": "1.7.2+build9",
+		"date": "2025-07-10",
+		"comment": "1.7.2+build9 build: update release js/css",
+		"hash": "f7f04602e2e902140eae3d46236289396070df8d"
+	},
+	{
+		"version": "1.7.2+build10",
+		"date": "2025-07-10",
+		"comment": "1.7.2+build10 fix: fixed build and main userscript",
+		"hash": "4f1e82dd59d88981d60a8dd719b8b1ea17c63fd1"
+	},
+	{
+		"version": "1.7.2+build10",
+		"date": "2025-07-10",
+		"comment": "1.7.2+build10 build: update release js/css",
+		"hash": "eeccf4df9f193c3e70979196b3aba0fdbcb9ab93"
+	},
+	{
+		"version": "1.7.2+build11",
+		"date": "2025-07-10",
+		"comment": "1.7.2+build11 fix: main userscript",
+		"hash": "ba9e5997e8983ca51a82923df242131c51d85a48"
+	},
+	{
+		"version": "1.7.2+build11",
+		"date": "2025-07-10",
+		"comment": "1.7.2+build11 build: update release js/css",
+		"hash": "a40b12fec9b0feb0397389ebd41e1df9b72c9d1c"
+	},
+	{
+		"version": "1.7.2+build12",
+		"date": "2025-07-13",
+		"comment": "1.7.2+build12 feat: enhanced file name extraction logic fix: fixed problems with packed files loading",
+		"hash": "7180f694cbf7a3b3ce0d78dfb570d628380a4b06"
+	},
+	{
+		"version": "1.7.2+build13",
+		"date": "2025-07-13",
+		"comment": "1.7.2+build13 feat: updated resource builder",
+		"hash": "83511f9f4b3453d67a3a2d7b52cda5f554107451"
+	},
+	{
+		"version": "1.7.2+build13",
+		"date": "2025-07-13",
+		"comment": "1.7.2+build13 build: update release js/css",
+		"hash": "9ca3cb651f9116ebac2b3a01d8e23f71ff388b05"
+	},
+	{
+		"version": "1.7.2+build14",
+		"date": "2025-07-13",
+		"comment": "1.7.2+build14 feat: deleted common container animation from public use",
+		"hash": "248edd85e4ae46b3ab122bebb27def4c2b8e69d1"
+	},
+	{
+		"version": "1.7.2+build14",
+		"date": "2025-07-13",
+		"comment": "1.7.2+build14 build: update release js/css",
+		"hash": "1f386c04cbb31b5c306865890b18fd4f0e165066"
+	},
+	{
+		"version": "1.7.2+build15",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build15 feat: created auto-release feature",
+		"hash": "78f0c7b8e239da96a5deafef33bc596ef16cc0b2"
+	},
+	{
+		"version": "1.7.2+build16",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build16 feat: moved auto-release and build-theme into one yml: auto-build-and-release",
+		"hash": "d257c587db6f41a031675224ba589a1202eeca18"
+	},
+	{
+		"version": "1.7.2+build16",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build16\\nbuild: release artifacts",
+		"hash": "ea7cb1ea507220831c4b9e32cbef4b36c133002c"
+	},
+	{
+		"version": "1.7.2+build17",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build17 chore: remove release/data — moved to 'builds' branch",
+		"hash": "2c516f6c65cb62a3143b92be2868641d6e4b9cca"
+	},
+	{
+		"version": "1.7.2+build18",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build18 feat: updated auto-build-and-release",
+		"hash": "3df45eeed8e6b37143c108677ef9897870a5a4b0"
+	},
+	{
+		"version": "1.7.2+build18",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build18\\nbuild: release artifacts",
+		"hash": "e3f5df420ba97dabff7ca69aac9594b2ffffead2"
+	},
+	{
+		"version": "1.7.2+build19",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build19 feat: updated auto-build-and-release",
+		"hash": "279ee820ed0a44ba92af9f39f083984945b9bbcc"
+	},
+	{
+		"version": "1.7.2+build19",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build19 build: release artifacts",
+		"hash": "fe7eff7c4f38142bfc8e78eb41ed96e984ade08c"
+	},
+	{
+		"version": "1.7.2+build20",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build20 feat: updated main userscript to take built CSS and JS from 'builds' branch",
+		"hash": "5faf7d6b896abc3568bc8af179eb3777a620cea0"
+	},
+	{
+		"version": "1.7.2+build20",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build20 build: release artifacts",
+		"hash": "1e1b9ba56c6d6b6867e06324ba6da4fc4b42acdc"
+	},
+	{
+		"version": "1.7.2+build21",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build21 feat: updated auto-build-and-release",
+		"hash": "a33a3f3e3578f103c8a404479d6bd248449826ee"
+	},
+	{
+		"version": "1.7.2+build21",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build21 build: release artifacts",
+		"hash": "ad2b593ec9b9fb93f924823e3894e3b0937e066b"
+	},
+	{
+		"version": "1.7.2+build22",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build22 feat: updated EntranceForms",
+		"hash": "da7ca99cd4320b1c9b1bfac0e94703360a25ec74"
+	},
+	{
+		"version": "1.7.2+build22",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build22 build: release artifacts",
+		"hash": "42557b709529973d32472e82b4b1314bc99763f6"
+	},
+	{
+		"version": "1.7.2+build23",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build23 feat: updated PurchaseScreen",
+		"hash": "5296233165cedc884813b1644acefaec684baa41"
+	},
+	{
+		"version": "1.7.2+build23",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build23 build: release artifacts",
+		"hash": "9f42c9edfec463f585ad5a13e8ae4171404e7950"
+	},
+	{
+		"version": "1.7.2+build24",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build24 feat: updated LoadingScreen, BattlePause, Modal (convert coins to rubies), ContainersOpening",
+		"hash": "b2cdc8c5c6ce35a0533ccce90b2ccab6b9c2fb09"
+	},
+	{
+		"version": "1.7.2+build24",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build24 build: release artifacts",
+		"hash": "4e45faf519cb819d4612d19c7244005a8e01bd99"
+	},
+	{
+		"version": "1.7.2+build25",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build25 docs: add detailed inline comments to main userscript functions for better code clarity",
+		"hash": "7d895328227cc2ff9e950ae41d2e9ff21147b15b"
+	},
+	{
+		"version": "1.7.2+build25",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build25 build: release artifacts",
+		"hash": "e663a04c727a3427fb685eb20eaa54f748e44065"
+	},
+	{
+		"version": "1.7.2+build26",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build26 feat: updated link to logo inside main userscript",
+		"hash": "21b14fc33914a3ff48990766159c61e91583dcf7"
+	},
+	{
+		"version": "1.7.2+build26",
+		"date": "2025-07-14",
+		"comment": "1.7.2+build26 build: release artifacts",
+		"hash": "0e1715762477c4f2532cdac25d785abbc56c29dd"
+	},
+	{
+		"version": "1.7.2+build28",
+		"date": "2025-08-25",
+		"comment": "1.7.2+build27 chore(release): trigger new release",
+		"hash": "7925d8e30ef051566fdf13bf1922e9cb82814e21"
+	}
 ]
