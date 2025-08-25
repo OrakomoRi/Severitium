@@ -62,7 +62,8 @@
 	background-color: var(--severitium-dark-transparent-background2);
 	border: var(--severitium-dark-gray-color) .1em solid;
 	border-radius: var(--severitium-border-radius);
-	backdrop-filter: none;
+	-webkit-backdrop-filter: none;
+	        backdrop-filter: none;
 	margin: 0;
 }
 
