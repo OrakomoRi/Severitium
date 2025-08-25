@@ -1,12 +1,8 @@
-# :sparkles: Notificator Icon
+# ✨ Notificator Icon
 
 Styles the notificator icon to match the main color of the theme.
 
-## :bulb: Single module
-
-You can manually use this component by enabling the [script](https://github.com/OrakomoRi/Severitium/blob/main/src/General/NotificatorIcon/NotificatorIcon.user.js?raw=true) in Tampermonkey.
-
-## :information_source: Design
+## ℹ️ Design
 
 ### Notificator icon in lobby's main menu
 

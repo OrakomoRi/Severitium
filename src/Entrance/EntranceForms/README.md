@@ -1,12 +1,8 @@
-# :sparkles: Entrance Forms
+# ✨ Entrance Forms
 
 Changes the default authorization and registration forms. Changes fields for two-factor authentication, account recovery. Changes buttons associated with these forms.
 
-## :bulb: Single module
-
-You can manually use this component by enabling the [script](https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceForms/EntranceForms.user.js?raw=true) in Tampermonkey.
-
-## :information_source: Design
+## ℹ️ Design
 
 ### Registration
 

@@ -1,12 +1,8 @@
-# :sparkles: Common Sort
+# ✨ Common Sort
 
 Stylizes sorting icons in table headers (looks like 2 arrows: up and down).
 
-## :bulb: Single module
-
-You can manually use this component by enabling the [script](https://github.com/OrakomoRi/Severitium/blob/main/src/General/CommonSort/CommonSort.user.js?raw=true) in Tampermonkey.
-
-## :information_source: Design
+## ℹ️ Design
 
 ### Common Sort inactive in friends screen
 

@@ -1,12 +1,8 @@
-# :sparkles: Existing Clan
+# ✨ Existing Clan
 
 Modifies elements of an existing clan. Clan information field, icons, player table, buttons, basically everything that is there.
 
-## :bulb: Single module
-
-You can manually use this component by enabling the [script](https://github.com/OrakomoRi/Severitium/blob/main/src/Clan/ExistingClan/ExistingClan.user.js?raw=true) in Tampermonkey.
-
-## :information_source: Design
+## ℹ️ Design
 
 ### Own clan info
 

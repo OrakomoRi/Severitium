@@ -1,12 +1,8 @@
-# :sparkles: Payment Screen
+# ✨ Payment Screen
 
 Stylizes the store screen where payment methods (with real funds) are presented.
 
-## :bulb: Single module
-
-You can manually use this component by enabling the [script](https://github.com/OrakomoRi/Severitium/blob/main/src/Shop/PaymentScreen/PaymentScreen.user.js?raw=true) in Tampermonkey.
-
-## :information_source: Design
+## ℹ️ Design
 
 ### Choise of payment type
 

@@ -1,12 +1,8 @@
-# :sparkles: Friends Screen
+# ✨ Friends Screen
 
 Stylizes the elements of the friends window. The friends list, adding new friends, and the list of fellow clansmen have all been redesigned to fit the new theme.
 
-## :bulb: Single module
-
-You can manually use this component by enabling the [script](https://github.com/OrakomoRi/Severitium/blob/main/src/Friends/FriendsScreen/FriendsScreen.user.js?raw=true) in Tampermonkey.
-
-## :information_source: Design
+## ℹ️ Design
 
 ### Friends screen
 

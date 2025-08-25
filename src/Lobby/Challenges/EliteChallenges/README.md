@@ -1,12 +1,8 @@
-# :sparkles: Elite Challenges
+# ✨ Elite Challenges
 
 Elite challenges card in the lobby.
 
-## :bulb: Single module
-
-You can manually use this component by enabling the [script](https://github.com/OrakomoRi/Severitium/blob/main/src/Lobby/Challenges/EliteChallenges/EliteChallenges.user.js?raw=true) in Tampermonkey.
-
-## :information_source: Design
+## ℹ️ Design
 
 ### Elite challenges card
 

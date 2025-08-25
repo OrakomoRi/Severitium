@@ -1,12 +1,9 @@
-# :sparkles: Entrance Icons
+# ✨ Entrance Icons
 
 Redesign static boring option selection icons at the entrance into dynamic and matching the main color of the theme.
 
-## :bulb: Single module
 
-You can manually use this component by enabling the [script](https://github.com/OrakomoRi/Severitium/blob/main/src/Entrance/EntranceIcons/EntranceIcons.user.js?raw=true) in Tampermonkey.
-
-## :information_source: Design
+## ℹ️ Design
 
 ### First choice
 

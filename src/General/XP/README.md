@@ -1,12 +1,8 @@
-# :sparkles: XP
+# ✨ XP
 
 Replaces the original XP icon with a custom icon. I find the original one ugly. Also removes the XP icon inside the [top panel](/src/General/TopPanel/README.md).
 
-## :bulb: Single module
-
-You can manually use this component by enabling the [script](https://github.com/OrakomoRi/Severitium/blob/main/src/General/TopPanel/TopPanel.user.js?raw=true) in Tampermonkey.
-
-## :information_source: Design
+## ℹ️ Design
 
 ### XP icon
 
