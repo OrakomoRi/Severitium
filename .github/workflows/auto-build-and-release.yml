@@ -47,7 +47,7 @@ jobs:
                   node-version: "20"
 
             - name: Install minifiers
-              run: npm install -g terser clean-css-cli jq
+              run: npm install -g terser clean-css-cli
 
             - name: Build release files
               run: |
@@ -67,6 +67,9 @@ jobs:
 
             - name: Update versions.json
               run: |
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+                  
                   git fetch origin builds
                   git switch --create builds-temp origin/builds || git switch builds-temp
                   
@@ -84,7 +87,7 @@ jobs:
                   git checkout builds-temp
                   
                   if ! grep -q "\"version\": \"$VERSION\"" versions/versions.json 2>/dev/null; then
-                    jq --arg version "$VERSION" \
+                    /usr/bin/jq --arg version "$VERSION" \
                        --arg date "$COMMIT_DATE" \
                        --arg comment "$COMMIT_MESSAGE" \
                        --arg hash "$COMMIT_HASH" \
