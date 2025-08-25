@@ -147,31 +147,24 @@
 	background-color: var(--severitium-light-transparent-background3);
 }
 
-/* Group button icon */
+/* Group button old icon */
 
-.UserInfoContainerStyle-userTitleContainer > div > [class*="user"i][class*="group"i],
+.UserInfoContainerStyle-userTitleContainer > div > [class*="user"i][class*="group"i] > div,
+.BreadcrumbsComponentStyle-headerContainer > div > div > [class*="user"i][class*="group"i] > div {
+	/* display: none; */
+	width: 1.5em;
+	height: 1.5em;
+}
+
+/* Group button new icon */
+
+/* .UserInfoContainerStyle-userTitleContainer > div > [class*="user"i][class*="group"i],
 .BreadcrumbsComponentStyle-headerContainer > div > div > [class*="user"i][class*="group"i] {
 	width: 1.5em;
 	height: 1.5em;
 	position: relative;
-}
-
-/* Icon of a group button (old icon parts) */
-
-.UserInfoContainerStyle-userTitleContainer > div .UserGroupTitleButtonComponentStyle-commonBlockGroup > div > img,
-.BreadcrumbsComponentStyle-headerContainer > div .UserGroupTitleButtonComponentStyle-commonBlockGroup > div > img {
-	display: none;
-}
-
-/* Icon of a group button (new icon parts) */
-
-.UserInfoContainerStyle-userTitleContainer > div .UserGroupTitleButtonComponentStyle-commonBlockGroup > div,
-.BreadcrumbsComponentStyle-headerContainer > div .UserGroupTitleButtonComponentStyle-commonBlockGroup > div {
-	width: .6em;
-	height: .6em;
-	position: absolute;
-	-webkit-mask-image: url('data:image/svg+xml,<svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="4" fill="white"/></svg>');
-			mask-image: url('data:image/svg+xml,<svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="4" fill="white"/></svg>');
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c6.627 0 12 5.373 12 12H0c0-6.627 5.373-12 12-12m0-12a5.25 5.25 0 1 1 0 10.5A5.25 5.25 0 0 1 12 0"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c6.627 0 12 5.373 12 12H0c0-6.627 5.373-12 12-12m0-12a5.25 5.25 0 1 1 0 10.5A5.25 5.25 0 0 1 12 0"/></svg>');
 	-webkit-mask-size: contain;
 			mask-size: contain;
 	-webkit-mask-position: center;
@@ -179,55 +172,8 @@
 	-webkit-mask-repeat: no-repeat;
 			mask-repeat: no-repeat;
 	background-image: none;
-	transition: background-color .2s ease;
-}
-
-/* First icon part */
-
-.UserInfoContainerStyle-userTitleContainer > div .UserGroupTitleButtonComponentStyle-commonBlockGroup > div:first-child,
-.BreadcrumbsComponentStyle-headerContainer > div .UserGroupTitleButtonComponentStyle-commonBlockGroup > div:first-child {
-	top: 0;
-	left: 50%;
-	-webkit-transform: translateX(-50%);
-	        transform: translateX(-50%);
-}
-
-/* Second icon part */
-
-.UserInfoContainerStyle-userTitleContainer > div .UserGroupTitleButtonComponentStyle-commonBlockGroup > div:nth-of-type(2),
-.BreadcrumbsComponentStyle-headerContainer > div .UserGroupTitleButtonComponentStyle-commonBlockGroup > div:nth-of-type(2) {
-	bottom: 0;
-	left: 0;
-}
-
-/* Third icon part */
-
-.UserInfoContainerStyle-userTitleContainer > div .UserGroupTitleButtonComponentStyle-commonBlockGroup > div:last-child,
-.BreadcrumbsComponentStyle-headerContainer > div .UserGroupTitleButtonComponentStyle-commonBlockGroup > div:last-child {
-	bottom: 0;
-	right: 0;
-}
-
-/* Icon part of a group button (leader) */
-
-.UserInfoContainerStyle-userTitleContainer > div .UserGroupTitleButtonComponentStyle-commonBlockGroup > div:has(img[src*="lead"i]),
-.BreadcrumbsComponentStyle-headerContainer > div .UserGroupTitleButtonComponentStyle-commonBlockGroup > div:has(img[src*="lead"i]) {
-	background-color: var(--severitium-main-color);
-}
-
-/* Icon part of a group button (inactive) */
-
-.UserInfoContainerStyle-userTitleContainer > div .UserGroupTitleButtonComponentStyle-commonBlockGroup > div:has(img[src*="offline"i]),
-.BreadcrumbsComponentStyle-headerContainer > div .UserGroupTitleButtonComponentStyle-commonBlockGroup > div:has(img[src*="offline"i]) {
 	background-color: var(--severitium-light-gray-color);
-}
-
-/* Icon part of a group button (member) */
-
-.UserInfoContainerStyle-userTitleContainer > div .UserGroupTitleButtonComponentStyle-commonBlockGroup > div:has(img[src*="ready"i]),
-.BreadcrumbsComponentStyle-headerContainer > div .UserGroupTitleButtonComponentStyle-commonBlockGroup > div:has(img[src*="ready"i]) {
-	background-color: var(--severitium-green-color);
-}
+} */
 
 /* Rank button */
 
