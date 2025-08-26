@@ -11,7 +11,7 @@
 
 /* Skip opening hotkey */
 
-.AnimationOpenContainerComponentStyle-controlButton .DeviceButtonComponentStyle-blockAlterations > [class*="hotkey"i] {
+.AnimationOpenContainerComponentStyle-controlButton .DeviceButtonComponentStyle-blockAlterations > [class*='hotkey'i] {
 	background: transparent;
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .1em;
@@ -153,7 +153,7 @@
 
 /* Button hotkey */
 
-.ClosedContainerStyle-moreButton h3[class*="hotkey"i] {
+.ClosedContainerStyle-moreButton h3[class*='hotkey'i] {
 	background: transparent;
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .1em;

@@ -114,7 +114,7 @@
 
 /* Possible rewards hotkey */
 
-.ContainerInfoComponentStyle-lootBoxDescriptionContainer .ContainerInfoComponentStyle-rewardDescriptionBlock .ContainerInfoComponentStyle-learnMoreBlock [class*="hotkey"i] {
+.ContainerInfoComponentStyle-lootBoxDescriptionContainer .ContainerInfoComponentStyle-rewardDescriptionBlock .ContainerInfoComponentStyle-learnMoreBlock [class*='hotkey'i] {
 	background: transparent;
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .1em;
@@ -188,7 +188,7 @@
 
 /* Styles for the active item */
 
-.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div[data-state="active"] {
+.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div[data-state='active'] {
     box-shadow: none;
     background-color: var(--severitium-light-transparent-background3);
     border-color: var(--severitium-light-gray-color);
@@ -197,7 +197,7 @@
 
 /* Styles for inactive item */
 
-.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div[data-state="inactive"] {
+.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div[data-state='inactive'] {
     box-shadow: none;
     background-color: var(--severitium-dark-transparent-background2);
     border-color: var(--severitium-gray-color);

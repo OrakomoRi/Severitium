@@ -10,7 +10,7 @@
 
 /* Single item of a menu */
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i]) {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i]) {
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -30,7 +30,7 @@
 
 /* Single item of a menu on hover */
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i]):hover {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i]):hover {
 	background: none;
 	border-width: .1em;
 	border-style: solid;
@@ -41,7 +41,7 @@
 
 /* Active/selected menu item */
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="active"] {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active'] {
 	background: none;
 	background-color: transparent;
 	pointer-events: none;
@@ -49,7 +49,7 @@
 
 /* Inactive menu item */
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="inactive"] {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='inactive'] {
 	background: none;
 	background-color: transparent;
 }
@@ -57,37 +57,37 @@
 /* Active/selected menu item based on icon type */
 /* Icon can be: all, common, uncommon, rare, epic, legendary, mystic */
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="active"]:has(img[src*="all"i]) {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='all'i]) {
 	border-color: var(--severitium-white-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="active"]:has(img[src*="casual"i]) {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='casual'i]) {
 	border-color: var(--severitium-light-gray-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="active"]:has(img[src*="uncommon"i]) {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='uncommon'i]) {
 	border-color: var(--severitium-green-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="active"]:has(img[src*="rare"i]) {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='rare'i]) {
 	border-color: var(--severitium-blue-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="active"]:has(img[src*="epic"i]) {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='epic'i]) {
 	border-color: var(--severitium-purple-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="active"]:has(img[src*="legendary"i]) {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='legendary'i]) {
 	border-color: var(--severitium-yellow-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="active"]:has(img[src*="red"i]) {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='red'i]) {
 	border-color: var(--severitium-red-color);
 }
 
 /* Pseudo-element for hover animation */
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])::after {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -102,75 +102,75 @@
 
 /* Pseudo-element on item hover */
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i]):hover::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i]):hover::after {
 	opacity: .2;
 }
 
 /* Pseudo-element for active item */
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="active"]::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']::after {
 	opacity: .3;
 }
 
 /* Pseudo-element on item hover based on icon type */
 /* Icon can be: all, common, uncommon, rare, epic, legendary, mystic */
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i]):has(img[src*="all"i]):hover::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i]):has(img[src*='all'i]):hover::after {
 	background-color: var(--severitium-white-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i]):has(img[src*="casual"i]):hover::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i]):has(img[src*='casual'i]):hover::after {
 	background-color: var(--severitium-light-gray-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i]):has(img[src*="uncommon"i]):hover::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i]):has(img[src*='uncommon'i]):hover::after {
 	background-color: var(--severitium-green-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i]):has(img[src*="rare"i]):hover::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i]):has(img[src*='rare'i]):hover::after {
 	background-color: var(--severitium-blue-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i]):has(img[src*="epic"i]):hover::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i]):has(img[src*='epic'i]):hover::after {
 	background-color: var(--severitium-purple-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i]):has(img[src*="legendary"i]):hover::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i]):has(img[src*='legendary'i]):hover::after {
 	background-color: var(--severitium-yellow-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i]):has(img[src*="red"i]):hover::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i]):has(img[src*='red'i]):hover::after {
 	background-color: var(--severitium-red-color);
 }
 
 /* Pseudo-element for active item based on icon type */
 /* Icon can be: all, common, uncommon, rare, epic, legendary, mystic */
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="active"]:has(img[src*="all"i])::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='all'i])::after {
 	background-color: var(--severitium-white-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="active"]:has(img[src*="casual"i])::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='casual'i])::after {
 	background-color: var(--severitium-light-gray-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="active"]:has(img[src*="uncommon"i])::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='uncommon'i])::after {
 	background-color: var(--severitium-green-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="active"]:has(img[src*="rare"i])::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='rare'i])::after {
 	background-color: var(--severitium-blue-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="active"]:has(img[src*="epic"i])::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='epic'i])::after {
 	background-color: var(--severitium-purple-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="active"]:has(img[src*="legendary"i])::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='legendary'i])::after {
 	background-color: var(--severitium-yellow-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])[data-state="active"]:has(img[src*="red"i])::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='red'i])::after {
 	background-color: var(--severitium-red-color);
 }
 
@@ -185,31 +185,31 @@
 /* Text of rarity based on selected rarity */
 /* Icon can be: all, common, uncommon, rare, epic, legendary, mystic */
 
-.ContainersComponentStyle-navigationBlockForCategories .ContainerInfoComponentStyle-typeRewardsBlock .ContainerInfoComponentStyle-rewardText[data-rarity="all"] {
+.ContainersComponentStyle-navigationBlockForCategories .ContainerInfoComponentStyle-typeRewardsBlock .ContainerInfoComponentStyle-rewardText[data-rarity='all'] {
 	color: var(--severitium-white-text-color);
 }
 
-.ContainersComponentStyle-navigationBlockForCategories .ContainerInfoComponentStyle-typeRewardsBlock .ContainerInfoComponentStyle-rewardText[data-rarity="common"] {
+.ContainersComponentStyle-navigationBlockForCategories .ContainerInfoComponentStyle-typeRewardsBlock .ContainerInfoComponentStyle-rewardText[data-rarity='common'] {
 	color: var(--severitium-light-gray-text-color);
 }
 
-.ContainersComponentStyle-navigationBlockForCategories .ContainerInfoComponentStyle-typeRewardsBlock .ContainerInfoComponentStyle-rewardText[data-rarity="uncommon"] {
+.ContainersComponentStyle-navigationBlockForCategories .ContainerInfoComponentStyle-typeRewardsBlock .ContainerInfoComponentStyle-rewardText[data-rarity='uncommon'] {
 	color: var(--severitium-green-text-color);
 }
 
-.ContainersComponentStyle-navigationBlockForCategories .ContainerInfoComponentStyle-typeRewardsBlock .ContainerInfoComponentStyle-rewardText[data-rarity="rare"] {
+.ContainersComponentStyle-navigationBlockForCategories .ContainerInfoComponentStyle-typeRewardsBlock .ContainerInfoComponentStyle-rewardText[data-rarity='rare'] {
 	color: var(--severitium-blue-text-color);
 }
 
-.ContainersComponentStyle-navigationBlockForCategories .ContainerInfoComponentStyle-typeRewardsBlock .ContainerInfoComponentStyle-rewardText[data-rarity="epic"] {
+.ContainersComponentStyle-navigationBlockForCategories .ContainerInfoComponentStyle-typeRewardsBlock .ContainerInfoComponentStyle-rewardText[data-rarity='epic'] {
 	color: var(--severitium-purple-text-color);
 }
 
-.ContainersComponentStyle-navigationBlockForCategories .ContainerInfoComponentStyle-typeRewardsBlock .ContainerInfoComponentStyle-rewardText[data-rarity="legendary"] {
+.ContainersComponentStyle-navigationBlockForCategories .ContainerInfoComponentStyle-typeRewardsBlock .ContainerInfoComponentStyle-rewardText[data-rarity='legendary'] {
 	color: var(--severitium-yellow-text-color);
 }
 
-.ContainersComponentStyle-navigationBlockForCategories .ContainerInfoComponentStyle-typeRewardsBlock .ContainerInfoComponentStyle-rewardText[data-rarity="mystic"] {
+.ContainersComponentStyle-navigationBlockForCategories .ContainerInfoComponentStyle-typeRewardsBlock .ContainerInfoComponentStyle-rewardText[data-rarity='mystic'] {
 	color: var(--severitium-red-text-color);
 }
 

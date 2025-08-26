@@ -23,13 +23,13 @@
 
 /* Inactive contract card */
 
-.ContractCardComponentStyle-card:not(:has([class*="hotkey"i])) {
+.ContractCardComponentStyle-card:not(:has([class*='hotkey'i])) {
 	background-color: var(--severitium-dark-transparent-background2) !important;
 }
 
 /* Active contract card */
 
-.ContractCardComponentStyle-card:has([class*="hotkey"i]) {
+.ContractCardComponentStyle-card:has([class*='hotkey'i]) {
 	background-color: var(--severitium-light-transparent-background3) !important;
 }
 
@@ -108,7 +108,7 @@
 
 /* Card score icon */
 
-.ContractCardComponentStyle-card > div > img + div > [class*="icon"i] {
+.ContractCardComponentStyle-card > div > img + div > [class*='icon'i] {
 	width: 1.5em;
 	height: 1em;
 	background-image: none;
@@ -157,7 +157,7 @@
 
 /* Early competition button */
 
-.ContractCardComponentStyle-card div:has(> span):has([class*="hotkey"i]) {
+.ContractCardComponentStyle-card div:has(> span):has([class*='hotkey'i]) {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -169,7 +169,7 @@
 
 /* Early competition button on hover */
 
-.ContractCardComponentStyle-card div:has(> span):has([class*="hotkey"i]):hover {
+.ContractCardComponentStyle-card div:has(> span):has([class*='hotkey'i]):hover {
 	outline: none;
 	box-shadow: none;
 	background: var(--severitium-gold-button-background);
@@ -178,13 +178,13 @@
 
 /* Early competition button text */
 
-.ContractCardComponentStyle-card div:has(> span):has([class*="hotkey"i]) > span {
+.ContractCardComponentStyle-card div:has(> span):has([class*='hotkey'i]) > span {
 	color: var(--severitium-gold-button-color);
 }
 
 /* Hotkey */
 
-.ContractCardComponentStyle-card [class*="hotkey"i] {
+.ContractCardComponentStyle-card [class*='hotkey'i] {
 	background: transparent;
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .1em;
@@ -194,14 +194,14 @@
 
 /* Bottom text of an active card */
 
-.ContractCardComponentStyle-card:has([class*="hotkey"i]) > div:last-child > span {
+.ContractCardComponentStyle-card:has([class*='hotkey'i]) > div:last-child > span {
 	font-size: 1em;
 	color: var(--severitium-main-color) !important;
 }
 
 /* Bottom button of an inactive card top line */
 
-.ContractCardComponentStyle-card:not(:has([class*="hotkey"i])) > div:nth-last-child(2) {
+.ContractCardComponentStyle-card:not(:has([class*='hotkey'i])) > div:nth-last-child(2) {
 	width: 100% !important;
 	height: .1em !important;
 	background-color: var(--severitium-dark-gray-color) !important;
@@ -209,7 +209,7 @@
 
 /* Bottom button of an inactive card */
 
-.ContractCardComponentStyle-card:not(:has([class*="hotkey"i])) > div:last-child > span {
+.ContractCardComponentStyle-card:not(:has([class*='hotkey'i])) > div:last-child > span {
 	font-size: 1em;
 	color: var(--severitium-white-text-color) !important;
 	transition: color .2s ease;
@@ -217,13 +217,13 @@
 
 /* Bottom button of an inactive card on button hover */
 
-.ContractCardComponentStyle-card:not(:has([class*="hotkey"i])) > div:last-child:hover > span {
+.ContractCardComponentStyle-card:not(:has([class*='hotkey'i])) > div:last-child:hover > span {
 	color: var(--severitium-main-color) !important;
 }
 
 /* Empty quest container header */
 
-.QuestsComponentStyle-content > [class*="QuestsComponentStyle-emptyList" i] h2 {
+.QuestsComponentStyle-content > [class*='QuestsComponentStyle-emptyList'i] h2 {
 	width: auto;
 	height: auto;
 	background-color: var(--severitium-main-color);

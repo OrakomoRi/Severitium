@@ -49,7 +49,7 @@
 
 /* Single friend's container when selected */
 
-.InvitationWindowsComponentStyle-usersScroll > div > div:has(> img[src*="selected"i][class*="selected"i]) {
+.InvitationWindowsComponentStyle-usersScroll > div > div:has(> img[src*='selected'i][class*='selected'i]) {
 	border: none;
 	box-shadow: 0 0 .1em .05em var(--severitium-main-color);
 	background-color: var(--severitium-light-transparent-background3);
@@ -58,7 +58,7 @@
 /* Single friend's container on hover */
 
 .InvitationWindowsComponentStyle-usersScroll > div > div:hover,
-.InvitationWindowsComponentStyle-usersScroll > div > div:has(> img[src*="selected"i][class*="selected"i]):hover {
+.InvitationWindowsComponentStyle-usersScroll > div > div:has(> img[src*='selected'i][class*='selected'i]):hover {
 	background-color: var(--severitium-light-transparent-background2);
 }
 
@@ -76,13 +76,13 @@
 
 /* Original checkmark on rank when player is selected */
 
-.InvitationWindowsComponentStyle-usersScroll > div > div > img[src*="selected"i][class*="selected"i] {
+.InvitationWindowsComponentStyle-usersScroll > div > div > img[src*='selected'i][class*='selected'i] {
 	display: none;
 }
 
 /* Custom checkmark on rank when player is selected */
 
-.InvitationWindowsComponentStyle-usersScroll > div > div:has(> img[src*="selected"i][class*="selected"i]) > .InvitationWindowsComponentStyle-rankContainer::after {
+.InvitationWindowsComponentStyle-usersScroll > div > div:has(> img[src*='selected'i][class*='selected'i]) > .InvitationWindowsComponentStyle-rankContainer::after {
 	content: '';
 	position: absolute;
 	top: 50%;

@@ -17,8 +17,8 @@
 
 /* Hotkey block */
 
-.MainScreenComponentStyle-containerPanel [class*="hotkey"i],
-.BreadcrumbsComponentStyle-headerContainer [class*="hotkey"i],
+.MainScreenComponentStyle-containerPanel [class*='hotkey'i],
+.BreadcrumbsComponentStyle-headerContainer [class*='hotkey'i],
 .BreadcrumbsComponentStyle-backButton h3 {
 	background: transparent;
 	color: var(--severitium-dark-white-text-color);
@@ -34,7 +34,7 @@
 
 /* Premium button image */
 
-.UserInfoContainerStyle-userTitleContainer > div:nth-child(1) > [class*="image"i] {
+.UserInfoContainerStyle-userTitleContainer > div:nth-child(1) > [class*='image'i] {
 	background: none;
 	background-image: none;
 	background-color: var(--severitium-yellow-color);
@@ -52,7 +52,7 @@
 
 /* Premium button timer */
 
-.UserInfoContainerStyle-userTitleContainer > div:nth-child(1) > span[id*="timer"i] {
+.UserInfoContainerStyle-userTitleContainer > div:nth-child(1) > span[id*='timer'i] {
 	font-size: 1.2em;
 	text-transform: uppercase;
 	color: var(--severitium-gold-text-color);
@@ -134,23 +134,23 @@
 
 /* Group button */
 
-.UserInfoContainerStyle-userTitleContainer > div:has(> [class*="user"i][class*="group"i]),
-.BreadcrumbsComponentStyle-headerContainer > div > div:has(> [class*="user"i][class*="group"i]) {
+.UserInfoContainerStyle-userTitleContainer > div:has(> [class*='user'i][class*='group'i]),
+.BreadcrumbsComponentStyle-headerContainer > div > div:has(> [class*='user'i][class*='group'i]) {
 	background-color: transparent;
 	transition: background-color .2s ease;
 }
 
 /* Group button on hover */
 
-.UserInfoContainerStyle-userTitleContainer > div:has(> [class*="user"i][class*="group"i]):hover,
-.BreadcrumbsComponentStyle-headerContainer > div > div:has(> [class*="user"i][class*="group"i]):hover {
+.UserInfoContainerStyle-userTitleContainer > div:has(> [class*='user'i][class*='group'i]):hover,
+.BreadcrumbsComponentStyle-headerContainer > div > div:has(> [class*='user'i][class*='group'i]):hover {
 	background-color: var(--severitium-light-transparent-background3);
 }
 
 /* Group button old icon */
 
-.UserInfoContainerStyle-userTitleContainer > div > [class*="user"i][class*="group"i] > div,
-.BreadcrumbsComponentStyle-headerContainer > div > div > [class*="user"i][class*="group"i] > div {
+.UserInfoContainerStyle-userTitleContainer > div > [class*='user'i][class*='group'i] > div,
+.BreadcrumbsComponentStyle-headerContainer > div > div > [class*='user'i][class*='group'i] > div {
 	/* display: none; */
 	width: 1.5em;
 	height: 1.5em;
@@ -158,8 +158,8 @@
 
 /* Group button new icon */
 
-/* .UserInfoContainerStyle-userTitleContainer > div > [class*="user"i][class*="group"i],
-.BreadcrumbsComponentStyle-headerContainer > div > div > [class*="user"i][class*="group"i] {
+/* .UserInfoContainerStyle-userTitleContainer > div > [class*='user'i][class*='group'i],
+.BreadcrumbsComponentStyle-headerContainer > div > div > [class*='user'i][class*='group'i] {
 	width: 1.5em;
 	height: 1.5em;
 	position: relative;
@@ -190,35 +190,35 @@
 
 /* Currency buttons */
 
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="coin"i]),
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="crystal"i]),
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="ruby"i]),
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i]),
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i]),
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i]) {
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='coin'i]),
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='crystal'i]),
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='ruby'i]),
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='coin'i]),
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='crystal'i]),
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='ruby'i]) {
 	position: relative;
 	background-color: transparent;
 }
 
 /* Currency buttons on hover */
 
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="coin"i]):hover,
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="crystal"i]):hover,
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="ruby"i]):hover,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i]):hover,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i]):hover,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i]):hover {
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='coin'i]):hover,
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='crystal'i]):hover,
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='ruby'i]):hover,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='coin'i]):hover,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='crystal'i]):hover,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='ruby'i]):hover {
 	background: none;
 }
 
 /* Pseudo element for hover highlight */
 
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="coin"i])::before,
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="crystal"i])::before,
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="ruby"i])::before,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i])::before,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i])::before,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i])::before {
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='coin'i])::before,
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='crystal'i])::before,
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='ruby'i])::before,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='coin'i])::before,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='crystal'i])::before,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='ruby'i])::before {
 	content: '';
 	position: absolute;
 	height: 100%;
@@ -232,65 +232,65 @@
 
 /* Pseudo element for ruby currency on hover */
 
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="ruby"i]):hover::before,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i]):hover::before {
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='ruby'i]):hover::before,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='ruby'i]):hover::before {
 	background: linear-gradient(270deg, var(--severitium-ruby-color) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 /* Pseudo element for tancoin currency on hover */
 
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="coin"i]):hover::before,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i]):hover::before {
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='coin'i]):hover::before,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='coin'i]):hover::before {
 	background: linear-gradient(270deg, var(--severitium-tancoin-color) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 /* Pseudo element for crystal currency on hover */
 
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="crystal"i]):hover::before,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i]):hover::before {
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='crystal'i]):hover::before,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='crystal'i]):hover::before {
 	background: linear-gradient(270deg, var(--severitium-crystal-color) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 /* Text on tancoin button */
 
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="coin"i]) > span,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i]) > span {
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='coin'i]) > span,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='coin'i]) > span {
 	color: var(--severitium-tancoin-color);
 }
 
 /* Text on crystal button */
 
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="crystal"i]) > span,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i]) > span {
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='crystal'i]) > span,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='crystal'i]) > span {
 	color: var(--severitium-crystal-color);
 }
 
 /* Text on ruby button */
 
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="ruby"i]) > span,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i]) > span {
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='ruby'i]) > span,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='ruby'i]) > span {
 	color: var(--severitium-ruby-color);
 }
 
 /* Original plus sign icons on currency buttons */
 
-.UserScoreComponentStyle-blockRightPanel div> img[src*="coin"i][src*="add"i],
-.UserScoreComponentStyle-blockRightPanel div> img[src*="crystal"i][src*="add"i],
-.UserScoreComponentStyle-blockRightPanel div> img[src*="ruby"i][src*="add"i],
-.BreadcrumbsComponentStyle-rightButtonsContainer div> img[src*="coin"i][src*="add"i],
-.BreadcrumbsComponentStyle-rightButtonsContainer div> img[src*="crystal"i][src*="add"i],
-.BreadcrumbsComponentStyle-rightButtonsContainer div> img[src*="ruby"i][src*="add"i] {
+.UserScoreComponentStyle-blockRightPanel div> img[src*='coin'i][src*='add'i],
+.UserScoreComponentStyle-blockRightPanel div> img[src*='crystal'i][src*='add'i],
+.UserScoreComponentStyle-blockRightPanel div> img[src*='ruby'i][src*='add'i],
+.BreadcrumbsComponentStyle-rightButtonsContainer div> img[src*='coin'i][src*='add'i],
+.BreadcrumbsComponentStyle-rightButtonsContainer div> img[src*='crystal'i][src*='add'i],
+.BreadcrumbsComponentStyle-rightButtonsContainer div> img[src*='ruby'i][src*='add'i] {
 	display: none;
 }
 
 /* Custom plus sign icons on currency buttons */
 
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="coin"i][src*="add"i])::after,
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="crystal"i][src*="add"i])::after,
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="ruby"i][src*="add"i])::after,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i][src*="add"i])::after,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i][src*="add"i])::after,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i][src*="add"i])::after {
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='coin'i][src*='add'i])::after,
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='crystal'i][src*='add'i])::after,
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='ruby'i][src*='add'i])::after,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='coin'i][src*='add'i])::after,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='crystal'i][src*='add'i])::after,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='ruby'i][src*='add'i])::after {
 	content: '';
 	position: absolute;
 	top: 50%;
@@ -314,22 +314,22 @@
 
 /* Custom plus sign icon on coin button hover */
 
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="coin"i][src*="add"i]):hover::after,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="coin"i][src*="add"i]):hover::after {
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='coin'i][src*='add'i]):hover::after,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='coin'i][src*='add'i]):hover::after {
 	background-color: var(--severitium-tancoin-color);
 }
 
 /* Custom plus sign icon on crystal button hover */
 
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="crystal"i][src*="add"i]):hover::after,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="crystal"i][src*="add"i]):hover::after {
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='crystal'i][src*='add'i]):hover::after,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='crystal'i][src*='add'i]):hover::after {
 	background-color: var(--severitium-crystal-color);
 }
 
 /* Custom plus sign icon on ruby button hover */
 
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*="ruby"i][src*="add"i]):hover::after,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*="ruby"i][src*="add"i]):hover::after {
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='ruby'i][src*='add'i]):hover::after,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='ruby'i][src*='add'i]):hover::after {
 	background-color: var(--severitium-ruby-color);
 }
 

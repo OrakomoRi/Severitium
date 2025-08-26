@@ -6,7 +6,7 @@
 
 /* Small notificators (containers) */
 
-[class*="container"i][class*="navigation"i] .MenuComponentStyle-commonBlock + span {
+[class*='container'i][class*='navigation'i] .MenuComponentStyle-commonBlock + span {
 	background-color: var(--severitium-main-color);
 }
 
@@ -39,7 +39,7 @@
 
 /* Main menu custom icon inner circle */
 
-.MainScreenComponentStyle-blockMainMenu > ul > li:has(> .PrimaryMenuItemComponentStyle-notificationIconNewNews) span[class*="name"i]::before {
+.MainScreenComponentStyle-blockMainMenu > ul > li:has(> .PrimaryMenuItemComponentStyle-notificationIconNewNews) span[class*='name'i]::before {
 	content: '';
 	display: block;
 	position: absolute;
@@ -67,7 +67,7 @@
 
 /* Main menu custom icon outer circle */
 
-.MainScreenComponentStyle-blockMainMenu > ul > li:has(> .PrimaryMenuItemComponentStyle-notificationIconNewNews) span[class*="name"i]::after {
+.MainScreenComponentStyle-blockMainMenu > ul > li:has(> .PrimaryMenuItemComponentStyle-notificationIconNewNews) span[class*='name'i]::after {
 	content: '';
 	display: block;
 	position: absolute;
@@ -94,15 +94,15 @@
 
 /* Main menu custom icon inner circle when discoun icon appears */
 
-.MainScreenComponentStyle-blockMainMenu > ul > li:has(> .PrimaryMenuItemComponentStyle-notificationIconNewNews):has(span[class*="discount"i]) span[class*="name"i]::before,
-.MainScreenComponentStyle-blockMainMenu > ul > li:has(> .PrimaryMenuItemComponentStyle-notificationIconNewNews):has(span[class*="discount"i]) span[class*="name"i]::after {
+.MainScreenComponentStyle-blockMainMenu > ul > li:has(> .PrimaryMenuItemComponentStyle-notificationIconNewNews):has(span[class*='discount'i]) span[class*='name'i]::before,
+.MainScreenComponentStyle-blockMainMenu > ul > li:has(> .PrimaryMenuItemComponentStyle-notificationIconNewNews):has(span[class*='discount'i]) span[class*='name'i]::after {
 	right: -1.5em;
 }
 
 /* Notificator icon on item hover */
 
-.MainScreenComponentStyle-blockMainMenu > ul > li:hover > span[class*="name"i]::before,
-.MainScreenComponentStyle-blockMainMenu > ul > li:hover > span[class*="name"i]::after {
+.MainScreenComponentStyle-blockMainMenu > ul > li:hover > span[class*='name'i]::before,
+.MainScreenComponentStyle-blockMainMenu > ul > li:hover > span[class*='name'i]::after {
 	opacity: 0;
 }
 
@@ -139,13 +139,13 @@
 
 /* News original notificator icon */
 
-.NewsComponentStyle-newsItemHeader .NewsComponentStyle-newsItemDate > img[src*="circle"i] {
+.NewsComponentStyle-newsItemHeader .NewsComponentStyle-newsItemDate > img[src*='circle'i] {
 	display: none;
 }
 
 /* News custom icon inner circle */
 
-.NewsComponentStyle-newsItemHeader .NewsComponentStyle-newsItemDate:has(> img[src*="circle"i])::before {
+.NewsComponentStyle-newsItemHeader .NewsComponentStyle-newsItemDate:has(> img[src*='circle'i])::before {
 	content: '';
 	display: block;
 	position: absolute;
@@ -173,7 +173,7 @@
 
 /* News custom icon outer circle */
 
-.NewsComponentStyle-newsItemHeader .NewsComponentStyle-newsItemDate:has(> img[src*="circle"i])::after {
+.NewsComponentStyle-newsItemHeader .NewsComponentStyle-newsItemDate:has(> img[src*='circle'i])::after {
 	content: '';
 	display: block;
 	position: absolute;

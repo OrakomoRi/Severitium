@@ -50,7 +50,7 @@
 
 /* Menu item on hover */
 
-.NewShopCommonComponentStyle-commonBlockMenuShop > div > div[data-state="inactive"]:hover {
+.NewShopCommonComponentStyle-commonBlockMenuShop > div > div[data-state='inactive']:hover {
 	width: var(100% - 1em);
 	background: none;
 	border: none;
@@ -61,13 +61,13 @@
 
 /* Inactive menu item */
 
-.NewShopCommonComponentStyle-commonBlockMenuShop > div > div[data-state="inactive"] {
+.NewShopCommonComponentStyle-commonBlockMenuShop > div > div[data-state='inactive'] {
 	background: none;
 }
 
 /* Active menu item */
 
-.NewShopCommonComponentStyle-commonBlockMenuShop > div > div[data-state="active"] {
+.NewShopCommonComponentStyle-commonBlockMenuShop > div > div[data-state='active'] {
 	background: none;
 	pointer-events: none;
 }

@@ -126,7 +126,7 @@
 
 /* Description for selected payment type */
 
-.CoinPaymentComponentStyle-commonContainer + span[class*="payment"i][class*="description"i],
+.CoinPaymentComponentStyle-commonContainer + span[class*='payment'i][class*='description'i],
 .BasePaymentComponentStyle-commonContainerForChoiceAndButton .SpecialConditionsComponentStyle-description {
 	color: var(--severitium-extra-light-gray-text-color);
 }
@@ -146,19 +146,19 @@
 
 /* Crystal amount */
 
-.BasePaymentComponentStyle-commonContainerForChoiceAndButton .SpecialConditionsComponentStyle-compensationDescription + span[class*="crystal"i] {
+.BasePaymentComponentStyle-commonContainerForChoiceAndButton .SpecialConditionsComponentStyle-compensationDescription + span[class*='crystal'i] {
 	color: var(--severitium-crystal-color);
 }
 
 /* Tancoin amount */
 
-.BasePaymentComponentStyle-commonContainerForChoiceAndButton .SpecialConditionsComponentStyle-compensationDescription + span[class*="coins"i] {
+.BasePaymentComponentStyle-commonContainerForChoiceAndButton .SpecialConditionsComponentStyle-compensationDescription + span[class*='coins'i] {
 	color: var(--severitium-tancoin-color);
 }
 
 /* Ruby amount */
 
-.BasePaymentComponentStyle-commonContainerForChoiceAndButton .SpecialConditionsComponentStyle-compensationDescription + span[class*="ruby"i] {
+.BasePaymentComponentStyle-commonContainerForChoiceAndButton .SpecialConditionsComponentStyle-compensationDescription + span[class*='ruby'i] {
 	color: var(--severitium-ruby-color);
 }
 

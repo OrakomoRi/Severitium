@@ -80,7 +80,7 @@
 
 /* Button on hover */
 
-.RepatriationBonusStyle-buttonTake:hover {	
+.RepatriationBonusStyle-buttonTake:hover {
 	outline: none;
 	box-shadow: none;
 	background: var(--severitium-green-button-background);

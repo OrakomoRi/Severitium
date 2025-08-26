@@ -97,7 +97,7 @@
 
 /* Description hotkey */
 
-.ContainersComponentStyle-infoPanel .ItemDescriptionComponentStyle-descriptionBlockDevice .ContainersComponentStyle-description [class*="hotkey"i] {
+.ContainersComponentStyle-infoPanel .ItemDescriptionComponentStyle-descriptionBlockDevice .ContainersComponentStyle-description [class*='hotkey'i] {
 	background: transparent;
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .1em;
@@ -205,7 +205,7 @@
 
 /* Possible rewards hotkey */
 
-.ContainersComponentStyle-infoPanel .ContainersComponentStyle-possibleRewardsBlock .DeviceButtonComponentStyle-blockAlterations [class*="hotkey"i] {
+.ContainersComponentStyle-infoPanel .ContainersComponentStyle-possibleRewardsBlock .DeviceButtonComponentStyle-blockAlterations [class*='hotkey'i] {
 	background: transparent;
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .1em;
@@ -239,7 +239,7 @@
 
 /* Key count circle active */
 
-.ContainersComponentStyle-containersBlock .ContainersComponentStyle-keyBlock:has(.ContainersComponentStyle-key > img[src*="active"i]:not([src*="inactive"i])) .ContainersComponentStyle-countBlock > div {
+.ContainersComponentStyle-containersBlock .ContainersComponentStyle-keyBlock:has(.ContainersComponentStyle-key > img[src*='active'i]:not([src*='inactive'i])) .ContainersComponentStyle-countBlock > div {
 	background-color: var(--severitium-main-color);
 	box-shadow: var(--severitium-main-color) 0 0 1em 0;
 	border-radius: 50%;
@@ -247,7 +247,7 @@
 
 /* Key count circle inactive */
 
-.ContainersComponentStyle-containersBlock .ContainersComponentStyle-keyBlock:has(.ContainersComponentStyle-key > img[src*="inactive"i]) .ContainersComponentStyle-countBlock > div {
+.ContainersComponentStyle-containersBlock .ContainersComponentStyle-keyBlock:has(.ContainersComponentStyle-key > img[src*='inactive'i]) .ContainersComponentStyle-countBlock > div {
 	background-color: var(--severitium-light-gray-color);
 	box-shadow: var(--severitium-light-gray-color) 0 0 1em 0;
 	border-radius: 50%;
@@ -255,13 +255,13 @@
 
 /* Key count active text */
 
-.ContainersComponentStyle-containersBlock .ContainersComponentStyle-keyBlock:has(.ContainersComponentStyle-key > img[src*="active"i]:not([src*="inactive"i])) .ContainersComponentStyle-countBlock > div > p {
+.ContainersComponentStyle-containersBlock .ContainersComponentStyle-keyBlock:has(.ContainersComponentStyle-key > img[src*='active'i]:not([src*='inactive'i])) .ContainersComponentStyle-countBlock > div > p {
 	color: var(--severitium-black-text-color);
 }
 
 /* Key count inactive text */
 
-.ContainersComponentStyle-containersBlock .ContainersComponentStyle-keyBlock:has(.ContainersComponentStyle-key > img[src*="inactive"i]) .ContainersComponentStyle-countBlock > div > p {
+.ContainersComponentStyle-containersBlock .ContainersComponentStyle-keyBlock:has(.ContainersComponentStyle-key > img[src*='inactive'i]) .ContainersComponentStyle-countBlock > div > p {
 	color: var(--severitium-white-text-color);
 }
 
@@ -302,7 +302,7 @@
 
 /* Open containers button hotkey */
 
-.ContainersComponentStyle-bottomBlock .DeviceButtonComponentStyle-blockAlterations > div [class*="hotkey"i] {
+.ContainersComponentStyle-bottomBlock .DeviceButtonComponentStyle-blockAlterations > div [class*='hotkey'i] {
 	background: transparent;
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .1em;
@@ -344,7 +344,7 @@
 
 /* Buy containers button hotkey */
 
-.ContainersComponentStyle-moreButton [class*="hotkey"i] {
+.ContainersComponentStyle-moreButton [class*='hotkey'i] {
 	background: transparent;
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .1em;

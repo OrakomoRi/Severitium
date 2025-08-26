@@ -58,13 +58,13 @@
 
 /* Limited section card gradient */
 
-.ShopSelectedSectionComponentStyle-limitedOffersCommon > div[class*="gradient"i][class*="section"i] {
+.ShopSelectedSectionComponentStyle-limitedOffersCommon > div[class*='gradient'i][class*='section'i] {
 	display: none;
 }
 
 /* Limited section card background image */
 
-.ShopSelectedSectionComponentStyle-limitedOffersCommon > div[class*="backgroundimage"i] {
+.ShopSelectedSectionComponentStyle-limitedOffersCommon > div[class*='backgroundimage'i] {
 	border-radius: var(--severitium-border-radius);
 	transition: -webkit-transform .2s ease, -webkit-filter .2s ease;
 	transition: transform .2s ease, filter .2s ease;
@@ -73,7 +73,7 @@
 
 /* Limited section card background image on card hover */
 
-.ShopSelectedSectionComponentStyle-limitedOffersCommon:hover > div[class*="backgroundimage"i] {
+.ShopSelectedSectionComponentStyle-limitedOffersCommon:hover > div[class*='backgroundimage'i] {
 	-webkit-transform: scale(1.1);
 	        transform: scale(1.1);
 	-webkit-filter: saturate(1.25);
@@ -145,7 +145,7 @@
 
 /* Common section card background image */
 
-.ShopSelectedSectionComponentStyle-commonCard > div[class*="backgroundimage"i] {
+.ShopSelectedSectionComponentStyle-commonCard > div[class*='backgroundimage'i] {
 	border-radius: var(--severitium-border-radius);
 	background-color: var(--severitium-light-transparent-background3);
 	transition: -webkit-transform .2s ease, -webkit-filter .2s ease;
@@ -155,7 +155,7 @@
 
 /* Common section card background image on card hover */
 
-.ShopSelectedSectionComponentStyle-commonCard:hover > div[class*="backgroundimage"i] {
+.ShopSelectedSectionComponentStyle-commonCard:hover > div[class*='backgroundimage'i] {
 	-webkit-transform: scale(1.1);
 	        transform: scale(1.1);
 	-webkit-filter: saturate(1.25);

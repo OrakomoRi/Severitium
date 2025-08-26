@@ -143,7 +143,7 @@
 
 /* Pause timer text */
 
-.BattlePauseMenuDialogComponentStyle-timer span[id*="timer"i] {
+.BattlePauseMenuDialogComponentStyle-timer span[id*='timer'i] {
 	color: var(--severitium-main-color);
 }
 
@@ -195,8 +195,8 @@
 
 /* Hotkey block of the button */
 
-.BattlePauseMenuComponentStyle-enabledButton div[class*="hotkey"i],
-.BattlePauseMenuComponentStyle-disabledButton div[class*="hotkey"i] {
+.BattlePauseMenuComponentStyle-enabledButton div[class*='hotkey'i],
+.BattlePauseMenuComponentStyle-disabledButton div[class*='hotkey'i] {
 	background: transparent;
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .1em;

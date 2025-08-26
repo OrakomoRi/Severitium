@@ -63,7 +63,7 @@
 
 /* Large card timer */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover > div[class*="time"i] {
+.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover > div[class*='time'i] {
 	background-color: var(--severitium-main-color);
 	color: var(--severitium-black-text-color);
 	border-radius: var(--severitium-border-radius);
@@ -71,7 +71,7 @@
 
 /* Purchase button */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*="center"i] {
+.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*='center'i] {
 	position: relative;
 	box-sizing: border-box;
 	outline: none;
@@ -86,7 +86,7 @@
 
 /* Button on hover */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*="center"i]:hover {
+.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*='center'i]:hover {
 	background-color: var(--severitium-gold-button-background);
 	outline: none;
 	box-shadow: none;
@@ -95,13 +95,13 @@
 
 /* Button text */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*="center"i] > span {
+.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*='center'i] > span {
 	color: var(--severitium-gold-button-color);
 }
 
 /* Button hotkey container */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*="center"i] h3[class*="hotkey"i] {
+.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*='center'i] h3[class*='hotkey'i] {
 	background: transparent;
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-light-gray-color) dashed .1em;
@@ -110,20 +110,20 @@
 
 /* Price text */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*="center"i] span[class*="price"i] {
+.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*='center'i] span[class*='price'i] {
 	color: var(--severitium-extra-light-gray-text-color);
 }
 
 /* Discount container */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*="center"i] .ShopItemComponentStyle-discountContainer {
+.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*='center'i] .ShopItemComponentStyle-discountContainer {
 	background-color: var(--severitium-red-color);
 	border-radius: var(--severitium-border-radius);
 }
 
 /* Discount text */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*="center"i] .ShopItemComponentStyle-discountContainer > h3 {
+.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*='center'i] .ShopItemComponentStyle-discountContainer > h3 {
 	color: var(--severitium-white-text-color);
 }
 
@@ -170,7 +170,7 @@
 
 /* Single limited offer timer */
 
-.ShopCategoryOfferSectionStyle-containerLimitOffers > div > div[class*="time"i] {
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div > div[class*='time'i] {
 	background-color: var(--severitium-main-color);
 	color: var(--severitium-black-text-color);
 	border-radius: var(--severitium-border-radius);
@@ -257,19 +257,19 @@
 
 /* Price text for ruby currency */
 
-.ShopCategoryOfferSectionStyle-containerLimitOffers > div img[src*="ruby"i] + .ShowcaseItemComponentStyle-priceText {
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div img[src*='ruby'i] + .ShowcaseItemComponentStyle-priceText {
 	color: var(--severitium-ruby-color);
 }
 
 /* Price text for coin currency */
 
-.ShopCategoryOfferSectionStyle-containerLimitOffers > div img[src*="coin"i] + .ShowcaseItemComponentStyle-priceText {
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div img[src*='coin'i] + .ShowcaseItemComponentStyle-priceText {
 	color: var(--severitium-tancoin-color);
 }
 
 /* Price text for crystal currency */
 
-.ShopCategoryOfferSectionStyle-containerLimitOffers > div img[src*="crystal"i] + .ShowcaseItemComponentStyle-priceText {
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div img[src*='crystal'i] + .ShowcaseItemComponentStyle-priceText {
 	color: var(--severitium-crystal-color);
 }
 
@@ -291,9 +291,9 @@
 
 /* Shop default small card */
 
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*="item"i],
-.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*="item"i],
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*="item"i] {
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i],
+.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i],
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] {
 	background: none;
 	background-color: var(--severitium-dark-transparent-background1);
 	box-shadow: none;
@@ -306,9 +306,9 @@
 
 /* Shop default small card on hover */
 
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*="item"i]:hover,
-.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*="item"i]:hover,
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*="item"i]:hover {
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i]:hover,
+.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i]:hover,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i]:hover {
 	background: none;
 	background-color: var(--severitium-dark-transparent-background2);
 	box-shadow: none;
@@ -317,9 +317,9 @@
 
 /* Shop default small card on click */
 
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*="item"i]:active,
-.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*="item"i]:active,
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*="item"i]:active {
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i]:active,
+.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i]:active,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i]:active {
 	background: none;
 	background-color: var(--severitium-light-transparent-background2);
 	box-shadow: none;
@@ -330,7 +330,7 @@
 
 /* Disabled small card */
 
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*="item"i]:has(> .ShowcaseItemComponentStyle-disabledBackground) {
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i]:has(> .ShowcaseItemComponentStyle-disabledBackground) {
 	opacity: .5;
 	pointer-events: none;
 	transition: none;
@@ -338,15 +338,15 @@
 
 /* Shop default small card amount text */
 
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*="item"i] span.ShopItemComponentStyle-amount,
-.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*="item"i] span.ShopItemComponentStyle-amount,
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*="item"i] span.ShopItemComponentStyle-amount {
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] span.ShopItemComponentStyle-amount,
+.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i] span.ShopItemComponentStyle-amount,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] span.ShopItemComponentStyle-amount {
 	color: var(--severitium-light-gray-text-color);
 }
 
 /* Shop default small card bonus amount */
 
-.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*="item"i] .ShopItemComponentStyle-bonus {
+.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i] .ShopItemComponentStyle-bonus {
 	background: none;
 	background-color: var(--severitium-main-color);
 	color: var(--severitium-black-text-color);
@@ -359,53 +359,53 @@
 
 /* Shop default small item card name text */
 
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*="item"i] .ShopItemComponentStyle-containerName > span,
-.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*="item"i] .ShopItemComponentStyle-containerName > span,
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*="item"i] .ShopItemComponentStyle-containerName > span {
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] .ShopItemComponentStyle-containerName > span,
+.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i] .ShopItemComponentStyle-containerName > span,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] .ShopItemComponentStyle-containerName > span {
 	color: var(--severitium-extra-light-gray-text-color);
 }
 
 /* Price text for real currency */
 
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*="item"i] .ShopItemComponentStyle-footerContent {
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] .ShopItemComponentStyle-footerContent {
 	color: var(--severitium-light-gray-color);
 }
 
 /* Price text for ruby currency */
 
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*="item"i] img[src*="ruby"i] + .ShowcaseItemComponentStyle-priceText,
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*="item"i] img[src*="ruby"i] + .ShopItemComponentStyle-footerContent,
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*="item"i] img[src*="ruby"i] + .ShowcaseItemComponentStyle-priceText,
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*="item"i] img[src*="ruby"i] + .ShopItemComponentStyle-footerContent,
-	.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*="item"i] img[src*="ruby"i] + .ShowcaseItemComponentStyle-priceText {
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] img[src*='ruby'i] + .ShowcaseItemComponentStyle-priceText,
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] img[src*='ruby'i] + .ShopItemComponentStyle-footerContent,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] img[src*='ruby'i] + .ShowcaseItemComponentStyle-priceText,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] img[src*='ruby'i] + .ShopItemComponentStyle-footerContent,
+.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i] img[src*='ruby'i] + .ShowcaseItemComponentStyle-priceText {
 	color: var(--severitium-ruby-color);
 }
 
 /* Price text for coin currency */
 
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*="item"i] img[src*="coin"i] + .ShowcaseItemComponentStyle-priceText,
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*="item"i] img[src*="coin"i] + .ShopItemComponentStyle-footerContent,
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*="item"i] img[src*="coin"i] + .ShowcaseItemComponentStyle-priceText,
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*="item"i] img[src*="coin"i] + .ShopItemComponentStyle-footerContent,
-.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*="item"i] img[src*="coin"i] + .ShowcaseItemComponentStyle-priceText {
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] img[src*='coin'i] + .ShowcaseItemComponentStyle-priceText,
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] img[src*='coin'i] + .ShopItemComponentStyle-footerContent,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] img[src*='coin'i] + .ShowcaseItemComponentStyle-priceText,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] img[src*='coin'i] + .ShopItemComponentStyle-footerContent,
+.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i] img[src*='coin'i] + .ShowcaseItemComponentStyle-priceText {
 	color: var(--severitium-tancoin-color);
 }
 
 /* Price text for crystal currency */
 
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*="item"i] img[src*="crystal"i] + .ShowcaseItemComponentStyle-priceText,
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*="item"i] img[src*="crystal"i] + .ShopItemComponentStyle-footerContent,
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*="item"i] img[src*="crystal"i] + .ShowcaseItemComponentStyle-priceText,
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*="item"i] img[src*="crystal"i] + .ShopItemComponentStyle-footerContent,
-	.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*="item"i] img[src*="crystal"i] + .ShowcaseItemComponentStyle-priceText {
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] img[src*='crystal'i] + .ShowcaseItemComponentStyle-priceText,
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] img[src*='crystal'i] + .ShopItemComponentStyle-footerContent,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] img[src*='crystal'i] + .ShowcaseItemComponentStyle-priceText,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] img[src*='crystal'i] + .ShopItemComponentStyle-footerContent,
+.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i] img[src*='crystal'i] + .ShowcaseItemComponentStyle-priceText {
 	color: var(--severitium-crystal-color);
 }
 
 /* Discount block */
 
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*="item"i] .ShowcaseItemComponentStyle-discountContainer > p,
-.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*="item"i] .ShowcaseItemComponentStyle-discountContainer > p,
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*="item"i] .ShowcaseItemComponentStyle-discountContainer > p {
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] .ShowcaseItemComponentStyle-discountContainer > p,
+.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i] .ShowcaseItemComponentStyle-discountContainer > p,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] .ShowcaseItemComponentStyle-discountContainer > p {
 	background-color: var(--severitium-red-color);
 	border-radius: var(--severitium-border-radius);
 	color: var(--severitium-white-text-color);
@@ -413,7 +413,7 @@
 
 /* Disabled text "sold" block */
 
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*="item"i] .ShowcaseItemComponentStyle-disabledReason {
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] .ShowcaseItemComponentStyle-disabledReason {
 	background: none;
 	background-color: var(--severitium-red-color);
 	color: var(--severitium-white-color);
@@ -552,7 +552,7 @@
 
 /* Promocode enabled button */
 
-.PromoCodesComponentStyle-sendButton:not([class*="disabled"i]) {
+.PromoCodesComponentStyle-sendButton:not([class*='disabled'i]) {
 	border-radius: var(--severitium-border-radius);
 	background-color: var(--severitium-green-button-background);
 	border: var(--severitium-green-button-border-color) solid .1em;
@@ -576,7 +576,7 @@
 
 /* Promocode disabled button */
 
-.PromoCodesComponentStyle-sendButton[class*="disabled"i] {
+.PromoCodesComponentStyle-sendButton[class*='disabled'i] {
 	outline: none;
 	box-shadow: none;
 	border: transparent solid .1em;
@@ -587,7 +587,7 @@
 
 /* Button text */
 
-.PromoCodesComponentStyle-sendButton[class*="disabled"i] > span {
+.PromoCodesComponentStyle-sendButton[class*='disabled'i] > span {
 	color: var(--severitium-gray-button-color);
 	opacity: .5;
 }

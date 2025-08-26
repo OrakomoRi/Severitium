@@ -469,15 +469,15 @@
 
 /* Shop original icon if user should buy something to open the misson */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div .MainQuestComponentStyle-backgroundIcon img[src*="shop"i],
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission + div .TableMainQuestComponentStyle-backgroundIconTable img[src*="shop"i] {
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div .MainQuestComponentStyle-backgroundIcon img[src*='shop'i],
+.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission + div .TableMainQuestComponentStyle-backgroundIconTable img[src*='shop'i] {
 	display: none;
 }
 
 /* Shop custom icon if user should buy something to open the misson */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div .MainQuestComponentStyle-backgroundIcon:has(img[src*="shop"i]),
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission + div .TableMainQuestComponentStyle-backgroundIconTable:has(img[src*="shop"i]) {
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div .MainQuestComponentStyle-backgroundIcon:has(img[src*='shop'i]),
+.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission + div .TableMainQuestComponentStyle-backgroundIconTable:has(img[src*='shop'i]) {
 	content: '';
 	width: 1.5em;
 	height: 1.5em;
@@ -501,14 +501,14 @@
 
 /* Shop custom icon if user should buy something to open the misson on card's hover */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:hover .MainQuestComponentStyle-backgroundIcon:has(img[src*="shop"i]) {
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:hover .MainQuestComponentStyle-backgroundIcon:has(img[src*='shop'i]) {
 	-webkit-transform: scale(0);
 			transform: scale(0);
 }
 
 /* Shop custom icon if user should buy something to open the misson for quest line */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission + div .TableMainQuestComponentStyle-backgroundIconTable:has(img[src*="shop"i]) {
+.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission + div .TableMainQuestComponentStyle-backgroundIconTable:has(img[src*='shop'i]) {
 	margin: 0;
 	padding: 0;
 }
@@ -619,7 +619,7 @@
 
 /* Quest line's timer container */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div div:has(> span[id*="timer"i]) {
+.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div div:has(> span[id*='timer'i]) {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -639,7 +639,7 @@
 
 /* Quest line's timer on card hover */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div:hover div:has(> span[id*="timer"i]) {
+.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div:hover div:has(> span[id*='timer'i]) {
 	width: -webkit-fit-content;
 	width: -moz-fit-content;
 	width: fit-content;
@@ -651,8 +651,8 @@
 
 /* Quest card's timer text */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-timerData span[id*="timer"i],
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted > .MainQuestComponentStyle-timerData span[id*="timer"i] {
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-timerData span[id*='timer'i],
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted > .MainQuestComponentStyle-timerData span[id*='timer'i] {
 	width: auto;
 	height: auto;
 	margin: 0;
@@ -664,7 +664,7 @@
 
 /* Quest line's timer text */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div span[id*="timer"i] {
+.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div span[id*='timer'i] {
 	width: auto;
 	height: auto;
 	margin: 0;
@@ -732,7 +732,7 @@
 
 /* Quest card's rewards item's image */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-rewardsContainer > div > div[class*="image"i] {
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-rewardsContainer > div > div[class*='image'i] {
 	min-width: 4em;
 	width: -webkit-max-content;
 	width: max-content;
@@ -743,7 +743,7 @@
 
 /* Quest link's rewards item's image */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > .TableMainQuestComponentStyle-rewardsContainerTable > div > div[class*="image"i] {
+.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > .TableMainQuestComponentStyle-rewardsContainerTable > div > div[class*='image'i] {
 	min-width: 4em;
 	width: -webkit-max-content;
 	width: max-content;
@@ -910,7 +910,7 @@
 
 /* Supermisson counter timer container */
 
-.SuperMissionComponentStyle-descriptionSuperMission div.SuperMissionComponentStyle-commonBlockTimerCount > div:has(> span[id*="timer"i]) {
+.SuperMissionComponentStyle-descriptionSuperMission div.SuperMissionComponentStyle-commonBlockTimerCount > div:has(> span[id*='timer'i]) {
 	padding: .1em .25em;
 	background-color: var(--severitium-main-color);
 	border-radius: var(--severitium-border-radius);
@@ -918,7 +918,7 @@
 
 /* Supermisson counter timer text */
 
-.SuperMissionComponentStyle-descriptionSuperMission div.SuperMissionComponentStyle-commonBlockTimerCount > div span[id*="timer"i] {
+.SuperMissionComponentStyle-descriptionSuperMission div.SuperMissionComponentStyle-commonBlockTimerCount > div span[id*='timer'i] {
 	font-size: 1em;
 	font-weight: normal;
 	color: var(--severitium-black-text-color);
@@ -989,8 +989,8 @@
 
 /* Supermisson condition name container of a completed one */
 
-.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div.SuperMissionComponentStyle-conditionContextItems:has(img[src*="correct"i]) > h4,
-.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div.SuperMissionComponentStyle-conditionContextItems:has(img[src*="discount"i]) > h4 {
+.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div.SuperMissionComponentStyle-conditionContextItems:has(img[src*='correct'i]) > h4,
+.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div.SuperMissionComponentStyle-conditionContextItems:has(img[src*='discount'i]) > h4 {
 	width: auto;
 	height: -webkit-fit-content;
 	height: -moz-fit-content;
@@ -1005,20 +1005,20 @@
 
 /* Supermisson condition name text of a completed one */
 
-.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div.SuperMissionComponentStyle-conditionContextItems:has(img[src*="correct"i]) > h4 span,
-.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div.SuperMissionComponentStyle-conditionContextItems:has(img[src*="discount"i]) > h4 span {
+.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div.SuperMissionComponentStyle-conditionContextItems:has(img[src*='correct'i]) > h4 span,
+.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div.SuperMissionComponentStyle-conditionContextItems:has(img[src*='discount'i]) > h4 span {
 	color: var(--severitium-green-text-color);
 }
 
 /* Supermisson original icon of a completed one */
 
-.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div.SuperMissionComponentStyle-conditionContextItems img[src*="correct"i] {
+.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div.SuperMissionComponentStyle-conditionContextItems img[src*='correct'i] {
 	display: none;
 }
 
 /* Supermisson custom icon of a completed one */
 
-.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div.SuperMissionComponentStyle-conditionContextItems:has(img[src*="correct"i])::after {
+.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div.SuperMissionComponentStyle-conditionContextItems:has(img[src*='correct'i])::after {
 	content: '';
 	top: 50%;
 	right: 0;
@@ -1037,13 +1037,13 @@
 
 /* Supermisson original icon of a completed one that has gift icon */
 
-.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div.SuperMissionComponentStyle-conditionContextItems img[src*="discount"i] {
+.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div.SuperMissionComponentStyle-conditionContextItems img[src*='discount'i] {
 	display: none;
 }
 
 /* Supermisson custom gift icon of a completed one */
 
-.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div.SuperMissionComponentStyle-conditionContextItems:has(img[src*="discount"i])::after {
+.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div.SuperMissionComponentStyle-conditionContextItems:has(img[src*='discount'i])::after {
 	content: '';
 	top: 50%;
 	right: 0;
@@ -1153,7 +1153,7 @@
 
 /* Each reward block reward's image */
 
-.SuperMissionComponentStyle-descriptionSuperMission .SuperMissionComponentStyle-rewardsContainer > div > div[class*="image"i] {
+.SuperMissionComponentStyle-descriptionSuperMission .SuperMissionComponentStyle-rewardsContainer > div > div[class*='image'i] {
 	width: 100%;
 	height: 100%;
 	margin: 0;
@@ -1237,7 +1237,7 @@
 
 /* Super mission enabled button's hotkey */
 
-.SuperMissionComponentStyle-descriptionSuperMission div.SuperMissionComponentStyle-buttonCollect h3[class*="hotkey"i] {
+.SuperMissionComponentStyle-descriptionSuperMission div.SuperMissionComponentStyle-buttonCollect h3[class*='hotkey'i] {
 	background: transparent;
 	border: var(--severitium-gray-color) dashed .1em;
 	border-radius: var(--severitium-border-radius);

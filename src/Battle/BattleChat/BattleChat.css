@@ -26,7 +26,7 @@
 
 /* Chat text container */
 
-div[class*="BattleChatComponentStyle-inputContainer"] {
+div[class*='BattleChatComponentStyle-inputContainer'] {
 	background: var(--severitium-dark-transparent-background1);
 	border-radius: var(--severitium-border-radius);
 	-webkit-backdrop-filter: blur(.2em);
@@ -35,32 +35,32 @@ div[class*="BattleChatComponentStyle-inputContainer"] {
 
 /* Chat text container in to team mode */
 
-div[class*="BattleChatComponentStyle-inputContainer"].BattleChatComponentStyle-inputContainerAllies {
+div[class*='BattleChatComponentStyle-inputContainer'].BattleChatComponentStyle-inputContainerAllies {
 	border: .1em solid var(--severitium-light-blue-color);
 }
 
 /* Chat text container in to all mode */
 
-div[class*="BattleChatComponentStyle-inputContainer"].BattleChatComponentStyle-inputContainerAll {
+div[class*='BattleChatComponentStyle-inputContainer'].BattleChatComponentStyle-inputContainerAll {
 	border: .1em solid var(--severitium-extra-light-gray-color);
 }
 
 /* Chat text container, background behind the icon of chat mode */
 
-div[class*="BattleChatComponentStyle-inputContainer"] > div[class*="btntoggle"i] {
+div[class*='BattleChatComponentStyle-inputContainer'] > div[class*='btntoggle'i] {
 	background: var(--severitium-light-transparent-background2);
 	border-radius: 0;
 }
 
 /* Chat text container chat mode original icon */
 
-div[class*="BattleChatComponentStyle-inputContainer"] > div[class*="btntoggle"i] > img {
+div[class*='BattleChatComponentStyle-inputContainer'] > div[class*='btntoggle'i] > img {
 	display: none;
 }
 
 /* Chat text container chat mode new icon base */
 
-div[class*="BattleChatComponentStyle-inputContainer"] > div[class*="btntoggle"i]::after {
+div[class*='BattleChatComponentStyle-inputContainer'] > div[class*='btntoggle'i]::after {
 	content: '';
 	width: 2em;
 	height: 2em;
@@ -76,7 +76,7 @@ div[class*="BattleChatComponentStyle-inputContainer"] > div[class*="btntoggle"i]
 
 /* Chat text container chat mode new icon for to team mode */
 
-div[class*="BattleChatComponentStyle-inputContainer"].BattleChatComponentStyle-inputContainerAllies > div[class*="btntoggle"i]::after {
+div[class*='BattleChatComponentStyle-inputContainer'].BattleChatComponentStyle-inputContainerAllies > div[class*='btntoggle'i]::after {
 	background-color: var(--severitium-light-blue-color);
 	-webkit-mask-image: url('data:image/svg+xml,<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M8 17.333c-2.933 0-5.333 2.4-5.333 5.334S5.067 28 8 28s5.333-2.4 5.333-5.333-2.4-5.334-5.333-5.334M16 4c-2.933 0-5.333 2.4-5.333 5.333s2.4 5.334 5.333 5.334 5.333-2.4 5.333-5.334S18.933 4 16 4m8 13.333c-2.933 0-5.333 2.4-5.333 5.334S21.067 28 24 28s5.333-2.4 5.333-5.333-2.4-5.334-5.333-5.334"/></svg>');
 			mask-image: url('data:image/svg+xml,<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M8 17.333c-2.933 0-5.333 2.4-5.333 5.334S5.067 28 8 28s5.333-2.4 5.333-5.333-2.4-5.334-5.333-5.334M16 4c-2.933 0-5.333 2.4-5.333 5.333s2.4 5.334 5.333 5.334 5.333-2.4 5.333-5.334S18.933 4 16 4m8 13.333c-2.933 0-5.333 2.4-5.333 5.334S21.067 28 24 28s5.333-2.4 5.333-5.333-2.4-5.334-5.333-5.334"/></svg>');
@@ -84,7 +84,7 @@ div[class*="BattleChatComponentStyle-inputContainer"].BattleChatComponentStyle-i
 
 /* Chat text container chat mode new icon for to all mode */
 
-div[class*="BattleChatComponentStyle-inputContainer"].BattleChatComponentStyle-inputContainerAll > div[class*="btntoggle"i]::after {
+div[class*='BattleChatComponentStyle-inputContainer'].BattleChatComponentStyle-inputContainerAll > div[class*='btntoggle'i]::after {
 	background-color: var(--severitium-extra-light-gray-color);
 	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M332.08,75.75A76.08,76.08,0,1,1,256-.33,76.08,76.08,0,0,1,332.08,75.75ZM100.33,92.14a76.08,76.08,0,1,0,76.08,76.08A76.08,76.08,0,0,0,100.33,92.14Zm0,176.74A76.08,76.08,0,1,0,176.41,345,76.08,76.08,0,0,0,100.33,268.88ZM411.67,92.14a76.08,76.08,0,1,0,76.08,76.08A76.08,76.08,0,0,0,411.67,92.14Zm0,176.74A76.08,76.08,0,1,0,487.75,345,76.08,76.08,0,0,0,411.67,268.88ZM256,360.17a76.08,76.08,0,1,0,76.08,76.08A76.08,76.08,0,0,0,256,360.17Z"/></svg>');
 			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M332.08,75.75A76.08,76.08,0,1,1,256-.33,76.08,76.08,0,0,1,332.08,75.75ZM100.33,92.14a76.08,76.08,0,1,0,76.08,76.08A76.08,76.08,0,0,0,100.33,92.14Zm0,176.74A76.08,76.08,0,1,0,176.41,345,76.08,76.08,0,0,0,100.33,268.88ZM411.67,92.14a76.08,76.08,0,1,0,76.08,76.08A76.08,76.08,0,0,0,411.67,92.14Zm0,176.74A76.08,76.08,0,1,0,487.75,345,76.08,76.08,0,0,0,411.67,268.88ZM256,360.17a76.08,76.08,0,1,0,76.08,76.08A76.08,76.08,0,0,0,256,360.17Z"/></svg>');
@@ -92,31 +92,31 @@ div[class*="BattleChatComponentStyle-inputContainer"].BattleChatComponentStyle-i
 
 /* Chat text "send to team" */
 
-div[class*="BattleChatComponentStyle-inputContainer"].BattleChatComponentStyle-inputContainerAllies > span {
+div[class*='BattleChatComponentStyle-inputContainer'].BattleChatComponentStyle-inputContainerAllies > span {
 	color: var(--severitium-blue-text-color);
 }
 
 /* Chat text "send to all" */
 
-div[class*="BattleChatComponentStyle-inputContainer"].BattleChatComponentStyle-inputContainerAll > span {
+div[class*='BattleChatComponentStyle-inputContainer'].BattleChatComponentStyle-inputContainerAll > span {
 	color: var(--severitium-white-color);
 }
 
 /* Chat input to team */
 
-div[class*="BattleChatComponentStyle-inputContainer"].BattleChatComponentStyle-inputContainerAllies > input {
+div[class*='BattleChatComponentStyle-inputContainer'].BattleChatComponentStyle-inputContainerAllies > input {
 	color: var(--severitium-blue-text-color);
 }
 
 /* Chat input to all */
 
-div[class*="BattleChatComponentStyle-inputContainer"].BattleChatComponentStyle-inputContainerAll > input {
+div[class*='BattleChatComponentStyle-inputContainer'].BattleChatComponentStyle-inputContainerAll > input {
 	color: var(--severitium-white-color);
 }
 
 /* Chat complain button */
 
-.BattleChatComponentStyle-container div:has(> img[src*="alert"i]) {
+.BattleChatComponentStyle-container div:has(> img[src*='alert'i]) {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -134,19 +134,19 @@ div[class*="BattleChatComponentStyle-inputContainer"].BattleChatComponentStyle-i
 
 /* Chat complain button on hover */
 
-.BattleChatComponentStyle-container div:has(> img[src*="alert"i]):hover {
+.BattleChatComponentStyle-container div:has(> img[src*='alert'i]):hover {
 	background-color: var(--severitium-dark-transparent-background2);
 }
 
 /* Chat complain buttons original icon */
 
-.BattleChatComponentStyle-container div > img[src*="alert"i] {
+.BattleChatComponentStyle-container div > img[src*='alert'i] {
 	display: none;
 }
 
 /* Chat complain buttons new icon */
 
-.BattleChatComponentStyle-container div:has(> img[src*="alert"i])::after {
+.BattleChatComponentStyle-container div:has(> img[src*='alert'i])::after {
 	content: '';
 	width: 2.5em;
 	height: 2.5em;

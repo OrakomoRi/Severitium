@@ -147,6 +147,7 @@
 /* Input on focus */
 
 .ClanCreateComponentStyle-blockLicense .SearchInputComponentStyle-searchInput input:focus {
+	box-shadow: none;
 	border-color: var(--severitium-white-color);
 }
 
@@ -344,6 +345,7 @@
 /* Button */
 
 .ClanInvitationsComponentStyle-sendButton[class*='disabled'i] {
+	pointer-events: none;
 	background-color: var(--severitium-light-transparent-background3);
 	border-radius: var(--severitium-border-radius);
 	border: transparent solid .1em;

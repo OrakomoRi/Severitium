@@ -33,11 +33,11 @@
 
 /* Hotkeys in a main container */
 
-.ContainersComponentStyle-navigationBlock [class*="hotkey"i]:not([class*="component"i]),
-.GarageMenuComponentStyle-garageMenuContainer [class*="hotkey"i]:not([class*="component"i]),
-.ProBattlesComponentStyle-navigationBlock [class*="hotkey"i]:not([class*="component"i]),
-.Common-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div [class*="hotkey"i]:not([class*="component"i]),
-.ContainersComponentStyle-navigationBlockForCategories [class*="hotkey"i]:not([class*="component"i]) {
+.ContainersComponentStyle-navigationBlock [class*='hotkey'i]:not([class*='component'i]),
+.GarageMenuComponentStyle-garageMenuContainer [class*='hotkey'i]:not([class*='component'i]),
+.ProBattlesComponentStyle-navigationBlock [class*='hotkey'i]:not([class*='component'i]),
+.Common-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div [class*='hotkey'i]:not([class*='component'i]),
+.ContainersComponentStyle-navigationBlockForCategories [class*='hotkey'i]:not([class*='component'i]) {
 	background: transparent;
 	border: var(--severitium-gray-color) dashed .1em;
 	border-radius: var(--severitium-border-radius);
@@ -46,8 +46,8 @@
 
 /* Quest & Battle display type hotkey inside the main container */
 
-.Common-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) [class*="hotkey"i]:not([class*="component"i]),
-.ProBattlesComponentStyle-navigationBlock > div [class*="hotkey"i]:not([class*="component"i]) {
+.Common-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) [class*='hotkey'i]:not([class*='component'i]),
+.ProBattlesComponentStyle-navigationBlock > div [class*='hotkey'i]:not([class*='component'i]) {
 	position: relative;
 	top: auto;
 	left: auto;
@@ -58,12 +58,12 @@
 
 /* Chat icon inside the main container */
 
-.ContainersComponentStyle-navigationBlock [class*="chatblock"i] > [class*="chaticon"i],
-.GarageMenuComponentStyle-garageMenuContainer [class*="chatblock"i] > [class*="chaticon"i],
-.ProBattlesComponentStyle-navigationBlock [class*="chatblock"i] > [class*="chaticon"i],
-.ContainersComponentStyle-navigationBlock [class*="chatblock"i]:hover > [class*="chaticon"i],
-.GarageMenuComponentStyle-garageMenuContainer [class*="chatblock"i]:hover > [class*="chaticon"i],
-.ProBattlesComponentStyle-navigationBlock [class*="chatblock"i]:hover > [class*="chaticon"i] {
+.ContainersComponentStyle-navigationBlock [class*='chatblock'i] > [class*='chaticon'i],
+.GarageMenuComponentStyle-garageMenuContainer [class*='chatblock'i] > [class*='chaticon'i],
+.ProBattlesComponentStyle-navigationBlock [class*='chatblock'i] > [class*='chaticon'i],
+.ContainersComponentStyle-navigationBlock [class*='chatblock'i]:hover > [class*='chaticon'i],
+.GarageMenuComponentStyle-garageMenuContainer [class*='chatblock'i]:hover > [class*='chaticon'i],
+.ProBattlesComponentStyle-navigationBlock [class*='chatblock'i]:hover > [class*='chaticon'i] {
 	height: 1.5em;
 	width: 1.5em;
 	margin: 0;
@@ -82,18 +82,18 @@
 
 /* Chat icon inside the main container (static) */
 
-.ContainersComponentStyle-navigationBlock [class*="chatblock"i] > [class*="chaticon"i],
-.GarageMenuComponentStyle-garageMenuContainer [class*="chatblock"i] > [class*="chaticon"i],
-.ProBattlesComponentStyle-navigationBlock [class*="chatblock"i] > [class*="chaticon"i] {
+.ContainersComponentStyle-navigationBlock [class*='chatblock'i] > [class*='chaticon'i],
+.GarageMenuComponentStyle-garageMenuContainer [class*='chatblock'i] > [class*='chaticon'i],
+.ProBattlesComponentStyle-navigationBlock [class*='chatblock'i] > [class*='chaticon'i] {
 	background-color: var(--severitium-light-gray-color);
 	transition: background-color .2s ease;
 }
 
 /* Chat icon inside the main container on hover */
 
-.ContainersComponentStyle-navigationBlock [class*="chatblock"i]:hover > [class*="chaticon"i],
-.GarageMenuComponentStyle-garageMenuContainer [class*="chatblock"i]:hover > [class*="chaticon"i],
-.ProBattlesComponentStyle-navigationBlock [class*="chatblock"i]:hover > [class*="chaticon"i] {
+.ContainersComponentStyle-navigationBlock [class*='chatblock'i]:hover > [class*='chaticon'i],
+.GarageMenuComponentStyle-garageMenuContainer [class*='chatblock'i]:hover > [class*='chaticon'i],
+.ProBattlesComponentStyle-navigationBlock [class*='chatblock'i]:hover > [class*='chaticon'i] {
 	background-color: var(--severitium-white-color);
 }
 
@@ -105,7 +105,7 @@
 
 /* Quest & Battle display type button inside the main container */
 
-.Common-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) div:has(> [class*="hotkey"i]:not([class*="component"i])),
+.Common-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) div:has(> [class*='hotkey'i]:not([class*='component'i])),
 .ProBattlesComponentStyle-navigationBlock > div {
 	display: flex;
 	justify-content: center;
@@ -119,7 +119,7 @@
 
 /* Quest & Battle display type button inside the main container on hover */
 
-.Common-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) div:has(> [class*="hotkey"i]:not([class*="component"i])):hover,
+.Common-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) div:has(> [class*='hotkey'i]:not([class*='component'i])):hover,
 .ProBattlesComponentStyle-navigationBlock > div:hover {
 	background: none;
 }

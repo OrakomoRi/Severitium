@@ -43,7 +43,7 @@
 /* Text of the modal window */
 
 .DialogContainerComponentStyle-contentContainer span,
-.ModalStyle-rootHover > div > div:has(> [class*="head"i]) + div > div > div {
+.ModalStyle-rootHover > div > div:has(> [class*='head'i]) + div > div > div {
 	color: var(--severitium-white-text-color) !important;
 }
 
@@ -54,9 +54,9 @@
 	* Rename modal
 */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-contentContainer span[class]:not([class*="common"i]),
-.ModalStyle-rootHover > div:not([class*='battlepick'i]) .FriendListComponentStyle-commonBlockText span[class]:not([class*="common"i]),
-.ModalStyle-rootHover > div:not([class*='battlepick'i]) .PaidRenameDialogComponentStyle-messageBlock > span[class]:not([class*="common"i]) {
+.ModalStyle-rootHover > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-contentContainer span[class]:not([class*='common'i]),
+.ModalStyle-rootHover > div:not([class*='battlepick'i]) .FriendListComponentStyle-commonBlockText span[class]:not([class*='common'i]),
+.ModalStyle-rootHover > div:not([class*='battlepick'i]) .PaidRenameDialogComponentStyle-messageBlock > span[class]:not([class*='common'i]) {
 	color: var(--severitium-main-color);
 }
 
@@ -65,7 +65,7 @@
 	* Successful purcase modal
 */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i]) .SuccessfulPurchaseComponentStyle-reward span[class]:not([class*="common"i]) {
+.ModalStyle-rootHover > div:not([class*='battlepick'i]) .SuccessfulPurchaseComponentStyle-reward span[class]:not([class*='common'i]) {
 	color: var(--severitium-white-text-color);
 }
 
@@ -182,7 +182,7 @@
 /* Hotkey block */
 
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .PopupMessageComponentStyle-buttonsContainer > div h3,
-.ModalStyle-rootHover > div:not([class*='battlepick'i]) h3[class*="hotkey"i] {
+.ModalStyle-rootHover > div:not([class*='battlepick'i]) h3[class*='hotkey'i] {
 	background: transparent;
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .1em;
@@ -347,19 +347,19 @@
 
 /* Ruby currency amount inside modal */
 
-.ModalStyle-rootHover > div > div:has(> [class*="head"i]) + div > div > div > img[src*="ruby"i] + span {
+.ModalStyle-rootHover > div > div:has(> [class*='head'i]) + div > div > div > img[src*='ruby'i] + span {
 	color: var(--severitium-ruby-color);
 }
 
 /* Tancoin currency amount inside modal */
 
-.ModalStyle-rootHover > div > div:has(> [class*="head"i]) + div > div > div > img[src*="coin"i] + span {
+.ModalStyle-rootHover > div > div:has(> [class*='head'i]) + div > div > div > img[src*='coin'i] + span {
 	color: var(--severitium-tancoin-color);
 }
 
 /* Crystal currency amount inside modal */
 
-.ModalStyle-rootHover > div > div:has(> [class*="head"i]) + div > div > div > img[src*="crystal"i] + span {
+.ModalStyle-rootHover > div > div:has(> [class*='head'i]) + div > div > div > img[src*='crystal'i] + span {
 	color: var(--severitium-crystal-color);
 }
 
@@ -367,19 +367,19 @@
 
 /* Conversion dialog right panel (balance amount ruby) */
 
-.ConverterDialogComponentStyle-rightPanel .ConverterDialogComponentStyle-balanceContainer > img[src*="ruby"] + span {
+.ConverterDialogComponentStyle-rightPanel .ConverterDialogComponentStyle-balanceContainer > img[src*='ruby'] + span {
 	color: var(--severitium-ruby-color);
 }
 
 /* Conversion dialog right panel (balance amount tancoin) */
 
-.ConverterDialogComponentStyle-rightPanel .ConverterDialogComponentStyle-balanceContainer > img[src*="coin"] + span {
+.ConverterDialogComponentStyle-rightPanel .ConverterDialogComponentStyle-balanceContainer > img[src*='coin'] + span {
 	color: var(--severitium-tancoin-color);
 }
 
 /* Conversion dialog right panel (balance amount crystal) */
 
-.ConverterDialogComponentStyle-rightPanel .ConverterDialogComponentStyle-balanceContainer > img[src*="crystal"] + span {
+.ConverterDialogComponentStyle-rightPanel .ConverterDialogComponentStyle-balanceContainer > img[src*='crystal'] + span {
 	color: var(--severitium-crystal-color);
 }
 
@@ -415,7 +415,7 @@
 
 /* Minus slider button */
 
-.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="minus"i]) {
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*='minus'i]) {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -426,19 +426,19 @@
 
 /* Button on hover */
 
-.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="minus"i]):hover {
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*='minus'i]):hover {
 	border: var(--severitium-red-button-border-color-hover) solid .1em;
 }
 
 /* Button original icon */
 
-.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton > img[src*="minus"i] {
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton > img[src*='minus'i] {
 	display: none;
 }
 
 /* Button custom icon */
 
-.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="minus"i])::before {
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*='minus'i])::before {
 	content: '';
 	height: 1.5em;
 	width: 1.5em;
@@ -455,7 +455,7 @@
 
 /* Plus slider button */
 
-.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="plus"i]) {
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*='plus'i]) {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -466,19 +466,19 @@
 
 /* Button on hover */
 
-.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="plus"i]):hover {
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*='plus'i]):hover {
 	border: var(--severitium-green-button-border-color-hover) solid .1em;
 }
 
 /* Button original icon */
 
-.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton > img[src*="plus"i] {
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton > img[src*='plus'i] {
 	display: none;
 }
 
 /* Button custom icon */
 
-.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="plus"i])::before {
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*='plus'i])::before {
 	content: '';
 	height: 1.5em;
 	width: 1.5em;
@@ -495,7 +495,7 @@
 
 /* Max slider button */
 
-.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="max"i]) {
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*='max'i]) {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -506,19 +506,19 @@
 
 /* Button on hover */
 
-.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="max"i]):hover {
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*='max'i]):hover {
 	border: var(--severitium-blue-button-border-color-hover) solid .1em;
 }
 
 /* Button original icon */
 
-.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton > img[src*="max"i] {
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton > img[src*='max'i] {
 	display: none;
 }
 
 /* Button custom icon */
 
-.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*="max"i])::before {
+.ConverterDialogComponentStyle-sliderWithButtonsContainer .ConverterDialogComponentStyle-sliderButton:has(> img[src*='max'i])::before {
 	content: '';
 	height: 1.5em;
 	width: 1.5em;
