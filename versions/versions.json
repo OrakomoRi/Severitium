@@ -1336,5 +1336,11 @@
     "date": "2025-08-25",
     "comment": "1.7.2+build32 feat: updated group icon on the top panel, added new color to the variables",
     "hash": "a4083f7ff1d36dcbe710a57768de34ff1b73a3ee"
+  },
+  {
+    "version": "1.7.2+build33",
+    "date": "2025-08-27",
+    "comment": "1.7.2+build33 feat: updated all css selectors to use ' instead of \" fix: fixed existing clan window (actions container), fixed entrance input selectors",
+    "hash": "33f61c729cabc53aceb70aee956ece1ba1f73051"
   }
 ]
