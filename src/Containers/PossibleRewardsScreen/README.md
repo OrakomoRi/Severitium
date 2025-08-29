@@ -10,8 +10,8 @@ Stylizes the screen of possible rewards from containers. Categories, table, indi
 
 #### Old
 
-![](/images/containers/old/possiblerewardsmenu.gif)
+![](/images/containers/old/possiblerewardsscreen.gif)
 
 #### New
 
-![](/images/containers/new/possiblerewardsmenu.gif)
+![](/images/containers/new/possiblerewardsscreen.gif)
