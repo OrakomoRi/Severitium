@@ -47,7 +47,7 @@ jobs:
                   node-version: "20"
 
             - name: Install minifiers
-              run: npm i -g terser lightningcss
+              run: npm i -g terser lightningcss-cli
 
             - name: Build release files
               run: |
