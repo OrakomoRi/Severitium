@@ -1354,5 +1354,11 @@
     "date": "2025-08-30",
     "comment": "1.7.2+build35 fix: fix buttons styles (red, green, disabled)",
     "hash": "613910bd24c148423aeedcdfa09cdff51b769770"
+  },
+  {
+    "version": "1.7.2+build38",
+    "date": "2025-08-30",
+    "comment": "1.7.2+build38 feat: updated css minifier (lightningcss -> csso) fix: js, css minifying",
+    "hash": "48353fa4f29d7591e99db94d9d2c201eb1e9f95b"
   }
 ]
