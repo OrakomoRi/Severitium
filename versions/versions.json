@@ -1348,5 +1348,11 @@
     "date": "2025-08-30",
     "comment": "1.7.2+build34 feat: updated styles for modal disabled buttons fix: fix change creator tag apply modal button",
     "hash": "7a1d20f426e426929c8549847436841842cb800a"
+  },
+  {
+    "version": "1.7.2+build35",
+    "date": "2025-08-30",
+    "comment": "1.7.2+build35 fix: fix buttons styles (red, green, disabled)",
+    "hash": "613910bd24c148423aeedcdfa09cdff51b769770"
   }
 ]
