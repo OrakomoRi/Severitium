@@ -1360,5 +1360,11 @@
     "date": "2025-08-30",
     "comment": "1.7.2+build38 feat: updated css minifier (lightningcss -> csso) fix: js, css minifying",
     "hash": "48353fa4f29d7591e99db94d9d2c201eb1e9f95b"
+  },
+  {
+    "version": "1.7.2+build39",
+    "date": "2025-08-30",
+    "comment": "1.7.2+build39 feat: updated button styles for modals",
+    "hash": "b626b48a063c8075dbad05ef62843fe84ce9194a"
   }
 ]
