@@ -47,7 +47,7 @@ jobs:
                   node-version: "20"
 
             - name: Install minifiers
-              run: npm install -g terser clean-css-cli
+              run: npm i -g terser lightningcss
 
             - name: Build release files
               run: |
@@ -62,7 +62,7 @@ jobs:
                   # Collect and minify CSS files
                   find src -path "src/_Additional" -prune -o -name "*.css" ! -name "*.user.css" ! -name "*.min.css" -print \
                     | xargs cat > "builds/$VERSION/style.release.css"
-                  cleancss -o "builds/$VERSION/style.release.min.css" "builds/$VERSION/style.release.css"
+                  lightningcss --minify -o "builds/$VERSION/style.release.min.css" "builds/$VERSION/style.release.css"
                   rm "builds/$VERSION/style.release.css"
 
             - name: Update versions.json
