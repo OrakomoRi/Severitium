@@ -47,6 +47,25 @@
 	color: var(--severitium-white-text-color) !important;
 }
 
+/* Modal disabled button */
+
+.ModalStyle-rootHover div.ButtonComponentStyle-disabled.ButtonComponentStyle-disabled {
+	pointer-events: none;
+	background-color: var(--severitium-light-transparent-background3);
+	border-radius: var(--severitium-border-radius);
+	border: transparent solid .1em;
+	outline: none;
+	box-shadow: none;
+}
+
+/* Button text */
+
+.ModalStyle-rootHover div.ButtonComponentStyle-disabled.ButtonComponentStyle-disabled > span {
+	color: var(--severitium-white-text-color);
+	text-shadow: none;
+	opacity: .25;
+}
+
 /*
 	Highlighted text in modal for:
 	* Settings modal
@@ -144,15 +163,15 @@
 	transition: border .2s ease;
 }
 
-/* Apply red (warning) button on hover */
+/* Button on hover */
 
 .ModalStyle-rootHover > div:not([class*='battlepick'i]):not([class*='need2fa'i]):not([class*='changeowner'i]) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):hover {
 	border: var(--severitium-red-button-border-color-hover) solid .1em;
 }
 
-/* Apply red (warning) button text */
+/* Button text */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i]):not([class*='need2fa'i]):not([class*='changeowner'i]) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) span {
+.ModalStyle-rootHover > div:not([class*='battlepick'i]):not([class*='need2fa'i]):not([class*='changeowner'i]) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) > span {
 	color: var(--severitium-red-button-color);
 }
 
@@ -167,16 +186,39 @@
 	transition: border .2s ease;
 }
 
-/* Gold (warning) button on hover */
+/* Button on hover */
 
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) div[class*='premiumbutton'i]:hover {
 	border: var(--severitium-gold-button-border-color-hover) solid .1em;
 }
 
-/* Gold (purchase) button text */
+/* Button text */
 
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) div[class*='premiumbutton'i] > span {
 	color: var(--severitium-gold-button-color);
+}
+
+/* Green (apply) button of the modal window */
+
+.ModalStyle-rootHover > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.ModalStyle-rootHover > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):hover {
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.ModalStyle-rootHover > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) > span {
+	color: var(--severitium-green-button-color);
 }
 
 /* Hotkey block */
