@@ -1372,5 +1372,11 @@
     "date": "2025-08-30",
     "comment": "1.7.2+build40 feat: updated button styles for modals",
     "hash": "3efc2ac9b35692f3f3dac2635e161336e45773d5"
+  },
+  {
+    "version": "1.7.2+build41",
+    "date": "2025-08-30",
+    "comment": "1.7.2+build41 feat: updated button styles for modals",
+    "hash": "66e0ad4b778d9651847a8d6af33180e229707bb9"
   }
 ]
