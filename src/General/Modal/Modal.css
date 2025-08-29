@@ -49,7 +49,7 @@
 
 /* Modal disabled button */
 
-.ModalStyle-rootHover.ModalStyle-rootHover div.ButtonComponentStyle-disabled.ButtonComponentStyle-disabled {
+.ModalStyle-rootHover.ModalStyle-rootHover > div .ButtonComponentStyle-disabled.ButtonComponentStyle-disabled.ButtonComponentStyle-disabled:not(:root) {
 	pointer-events: none;
 	background-color: var(--severitium-light-transparent-background3);
 	border-radius: var(--severitium-border-radius);
@@ -60,7 +60,7 @@
 
 /* Button text */
 
-.ModalStyle-rootHover.ModalStyle-rootHover div.ButtonComponentStyle-disabled.ButtonComponentStyle-disabled > span {
+.ModalStyle-rootHover.ModalStyle-rootHover > div .ButtonComponentStyle-disabled.ButtonComponentStyle-disabled.ButtonComponentStyle-disabled:not(:root) > span {
 	color: var(--severitium-white-text-color);
 	text-shadow: none;
 	opacity: .25;
@@ -155,7 +155,7 @@
 
 /* Apply red (warning) button of the modal window */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i]):not([class*='need2fa'i]):not([class*='changeowner'i]) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) {
+.ModalStyle-rootHover > div:not([class*='battlepick'i], [class*='need2fa'i], [class*='changeowner'i]) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -166,19 +166,19 @@
 
 /* Button on hover */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i]):not([class*='need2fa'i]):not([class*='changeowner'i]) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):hover {
+.ModalStyle-rootHover > div:not([class*='battlepick'i], [class*='need2fa'i], [class*='changeowner'i]) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):hover {
 	border: var(--severitium-red-button-border-color-hover) solid .1em;
 }
 
 /* Button text */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i]):not([class*='need2fa'i]):not([class*='changeowner'i]) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) > span {
+.ModalStyle-rootHover > div:not([class*='battlepick'i], [class*='need2fa'i], [class*='changeowner'i]) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) > span {
 	color: var(--severitium-red-button-color);
 }
 
 /* Green (apply) button of the modal window */
 
-.ModalStyle-rootHover > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) {
+.ModalStyle-rootHover > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):not(:root):nth-last-child(n) {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -189,13 +189,13 @@
 
 /* Button on hover */
 
-.ModalStyle-rootHover.ModalStyle-rootHover > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):hover {
+.ModalStyle-rootHover.ModalStyle-rootHover > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):not(:root):nth-last-child(n):hover {
 	border: var(--severitium-green-button-border-color-hover) solid .1em;
 }
 
 /* Button text */
 
-.ModalStyle-rootHover.ModalStyle-rootHover > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) > span {
+.ModalStyle-rootHover.ModalStyle-rootHover > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):not(:root):nth-last-child(n) > span {
 	color: var(--severitium-green-button-color);
 }
 
