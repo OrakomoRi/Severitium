@@ -49,7 +49,7 @@
 
 /* Modal disabled button */
 
-.ModalStyle-rootHover.ModalStyle-rootHover > div .ButtonComponentStyle-disabled.ButtonComponentStyle-disabled.ButtonComponentStyle-disabled:not(:root) {
+.ModalStyle-rootHover:not(:root):not(:root) > div div.ButtonComponentStyle-disabled:not(:root):not(:root):not(:root) {
 	pointer-events: none;
 	background-color: var(--severitium-light-transparent-background3);
 	border-radius: var(--severitium-border-radius);
@@ -60,7 +60,7 @@
 
 /* Button text */
 
-.ModalStyle-rootHover.ModalStyle-rootHover > div .ButtonComponentStyle-disabled.ButtonComponentStyle-disabled.ButtonComponentStyle-disabled:not(:root) > span {
+.ModalStyle-rootHover:not(:root):not(:root) > div div.ButtonComponentStyle-disabled:not(:root):not(:root):not(:root) > span {
 	color: var(--severitium-white-text-color);
 	text-shadow: none;
 	opacity: .25;
@@ -189,13 +189,13 @@
 
 /* Button on hover */
 
-.ModalStyle-rootHover.ModalStyle-rootHover > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):not(:root):nth-last-child(n):hover {
+.ModalStyle-rootHover > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):not(:root):nth-last-child(n):hover {
 	border: var(--severitium-green-button-border-color-hover) solid .1em;
 }
 
 /* Button text */
 
-.ModalStyle-rootHover.ModalStyle-rootHover > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):not(:root):nth-last-child(n) > span {
+.ModalStyle-rootHover > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):not(:root):nth-last-child(n) > span {
 	color: var(--severitium-green-button-color);
 }
 
