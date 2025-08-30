@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build49
+// @version			1.7.2+build50
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -102,7 +102,7 @@
 	const severitiumInjector = new SeveritiumInjector(script, currentSeason);
 
 	const logger = new Logger(script.name);
-	// logger.enableLogging();
+	logger.enableLogging(); // Enable for debugging
 
 
 	/**
@@ -386,7 +386,7 @@
 				// Fetch all images (as Base64)
 				const imagePromises = imageLinks.map(({ url }, index) => {
 					const formattedUrl = url
-						.replace('SEASON_PLACEHOLDER', _getSeason())
+						.replace('SEASON_PLACEHOLDER', currentSeason)
 						+ `?v=${script.version}`;
 					logger.log(`Attempting to load image ${index + 1}/${imageLinks.length}: ${formattedUrl}`, 'info');
 					return fetchResource(formattedUrl, true).then(img => {
@@ -443,7 +443,36 @@
 			}
 			// Apply images to the page
 			if (imageLinks && imageLinks.length > 0) {
-				severitiumInjector.applyImages(imageLinks);
+				// Prepare image links with proper URLs and check if data exists
+				const preparedImageLinks = imageLinks.map(element => {
+					const formattedUrl = element.url
+						.replace('SEASON_PLACEHOLDER', currentSeason)
+						+ `?v=${script.version}`;
+					
+					// Check if we have valid image data for this URL
+					const imageData = script.images[formattedUrl];
+					const hasValidData = imageData && imageData !== 'undefined' && typeof imageData === 'string' && imageData.length > 0;
+					
+					if (!hasValidData) {
+						logger.log(`Missing or invalid image data for: ${formattedUrl}`, 'warn');
+					}
+					
+					return {
+						...element,
+						url: formattedUrl,
+						hasValidData: hasValidData
+					};
+				});
+				
+				// Filter out images without valid data
+				const validImageLinks = preparedImageLinks.filter(element => element.hasValidData);
+				
+				logger.log(`Applying ${validImageLinks.length} valid images out of ${imageLinks.length} total`, 'info');
+				if (validImageLinks.length > 0) {
+					severitiumInjector.applyImages(validImageLinks);
+				} else {
+					logger.log('No valid image data found, skipping image application', 'warn');
+				}
 			} else {
 				logger.log('No image links to apply.', 'warn');
 			}
