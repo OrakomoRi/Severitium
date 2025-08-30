@@ -1420,5 +1420,11 @@
     "date": "2025-08-31",
     "comment": "1.7.2+build48 feat: update main userscript",
     "hash": "a03eb7d8405d5a246600f5a66c55ee03f1c60cd5"
+  },
+  {
+    "version": "1.7.2+build49",
+    "date": "2025-08-31",
+    "comment": "1.7.2+build49 feat: update main userscript, update injector",
+    "hash": "8fddbc0f8c6ee18a964fca542c7f09bef05ad332"
   }
 ]
