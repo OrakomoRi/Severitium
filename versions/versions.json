@@ -1414,5 +1414,11 @@
     "date": "2025-08-31",
     "comment": "1.7.2+build47 feat: update main userscript",
     "hash": "1f1b004bcde89d4fa529d254011d25fb6e30f596"
+  },
+  {
+    "version": "1.7.2+build48",
+    "date": "2025-08-31",
+    "comment": "1.7.2+build48 feat: update main userscript",
+    "hash": "a03eb7d8405d5a246600f5a66c55ee03f1c60cd5"
   }
 ]
