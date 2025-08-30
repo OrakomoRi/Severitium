@@ -1384,5 +1384,11 @@
     "date": "2025-08-30",
     "comment": "1.7.2+build42 feat: updated links to sources logic",
     "hash": "895a7c0446836ae736c6af4bf13f5c19b8f41c04"
+  },
+  {
+    "version": "1.7.2+build43",
+    "date": "2025-08-30",
+    "comment": "1.7.2+build43 fix: main userscript fix",
+    "hash": "13a048648bf515a5647ffb75b0795e382bd392e6"
   }
 ]
