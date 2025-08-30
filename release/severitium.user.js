@@ -2,11 +2,11 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build41
+// @version			1.7.2+build42
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
-// @icon			https://github.com/OrakomoRi/Severitium/blob/main/images/icon.svg?raw=true
+// @icon			https://i.imgur.com/8MoASmv.png
 
 // @match			https://*.tankionline.com/play/*
 // @include			https://*test*.tankionline.com/*
@@ -15,15 +15,15 @@
 // @connect			github.com
 // @connect			cdn.jsdelivr.net
 
-// @updateURL		https://github.com/OrakomoRi/Severitium/blob/main/release/severitium.user.js?raw=true
-// @downloadURL		https://github.com/OrakomoRi/Severitium/blob/main/release/severitium.user.js?raw=true
+// @updateURL		https://raw.githubusercontent.com/OrakomoRi/Severitium/main/release/severitium.user.js
+// @downloadURL		https://raw.githubusercontent.com/OrakomoRi/Severitium/main/release/severitium.user.js
 
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_getSeason.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/_extractFileName.min.js?raw=true
+// @require			https://raw.githubusercontent.com/OrakomoRi/Severitium/main/src/_Additional/_getSeason.min.js
+// @require			https://raw.githubusercontent.com/OrakomoRi/Severitium/main/src/_Additional/_extractFileName.min.js
 
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/class/LoadingScreen.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/class/Logger.min.js?raw=true
-// @require			https://github.com/OrakomoRi/Severitium/blob/main/src/_Additional/class/SeveritiumInjector.min.js?raw=true
+// @require			https://raw.githubusercontent.com/OrakomoRi/Severitium/main/src/_Additional/class/LoadingScreen.min.js
+// @require			https://raw.githubusercontent.com/OrakomoRi/Severitium/main/src/_Additional/class/Logger.min.js
+// @require			https://raw.githubusercontent.com/OrakomoRi/Severitium/main/src/_Additional/class/SeveritiumInjector.min.js
 
 // @run-at			document-start
 // @grant			unsafeWindow
@@ -31,10 +31,10 @@
 // @grant			GM_getValue
 // @grant			GM_setValue
 // @grant			GM_openInTab
-
+Да
 // @require			https://cdn.jsdelivr.net/npm/sweetalert2@11
-// @require			https://cdn.jsdelivr.net/gh/OrakomoRi/CompareVersions@main/JS/compareversions.min.js
-// @require			https://cdn.jsdelivr.net/gh/OrakomoRi/Breezium@latest/modules/BreeziumSelect/js/BreeziumSelect.min.js
+// @require			https://cdn.jsdelivr.net/gh/OrakomoRi/CompareVersions/JS/compareversions.min.js
+// @require			https://cdn.jsdelivr.net/gh/OrakomoRi/Breezium/modules/BreeziumSelect/js/BreeziumSelect.min.js
 
 // ==/UserScript==
 
@@ -83,7 +83,7 @@
 	};
 
 	const GITHUB_SCRIPT_URL = GM_info.script.updateURL;
-	const STABLE_JSON_URL = 'https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/stable.json?raw=true';
+	const STABLE_JSON_URL = `https://orakomori.github.io/Severitium/src/_preload/stable.json?v=${script.version}`;
 
 	const script = {
 		CSS: {},
@@ -333,15 +333,15 @@
 			// If version changed or force reload, reload everything
 			const loadEverything = forceReload || !isSameVersion;
 
-			// Construct URLs for CSS and JS for the current version
-			const RELEASE_CSS_URL = `https://github.com/OrakomoRi/Severitium/blob/builds/${script.version}/style.release.min.css?raw=true`;
-			const RELEASE_JS_URL = `https://github.com/OrakomoRi/Severitium/blob/builds/${script.version}/script.release.min.js?raw=true`;
+			// Construct URLs for CSS and JS for the current version using jsDelivr CDN
+			const RELEASE_CSS_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/${script.version}/style.release.min.css`;
+			const RELEASE_JS_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/${script.version}/script.release.min.js`;
 			logger.log(`Resolved CSS path: ${RELEASE_CSS_URL}`, 'debug');
 			logger.log(`Resolved JS path: ${RELEASE_JS_URL}`, 'debug');
 
 			logger.log(`Last season: ${lastSeason || 'null'}; current season: ${currentSeason}. Season changed: ${isSeasonChanged ? 'yes' : 'no'}`, 'debug');
 			// Fetch image links for the current season
-			imageLinks = await fetchJSON('https://github.com/OrakomoRi/Severitium/blob/main/src/_preload/ImageModules.json?raw=true').then(data => data || []);
+			imageLinks = await fetchJSON(`https://orakomori.github.io/Severitium/src/_preload/ImageModules.json?v=${script.version}`).then(data => data || []);
 
 			if (!loadEverything && !loadOnlyImages) {
 				// Load all resources from cache if nothing changed
@@ -369,7 +369,9 @@
 				}
 				// Fetch all images (as Base64)
 				const imagePromises = imageLinks.map(({ url }) => {
-					const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason());
+					const formattedUrl = url
+						.replace('SEASON_PLACEHOLDER', _getSeason())
+						+ `?v=${script.version}`;
 					return fetchResource(formattedUrl, true).then(img => {
 						script.images[formattedUrl] = img;
 						loadingScreen.updateProgress();
