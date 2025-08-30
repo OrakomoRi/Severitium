@@ -1438,5 +1438,11 @@
     "date": "2025-08-31",
     "comment": "1.7.2+build51 feat: added settings content styles",
     "hash": "3ba5eb9a87015de203a7f4e78539ebb8a5b3e3a5"
+  },
+  {
+    "version": "1.7.2+build52",
+    "date": "2025-08-31",
+    "comment": "1.7.2+build52 feat: update main userscript",
+    "hash": "b4705d9b91e58d3e03f4306807145262831ed538"
   }
 ]
