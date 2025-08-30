@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build46
+// @version			1.7.2+build47
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -248,7 +248,8 @@
 		const { fileName, fileType } = _extractFileName(url);
 		const startTime = performance.now();
 		logger.log(`[START] ${new Date().toISOString()}\n${fileName} ${fileType}`, 'debug');
-	
+		logger.debug(`Fetching resource from ${url}`);
+
 		return new Promise((resolve, reject) => {
 			GM_xmlhttpRequest({
 				method: 'GET',
@@ -262,6 +263,12 @@
 	
 						if (asBase64) {
 							// Convert blob to Base64 string for image embedding
+							if (!response.response || response.response.size === 0) {
+								logger.log(`[ERROR] ${fileName} ${fileType}: Empty blob response`, 'error');
+								reject(new Error(`Empty blob response from ${url}`));
+								return;
+							}
+							
 							const reader = new FileReader();
 							reader.onloadend = () => resolve(reader.result.split(',')[1]);
 							reader.readAsDataURL(response.response);
@@ -342,7 +349,15 @@
 
 			logger.log(`Last season: ${lastSeason || 'null'}; current season: ${currentSeason}. Season changed: ${isSeasonChanged ? 'yes' : 'no'}`, 'debug');
 			// Fetch image links for the current season
-			imageLinks = await fetchJSON(`https://orakomori.github.io/Severitium/src/_preload/ImageModules.json?v=${script.version}`).then(data => data || []);
+			imageLinks = await fetchJSON(`https://orakomori.github.io/Severitium/src/_preload/ImageModules.json?v=${script.version}`).then(data => {
+				logger.log(`Loaded ${data ? data.length : 0} image links from ImageModules.json`, 'info');
+				if (data && data.length > 0) {
+					data.forEach((item, index) => {
+						logger.log(`Image ${index + 1}: ${item.url}`, 'debug');
+					});
+				}
+				return data || [];
+			});
 
 			if (!loadEverything && !loadOnlyImages) {
 				// Load all resources from cache if nothing changed
@@ -369,10 +384,11 @@
 					});
 				}
 				// Fetch all images (as Base64)
-				const imagePromises = imageLinks.map(({ url }) => {
+				const imagePromises = imageLinks.map(({ url }, index) => {
 					const formattedUrl = url
 						.replace('SEASON_PLACEHOLDER', _getSeason())
 						+ `?v=${script.version}`;
+					logger.log(`Attempting to load image ${index + 1}/${imageLinks.length}: ${formattedUrl}`, 'info');
 					return fetchResource(formattedUrl, true).then(img => {
 						script.images[formattedUrl] = img;
 						loadingScreen.updateProgress();
@@ -425,8 +441,26 @@
 				logger.log(typeof script.JS['main'], 'debug');
 				severitiumInjector.applyJS('main');
 			}
-			// Apply images to the page
-			severitiumInjector.applyImages(imageLinks);
+			// Apply images to the page - only apply valid images
+			if (imageLinks && imageLinks.length > 0) {
+				// Filter out images with invalid data
+				const validImageLinks = imageLinks.filter(({ url }) => {
+					const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason()) + `?v=${script.version}`;
+					const imageData = script.images[formattedUrl];
+					const isValid = imageData && imageData !== 'undefined' && typeof imageData === 'string' && imageData.length > 0;
+					if (!isValid) {
+						logger.log(`Skipping invalid image: ${formattedUrl} (data: ${typeof imageData})`, 'warn');
+					}
+					return isValid;
+				});
+				
+				logger.log(`Applying ${validImageLinks.length} valid images out of ${imageLinks.length} total`, 'info');
+				if (validImageLinks.length > 0) {
+					severitiumInjector.applyImages(validImageLinks);
+				}
+			} else {
+				logger.log('No image links to apply', 'warn');
+			}
 			// Remove loading screen
 			LoadingScreen.remove(loadingScreen);
 		}
