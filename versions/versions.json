@@ -1378,5 +1378,11 @@
     "date": "2025-08-30",
     "comment": "1.7.2+build41 feat: updated button styles for modals",
     "hash": "66e0ad4b778d9651847a8d6af33180e229707bb9"
+  },
+  {
+    "version": "1.7.2+build42",
+    "date": "2025-08-30",
+    "comment": "1.7.2+build42 feat: updated links to sources logic",
+    "hash": "895a7c0446836ae736c6af4bf13f5c19b8f41c04"
   }
 ]
