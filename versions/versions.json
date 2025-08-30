@@ -1402,5 +1402,11 @@
     "date": "2025-08-31",
     "comment": "1.7.2+build45 fix: main userscript fix",
     "hash": "d29c6981f08a3944a5e1fd09cbdcaa73df2fdba3"
+  },
+  {
+    "version": "1.7.2+build46",
+    "date": "2025-08-31",
+    "comment": "1.7.2+build46 feat: enhance file name extraction logic",
+    "hash": "f48b28970fd5b55c17506b0a21ca9e2f43136998"
   }
 ]
