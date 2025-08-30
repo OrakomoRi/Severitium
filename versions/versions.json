@@ -1396,5 +1396,11 @@
     "date": "2025-08-31",
     "comment": "1.7.2+build44 fix: main userscript fix",
     "hash": "1e5c0ac0f6b0f393537479cff91f7efb014f8f7d"
+  },
+  {
+    "version": "1.7.2+build45",
+    "date": "2025-08-31",
+    "comment": "1.7.2+build45 fix: main userscript fix",
+    "hash": "d29c6981f08a3944a5e1fd09cbdcaa73df2fdba3"
   }
 ]
