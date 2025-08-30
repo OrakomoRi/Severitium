@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build43
+// @version			1.7.2+build44
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -82,9 +82,6 @@
 		timer: 5000,
 	};
 
-	const GITHUB_SCRIPT_URL = GM_info.script.updateURL;
-	const STABLE_JSON_URL = `https://orakomori.github.io/Severitium/src/_preload/stable.json?v=${script.version}`;
-
 	const script = {
 		CSS: {},
 		JS: {},
@@ -94,6 +91,9 @@
 	}
 
 	let imageLinks;
+
+	const GITHUB_SCRIPT_URL = GM_info.script.updateURL;
+	const STABLE_JSON_URL = `https://orakomori.github.io/Severitium/src/_preload/stable.json?v=${script.version}`;
 
 	const lastSeason = GM_getValue('SeveritiumSeason', '');
 	const currentSeason = _getSeason();
