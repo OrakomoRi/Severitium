@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build47
+// @version			1.7.2+build48
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -248,7 +248,7 @@
 		const { fileName, fileType } = _extractFileName(url);
 		const startTime = performance.now();
 		logger.log(`[START] ${new Date().toISOString()}\n${fileName} ${fileType}`, 'debug');
-		logger.debug(`Fetching resource from ${url}`);
+		logger.log(`Fetching resource from ${url}`, 'debug');
 
 		return new Promise((resolve, reject) => {
 			GM_xmlhttpRequest({
