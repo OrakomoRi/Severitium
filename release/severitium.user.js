@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build48
+// @version			1.7.2+build49
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -99,7 +99,7 @@
 	const lastSeason = GM_getValue('SeveritiumSeason', '');
 	const currentSeason = _getSeason();
 
-	const severitiumInjector = new SeveritiumInjector(script);
+	const severitiumInjector = new SeveritiumInjector(script, currentSeason);
 
 	const logger = new Logger(script.name);
 	// logger.enableLogging();
@@ -441,25 +441,11 @@
 				logger.log(typeof script.JS['main'], 'debug');
 				severitiumInjector.applyJS('main');
 			}
-			// Apply images to the page - only apply valid images
+			// Apply images to the page
 			if (imageLinks && imageLinks.length > 0) {
-				// Filter out images with invalid data
-				const validImageLinks = imageLinks.filter(({ url }) => {
-					const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason()) + `?v=${script.version}`;
-					const imageData = script.images[formattedUrl];
-					const isValid = imageData && imageData !== 'undefined' && typeof imageData === 'string' && imageData.length > 0;
-					if (!isValid) {
-						logger.log(`Skipping invalid image: ${formattedUrl} (data: ${typeof imageData})`, 'warn');
-					}
-					return isValid;
-				});
-				
-				logger.log(`Applying ${validImageLinks.length} valid images out of ${imageLinks.length} total`, 'info');
-				if (validImageLinks.length > 0) {
-					severitiumInjector.applyImages(validImageLinks);
-				}
+				severitiumInjector.applyImages(imageLinks);
 			} else {
-				logger.log('No image links to apply', 'warn');
+				logger.log('No image links to apply.', 'warn');
 			}
 			// Remove loading screen
 			LoadingScreen.remove(loadingScreen);

@@ -2,8 +2,9 @@ class SeveritiumInjector {
 	/**
 	 * @param {Object} severitium - Main object containing data.
 	 */
-	constructor(Severitium) {
+	constructor(Severitium, season) {
 		this.Severitium = Severitium;
+		this.season = season;
 	}
 
 	/**
@@ -181,7 +182,7 @@ class SeveritiumInjector {
 		// Process each link and inject image styles
 		for (const { url, style, attributes = [] } of links) {
 			// Replace the season placeholder in the URL if needed
-			const formattedUrl = url.replace('SEASON_PLACEHOLDER', _getSeason());
+			const formattedUrl = url.replace('SEASON_PLACEHOLDER', this.season);
 			// Ensure the `data-resource` attribute is included
 			const updatedAttributes = attributes.some(attr => attr.name === 'data-resource')
 				? attributes
