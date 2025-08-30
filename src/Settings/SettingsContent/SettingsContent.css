@@ -1,0 +1,873 @@
+/* Navigation menu container */
+
+.SettingsMenuComponentStyle-blockMenuOptions {
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+	margin: 0;
+}
+
+/* Menu item */
+
+.SettingsMenuComponentStyle-menuItemOptions {
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	padding: .5em 0;
+}
+
+/* Active menu item */
+
+.SettingsMenuComponentStyle-menuItemOptions[class*='activeitem' i] {
+	pointer-events: none;
+}
+
+/* Item text */
+
+.SettingsMenuComponentStyle-menuItemOptions > span {
+	font-size: 1.25em;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--severitium-light-gray-text-color);
+	pointer-events: none;
+	transition: color .2s ease;
+}
+
+/* Hovered item text */
+
+.SettingsMenuComponentStyle-menuItemOptions:hover > span {
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Active item text */
+
+.SettingsMenuComponentStyle-menuItemOptions[class*='activeitem' i] > span {
+	color: var(--severitium-white-text-color);
+}
+
+/* Visual element to highlight active item */
+
+.SettingsMenuComponentStyle-slideMenuOptions {
+	display: none;
+}
+
+/* Pseudo-element for menu item */
+
+.SettingsMenuComponentStyle-menuItemOptions::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 100%;
+	bottom: 0;
+	left: 0;
+	opacity: .75;
+	transition: all .2s ease-in-out;
+	z-index: -1;
+	pointer-events: none;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Pseudo-element for menu active item */
+
+.SettingsMenuComponentStyle-menuItemOptions[class*='activeitem' i]::after {
+	right: 0;
+	background: var(--severitium-main-color);
+	-webkit-animation: channel-select .2s ease-in-out;
+	        animation: channel-select .2s ease-in-out;
+}
+
+/* Animation */
+
+@-webkit-keyframes channel-select {
+	0% {
+		right: 100%;
+		background-color: rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		right: 0;
+		background-color: var(--severitium-main-color);
+	}
+}
+
+@keyframes channel-select {
+	0% {
+		right: 100%;
+		background-color: rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		right: 0;
+		background-color: var(--severitium-main-color);
+	}
+}
+
+/* Settings tab content block */
+
+.SettingsComponentStyle-containerBlock {
+	background: none;
+}
+
+/* Settings tab content inner block */
+
+.SettingsComponentStyle-scrollingMenu {
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	-webkit-backdrop-filter: blur(.5em);
+	        backdrop-filter: blur(.5em);
+	border: var(--severitium-gray-color) solid .1em;
+	border-radius: var(--severitium-border-radius);
+	scrollbar-width: thin;
+	scrollbar-color: var(--severitium-light-gray-color) var(--severitium-dark-gray-color);
+	overflow-y: auto;
+}
+
+/* Scrollbar for inner block */
+
+.SettingsComponentStyle-scrollingMenu::-webkit-scrollbar {
+	width: .5em;
+}
+
+.SettingsComponentStyle-scrollingMenu::-webkit-scrollbar-thumb {
+	background-color: var(--severitium-light-gray-color);
+	border-radius: var(--severitium-border-radius);
+}
+
+.SettingsComponentStyle-scrollingMenu::-webkit-scrollbar-track {
+	background-color: var(--severitium-dark-gray-color);
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Settings disabled button */
+
+.SettingsComponentStyle-blockContentOptions div.ButtonComponentStyle-disabled:not(:root) {
+	pointer-events: none;
+	background-color: var(--severitium-light-transparent-background3);
+	border-radius: var(--severitium-border-radius);
+	border: transparent solid .1em;
+	outline: none;
+	box-shadow: none;
+}
+
+/* Button text */
+
+.SettingsComponentStyle-blockContentOptions div.ButtonComponentStyle-disabled:not(:root) > span {
+	color: var(--severitium-white-text-color);
+	text-shadow: none;
+	opacity: .25;
+}
+
+/* Settings line */
+
+.SettingsComponentStyle-borderLineOption {
+	height: 2px;
+	width: 100%;
+	margin: 0;
+	margin-bottom: 2em;
+	background: none;
+	background-color: var(--severitium-gray-color);
+}
+
+/* Setting label for the checkbox */
+
+.CheckBoxComponentStyle-oneSetting .CheckBoxStyle-checkbox + div label {
+	font-size: 1em;
+	font-weight: normal;
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* Setting label for active checkbox */
+
+.CheckBoxComponentStyle-oneSetting .CheckBoxStyle-checkbox:has(input[data-state='on']) + div label {
+	color: var(--severitium-white-text-color);
+}
+
+/* Game settings browser notifications block */
+
+.GameSettingsStyle-containerFormOptions {
+	width: 100%;
+	margin: 0;
+}
+
+/* Allow/deny block */
+
+.GameSettingsStyle-notificationsTextAndButtonBlock {
+	width: 100%;
+	margin: 0;
+	margin-bottom: 1em;
+}
+
+/* Browser notifications action button */
+
+.GameSettingsStyle-notificationsTextAndButtonBlock .GameSettingsStyle-button.GameSettingsStyle-button {
+	width: 15em;
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.GameSettingsStyle-notificationsTextAndButtonBlock .GameSettingsStyle-button:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.GameSettingsStyle-notificationsTextAndButtonBlock .GameSettingsStyle-button > span {
+	color: var(--severitium-green-button-color);
+}
+
+/* Reset all button */
+
+.SettingsButtonsComponentStyle-buttonsWidthBackReset:not(:root) {
+	width: 15em;
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-gray-button-background);
+	border: var(--severitium-gray-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.SettingsButtonsComponentStyle-buttonsWidthBackReset:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-gray-button-background);
+	border: var(--severitium-gray-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.SettingsButtonsComponentStyle-buttonsWidthBackReset > span {
+	color: var(--severitium-gray-button-color);
+}
+
+/* Range input value text */
+
+.SettingsComponentStyle-slider > p > span {
+	color: var(--severitium-main-color);
+}
+
+/* Overdrives and supplies icons */
+
+.KeyMappingWithIconComponentStyle-commonUltimateAndSupplies > div > img {
+	pointer-events: none;
+}
+
+/* Overdrives hotkey block */
+
+.KeyMappingWithIconComponentStyle-overdrives {
+	outline: none;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	border-radius: 50%;
+	border: var(--severitium-gray-color) solid .1em;
+	transition: background-color .2s ease, border .2s ease;
+}
+
+/* Overdrives hotkey block on hover */
+
+.KeyMappingWithIconComponentStyle-overdrives:hover {
+	outline: none;
+	background-color: var(--severitium-light-transparent-background2);
+}
+
+/* Overdrives hotkey block on focus */
+
+.KeyMappingWithIconComponentStyle-overdrives:focus-within {
+	outline: none;
+	background-color: var(--severitium-light-transparent-background2);
+	border: var(--severitium-white-color) solid .1em;
+	pointer-events: none;
+}
+
+/* Supplies hotkey block */
+
+.KeyMappingWithIconComponentStyle-commonBlockSupplies {
+	outline: none;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	border-radius: var(--severitium-border-radius);
+	border: var(--severitium-gray-color) solid .1em;
+	transition: background-color .2s ease, border .2s ease;
+}
+
+/* Supplies hotkey block on hover */
+
+.KeyMappingWithIconComponentStyle-commonBlockSupplies:hover {
+	outline: none;
+	background-color: var(--severitium-light-transparent-background2);
+}
+
+/* Supplies hotkey block on focus */
+
+.KeyMappingWithIconComponentStyle-commonBlockSupplies:focus-within {
+	outline: none;
+	background-color: var(--severitium-light-transparent-background2);
+	border: var(--severitium-white-color) solid .1em;
+	pointer-events: none;
+}
+
+/* Overdrive hotkey block no hotkey */
+
+.KeyMappingWithIconComponentStyle-noNameRound {
+	outline: none;
+	background: none;
+	background-color: var(--severitium-red-transparent-background1);
+	border-radius: 50%;
+	border: var(--severitium-red-color) solid .1em;
+	transition: background-color .2s ease, border .2s ease;
+}
+
+/* Overdrive hotkey block no hotkey on hover */
+
+.KeyMappingWithIconComponentStyle-noNameRound:hover {
+	outline: none;
+	background-color: var(--severitium-red-transparent-background1);
+	border: var(--severitium-gray-color) solid .1em;
+}
+
+/* Overdrive hotkey block no hotkey on focus */
+
+.KeyMappingWithIconComponentStyle-noNameRound:focus-within {
+	outline: none;
+	background-color: var(--severitium-red-transparent-background1);
+	border: var(--severitium-white-color) solid .1em;
+	pointer-events: none;
+}
+
+/* Supplies hotkey block no hotkey */
+
+.KeyMappingWithIconComponentStyle-noNameKey {
+	outline: none;
+	background: none;
+	background-color: var(--severitium-red-transparent-background1);
+	border-radius: var(--severitium-border-radius);
+	border: var(--severitium-red-color) solid .1em;
+	transition: background-color .2s ease, border .2s ease;
+}
+
+/* Supplies hotkey block no hotkey on hover */
+
+.KeyMappingWithIconComponentStyle-noNameKey:hover {
+	outline: none;
+	background-color: var(--severitium-red-transparent-background1);
+	border: var(--severitium-gray-color) solid .1em;
+}
+
+/* Supplies hotkey block no hotkey on focus */
+
+.KeyMappingWithIconComponentStyle-noNameKey:focus-within {
+	outline: none;
+	background-color: var(--severitium-red-transparent-background1);
+	border: var(--severitium-white-color) solid .1em;
+	pointer-events: none;
+}
+
+/* Reset image for overdrives and supplies */
+
+.KeyMappingWithIconComponentStyle-commonBlock .KeyboardSettingsComponentStyle-imageReset {
+	display: none;
+}
+
+/* Reset all button */
+
+.KeyboardSettingsComponentStyle-buttonResetAllKeys:not(:root) {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-gray-button-background);
+	border-radius: var(--severitium-border-radius);
+	border: var(--severitium-gray-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.KeyboardSettingsComponentStyle-buttonResetAllKeys:not(:root):hover {
+	outline: none;
+	box-shadow: none;
+	background-color: var(--severitium-gray-button-background);
+	border: var(--severitium-white-color) solid .1em;
+}
+
+/* Button text */
+
+.KeyboardSettingsComponentStyle-buttonResetAllKeys:not(:root) > span {
+	margin: 0;
+	color: var(--severitium-gray-button-color);
+}
+
+/* Button reset image (original) */
+
+.KeyboardSettingsComponentStyle-buttonResetAllKeys > img {
+	display: none;
+}
+
+/* Button reset image (custom) */
+
+.KeyboardSettingsComponentStyle-buttonResetAllKeys::before {
+	content: '';
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	-webkit-mask-size: cover;
+			mask-size: cover;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	background-color: var(--severitium-gray-button-color);
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 487.23 487.23"><path d="M55.323 203.641a38.91 38.91 0 0 0 35.872-23.854c25.017-59.604 83.842-101.61 152.42-101.61 37.797 0 72.449 12.955 100.23 34.442l-21.775 3.371a16.98 16.98 0 0 0-14.232 14.512 16.98 16.98 0 0 0 9.867 17.768l119.746 53.872a17.01 17.01 0 0 0 16.168-1.205 17.02 17.02 0 0 0 7.796-14.208l.621-131.943a16.98 16.98 0 0 0-12.024-16.332 16.99 16.99 0 0 0-19.104 6.837l-16.505 24.805C370.398 26.778 310.1 0 243.615 0 142.806 0 56.133 61.562 19.167 149.06a39.26 39.26 0 0 0 3.429 36.987 39.27 39.27 0 0 0 32.727 17.594m409.312 97.543a39.27 39.27 0 0 0-32.728-17.594 38.91 38.91 0 0 0-35.872 23.854c-25.018 59.604-83.843 101.61-152.42 101.61-37.798 0-72.45-12.955-100.232-34.442l21.776-3.369a16.99 16.99 0 0 0 14.233-14.514 16.985 16.985 0 0 0-9.867-17.768L49.779 285.089a17.01 17.01 0 0 0-16.169 1.205 17.02 17.02 0 0 0-7.795 14.207l-.622 131.943a16.98 16.98 0 0 0 12.024 16.332 16.99 16.99 0 0 0 19.104-6.839l16.505-24.805c44.004 43.32 104.303 70.098 170.788 70.098 100.811 0 187.481-61.561 224.446-149.059a39.25 39.25 0 0 0-3.425-36.987"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 487.23 487.23"><path d="M55.323 203.641a38.91 38.91 0 0 0 35.872-23.854c25.017-59.604 83.842-101.61 152.42-101.61 37.797 0 72.449 12.955 100.23 34.442l-21.775 3.371a16.98 16.98 0 0 0-14.232 14.512 16.98 16.98 0 0 0 9.867 17.768l119.746 53.872a17.01 17.01 0 0 0 16.168-1.205 17.02 17.02 0 0 0 7.796-14.208l.621-131.943a16.98 16.98 0 0 0-12.024-16.332 16.99 16.99 0 0 0-19.104 6.837l-16.505 24.805C370.398 26.778 310.1 0 243.615 0 142.806 0 56.133 61.562 19.167 149.06a39.26 39.26 0 0 0 3.429 36.987 39.27 39.27 0 0 0 32.727 17.594m409.312 97.543a39.27 39.27 0 0 0-32.728-17.594 38.91 38.91 0 0 0-35.872 23.854c-25.018 59.604-83.843 101.61-152.42 101.61-37.798 0-72.45-12.955-100.232-34.442l21.776-3.369a16.99 16.99 0 0 0 14.233-14.514 16.985 16.985 0 0 0-9.867-17.768L49.779 285.089a17.01 17.01 0 0 0-16.169 1.205 17.02 17.02 0 0 0-7.795 14.207l-.622 131.943a16.98 16.98 0 0 0 12.024 16.332 16.99 16.99 0 0 0 19.104-6.839l16.505-24.805c44.004 43.32 104.303 70.098 170.788 70.098 100.811 0 187.481-61.561 224.446-149.059a39.25 39.25 0 0 0-3.425-36.987"/></svg>');
+}
+
+/* Default hotkey block */
+
+.KeyboardSettingsComponentStyle-keyInput {
+	outline: none;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	border-radius: var(--severitium-border-radius);
+	border: var(--severitium-gray-color) solid .1em;
+	transition: background-color .2s ease, border .2s ease;
+}
+
+/* Default hotkey block on hover */
+
+.KeyboardSettingsComponentStyle-keyInput:hover {
+	outline: none;
+	background-color: var(--severitium-light-transparent-background2);
+}
+
+/* Default hotkey block on focus */
+
+.KeyboardSettingsComponentStyle-keyInput:focus-within {
+	outline: none;
+	background-color: var(--severitium-light-transparent-background2);
+	border: var(--severitium-white-color) solid .1em;
+}
+
+/* Reset image for other rows */
+
+.KeyboardSettingsComponentStyle-main .KeyboardSettingsComponentStyle-imageReset {
+	display: none;
+}
+
+/* Overdrive and supplies hotkey row */
+
+.KeyMappingWithIconComponentStyle-commonBlock {
+	width: 100%;
+}
+
+/* Default hotkey row */
+
+.KeyboardSettingsComponentStyle-main {
+	width: 100%;
+}
+	
+/* Captcha container */
+
+.AccountSettingsComponentStyle-captchaOptions {
+	margin: 0;
+}
+
+/* Change password and email button */
+
+.AccountSettingsComponentStyle-changeCaptchaButton > div {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.AccountSettingsComponentStyle-changeCaptchaButton > div:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.AccountSettingsComponentStyle-changeCaptchaButton > div > span {
+	color: var(--severitium-green-button-color);
+}
+
+/* Change username input field */
+
+.AccountSettingsComponentStyle-commonBlock.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input {
+	box-shadow: none;
+	background: none;
+	border-radius: var(--severitium-border-radius);
+	border: .1em solid var(--severitium-light-gray-color);
+	color: var(--severitium-white-text-color);
+	transition: border .2s ease, color .2s ease;
+}
+
+/* Input on hover */
+
+.AccountSettingsComponentStyle-commonBlock.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:hover {
+	background: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	border: .1em solid var(--severitium-light-gray-color);
+}
+
+/* Input on focus */
+
+.AccountSettingsComponentStyle-commonBlock.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:focus {
+	background: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	border: .1em solid var(--severitium-white-color);
+}
+
+/* Input's placeholder */
+
+.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input::-webkit-input-placeholder {
+	color: var(--severitium-light-gray-text-color);
+	-webkit-transition: color .2s ease;
+	transition: color .2s ease;
+}
+
+.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:-ms-input-placeholder {
+	color: var(--severitium-light-gray-text-color);
+	-ms-transition: color .2s ease;
+	transition: color .2s ease;
+}
+
+.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input::placeholder {
+	color: var(--severitium-light-gray-text-color);
+	transition: color .2s ease;
+}
+
+/* Placeholder of the input on input container hover & input on focus */
+
+.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:hover input::-webkit-input-placeholder, .AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:focus::-webkit-input-placeholder {
+	color: var(--severitium-white-text-color);
+}
+
+.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:hover input:-ms-input-placeholder, .AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:focus:-ms-input-placeholder {
+	color: var(--severitium-white-text-color);
+}
+
+.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:hover input::placeholder,
+.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:focus::placeholder {
+	color: var(--severitium-white-text-color);
+}
+
+/* Change username button */
+
+.AccountSettingsComponentStyle-changeUidButton > div {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.AccountSettingsComponentStyle-changeUidButton > div:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.AccountSettingsComponentStyle-changeUidButton > div > span {
+	color: var(--severitium-green-button-color);
+}
+
+/* Change username price text */
+
+.AccountSettingsComponentStyle-chargedWriting > img[src*='ruby'i] + span {
+	color: var(--severitium-ruby-color);
+}
+
+/* Reset tag button */
+
+.AccountSettingsComponentStyle-resetTagButton > div {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-red-button-background);
+	border: var(--severitium-red-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.AccountSettingsComponentStyle-resetTagButton > div:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-red-button-background);
+	border: var(--severitium-red-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.AccountSettingsComponentStyle-resetTagButton > div > span {
+	color: var(--severitium-red-button-color);
+}
+
+/* Mount tag button */
+
+.AccountSettingsComponentStyle-mountTagButton > div {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-gold-button-background);
+	border: var(--severitium-gold-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.AccountSettingsComponentStyle-mountTagButton > div:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-gold-button-background);
+	border: var(--severitium-gold-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.AccountSettingsComponentStyle-mountTagButton > div > span {
+	color: var(--severitium-gold-button-color);
+}
+
+/* Link twitch button */
+
+.TwitchSettingsRendersStyle-button {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.TwitchSettingsRendersStyle-button:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.TwitchSettingsRendersStyle-button > span {
+	color: var(--severitium-green-button-color);
+}
+
+/* Security button (two-factor authentification) */
+
+.SecuritySettingsComponentStyle-button {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.SecuritySettingsComponentStyle-button:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.SecuritySettingsComponentStyle-button > span {
+	color: var(--severitium-green-button-color);
+}
+
+/* Activate two-factor authentification button */
+
+.SecuritySettingsComponentStyle-activation2FaButton {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.SecuritySettingsComponentStyle-activation2FaButton:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.SecuritySettingsComponentStyle-activation2FaButton > span {
+	color: var(--severitium-green-button-color);
+}
+
+/* Second step block (two-factor authentication) */
+
+.SecuritySettingsComponentStyle-secondStepBlock {
+	height: fit-content;
+}
+
+/* Second step content (two-factor authentication) */
+
+.SecuritySettingsComponentStyle-secondStepContent {
+	height: auto;
+	display: flex;
+	align-items: start;
+	justify-content: center;
+	gap: .75em;
+}
+
+/* All elements inside the second step */
+
+.SecuritySettingsComponentStyle-secondStepContent * {
+	box-sizing: border-box;
+	height: fit-content;
+	margin: 0;
+}
+
+/* Secret code */
+
+.SecuritySettingsComponentStyle-sharedSecret {
+	font-weight: bold;
+	color: var(--severitium-green-text-color);
+}
+
+/* Secret code container */
+
+.SecuritySettingsComponentStyle-secondStepContent div:has(> .SecuritySettingsComponentStyle-copyCode) {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
+}
+
+/* Copy code button */
+
+.SecuritySettingsComponentStyle-copyCode {
+	display: flex;
+	color: var(--severitium-light-gray-text-color);
+	letter-spacing: .1em;
+	margin: 0;
+	padding: .25em;
+	border-radius: var(--severitium-border-radius);
+	border: var(--severitium-light-gray-color) dashed .1em;
+	cursor: pointer;
+	background: none;
+	transition: color .2s ease, border-color .2s ease;
+}
+
+/* Button on hover */
+
+.SecuritySettingsComponentStyle-copyCode:hover {
+	color: var(--severitium-white-text-color);
+	border-color: var(--severitium-white-color);
+}
+
+/* Code input block */
+
+.SecuritySettingsComponentStyle-codeInputBlock {
+	height: fit-content;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	justify-content: center;
+	gap: .5em;
+	margin: 0;
+	margin-top: 1em;
+}
+
+/* All elements inside code input block */
+
+.SecuritySettingsComponentStyle-codeInputBlock * {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+/* Input block */
+
+.SecuritySettingsComponentStyle-blockInputCode {
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+	gap: .5em;
+}
+
+/* Information text */
+
+.AccountSettingsComponentStyle-informationWriting {
+	margin-top: 0;
+	color: var(--severitium-red-text-color);
+}
+
+/* Code input */
+
+.SecuritySettingsComponentStyle-blockInputCode > input {
+	min-width: 15em;
+	width: fit-content;
+	outline: none;
+	background-color: var(--severitium-light-transparent-background3);
+	border-radius: var(--severitium-border-radius);
+	border: var(--severitium-gray-color) solid .1em;
+	transition: background-color .2s ease, border .2s ease;
+}
+
+/* Input on hover */
+
+.SecuritySettingsComponentStyle-blockInputCode > input:hover {
+	outline: none;
+	background-color: var(--severitium-light-transparent-background3);
+	border: var(--severitium-light-gray-color) solid .1em;
+}
+
+/* Input on focus */
+
+.SecuritySettingsComponentStyle-blockInputCode > input:focus-within {
+	background-color: var(--severitium-light-transparent-background3);
+	border: var(--severitium-white-color) solid .1em;
+}
