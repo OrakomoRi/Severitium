@@ -210,7 +210,7 @@
 	box-sizing: border-box;
 	-webkit-backdrop-filter: blur(.25em);
 	backdrop-filter: blur(.25em);
-	transition: background-color .2s ease;
+	transition: background-color .2s ease, border-color .2s ease, color .2s ease;
 }
 
 /* Inputs for text, password and email on hover */

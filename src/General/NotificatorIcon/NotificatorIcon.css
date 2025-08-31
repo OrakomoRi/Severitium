@@ -197,3 +197,11 @@
 	background-color: var(--severitium-main-color);
 	transition: opacity .2s ease;
 }
+
+/* Settings tab notificator icon */
+
+.ItemNotificationMarkerStyle-base.ItemNotificationMarkerStyle-base {
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0;
+}
