@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build53
+// @version			1.7.2+build54
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -441,6 +441,17 @@
 			}
 			if (script.JS['main']) {
 				logger.log(typeof script.JS['main'], 'debug');
+				
+				// Ensure required libraries are globally accessible before applying JS
+				if (typeof window.BreeziumSelect === 'undefined' && typeof BreeziumSelect !== 'undefined') {
+					window.BreeziumSelect = BreeziumSelect;
+					logger.log('Made BreeziumSelect globally accessible', 'debug');
+				}
+				if (typeof window.Swal === 'undefined' && typeof Swal !== 'undefined') {
+					window.Swal = Swal;
+					logger.log('Made Swal globally accessible', 'debug');
+				}
+				
 				severitiumInjector.applyJS('main');
 			}
 			// Apply images to the page
