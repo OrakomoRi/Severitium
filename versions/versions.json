@@ -1468,5 +1468,11 @@
     "date": "2025-08-31",
     "comment": "1.7.2+build56 feat: updated main userscript, updated injector, added BreeziumSelect library as built-in",
     "hash": "da27d89cf161b5b72f35f82a9e6beda8f8ff4eaf"
+  },
+  {
+    "version": "1.7.2+build57",
+    "date": "2025-08-31",
+    "comment": "1.7.2+build57 feat: updated main userscript",
+    "hash": "793b74766ff5ba61c579e35c141e8cdba0690880"
   }
 ]
