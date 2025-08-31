@@ -1498,5 +1498,11 @@
     "date": "2025-09-01",
     "comment": "1.7.2+build61 feat: updated settings content styles",
     "hash": "91f6c102f4ab48aa5904ace7e5d8b0cea3f09c46"
+  },
+  {
+    "version": "1.7.2+build62",
+    "date": "2025-09-01",
+    "comment": "1.7.2+build62 feat: updated notificator icon",
+    "hash": "e3fed6ad21b6d37305405413b5e257c365602d7c"
   }
 ]
