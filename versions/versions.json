@@ -1480,5 +1480,11 @@
     "date": "2025-08-31",
     "comment": "1.7.2+build58 feat: chat window update",
     "hash": "66777e4aba26e1f31905c282403a7bb8b08b8fa0"
+  },
+  {
+    "version": "1.7.2+build59",
+    "date": "2025-08-31",
+    "comment": "1.7.2+build59 feat: updated entrance forms and notificator icon",
+    "hash": "2f7e9021dd5efc4c11ad1725e418ecf4d872a969"
   }
 ]
