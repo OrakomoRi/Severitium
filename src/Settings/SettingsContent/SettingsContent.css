@@ -174,6 +174,36 @@
 	background-color: var(--severitium-gray-color);
 }
 
+/* Settings common row block */
+
+.AccountSettingsComponentStyle-commonBlock {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1em;
+}
+
+/* Settings header text */
+
+p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root) {
+	height: fit-content;
+	font-size: 1.25em;
+	color: var(--severitium-white-color);
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: .05em;
+}
+
+/* Input label */
+
+.AccountSettingsComponentStyle-labelInputEmail {
+	margin: 0;
+	margin-bottom: .5em;
+	font-size: 1em;
+	color: var(--severitium-light-gray-text-color);
+}
+
 /* Setting label for the checkbox */
 
 .CheckBoxComponentStyle-oneSetting .CheckBoxStyle-checkbox + div label {
@@ -188,11 +218,38 @@
 	color: var(--severitium-white-text-color);
 }
 
+/* Range input value text */
+
+.SettingsComponentStyle-slider > p > span {
+	color: var(--severitium-main-color);
+}
+
+/* NOTIFICATIONS SECTION */
+
 /* Game settings browser notifications block */
 
 .GameSettingsStyle-containerFormOptions {
 	width: 100%;
 	margin: 0;
+}
+
+/* Text container */
+
+.GameSettingsStyle-notificationTextBlock {
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+	gap: .5em;
+	margin: 0;
+}
+
+/* Information text */
+
+.GameSettingsStyle-notificationTextBlock > span.GameSettingsStyle-notificationText {
+	color: var(--severitium-red-text-color);
 }
 
 /* Allow/deny block */
@@ -257,11 +314,7 @@
 	color: var(--severitium-gray-button-color);
 }
 
-/* Range input value text */
-
-.SettingsComponentStyle-slider > p > span {
-	color: var(--severitium-main-color);
-}
+/* HOTKEYS SECTION */
 
 /* Overdrives and supplies icons */
 
@@ -485,7 +538,185 @@
 .KeyboardSettingsComponentStyle-main {
 	width: 100%;
 }
-	
+
+/* LOCATION SECTION */
+
+/* Location block */
+
+.AccountSettingsComponentStyle-containerFormOptions > form > .AccountSettingsComponentStyle-textHeadlineOptions + div:has(> span) {
+	width: 100%;
+	margin: 0;
+	margin-bottom: 1em;
+	padding: 1em;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	border-radius: var(--severitium-border-radius);
+	border: var(--severitium-gray-color) dashed .1em;
+	pointer-events: none;
+}
+
+/* Location text */
+
+.AccountSettingsComponentStyle-containerFormOptions > form > .AccountSettingsComponentStyle-textHeadlineOptions + div:has(> span) > span {
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Text under location block */
+
+.AccountSettingsComponentStyle-containerFormOptions > form > .AccountSettingsComponentStyle-textHeadlineOptions + div:has(> span) + div > span {
+	font-size: 1em;
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* CHANGE EMAIL AND PASSWORD SECTION */
+
+/* No email section header */
+
+p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root)[class*='ksc'i] {
+	color: var(--severitium-red-text-color);
+}
+
+/* Email and captcha block and all elements inside it */
+
+.AccountSettingsComponentStyle-containerFormOptions .AccountSettingsComponentStyle-blockProtectAccount,
+.AccountSettingsComponentStyle-containerFormOptions .AccountSettingsComponentStyle-blockProtectAccount * {
+	box-sizing: border-box;
+}
+
+/* Email input */
+
+.AccountSettingsComponentStyle-blockInputEmail .InputComponentStyle-blurBackground + input {
+	box-shadow: none;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	font-size: 1em;
+	border-radius: var(--severitium-border-radius);
+	border: .1em solid var(--severitium-light-gray-color);
+	color: var(--severitium-white-text-color);
+	transition: border .2s ease, color .2s ease, background-color .2s ease;
+}
+
+/* Input on hover */
+
+.AccountSettingsComponentStyle-blockInputEmail .InputComponentStyle-blurBackground + input:hover {
+	box-shadow: none;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	border-radius: var(--severitium-border-radius);
+	border: .1em solid var(--severitium-light-gray-color);
+}
+
+/* Input on focus */
+
+.AccountSettingsComponentStyle-blockInputEmail .InputComponentStyle-blurBackground + input:focus {
+	box-shadow: none;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	border-radius: var(--severitium-border-radius);
+	border: .1em solid var(--severitium-white-color);
+}
+
+/* Input's placeholder */
+
+.AccountSettingsComponentStyle-blockInputEmail .InputComponentStyle-blurBackground + input::-webkit-input-placeholder {
+	color: var(--severitium-light-gray-text-color);
+	-webkit-transition: color .2s ease;
+	transition: color .2s ease;
+}
+
+.AccountSettingsComponentStyle-blockInputEmail .InputComponentStyle-blurBackground + input:-ms-input-placeholder {
+	color: var(--severitium-light-gray-text-color);
+	-ms-transition: color .2s ease;
+	transition: color .2s ease;
+}
+
+.AccountSettingsComponentStyle-blockInputEmail .InputComponentStyle-blurBackground + input::placeholder {
+	color: var(--severitium-light-gray-text-color);
+	transition: color .2s ease;
+}
+
+/* Placeholder of the input on input container hover & input on focus */
+
+.AccountSettingsComponentStyle-blockInputEmail .InputComponentStyle-blurBackground + input:hover input::-webkit-input-placeholder,
+.AccountSettingsComponentStyle-blockInputEmail .InputComponentStyle-blurBackground + input:focus::-webkit-input-placeholder {
+	color: var(--severitium-white-text-color);
+}
+
+.AccountSettingsComponentStyle-blockInputEmail .InputComponentStyle-blurBackground + input:hover input:-ms-input-placeholder,
+.AccountSettingsComponentStyle-blockInputEmail .InputComponentStyle-blurBackground + input:focus:-ms-input-placeholder {
+	color: var(--severitium-white-text-color);
+}
+
+.AccountSettingsComponentStyle-blockInputEmail .InputComponentStyle-blurBackground + input:hover input::placeholder,
+.AccountSettingsComponentStyle-blockInputEmail .InputComponentStyle-blurBackground + input:focus::placeholder {
+	color: var(--severitium-white-text-color);
+}
+
+/* Invalid input */
+
+.AccountSettingsComponentStyle-blockInputEmail .InputComponentStyle-blurBackground + input[class*='invalid'] {
+	background-color: var(--severitium-red-transparent-background1);
+	border: var(--severitium-red-color) solid .1em;
+}
+
+/* Invalid input on hover */
+
+.AccountSettingsComponentStyle-blockInputEmail .InputComponentStyle-blurBackground + input[class*='invalid']:hover {
+	background-color: var(--severitium-red-transparent-background1);
+	border: var(--severitium-gray-color) solid .1em;
+}
+
+/* Invalid input on focus */
+
+.AccountSettingsComponentStyle-blockInputEmail .InputComponentStyle-blurBackground + input[class*='invalid']:focus {
+	background-color: var(--severitium-red-transparent-background1);
+	border: var(--severitium-white-color) solid .1em;
+}
+
+/* Information text */
+
+.AccountSettingsComponentStyle-blockProtectAccount:has(.AccountSettingsComponentStyle-blockInputEmail > div > input[class*='invalid']) + .AccountSettingsComponentStyle-informationWriting {
+	display: block;
+	font-size: 1em;
+	margin: 0;
+	margin-top: .5em;
+	color: var(--severitium-red-text-color);
+	text-transform: capitalize;
+}
+
+/* Connect email button */
+
+.AccountSettingsComponentStyle-buttonConnectOptions:not(:root) {
+	margin: 0;
+	margin-top: 1em;
+}
+
+/* Enabled button */
+
+.AccountSettingsComponentStyle-buttonConnectOptions:not([class*='disabled'i]) {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.AccountSettingsComponentStyle-buttonConnectOptions:not([class*='disabled'i]):hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.AccountSettingsComponentStyle-buttonConnectOptions:not([class*='disabled'i]) > span {
+	color: var(--severitium-green-button-color);
+}
+
 /* Captcha container */
 
 .AccountSettingsComponentStyle-captchaOptions {
@@ -518,31 +749,173 @@
 	color: var(--severitium-green-button-color);
 }
 
-/* Change username input field */
+/* CHANGE PASSWORD SECTION */
 
-.AccountSettingsComponentStyle-commonBlock.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input {
+/* Change password inputs block */
+
+.AccountSettingsComponentStyle-blockChangePassword {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+	justify-content: space-between;
+	gap: .5em;
+}
+
+/* All child elements */
+
+.AccountSettingsComponentStyle-blockChangePassword > * {
+	width: 100%;
+	margin: 0;
+}
+
+/* Change password input */
+
+.AccountSettingsComponentStyle-blockChangePassword > * .InputComponentStyle-blurBackground + input:not(:root) {
+	width: 100%;
 	box-shadow: none;
 	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	font-size: 1em;
 	border-radius: var(--severitium-border-radius);
 	border: .1em solid var(--severitium-light-gray-color);
 	color: var(--severitium-white-text-color);
-	transition: border .2s ease, color .2s ease;
+	transition: border .2s ease, color .2s ease, background-color .2s ease;
 }
 
 /* Input on hover */
 
-.AccountSettingsComponentStyle-commonBlock.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:hover {
-	background: none;
+.AccountSettingsComponentStyle-blockChangePassword > * .InputComponentStyle-blurBackground + input:not(:root):hover {
 	box-shadow: none;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
 	border-radius: var(--severitium-border-radius);
 	border: .1em solid var(--severitium-light-gray-color);
 }
 
 /* Input on focus */
 
-.AccountSettingsComponentStyle-commonBlock.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:focus {
-	background: none;
+.AccountSettingsComponentStyle-blockChangePassword > * .InputComponentStyle-blurBackground + input:not(:root):focus {
 	box-shadow: none;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	border-radius: var(--severitium-border-radius);
+	border: .1em solid var(--severitium-white-color);
+}
+
+/* Input's placeholder */
+
+.AccountSettingsComponentStyle-blockChangePassword > * .InputComponentStyle-blurBackground + input:not(:root)::-webkit-input-placeholder {
+	color: var(--severitium-light-gray-text-color);
+	-webkit-transition: color .2s ease;
+	transition: color .2s ease;
+}
+
+.AccountSettingsComponentStyle-blockChangePassword > * .InputComponentStyle-blurBackground + input:not(:root)::-ms-input-placeholder {
+	color: var(--severitium-light-gray-text-color);
+	-ms-transition: color .2s ease;
+	transition: color .2s ease;
+}
+
+.AccountSettingsComponentStyle-blockChangePassword > * .InputComponentStyle-blurBackground + input:not(:root)::placeholder {
+	color: var(--severitium-light-gray-text-color);
+	transition: color .2s ease;
+}
+
+/* Placeholder of the input on input container hover & input on focus */
+
+.AccountSettingsComponentStyle-blockChangePassword .InputComponentStyle-blurBackground + input:not(:root):hover::-webkit-input-placeholder,
+.AccountSettingsComponentStyle-blockChangePassword .InputComponentStyle-blurBackground + input:not(:root):focus::-webkit-input-placeholder {
+	color: var(--severitium-white-text-color);
+}
+
+.AccountSettingsComponentStyle-blockChangePassword .InputComponentStyle-blurBackground + input:not(:root):hover:-ms-input-placeholder,
+.AccountSettingsComponentStyle-blockChangePassword .InputComponentStyle-blurBackground + input:not(:root):focus:-ms-input-placeholder {
+	color: var(--severitium-white-text-color);
+}
+
+.AccountSettingsComponentStyle-blockChangePassword > * .InputComponentStyle-blurBackground + input:not(:root):hover::placeholder,
+.AccountSettingsComponentStyle-blockChangePassword > * .InputComponentStyle-blurBackground + input:not(:root):focus::placeholder {
+	color: var(--severitium-white-text-color);
+}
+
+/* Invalid input */
+
+.AccountSettingsComponentStyle-blockChangePassword > * .InputComponentStyle-blurBackground + input:not(:root)[class*='invalid'] {
+	background-color: var(--severitium-red-transparent-background1);
+	border: var(--severitium-red-color) solid .1em;
+}
+
+/* Invalid input on hover */
+
+.AccountSettingsComponentStyle-blockChangePassword > * .InputComponentStyle-blurBackground + input:not(:root)[class*='invalid']:hover {
+	background-color: var(--severitium-red-transparent-background1);
+	border: var(--severitium-gray-color) solid .1em;
+}
+
+/* Invalid input on focus */
+
+.AccountSettingsComponentStyle-blockChangePassword > * .InputComponentStyle-blurBackground + input:not(:root)[class*='invalid']:focus {
+	background-color: var(--severitium-red-transparent-background1);
+	border: var(--severitium-white-color) solid .1em;
+}
+
+/* CHANGE USERNAME SECTION */
+
+/* Change username settings block */
+
+.AccountSettingsComponentStyle-commonBlock:has(.AccountSettingsComponentStyle-changeUidButton) {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* Change username block (label, input, bottom text) */
+
+.AccountSettingsComponentStyle-blockInputEmail {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+	gap: .75em;
+}
+
+/* All childs of the username block */
+
+.AccountSettingsComponentStyle-blockInputEmail > * {
+	margin: 0;
+}
+
+/* Change username input */
+
+.AccountSettingsComponentStyle-commonBlock:not(:root) .InputComponentStyle-blurBackground + input {
+	box-shadow: none;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	font-size: 1em;
+	border-radius: var(--severitium-border-radius);
+	border: .1em solid var(--severitium-light-gray-color);
+	color: var(--severitium-white-text-color);
+	transition: border .2s ease, color .2s ease, background-color .2s ease;
+}
+
+/* Input on hover */
+
+.AccountSettingsComponentStyle-commonBlock:not(:root) .InputComponentStyle-blurBackground + input:hover {
+	box-shadow: none;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	border-radius: var(--severitium-border-radius);
+	border: .1em solid var(--severitium-light-gray-color);
+}
+
+/* Input on focus */
+
+.AccountSettingsComponentStyle-commonBlock:not(:root) .InputComponentStyle-blurBackground + input:focus {
+	box-shadow: none;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
 	border-radius: var(--severitium-border-radius);
 	border: .1em solid var(--severitium-white-color);
 }
@@ -568,11 +941,13 @@
 
 /* Placeholder of the input on input container hover & input on focus */
 
-.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:hover input::-webkit-input-placeholder, .AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:focus::-webkit-input-placeholder {
+.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:hover input::-webkit-input-placeholder,
+.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:focus::-webkit-input-placeholder {
 	color: var(--severitium-white-text-color);
 }
 
-.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:hover input:-ms-input-placeholder, .AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:focus:-ms-input-placeholder {
+.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:hover input:-ms-input-placeholder,
+.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input:focus:-ms-input-placeholder {
 	color: var(--severitium-white-text-color);
 }
 
@@ -581,9 +956,63 @@
 	color: var(--severitium-white-text-color);
 }
 
+/* Invalid input */
+
+.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input[class*='invalid'] {
+	background-color: var(--severitium-red-transparent-background1);
+	border: var(--severitium-red-color) solid .1em;
+}
+
+/* Invalid input on hover */
+
+.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input[class*='invalid']:hover {
+	background-color: var(--severitium-red-transparent-background1);
+	border: var(--severitium-gray-color) solid .1em;
+}
+
+/* Invalid input on focus */
+
+.AccountSettingsComponentStyle-commonBlock .InputComponentStyle-blurBackground + input[class*='invalid']:focus {
+	background-color: var(--severitium-red-transparent-background1);
+	border: var(--severitium-white-color) solid .1em;
+}
+
+/* Information text */
+
+.AccountSettingsComponentStyle-containerFormOptions .RegistrationComponentStyle-containerItem + .AccountSettingsComponentStyle-informationWriting {
+	text-transform: capitalize;
+	margin: 0;
+	margin-top: .5em;
+}
+
+/* Default information text */
+
+.AccountSettingsComponentStyle-containerFormOptions .RegistrationComponentStyle-containerItem:not(:has(> input[class*='invalid'])) + .AccountSettingsComponentStyle-informationWriting {
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* Warning information text */
+
+.AccountSettingsComponentStyle-containerFormOptions .RegistrationComponentStyle-containerItem:has(> input[class*='invalid']) + .AccountSettingsComponentStyle-informationWriting {
+	color: var(--severitium-red-text-color);
+}
+
+/* Change username button block */
+
+.AccountSettingsComponentStyle-changeUidButton {
+	height: fit-content;
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	justify-content: center;
+	margin: 0;
+}
+
 /* Change username button */
 
-.AccountSettingsComponentStyle-changeUidButton > div {
+.AccountSettingsComponentStyle-changeUidButton:not(:root) > div {
+	margin: 0;
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -611,6 +1040,74 @@
 
 .AccountSettingsComponentStyle-chargedWriting > img[src*='ruby'i] + span {
 	color: var(--severitium-ruby-color);
+}
+
+/* CREATOR TAG SECTION */
+
+/* Creator tag text block */
+
+.AccountSettingsComponentStyle-creatorTagBlock {
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: space-between;
+	gap: .5em;
+	margin: 0;
+	padding: 0;
+}
+
+/* Default text */
+
+.AccountSettingsComponentStyle-creatorTagBlock .AccountSettingsComponentStyle-currentTagTitle {
+	font-size: 1em;
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Changing text (under the default one) */
+
+.AccountSettingsComponentStyle-creatorTagBlock .AccountSettingsComponentStyle-currentTagTitle + span {
+	font-size: 1em;
+}
+
+/* No tag text */
+
+.AccountSettingsComponentStyle-commonBlock:has(> .AccountSettingsComponentStyle-resetTagButton > .ButtonComponentStyle-disabled) .AccountSettingsComponentStyle-creatorTagBlock .AccountSettingsComponentStyle-currentTagTitle + span {
+	color: var(--severitium-red-text-color);
+}
+
+/* Tag text */
+
+.AccountSettingsComponentStyle-commonBlock:not(:has(> .AccountSettingsComponentStyle-resetTagButton > .ButtonComponentStyle-disabled)) .AccountSettingsComponentStyle-creatorTagBlock .AccountSettingsComponentStyle-currentTagTitle + span {
+	color: var(--severitium-main-color);
+}
+
+/* Child elements of creator tag text block */
+
+.AccountSettingsComponentStyle-creatorTagBlock > * {
+	margin: 0;
+}
+
+/* Reset tag, add new tag buttons containers */
+
+.AccountSettingsComponentStyle-resetTagButton,
+.AccountSettingsComponentStyle-mountTagButton {
+	height: fit-content;
+	width: fit-content;
+	margin: 0;
+}
+
+/* Reset tag, add new tag buttons */
+
+.AccountSettingsComponentStyle-resetTagButton > div:not(:root),
+.AccountSettingsComponentStyle-mountTagButton > div:not(:root) {
+	margin: 0;
+}
+
+/* Reset tag button container */
+
+.AccountSettingsComponentStyle-resetTagButton {
+	flex-grow: 1;
 }
 
 /* Reset tag button */
@@ -665,9 +1162,29 @@
 	color: var(--severitium-gold-button-color);
 }
 
+/* TWITCH SECTION */
+
+/* Default text */
+
+.TwitchSettingsRendersStyle-defaultTextContainer span {
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* Linked account text */
+
+.TwitchSettingsRendersStyle-linkedAccountTextContainer span {
+	color: var(--severitium-white-text-color);
+}
+
+/* Linked account nickname */
+
+.TwitchSettingsRendersStyle-linkedAccountTextContainer span[class*='nick'i] {
+	color: var(--severitium-main-color);
+}
+
 /* Link twitch button */
 
-.TwitchSettingsRendersStyle-button {
+.TwitchSettingsRendersStyle-defaultTextContainer + .TwitchSettingsRendersStyle-button {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -678,7 +1195,7 @@
 
 /* Button on hover */
 
-.TwitchSettingsRendersStyle-button:hover {
+.TwitchSettingsRendersStyle-defaultTextContainer + .TwitchSettingsRendersStyle-button:hover {
 	outline: none;
 	box-shadow: none;
 	background: var(--severitium-green-button-background);
@@ -687,8 +1204,44 @@
 
 /* Button text */
 
-.TwitchSettingsRendersStyle-button > span {
+.TwitchSettingsRendersStyle-defaultTextContainer + .TwitchSettingsRendersStyle-button > span {
 	color: var(--severitium-green-button-color);
+}
+
+/* Unlink twitch button */
+
+.TwitchSettingsRendersStyle-linkedAccountTextContainer + .TwitchSettingsRendersStyle-button {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-red-button-background);
+	border: var(--severitium-red-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.TwitchSettingsRendersStyle-linkedAccountTextContainer + .TwitchSettingsRendersStyle-button:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-red-button-background);
+	border: var(--severitium-red-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.TwitchSettingsRendersStyle-linkedAccountTextContainer + .TwitchSettingsRendersStyle-button > span {
+	color: var(--severitium-red-button-color);
+}
+
+/* TWO-FACTOR AUTHENTICATION SECTION */
+
+/* Two-factor authentification header text and options block */
+
+.SecuritySettingsComponentStyle-about2FaTextAndButtonBlock {
+	height: fit-content;
+	margin: 0;
+	margin-bottom: 1em;
 }
 
 /* Security button (two-factor authentification) */
@@ -743,6 +1296,12 @@
 	color: var(--severitium-green-button-color);
 }
 
+/* Two-factor authentication setup block */
+
+.SecuritySettingsComponentStyle-containerFormOptions {
+	margin: 0;
+}
+
 /* Second step block (two-factor authentication) */
 
 .SecuritySettingsComponentStyle-secondStepBlock {
@@ -765,6 +1324,26 @@
 	box-sizing: border-box;
 	height: fit-content;
 	margin: 0;
+}
+
+/* QR Code image block */
+
+.SecuritySettingsComponentStyle-qrCodeImage {
+	min-height: 15em;
+	height: auto;
+	max-height: 15em;
+	aspect-ratio: 1 / 1;
+	box-sizing: border-box;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* QR Code image */
+
+.SecuritySettingsComponentStyle-qrCodeImage > img {
+	max-width: 14em;
+	max-height: 14em;
+	object-fit: contain;
+	box-sizing: border-box;
 }
 
 /* Secret code */
@@ -813,11 +1392,11 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	align-items: end;
+	align-items: start;
 	justify-content: center;
 	gap: .5em;
 	margin: 0;
-	margin-top: 1em;
+	margin-top: 2em;
 }
 
 /* All elements inside code input block */
@@ -840,7 +1419,7 @@
 
 /* Information text */
 
-.AccountSettingsComponentStyle-informationWriting {
+.SecuritySettingsComponentStyle-blockInputCode > .AccountSettingsComponentStyle-informationWriting {
 	margin-top: 0;
 	color: var(--severitium-red-text-color);
 }
