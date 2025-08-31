@@ -1474,5 +1474,11 @@
     "date": "2025-08-31",
     "comment": "1.7.2+build57 feat: updated main userscript",
     "hash": "793b74766ff5ba61c579e35c141e8cdba0690880"
+  },
+  {
+    "version": "1.7.2+build58",
+    "date": "2025-08-31",
+    "comment": "1.7.2+build58 feat: chat window update",
+    "hash": "66777e4aba26e1f31905c282403a7bb8b08b8fa0"
   }
 ]
