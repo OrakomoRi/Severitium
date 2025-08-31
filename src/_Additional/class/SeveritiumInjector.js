@@ -16,6 +16,38 @@ class SeveritiumInjector {
 	}
 
 	/**
+	 * Generates code to automatically transfer userscript libraries to page context
+	 * 
+	 * @returns {string} - JavaScript code for library transfer
+	 */
+	generateLibraryTransferCode() {
+		const knownLibraries = [
+			'BreeziumSelect', 'Swal', 'jQuery', '$', '_', 'moment', 'axios', 'fetch'
+		];
+		
+		let transferCode = '// Auto-transfer userscript libraries\n';
+		
+		for (const lib of knownLibraries) {
+			transferCode += `if (typeof ${lib} !== 'undefined' && typeof window.${lib} === 'undefined') window.${lib} = ${lib};\n`;
+		}
+		
+		// Also try to detect libraries from window object
+		transferCode += `
+		// Auto-detect additional libraries
+		try {
+			const userscriptGlobals = Object.getOwnPropertyNames(this);
+			for (const name of userscriptGlobals) {
+				if (typeof this[name] === 'function' && name[0] === name[0].toUpperCase() && typeof window[name] === 'undefined') {
+					window[name] = this[name];
+				}
+			}
+		} catch(e) {}
+		`;
+		
+		return transferCode;
+	}
+
+	/**
 	 * Removes all injected CSS styles with the attribute `data-resource="SeveritiumCSS"`.
 	 * This ensures that previously applied styles do not interfere with new ones.
 	 */
@@ -94,7 +126,14 @@ class SeveritiumInjector {
 	 */
 	injectJS(url, attributes = []) {
 		const script = document.createElement('script');
-		script.textContent = this.Severitium.JS[url];
+		
+		// Automatically detect and transfer userscript libraries
+		const libraryTransferCode = this.generateLibraryTransferCode();
+		
+		script.textContent = `
+			${libraryTransferCode}
+			${this.Severitium.JS[url]}
+		`;
 		for (const attr of attributes) {
 			script.setAttribute(attr.name, attr.value);
 		}
@@ -102,7 +141,7 @@ class SeveritiumInjector {
 		// console.log(`SEVERITIUM: Applied JS from ${url}`);
 	}
 
-		/**
+	/**
 	 * Applies one or multiple JavaScript modules to the document.
 	 * Removes previously injected scripts and injects new ones from the provided input.
 	 *

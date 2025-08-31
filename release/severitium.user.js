@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build54
+// @version			1.7.2+build55
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -38,6 +38,7 @@
 // @grant			GM_getValue
 // @grant			GM_setValue
 // @grant			GM_openInTab
+// @grant			GM_getResourceText
 
 // ==/UserScript==
 
@@ -330,6 +331,19 @@
 	 */
 	async function loadResources(forceReload = false) {
 		logger.log(`Load resources started.`, 'debug');
+		
+		// Inject BreeziumSelect CSS
+		try {
+			const breeziumCSS = GM_getResourceText('https://cdn.jsdelivr.net/gh/OrakomoRi/Breezium@latest/modules/BreeziumSelect/js/BreeziumSelect.min.css');
+			if (breeziumCSS) {
+				const styleElement = document.createElement('style');
+				styleElement.textContent = breeziumCSS;
+				document.head.appendChild(styleElement);
+			}
+		} catch (error) {
+			logger.log(`Error injecting BreeziumSelect CSS: ${error.message}`, 'warn');
+		}
+		
 		// Show loading screen
 		const loadingScreen = LoadingScreen.add(`${script.name}`);
 
@@ -441,17 +455,6 @@
 			}
 			if (script.JS['main']) {
 				logger.log(typeof script.JS['main'], 'debug');
-				
-				// Ensure required libraries are globally accessible before applying JS
-				if (typeof window.BreeziumSelect === 'undefined' && typeof BreeziumSelect !== 'undefined') {
-					window.BreeziumSelect = BreeziumSelect;
-					logger.log('Made BreeziumSelect globally accessible', 'debug');
-				}
-				if (typeof window.Swal === 'undefined' && typeof Swal !== 'undefined') {
-					window.Swal = Swal;
-					logger.log('Made Swal globally accessible', 'debug');
-				}
-				
 				severitiumInjector.applyJS('main');
 			}
 			// Apply images to the page
