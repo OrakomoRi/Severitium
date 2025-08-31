@@ -1,0 +1,124 @@
+/*
+	Breezium-Select CSS Customization
+
+	Customize the appearance of the Breezium Select by overriding the following CSS variables:
+
+	--breezium-padding: Padding for the selected item and options (default: .5rem 1rem).
+	--breezium-bg-color: Background color for the selected item and options dropdown (default: rgba(30, 30, 30, .25)).
+	--breezium-hover-bg-color: Background color for the selected item on hover (default: rgba(100, 100, 100, .25)).
+	--breezium-backdrop-filter: Blur effect on the background (default: blur(.25rem)).
+	--breezium-border-radius: Radius for rounded corners (default: .5rem).
+	--breezium-border-width: Width of the border (default: .1rem).
+	--breezium-border-color: Color of the border (default: rgba(255, 255, 255, .25)).
+	--breezium-text-color: Text color for the selected item and options (default: #fff).
+	--breezium-font-size: Font size for the selected item (default: 1rem).
+	--breezium-box-shadow: Box shadow for the options dropdown (default: 0 .25rem .5rem rgba(0, 0, 0, .25)).
+	--breezium-option-bg-color: Background color for each option (default: rgba(30, 30, 30, .25)).
+	--breezium-option-hover-bg-color: Background color when hovering over an option (default: rgba(150, 150, 150, .25)).
+	--breezium-options-margin-top: Margin between the selected item and options (default: .25rem).
+	--breezium-background-hover-transition-time: Time of background/background-color transition on hover/active (default: .2s).
+	--breezium-select-selected-width: Static selected element width to display correctly (default: 5rem).
+	--breezium-select-options-max-height: Max possible height of options container (default: 10rem).
+	--breezium-select-option-height: Height of one option to display them equal (default: 2.5rem).
+	--breezium-select-scroll-width: Width of the scrollbar in options dropdown (default: .5rem).
+	--breezium-select-scroll-track-background: Background color of the scrollbar track (default: rgba(255, 255, 255, .1)).
+	--breezium-select-scroll-thumb-background: Background color of the scrollbar thumb (default: rgba(255, 255, 255, .3)).
+	--breezium-select-scroll-thumb-hover-background: Background color of the scrollbar thumb on hover (default: rgba(255, 255, 255, .5)).
+*/
+
+.breezium-select,
+.breezium-select * {
+	box-sizing: border-box;
+}
+
+.breezium-select {
+	position: relative;
+	cursor: pointer;
+	width: fit-content;
+}
+
+.breezium-select .breezium-selected {
+	width: var(--breezium-select-selected-width, 5rem);
+	height: var(--breezium-select-option-height, 2.5rem);
+	padding: var(--breezium-padding, .5rem 1rem);
+	background-color: var(--breezium-bg-color, rgba(30, 30, 30, .25));
+	-webkit-backdrop-filter: var(--breezium-backdrop-filter, blur(.25rem));
+	backdrop-filter: var(--breezium-backdrop-filter, blur(.25rem));
+	border-radius: var(--breezium-border-radius, .25rem);
+	border: var(--breezium-border-width, .1rem) solid var(--breezium-border-color, rgba(255, 255, 255, .25));
+	text-align: center;
+	color: var(--breezium-text-color, #fff);
+	font-size: var(--breezium-font-size, 1rem);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	transition: background-color var(--breezium-background-hover-transition-time, .2s) ease;
+}
+
+.breezium-select.show .breezium-selected:hover,
+.breezium-select .breezium-selected:hover {
+	background-color: var(--breezium-hover-bg-color, rgba(100, 100, 100, .25));
+}
+
+.breezium-select .breezium-options {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	max-height: var(--breezium-select-options-max-height, 10rem);
+	-webkit-backdrop-filter: var(--breezium-backdrop-filter, blur(.25rem));
+	backdrop-filter: var(--breezium-backdrop-filter, blur(.25rem));
+	border-radius: var(--breezium-border-radius, .25rem);
+	border: var(--breezium-border-width, .1rem) solid var(--breezium-border-color, rgba(255, 255, 255, .25));
+	display: none;
+	background-color: var(--breezium-bg-color, rgba(30, 30, 30, .25));
+	z-index: 10;
+	box-shadow: var(--breezium-box-shadow, 0 .25rem .5rem rgba(0, 0, 0, .25));
+	overflow: hidden auto;
+}
+
+.breezium-select.show .breezium-options {
+	margin-top: var(--breezium-options-margin-top, 0.25rem);
+	display: flex;
+	flex-direction: column;
+}
+
+.breezium-select .breezium-option {
+	max-width: 100%;
+	height: var(--breezium-select-option-height, 2.5rem);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--breezium-padding, .5rem 1rem);
+	background-color: var(--breezium-option-bg-color, rgba(30, 30, 30, .25));
+	text-align: center;
+	cursor: pointer;
+	color: var(--breezium-text-color, #fff);
+	white-space: nowrap;
+	font-size: var(--breezium-font-size, 1rem);
+	text-overflow: ellipsis;
+	transition: background-color var(--breezium-background-hover-transition-time, .2s) ease;
+}
+
+.breezium-select .breezium-option:hover {
+	background-color: var(--breezium-option-hover-bg-color, rgba(150, 150, 150, .25));
+	transition: background-color .2s ease;
+}
+
+.breezium-select .breezium-options::-webkit-scrollbar {
+	width: var(--breezium-select-scroll-width, .5rem);
+}
+
+.breezium-select .breezium-options::-webkit-scrollbar-track {
+	background: var(--breezium-select-scroll-track-background, rgba(255, 255, 255, .1));
+}
+
+.breezium-select .breezium-options::-webkit-scrollbar-thumb {
+	background: var(--breezium-select-scroll-thumb-background, rgba(255, 255, 255, .3));
+	-webkit-transition: background var(--breezium-background-hover-transition-time, .2s) ease;
+	transition: background var(--breezium-background-hover-transition-time, .2s) ease;
+}
+
+.breezium-select .breezium-options::-webkit-scrollbar-thumb:hover {
+	background: var(--breezium-select-scroll-thumb-hover-background, rgba(255, 255, 255, .5));
+}

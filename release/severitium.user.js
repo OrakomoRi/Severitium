@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build55
+// @version			1.7.2+build56
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -21,9 +21,6 @@
 
 // @require			https://cdn.jsdelivr.net/npm/sweetalert2@11
 // @require			https://cdn.jsdelivr.net/gh/OrakomoRi/CompareVersions/JS/compareversions.min.js
-// @require			https://cdn.jsdelivr.net/gh/OrakomoRi/Breezium@latest/modules/BreeziumSelect/js/BreeziumSelect.min.js
-
-// @resource		https://cdn.jsdelivr.net/gh/OrakomoRi/Breezium@latest/modules/BreeziumSelect/js/BreeziumSelect.min.css
 
 // @require			https://raw.githubusercontent.com/OrakomoRi/Severitium/main/src/_Additional/_getSeason.min.js
 // @require			https://raw.githubusercontent.com/OrakomoRi/Severitium/main/src/_Additional/_extractFileName.min.js
@@ -331,6 +328,16 @@
 	 */
 	async function loadResources(forceReload = false) {
 		logger.log(`Load resources started.`, 'debug');
+		
+		// Direct transfer of libraries to page context
+		if (typeof BreeziumSelect !== 'undefined') {
+			unsafeWindow.BreeziumSelect = BreeziumSelect;
+			logger.log('BreeziumSelect transferred via unsafeWindow', 'debug');
+		}
+		if (typeof Swal !== 'undefined') {
+			unsafeWindow.Swal = Swal;
+			logger.log('Swal transferred via unsafeWindow', 'debug');
+		}
 		
 		// Inject BreeziumSelect CSS
 		try {
