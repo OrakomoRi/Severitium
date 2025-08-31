@@ -204,3 +204,35 @@
 	top: 50%;
 	transform: translateY(-50%);
 }
+
+/* Common challenges notificator icon */
+
+/* Original notification icon */
+
+.BattlePassLobbyComponentStyle-menuBattlePass > div > img[src*='notification'i] {
+	display: none;
+}
+
+.BattlePassLobbyComponentStyle-menuBattlePass > div:has(> img[src*='notification'i]) {
+	all: unset !important;
+}
+
+/* Custom notification icon */
+
+.BattlePassLobbyComponentStyle-menuBattlePass > div:has(> img[src*='notification'i])::before {
+	content: '';
+	position: absolute;
+	top: .5em;
+	right: .5em;
+	height: 1em;
+	width: 1em;
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	background-color: var(--severitium-main-color);
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg>');
+}
