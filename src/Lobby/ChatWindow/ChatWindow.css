@@ -79,6 +79,7 @@
 
 .breezium-select .breezium-selected[data-state='selected'] {
 	color: var(--severitium-main-color);
+	width: 10rem;
 }
 
 /* Breezium option */
