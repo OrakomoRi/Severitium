@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build52
+// @version			1.7.2+build53
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -19,6 +19,12 @@
 // @updateURL		https://raw.githubusercontent.com/OrakomoRi/Severitium/main/release/severitium.user.js
 // @downloadURL		https://raw.githubusercontent.com/OrakomoRi/Severitium/main/release/severitium.user.js
 
+// @require			https://cdn.jsdelivr.net/npm/sweetalert2@11
+// @require			https://cdn.jsdelivr.net/gh/OrakomoRi/CompareVersions/JS/compareversions.min.js
+// @require			https://cdn.jsdelivr.net/gh/OrakomoRi/Breezium@latest/modules/BreeziumSelect/js/BreeziumSelect.min.js
+
+// @resource		https://cdn.jsdelivr.net/gh/OrakomoRi/Breezium@latest/modules/BreeziumSelect/js/BreeziumSelect.min.css
+
 // @require			https://raw.githubusercontent.com/OrakomoRi/Severitium/main/src/_Additional/_getSeason.min.js
 // @require			https://raw.githubusercontent.com/OrakomoRi/Severitium/main/src/_Additional/_extractFileName.min.js
 
@@ -32,12 +38,6 @@
 // @grant			GM_getValue
 // @grant			GM_setValue
 // @grant			GM_openInTab
-
-// @require			https://cdn.jsdelivr.net/npm/sweetalert2@11
-// @require			https://cdn.jsdelivr.net/gh/OrakomoRi/CompareVersions/JS/compareversions.min.js
-// @require			https://cdn.jsdelivr.net/gh/OrakomoRi/Breezium@latest/modules/BreeziumSelect/js/BreeziumSelect.min.js
-
-// @resource		https://cdn.jsdelivr.net/gh/OrakomoRi/Breezium@latest/modules/BreeziumSelect/js/BreeziumSelect.min.css
 
 // ==/UserScript==
 
