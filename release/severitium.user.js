@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build68
+// @version			1.7.2+build69
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -166,7 +166,7 @@
 	async function findLatestStableVersion() {
 		try {
 			// Fetch the stable.json file containing all available stable versions
-			const stableData = await fetchJSON(STABLE_JSON_URL);
+			const stableData = await fetchResource(STABLE_JSON_URL, 'json');
 
 			// Determine the latest stable version from the list of versions in stable.json (should return the most recent one)
 			const latestVersionData = getLatestVersion(stableData.versions);
@@ -240,13 +240,13 @@
 	}
 
 	/**
-	 * Fetches a resource from a given URL, optionally as a Base64 string
+	 * Fetches a resource from a given URL with various return formats
 	 *
 	 * @param {string} url - The URL of the resource to fetch
-	 * @param {boolean} [asBase64=false] - Whether to fetch the resource as Base64
-	 * @returns {Promise<string>} - Resolves with the resource content (text or Base64)
+	 * @param {'text'|'base64'|'json'} [format='text'] - The format to return the resource in
+	 * @returns {Promise<string|Object>} - Resolves with the resource content in the specified format
 	 */
-	async function fetchResource(url, asBase64 = false) {
+	async function fetchResource(url, format = 'text') {
 		const { fileName, fileType } = _extractFileName(url);
 		const startTime = performance.now();
 		logger.log(`[START] ${new Date().toISOString()}\n${fileName} ${fileType}`, 'debug');
@@ -256,14 +256,14 @@
 			GM_xmlhttpRequest({
 				method: 'GET',
 				url,
-				responseType: asBase64 ? 'blob' : 'text',
+				responseType: format === 'base64' ? 'blob' : 'text',
 				onload: (response) => {
 					if (response.status === 200) {
 						const endTime = performance.now();
 						const duration = ((endTime - startTime) / 1000).toFixed(3);
 						logger.log(`[END] ${new Date().toISOString()} (Time: ${duration}s)\n${fileName} ${fileType}`, 'debug');
 	
-						if (asBase64) {
+						if (format === 'base64') {
 							// Convert blob to Base64 string for image embedding
 							if (!response.response || response.response.size === 0) {
 								logger.log(`[ERROR] ${fileName} ${fileType}: Empty blob response`, 'error');
@@ -274,6 +274,18 @@
 							const reader = new FileReader();
 							reader.onloadend = () => resolve(reader.result.split(',')[1]);
 							reader.readAsDataURL(response.response);
+						} else if (format === 'json') {
+							// Parse JSON and validate
+							try {
+								const jsonData = JSON.parse(response.responseText);
+								if (typeof jsonData !== 'object' || jsonData === null) {
+									throw new Error('Parsed JSON is not an object');
+								}
+								resolve(jsonData);
+							} catch (error) {
+								logger.log(`[ERROR] ${fileName} ${fileType}: Failed to parse JSON - ${error.message}`, 'error');
+								reject(new Error(`Failed to parse JSON from ${url}: ${error.message}`));
+							}
 						} else {
 							// Return plain text for CSS/JS
 							resolve(response.responseText);
@@ -282,40 +294,6 @@
 						// Log and reject on HTTP error
 						logger.log(`[ERROR] ${fileName} ${fileType}: Failed to fetch (${response.status})`, 'error');
 						reject(new Error(`Failed to fetch resource from ${url}`));
-					}
-				},
-				onerror: (error) => reject(error),
-			});
-		});
-	}
-
-	/**
-	 * Fetches and parses JSON from a given URL
-	 *
-	 * @param {string} url - The URL to fetch JSON from
-	 * @returns {Promise<Object>} - Resolves with the parsed JSON object
-	 */
-	function fetchJSON(url) {
-		return new Promise((resolve, reject) => {
-			GM_xmlhttpRequest({
-				method: 'GET',
-				url: url,
-				onload(response) {
-					if (response.status !== 200) {
-						// Reject if HTTP status is not OK
-						reject(new Error(`${(script.name).toUpperCase()}: Failed to fetch: ${response.status}`));
-						return;
-					}
-					try {
-						// Attempt to parse JSON
-						const jsonData = JSON.parse(response.responseText);
-						if (typeof jsonData !== 'object' || jsonData === null) {
-							throw new Error('Parsed JSON is not an object');
-						}
-						resolve(jsonData);
-					} catch (error) {
-						// Reject if JSON parsing fails
-						reject(new Error(`Failed to parse JSON from ${url}: ${error.message}`));
 					}
 				},
 				onerror: (error) => reject(error),
@@ -354,7 +332,7 @@
 
 			logger.log(`Last season: ${lastSeason || 'null'}; current season: ${currentSeason}. Season changed: ${isSeasonChanged ? 'yes' : 'no'}`, 'debug');
 			// Fetch image links for the current season
-			imageLinks = await fetchJSON(`https://orakomori.github.io/Severitium/src/_preload/ImageModules.json?v=${script.version}`).then(data => {
+			imageLinks = await fetchResource(`https://orakomori.github.io/Severitium/src/_preload/ImageModules.json?v=${script.version}`, 'json').then(data => {
 				logger.log(`Loaded ${data ? data.length : 0} image links from ImageModules.json`, 'info');
 				if (data && data.length > 0) {
 					data.forEach((item, index) => {
@@ -379,7 +357,7 @@
 				let jsPromise = null;
 
 				if (!loadOnlyImages) {
-					jsonPromise = fetchJSON(RELEASE_VARIABLES_URL).then(json => {
+					jsonPromise = fetchResource(RELEASE_VARIABLES_URL, 'json').then(json => {
 						script.VARIABLES = json;
 						loadingScreen.updateProgress();
 					});
@@ -402,7 +380,7 @@
 						.replace('SEASON_PLACEHOLDER', currentSeason)
 						+ `?v=${script.version}`;
 					logger.log(`Attempting to load image ${index + 1}/${imageLinks.length}: ${formattedUrl}`, 'info');
-					return fetchResource(formattedUrl, true).then(img => {
+					return fetchResource(formattedUrl, 'base64').then(img => {
 						script.images[formattedUrl] = img;
 						loadingScreen.updateProgress();
 					});

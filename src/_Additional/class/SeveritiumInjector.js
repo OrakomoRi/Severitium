@@ -61,7 +61,7 @@ class SeveritiumInjector {
 		this.removeInjectedVariables();
 
 		// Default attribute to identify Severitium-injected styles
-		const defaultAttributes = { name: 'data-resource', value: 'SeveritiumVariables' };
+		const defaultAttributes = [{ name: 'data-resource', value: 'SeveritiumVariables' }];
 
 		this.injectVariables(defaultAttributes);
 	}
@@ -109,7 +109,7 @@ class SeveritiumInjector {
 		this.removeInjectedCSS();
 
 		// Default attribute to identify Severitium-injected styles
-		const defaultAttributes = { name: 'data-resource', value: 'SeveritiumCSS' };
+		const defaultAttributes = [{ name: 'data-resource', value: 'SeveritiumCSS' }];
 
 		const normalizedLinks = Array.isArray(links)
 			? links
@@ -120,7 +120,7 @@ class SeveritiumInjector {
 			// Ensure the `data-resource` attribute is included
 			const updatedAttributes = attributes.some(attr => attr.name === 'data-resource')
 				? attributes
-				: [defaultAttributes, ...attributes];
+				: [...defaultAttributes, ...attributes];
 			this.injectCSS(url, updatedAttributes);
 		}
 	}
@@ -163,7 +163,7 @@ class SeveritiumInjector {
 
 		this.removeInjectedJS();
 
-		const defaultAttributes = { name: 'data-resource', value: 'SeveritiumJS' };
+		const defaultAttributes = [{ name: 'data-resource', value: 'SeveritiumJS' }];
 
 		const normalizedLinks = Array.isArray(links)
 			? links
@@ -172,7 +172,7 @@ class SeveritiumInjector {
 		for (const { url, attributes = [] } of normalizedLinks) {
 			const updatedAttributes = attributes.some(attr => attr.name === 'data-resource')
 				? attributes
-				: [defaultAttributes, ...attributes];
+				: [...defaultAttributes, ...attributes];
 			this.injectJS(url, updatedAttributes);
 		}
 	}
@@ -226,7 +226,7 @@ class SeveritiumInjector {
 		this.removeInjectedImages();
 
 		// Default attribute to identify Severitium-injected image styles
-		const defaultAttributes = { name: 'data-resource', value: 'SeveritiumImage' };
+		const defaultAttributes = [{ name: 'data-resource', value: 'SeveritiumImage' }];
 
 		// Process each link and inject image styles
 		for (const { url, style, attributes = [] } of links) {
@@ -235,7 +235,7 @@ class SeveritiumInjector {
 			// Ensure the `data-resource` attribute is included
 			const updatedAttributes = attributes.some(attr => attr.name === 'data-resource')
 				? attributes
-				: [defaultAttributes, ...attributes];
+				: [...defaultAttributes, ...attributes];
 			this.injectImage(formattedUrl, style, updatedAttributes);
 		}
 	}
