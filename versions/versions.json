@@ -1516,5 +1516,11 @@
     "date": "2025-09-01",
     "comment": "1.7.2+build64 feat: updated entrance forms",
     "hash": "2a49739ff3bde98e445e2c346ea389efb8fe185f"
+  },
+  {
+    "version": "1.7.2+build65",
+    "date": "2025-09-01",
+    "comment": "1.7.2+build65 feat: updated settings content and quests screen",
+    "hash": "aa12d9cea0fbfbc2be6e8d7788b0e20ab1b8de1b"
   }
 ]
