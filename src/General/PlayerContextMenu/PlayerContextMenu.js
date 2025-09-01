@@ -65,7 +65,7 @@
 		const contextMenu = clonedModal.querySelector('.ContextMenuStyle-menu');
 		const realContextMenu = modal.querySelector('.ContextMenuStyle-menu');
 
-		const ModalID = crypto.generateUniqueUUID();
+		const ModalID = generateUniqueUUID();
 
 		if (contextMenu) {
 			contextMenu.dataset.clone = 'true';
