@@ -1510,5 +1510,11 @@
     "date": "2025-09-01",
     "comment": "1.7.2+build63 feat: updated entrance forms",
     "hash": "b15a7f0348f9a907247e93689536a025ac27723f"
+  },
+  {
+    "version": "1.7.2+build64",
+    "date": "2025-09-01",
+    "comment": "1.7.2+build64 feat: updated entrance forms",
+    "hash": "2a49739ff3bde98e445e2c346ea389efb8fe185f"
   }
 ]
