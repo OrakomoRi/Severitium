@@ -1522,5 +1522,11 @@
     "date": "2025-09-01",
     "comment": "1.7.2+build65 feat: updated settings content and quests screen",
     "hash": "aa12d9cea0fbfbc2be6e8d7788b0e20ab1b8de1b"
+  },
+  {
+    "version": "1.7.2+build66",
+    "date": "2025-09-01",
+    "comment": "1.7.2+build66 feat: enhance build process for JavaScript and CSS files, updated chat window",
+    "hash": "3db7a59324ac227bd88f5a6003d9507a37a3edc5"
   }
 ]
