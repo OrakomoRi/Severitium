@@ -1552,5 +1552,11 @@
     "date": "2025-09-02",
     "comment": "1.7.2+build70 fix: fixed player context menu UUID",
     "hash": "496039e5e68b8ac2b69329420afc5523fde53cf3"
+  },
+  {
+    "version": "1.7.2+build71",
+    "date": "2025-09-02",
+    "comment": "1.7.2+build71 feat: updated notificator icon for garage items",
+    "hash": "511ca750f69aed83d1e5e3ee27daf9ce777f39ca"
   }
 ]
