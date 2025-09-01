@@ -1540,5 +1540,11 @@
     "date": "2025-09-02",
     "comment": "1.7.2+build68 fix: updated link to variables json",
     "hash": "522a843b967b0eec1a8be0c36cec77e7063992aa"
+  },
+  {
+    "version": "1.7.2+build69",
+    "date": "2025-09-02",
+    "comment": "1.7.2+build69 fix: updated variables loading logic",
+    "hash": "6ea541be852c74f785a76cac38816b365fb183c5"
   }
 ]
