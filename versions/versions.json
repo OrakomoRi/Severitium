@@ -1504,5 +1504,11 @@
     "date": "2025-09-01",
     "comment": "1.7.2+build62 feat: updated notificator icon",
     "hash": "e3fed6ad21b6d37305405413b5e257c365602d7c"
+  },
+  {
+    "version": "1.7.2+build63",
+    "date": "2025-09-01",
+    "comment": "1.7.2+build63 feat: updated entrance forms",
+    "hash": "b15a7f0348f9a907247e93689536a025ac27723f"
   }
 ]
