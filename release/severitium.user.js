@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build66
+// @version			1.7.2+build67
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -60,6 +60,7 @@
 	 * 
 	 * @param {array} script - Array with catched data
 	 * Catches all CSS, JS, images based on main userscript's version
+	 * @param {array} script.VARIABLES - Array with CSS variables
 	 * @param {array} script.CSS - Array with CSS
 	 * @param {array} script.JS - Array with JS
 	 * @param {array} script.images - Array with images
@@ -84,6 +85,7 @@
 	};
 
 	const script = {
+		VARIABLES: {},
 		CSS: {},
 		JS: {},
 		images: {},
@@ -345,8 +347,10 @@
 			// Construct URLs for CSS and JS for the current version using jsDelivr CDN
 			const RELEASE_CSS_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/${script.version}/style.release.min.css`;
 			const RELEASE_JS_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/${script.version}/script.release.min.js`;
+			const RELEASE_VARIABLES_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/${script.version}/script.release.min.js`;
 			logger.log(`Resolved CSS path: ${RELEASE_CSS_URL}`, 'debug');
 			logger.log(`Resolved JS path: ${RELEASE_JS_URL}`, 'debug');
+			logger.log(`Resolved Variables path: ${RELEASE_VARIABLES_URL}`, 'debug');
 
 			logger.log(`Last season: ${lastSeason || 'null'}; current season: ${currentSeason}. Season changed: ${isSeasonChanged ? 'yes' : 'no'}`, 'debug');
 			// Fetch image links for the current season
@@ -363,16 +367,23 @@
 			if (!loadEverything && !loadOnlyImages) {
 				// Load all resources from cache if nothing changed
 				logger.log(`Loading resources from cache.`, 'info');
+				script.VARIABLES = GM_getValue('SeveritiumVariables', {});
 				script.CSS = GM_getValue('SeveritiumCSS', {});
 				script.JS = GM_getValue('SeveritiumJS', {});
 				script.images = GM_getValue('SeveritiumImages', {});
 			} else {
 				logger.log(`Fetching ${loadOnlyImages ? 'only images' : 'all resources'}.`, 'info');
 
+				let jsonPromise = null;
 				let cssPromise = null;
 				let jsPromise = null;
 
 				if (!loadOnlyImages) {
+					jsonPromise = fetchJSON(RELEASE_VARIABLES_URL).then(json => {
+						script.VARIABLES = json;
+						loadingScreen.updateProgress();
+					});
+
 					// Fetch CSS and JS if not just images
 					cssPromise = fetchResource(RELEASE_CSS_URL).then(css => {
 						script.CSS['main'] = css;
@@ -384,6 +395,7 @@
 						loadingScreen.updateProgress();
 					});
 				}
+
 				// Fetch all images (as Base64)
 				const imagePromises = imageLinks.map(({ url }, index) => {
 					const formattedUrl = url
@@ -398,6 +410,7 @@
 
 				// Wait for all resources to load
 				const allPromises = [...imagePromises];
+				if (jsonPromise) allPromises.push(jsonPromise);
 				if (cssPromise) allPromises.push(cssPromise);
 				if (jsPromise) allPromises.push(jsPromise);
 
@@ -413,10 +426,12 @@
 
 				if (!loadOnlyImages) {
 					// Save CSS and JS to cache
+					GM_setValue('SeveritiumVariables', script.VARIABLES);
 					GM_setValue('SeveritiumCSS', script.CSS);
 					GM_setValue('SeveritiumJS', script.JS);
 				} else {
 					// If only images, reload CSS/JS from cache
+					script.VARIABLES = GM_getValue('SeveritiumVariables', {});
 					script.CSS = GM_getValue('SeveritiumCSS', {});
 					script.JS = GM_getValue('SeveritiumJS', {});
 				}
@@ -433,7 +448,11 @@
 		} finally {
 			// Apply loaded resources to the page
 			severitiumInjector.updateSeveritium(script);
-			logger.log(`CSS found: ${script.CSS['main'] ? 'yes' : 'no'}.\nJS found: ${script.JS['main'] ? 'yes' : 'no'}.`, 'debug');
+			logger.log(`JSON found: ${script.VARIABLES ? 'yes' : 'no'}.\nCSS found: ${script.CSS['main'] ? 'yes' : 'no'}.\nJS found: ${script.JS['main'] ? 'yes' : 'no'}.`, 'debug');
+			if (script.VARIABLES) {
+				logger.log(typeof script.VARIABLES, 'debug');
+				severitiumInjector.applyVariables(script.VARIABLES);
+			}
 			if (script.CSS['main']) {
 				logger.log(typeof script.CSS['main'], 'debug');
 				severitiumInjector.applyCSS('main');

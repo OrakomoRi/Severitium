@@ -76,6 +76,51 @@ jobs:
                   
                   csso "builds/$VERSION/style.release.css" -o "builds/$VERSION/style.release.min.css"
                   rm -f "builds/$VERSION/style.release.css"
+                  
+                  # Extract and build variables separately
+                  echo "Extracting Variables.css..."
+                  if [ -f "src/Variables/Variables.css" ]; then
+                    cp "src/Variables/Variables.css" "builds/$VERSION/variables.css"
+                    csso "builds/$VERSION/variables.css" -o "builds/$VERSION/variables.min.css"
+                    echo "Variables.css extracted and minified successfully"
+                  else
+                    echo "Warning: Variables.css not found"
+                  fi
+                  
+                  # Create variables.json for easier parsing
+                  echo "Creating variables.json..."
+                  if [ -f "builds/$VERSION/variables.css" ]; then
+                    node -e "
+                      const fs = require('fs');
+                      const css = fs.readFileSync('builds/$VERSION/variables.css', 'utf8');
+                      const variables = {};
+                      
+                      // Extract variables from :root block
+                      const rootMatch = css.match(/:root\s*{([^}]*)}/);
+                      if (rootMatch) {
+                        const rootContent = rootMatch[1];
+                        const varMatches = rootContent.match(/--[^:;]+:[^;]+;/g);
+                        
+                        if (varMatches) {
+                          varMatches.forEach(match => {
+                            const [property, value] = match.split(':').map(s => s.trim());
+                            if (property && value) {
+                              variables[property] = value.replace(';', '').trim();
+                            }
+                          });
+                        }
+                      }
+                      
+                      const output = {
+                        version: '$VERSION',
+                        timestamp: new Date().toISOString(),
+                        variables: variables
+                      };
+                      
+                      fs.writeFileSync('builds/$VERSION/variables.json', JSON.stringify(output, null, 2));
+                      console.log('Variables extracted to JSON:', Object.keys(variables).length, 'variables');
+                    " || echo "Failed to create variables.json"
+                  fi
   
             - name: Update versions.json
               run: |

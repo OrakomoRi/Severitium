@@ -16,13 +16,62 @@ class SeveritiumInjector {
 	}
 
 	/**
+	 * Removes existing variables injected by Severitium with the attribute `data-resource="SeveritiumVariables"`.
+	 * This ensures that previously applied styles do not interfere with new ones.
+	 */
+	removeInjectedVariables() {
+		const styles = document.querySelectorAll('style[data-resource="SeveritiumVariables"]');
+		for (const el of styles) {
+			el.remove();
+		}
+	}
+
+	/**
+	 * Injects variables into the document using a customly created :root and attributes.
+	 *
+	 * @param {Array<{ name: string, value: string }>} attributes - An array of attribute objects to apply to the injected <style> element.
+	 */
+	injectVariables(attributes = []) {
+		const style = document.createElement('style');
+		let css = ':root {\n';
+		for (const [key, value] of Object.entries(this.Severitium.VARIABLES.variables || {})) {
+			css += `--${key}: ${value};\n`;
+		}
+		css += '}';
+		style.textContent = css;
+		for (const attr of attributes) {
+			style.setAttribute(attr.name, attr.value);
+		}
+		document.body.appendChild(style);
+		// console.log(`SEVERITIUM: Applied CSS from ${url}`);
+	}
+
+	/**
+	 * Applies variables to the document.
+	 *
+	 * @param {Array<{ property: string, value: string }> } variables - An array of objects representing CSS properties and their values.
+	 *
+	 */
+	applyVariables(variables = null) {
+		if (!variables) {
+			return;
+		}
+
+		// Remove existing Severitium-injected variables
+		this.removeInjectedVariables();
+
+		// Default attribute to identify Severitium-injected styles
+		const defaultAttributes = { name: 'data-resource', value: 'SeveritiumVariables' };
+
+		this.injectVariables(defaultAttributes);
+	}
+
+	/**
 	 * Removes all injected CSS styles with the attribute `data-resource="SeveritiumCSS"`.
 	 * This ensures that previously applied styles do not interfere with new ones.
 	 */
 	removeInjectedCSS() {
-		const styles = document.querySelectorAll(
-			'style[data-resource="SeveritiumCSS"]'
-		);
+		const styles = document.querySelectorAll('style[data-resource="SeveritiumCSS"]');
 		for (const el of styles) {
 			el.remove();
 		}
@@ -47,9 +96,9 @@ class SeveritiumInjector {
 	/**
 	 * Applies multiple CSS styles to the document.
 	 * Removes existing styles injected by Severitium and injects new styles from the provided links.
-	 * 
+	 *
 	 * @param {string | Array<{ url: string, attributes?: Array<{ name: string, value: string }> }>} links -
-	 *        Either a single string key (e.g., 'main') or an array of objects with the URL key and optional script attributes.
+	 * Either a single string key (e.g., 'main') or an array of objects with the URL key and optional script attributes.
 	 */
 	applyCSS(links = null) {
 		if (!links) {
@@ -107,7 +156,7 @@ class SeveritiumInjector {
 	 * Removes previously injected scripts and injects new ones from the provided input.
 	 *
 	 * @param {string | Array<{ url: string, attributes?: Array<{ name: string, value: string }> }>} links -
-	 *        Either a single string key (e.g., 'main') or an array of objects with the URL key and optional script attributes.
+	 * Either a single string key (e.g., 'main') or an array of objects with the URL key and optional script attributes.
 	 */
 	applyJS(links = null) {
 		if (!links) return;
