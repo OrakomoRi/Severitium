@@ -418,6 +418,8 @@
 
 .EntranceComponentStyle-ContainerForm form div[class*='EntranceComponentStyle-button'i][class*='buttonnoactive'i],
 .HeaderComponentStyle-supportBlock div[class*='EntranceComponentStyle-button'i][class*='buttonnoactive'i] {
+	width: 100%;
+	box-sizing: border-box;
 	margin: 0;
 	margin-top: 1em;
 	border-radius: var(--severitium-border-radius);
@@ -428,7 +430,10 @@
 
 .EntranceComponentStyle-ContainerForm form div[class*='EntranceComponentStyle-button'i][class*='buttonactive'i],
 .HeaderComponentStyle-supportBlock div[class*='EntranceComponentStyle-button'i][class*='buttonactive'i] {
+	width: 100%;
+	box-sizing: border-box;
 	margin: 0;
+	margin-top: 1em;
 	background-color: var(--severitium-gray-button-background);
 	border: .1em solid var(--severitium-gray-button-border-color);
 	border-radius: var(--severitium-border-radius);
