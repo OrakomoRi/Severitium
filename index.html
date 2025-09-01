@@ -5,353 +5,46 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/svg" href="images/icon.svg">
+	<link rel="stylesheet" href="assets/css/style.css">
 	<title>Severitium</title>
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
 
-		/* Dark scrollbar */
-		::-webkit-scrollbar {
-			width: 0.75rem;
-		}
-
-		::-webkit-scrollbar-track {
-			background: #1a1a1a;
-		}
-
-		::-webkit-scrollbar-thumb {
-			background: #666666;
-			border-radius: 0.375rem;
-		}
-
-		::-webkit-scrollbar-thumb:hover {
-			background: #888888;
-		}
-
-		/* Firefox scrollbar */
-		* {
-			scrollbar-width: thin;
-			scrollbar-color: #666666 #1a1a1a;
-		}
-
-		body {
-			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #2d2d2d);
-			color: #ffffff;
-			line-height: 1.6;
-			min-height: 100vh;
-		}
-
-		.container {
-			max-width: 75rem;
-			margin: 0 auto;
-			padding: 1.25rem;
-		}
-
-		header {
-			text-align: center;
-			margin-bottom: 3.125rem;
-			padding: 2.5rem 0;
-		}
-
-		.logo {
-			max-width: 18.75rem;
-			margin-bottom: 1.25rem;
-		}
-
-		h1 {
-			font-size: 3rem;
-			margin-bottom: 0.625rem;
-			background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-clip: text;
-		}
-
-		.tagline {
-			font-size: 1.2rem;
-			color: #b8b8b8;
-			margin-bottom: 1.875rem;
-		}
-
-		.features {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
-			gap: 1.875rem;
-			margin-bottom: 3.125rem;
-		}
-
-		.feature-card {
-			background: rgba(0, 0, 0, 0.4);
-			border-radius: 0.9375rem;
-			padding: 1.875rem;
-			text-align: center;
-			transition: transform 0.3s ease, box-shadow 0.3s ease;
-			backdrop-filter: blur(0.625rem);
-			border: .1rem solid rgba(255, 255, 255, 0.1);
-		}
-
-		.feature-card:hover {
-			transform: translateY(-0.625rem);
-			box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.3);
-		}
-
-		.feature-icon {
-			font-size: 3rem;
-			margin-bottom: 1.25rem;
-		}
-
-		.feature-title {
-			font-size: 1.5rem;
-			margin-bottom: 0.9375rem;
-			color: #4ecdc4;
-		}
-
-		.feature-description {
-			color: #d0d0d0;
-		}
-
-		.cta-section {
-			text-align: center;
-			margin: 3.75rem 0;
-		}
-
-		.download-btn {
-			display: inline-block;
-			background: linear-gradient(135deg, #ff6b6b, #ff8e8e, #4ecdc4);
-			color: white;
-			padding: 0.9375rem 2.5rem;
-			text-decoration: none;
-			border-radius: 3.125rem;
-			font-size: 1.2rem;
-			font-weight: bold;
-			transition: all 0.3s ease;
-			margin: 0.625rem;
-			border: .2rem solid transparent;
-			position: relative;
-			overflow: hidden;
-		}
-
-		.download-btn::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: -100%;
-			width: 100%;
-			height: 100%;
-			background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-			transition: left 0.5s;
-		}
-
-		.download-btn:hover::before {
-			left: 100%;
-		}
-
-		.download-btn:hover {
-			transform: translateY(-0.1875rem);
-			box-shadow: 0 0.9375rem 2.1875rem rgba(255, 107, 107, 0.4);
-			border-color: rgba(255, 255, 255, 0.3);
-		}
-
-		.step-btn {
-			background: linear-gradient(135deg, #2d2d2d, #404040, #555555);
-			border: .2rem solid #4ecdc4;
-			color: #ffffff;
-			position: relative;
-			overflow: hidden;
-		}
-
-		.step-btn::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(69, 183, 209, 0.1));
-			opacity: 0;
-			transition: opacity 0.3s ease;
-		}
-
-		.step-btn:hover::after {
-			opacity: 1;
-		}
-
-		.step-btn:hover {
-			background: linear-gradient(135deg, #404040, #555555, #666666);
-			box-shadow: 0 0.9375rem 2.1875rem rgba(78, 205, 196, 0.3);
-			border-color: #45b7d1;
-			transform: translateY(-0.1875rem);
-		}
-
-		.github-section {
-			text-align: center;
-			margin: 2.5rem 0;
-		}
-
-		.github-btn {
-			background: linear-gradient(135deg, #2d2d2d, #404040, #555555);
-			border: .2rem solid #4ecdc4;
-		}
-
-		.github-btn:hover {
-			background: linear-gradient(135deg, #404040, #555555, #666666);
-			box-shadow: 0 0.9375rem 2.1875rem rgba(78, 205, 196, 0.3);
-			border-color: #45b7d1;
-		}
-
-		.support-section {
-			text-align: center;
-			margin: 3.125rem 0;
-			padding: 2.5rem 0;
-			border-top: .1rem solid rgba(255, 255, 255, 0.1);
-			border-bottom: .1rem solid rgba(255, 255, 255, 0.1);
-		}
-
-		.support-btn {
-			background: linear-gradient(135deg, #2d2d2d, #404040);
-			border: .2rem solid #ff9a9e;
-			color: #ffffff;
-			margin: 0.625rem;
-		}
-
-		.support-btn:hover {
-			background: linear-gradient(135deg, #404040, #555555);
-			box-shadow: 0 0.9375rem 2.1875rem rgba(255, 154, 158, 0.3);
-			border-color: #fecfef;
-		}
-
-		.patreon-btn {
-			background: linear-gradient(135deg, #2d2d2d, #404040);
-			border: .2rem solid #ff424d;
-			color: #ffffff;
-		}
-
-		.patreon-btn:hover {
-			background: linear-gradient(135deg, #404040, #555555);
-			box-shadow: 0 0.9375rem 2.1875rem rgba(255, 66, 77, 0.3);
-			border-color: #ff6b6b;
-		}
-
-		.compatibility {
-			margin-top: 3.125rem;
-			text-align: center;
-		}
-
-		.browser-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(9.375rem, 1fr));
-			gap: 1.25rem;
-			margin-top: 1.875rem;
-		}
-
-		.browser-item {
-			background: rgba(0, 0, 0, 0.3);
-			padding: 1.25rem;
-			border-radius: 0.625rem;
-			border: .1rem solid rgba(255, 255, 255, 0.1);
-		}
-
-		.footer {
-			text-align: center;
-			margin-top: 3.75rem;
-			padding: 1.875rem 0;
-			border-top: .1rem solid rgba(255, 255, 255, 0.1);
-			color: #888;
-		}
-
-		.preview-video {
-			text-align: center;
-			margin: 2.5rem 0;
-		}
-
-		.video-link {
-			display: inline-block;
-			background: rgba(0, 0, 0, 0.4);
-			padding: 1.25rem;
-			border-radius: 0.9375rem;
-			text-decoration: none;
-			color: #4ecdc4;
-			transition: background 0.3s ease;
-		}
-
-		.video-link:hover {
-			background: rgba(0, 0, 0, 0.6);
-		}
-
-		@media (max-width: 768px) {
-			h1 {
-				font-size: 2rem;
-			}
-
-			.features {
-				grid-template-columns: 1fr;
-			}
-
-			.download-btn {
-				display: block;
-				margin: 0.9375rem auto;
-				width: fit-content;
-			}
-		}
-	</style>
-	<script>
-		async function getLatestVersion() {
-			const timestamp = new Date().getTime();
-			try {
-				const response = await fetch(`https://orakomori.github.io/Severitium/src/_preload/stable.json?t=${timestamp}`);
-				const data = await response.json();
-
-				if (data.versions && data.versions.length > 0) {
-					const latestVersion = data.versions[data.versions.length - 1];
-					return latestVersion.link;
-				}
-			} catch (error) {
-				console.error('Error fetching latest version:', error);
-				return `https://orakomori.github.io/Severitium/release/severitium.user.js?t=${timestamp}`;
-			}
-
-			// Fallback
-			return `https://orakomori.github.io/Severitium/release/severitium.user.js?t=${timestamp}`;
-		}
-
-		document.addEventListener('DOMContentLoaded', async function () {
-			const installButton = document.getElementById('install-script-btn');
-			if (installButton) {
-				const latestLink = await getLatestVersion();
-				installButton.href = latestLink;
-			}
-		});
-	</script>
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
 	<div class="container">
 		<header>
 			<h1>Severitium</h1>
-			<p class="tagline">🖤 Vibrant, interactive, memorable</p>
+			<p class="tagline"><ion-icon name="heart"></ion-icon> Vibrant, interactive, memorable</p>
 			<p>Free open-source theme for Tanki Online</p>
+			
+			<div class="quick-download">
+				<a href="#" target="_blank" class="quick-btn latest-btn" id="latest-btn">
+					<ion-icon name="rocket-outline"></ion-icon> Latest Version
+				</a>
+				<a href="#" target="_blank" class="quick-btn stable-btn" id="stable-btn">
+					<ion-icon name="checkmark-circle-outline"></ion-icon> Stable Version
+				</a>
+			</div>
 		</header>
 
 		<section class="features">
 			<div class="feature-card">
-				<div class="feature-icon">🎨</div>
+				<div class="feature-icon"><ion-icon name="color-palette-outline"></ion-icon></div>
 				<h3 class="feature-title">Modern Design</h3>
 				<p class="feature-description">Vibrant animations, custom colors and stylish interface for enhanced
 					gaming experience</p>
 			</div>
 
 			<div class="feature-card">
-				<div class="feature-icon">🔧</div>
+				<div class="feature-icon"><ion-icon name="build-outline"></ion-icon></div>
 				<h3 class="feature-title">Bug Fixes</h3>
 				<p class="feature-description">Original bug fixes for more stable game performance</p>
 			</div>
 
 			<div class="feature-card">
-				<div class="feature-icon">🚀</div>
+				<div class="feature-icon"><ion-icon name="rocket-outline"></ion-icon></div>
 				<h3 class="feature-title">Open Source</h3>
 				<p class="feature-description">Fully open project with community contribution capabilities</p>
 			</div>
@@ -359,7 +52,7 @@
 
 		<section class="preview-video">
 			<a href="https://youtu.be/pFkgSHNhcug" target="_blank" class="video-link">
-				📹 Watch Severitium theme preview
+				<ion-icon name="play-circle-outline"></ion-icon> Watch Severitium theme preview
 			</a>
 		</section>
 
@@ -381,7 +74,7 @@
 			<h2>Source Code</h2>
 			<p style="margin: 1.25rem 0; color: #d0d0d0;">View the project on GitHub:</p>
 			<a href="https://github.com/OrakomoRi/Severitium" target="_blank" class="download-btn github-btn">
-				📁 GitHub Repository
+				<ion-icon name="logo-github"></ion-icon> GitHub Repository
 			</a>
 		</section>
 
@@ -390,11 +83,11 @@
 			<p style="margin: 1.25rem 0; color: #d0d0d0;">Help us continue developing Severitium:</p>
 
 			<a href="https://boosty.to/orakomori/donate" target="_blank" class="download-btn support-btn">
-				💖 Support on Boosty
+				<ion-icon name="heart-outline"></ion-icon> Support on Boosty
 			</a>
 
 			<a href="https://www.patreon.com/orakomori" target="_blank" class="download-btn patreon-btn">
-				🎯 Support on Patreon
+				<ion-icon name="gift-outline"></ion-icon> Support on Patreon
 			</a>
 		</section>
 
@@ -425,7 +118,7 @@
 		</section>
 
 		<footer class="footer">
-			<p>Made with ❤️ by OrakomoRi</p>
+			<p>Made with <ion-icon name="heart"></ion-icon> by OrakomoRi</p>
 			<p>Distributed under the MIT License</p>
 			<p style="margin-top: 0.9375rem;">
 				<a href="https://github.com/OrakomoRi/Severitium/blob/main/CHANGELOG.md" style="color: #4ecdc4; text-decoration: none;">Changelog</a> |
@@ -433,6 +126,8 @@
 			</p>
 		</footer>
 	</div>
+
+	<script src="assets/js/main.js"></script>
 </body>
 
 </html>
