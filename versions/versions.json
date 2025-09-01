@@ -1546,5 +1546,11 @@
     "date": "2025-09-02",
     "comment": "1.7.2+build69 fix: updated variables loading logic",
     "hash": "6ea541be852c74f785a76cac38816b365fb183c5"
+  },
+  {
+    "version": "1.7.2+build70",
+    "date": "2025-09-02",
+    "comment": "1.7.2+build70 fix: fixed player context menu UUID",
+    "hash": "496039e5e68b8ac2b69329420afc5523fde53cf3"
   }
 ]
