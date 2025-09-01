@@ -200,7 +200,7 @@
 
 /* Settings tab notificator icon */
 
-.ItemNotificationMarkerStyle-base.ItemNotificationMarkerStyle-base {
+.ItemNotificationMarkerStyle-base:not(:root) {
 	top: 50%;
 	transform: translateY(-50%);
 }
@@ -235,4 +235,12 @@
 	background-color: var(--severitium-main-color);
 	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg>');
 			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg>');
+}
+
+/* Garage item notificator icon */
+
+.GarageCommonStyle-positionContent  {
+	top: .5em;
+	right: .5em;
+	transform: none;
 }
