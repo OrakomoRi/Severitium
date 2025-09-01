@@ -545,6 +545,7 @@ p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root) {
 
 .AccountSettingsComponentStyle-containerFormOptions > form > .AccountSettingsComponentStyle-textHeadlineOptions + div:has(> span) {
 	width: 100%;
+	box-sizing: border-box;
 	margin: 0;
 	margin-bottom: 1em;
 	padding: 1em;
