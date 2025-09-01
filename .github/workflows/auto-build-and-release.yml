@@ -54,14 +54,26 @@ jobs:
                   mkdir -p "builds/$VERSION"
                   
                   # Collect and minify JavaScript files
-                  find src -path "src/_Additional" -prune -o -name "*.js" ! -name "*.user.js" ! -name "*.min.js" -print \
-                    | sort | xargs -r cat > "builds/$VERSION/script.release.js"
+                  # First, collect files from _libs directory
+                  find src/_libs -name "*.js" ! -name "*.user.js" ! -name "*.min.js" 2>/dev/null \
+                    | sort | xargs -r cat > "builds/$VERSION/script.release.js" || touch "builds/$VERSION/script.release.js"
+                  
+                  # Then, collect all other files (excluding _Additional and _libs)
+                  find src -path "src/_Additional" -prune -o -path "src/_libs" -prune -o -name "*.js" ! -name "*.user.js" ! -name "*.min.js" -print \
+                    | sort | xargs -r cat >> "builds/$VERSION/script.release.js"
+                  
                   terser "builds/$VERSION/script.release.js" -c -m -o "builds/$VERSION/script.release.min.js"
                   rm -f "builds/$VERSION/script.release.js"
                   
                   # Collect and minify CSS files
-                  find src -path "src/_Additional" -prune -o -name "*.css" ! -name "*.user.css" ! -name "*.min.css" -print \
-                    | sort | xargs -r cat > "builds/$VERSION/style.release.css"
+                  # First, collect files from _libs directory
+                  find src/_libs -name "*.css" ! -name "*.user.css" ! -name "*.min.css" 2>/dev/null \
+                    | sort | xargs -r cat > "builds/$VERSION/style.release.css" || touch "builds/$VERSION/style.release.css"
+                  
+                  # Then, collect all other files (excluding _Additional and _libs)
+                  find src -path "src/_Additional" -prune -o -path "src/_libs" -prune -o -name "*.css" ! -name "*.user.css" ! -name "*.min.css" -print \
+                    | sort | xargs -r cat >> "builds/$VERSION/style.release.css"
+                  
                   csso "builds/$VERSION/style.release.css" -o "builds/$VERSION/style.release.min.css"
                   rm -f "builds/$VERSION/style.release.css"
   
