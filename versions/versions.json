@@ -1534,5 +1534,11 @@
     "date": "2025-09-02",
     "comment": "1.7.2+build67 feat: enhance Severitium with variable extraction and injection functionality",
     "hash": "9fa3da6cfb2e069c6c0f448a6808ff898c83579f"
+  },
+  {
+    "version": "1.7.2+build68",
+    "date": "2025-09-02",
+    "comment": "1.7.2+build68 fix: updated link to variables json",
+    "hash": "522a843b967b0eec1a8be0c36cec77e7063992aa"
   }
 ]
