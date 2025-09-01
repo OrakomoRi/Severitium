@@ -239,7 +239,7 @@
 
 /* Garage item notificator icon */
 
-.GarageCommonStyle-positionContent  {
+.GarageCommonStyle-positionContent .ItemNotificationMarkerStyle-base:not(:root) {
 	top: .5em;
 	right: .5em;
 	transform: none;
