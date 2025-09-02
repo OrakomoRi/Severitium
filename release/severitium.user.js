@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build78
+// @version			1.7.2+build79
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -432,7 +432,13 @@
 				severitiumInjector.applyVariables(script.VARIABLES);
 				if (script.VARIABLES.variables) {
 					// Store formatted CSS variables in localStorage for external access
-					localStorage.setItem('SeveritiumVariables', JSON.stringify(script.VARIABLES.variables, null, 2));
+					// Create structure with themes support for future extensibility
+					const existingThemes = JSON.parse(localStorage.getItem('SeveritiumVariables') || '{}');
+					const updatedThemes = {
+						...existingThemes,
+						default: script.VARIABLES.variables
+					};
+					localStorage.setItem('SeveritiumVariables', JSON.stringify(updatedThemes, null, 2));
 				}
 			}
 			if (script.CSS['main']) {
@@ -492,16 +498,7 @@
 		await loadResources(true);
 	}
 
-	/**
-	 * Get current Severitium CSS variables
-	 * @returns {Object|null} CSS variables object or null if not loaded
-	 */
-	function getSeveritiumVariables() {
-		return script.VARIABLES?.variables || null;
-	}
-
 	unsafeWindow.reloadSeveritiumResources = reloadResources;
-	unsafeWindow.getSeveritiumVariables = getSeveritiumVariables;
 
 	(async () => {
 		if (updateCheck) {
