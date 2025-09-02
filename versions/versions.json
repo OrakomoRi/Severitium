@@ -1570,5 +1570,11 @@
     "date": "2025-09-02",
     "comment": "1.7.2+build73 feat: updated notificator icon for garage items",
     "hash": "d7aa05fc85d85624d6c531dbfac71e429bfaf8ce"
+  },
+  {
+    "version": "1.7.2+build74",
+    "date": "2025-09-02",
+    "comment": "1.7.2+build74 feat: updated battle pause",
+    "hash": "729f6ef3fe1d0dc444b98167412fb6e94342fa3d"
   }
 ]
