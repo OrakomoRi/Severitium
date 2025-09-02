@@ -1606,5 +1606,11 @@
     "date": "2025-09-02",
     "comment": "1.7.2+build79 feat: updated variables saving",
     "hash": "45de23a75faa7a088654679e3e3009225405f527"
+  },
+  {
+    "version": "1.7.2+build80",
+    "date": "2025-09-03",
+    "comment": "1.7.2+build80 feat: minor updates in main userscript, updated friends and invite screens",
+    "hash": "b51a44837ba8bf11acfcbc7a2caadc00a01badd8"
   }
 ]
