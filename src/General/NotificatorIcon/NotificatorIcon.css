@@ -200,7 +200,7 @@
 
 /* Settings tab notificator icon */
 
-.ItemNotificationMarkerStyle-base:not(:root) {
+.SettingsComponentStyle-blockContentOptions .ItemNotificationMarkerStyle-base:not(:root) {
 	top: 50%;
 	transform: translateY(-50%);
 }
