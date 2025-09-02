@@ -1576,5 +1576,11 @@
     "date": "2025-09-02",
     "comment": "1.7.2+build74 feat: updated battle pause",
     "hash": "729f6ef3fe1d0dc444b98167412fb6e94342fa3d"
+  },
+  {
+    "version": "1.7.2+build75",
+    "date": "2025-09-02",
+    "comment": "1.7.2+build75 feat: updated notificator icon",
+    "hash": "5f3dadda4064a56c417c1b8d348cbcc1ba36312b"
   }
 ]
