@@ -1594,5 +1594,11 @@
     "date": "2025-09-02",
     "comment": "1.7.2+build77 feat: updated variables saving",
     "hash": "335a0e6264981a1f1aad06bd7bdbb29d64815b31"
+  },
+  {
+    "version": "1.7.2+build78",
+    "date": "2025-09-02",
+    "comment": "1.7.2+build78 feat: updated variables saving",
+    "hash": "dea98372ab48652df94150c2eaeb46a7f2e8a744"
   }
 ]
