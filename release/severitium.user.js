@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build79
+// @version			1.7.2+build80
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -357,12 +357,12 @@
 				let jsPromise = null;
 
 				if (!loadOnlyImages) {
+					// Fetch Variables, CSS and JS if not just images
 					jsonPromise = fetchResource(RELEASE_VARIABLES_URL, 'json').then(json => {
 						script.VARIABLES = json;
 						loadingScreen.updateProgress();
 					});
 
-					// Fetch CSS and JS if not just images
 					cssPromise = fetchResource(RELEASE_CSS_URL).then(css => {
 						script.CSS['main'] = css;
 						loadingScreen.updateProgress();
@@ -428,7 +428,7 @@
 			severitiumInjector.updateSeveritium(script);
 			logger.log(`JSON found: ${script.VARIABLES ? 'yes' : 'no'}.\nCSS found: ${script.CSS['main'] ? 'yes' : 'no'}.\nJS found: ${script.JS['main'] ? 'yes' : 'no'}.`, 'debug');
 			if (script.VARIABLES) {
-				logger.log(typeof script.VARIABLES, 'debug');
+				logger.log(`Type of VARIABLES: ${typeof script.VARIABLES}`, 'debug');
 				severitiumInjector.applyVariables(script.VARIABLES);
 				if (script.VARIABLES.variables) {
 					// Store formatted CSS variables in localStorage for external access
@@ -442,11 +442,11 @@
 				}
 			}
 			if (script.CSS['main']) {
-				logger.log(typeof script.CSS['main'], 'debug');
+				logger.log(`Type of CSS['main']: ${typeof script.CSS['main']}`, 'debug');
 				severitiumInjector.applyCSS('main');
 			}
 			if (script.JS['main']) {
-				logger.log(typeof script.JS['main'], 'debug');
+				logger.log(`Type of JS['main']: ${typeof script.JS['main']}`, 'debug');
 				severitiumInjector.applyJS('main');
 			}
 			// Apply images to the page

@@ -29,9 +29,10 @@
 /* Single friend string */
 
 .InvitationWindowsComponentStyle-usersScroll > div {
+	width: auto;
+	min-height: unset;
 	display: flex;
 	gap: .5em;
-	width: auto;
 }
 
 /* Single friend's container */
