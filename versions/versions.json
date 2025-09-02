@@ -1588,5 +1588,11 @@
     "date": "2025-09-02",
     "comment": "1.7.2+build76 feat: updated purchase screen",
     "hash": "85ef23d99b92724a5d47a996fb7580a25266f78d"
+  },
+  {
+    "version": "1.7.2+build77",
+    "date": "2025-09-02",
+    "comment": "1.7.2+build77 feat: updated variables saving",
+    "hash": "335a0e6264981a1f1aad06bd7bdbb29d64815b31"
   }
 ]
