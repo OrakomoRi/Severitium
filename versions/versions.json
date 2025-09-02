@@ -1582,5 +1582,11 @@
     "date": "2025-09-02",
     "comment": "1.7.2+build75 feat: updated notificator icon",
     "hash": "5f3dadda4064a56c417c1b8d348cbcc1ba36312b"
+  },
+  {
+    "version": "1.7.2+build76",
+    "date": "2025-09-02",
+    "comment": "1.7.2+build76 feat: updated purchase screen",
+    "hash": "85ef23d99b92724a5d47a996fb7580a25266f78d"
   }
 ]
