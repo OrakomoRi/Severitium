@@ -193,16 +193,6 @@
 	transition: background-color .2s ease;
 }
 
-/* Hotkey block of the button */
-
-.BattlePauseMenuComponentStyle-enabledButton div[class*='hotkey'i],
-.BattlePauseMenuComponentStyle-disabledButton div[class*='hotkey'i] {
-	background: transparent;
-	color: var(--severitium-dark-white-text-color);
-	border: var(--severitium-gray-color) dashed .1em;
-	border-radius: var(--severitium-border-radius);
-}
-
 /* Pause enabled buttons on hover (except leave red button) */
 
 .BattlePauseMenuComponentStyle-enabledButton.BattlePauseMenuComponentStyle-menuButton:hover {
@@ -213,6 +203,23 @@
 
 .BattlePauseMenuComponentStyle-enabledButton.BattlePauseMenuComponentStyle-redMenuButton:hover {
 	background-color: var(--severitium-red-button-background);
+}
+
+/* Text of the pause button */
+
+.BattlePauseMenuComponentStyle-enabledButton span,
+.BattlePauseMenuComponentStyle-disabledButton span {
+	color: var(--severitium-red-text-color);
+}
+
+/* Hotkey block of the button */
+
+.BattlePauseMenuComponentStyle-enabledButton div[class*='hotkey'i],
+.BattlePauseMenuComponentStyle-disabledButton div[class*='hotkey'i] {
+	background: transparent;
+	color: var(--severitium-dark-white-text-color);
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: var(--severitium-border-radius);
 }
 
 /* Pause disabled buttons on hover */
