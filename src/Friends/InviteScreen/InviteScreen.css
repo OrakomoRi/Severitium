@@ -33,6 +33,7 @@
 	min-height: unset;
 	display: flex;
 	gap: .5em;
+	padding: 0;
 }
 
 /* Single friend's container */
