@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build81
+// @version			1.7.2+build82
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -443,6 +443,7 @@
 			if (script.theme) {
 				// Apply active theme
 				const activeVariables = getActiveThemeVariables();
+				logger.log(`Active variables: ${activeVariables}`, 'warn');
 				if (activeVariables) {
 					severitiumInjector.applyTheme();
 				}
@@ -518,28 +519,44 @@
 		const defaultVariables = script.theme.themes.default;
 		if (!defaultVariables) return;
 
-		const themes = GM_getValue('SeveritiumTheme', { active: 'default', themes: {} });
+		// Get existing themes from storage, but preserve current script.theme structure
+		const existingThemes = GM_getValue('SeveritiumTheme', { active: 'default', themes: {} });
 		
-		// Add missing variables to custom themes
-		Object.keys(themes.themes).forEach(name => {
+		// Merge existing themes with current script.theme to preserve new default
+		if (!existingThemes.themes) {
+			existingThemes.themes = {};
+		}
+		
+		// Keep the new default theme from script.theme
+		existingThemes.themes.default = defaultVariables;
+		
+		// Set active theme properly
+		if (!existingThemes.active) {
+			existingThemes.active = 'default';
+		}
+		
+		// Add missing variables to custom themes only
+		Object.keys(existingThemes.themes).forEach(name => {
 			if (name !== 'default') {
 				Object.keys(defaultVariables).forEach(varName => {
-					if (!(varName in themes.themes[name])) {
-						themes.themes[name][varName] = defaultVariables[varName];
+					if (!(varName in existingThemes.themes[name])) {
+						existingThemes.themes[name][varName] = defaultVariables[varName];
 					}
 				});
 			}
 		});
 		
-		script.theme = themes;
+		// Update script.theme with merged data
+		script.theme = existingThemes;
 	}
 
 	/**
 	 * Get active theme variables
 	 */
 	function getActiveThemeVariables() {
-		const themes = GM_getValue('SeveritiumTheme', { active: 'default', themes: {} });
-		return themes.themes[themes.active] || themes.themes.default || null;
+		// Use current script.theme instead of reading from storage
+		const activeTheme = script.theme.active || 'default';
+		return script.theme.themes?.[activeTheme] || script.theme.themes?.default || null;
 	}
 
 	// Expose minimal API
