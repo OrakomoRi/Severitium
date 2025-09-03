@@ -1642,5 +1642,11 @@
     "date": "2025-09-03",
     "comment": "1.7.2+build85 feat: updated button text styles in BattlePause",
     "hash": "d423aee4629c1e4b121ed170c5a57b7553356aa9"
+  },
+  {
+    "version": "1.7.2+build86",
+    "date": "2025-09-03",
+    "comment": "1.7.2+build86 feat: updated friends and invite screens",
+    "hash": "786cc0565afdb135bdb03e562804ed8cc9b786aa"
   }
 ]
