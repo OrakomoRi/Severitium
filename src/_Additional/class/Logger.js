@@ -1,3 +1,4 @@
+if (typeof Logger === 'undefined') {
 class Logger {
 	/**
 	 * Creates an instance of Logger.
@@ -96,4 +97,5 @@ class Logger {
 	disableLogging() {
 		this.logging = false;
 	}
+}
 }

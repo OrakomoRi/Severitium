@@ -4,6 +4,7 @@
  * @param {Function} callback Function triggered when an option is selected
  * @param {string|null} defaultValue Default value displayed before selecting an option
  */
+if (typeof BreeziumSelect === 'undefined') {
 class BreeziumSelect {
 	constructor(options, callback, defaultOption = null) {
 		this.container = document.createElement('div');
@@ -124,4 +125,5 @@ class BreeziumSelect {
 			parent.appendChild(this.container);
 		}
 	}
+}
 }
