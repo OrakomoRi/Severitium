@@ -1636,5 +1636,11 @@
     "date": "2025-09-03",
     "comment": "1.7.2+build84 feat: removed undefined checks for class declarations, changed breeziumselect.js",
     "hash": "266dc4feaef549499f35a90aace003d99ace7f56"
+  },
+  {
+    "version": "1.7.2+build85",
+    "date": "2025-09-03",
+    "comment": "1.7.2+build85 feat: updated button text styles in BattlePause",
+    "hash": "d423aee4629c1e4b121ed170c5a57b7553356aa9"
   }
 ]
