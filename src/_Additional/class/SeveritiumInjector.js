@@ -1,4 +1,3 @@
-if (typeof SeveritiumInjector === 'undefined') {
 class SeveritiumInjector {
 	/**
 	 * @param {Object} severitium - Main object containing data.
@@ -241,5 +240,4 @@ class SeveritiumInjector {
 			this.injectImage(formattedUrl, style, updatedAttributes);
 		}
 	}
-}
 }

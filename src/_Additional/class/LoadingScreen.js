@@ -2,7 +2,6 @@
  * LoadingScreen class creates a customizable animated loading screen
  * with a night sky effect and fading animations
  */
-if (typeof LoadingScreen === 'undefined') {
 class LoadingScreen {
 	constructor(name) {
 		this.name = name; // Unique name identifier for the loading screen elements
@@ -405,5 +404,4 @@ class LoadingScreen {
 	static remove(instance) {
 		if (instance) instance.fadeOut();
 	}
-}
 }
