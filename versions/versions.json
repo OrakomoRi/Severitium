@@ -1612,5 +1612,11 @@
     "date": "2025-09-03",
     "comment": "1.7.2+build80 feat: minor updates in main userscript, updated friends and invite screens",
     "hash": "b51a44837ba8bf11acfcbc7a2caadc00a01badd8"
+  },
+  {
+    "version": "1.7.2+build81",
+    "date": "2025-09-03",
+    "comment": "1.7.2+build81 feat: refactor theme handling in Severitium: update variable structure and inject theme functionality",
+    "hash": "13664c07a0ee832356092e4e6a682622acdbd8ab"
   }
 ]
