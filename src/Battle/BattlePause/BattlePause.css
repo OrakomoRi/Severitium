@@ -205,11 +205,22 @@
 	background-color: var(--severitium-red-button-background);
 }
 
-/* Text of the pause button */
+/* Text of enabled buttons */
 
-.BattlePauseMenuComponentStyle-enabledButton span,
-.BattlePauseMenuComponentStyle-disabledButton span {
+.BattlePauseMenuComponentStyle-enabledButton span {
+	color: var(--severitium-white-text-color);
+}
+
+/* Text on the pause button */
+
+.BattlePauseMenuComponentStyle-enabledButton.BattlePauseMenuComponentStyle-redMenuButton span {
 	color: var(--severitium-red-text-color);
+}
+
+/* Text of disabled buttons */
+
+.BattlePauseMenuComponentStyle-disabledButton:not(root) span {
+	color: var(--severitium-light-gray-text-color);
 }
 
 /* Hotkey block of the button */
