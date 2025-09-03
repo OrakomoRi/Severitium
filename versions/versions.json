@@ -1618,5 +1618,11 @@
     "date": "2025-09-03",
     "comment": "1.7.2+build81 feat: refactor theme handling in Severitium: update variable structure and inject theme functionality",
     "hash": "13664c07a0ee832356092e4e6a682622acdbd8ab"
+  },
+  {
+    "version": "1.7.2+build82",
+    "date": "2025-09-03",
+    "comment": "1.7.2+build82 feat: improved theme management logic",
+    "hash": "ccef99655f57e048c7bc8b3197203604963a0819"
   }
 ]
