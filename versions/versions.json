@@ -1624,5 +1624,11 @@
     "date": "2025-09-03",
     "comment": "1.7.2+build82 feat: improved theme management logic",
     "hash": "ccef99655f57e048c7bc8b3197203604963a0819"
+  },
+  {
+    "version": "1.7.2+build83",
+    "date": "2025-09-03",
+    "comment": "1.7.2+build83 feat: added undefined checks for class declarations",
+    "hash": "0db8cfdaee5b8c4be7aff183cac960ca8c9c9b5a"
   }
 ]
