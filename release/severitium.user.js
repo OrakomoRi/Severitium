@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build80
+// @version			1.7.2+build81
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -60,7 +60,7 @@
 	 * 
 	 * @param {array} script - Array with catched data
 	 * Catches all CSS, JS, images based on main userscript's version
-	 * @param {array} script.VARIABLES - Array with CSS variables
+	 * @param {array} script.theme - Object with themes
 	 * @param {array} script.CSS - Array with CSS
 	 * @param {array} script.JS - Array with JS
 	 * @param {array} script.images - Array with images
@@ -85,7 +85,7 @@
 	};
 
 	const script = {
-		VARIABLES: {},
+		theme: {},
 		CSS: {},
 		JS: {},
 		images: {},
@@ -345,21 +345,30 @@
 			if (!loadEverything && !loadOnlyImages) {
 				// Load all resources from cache if nothing changed
 				logger.log(`Loading resources from cache.`, 'info');
-				script.VARIABLES = GM_getValue('SeveritiumVariables', {});
+				script.theme = GM_getValue('SeveritiumTheme', { active: 'default', themes: {} });
 				script.CSS = GM_getValue('SeveritiumCSS', {});
 				script.JS = GM_getValue('SeveritiumJS', {});
 				script.images = GM_getValue('SeveritiumImages', {});
 			} else {
 				logger.log(`Fetching ${loadOnlyImages ? 'only images' : 'all resources'}.`, 'info');
 
+				// Get cached themes
+				script.theme = GM_getValue('SeveritiumTheme', { active: 'default', themes: {} });
+
 				let jsonPromise = null;
 				let cssPromise = null;
 				let jsPromise = null;
 
 				if (!loadOnlyImages) {
-					// Fetch Variables, CSS and JS if not just images
+					// Fetch Default theme, CSS and JS if not just images
 					jsonPromise = fetchResource(RELEASE_VARIABLES_URL, 'json').then(json => {
-						script.VARIABLES = json;
+						// Ensure themes structure exists
+						if (!script.theme.themes) {
+							script.theme.themes = {};
+						}
+						if (json.variables) {
+							script.theme.themes.default = json.variables;
+						}
 						loadingScreen.updateProgress();
 					});
 
@@ -403,13 +412,17 @@
 				});
 
 				if (!loadOnlyImages) {
-					// Save CSS and JS to cache
-					GM_setValue('SeveritiumVariables', script.VARIABLES);
+					// Update custom themes with new default variables
+					if (script.theme.themes?.default) {
+						updateCustomThemesWithNewVariables();
+					}
+					
+					GM_setValue('SeveritiumTheme', script.theme);
 					GM_setValue('SeveritiumCSS', script.CSS);
 					GM_setValue('SeveritiumJS', script.JS);
 				} else {
 					// If only images, reload CSS/JS from cache
-					script.VARIABLES = GM_getValue('SeveritiumVariables', {});
+					script.theme = GM_getValue('SeveritiumTheme', { active: 'default', themes: {} });
 					script.CSS = GM_getValue('SeveritiumCSS', {});
 					script.JS = GM_getValue('SeveritiumJS', {});
 				}
@@ -426,19 +439,20 @@
 		} finally {
 			// Apply loaded resources to the page
 			severitiumInjector.updateSeveritium(script);
-			logger.log(`JSON found: ${script.VARIABLES ? 'yes' : 'no'}.\nCSS found: ${script.CSS['main'] ? 'yes' : 'no'}.\nJS found: ${script.JS['main'] ? 'yes' : 'no'}.`, 'debug');
-			if (script.VARIABLES) {
-				logger.log(`Type of VARIABLES: ${typeof script.VARIABLES}`, 'debug');
-				severitiumInjector.applyVariables(script.VARIABLES);
-				if (script.VARIABLES.variables) {
-					// Store formatted CSS variables in localStorage for external access
-					// Create structure with themes support for future extensibility
-					const existingThemes = JSON.parse(localStorage.getItem('SeveritiumVariables') || '{}');
-					const updatedThemes = {
-						...existingThemes,
-						default: script.VARIABLES.variables
-					};
-					localStorage.setItem('SeveritiumVariables', JSON.stringify(updatedThemes, null, 2));
+			logger.log(`Theme found: ${script.theme ? 'yes' : 'no'}.\nCSS found: ${script.CSS['main'] ? 'yes' : 'no'}.\nJS found: ${script.JS['main'] ? 'yes' : 'no'}.`, 'debug');
+			if (script.theme) {
+				// Apply active theme
+				const activeVariables = getActiveThemeVariables();
+				if (activeVariables) {
+					severitiumInjector.applyTheme();
+				}
+				
+				// Update localStorage for external access
+				if (script.theme.themes?.default) {
+					const existing = JSON.parse(localStorage.getItem('SeveritiumThemes') || '{"active":"default","themes":{}}');
+					existing.themes.default = script.theme.themes.default;
+					existing.active = script.theme.active || 'default';
+					localStorage.setItem('SeveritiumThemes', JSON.stringify(existing, null, 2));
 				}
 			}
 			if (script.CSS['main']) {
@@ -493,11 +507,42 @@
 	 * Manually reloads all resources, bypassing cache
 	 */
 	async function reloadResources() {
-		// Log manual reload
 		logger.log(`Manually reloading resources.`, 'info');
 		await loadResources(true);
 	}
 
+	/**
+	 * Update custom themes with new variables from default theme
+	 */
+	function updateCustomThemesWithNewVariables() {
+		const defaultVariables = script.theme.themes.default;
+		if (!defaultVariables) return;
+
+		const themes = GM_getValue('SeveritiumTheme', { active: 'default', themes: {} });
+		
+		// Add missing variables to custom themes
+		Object.keys(themes.themes).forEach(name => {
+			if (name !== 'default') {
+				Object.keys(defaultVariables).forEach(varName => {
+					if (!(varName in themes.themes[name])) {
+						themes.themes[name][varName] = defaultVariables[varName];
+					}
+				});
+			}
+		});
+		
+		script.theme = themes;
+	}
+
+	/**
+	 * Get active theme variables
+	 */
+	function getActiveThemeVariables() {
+		const themes = GM_getValue('SeveritiumTheme', { active: 'default', themes: {} });
+		return themes.themes[themes.active] || themes.themes.default || null;
+	}
+
+	// Expose minimal API
 	unsafeWindow.reloadSeveritiumResources = reloadResources;
 
 	(async () => {

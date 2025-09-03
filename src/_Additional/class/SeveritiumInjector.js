@@ -16,25 +16,28 @@ class SeveritiumInjector {
 	}
 
 	/**
-	 * Removes existing variables injected by Severitium with the attribute `data-resource="SeveritiumVariables"`.
+	 * Removes the existing theme injected by Severitium with the attribute `data-resource="SeveritiumTheme"`.
 	 * This ensures that previously applied styles do not interfere with new ones.
 	 */
-	removeInjectedVariables() {
-		const styles = document.querySelectorAll('style[data-resource="SeveritiumVariables"]');
+	removeInjectedTheme() {
+		const styles = document.querySelectorAll('style[data-resource="SeveritiumTheme"]');
 		for (const el of styles) {
 			el.remove();
 		}
 	}
 
 	/**
-	 * Injects variables into the document using a customly created :root and attributes.
+	 * Injects the theme into the document using a customly created <style> element and attributes.
 	 *
 	 * @param {Array<{ name: string, value: string }>} attributes - An array of attribute objects to apply to the injected <style> element.
 	 */
-	injectVariables(attributes = []) {
+	injectTheme(attributes = []) {
+		const active = this.Severitium.active || 'default';
+		const theme = this.Severitium.theme.themes[active] || {};
+
 		const style = document.createElement('style');
 		let css = ':root {\n';
-		for (const [key, value] of Object.entries(this.Severitium.VARIABLES.variables || {})) {
+		for (const [key, value] of Object.entries(theme || {})) {
 			css += `\t--${key}: ${value};\n`;
 		}
 		css += '}';
@@ -47,23 +50,21 @@ class SeveritiumInjector {
 	}
 
 	/**
-	 * Applies variables to the document.
-	 *
-	 * @param {Array<{ property: string, value: string }> } variables - An array of objects representing CSS properties and their values.
+	 * Applies the theme to the document.
 	 *
 	 */
-	applyVariables(variables = null) {
-		if (!variables) {
+	applyTheme() {
+		if (!this.Severitium.theme) {
 			return;
 		}
 
 		// Remove existing Severitium-injected variables
-		this.removeInjectedVariables();
+		this.removeInjectedTheme();
 
 		// Default attribute to identify Severitium-injected styles
-		const defaultAttributes = [{ name: 'data-resource', value: 'SeveritiumVariables' }];
+		const defaultAttributes = [{ name: 'data-resource', value: 'SeveritiumTheme' }];
 
-		this.injectVariables(defaultAttributes);
+		this.injectTheme(defaultAttributes);
 	}
 
 	/**
