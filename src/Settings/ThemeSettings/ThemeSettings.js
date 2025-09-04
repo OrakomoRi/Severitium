@@ -33,6 +33,7 @@
 		const menuContainer = document.querySelector('.SettingsMenuComponentStyle-blockMenuOptions');
 		if (!menuContainer) return;
 
+		// Use capture phase to intercept before React handlers
 		menuContainer.addEventListener('click', (e) => {
 			const clickedItem = e.target.closest('.SettingsMenuComponentStyle-menuItemOptions');
 			if (!clickedItem) return;
@@ -58,49 +59,17 @@
 				contentSection.innerHTML = '<h2>Theme Settings</h2><p>Customize your theme settings here.</p>';
 				document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu').innerHTML = contentSection.outerHTML;
 			} else {
-				// Check if we're returning from theme tab
+				// For other tabs, check if we're returning from theme tab
 				const isThemeCurrentlyActive = themeMenuItem && themeMenuItem.classList.contains('SettingsMenuComponentStyle-activeItemOptions');
 				
 				if (isThemeCurrentlyActive) {
-					// We're switching from theme tab to another tab
-					// Need to completely reset the game's state
-					e.preventDefault();
-					e.stopPropagation();
-					
-					// Remove active class from all items
-					document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => 
-						item.classList.remove('SettingsMenuComponentStyle-activeItemOptions')
-					);
-					
-					// Clear the content area
-					const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
-					if (contentContainer) {
-						contentContainer.innerHTML = '';
-					}
-					
-					// Force a small delay to let the game reset its state
-					setTimeout(() => {
-						// Simulate a real click event on the target tab
-						const clickEvent = new MouseEvent('click', {
-							bubbles: true,
-							cancelable: true,
-							view: window
-						});
-						clickedItem.dispatchEvent(clickEvent);
-					}, 100);
-					return;
+					// We're switching from theme tab - let React handle this naturally
+					// Just remove our theme active class and let the click proceed
+					themeMenuItem.classList.remove('SettingsMenuComponentStyle-activeItemOptions');
+					// Don't prevent the event - let React's handlers work
 				}
-
-				// Normal tab switching
-				// Remove active class from all items (including theme)
-				document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => 
-					item.classList.remove('SettingsMenuComponentStyle-activeItemOptions')
-				);
-
-				// Add active class to clicked item
-				clickedItem.classList.add('SettingsMenuComponentStyle-activeItemOptions');
 			}
-		});
+		}, true); // Use capture phase
 	}
 
 	/**
