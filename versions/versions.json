@@ -1684,5 +1684,11 @@
     "date": "2025-09-04",
     "comment": "1.7.2+build92 feat: updated some buttons in settings fix: fixed the behaviour of theme settings (test)",
     "hash": "e00db90d10ae2b6e26d03cfef7401943ab6a552d"
+  },
+  {
+    "version": "1.7.2+build93",
+    "date": "2025-09-04",
+    "comment": "1.7.2+build93 fix: fixed the behaviour of theme settings (test)",
+    "hash": "26f1f9728ae5d885c90939532ca9f4213d292945"
   }
 ]
