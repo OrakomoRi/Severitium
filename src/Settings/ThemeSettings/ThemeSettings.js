@@ -58,26 +58,40 @@
 				contentSection.innerHTML = '<h2>Theme Settings</h2><p>Customize your theme settings here.</p>';
 				document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu').innerHTML = contentSection.outerHTML;
 			} else {
-				// For other tabs, check if we're returning from theme tab
+				// Check if we're returning from theme tab
 				const isThemeCurrentlyActive = themeMenuItem && themeMenuItem.classList.contains('SettingsMenuComponentStyle-activeItemOptions');
 				
-				if (isThemeCurrentlyActive && clickedItem === previousActiveTab) {
-					// We're returning to the previous tab from theme tab
-					// Need to "wake up" the game's system by clicking another tab first
+				if (isThemeCurrentlyActive) {
+					// We're switching from theme tab to another tab
+					// Need to "wake up" the game's system
 					const otherTabs = Array.from(menuContainer.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions:not([data-theme-tab])'));
 					const differentTab = otherTabs.find(tab => tab !== clickedItem);
 					
-					if (differentTab) {
-						// Temporarily click different tab to reset game's state
-						differentTab.click();
-						// Then immediately click the target tab
+					if (differentTab && clickedItem === previousActiveTab) {
+						// If returning to the previous tab, use the workaround
+						// First click a different tab to reset game's state
+						e.preventDefault();
+						e.stopPropagation();
+						
+						// Remove active class from all items
+						document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => 
+							item.classList.remove('SettingsMenuComponentStyle-activeItemOptions')
+						);
+						
+						// Temporarily activate different tab
+						differentTab.classList.add('SettingsMenuComponentStyle-activeItemOptions');
+						
+						// Then switch to target tab after a short delay
 						setTimeout(() => {
+							differentTab.classList.remove('SettingsMenuComponentStyle-activeItemOptions');
+							clickedItem.classList.add('SettingsMenuComponentStyle-activeItemOptions');
 							clickedItem.click();
-						}, 10);
-						return; // Prevent default handling
+						}, 50);
+						return;
 					}
 				}
 
+				// Normal tab switching
 				// Remove active class from all items (including theme)
 				document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => 
 					item.classList.remove('SettingsMenuComponentStyle-activeItemOptions')
