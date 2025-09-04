@@ -4,6 +4,8 @@
 	let themeMenuItem = null;
 	let menuClickHandlerAdded = false;
 	let previousActiveTab = null;
+	let savedContent = new Map(); // Cache for tab contents
+	const MAX_CACHE_SIZE = 5;
 
 	/**
 	 * Initialize the custom settings tab
@@ -27,22 +29,89 @@
 	}
 
 	/**
+	 * Cache cleanup to prevent memory leaks
+	 * Called when switching tabs or when settings container is removed
+	 */
+	function cleanupCache() {
+		// Keep only the most recent entries if cache is too large
+		if (savedContent.size > MAX_CACHE_SIZE) {
+			const entries = Array.from(savedContent.entries());
+			const toKeep = entries.slice(-MAX_CACHE_SIZE);
+			savedContent.clear();
+			toKeep.forEach(([key, value]) => savedContent.set(key, value));
+		}
+	}
+
+	/**
+	 * Get unique identifier for a tab
+	 */
+	function getTabId(tabElement) {
+		if (!tabElement) return null;
+		
+		const span = tabElement.querySelector('span');
+		if (!span) return null;
+		
+		return span.textContent?.trim().toLowerCase();
+	}
+
+	/**
+	 * Save current content for a tab
+	 */
+	function saveTabContent(tabElement) {
+		const tabId = getTabId(tabElement);
+		if (!tabId) return;
+		
+		const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
+		if (!contentContainer) return;
+		
+		// Clone the content to avoid reference issues
+		const contentClone = contentContainer.cloneNode(true);
+		savedContent.set(tabId, {
+			content: contentClone,
+			timestamp: Date.now()
+		});
+	}
+
+	/**
+	 * Restore content for a tab
+	 */
+	function restoreTabContent(tabElement) {
+		const tabId = getTabId(tabElement);
+		if (!tabId) return false;
+		
+		const cached = savedContent.get(tabId);
+		if (!cached) return false;
+		
+		const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
+		if (!contentContainer) return false;
+		
+		// Clone the cached content and restore it
+		const restoredContent = cached.content.cloneNode(true);
+		contentContainer.innerHTML = '';
+		contentContainer.appendChild(restoredContent);
+		
+		return true;
+	}
+	/**
 	 * Adds event delegation to the menu container for optimal performance
 	 */
 	function addMenuEventDelegation() {
 		const menuContainer = document.querySelector('.SettingsMenuComponentStyle-blockMenuOptions');
 		if (!menuContainer) return;
 
-		// Use capture phase to intercept before React handlers
 		menuContainer.addEventListener('click', (e) => {
 			const clickedItem = e.target.closest('.SettingsMenuComponentStyle-menuItemOptions');
 			if (!clickedItem) return;
 
+			// Clean cache when switching between tabs
+			cleanupCache();
+
 			// Handle theme tab content
 			if (clickedItem === themeMenuItem) {
-				// Remember the currently active tab before switching to theme
+				// Save content of currently active tab before switching
 				const currentActive = document.querySelector('.SettingsMenuComponentStyle-activeItemOptions:not([data-theme-tab])');
 				if (currentActive) {
+					saveTabContent(currentActive);
 					previousActiveTab = currentActive;
 				}
 
@@ -54,19 +123,31 @@
 				// Add active class to theme tab
 				clickedItem.classList.add('SettingsMenuComponentStyle-activeItemOptions');
 
+				// Show theme content
 				const contentSection = document.createElement('div');
 				contentSection.className = 'theme-settings';
 				contentSection.innerHTML = '<h2>Theme Settings</h2><p>Customize your theme settings here.</p>';
 				document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu').innerHTML = contentSection.outerHTML;
 			} else {
-				// For other tabs, check if we're returning from theme tab
+				// Check if we're returning from theme tab
 				const isThemeCurrentlyActive = themeMenuItem && themeMenuItem.classList.contains('SettingsMenuComponentStyle-activeItemOptions');
 				
 				if (isThemeCurrentlyActive) {
-					// We're switching from theme tab - let React handle this naturally
-					// Just remove our theme active class and let the click proceed
+					// Check if we're returning to the same tab we came from
+					if (clickedItem === previousActiveTab) {
+						// Try to restore cached content
+						if (restoreTabContent(clickedItem)) {
+							// Content restored successfully, just update active classes
+							document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => 
+								item.classList.remove('SettingsMenuComponentStyle-activeItemOptions')
+							);
+							clickedItem.classList.add('SettingsMenuComponentStyle-activeItemOptions');
+							return;
+						}
+					}
+					
+					// If no cached content or different tab, let React handle it normally
 					themeMenuItem.classList.remove('SettingsMenuComponentStyle-activeItemOptions');
-					// Don't prevent the event - let React's handlers work
 				}
 			}
 		}, true); // Use capture phase
@@ -100,10 +181,19 @@
 	 * @param {MutationRecord[]} mutations - List of mutations
 	 */
 	function processMutations(mutations) {
-		mutations.forEach(({ addedNodes }) => {
+		mutations.forEach(({ addedNodes, removedNodes }) => {
+			// Check for added nodes
 			addedNodes.forEach(node => {
 				if (node.nodeType !== Node.ELEMENT_NODE) return;
 				if (node.matches?.(containerSelector) || node.querySelector?.(containerSelector)) initializeSettingsTab();
+			});
+			
+			// Check for removed nodes - clean cache if settings container is removed
+			removedNodes.forEach(node => {
+				if (node.nodeType !== Node.ELEMENT_NODE) return;
+				if (node.matches?.(containerSelector) || node.querySelector?.(containerSelector)) {
+					cleanupCache();
+				}
 			});
 		});
 	}
