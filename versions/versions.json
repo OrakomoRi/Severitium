@@ -1672,5 +1672,11 @@
     "date": "2025-09-04",
     "comment": "1.7.2+build90 feat: updated shop window styles",
     "hash": "86a39d7da0692101f7c591d63a454cf89ce381a1"
+  },
+  {
+    "version": "1.7.2+build91",
+    "date": "2025-09-04",
+    "comment": "1.7.2+build91 feat: add custom settings tab for theme customization (test)",
+    "hash": "c91e34f152d678c7c5d82666f4b1d43aa09f6c35"
   }
 ]
