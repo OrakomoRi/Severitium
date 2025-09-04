@@ -20,11 +20,11 @@
 	function createMenuItem() {
 		const menuContainer = document.querySelector('.SettingsMenuComponentStyle-blockMenuOptions');
 		const menuItem = document.createElement('li');
-		menuItem.className = 'SettingsMenuComponentStyle-menuOption';
+		menuItem.className = 'SettingsMenuComponentStyle-menuItemOptions';
 		menuItem.innerHTML = '<span>Theme</span>';
 
 		menuItem.addEventListener('click', () => {
-			document.querySelectorAll('.SettingsMenuComponentStyle-menuOption').forEach(item => item.classList.remove('SettingsMenuComponentStyle-activeItemOptions'));
+			document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => item.classList.remove('SettingsMenuComponentStyle-activeItemOptions'));
 			menuItem.classList.add('SettingsMenuComponentStyle-activeItemOptions');
 
 			contentSection = document.createElement('div');
