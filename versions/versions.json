@@ -1708,5 +1708,11 @@
     "date": "2025-09-04",
     "comment": "1.7.2+build96 revert: reverted changes in theme settings logic (test)",
     "hash": "5acf64dc634b846c7e1d9f493d90090cd1765612"
+  },
+  {
+    "version": "1.7.2+build97",
+    "date": "2025-09-04",
+    "comment": "1.7.2+build97 fix: fixed the behaviour of theme settings (test)",
+    "hash": "cfbf1baadd26bde8720bfe266a5d5a7f92382437"
   }
 ]
