@@ -1666,5 +1666,11 @@
     "date": "2025-09-04",
     "comment": "1.7.2+build89 revert: revert of previously commited 'not ready' files",
     "hash": "173a8b9e5f04977ed49bcaf4bfcb4710ed9c07ed"
+  },
+  {
+    "version": "1.7.2+build90",
+    "date": "2025-09-04",
+    "comment": "1.7.2+build90 feat: updated shop window styles",
+    "hash": "86a39d7da0692101f7c591d63a454cf89ce381a1"
   }
 ]
