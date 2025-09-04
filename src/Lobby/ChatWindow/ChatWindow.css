@@ -56,7 +56,7 @@
 
 /* Breezium container */
 
-.breezium-select {
+.ChatComponentStyle-chatWindow .breezium-select {
 	--breezium-bg-color: var(--severitium-dark-transparent-background2);
 	--breezium-hover-bg-color: var(--severitium-light-transparent-background3);
 	--breezium-option-bg-color: transparent;
@@ -68,7 +68,7 @@
 
 /* Breezium selected item */
 
-.breezium-select .breezium-selected {
+.ChatComponentStyle-chatWindow .breezium-select .breezium-selected {
 	width: 17.5em;
 	font-family: BaseFontBold, FallbackFontBold;
 	font-size: 1.05em;
@@ -77,130 +77,15 @@
 
 /* Active selected item (not opened clan chat) */
 
-.breezium-select .breezium-selected[data-state='selected'] {
+.ChatComponentStyle-chatWindow .breezium-select .breezium-selected[data-state='selected'] {
 	color: var(--severitium-main-color);
 }
 
 /* Breezium option */
 
-.breezium-select .breezium-option {
+.ChatComponentStyle-chatWindow .breezium-select .breezium-option {
 	font-family: BaseFontBold, FallbackFontBold;
 	color: var(--severitium-white-text-color);
-}
-
-/* Selector container and all elements inside it */
-
-.severitium-selector-container,
-.severitium-selector-container * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-/* Selector container (selector + arrow) */
-
-.severitium-selector-container {
-	width: 17.5em;
-	height: auto;
-	cursor: pointer;
-	position: relative;
-	background-color: var(--severitium-dark-transparent-background3);
-	border: .075em solid var(--severitium-gray-color);
-	transition: background-color .2s ease;
-}
-
-/* Selector container on hover or when shows dropdown */
-
-.severitium-selector-container:hover,
-.severitium-selector-container.show {
-	background-color: var(--severitium-light-transparent-background3);
-}
-
-/* Arrow for the selector */
-
-.severitium-selector-arrow {
-	position: absolute;
-	right: 0;
-	top: 50%;
-	right: .5em;
-	-webkit-transform: translateY(-50%);
-			transform: translateY(-50%);
-	pointer-events: none;
-	border-style: solid;
-	border-width: .5em .3em 0;
-	border-color: var(--severitium-main-color) transparent transparent;
-}
-
-/* Custom dropdown for the selector */
-
-.severitium-custom-dropdown {
-	width: 100%;
-	position: relative;
-	display: inline-block;
-	padding: .25em .75em;
-}
-
-/* Text of the selected option */
-
-.severitium-custom-dropdown .severitium-selected-text {
-	font-family: BaseFontBold, FallbackFontBold;
-	font-weight: 500;
-	font-size: 1.05em;
-	color: var(--severitium-main-color);
-}
-
-/* List of options */
-
-.severitium-custom-dropdown div {
-	width: 100%;
-	display: none;
-	position: absolute;
-	left: 0;
-	top: 100%;
-	margin-top: .5em;
-	background-color: var(--severitium-dark-transparent-background4);
-	transition: background-color .2s ease;
-	border: .075em solid var(--severitium-gray-color);
-	justify-content: center;
-	flex-direction: column;
-}
-
-/* List of options when opened */
-
-.severitium-selector-container.show .severitium-custom-dropdown div {
-	display: flex;
-	animation: open-menu .2s ease;
-}
-
-/* Open menu blink animation */
-
-@keyframes open-menu {
-	0% {
-		transform: scale(.9);
-	} 50% {
-		transform: scale(1.1);
-	} 100% {
-		transform: scale(1);
-	}
-}
-
-/* Single option */
-
-.severitium-custom-dropdown div span {
-	z-index: 1;
-	padding: .5em 1em;
-	cursor: pointer;
-	width: 100%;
-	color: var(--severitium-white-text-color);
-	-webkit-backdrop-filter: blur(.5em);
-			backdrop-filter: blur(.5em);
-	transition: background-color .2s ease;
-}
-
-/* Single option on hover */
-
-.severitium-custom-dropdown div span:hover {
-	background-color: var(--severitium-light-transparent-background3);
 }
 
 /* Clan channel button in the container */

@@ -1,3 +1,38 @@
 .SettingsComponentStyle-scrollingMenu.content-hidden {
 	display: none;
 }
+
+/* Breezium container */
+
+.SettingsComponentStyle-blockContentOptions .breezium-select {
+	--breezium-bg-color: var(--severitium-dark-transparent-background4);
+	--breezium-hover-bg-color: var(--severitium-light-transparent-background3);
+	--breezium-option-bg-color: transparent;
+	--breezium-border-width: .075rem;
+	--breezium-border-radius: .25rem;
+	--breezium-border-color: var(--severitium-gray-color);
+	--breezium-backdrop-filter: blur(5rem);
+	width: 100%;
+}
+
+/* Breezium selected item */
+
+.SettingsComponentStyle-blockContentOptions .breezium-select .breezium-selected {
+	width: 100%;
+	font-family: BaseFontBold, FallbackFontBold;
+	font-size: 1em;
+	color: var(--severitium-white-text-color);
+}
+
+/* Active selected item (not opened clan chat) */
+
+.SettingsComponentStyle-blockContentOptions .breezium-select .breezium-selected[data-state='selected'] {
+	color: var(--severitium-main-color);
+}
+
+/* Breezium option */
+
+.SettingsComponentStyle-blockContentOptions .breezium-select .breezium-option {
+	font-family: BaseFontBold, FallbackFontBold;
+	color: var(--severitium-white-text-color);
+}
