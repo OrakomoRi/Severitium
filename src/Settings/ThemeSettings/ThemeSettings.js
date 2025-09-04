@@ -84,7 +84,7 @@
 		if (!oldContentContainer) return;
 
 		// Hide our custom content
-		const themeContentElement = containerSelector.querySelector('.SettingsComponentStyle-scrollingMenu[data-content="theme"]');
+		const themeContentElement = document.querySelector('.SettingsComponentStyle-scrollingMenu[data-content="theme"]');
 		if (themeContentElement) {
 			themeContentElement.remove();
 		}
