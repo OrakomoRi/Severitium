@@ -1840,5 +1840,11 @@
     "date": "2025-09-05",
     "comment": "1.7.2+build118 feat: updated chat window, theme settings",
     "hash": "276673887109be33850bb833ff6d86098c100512"
+  },
+  {
+    "version": "1.7.2+build119",
+    "date": "2025-09-05",
+    "comment": "1.7.2+build119 feat: updated settings content, theme settings",
+    "hash": "5caa621af7d6d7e1bf11714504ccc26c96bf3b1a"
   }
 ]
