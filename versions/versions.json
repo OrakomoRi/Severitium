@@ -1660,5 +1660,11 @@
     "date": "2025-09-04",
     "comment": "1.7.2+build88 fix: fixed import of Coloris library",
     "hash": "5377ff3e9440883d629ba7956c69d04a1f763ad7"
+  },
+  {
+    "version": "1.7.2+build89",
+    "date": "2025-09-04",
+    "comment": "1.7.2+build89 revert: revert of previously commited 'not ready' files",
+    "hash": "173a8b9e5f04977ed49bcaf4bfcb4710ed9c07ed"
   }
 ]
