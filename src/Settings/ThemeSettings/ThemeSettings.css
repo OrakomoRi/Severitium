@@ -47,6 +47,7 @@
 	outline: none;
 	box-shadow: none;
 	margin: 0;
+	font-size: inherit;
 	border-radius: var(--severitium-border-radius);
 }
 
