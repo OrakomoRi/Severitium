@@ -2,7 +2,6 @@
 	const containerSelector = '.SettingsComponentStyle-blockContentOptions';
 
 	let themeMenuItem = null;
-	let menuClickHandlerAdded = false;
 	let isThemeTabActive = false;
 	let previousActiveTab = null;
 
@@ -18,11 +17,7 @@
 		// Always recreate menu item to ensure it's valid
 		createMenuItem();
 
-		// Add event delegation only once
-		if (!menuClickHandlerAdded) {
-			addMenuEventDelegation();
-			menuClickHandlerAdded = true;
-		}
+		addMenuEventDelegation();
 
 		// If theme tab was active, restore it and hide original content
 		if (isThemeTabActive) {
@@ -188,6 +183,15 @@
 					if (isThemeTabActive) {
 						hideOriginalContent();
 					}
+				}
+			});
+			
+			// Check for removed nodes - reset state if settings container is removed
+			removedNodes.forEach(node => {
+				if (node.nodeType !== Node.ELEMENT_NODE) return;
+				if (node.matches?.(containerSelector) || node.querySelector?.(containerSelector)) {
+					// Don't reset isThemeTabActive - we want to preserve the state
+					const menuContainer = document.querySelector('.SettingsMenuComponentStyle-blockMenuOptions')?.removeEventListener('click');
 				}
 			});
 		});
