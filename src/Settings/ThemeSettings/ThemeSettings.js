@@ -28,9 +28,12 @@
 			menuClickHandlerAdded = true;
 		}
 
-		// If theme tab was active, restore it
+		// If theme tab was active, restore it and hide original content
 		if (isThemeTabActive) {
-			showThemeContent();
+			// Use setTimeout to ensure React has finished rendering the content
+			setTimeout(() => {
+				showThemeContent();
+			}, 100);
 		}
 	}
 
@@ -53,16 +56,13 @@
 		const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
 		if (!contentContainer) return;
 
-		// Save currently active tab before switching to theme
-		previousActiveTab = document.querySelector('.SettingsMenuComponentStyle-activeItemOptions:not([data-theme-tab])');
+		// Save currently active tab before switching to theme (only if not already theme active)
+		if (!isThemeTabActive) {
+			previousActiveTab = document.querySelector('.SettingsMenuComponentStyle-activeItemOptions:not([data-theme-tab])');
+		}
 
 		// Hide all original content with CSS class
-		const originalChildren = contentContainer.children;
-		for (let child of originalChildren) {
-			if (!child.classList.contains('theme-settings-custom')) {
-				child.classList.add('content-hidden');
-			}
-		}
+		hideOriginalContent();
 
 		// Always recreate theme content to ensure it's valid
 		const existingThemeContent = contentContainer.querySelector('.theme-settings-custom');
@@ -118,6 +118,22 @@
 		}
 		
 		isThemeTabActive = false;
+	}
+
+	/**
+	 * Hide original content when theme is active (for use during initialization)
+	 */
+	function hideOriginalContent() {
+		const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
+		if (!contentContainer) return;
+
+		// Hide all original content with CSS class
+		const originalChildren = contentContainer.children;
+		for (let child of originalChildren) {
+			if (!child.classList.contains('theme-settings-custom')) {
+				child.classList.add('content-hidden');
+			}
+		}
 	}
 	/**
 	 * Adds event delegation to the menu container for optimal performance
@@ -191,14 +207,23 @@
 			// Check for added nodes
 			addedNodes.forEach(node => {
 				if (node.nodeType !== Node.ELEMENT_NODE) return;
-				if (node.matches?.(containerSelector) || node.querySelector?.(containerSelector)) initializeSettingsTab();
+				if (node.matches?.(containerSelector) || node.querySelector?.(containerSelector)) {
+					initializeSettingsTab();
+					
+					// If theme was active and new content appeared, hide it after React renders
+					if (isThemeTabActive) {
+						setTimeout(() => {
+							hideOriginalContent();
+						}, 50);
+					}
+				}
 			});
 			
 			// Check for removed nodes - reset state if settings container is removed
 			removedNodes.forEach(node => {
 				if (node.nodeType !== Node.ELEMENT_NODE) return;
 				if (node.matches?.(containerSelector) || node.querySelector?.(containerSelector)) {
-					isThemeTabActive = false;
+					// Don't reset isThemeTabActive - we want to preserve the state
 					themeContentElement = null;
 					previousActiveTab = null;
 				}
