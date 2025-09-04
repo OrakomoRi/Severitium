@@ -190,15 +190,6 @@
 					}
 				}
 			});
-			
-			// Check for removed nodes - reset state if settings container is removed
-			removedNodes.forEach(node => {
-				if (node.nodeType !== Node.ELEMENT_NODE) return;
-				if (node.matches?.(containerSelector) || node.querySelector?.(containerSelector)) {
-					// Don't reset isThemeTabActive - we want to preserve the state
-					previousActiveTab = null;
-				}
-			});
 		});
 	}
 
