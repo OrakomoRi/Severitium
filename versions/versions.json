@@ -1786,5 +1786,11 @@
     "date": "2025-09-04",
     "comment": "1.7.2+build109 fix: fixed the behaviour of theme settings (test)",
     "hash": "bb50cb17fd4b05d7c476561bd94468e532f05b9d"
+  },
+  {
+    "version": "1.7.2+build110",
+    "date": "2025-09-04",
+    "comment": "1.7.2+build110 fix: fixed the behaviour of theme settings (test)",
+    "hash": "4be9b945e8a8c96b9e2cda1ebb2c37d4ef980a98"
   }
 ]
