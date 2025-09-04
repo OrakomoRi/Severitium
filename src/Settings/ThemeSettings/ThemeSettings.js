@@ -53,7 +53,7 @@
 			existingThemeContent.remove();
 		}
 
-		themeContentElement = document.createElement('div');
+		let themeContentElement = document.createElement('div');
 		themeContentElement.className = 'SettingsComponentStyle-scrollingMenu';
 		themeContentElement.setAttribute('data-content', 'theme');
 		themeContentElement.innerHTML = '<div><h2>Theme Settings</h2><p>Customize your theme settings here.</p></div>';
