@@ -685,16 +685,18 @@ p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root)[class*='ksc'i] {
 	text-transform: capitalize;
 }
 
-/* Connect email button */
+/* Connect/change email button */
 
-.AccountSettingsComponentStyle-buttonConnectOptions:not(:root) {
+.AccountSettingsComponentStyle-buttonConnectOptions:not(:root),
+.AccountSettingsComponentStyle-buttonChangesOptions:not(:root) {
 	margin: 0;
 	margin-top: 1em;
 }
 
 /* Enabled button */
 
-.AccountSettingsComponentStyle-buttonConnectOptions:not([class*='disabled'i]) {
+.AccountSettingsComponentStyle-buttonConnectOptions:not([class*='disabled'i]),
+.AccountSettingsComponentStyle-buttonChangesOptions:not([class*='disabled'i]) {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -705,7 +707,8 @@ p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root)[class*='ksc'i] {
 
 /* Button on hover */
 
-.AccountSettingsComponentStyle-buttonConnectOptions:not([class*='disabled'i]):hover {
+.AccountSettingsComponentStyle-buttonConnectOptions:not([class*='disabled'i]):hover,
+.AccountSettingsComponentStyle-buttonChangesOptions:not([class*='disabled'i]):hover {
 	outline: none;
 	box-shadow: none;
 	background: var(--severitium-green-button-background);
@@ -714,14 +717,23 @@ p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root)[class*='ksc'i] {
 
 /* Button text */
 
-.AccountSettingsComponentStyle-buttonConnectOptions:not([class*='disabled'i]) > span {
+.AccountSettingsComponentStyle-buttonConnectOptions:not([class*='disabled'i]) > span,
+.AccountSettingsComponentStyle-buttonChangesOptions:not([class*='disabled'i]) > span {
 	color: var(--severitium-green-button-color);
 }
 
 /* Captcha container */
 
 .AccountSettingsComponentStyle-captchaOptions {
+	width: fit-content;
+	height: fit-content;
 	margin: 0;
+}
+
+/* Captcha inner container */
+
+.AccountSettingsComponentStyle-captchaOptions > div {
+	transform: none !important;
 }
 
 /* Change password and email button */

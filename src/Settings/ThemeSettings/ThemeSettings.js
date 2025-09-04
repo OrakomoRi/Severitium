@@ -19,9 +19,9 @@
 	 */
 	function createMenuItem() {
 		const menuContainer = document.querySelector('.SettingsMenuComponentStyle-blockMenuOptions');
-		const menuItem = document.createElement('div');
+		const menuItem = document.createElement('li');
 		menuItem.className = 'SettingsMenuComponentStyle-menuOption';
-		menuItem.innerHTML = '<span>Theme Settings</span>';
+		menuItem.innerHTML = '<span>Theme</span>';
 
 		menuItem.addEventListener('click', () => {
 			document.querySelectorAll('.SettingsMenuComponentStyle-menuOption').forEach(item => item.classList.remove('SettingsMenuComponentStyle-activeItemOptions'));
@@ -30,7 +30,7 @@
 			contentSection = document.createElement('div');
 			contentSection.className = 'theme-settings';
 			contentSection.innerHTML = '<h2>Theme Settings</h2><p>Customize your theme settings here.</p>';
-			document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu').appendChild(contentSection);
+			document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu').innerHTML = contentSection.outerHTML;
 		});
 
 		// Append the new menu item
