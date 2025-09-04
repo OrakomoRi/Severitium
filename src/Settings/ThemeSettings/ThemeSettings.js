@@ -4,6 +4,7 @@
 	let themeMenuItem = null;
 	let menuClickHandlerAdded = false;
 	let isThemeTabActive = false;
+	let themeContentElement = null;
 
 	/**
 	 * Initialize the custom settings tab
@@ -13,6 +14,9 @@
 		const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
 
 		if (!menuContainer || !contentContainer) return;
+
+		// Add CSS for hiding content
+		addHiddenContentCSS();
 
 		// Only create menu item if it doesn't exist
 		if (!themeMenuItem || !menuContainer.contains(themeMenuItem)) {
@@ -32,29 +36,80 @@
 	}
 
 	/**
-	 * Show theme content
+	 * Add CSS rule for hiding content
+	 */
+	function addHiddenContentCSS() {
+		if (document.getElementById('theme-settings-css')) return;
+
+		const style = document.createElement('style');
+		style.id = 'theme-settings-css';
+		style.textContent = '.content-hidden { display: none !important; }';
+		document.head.appendChild(style);
+	}
+
+	/**
+	 * Show theme content by hiding original and showing custom
 	 */
 	function showThemeContent() {
-		// Remove active class from all items
+		const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
+		if (!contentContainer) return;
+
+		// Hide all original content with CSS class
+		const originalChildren = contentContainer.children;
+		for (let child of originalChildren) {
+			if (!child.classList.contains('theme-settings-custom')) {
+				child.classList.add('content-hidden');
+			}
+		}
+
+		// Create or show our custom theme content
+		if (!themeContentElement) {
+			themeContentElement = document.createElement('div');
+			themeContentElement.className = 'theme-settings-custom';
+			themeContentElement.innerHTML = '<h2>Theme Settings</h2><p>Customize your theme settings here.</p>';
+			contentContainer.appendChild(themeContentElement);
+		} else {
+			themeContentElement.style.display = 'block';
+		}
+
+		// Remove active class from all items and add to theme tab
 		document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => 
 			item.classList.remove('SettingsMenuComponentStyle-activeItemOptions')
 		);
-
-		// Add active class to theme tab
+		
 		if (themeMenuItem) {
 			themeMenuItem.classList.add('SettingsMenuComponentStyle-activeItemOptions');
 		}
-
-		// Show theme content
-		const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
-		if (contentContainer) {
-			const contentSection = document.createElement('div');
-			contentSection.className = 'theme-settings';
-			contentSection.innerHTML = '<h2>Theme Settings</h2><p>Customize your theme settings here.</p>';
-			contentContainer.innerHTML = contentSection.outerHTML;
-		}
 		
 		isThemeTabActive = true;
+	}
+
+	/**
+	 * Hide theme content and restore original
+	 */
+	function hideThemeContent() {
+		const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
+		if (!contentContainer) return;
+
+		// Hide our custom content
+		if (themeContentElement) {
+			themeContentElement.style.display = 'none';
+		}
+
+		// Restore all original content by removing CSS class
+		const originalChildren = contentContainer.children;
+		for (let child of originalChildren) {
+			if (!child.classList.contains('theme-settings-custom')) {
+				child.classList.remove('content-hidden');
+			}
+		}
+
+		// Remove active class from theme tab
+		if (themeMenuItem) {
+			themeMenuItem.classList.remove('SettingsMenuComponentStyle-activeItemOptions');
+		}
+		
+		isThemeTabActive = false;
 	}
 	/**
 	 * Adds event delegation to the menu container for optimal performance
@@ -75,14 +130,10 @@
 				return;
 			} 
 			
-			// If clicking on any other tab while theme is active, let React handle it
+			// If clicking on any other tab while theme is active, hide theme content
 			if (isThemeTabActive) {
-				isThemeTabActive = false;
-				// Remove active class from theme tab
-				if (themeMenuItem) {
-					themeMenuItem.classList.remove('SettingsMenuComponentStyle-activeItemOptions');
-				}
-				// Let the natural React click handler proceed
+				hideThemeContent();
+				// Let the natural React click handler proceed after hiding our content
 			}
 		}, true); // Use capture phase
 	}
@@ -127,6 +178,7 @@
 				if (node.nodeType !== Node.ELEMENT_NODE) return;
 				if (node.matches?.(containerSelector) || node.querySelector?.(containerSelector)) {
 					isThemeTabActive = false;
+					themeContentElement = null;
 				}
 			});
 		});
