@@ -81,6 +81,8 @@
 	margin-top: var(--breezium-options-margin-top, 0.25rem);
 	display: flex;
 	flex-direction: column;
+	scrollbar-width: thin;
+	scrollbar-color: var(--breezium-select-scroll-thumb-background, rgba(255, 255, 255, .3)) var(--breezium-select-scroll-track-background, rgba(255, 255, 255, .1));
 }
 
 .breezium-select .breezium-option {
