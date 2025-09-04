@@ -1828,5 +1828,11 @@
     "date": "2025-09-05",
     "comment": "1.7.2+build116 feat: updated breezium select styles",
     "hash": "80f8b0fe706af36fb79cf660b8d076e6f0d2851b"
+  },
+  {
+    "version": "1.7.2+build117",
+    "date": "2025-09-05",
+    "comment": "1.7.2+build117 feat: updated breezium select variable values",
+    "hash": "22d77dc4687e10b8f7403580c660ce074bdf9be3"
   }
 ]
