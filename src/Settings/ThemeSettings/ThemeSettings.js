@@ -4,7 +4,6 @@
 	let themeMenuItem = null;
 	let menuClickHandlerAdded = false;
 	let isThemeTabActive = false;
-	let themeContentElement = null;
 	let previousActiveTab = null;
 
 	/**
@@ -15,9 +14,6 @@
 		const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
 
 		if (!menuContainer || !contentContainer) return;
-
-		// Add CSS for hiding content
-		addHiddenContentCSS();
 
 		// Always recreate menu item to ensure it's valid
 		createMenuItem();
@@ -30,23 +26,8 @@
 
 		// If theme tab was active, restore it and hide original content
 		if (isThemeTabActive) {
-			// Use setTimeout to ensure React has finished rendering the content
-			setTimeout(() => {
-				showThemeContent();
-			}, 100);
+			showThemeContent();
 		}
-	}
-
-	/**
-	 * Add CSS rule for hiding content
-	 */
-	function addHiddenContentCSS() {
-		if (document.getElementById('theme-settings-css')) return;
-
-		const style = document.createElement('style');
-		style.id = 'theme-settings-css';
-		style.textContent = '.content-hidden { display: none !important; }';
-		document.head.appendChild(style);
 	}
 
 	/**
@@ -58,22 +39,25 @@
 
 		// Save currently active tab before switching to theme (only if not already theme active)
 		if (!isThemeTabActive) {
-			previousActiveTab = document.querySelector('.SettingsMenuComponentStyle-activeItemOptions:not([data-theme-tab])');
+			previousActiveTab = document.querySelector('.SettingsMenuComponentStyle-activeItemOptions:not([data-module="SeveritiumSettingsTab"])');
 		}
+
+		contentContainer.setAttribute('data-content', 'old');
 
 		// Hide all original content with CSS class
 		hideOriginalContent();
 
 		// Always recreate theme content to ensure it's valid
-		const existingThemeContent = contentContainer.querySelector('.theme-settings-custom');
+		const existingThemeContent = contentContainer.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu[data-content="theme"]');
 		if (existingThemeContent) {
 			existingThemeContent.remove();
 		}
 
 		themeContentElement = document.createElement('div');
-		themeContentElement.className = 'theme-settings-custom';
-		themeContentElement.innerHTML = '<h2>Theme Settings</h2><p>Customize your theme settings here.</p>';
-		contentContainer.appendChild(themeContentElement);
+		themeContentElement.className = 'SettingsComponentStyle-scrollingMenu';
+		themeContentElement.setAttribute('data-content', 'theme');
+		themeContentElement.innerHTML = '<div><h2>Theme Settings</h2><p>Customize your theme settings here.</p></div>';
+		contentContainer.after(themeContentElement);
 
 		// Remove active class from all items and add to theme tab
 		document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => 
@@ -96,21 +80,16 @@
 	 * Hide theme content and restore original
 	 */
 	function hideThemeContent() {
-		const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
-		if (!contentContainer) return;
+		const oldContentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
+		if (!oldContentContainer) return;
 
 		// Hide our custom content
+		const themeContentElement = containerSelector.querySelector('.SettingsComponentStyle-scrollingMenu[data-content="theme"]');
 		if (themeContentElement) {
-			themeContentElement.style.display = 'none';
+			themeContentElement.remove();
 		}
 
-		// Restore all original content by removing CSS class
-		const originalChildren = contentContainer.children;
-		for (let child of originalChildren) {
-			if (!child.classList.contains('theme-settings-custom')) {
-				child.classList.remove('content-hidden');
-			}
-		}
+		oldContentContainer.classList.remove('content-hidden');
 
 		// Remove active class from theme tab
 		if (themeMenuItem) {
@@ -124,17 +103,12 @@
 	 * Hide original content when theme is active (for use during initialization)
 	 */
 	function hideOriginalContent() {
-		const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
-		if (!contentContainer) return;
+		const oldContentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu[data-content="old"]');
+		if (!oldContentContainer) return;
 
-		// Hide all original content with CSS class
-		const originalChildren = contentContainer.children;
-		for (let child of originalChildren) {
-			if (!child.classList.contains('theme-settings-custom')) {
-				child.classList.add('content-hidden');
-			}
-		}
+		oldContentContainer.classList.add('content-hidden');
 	}
+
 	/**
 	 * Adds event delegation to the menu container for optimal performance
 	 */
@@ -147,7 +121,7 @@
 			if (!clickedItem) return;
 
 			// Check if this is our theme tab (by data attribute)
-			if (clickedItem.getAttribute('data-theme-tab') === 'true') {
+			if (clickedItem.getAttribute('data-module') === 'SeveritiumSettingsTab') {
 				e.preventDefault();
 				e.stopPropagation();
 				showThemeContent();
@@ -177,7 +151,7 @@
 		if (!menuContainer) return;
 
 		// Remove existing theme tab if it exists
-		const existingThemeTab = menuContainer.querySelector('[data-theme-tab="true"]');
+		const existingThemeTab = menuContainer.querySelector('[data-module="SeveritiumSettingsTab"]');
 		if (existingThemeTab) {
 			existingThemeTab.remove();
 		}
@@ -185,7 +159,7 @@
 		themeMenuItem = document.createElement('li');
 		themeMenuItem.className = 'SettingsMenuComponentStyle-menuItemOptions';
 		themeMenuItem.innerHTML = '<span>Theme</span>';
-		themeMenuItem.setAttribute('data-theme-tab', 'true');
+		themeMenuItem.setAttribute('data-module', 'SeveritiumSettingsTab');
 
 		menuContainer.appendChild(themeMenuItem);
 	}
@@ -212,9 +186,7 @@
 					
 					// If theme was active and new content appeared, hide it after React renders
 					if (isThemeTabActive) {
-						setTimeout(() => {
-							hideOriginalContent();
-						}, 50);
+						hideOriginalContent();
 					}
 				}
 			});
@@ -224,7 +196,6 @@
 				if (node.nodeType !== Node.ELEMENT_NODE) return;
 				if (node.matches?.(containerSelector) || node.querySelector?.(containerSelector)) {
 					// Don't reset isThemeTabActive - we want to preserve the state
-					themeContentElement = null;
 					previousActiveTab = null;
 				}
 			});
