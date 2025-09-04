@@ -1822,5 +1822,11 @@
     "date": "2025-09-05",
     "comment": "1.7.2+build115 feat: updated behaviour of themes saving",
     "hash": "08eb4369117953b7be43b25cc50b0eeddb509194"
+  },
+  {
+    "version": "1.7.2+build116",
+    "date": "2025-09-05",
+    "comment": "1.7.2+build116 feat: updated breezium select styles",
+    "hash": "80f8b0fe706af36fb79cf660b8d076e6f0d2851b"
   }
 ]
