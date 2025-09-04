@@ -19,10 +19,8 @@
 		// Add CSS for hiding content
 		addHiddenContentCSS();
 
-		// Only create menu item if it doesn't exist
-		if (!themeMenuItem || !menuContainer.contains(themeMenuItem)) {
-			createMenuItem();
-		}
+		// Always recreate menu item to ensure it's valid
+		createMenuItem();
 
 		// Add event delegation only once
 		if (!menuClickHandlerAdded) {
@@ -66,20 +64,26 @@
 			}
 		}
 
-		// Create or show our custom theme content
-		if (!themeContentElement) {
-			themeContentElement = document.createElement('div');
-			themeContentElement.className = 'theme-settings-custom';
-			themeContentElement.innerHTML = '<h2>Theme Settings</h2><p>Customize your theme settings here.</p>';
-			contentContainer.appendChild(themeContentElement);
-		} else {
-			themeContentElement.style.display = 'block';
+		// Always recreate theme content to ensure it's valid
+		const existingThemeContent = contentContainer.querySelector('.theme-settings-custom');
+		if (existingThemeContent) {
+			existingThemeContent.remove();
 		}
+
+		themeContentElement = document.createElement('div');
+		themeContentElement.className = 'theme-settings-custom';
+		themeContentElement.innerHTML = '<h2>Theme Settings</h2><p>Customize your theme settings here.</p>';
+		contentContainer.appendChild(themeContentElement);
 
 		// Remove active class from all items and add to theme tab
 		document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => 
 			item.classList.remove('SettingsMenuComponentStyle-activeItemOptions')
 		);
+		
+		// Ensure we have a valid theme menu item
+		if (!themeMenuItem || !document.contains(themeMenuItem)) {
+			themeMenuItem = document.querySelector('[data-theme-tab="true"]');
+		}
 		
 		if (themeMenuItem) {
 			themeMenuItem.classList.add('SettingsMenuComponentStyle-activeItemOptions');
@@ -126,8 +130,8 @@
 			const clickedItem = e.target.closest('.SettingsMenuComponentStyle-menuItemOptions');
 			if (!clickedItem) return;
 
-			// Handle theme tab content
-			if (clickedItem === themeMenuItem) {
+			// Check if this is our theme tab (by data attribute)
+			if (clickedItem.getAttribute('data-theme-tab') === 'true') {
 				e.preventDefault();
 				e.stopPropagation();
 				showThemeContent();
@@ -155,6 +159,12 @@
 	function createMenuItem() {
 		const menuContainer = document.querySelector('.SettingsMenuComponentStyle-blockMenuOptions');
 		if (!menuContainer) return;
+
+		// Remove existing theme tab if it exists
+		const existingThemeTab = menuContainer.querySelector('[data-theme-tab="true"]');
+		if (existingThemeTab) {
+			existingThemeTab.remove();
+		}
 
 		themeMenuItem = document.createElement('li');
 		themeMenuItem.className = 'SettingsMenuComponentStyle-menuItemOptions';
