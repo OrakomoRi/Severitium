@@ -1,6 +1,9 @@
 (function () {
 	const containerSelector = '.SettingsComponentStyle-blockContentOptions';
 
+	let themeMenuItem = null;
+	let menuClickHandlerAdded = false;
+
 	/**
 	 * Initialize the custom settings tab
 	 */
@@ -10,31 +13,60 @@
 
 		if (!menuContainer || !contentContainer) return;
 
-		createMenuItem();
+		// Only create menu item if it doesn't exist
+		if (!themeMenuItem || !menuContainer.contains(themeMenuItem)) {
+			createMenuItem();
+		}
+
+		// Add event delegation only once
+		if (!menuClickHandlerAdded) {
+			addMenuEventDelegation();
+			menuClickHandlerAdded = true;
+		}
 	}
 
+	/**
+	 * Adds event delegation to the menu container for optimal performance
+	 */
+	function addMenuEventDelegation() {
+		const menuContainer = document.querySelector('.SettingsMenuComponentStyle-blockMenuOptions');
+		if (!menuContainer) return;
+
+		menuContainer.addEventListener('click', (e) => {
+			const clickedItem = e.target.closest('.SettingsMenuComponentStyle-menuItemOptions');
+			if (!clickedItem) return;
+
+			// Remove active class from all items
+			document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => 
+				item.classList.remove('SettingsMenuComponentStyle-activeItemOptions')
+			);
+
+			// Add active class to clicked item
+			clickedItem.classList.add('SettingsMenuComponentStyle-activeItemOptions');
+
+			// Handle theme tab content
+			if (clickedItem === themeMenuItem) {
+				const contentSection = document.createElement('div');
+				contentSection.className = 'theme-settings';
+				contentSection.innerHTML = '<h2>Theme Settings</h2><p>Customize your theme settings here.</p>';
+				document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu').innerHTML = contentSection.outerHTML;
+			}
+		});
+	}
 
 	/**
-	 * Creates and appends the menu item and content section
+	 * Creates and appends the menu item
 	 */
 	function createMenuItem() {
 		const menuContainer = document.querySelector('.SettingsMenuComponentStyle-blockMenuOptions');
-		const menuItem = document.createElement('li');
-		menuItem.className = 'SettingsMenuComponentStyle-menuItemOptions';
-		menuItem.innerHTML = '<span>Theme</span>';
+		if (!menuContainer) return;
 
-		menuItem.addEventListener('click', () => {
-			document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => item.classList.remove('SettingsMenuComponentStyle-activeItemOptions'));
-			menuItem.classList.add('SettingsMenuComponentStyle-activeItemOptions');
+		themeMenuItem = document.createElement('li');
+		themeMenuItem.className = 'SettingsMenuComponentStyle-menuItemOptions';
+		themeMenuItem.innerHTML = '<span>Theme</span>';
+		themeMenuItem.setAttribute('data-theme-tab', 'true');
 
-			contentSection = document.createElement('div');
-			contentSection.className = 'theme-settings';
-			contentSection.innerHTML = '<h2>Theme Settings</h2><p>Customize your theme settings here.</p>';
-			document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu').innerHTML = contentSection.outerHTML;
-		});
-
-		// Append the new menu item
-		menuContainer.appendChild(menuItem);
+		menuContainer.appendChild(themeMenuItem);
 	}
 
 	/**
