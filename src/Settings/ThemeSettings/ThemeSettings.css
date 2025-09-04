@@ -1,0 +1,353 @@
+/* Severitium Theme Settings Styles */
+
+/* Theme settings menu item */
+.severitium-theme-settings-menu {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.severitium-theme-settings-menu:hover {
+    background-color: var(--severitium-dark-transparent-background2);
+}
+
+.severitium-theme-settings-menu.activeitem {
+    background-color: var(--severitium-main-color) !important;
+}
+
+.severitium-theme-settings-menu.activeitem span {
+    color: var(--severitium-white-text-color) !important;
+}
+
+/* Loading and Error States */
+.severitium-loading,
+.severitium-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    font-size: 16px;
+    color: var(--severitium-text-color, #ffffff);
+    background: var(--severitium-background-color, #1a1a1a);
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.severitium-error {
+    color: #ff6b6b;
+    border: 1px solid #ff6b6b;
+}
+
+.severitium-loading::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--severitium-accent-color, #00bcd4);
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: severitium-spin 1s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes severitium-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Theme Settings Container */
+.severitium-theme-settings-content {
+    padding: 0;
+}
+
+.severitium-settings-section {
+    margin-bottom: 2em;
+    padding: 1.5em;
+    background: var(--severitium-dark-transparent-background2);
+    border-radius: var(--severitium-border-radius);
+    border: 1px solid var(--severitium-dark-transparent-background1);
+}
+
+.severitium-settings-section h3 {
+    margin: 0 0 1em 0;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--severitium-light-gray-color);
+    color: var(--severitium-white-text-color);
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+/* Color input grid */
+.severitium-color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1em;
+}
+
+.severitium-color-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.severitium-color-input label {
+    color: var(--severitium-extra-light-gray-text-color);
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.severitium-color-input-wrapper {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.severitium-color-picker {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: var(--severitium-border-radius);
+    cursor: pointer;
+    background: none;
+    padding: 0;
+}
+
+.severitium-color-picker::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: var(--severitium-border-radius);
+}
+
+.severitium-color-picker::-webkit-color-swatch {
+    border: 2px solid var(--severitium-light-gray-color);
+    border-radius: var(--severitium-border-radius);
+}
+
+.severitium-color-text {
+    flex: 1;
+    padding: 0.6em 0.8em;
+    background: var(--severitium-dark-transparent-background1);
+    border: 1px solid var(--severitium-light-gray-color);
+    border-radius: var(--severitium-border-radius);
+    color: var(--severitium-white-text-color);
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+}
+
+.severitium-color-text:hover {
+    border-color: var(--severitium-extra-light-gray-color);
+    background: var(--severitium-dark-transparent-background2);
+}
+
+.severitium-color-text:focus {
+    outline: none;
+    border-color: var(--severitium-main-color);
+    background: var(--severitium-dark-transparent-background3);
+}
+
+.severitium-color-text::placeholder {
+    color: var(--severitium-light-gray-text-color);
+}
+
+/* Range inputs */
+.severitium-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
+}
+
+.severitium-range-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.severitium-range-input label {
+    color: var(--severitium-extra-light-gray-text-color);
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.severitium-range-input-wrapper {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.severitium-range-slider {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--severitium-dark-transparent-background1);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.severitium-range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--severitium-main-color);
+    cursor: pointer;
+    border: 2px solid var(--severitium-white-color);
+    transition: all 0.2s ease;
+}
+
+.severitium-range-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px var(--severitium-main-color);
+}
+
+.severitium-range-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--severitium-main-color);
+    cursor: pointer;
+    border: 2px solid var(--severitium-white-color);
+    transition: all 0.2s ease;
+}
+
+.severitium-range-text {
+    width: 80px;
+    padding: 0.6em 0.8em;
+    background: var(--severitium-dark-transparent-background1);
+    border: 1px solid var(--severitium-light-gray-color);
+    border-radius: var(--severitium-border-radius);
+    color: var(--severitium-white-text-color);
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.severitium-range-text:hover {
+    border-color: var(--severitium-extra-light-gray-color);
+    background: var(--severitium-dark-transparent-background2);
+}
+
+.severitium-range-text:focus {
+    outline: none;
+    border-color: var(--severitium-main-color);
+    background: var(--severitium-dark-transparent-background3);
+}
+
+/* Action buttons */
+.severitium-settings-actions {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2em 1.5em;
+    background: var(--severitium-dark-transparent-background1);
+    border-radius: var(--severitium-border-radius);
+    border: 1px solid var(--severitium-light-gray-color);
+}
+
+.severitium-btn {
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: var(--severitium-border-radius);
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+}
+
+.severitium-btn-primary {
+    background: var(--severitium-green-button-background);
+    color: var(--severitium-green-button-color);
+    border: 1px solid var(--severitium-green-button-border-color);
+}
+
+.severitium-btn-primary:hover {
+    background: var(--severitium-green-button-background-hover);
+    border-color: var(--severitium-green-button-border-color-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px var(--severitium-dark-transparent-background1);
+}
+
+.severitium-btn-secondary {
+    background: var(--severitium-gray-button-background);
+    color: var(--severitium-gray-button-color);
+    border: 1px solid var(--severitium-gray-button-border-color);
+}
+
+.severitium-btn-secondary:hover {
+    border-color: var(--severitium-gray-button-border-color-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px var(--severitium-dark-transparent-background1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .severitium-color-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .severitium-metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .severitium-settings-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .severitium-btn {
+        min-width: auto;
+    }
+    
+    .severitium-color-input-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .severitium-color-picker {
+        width: 100%;
+        height: 50px;
+    }
+}
+
+/* Animation for showing settings */
+.severitium-theme-settings-content {
+    animation: severitiumFadeIn 0.3s ease-out;
+}
+
+@keyframes severitiumFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom scrollbar for settings content */
+.severitium-theme-settings-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.severitium-theme-settings-content::-webkit-scrollbar-track {
+    background: var(--severitium-dark-transparent-background1);
+    border-radius: 4px;
+}
+
+.severitium-theme-settings-content::-webkit-scrollbar-thumb {
+    background: var(--severitium-light-gray-color);
+    border-radius: 4px;
+}
+
+.severitium-theme-settings-content::-webkit-scrollbar-thumb:hover {
+    background: var(--severitium-extra-light-gray-color);
+}

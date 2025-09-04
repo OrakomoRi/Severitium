@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Severitium Color Picker Demo with Coloris</title>
+    
+    <!-- Coloris CSS -->
+    <link rel="stylesheet" href="src/_libs/Сoloris/coloris.css">
+    
+    <style>
+        :root {
+            /* Default Severitium variables */
+            --severitium-main-color: rgb(233, 67, 67);
+            --severitium-white-text-color: rgb(255, 255, 255);
+            --severitium-dark-white-text-color: rgb(225, 225, 225);
+            --severitium-extra-light-gray-text-color: rgb(200, 200, 200);
+            --severitium-light-gray-text-color: rgb(150, 150, 150);
+            --severitium-black-text-color: rgb(0, 0, 0);
+            --severitium-red-text-color: rgb(255, 100, 100);
+            --severitium-gold-text-color: rgb(255, 185, 100);
+            --severitium-yellow-text-color: rgb(225, 205, 75);
+            --severitium-green-text-color: rgb(110, 255, 100);
+            --severitium-blue-text-color: rgb(100, 170, 255);
+            --severitium-orange-text-color: rgb(255, 150, 100);
+            --severitium-purple-text-color: rgb(200, 115, 225);
+            --severitium-light-blue-text-color: rgb(120, 190, 225);
+            --severitium-border-radius: 0.25em;
+            
+            /* Special colors */
+            --severitium-friend-color: rgb(202, 104, 219);
+            --severitium-crystal-color: rgb(100, 185, 225);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1e1e, #2d2d2d);
+            color: var(--severitium-white-text-color);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: var(--severitium-border-radius);
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--severitium-main-color);
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .settings-section {
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: var(--severitium-border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .settings-section h3 {
+            color: var(--severitium-gold-text-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .color-input {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .color-input label {
+            margin-bottom: 8px;
+            color: var(--severitium-dark-white-text-color);
+            font-weight: 500;
+        }
+
+        .color-input-wrapper {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .coloris-input {
+            flex: 1;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--severitium-border-radius);
+            color: var(--severitium-white-text-color);
+            font-family: 'Courier New', monospace;
+            cursor: pointer;
+        }
+
+        .coloris-input:focus {
+            outline: none;
+            border-color: var(--severitium-main-color);
+            box-shadow: 0 0 5px rgba(233, 67, 67, 0.3);
+        }
+
+        /* Coloris theme customization */
+        .clr-picker {
+            border-radius: var(--severitium-border-radius);
+        }
+
+        .clr-picker.clr-dark {
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .preview-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--severitium-border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .preview-item {
+            padding: 15px;
+            border-radius: var(--severitium-border-radius);
+            text-align: center;
+            font-weight: bold;
+            border: 2px solid transparent;
+        }
+
+        .preview-main { 
+            background: var(--severitium-main-color); 
+            color: white;
+        }
+        .preview-white-text { 
+            background: rgba(0, 0, 0, 0.5); 
+            color: var(--severitium-white-text-color); 
+        }
+        .preview-red-text { 
+            background: rgba(0, 0, 0, 0.5); 
+            color: var(--severitium-red-text-color); 
+        }
+        .preview-gold-text { 
+            background: rgba(0, 0, 0, 0.5); 
+            color: var(--severitium-gold-text-color); 
+        }
+        .preview-green-text { 
+            background: rgba(0, 0, 0, 0.5); 
+            color: var(--severitium-green-text-color); 
+        }
+        .preview-blue-text { 
+            background: rgba(0, 0, 0, 0.5); 
+            color: var(--severitium-blue-text-color); 
+        }
+        .preview-friend { 
+            background: rgba(0, 0, 0, 0.5); 
+            color: var(--severitium-friend-color); 
+        }
+        .preview-crystal { 
+            background: rgba(0, 0, 0, 0.5); 
+            color: var(--severitium-crystal-color); 
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            margin: 0 10px;
+            border: none;
+            border-radius: var(--severitium-border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--severitium-main-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: rgb(200, 50, 50);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--severitium-white-text-color);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .status {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: var(--severitium-border-radius);
+            display: none;
+        }
+
+        .status.success {
+            background: rgba(110, 255, 100, 0.2);
+            color: var(--severitium-green-text-color);
+            border: 1px solid var(--severitium-green-text-color);
+        }
+
+        .status.error {
+            background: rgba(255, 100, 100, 0.2);
+            color: var(--severitium-red-text-color);
+            border: 1px solid var(--severitium-red-text-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>🎨 Severitium Color Picker with Coloris</h1>
+        
+        <div class="settings-section">
+            <h3>Основные цвета</h3>
+            <div class="color-grid">
+                <div class="color-input">
+                    <label for="main-color">Основной цвет темы</label>
+                    <div class="color-input-wrapper">
+                        <input type="text" id="main-color" class="coloris-input" value="rgb(233, 67, 67)" data-variable="--severitium-main-color" data-coloris>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <h3>Цвета текста</h3>
+            <div class="color-grid">
+                <div class="color-input">
+                    <label for="white-text">Белый текст</label>
+                    <div class="color-input-wrapper">
+                        <input type="text" id="white-text" class="coloris-input" value="rgb(255, 255, 255)" data-variable="--severitium-white-text-color" data-coloris>
+                    </div>
+                </div>
+                
+                <div class="color-input">
+                    <label for="red-text">Красный текст</label>
+                    <div class="color-input-wrapper">
+                        <input type="text" id="red-text" class="coloris-input" value="rgb(255, 100, 100)" data-variable="--severitium-red-text-color" data-coloris>
+                    </div>
+                </div>
+                
+                <div class="color-input">
+                    <label for="gold-text">Золотой текст</label>
+                    <div class="color-input-wrapper">
+                        <input type="text" id="gold-text" class="coloris-input" value="rgb(255, 185, 100)" data-variable="--severitium-gold-text-color" data-coloris>
+                    </div>
+                </div>
+                
+                <div class="color-input">
+                    <label for="green-text">Зелёный текст</label>
+                    <div class="color-input-wrapper">
+                        <input type="text" id="green-text" class="coloris-input" value="rgb(110, 255, 100)" data-variable="--severitium-green-text-color" data-coloris>
+                    </div>
+                </div>
+                
+                <div class="color-input">
+                    <label for="blue-text">Синий текст</label>
+                    <div class="color-input-wrapper">
+                        <input type="text" id="blue-text" class="coloris-input" value="rgb(100, 170, 255)" data-variable="--severitium-blue-text-color" data-coloris>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <h3>Специальные цвета</h3>
+            <div class="color-grid">
+                <div class="color-input">
+                    <label for="friend-color">Цвет друзей</label>
+                    <div class="color-input-wrapper">
+                        <input type="text" id="friend-color" class="coloris-input" value="rgb(202, 104, 219)" data-variable="--severitium-friend-color" data-coloris>
+                    </div>
+                </div>
+                
+                <div class="color-input">
+                    <label for="crystal-color">Цвет кристаллов</label>
+                    <div class="color-input-wrapper">
+                        <input type="text" id="crystal-color" class="coloris-input" value="rgb(100, 185, 225)" data-variable="--severitium-crystal-color" data-coloris>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h3>Предпросмотр цветов</h3>
+            <div class="preview-grid">
+                <div class="preview-item preview-main">Основной цвет</div>
+                <div class="preview-item preview-white-text">Белый текст</div>
+                <div class="preview-item preview-red-text">Красный текст</div>
+                <div class="preview-item preview-gold-text">Золотой текст</div>
+                <div class="preview-item preview-green-text">Зелёный текст</div>
+                <div class="preview-item preview-blue-text">Синий текст</div>
+                <div class="preview-item preview-friend">Цвет друзей</div>
+                <div class="preview-item preview-crystal">Цвет кристаллов</div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn btn-primary" onclick="exportSettings()">Экспорт настроек</button>
+            <button class="btn btn-secondary" onclick="resetToDefaults()">Сбросить к умолчанию</button>
+            <button class="btn btn-secondary" onclick="randomizeColors()">Случайные цвета</button>
+            <button class="btn btn-secondary" onclick="importSettings()">Импорт настроек</button>
+        </div>
+
+        <div id="status" class="status"></div>
+    </div>
+
+    <!-- Coloris JavaScript -->
+    <script src="src/_libs/Сoloris/coloris.js"></script>
+    
+    <script>
+        // Default variables for reset
+        const defaultVariables = {
+            '--severitium-main-color': 'rgb(233, 67, 67)',
+            '--severitium-white-text-color': 'rgb(255, 255, 255)',
+            '--severitium-red-text-color': 'rgb(255, 100, 100)',
+            '--severitium-gold-text-color': 'rgb(255, 185, 100)',
+            '--severitium-green-text-color': 'rgb(110, 255, 100)',
+            '--severitium-blue-text-color': 'rgb(100, 170, 255)',
+            '--severitium-friend-color': 'rgb(202, 104, 219)',
+            '--severitium-crystal-color': 'rgb(100, 185, 225)'
+        };
+
+        // Initialize Coloris
+        Coloris({
+            el: '.coloris-input',
+            theme: 'dark',
+            themeMode: 'dark',
+            alpha: false,
+            format: 'rgb',
+            formatToggle: true,
+            swatches: [
+                'rgb(233, 67, 67)',    // Main color
+                'rgb(255, 255, 255)',  // White
+                'rgb(255, 100, 100)',  // Red
+                'rgb(255, 185, 100)',  // Gold
+                'rgb(110, 255, 100)',  // Green  
+                'rgb(100, 170, 255)',  // Blue
+                'rgb(255, 150, 100)',  // Orange
+                'rgb(200, 115, 225)',  // Purple
+                'rgb(120, 190, 225)',  // Light blue
+                'rgb(225, 205, 75)',   // Yellow
+                'rgb(202, 104, 219)',  // Friend color
+                'rgb(100, 185, 225)',  // Crystal color
+                'rgb(225, 190, 85)',   // Tancoin color
+                'rgb(255, 125, 125)'   // Ruby color
+            ],
+            onChange: function(color, input) {
+                if (input && input.dataset.variable) {
+                    applyVariable(input.dataset.variable, color);
+                }
+            }
+        });
+
+        // Initialize event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Apply initial colors
+            document.querySelectorAll('.coloris-input').forEach(input => {
+                if (input.dataset.variable && input.value) {
+                    applyVariable(input.dataset.variable, input.value);
+                }
+            });
+        });
+
+        // Apply a single CSS variable
+        function applyVariable(variable, value) {
+            document.documentElement.style.setProperty(variable, value);
+        }
+
+        // Export current settings
+        function exportSettings() {
+            const currentSettings = {};
+            
+            // Get current values from inputs
+            document.querySelectorAll('.coloris-input').forEach(input => {
+                if (input.dataset.variable && input.value) {
+                    currentSettings[input.dataset.variable] = input.value;
+                }
+            });
+            
+            const data = {
+                version: '1.0',
+                timestamp: new Date().toISOString(),
+                settings: currentSettings,
+                library: 'Coloris'
+            };
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `severitium-coloris-theme-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            
+            URL.revokeObjectURL(url);
+            
+            showStatus('Настройки экспортированы с Coloris!', 'success');
+        }
+
+        // Reset to default values
+        function resetToDefaults() {
+            Object.entries(defaultVariables).forEach(([variable, value]) => {
+                // Apply to CSS
+                applyVariable(variable, value);
+                
+                // Update input
+                const input = document.querySelector(`.coloris-input[data-variable="${variable}"]`);
+                if (input) {
+                    input.value = value;
+                    // Trigger Coloris update
+                    input.dispatchEvent(new Event('input', { bubbles: true }));
+                }
+            });
+            
+            showStatus('Настройки сброшены к значениям по умолчанию!', 'success');
+        }
+
+        // Randomize colors for fun
+        function randomizeColors() {
+            const variables = Object.keys(defaultVariables);
+            
+            variables.forEach(variable => {
+                const r = Math.floor(Math.random() * 256);
+                const g = Math.floor(Math.random() * 256);
+                const b = Math.floor(Math.random() * 256);
+                const rgbValue = `rgb(${r}, ${g}, ${b})`;
+                
+                // Apply to CSS
+                applyVariable(variable, rgbValue);
+                
+                // Update input
+                const input = document.querySelector(`.coloris-input[data-variable="${variable}"]`);
+                if (input) {
+                    input.value = rgbValue;
+                    // Trigger Coloris update
+                    input.dispatchEvent(new Event('input', { bubbles: true }));
+                }
+            });
+            
+            showStatus('Применены случайные цвета с Coloris!', 'success');
+        }
+
+        // Import settings from JSON file
+        function importSettings() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            
+            input.onchange = function(event) {
+                const file = event.target.files[0];
+                if (!file) return;
+                
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const data = JSON.parse(e.target.result);
+                        
+                        if (data.settings) {
+                            Object.entries(data.settings).forEach(([variable, value]) => {
+                                // Apply to CSS
+                                applyVariable(variable, value);
+                                
+                                // Update input if exists
+                                const input = document.querySelector(`.coloris-input[data-variable="${variable}"]`);
+                                if (input) {
+                                    input.value = value;
+                                    // Trigger Coloris update
+                                    input.dispatchEvent(new Event('input', { bubbles: true }));
+                                }
+                            });
+                            
+                            showStatus(`Настройки импортированы! ${data.library ? `(${data.library})` : ''}`, 'success');
+                        } else {
+                            throw new Error('Invalid file format');
+                        }
+                    } catch (error) {
+                        showStatus('Ошибка импорта! Проверьте формат файла.', 'error');
+                    }
+                };
+                reader.readAsText(file);
+            };
+            
+            input.click();
+        }
+
+        // Show status message
+        function showStatus(message, type, duration = 3000) {
+            const statusElement = document.getElementById('status');
+            statusElement.textContent = message;
+            statusElement.className = `status ${type}`;
+            statusElement.style.display = 'block';
+            
+            setTimeout(() => {
+                statusElement.style.display = 'none';
+            }, duration);
+        }
+    </script>
+</body>
+</html>
