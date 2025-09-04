@@ -3,9 +3,7 @@
 
 	let themeMenuItem = null;
 	let menuClickHandlerAdded = false;
-	let previousActiveTab = null;
-	let savedContent = new Map(); // Cache for tab contents
-	const MAX_CACHE_SIZE = 5;
+	let isThemeTabActive = false;
 
 	/**
 	 * Initialize the custom settings tab
@@ -26,68 +24,37 @@
 			addMenuEventDelegation();
 			menuClickHandlerAdded = true;
 		}
-	}
 
-	/**
-	 * Cache cleanup to prevent memory leaks
-	 * Called when switching tabs or when settings container is removed
-	 */
-	function cleanupCache() {
-		// Keep only the most recent entries if cache is too large
-		if (savedContent.size > MAX_CACHE_SIZE) {
-			const entries = Array.from(savedContent.entries());
-			const toKeep = entries.slice(-MAX_CACHE_SIZE);
-			savedContent.clear();
-			toKeep.forEach(([key, value]) => savedContent.set(key, value));
+		// If theme tab was active, restore it
+		if (isThemeTabActive) {
+			showThemeContent();
 		}
 	}
 
 	/**
-	 * Get unique identifier for a tab
+	 * Show theme content
 	 */
-	function getTabId(tabElement) {
-		if (!tabElement) return null;
-		
-		const span = tabElement.querySelector('span');
-		if (!span) return null;
-		
-		return span.textContent?.trim().toLowerCase();
-	}
+	function showThemeContent() {
+		// Remove active class from all items
+		document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => 
+			item.classList.remove('SettingsMenuComponentStyle-activeItemOptions')
+		);
 
-	/**
-	 * Save current content for a tab
-	 */
-	function saveTabContent(tabElement) {
-		const tabId = getTabId(tabElement);
-		if (!tabId) return;
-		
-		const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
-		if (!contentContainer) return;
-		
-		// Save only the innerHTML content, not the container itself
-		savedContent.set(tabId, {
-			content: contentContainer.innerHTML,
-			timestamp: Date.now()
-		});
-	}
+		// Add active class to theme tab
+		if (themeMenuItem) {
+			themeMenuItem.classList.add('SettingsMenuComponentStyle-activeItemOptions');
+		}
 
-	/**
-	 * Restore content for a tab
-	 */
-	function restoreTabContent(tabElement) {
-		const tabId = getTabId(tabElement);
-		if (!tabId) return false;
-		
-		const cached = savedContent.get(tabId);
-		if (!cached) return false;
-		
+		// Show theme content
 		const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
-		if (!contentContainer) return false;
+		if (contentContainer) {
+			const contentSection = document.createElement('div');
+			contentSection.className = 'theme-settings';
+			contentSection.innerHTML = '<h2>Theme Settings</h2><p>Customize your theme settings here.</p>';
+			contentContainer.innerHTML = contentSection.outerHTML;
+		}
 		
-		// Restore only the innerHTML content into the existing container
-		contentContainer.innerHTML = cached.content;
-		
-		return true;
+		isThemeTabActive = true;
 	}
 	/**
 	 * Adds event delegation to the menu container for optimal performance
@@ -100,52 +67,22 @@
 			const clickedItem = e.target.closest('.SettingsMenuComponentStyle-menuItemOptions');
 			if (!clickedItem) return;
 
-			// Clean cache when switching between tabs
-			cleanupCache();
-
 			// Handle theme tab content
 			if (clickedItem === themeMenuItem) {
-				// Save content of currently active tab before switching
-				const currentActive = document.querySelector('.SettingsMenuComponentStyle-activeItemOptions:not([data-theme-tab])');
-				if (currentActive) {
-					saveTabContent(currentActive);
-					previousActiveTab = currentActive;
-				}
-
-				// Remove active class from all items
-				document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => 
-					item.classList.remove('SettingsMenuComponentStyle-activeItemOptions')
-				);
-
-				// Add active class to theme tab
-				clickedItem.classList.add('SettingsMenuComponentStyle-activeItemOptions');
-
-				// Show theme content
-				const contentSection = document.createElement('div');
-				contentSection.className = 'theme-settings';
-				contentSection.innerHTML = '<h2>Theme Settings</h2><p>Customize your theme settings here.</p>';
-				document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu').innerHTML = contentSection.outerHTML;
-			} else {
-				// Check if we're returning from theme tab
-				const isThemeCurrentlyActive = themeMenuItem && themeMenuItem.classList.contains('SettingsMenuComponentStyle-activeItemOptions');
-				
-				if (isThemeCurrentlyActive) {
-					// Check if we're returning to the same tab we came from
-					if (clickedItem === previousActiveTab) {
-						// Try to restore cached content
-						if (restoreTabContent(clickedItem)) {
-							// Content restored successfully, just update active classes
-							document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => 
-								item.classList.remove('SettingsMenuComponentStyle-activeItemOptions')
-							);
-							clickedItem.classList.add('SettingsMenuComponentStyle-activeItemOptions');
-							return;
-						}
-					}
-					
-					// If no cached content or different tab, let React handle it normally
+				e.preventDefault();
+				e.stopPropagation();
+				showThemeContent();
+				return;
+			} 
+			
+			// If clicking on any other tab while theme is active, let React handle it
+			if (isThemeTabActive) {
+				isThemeTabActive = false;
+				// Remove active class from theme tab
+				if (themeMenuItem) {
 					themeMenuItem.classList.remove('SettingsMenuComponentStyle-activeItemOptions');
 				}
+				// Let the natural React click handler proceed
 			}
 		}, true); // Use capture phase
 	}
@@ -185,11 +122,11 @@
 				if (node.matches?.(containerSelector) || node.querySelector?.(containerSelector)) initializeSettingsTab();
 			});
 			
-			// Check for removed nodes - clean cache if settings container is removed
+			// Check for removed nodes - reset state if settings container is removed
 			removedNodes.forEach(node => {
 				if (node.nodeType !== Node.ELEMENT_NODE) return;
 				if (node.matches?.(containerSelector) || node.querySelector?.(containerSelector)) {
-					cleanupCache();
+					isThemeTabActive = false;
 				}
 			});
 		});
