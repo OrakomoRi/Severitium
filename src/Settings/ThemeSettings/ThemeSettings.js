@@ -5,6 +5,7 @@
 	let menuClickHandlerAdded = false;
 	let isThemeTabActive = false;
 	let themeContentElement = null;
+	let previousActiveTab = null;
 
 	/**
 	 * Initialize the custom settings tab
@@ -53,6 +54,9 @@
 	function showThemeContent() {
 		const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
 		if (!contentContainer) return;
+
+		// Save currently active tab before switching to theme
+		previousActiveTab = document.querySelector('.SettingsMenuComponentStyle-activeItemOptions:not([data-theme-tab])');
 
 		// Hide all original content with CSS class
 		const originalChildren = contentContainer.children;
@@ -133,7 +137,14 @@
 			// If clicking on any other tab while theme is active, hide theme content
 			if (isThemeTabActive) {
 				hideThemeContent();
-				// Let the natural React click handler proceed after hiding our content
+				
+				// If we're returning to the previously active tab, restore its active class
+				if (clickedItem === previousActiveTab) {
+					e.preventDefault();
+					e.stopPropagation();
+					clickedItem.classList.add('SettingsMenuComponentStyle-activeItemOptions');
+				}
+				// For other tabs, let React handle it normally
 			}
 		}, true); // Use capture phase
 	}
@@ -179,6 +190,7 @@
 				if (node.matches?.(containerSelector) || node.querySelector?.(containerSelector)) {
 					isThemeTabActive = false;
 					themeContentElement = null;
+					previousActiveTab = null;
 				}
 			});
 		});
