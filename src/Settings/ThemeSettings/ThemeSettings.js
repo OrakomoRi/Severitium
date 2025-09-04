@@ -36,22 +36,43 @@
 			const clickedItem = e.target.closest('.SettingsMenuComponentStyle-menuItemOptions');
 			if (!clickedItem) return;
 
-			// Remove active class from all items
-			document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => 
-				item.classList.remove('SettingsMenuComponentStyle-activeItemOptions')
-			);
-
-			// Add active class to clicked item
-			clickedItem.classList.add('SettingsMenuComponentStyle-activeItemOptions');
-
-			// Handle theme tab content
+			// If clicking on theme tab, handle it ourselves
 			if (clickedItem === themeMenuItem) {
+				e.stopPropagation();
+				
+				// Remove active class from all items
+				document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => 
+					item.classList.remove('SettingsMenuComponentStyle-activeItemOptions')
+				);
+
+				// Add active class to theme tab
+				clickedItem.classList.add('SettingsMenuComponentStyle-activeItemOptions');
+
+				// Show theme content
 				const contentSection = document.createElement('div');
 				contentSection.className = 'theme-settings';
 				contentSection.innerHTML = '<h2>Theme Settings</h2><p>Customize your theme settings here.</p>';
 				document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu').innerHTML = contentSection.outerHTML;
+			} else {
+				// For other tabs, let the original handlers work by temporarily removing our theme tab,
+				// then restoring it after the original click is processed
+				const tempParent = themeMenuItem.parentNode;
+				const tempNextSibling = themeMenuItem.nextSibling;
+				
+				// Temporarily remove theme tab so original handlers can work
+				themeMenuItem.remove();
+				
+				// Allow original click to be processed
+				setTimeout(() => {
+					// Restore theme tab
+					if (tempNextSibling) {
+						tempParent.insertBefore(themeMenuItem, tempNextSibling);
+					} else {
+						tempParent.appendChild(themeMenuItem);
+					}
+				}, 0);
 			}
-		});
+		}, true); // Use capture phase to handle before other handlers
 	}
 
 	/**
