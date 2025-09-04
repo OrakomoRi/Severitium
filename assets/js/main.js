@@ -30,14 +30,18 @@ async function getLatestVersion() {
  * Initialize download buttons with proper URLs
  */
 async function initializeDownloadButtons() {
-	const timestamp = new Date().getTime();
-	
 	// Quick download buttons
 	const latestBtn = document.getElementById('latest-btn');
 	const stableBtn = document.getElementById('stable-btn');
 	
 	if (latestBtn) {
-		latestBtn.href = `https://orakomori.github.io/Severitium/release/severitium.user.js?t=${timestamp}`;
+		// Remove href and add click handler for dynamic timestamp generation
+		latestBtn.removeAttribute('href');
+		latestBtn.addEventListener('click', function(e) {
+			e.preventDefault();
+			const timestamp = new Date().getTime();
+			window.open(`https://orakomori.github.io/Severitium/release/severitium.user.js?t=${timestamp}`, '_blank');
+		});
 	}
 	
 	if (stableBtn) {

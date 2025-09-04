@@ -296,6 +296,7 @@ h1 {
 }
 
 .latest-btn {
+	cursor: pointer;
 	background: var(--gradient-button-secondary);
 	border: var(--border-medium) solid var(--color-accent);
 	color: var(--color-text-primary);
