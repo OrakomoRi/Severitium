@@ -1272,6 +1272,7 @@ p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root)[class*='ksc'i] {
 .SecuritySettingsComponentStyle-button {
 	outline: none;
 	box-shadow: none;
+	margin: 0;
 	border-radius: var(--severitium-border-radius);
 	background: var(--severitium-green-button-background);
 	border: var(--severitium-green-button-border-color) solid .1em;
@@ -1298,6 +1299,7 @@ p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root)[class*='ksc'i] {
 .SecuritySettingsComponentStyle-activation2FaButton {
 	outline: none;
 	box-shadow: none;
+	margin: 0;
 	border-radius: var(--severitium-border-radius);
 	background: var(--severitium-green-button-background);
 	border: var(--severitium-green-button-border-color) solid .1em;

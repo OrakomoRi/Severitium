@@ -36,3 +36,62 @@
 	font-family: BaseFontBold, FallbackFontBold;
 	color: var(--severitium-white-text-color);
 }
+
+/* Theme settings button component */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeActionButton {
+	min-width: 15em;
+	width: auto;
+	height: 3.125em;
+	cursor: pointer;
+	outline: none;
+	box-shadow: none;
+	margin: 0;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Theme settings green action button */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-greenActionButton {
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-greenActionButton:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-greenActionButton > span {
+	color: var(--severitium-green-button-color);
+}
+
+/* Theme settings red action button */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-redActionButton {
+	background: var(--severitium-red-button-background);
+	border: var(--severitium-red-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-redActionButton:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-red-button-background);
+	border: var(--severitium-red-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-redActionButton > span {
+	color: var(--severitium-red-button-color);
+}
