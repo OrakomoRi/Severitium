@@ -90,6 +90,15 @@
 		if (themeMenuItem) {
 			themeMenuItem.classList.remove('SettingsMenuComponentStyle-activeItemOptions');
 		}
+
+		if (previousActiveTab) {
+			if (document.contains(previousActiveTab)) {
+				if (!previousActiveTab.classList.contains('SettingsMenuComponentStyle-activeItemOptions')) {
+					previousActiveTab.classList.add('SettingsMenuComponentStyle-activeItemOptions');
+					previousActiveTab = null;
+				}
+			}
+		}
 		
 		isThemeTabActive = false;
 	}
