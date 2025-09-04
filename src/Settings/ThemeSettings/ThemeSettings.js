@@ -63,32 +63,32 @@
 				
 				if (isThemeCurrentlyActive) {
 					// We're switching from theme tab to another tab
-					// Need to "wake up" the game's system
-					const otherTabs = Array.from(menuContainer.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions:not([data-theme-tab])'));
-					const differentTab = otherTabs.find(tab => tab !== clickedItem);
+					// Need to completely reset the game's state
+					e.preventDefault();
+					e.stopPropagation();
 					
-					if (differentTab && clickedItem === previousActiveTab) {
-						// If returning to the previous tab, use the workaround
-						// First click a different tab to reset game's state
-						e.preventDefault();
-						e.stopPropagation();
-						
-						// Remove active class from all items
-						document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => 
-							item.classList.remove('SettingsMenuComponentStyle-activeItemOptions')
-						);
-						
-						// Temporarily activate different tab
-						differentTab.classList.add('SettingsMenuComponentStyle-activeItemOptions');
-						
-						// Then switch to target tab after a short delay
-						setTimeout(() => {
-							differentTab.classList.remove('SettingsMenuComponentStyle-activeItemOptions');
-							clickedItem.classList.add('SettingsMenuComponentStyle-activeItemOptions');
-							clickedItem.click();
-						}, 50);
-						return;
+					// Remove active class from all items
+					document.querySelectorAll('.SettingsMenuComponentStyle-menuItemOptions').forEach(item => 
+						item.classList.remove('SettingsMenuComponentStyle-activeItemOptions')
+					);
+					
+					// Clear the content area
+					const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
+					if (contentContainer) {
+						contentContainer.innerHTML = '';
 					}
+					
+					// Force a small delay to let the game reset its state
+					setTimeout(() => {
+						// Simulate a real click event on the target tab
+						const clickEvent = new MouseEvent('click', {
+							bubbles: true,
+							cancelable: true,
+							view: window
+						});
+						clickedItem.dispatchEvent(clickEvent);
+					}, 100);
+					return;
 				}
 
 				// Normal tab switching
