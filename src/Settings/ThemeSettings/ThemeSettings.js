@@ -64,10 +64,9 @@
 		const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
 		if (!contentContainer) return;
 		
-		// Clone the content to avoid reference issues
-		const contentClone = contentContainer.cloneNode(true);
+		// Save only the innerHTML content, not the container itself
 		savedContent.set(tabId, {
-			content: contentClone,
+			content: contentContainer.innerHTML,
 			timestamp: Date.now()
 		});
 	}
@@ -85,10 +84,8 @@
 		const contentContainer = document.querySelector('.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu');
 		if (!contentContainer) return false;
 		
-		// Clone the cached content and restore it
-		const restoredContent = cached.content.cloneNode(true);
-		contentContainer.innerHTML = '';
-		contentContainer.appendChild(restoredContent);
+		// Restore only the innerHTML content into the existing container
+		contentContainer.innerHTML = cached.content;
 		
 		return true;
 	}
