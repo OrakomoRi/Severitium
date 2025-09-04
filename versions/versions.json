@@ -1648,5 +1648,11 @@
     "date": "2025-09-03",
     "comment": "1.7.2+build86 feat: updated friends and invite screens",
     "hash": "786cc0565afdb135bdb03e562804ed8cc9b786aa"
+  },
+  {
+    "version": "1.7.2+build87",
+    "date": "2025-09-04",
+    "comment": "1.7.2+build87 feat: added Coloris color picker library to the project",
+    "hash": "df9d662f2d7dd8ae02561d07d8ed0df56d0e4a17"
   }
 ]
