@@ -1834,5 +1834,11 @@
     "date": "2025-09-05",
     "comment": "1.7.2+build117 feat: updated breezium select variable values",
     "hash": "22d77dc4687e10b8f7403580c660ce074bdf9be3"
+  },
+  {
+    "version": "1.7.2+build118",
+    "date": "2025-09-05",
+    "comment": "1.7.2+build118 feat: updated chat window, theme settings",
+    "hash": "276673887109be33850bb833ff6d86098c100512"
   }
 ]
