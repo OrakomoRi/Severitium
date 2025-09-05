@@ -1888,5 +1888,11 @@
     "date": "2025-09-05",
     "comment": "1.7.2+build126 feat: updated theme settings",
     "hash": "e2db53cd357d96f44e0c6ebc27a650d3cf582f7a"
+  },
+  {
+    "version": "1.7.2+build127",
+    "date": "2025-09-05",
+    "comment": "1.7.2+build127 feat: changed default theme css variables",
+    "hash": "170600d8da5688da479c9f28bfd568e0f36c3978"
   }
 ]
