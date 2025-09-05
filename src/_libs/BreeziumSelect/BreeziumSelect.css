@@ -15,8 +15,7 @@
 	--breezium-box-shadow: Box shadow for the options dropdown (default: 0 .25rem .5rem rgba(0, 0, 0, .25)).
 	--breezium-option-bg-color: Background color for each option (default: rgba(30, 30, 30, .25)).
 	--breezium-option-hover-bg-color: Background color when hovering over an option (default: rgba(150, 150, 150, .25)).
-	--breezium-options-margin-top: Margin between the selected item and options (default: .25rem).
-	--breezium-background-hover-transition-time: Time of background/background-color transition on hover/active (default: .2s).
+	--breezium-transition-duration: Time of transition duration on hover/active (default: .2s).
 	--breezium-select-selected-width: Static selected element width to display correctly (default: 5rem).
 	--breezium-select-options-max-height: Max possible height of options container (default: 10rem).
 	--breezium-select-option-height: Height of one option to display them equal (default: 2.5rem).
@@ -26,9 +25,7 @@
 	--breezium-select-scroll-thumb-hover-background: Background color of the scrollbar thumb on hover (default: rgba(255, 255, 255, .5)).
 	--breezium-min-width: Min width for the selected element (default: 5rem).
 	--breezium-z-index: Z-index for the dropdown (default: 20).
-	--breezium-focus-ring-color: Focus ring color (default: rgba(255,255,255,.7)).
-	--breezium-transition-duration: Base transition duration (default: .2s).
-	--breezium-options-margin-bottom: Spacing when opened upward (default: .25rem).
+	--breezium-options-margin-space: Spacing when opened upward or downward (default: .25rem).
 	--breezium-option-disabled-opacity: Opacity for disabled options (default: .5).
 	--breezium-option-selected-bg-color: Background color for selected option (default: rgba(100, 100, 100, .25)).
 */
@@ -42,19 +39,14 @@
 /* Root container */
 .breezium-select {
 	position: relative;
-	cursor: pointer;
 	width: fit-content;
-	contain: layout paint;
 }
 
 /* Selected (header) */
 .breezium-select .breezium-selected {
-	--sel-w: var(--breezium-select-selected-width, 8rem);
-	--sel-h: var(--breezium-select-option-height, 2.5rem);
-
 	min-width: var(--breezium-min-width, 5rem);
-	width: var(--sel-w);
-	height: var(--sel-h);
+	width: var(--breezium-select-selected-width, 5rem);
+	height: var(--breezium-select-option-height, 2.5rem);
 	padding: var(--breezium-padding, .5rem 1rem);
 	background-color: var(--breezium-bg-color, rgba(30, 30, 30, .25));
 	-webkit-backdrop-filter: var(--breezium-backdrop-filter, blur(.25rem));
@@ -67,8 +59,8 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	cursor: pointer;
 	transition: background-color var(--breezium-transition-duration, .2s) ease;
-	outline: none;
 }
 
 /* Hover on header */
@@ -77,20 +69,15 @@
 	background-color: var(--breezium-hover-bg-color, rgba(100, 100, 100, .25));
 }
 
-/* Accessible focus ring */
-.breezium-select .breezium-selected:focus-visible {
-	box-shadow: 0 0 0 .15rem var(--breezium-focus-ring-color, rgba(255, 255, 255, .7));
-}
-
 /* Options panel (dropdown) */
 .breezium-select .breezium-options {
+	display: none;
 	position: absolute;
-	width: 100%;
-	max-height: var(--breezium-select-options-max-height, 12rem);
+	top: 100%;
 	left: 0;
 	right: 0;
-	display: none;
-	flex-direction: column;
+	width: 100%;
+	max-height: var(--breezium-select-options-max-height, 12rem);
 	-webkit-backdrop-filter: var(--breezium-backdrop-filter, blur(.25rem));
 	backdrop-filter: var(--breezium-backdrop-filter, blur(.25rem));
 	border-radius: var(--breezium-border-radius, .25rem);
@@ -116,6 +103,7 @@
 /* Opened state: layout + subtle animation */
 .breezium-select.show .breezium-options {
 	display: flex;
+	flex-direction: column;
 	animation: breezium-fade-in var(--breezium-transition-duration, .2s) ease-out;
 }
 
@@ -150,7 +138,13 @@
 /* Disabled option */
 .breezium-select .breezium-option.is-disabled {
 	opacity: var(--breezium-option-disabled-opacity, .5);
+}
+
+/* Selected and disabled options */
+.breezium-select .breezium-option.is-selected,
+.breezium-select .breezium-option.is-disabled {
 	pointer-events: none;
+	cursor: default;
 }
 
 /* Scrollbar (WebKit) */
