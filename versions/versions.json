@@ -1876,5 +1876,11 @@
     "date": "2025-09-05",
     "comment": "1.7.2+build124 feat: updated breezium select, theme settings",
     "hash": "6517c9e362290442ff1dec35174eb1d8c738953d"
+  },
+  {
+    "version": "1.7.2+build125",
+    "date": "2025-09-05",
+    "comment": "1.7.2+build125 feat: updated breezium select, theme settings",
+    "hash": "8b966e7947e62658f54daec5bf6a552afbd83332"
   }
 ]
