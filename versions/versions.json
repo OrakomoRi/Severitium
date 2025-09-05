@@ -1864,5 +1864,11 @@
     "date": "2025-09-05",
     "comment": "1.7.2+build122 feat: updated breezium select",
     "hash": "f71bd3d0f152a56b643866445633b8f01d2d7d40"
+  },
+  {
+    "version": "1.7.2+build123",
+    "date": "2025-09-05",
+    "comment": "1.7.2+build123 feat: updated breezium select",
+    "hash": "019c7c3b497a9ce6f53cb1d06f77631532d453f1"
   }
 ]
