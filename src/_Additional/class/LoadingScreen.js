@@ -20,13 +20,17 @@ class LoadingScreen {
 	}
 
 	/**
-	 * Detects the language from localStorage or browser settings
-	 * 
-	 * @returns {string} ISO-639-1 language code
-	 */
+	* Detects the language from URL params, localStorage or browser settings
+	* 
+	* @returns {string} ISO-639-1 language code
+	*/
 	detectLanguage() {
+		const urlLang = new URLSearchParams(document.location.search).get('locale');
+		if (urlLang) return urlLang.toLowerCase();
+
 		const storedLang = localStorage.getItem('language_store_key');
 		if (storedLang) return storedLang.toLowerCase();
+
 		return navigator.language.split('-')[0].toLowerCase();
 	}
 

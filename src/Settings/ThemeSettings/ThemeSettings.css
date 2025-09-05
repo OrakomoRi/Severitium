@@ -69,7 +69,7 @@
 	outline: none;
 	box-shadow: none;
 	margin: 0;
-	padding: .25em;
+	padding: .75em;
 	font-size: inherit;
 	border-radius: var(--severitium-border-radius);
 	display: flex;
@@ -162,6 +162,35 @@
 
 .SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-redActionButton > svg {
 	fill: var(--severitium-red-button-color);
+}
+
+/* Theme settings gold action button */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-goldActionButton {
+	background: var(--severitium-gold-button-background);
+	border: var(--severitium-gold-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-goldActionButton:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-gold-button-background);
+	border: var(--severitium-gold-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-goldActionButton > span {
+	color: var(--severitium-gold-button-color);
+}
+
+/* Button icon */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-goldActionButton > svg {
+	fill: var(--severitium-gold-button-color);
 }
 
 /* Settings input */
