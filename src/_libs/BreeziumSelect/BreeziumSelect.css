@@ -24,7 +24,7 @@
 	--breezium-select-scroll-track-background: Background color of the scrollbar track (default: rgba(255, 255, 255, .1)).
 	--breezium-select-scroll-thumb-background: Background color of the scrollbar thumb (default: rgba(255, 255, 255, .3)).
 	--breezium-select-scroll-thumb-hover-background: Background color of the scrollbar thumb on hover (default: rgba(255, 255, 255, .5)).
-	--breezium-min-width: Min width for the selected element (default: 8rem).
+	--breezium-min-width: Min width for the selected element (default: 5rem).
 	--breezium-z-index: Z-index for the dropdown (default: 20).
 	--breezium-focus-ring-color: Focus ring color (default: rgba(255,255,255,.7)).
 	--breezium-transition-duration: Base transition duration (default: .2s).
@@ -47,8 +47,12 @@
 
 /* Selected (header) */
 .breezium-select .breezium-selected {
-	width: max(var(--breezium-select-selected-width, 5rem), var(--breezium-min-width, 8rem));
-	height: var(--breezium-select-option-height, 2.5rem);
+	--sel-w: var(--breezium-select-selected-width, 8rem);
+	--sel-h: var(--breezium-select-option-height, 2.5rem);
+
+	min-width: var(--breezium-min-width, 5rem);
+	width: var(--sel-w);
+	height: var(--sel-h);
 	padding: var(--breezium-padding, .5rem 1rem);
 	background-color: var(--breezium-bg-color, rgba(30, 30, 30, .25));
 	-webkit-backdrop-filter: var(--breezium-backdrop-filter, blur(.25rem));
@@ -58,7 +62,6 @@
 	text-align: center;
 	color: var(--breezium-text-color, #fff);
 	font-size: var(--breezium-font-size, 1rem);
-	line-height: calc(var(--breezium-select-option-height, 2.5rem) - 2 * var(--breezium-border-width, .1rem));
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -80,11 +83,11 @@
 /* Options panel (dropdown) */
 .breezium-select .breezium-options {
 	position: absolute;
-	top: 100%;
-	/* JS may override top/bottom for drop-up; this is the default */
 	left: 0;
 	right: 0;
-	max-height: var(--breezium-select-options-max-height, 10rem);
+	display: none;
+	flex-direction: column;
+	max-height: var(--breezium-select-options-max-height, 12rem);
 	-webkit-backdrop-filter: var(--breezium-backdrop-filter, blur(.25rem));
 	backdrop-filter: var(--breezium-backdrop-filter, blur(.25rem));
 	border-radius: var(--breezium-border-radius, .25rem);
@@ -97,18 +100,21 @@
 	will-change: transform, opacity;
 }
 
+/* Down/up positioning*/
+.breezium-select.drop-down .breezium-options {
+	top: calc(100% + .25rem);
+	bottom: auto;
+}
+
+.breezium-select.drop-up .breezium-options {
+	bottom: calc(100% + .25rem);
+	top: auto;
+}
+
 /* Opened state: layout + subtle animation */
 .breezium-select.show .breezium-options {
 	display: flex;
-	flex-direction: column;
-	margin-top: var(--breezium-options-margin-top, .25rem);
 	animation: breezium-fade-in var(--breezium-transition-duration, .2s) ease-out;
-}
-
-/* “Drop-up” spacing (JS toggles .drop-up/.drop-down) */
-.breezium-select.drop-up .breezium-options {
-	margin-top: 0;
-	margin-bottom: var(--breezium-options-margin-bottom, .25rem);
 }
 
 /* Option */
@@ -135,15 +141,15 @@
 }
 
 /* Selected option (visual hint) */
-.breezium-select .breezium-option.is-selected {
-	background-color: color-mix(in srgb, var(--breezium-option-bg-color, rgba(30, 30, 30, .25)) 75%, #fff 25%);
+.breezium-option.is-selected {
+	background-color: color-mix(in srgb, var(--breezium-option-bg-color, rgba(30, 30, 30, .25)) 70%, #fff 30%);
 }
 
 /* Disabled option */
 .breezium-select .breezium-option.is-disabled {
-	opacity: .55;
-	cursor: not-allowed;
+	opacity: .5;
 	filter: grayscale(20%);
+	pointer-events: none;
 }
 
 /* Scrollbar (WebKit) */
