@@ -1894,5 +1894,11 @@
     "date": "2025-09-05",
     "comment": "1.7.2+build127 feat: changed default theme css variables",
     "hash": "170600d8da5688da479c9f28bfd568e0f36c3978"
+  },
+  {
+    "version": "1.7.2+build128",
+    "date": "2025-09-05",
+    "comment": "1.7.2+build128 feat: updated behaviour of default theme saving",
+    "hash": "0fbdee4bba3c673460a82c7283a35d348d4f0999"
   }
 ]
