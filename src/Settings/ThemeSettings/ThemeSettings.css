@@ -22,6 +22,7 @@
 	font-family: BaseFontBold, FallbackFontBold;
 	font-size: 1em;
 	color: var(--severitium-white-text-color);
+	background-color: var(--severitium-dark-transparent-background2);
 }
 
 /* Active selected item (not opened clan chat) */
@@ -49,6 +50,13 @@
 	margin: 0;
 	font-size: inherit;
 	border-radius: var(--severitium-border-radius);
+}
+
+/* Button text */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeActionButton > span {
+	font-family: BaseFontBold, FallbackFontBold;
+	font-size: 1em;
 }
 
 /* Theme settings green action button */

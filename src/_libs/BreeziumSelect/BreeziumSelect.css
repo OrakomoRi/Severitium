@@ -24,21 +24,30 @@
 	--breezium-select-scroll-track-background: Background color of the scrollbar track (default: rgba(255, 255, 255, .1)).
 	--breezium-select-scroll-thumb-background: Background color of the scrollbar thumb (default: rgba(255, 255, 255, .3)).
 	--breezium-select-scroll-thumb-hover-background: Background color of the scrollbar thumb on hover (default: rgba(255, 255, 255, .5)).
+	--breezium-min-width: Min width for the selected element (default: 8rem).
+	--breezium-z-index: Z-index for the dropdown (default: 20).
+	--breezium-focus-ring-color: Focus ring color (default: rgba(255,255,255,.7)).
+	--breezium-transition-duration: Base transition duration (default: .2s).
+	--breezium-options-margin-bottom: Spacing when opened upward (default: .25rem).
 */
 
+/* Layout containment for fewer repaints */
 .breezium-select,
 .breezium-select * {
 	box-sizing: border-box;
 }
 
+/* Root container */
 .breezium-select {
 	position: relative;
 	cursor: pointer;
 	width: fit-content;
+	contain: layout paint;
 }
 
+/* Selected (header) */
 .breezium-select .breezium-selected {
-	width: var(--breezium-select-selected-width, 5rem);
+	width: max(var(--breezium-select-selected-width, 5rem), var(--breezium-min-width, 8rem));
 	height: var(--breezium-select-option-height, 2.5rem);
 	padding: var(--breezium-padding, .5rem 1rem);
 	background-color: var(--breezium-bg-color, rgba(30, 30, 30, .25));
@@ -49,22 +58,32 @@
 	text-align: center;
 	color: var(--breezium-text-color, #fff);
 	font-size: var(--breezium-font-size, 1rem);
+	line-height: calc(var(--breezium-select-option-height, 2.5rem) - 2 * var(--breezium-border-width, .1rem));
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	transition: background-color var(--breezium-background-hover-transition-time, .2s) ease;
+	transition: background-color var(--breezium-transition-duration, .2s) ease;
+	outline: none;
 }
 
+/* Hover on header */
 .breezium-select.show .breezium-selected:hover,
 .breezium-select .breezium-selected:hover {
 	background-color: var(--breezium-hover-bg-color, rgba(100, 100, 100, .25));
 }
 
+/* Accessible focus ring */
+.breezium-select .breezium-selected:focus-visible {
+	box-shadow: 0 0 0 .15rem var(--breezium-focus-ring-color, rgba(255, 255, 255, .7));
+}
+
+/* Options panel (dropdown) */
 .breezium-select .breezium-options {
 	position: absolute;
 	top: 100%;
+	/* JS may override top/bottom for drop-up; this is the default */
 	left: 0;
-	width: 100%;
+	right: 0;
 	max-height: var(--breezium-select-options-max-height, 10rem);
 	-webkit-backdrop-filter: var(--breezium-backdrop-filter, blur(.25rem));
 	backdrop-filter: var(--breezium-backdrop-filter, blur(.25rem));
@@ -72,19 +91,27 @@
 	border: var(--breezium-border-width, .1rem) solid var(--breezium-border-color, rgba(255, 255, 255, .25));
 	display: none;
 	background-color: var(--breezium-bg-color, rgba(30, 30, 30, .25));
-	z-index: 10;
+	z-index: var(--breezium-z-index, 20);
 	box-shadow: var(--breezium-box-shadow, 0 .25rem .5rem rgba(0, 0, 0, .25));
 	overflow: hidden auto;
+	will-change: transform, opacity;
 }
 
+/* Opened state: layout + subtle animation */
 .breezium-select.show .breezium-options {
-	margin-top: var(--breezium-options-margin-top, 0.25rem);
 	display: flex;
 	flex-direction: column;
-	scrollbar-width: thin;
-	scrollbar-color: var(--breezium-select-scroll-thumb-background, rgba(255, 255, 255, .3)) var(--breezium-select-scroll-track-background, rgba(255, 255, 255, .1));
+	margin-top: var(--breezium-options-margin-top, .25rem);
+	animation: breezium-fade-in var(--breezium-transition-duration, .2s) ease-out;
 }
 
+/* “Drop-up” spacing (JS toggles .drop-up/.drop-down) */
+.breezium-select.drop-up .breezium-options {
+	margin-top: 0;
+	margin-bottom: var(--breezium-options-margin-bottom, .25rem);
+}
+
+/* Option */
 .breezium-select .breezium-option {
 	max-width: 100%;
 	height: var(--breezium-select-option-height, 2.5rem);
@@ -99,14 +126,27 @@
 	white-space: nowrap;
 	font-size: var(--breezium-font-size, 1rem);
 	text-overflow: ellipsis;
-	transition: background-color var(--breezium-background-hover-transition-time, .2s) ease;
+	transition: background-color var(--breezium-transition-duration, .2s) ease;
 }
 
+/* Hover */
 .breezium-select .breezium-option:hover {
 	background-color: var(--breezium-option-hover-bg-color, rgba(150, 150, 150, .25));
-	transition: background-color .2s ease;
 }
 
+/* Selected option (visual hint) */
+.breezium-select .breezium-option.is-selected {
+	background-color: color-mix(in srgb, var(--breezium-option-bg-color, rgba(30, 30, 30, .25)) 75%, #fff 25%);
+}
+
+/* Disabled option */
+.breezium-select .breezium-option.is-disabled {
+	opacity: .55;
+	cursor: not-allowed;
+	filter: grayscale(20%);
+}
+
+/* Scrollbar (WebKit) */
 .breezium-select .breezium-options::-webkit-scrollbar {
 	width: var(--breezium-select-scroll-width, .5rem);
 }
@@ -117,10 +157,40 @@
 
 .breezium-select .breezium-options::-webkit-scrollbar-thumb {
 	background: var(--breezium-select-scroll-thumb-background, rgba(255, 255, 255, .3));
-	-webkit-transition: background var(--breezium-background-hover-transition-time, .2s) ease;
-	transition: background var(--breezium-background-hover-transition-time, .2s) ease;
+	transition: background var(--breezium-transition-duration, .2s) ease;
 }
 
 .breezium-select .breezium-options::-webkit-scrollbar-thumb:hover {
 	background: var(--breezium-select-scroll-thumb-hover-background, rgba(255, 255, 255, .5));
+}
+
+/* Scrollbar (Firefox) */
+.breezium-select.show .breezium-options {
+	scrollbar-width: thin;
+	scrollbar-color: var(--breezium-select-scroll-thumb-background, rgba(255, 255, 255, .3)) var(--breezium-select-scroll-track-background, rgba(255, 255, 255, .1));
+}
+
+/* Keyframes (subtle) */
+@keyframes breezium-fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(-.15rem);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Motion reduction */
+@media (prefers-reduced-motion: reduce) {
+
+	.breezium-select .breezium-selected,
+	.breezium-select .breezium-option,
+	.breezium-select.show .breezium-options,
+	.breezium-select .breezium-options::-webkit-scrollbar-thumb {
+		transition: none !important;
+		animation: none !important;
+	}
 }
