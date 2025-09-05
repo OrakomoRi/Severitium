@@ -6,7 +6,8 @@
 
 .SettingsComponentStyle-blockContentOptions .breezium-select {
 	--breezium-bg-color: var(--severitium-dark-transparent-background4);
-	--breezium-hover-bg-color: var(--severitium-light-transparent-background3);
+	--breezium-hover-bg-color: var(--severitium-light-transparent-background2);
+	--breezium-option-hover-bg-color: var(--severitium-light-transparent-background3);
 	--breezium-option-bg-color: transparent;
 	--breezium-border-width: .075rem;
 	--breezium-border-radius: .25rem;
