@@ -234,37 +234,39 @@
 .SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeNameInput {
     border: none;
     background: transparent;
+	background-color: transparent;
     outline: none;
-    color: var(--severitium-white-text-color, #fff);
-    font-family: inherit;
-    transition: all 0.2s ease;
+    color: var(--severitium-white-text-color);
+    font-family: BaseFontBold, FallbackFontBold;
     cursor: pointer;
     font-weight: bold;
     font-size: 1.25em;
+	padding: .5em .8em;
+	border-radius: var(--severitium-border-radius);
+	border: .1em solid transparent;
+    transition: background-color .2s ease, border-color .2s ease, color .2s ease;
 }
 
 /* Input when editing enabled */
 
 .SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeNameInput.editing {
-    background: var(--severitium-dark-transparent-background1);
-    border: .1em solid var(--severitium-light-gray-color);
-    border-radius: var(--severitium-border-radius);
-    padding: .5em .8em;
-    font-weight: normal;
+    background-color: var(--severitium-dark-transparent-background1);
+    border-color: var(--severitium-light-gray-color);
     cursor: text;
 }
 
 /* Input when focused */
 
 .SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeNameInput.editing:focus {
-    border-color: var(--severitium-main-color);
-    background: var(--severitium-dark-transparent-background2);
+    background-color: var(--severitium-dark-transparent-background2);
+    border-color: var(--severitium-white-color);
 }
 
 /* Disabled theme name input */
 
 .SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeNameInput.disabled {
     cursor: default;
+	pointer-events: none;
 }
 
 /* Theme header actions */

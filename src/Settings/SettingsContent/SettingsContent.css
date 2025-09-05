@@ -196,13 +196,15 @@
 
 /* Settings title text */
 
-p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root) {
+[class*='settings'i][class*='textheadlineoptions'i]:not(:root) {
 	height: fit-content;
 	font-size: 1.25em;
 	color: var(--severitium-white-color);
 	text-transform: uppercase;
 	font-weight: bold;
 	letter-spacing: .05em;
+	margin: 0;
+	margin-bottom: 1em;
 }
 
 /* Input label */
