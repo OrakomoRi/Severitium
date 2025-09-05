@@ -60,6 +60,52 @@
 	font-size: 1em;
 }
 
+/* Theme settings square button component */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeSquareActionButton {
+	height: 3.125em;
+	aspect-ratio: 1 / 1;
+	cursor: pointer;
+	outline: none;
+	box-shadow: none;
+	margin: 0;
+	padding: .25em;
+	font-size: inherit;
+	border-radius: var(--severitium-border-radius);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Button icon */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeSquareActionButton > svg {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: contain;
+	pointer-events: none;
+	user-select: none;
+}
+
+/* Theme settings disabled button */
+
+.SettingsComponentStyle-blockContentOptions div.ThemeButtonComponentStyle-disabled:not(:root) {
+	pointer-events: none;
+	background-color: var(--severitium-light-transparent-background3);
+	border-radius: var(--severitium-border-radius);
+	border: transparent solid .1em;
+	outline: none;
+	box-shadow: none;
+}
+
+/* Button text */
+
+.SettingsComponentStyle-blockContentOptions div.ThemeButtonComponentStyle-disabled:not(:root) > span {
+	color: var(--severitium-white-text-color);
+	text-shadow: none;
+	opacity: .25;
+}
+
 /* Theme settings green action button */
 
 .SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-greenActionButton {
@@ -83,6 +129,12 @@
 	color: var(--severitium-green-button-color);
 }
 
+/* Button icon */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-greenActionButton > svg {
+	fill: var(--severitium-green-button-color);
+}
+
 /* Theme settings red action button */
 
 .SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-redActionButton {
@@ -104,6 +156,12 @@
 
 .SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-redActionButton > span {
 	color: var(--severitium-red-button-color);
+}
+
+/* Button icon */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-redActionButton > svg {
+	fill: var(--severitium-red-button-color);
 }
 
 /* Settings input */
@@ -140,4 +198,33 @@
 .SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeInput:focus-within {
 	background-color: var(--severitium-light-transparent-background3);
 	border: var(--severitium-white-color) solid .1em;
+}
+
+/* Theme settings tab and all elements inside it */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeSettingsTab,
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeSettingsTab * {
+	box-sizing: border-box;
+}
+
+/* Theme settings tab */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeSettingsTab {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+}
+
+/* Theme settings row */
+
+.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeRow {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
 }

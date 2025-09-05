@@ -194,7 +194,7 @@
 	gap: 1em;
 }
 
-/* Settings header text */
+/* Settings title text */
 
 p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root) {
 	height: fit-content;
