@@ -1936,5 +1936,11 @@
     "date": "2025-09-06",
     "comment": "1.7.2+build134 feat: updated theme settings, loading screen (locale finding)",
     "hash": "493a4d63d6e3ccf6e975dbbc0600af04b1f3ccd9"
+  },
+  {
+    "version": "1.7.2+build135",
+    "date": "2025-09-06",
+    "comment": "1.7.2+build135 feat: updated settings content, modal styles",
+    "hash": "8bb2a4def044f56b17ffec741489da23b71b5fd9"
   }
 ]
