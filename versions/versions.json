@@ -1966,5 +1966,11 @@
     "date": "2025-09-07",
     "comment": "1.7.2+build139 feat: updated theme settings",
     "hash": "9b329e0d8752df52c1ab1fdeb504650583c1e3f3"
+  },
+  {
+    "version": "1.7.2+build140",
+    "date": "2025-09-07",
+    "comment": "1.7.2+build140 feat: updated settings content",
+    "hash": "e9e09a8a9d6264f687bf5f83c1c5a52abcf5bc21"
   }
 ]
