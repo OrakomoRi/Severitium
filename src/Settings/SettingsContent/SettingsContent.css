@@ -260,7 +260,14 @@
 
 /* Information text */
 
-.GameSettingsStyle-notificationTextBlock > span.GameSettingsStyle-notificationText {
+.GameSettingsStyle-notificationTextBlock span.GameSettingsStyle-notificationText {
+	font-size: 1em;
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* Error information text text */
+
+.GameSettingsStyle-notificationTextBlock:has(> div) > span.GameSettingsStyle-notificationText {
 	color: var(--severitium-red-text-color);
 }
 
