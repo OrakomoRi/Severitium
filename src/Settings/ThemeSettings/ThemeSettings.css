@@ -545,6 +545,8 @@ span.ThemeModalComponentStyle-highlightedText {
 	pointer-events: none;
 }
 
+/* Coloris button (over input field) */
+
 .clr-field button {
 	width: auto;
 	height: 100%;
