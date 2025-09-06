@@ -286,6 +286,8 @@
 /* Theme header */
 
 .SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-row.ThemeSettingsComponentStyle-header {
+	width: 100%;
+	height: 3.125em;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
