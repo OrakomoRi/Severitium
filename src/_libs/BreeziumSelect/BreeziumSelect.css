@@ -47,6 +47,9 @@
 	min-width: var(--breezium-min-width, 5rem);
 	width: var(--breezium-select-selected-width, 5rem);
 	height: var(--breezium-select-option-height, 2.5rem);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	padding: var(--breezium-padding, .5rem 1rem);
 	background-color: var(--breezium-bg-color, rgba(30, 30, 30, .25));
 	-webkit-backdrop-filter: var(--breezium-backdrop-filter, blur(.25rem));
