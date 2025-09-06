@@ -201,7 +201,7 @@
 	font-size: 1.25em;
 	color: var(--severitium-white-color);
 	text-transform: uppercase;
-	font-weight: bold;
+	font-family: BaseFontBold, FallbackFontBold;
 	letter-spacing: .05em;
 	margin: 0;
 	margin-bottom: 1em;

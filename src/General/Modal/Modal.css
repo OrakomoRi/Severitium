@@ -44,7 +44,7 @@
 
 .DialogContainerComponentStyle-contentContainer span,
 .ModalStyle-rootHover > div > div:has(> [class*='head'i]) + div > div > div {
-	color: var(--severitium-white-text-color) !important;
+	color: var(--severitium-light-gray-text-color) !important;
 }
 
 /* Modal disabled button */
