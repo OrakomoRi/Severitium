@@ -1954,5 +1954,11 @@
     "date": "2025-09-07",
     "comment": "Merge branch 'main' of https://github.com/OrakomoRi/Severitium",
     "hash": "e74c608c6c6bcb036c8f74d3377caaa72090f039"
+  },
+  {
+    "version": "1.7.2+build138",
+    "date": "2025-09-07",
+    "comment": "1.7.2+build138 feat: updated theme settings",
+    "hash": "a93bd05f66434929fe15e99f63c3585fe26775dd"
   }
 ]
