@@ -1,3 +1,10 @@
+/* Settings container and all elements inside it */
+
+.SettingsComponentStyle-blockContentOptions,
+.SettingsComponentStyle-blockContentOptions * {
+	box-sizing: border-box;
+}
+
 /* Navigation menu container */
 
 .SettingsMenuComponentStyle-blockMenuOptions {
@@ -564,7 +571,6 @@
 
 .AccountSettingsComponentStyle-containerFormOptions > form > .AccountSettingsComponentStyle-textHeadlineOptions + div:has(> span) {
 	width: 100%;
-	box-sizing: border-box;
 	margin: 0;
 	margin-bottom: 1em;
 	padding: 1em;
@@ -594,13 +600,6 @@
 
 p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root)[class*='ksc'i] {
 	color: var(--severitium-red-text-color);
-}
-
-/* Email and captcha block and all elements inside it */
-
-.AccountSettingsComponentStyle-containerFormOptions .AccountSettingsComponentStyle-blockProtectAccount,
-.AccountSettingsComponentStyle-containerFormOptions .AccountSettingsComponentStyle-blockProtectAccount * {
-	box-sizing: border-box;
 }
 
 /* Email input */
@@ -1196,6 +1195,24 @@ p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root)[class*='ksc'i] {
 
 /* TWITCH SECTION */
 
+/* Whole block container */
+
+.TwitchSettingsRendersStyle-TwitchTextAndButtonBlock {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1em;
+	flex-wrap: nowrap;
+	margin: 0;
+}
+
+/* Text and header container */
+
+.TwitchSettingsRendersStyle-defaultTextContainer {
+	width: 100%;
+}
+
 /* Default text */
 
 .TwitchSettingsRendersStyle-defaultTextContainer span {
@@ -1217,6 +1234,8 @@ p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root)[class*='ksc'i] {
 /* Link twitch button */
 
 .TwitchSettingsRendersStyle-defaultTextContainer + .TwitchSettingsRendersStyle-button {
+	min-width: none;
+	width: 100%;
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -1355,7 +1374,6 @@ p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root)[class*='ksc'i] {
 /* All elements inside the second step */
 
 .SecuritySettingsComponentStyle-secondStepContent * {
-	box-sizing: border-box;
 	height: fit-content;
 	margin: 0;
 }
@@ -1367,7 +1385,6 @@ p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root)[class*='ksc'i] {
 	height: auto;
 	max-height: 15em;
 	aspect-ratio: 1 / 1;
-	box-sizing: border-box;
 	border-radius: var(--severitium-border-radius);
 }
 
@@ -1377,7 +1394,6 @@ p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root)[class*='ksc'i] {
 	max-width: 14em;
 	max-height: 14em;
 	object-fit: contain;
-	box-sizing: border-box;
 }
 
 /* Secret code */
@@ -1436,7 +1452,6 @@ p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root)[class*='ksc'i] {
 /* All elements inside code input block */
 
 .SecuritySettingsComponentStyle-codeInputBlock * {
-	box-sizing: border-box;
 	margin: 0;
 }
 
