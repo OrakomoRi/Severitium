@@ -5,12 +5,13 @@
 /* Breezium container */
 
 .SettingsComponentStyle-blockContentOptions .breezium-select {
+	--breezium-select-option-height: 3.125em;
 	--breezium-bg-color: var(--severitium-dark-transparent-background4);
 	--breezium-hover-bg-color: var(--severitium-light-transparent-background3);
 	--breezium-option-hover-bg-color: var(--severitium-light-transparent-background3);
 	--breezium-option-bg-color: transparent;
-	--breezium-border-width: .075rem;
-	--breezium-border-radius: .25rem;
+	--breezium-border-width: .1rem;
+	--breezium-border-radius: var(--severitium-border-radius);
 	--breezium-border-color: var(--severitium-gray-color);
 	--breezium-backdrop-filter: blur(5rem);
 	width: 100%;
@@ -41,7 +42,7 @@
 
 /* Theme settings button component */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeActionButton {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-actionButton {
 	min-width: 15em;
 	width: auto;
 	height: 3.125em;
@@ -53,16 +54,9 @@
 	border-radius: var(--severitium-border-radius);
 }
 
-/* Button text */
-
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeActionButton > span {
-	font-family: BaseFontBold, FallbackFontBold;
-	font-size: 1em;
-}
-
 /* Theme settings square button component */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeSquareActionButton {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-squareActionButton {
 	height: 3.125em;
 	aspect-ratio: 1 / 1;
 	cursor: pointer;
@@ -77,14 +71,45 @@
 	justify-content: center;
 }
 
+/* Hidden button */
+
+.ThemeSettingsComponentStyle-actionButton.hidden,
+.ThemeSettingsComponentStyle-squareActionButton.hidden {
+	display: none;
+}
+
+/* Visible button */
+
+.ThemeSettingsComponentStyle-actionButton.visible,
+.ThemeSettingsComponentStyle-squareActionButton.visible {
+	display: flex;
+}
+
+/* Button text */
+
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-actionButton > span {
+	font-family: BaseFontBold, FallbackFontBold;
+	font-size: 1em;
+}
+
 /* Button icon */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeSquareActionButton > svg {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-squareActionButton > svg {
 	width: 100%;
 	aspect-ratio: 1 / 1;
-	object-fit: contain;
+	-o-object-fit: contain;
+	   object-fit: contain;
 	pointer-events: none;
-	user-select: none;
+	-webkit-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+}
+
+/* New theme and delete theme buttons */
+
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-actionButton[data-button='new-theme-button'],
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-actionButton[data-button='delete-theme-button'] {
+	width: 100%;
 }
 
 /* Theme settings disabled button */
@@ -108,7 +133,7 @@
 
 /* Theme settings green action button */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-greenActionButton {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-greenActionButton {
 	background: var(--severitium-green-button-background);
 	border: var(--severitium-green-button-border-color) solid .1em;
 	transition: border .2s ease;
@@ -116,7 +141,7 @@
 
 /* Button on hover */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-greenActionButton:hover {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-greenActionButton:hover {
 	outline: none;
 	box-shadow: none;
 	background: var(--severitium-green-button-background);
@@ -125,19 +150,19 @@
 
 /* Button text */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-greenActionButton > span {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-greenActionButton > span {
 	color: var(--severitium-green-button-color);
 }
 
 /* Button icon */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-greenActionButton > svg {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-greenActionButton > svg {
 	fill: var(--severitium-green-button-color);
 }
 
 /* Theme settings red action button */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-redActionButton {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-redActionButton {
 	background: var(--severitium-red-button-background);
 	border: var(--severitium-red-button-border-color) solid .1em;
 	transition: border .2s ease;
@@ -145,7 +170,7 @@
 
 /* Button on hover */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-redActionButton:hover {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-redActionButton:hover {
 	outline: none;
 	box-shadow: none;
 	background: var(--severitium-red-button-background);
@@ -154,19 +179,19 @@
 
 /* Button text */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-redActionButton > span {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-redActionButton > span {
 	color: var(--severitium-red-button-color);
 }
 
 /* Button icon */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-redActionButton > svg {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-redActionButton > svg {
 	fill: var(--severitium-red-button-color);
 }
 
 /* Theme settings gold action button */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-goldActionButton {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-goldActionButton {
 	background: var(--severitium-gold-button-background);
 	border: var(--severitium-gold-button-border-color) solid .1em;
 	transition: border .2s ease;
@@ -174,7 +199,7 @@
 
 /* Button on hover */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-goldActionButton:hover {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-goldActionButton:hover {
 	outline: none;
 	box-shadow: none;
 	background: var(--severitium-gold-button-background);
@@ -183,19 +208,19 @@
 
 /* Button text */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-goldActionButton > span {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-goldActionButton > span {
 	color: var(--severitium-gold-button-color);
 }
 
 /* Button icon */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-goldActionButton > svg {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-goldActionButton > svg {
 	fill: var(--severitium-gold-button-color);
 }
 
 /* Settings input */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeInput {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-input {
 	min-width: 15em;
 	width: 100%;
 	height: 3.125em;
@@ -216,7 +241,7 @@
 
 /* Input on hover */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeInput:hover {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-input:hover {
 	outline: none;
 	background-color: var(--severitium-light-transparent-background3);
 	border: var(--severitium-light-gray-color) solid .1em;
@@ -224,21 +249,21 @@
 
 /* Input on focus */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeInput:focus-within {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-input:focus-within {
 	background-color: var(--severitium-light-transparent-background3);
 	border: var(--severitium-white-color) solid .1em;
 }
 
 /* Theme settings tab and all elements inside it */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeSettingsTab,
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeSettingsTab * {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-settingsTab,
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-settingsTab * {
 	box-sizing: border-box;
 }
 
 /* Theme settings tab */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeSettingsTab {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-settingsTab {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -249,7 +274,7 @@
 
 /* Theme settings row */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeRow {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-row {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -258,49 +283,271 @@
 	gap: 1em;
 }
 
+/* Theme header */
+
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-row.ThemeSettingsComponentStyle-header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin: 4em 0 1em 0;
+}
+
 /* Theme name input styling */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeNameInput {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-nameInput {
+	width: 100%;
+	height: 100%;
     border: none;
     background: transparent;
 	background-color: transparent;
     outline: none;
     color: var(--severitium-white-text-color);
     font-family: BaseFontBold, FallbackFontBold;
-    cursor: pointer;
+	padding: 0;
     font-weight: bold;
     font-size: 1.25em;
-	padding: .5em .8em;
+	text-transform: uppercase;
+	letter-spacing: .1rem;
+	text-overflow: ellipsis;
 	border-radius: var(--severitium-border-radius);
-	border: .1em solid transparent;
-    transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+    transition: background-color .2s ease, color .2s ease;
 }
 
 /* Input when editing enabled */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeNameInput.editing {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-nameInput.editing {
+	width: 100%;
+	height: 100%;
     background-color: var(--severitium-dark-transparent-background1);
-    border-color: var(--severitium-light-gray-color);
     cursor: text;
 }
 
 /* Input when focused */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeNameInput.editing:focus {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-nameInput.editing:focus {
+	width: 100%;
+	height: 100%;
     background-color: var(--severitium-dark-transparent-background2);
-    border-color: var(--severitium-white-color);
 }
 
 /* Disabled theme name input */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeNameInput.disabled {
-    cursor: default;
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-nameInput.disabled {
+	width: 100%;
+	height: 100%;
 	pointer-events: none;
 }
 
 /* Theme header actions */
 
-.SettingsComponentStyle-blockContentOptions .SettingsComponentStyle-themeHeaderActions {
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-headerActions {
     display: flex;
     gap: .5em;
+}
+
+/* Theme modal overlay */
+
+.ThemeModalComponentStyle-RootHover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	background: var(--severitium-dark-transparent-background4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity .2s ease;
+}
+
+/* Shown modal */
+
+.ThemeModalComponentStyle-RootHover.show {
+	opacity: 1;
+	pointer-events: all;
+}
+
+/* Modal container and all elements inside it */
+
+.ThemeModalComponentStyle-container,
+.ThemeModalComponentStyle-container * {
+	box-sizing: border-box;
+	font-family: BaseFontRegular, FallbackFontRegular;
+}
+
+/* Modal container */
+
+.ThemeModalComponentStyle-container {
+	position: relative;
+	min-width: 30em;
+	width: auto;
+	max-width: 35em;
+	min-height: 15em;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: space-between;
+	gap: 1.5em;
+	padding: 2.5em;
+	background-color: var(--severitium-dark-transparent-background1);
+	-webkit-backdrop-filter: blur(.5em);
+			backdrop-filter: blur(.5em);
+	outline: var(--severitium-gray-color) solid .1em;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Modal title */
+
+.ThemeModalComponentStyle-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: unset;
+	color: var(--severitium-white-text-color);
+	font-size: 1.5em;
+	margin: 0;
+}
+
+/* Modal text */
+
+.ThemeModalComponentStyle-text {
+	color: var(--severitium-light-gray-text-color);
+	font-size: 1em;
+	line-height: 1.4;
+}
+
+/* Modal highlighted text */
+
+span.ThemeModalComponentStyle-highlightedText {
+	color: var(--severitium-main-color);
+}
+
+/* Modal buttons container */
+
+.ThemeModalComponentStyle-actionsContainer {
+	display: flex;
+	flex-direction: row;
+	gap: 1.5em;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Modal button */
+
+.ThemeModalComponentStyle-actionButton {
+	min-width: 40%;
+	min-height: 3em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	border-radius: var(--severitium-border-radius, 4px);
+	font-family: BaseFontBold, FallbackFontBold;
+	font-size: 1em;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+/* Modal gray button */
+
+.ThemeModalComponentStyle-grayActionButton {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-gray-button-background);
+	border: var(--severitium-gray-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.ThemeModalComponentStyle-grayActionButton:hover {
+	border: var(--severitium-gray-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.ThemeModalComponentStyle-grayActionButton > span {
+	color: var(--severitium-gray-button-color);
+}
+
+/* Modal red button */
+
+.ThemeModalComponentStyle-redActionButton {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-red-button-background);
+	border: var(--severitium-red-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.ThemeModalComponentStyle-redActionButton:hover {
+	border: var(--severitium-red-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.ThemeModalComponentStyle-redActionButton > span {
+	color: var(--severitium-red-button-color);
+}
+
+/* Variables grid */
+
+.ThemeSettingsComponentStyle-variableGrid {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1em;
+	margin-top: 1em;
+}
+
+/* Input wrapper */
+
+.ThemeInputComponentStyle-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: .5em;
+}
+
+/* Input label */
+
+.ThemeInputComponentStyle-wrapper label {
+	font-family: BaseFontRegular, FallbackFontRegular;
+	font-size: 1em;
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Input with helper wrapper */
+
+.ThemeInputComponentStyle-inputWithHelper {
+	position: relative;
+}
+
+/* Input helper */
+
+.ThemeInputComponentStyle-inputHelper {
+	position: absolute;
+	right: .75em;
+	top: 50%;
+	transform: translateY(-50%);
+	font-family: BaseFontRegular, FallbackFontRegular;
+	color: var(--severitium-light-gray-text-color);
+	pointer-events: none;
+}
+
+.clr-field button {
+	width: auto;
+	height: 100%;
+	aspect-ratio: 1 / 1;
+	border-radius: var(--severitium-border-radius);
 }
