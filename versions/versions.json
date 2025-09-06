@@ -1942,5 +1942,11 @@
     "date": "2025-09-06",
     "comment": "1.7.2+build135 feat: updated settings content, modal styles",
     "hash": "8bb2a4def044f56b17ffec741489da23b71b5fd9"
+  },
+  {
+    "version": "1.7.2+build136",
+    "date": "2025-09-06",
+    "comment": "1.7.2+build136 feat: updated settings content",
+    "hash": "6fdc88311384aaa8d02e336108cdecbcc6625625"
   }
 ]
