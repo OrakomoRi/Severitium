@@ -1290,14 +1290,33 @@ p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root)[class*='ksc'i] {
 /* Two-factor authentification header text and options block */
 
 .SecuritySettingsComponentStyle-about2FaTextAndButtonBlock {
+	width: 100%;
 	height: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1em;
 	margin: 0;
 	margin-bottom: 1em;
+}
+
+/* Description block */
+
+.SecuritySettingsComponentStyle-about2FaTextAndButtonBlock div:has(> .SecuritySettingsComponentStyle-about2FaText) {
+	width: 50%;
+}
+
+/* Description text */
+
+.SecuritySettingsComponentStyle-about2FaTextAndButtonBlock .SecuritySettingsComponentStyle-about2FaText {
+	font-size: 1em;
+	color: var(--severitium-light-gray-text-color);
 }
 
 /* Security button (two-factor authentification) */
 
 .SecuritySettingsComponentStyle-button {
+	width: 50%;
 	outline: none;
 	box-shadow: none;
 	margin: 0;
