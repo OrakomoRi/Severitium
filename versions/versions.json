@@ -1984,5 +1984,11 @@
     "date": "2025-09-09",
     "comment": "1.7.2+build142 feat: updated settings content",
     "hash": "ec8106d3197191a851fd06b605b6a2f33e3f9da1"
+  },
+  {
+    "version": "1.7.2+build143",
+    "date": "2025-09-10",
+    "comment": "1.7.2+build143 feat: updated chat input",
+    "hash": "d334f0961b0a501572e0f55f3ff68c66bf067758"
   }
 ]
