@@ -243,6 +243,13 @@
 	margin-bottom: 1em;
 }
 
+/* Chat input container */
+
+div:has(> .ChatComponentStyle-sendButton) {
+	border: none;
+	border-top: var(--severitium-gray-color) .1em solid;
+}
+
 /* Chat input */
 
 .ChatComponentStyle-chatWindow input[type='text'] {
