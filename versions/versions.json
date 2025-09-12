@@ -1990,5 +1990,11 @@
     "date": "2025-09-10",
     "comment": "1.7.2+build143 feat: updated chat input",
     "hash": "d334f0961b0a501572e0f55f3ff68c66bf067758"
+  },
+  {
+    "version": "1.7.2+build144",
+    "date": "2025-09-12",
+    "comment": "1.7.2+build144 feat: updated footer menu",
+    "hash": "380196ae63296c7df1e5597db4a84a6543ff02df"
   }
 ]
