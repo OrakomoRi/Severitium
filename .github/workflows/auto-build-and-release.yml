@@ -70,8 +70,8 @@ jobs:
                   find src/_libs -name "*.css" ! -name "*.user.css" ! -name "*.min.css" 2>/dev/null \
                     | sort | xargs -r cat > "builds/$VERSION/style.release.css" || touch "builds/$VERSION/style.release.css"
                   
-                  # Then, collect all other files (excluding _Additional and _libs)
-                  find src -path "src/_Additional" -prune -o -path "src/_libs" -prune -o -name "*.css" ! -name "*.user.css" ! -name "*.min.css" -print \
+                  # Then, collect all other files (excluding _Additional, _libs, and Variables)
+                  find src -path "src/_Additional" -prune -o -path "src/_libs" -prune -o -path "src/Variables" -prune -o -name "*.css" ! -name "*.user.css" ! -name "*.min.css" -print \
                     | sort | xargs -r cat >> "builds/$VERSION/style.release.css"
                   
                   csso "builds/$VERSION/style.release.css" -o "builds/$VERSION/style.release.min.css"
