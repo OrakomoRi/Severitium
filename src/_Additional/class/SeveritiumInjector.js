@@ -38,7 +38,7 @@ class SeveritiumInjector {
 		const style = document.createElement('style');
 		let css = ':root {\n';
 		for (const [key, value] of Object.entries(theme || {})) {
-			css += `\t--${key}: ${value};\n`;
+			css += `\t${key}: ${value};\n`;
 		}
 		css += '}';
 		style.textContent = css;
