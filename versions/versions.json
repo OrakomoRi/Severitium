@@ -2008,5 +2008,11 @@
     "date": "2025-09-14",
     "comment": "1.7.2+build146 feat: updated theme settings, injector",
     "hash": "b6d0ccc6107cadc64720d71dc5eddad409834790"
+  },
+  {
+    "version": "1.7.2+build147",
+    "date": "2025-09-14",
+    "comment": "1.7.2+build147 feat: updated injector",
+    "hash": "8c3a409b26fd3193f19d111924048c0539492fc2"
   }
 ]
