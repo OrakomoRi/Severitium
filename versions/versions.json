@@ -1996,5 +1996,11 @@
     "date": "2025-09-12",
     "comment": "1.7.2+build144 feat: updated footer menu",
     "hash": "380196ae63296c7df1e5597db4a84a6543ff02df"
+  },
+  {
+    "version": "1.7.2+build145",
+    "date": "2025-09-14",
+    "comment": "1.7.2+build145 feat: updated theme settings, main userscript",
+    "hash": "3aa35edc41536517fec4311c215ef26f213d48e4"
   }
 ]
