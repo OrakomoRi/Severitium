@@ -2020,5 +2020,11 @@
     "date": "2025-09-14",
     "comment": "1.7.2+build148 fix: file collection logic in auto-build workflow",
     "hash": "8b96d34fa20bb1f4de71523919ac3b243b4a5ef0"
+  },
+  {
+    "version": "1.7.2+build149",
+    "date": "2025-09-14",
+    "comment": "1.7.2+build149 fix: theme loading in the main userscript",
+    "hash": "19b92db3f26f0435c6005f90fd5cbe32825f8769"
   }
 ]
