@@ -2026,5 +2026,11 @@
     "date": "2025-09-14",
     "comment": "1.7.2+build149 fix: theme loading in the main userscript",
     "hash": "19b92db3f26f0435c6005f90fd5cbe32825f8769"
+  },
+  {
+    "version": "1.7.2+build150",
+    "date": "2025-09-14",
+    "comment": "1.7.2+build150 fix: fixed injector logic for theme integration",
+    "hash": "c71af87b6050bb7c62c1254b4b299d1de2298398"
   }
 ]
