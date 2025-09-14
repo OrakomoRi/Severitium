@@ -2014,5 +2014,11 @@
     "date": "2025-09-14",
     "comment": "1.7.2+build147 feat: updated injector",
     "hash": "8c3a409b26fd3193f19d111924048c0539492fc2"
+  },
+  {
+    "version": "1.7.2+build148",
+    "date": "2025-09-14",
+    "comment": "1.7.2+build148 fix: file collection logic in auto-build workflow",
+    "hash": "8b96d34fa20bb1f4de71523919ac3b243b4a5ef0"
   }
 ]
