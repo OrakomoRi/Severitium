@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build150
+// @version			1.7.2+build151
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -568,8 +568,11 @@
 	// Custom event listeners
 
 	window.addEventListener('theme:savethemes', () => {
-		logger.log('Theme saved (event handled)', 'debug');
-		// logger.log(`Themes updated. Total themes: ${Object.keys(themesData.themes).length}, Active: ${themesData.active}`, 'info');
+		const data = localStorage.getItem('SeveritiumThemes');
+		if (!data) return null;
+		const themesData = JSON.parse(data);
+		logger.log(`Themes updated. Total themes: ${Object.keys(themesData.themes).length}, Active: ${themesData.active}`, 'info');
+		GM_setValue('SeveritiumThemes', themesData);
 	});
 
 	(async () => {
