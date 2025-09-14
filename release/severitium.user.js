@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build144
+// @version			1.7.2+build145
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -564,6 +564,12 @@
 
 	// Expose minimal API
 	unsafeWindow.reloadSeveritiumResources = reloadResources;
+
+	// Custom event listeners
+
+	window.addEventListener('theme:savethemes', () => {
+		logger.log('Theme saved (event handled)', 'debug');
+	});
 
 	(async () => {
 		if (updateCheck) {

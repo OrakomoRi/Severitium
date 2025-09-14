@@ -254,6 +254,19 @@
 	border: var(--severitium-white-color) solid .1em;
 }
 
+/* Length input */
+
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-input[data-input-type='length'] {
+	cursor: text;
+}
+
+/* Color input */
+
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-input[data-input-type='color'] {
+	cursor: default;
+	user-select: none;
+}
+
 /* Theme settings tab and all elements inside it */
 
 .SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-settingsTab,
@@ -307,7 +320,7 @@
     color: var(--severitium-white-text-color);
     font-family: BaseFontBold, FallbackFontBold;
 	padding: 0;
-	padding: 0 0 0 1em;
+	padding: 0 1em;
     font-weight: bold;
     font-size: 1.25em;
 	text-transform: uppercase;
