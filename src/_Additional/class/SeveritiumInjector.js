@@ -33,7 +33,7 @@ class SeveritiumInjector {
 	 */
 	injectTheme(attributes = []) {
 		const active = this.Severitium.theme.active || 'default';
-		const theme = this.Severitium.theme.themes[active] || {};
+		const theme = this.Severitium.theme.themes[active].variables || {};
 
 		const style = document.createElement('style');
 		let css = ':root {\n';
