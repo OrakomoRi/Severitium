@@ -32,7 +32,7 @@ class SeveritiumInjector {
 	 * @param {Array<{ name: string, value: string }>} attributes - An array of attribute objects to apply to the injected <style> element.
 	 */
 	injectTheme(attributes = []) {
-		const active = this.Severitium.active || 'default';
+		const active = this.Severitium.theme.active || 'default';
 		const theme = this.Severitium.theme.themes[active] || {};
 
 		const style = document.createElement('style');

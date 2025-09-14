@@ -263,7 +263,7 @@
 /* Color input */
 
 .SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-input[data-input-type='color'] {
-	cursor: default;
+	cursor: pointer;
 	user-select: none;
 }
 
