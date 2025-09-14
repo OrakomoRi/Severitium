@@ -2002,5 +2002,11 @@
     "date": "2025-09-14",
     "comment": "1.7.2+build145 feat: updated theme settings, main userscript",
     "hash": "3aa35edc41536517fec4311c215ef26f213d48e4"
+  },
+  {
+    "version": "1.7.2+build146",
+    "date": "2025-09-14",
+    "comment": "1.7.2+build146 feat: updated theme settings, injector",
+    "hash": "b6d0ccc6107cadc64720d71dc5eddad409834790"
   }
 ]
