@@ -2038,5 +2038,11 @@
     "date": "2025-09-14",
     "comment": "1.7.2+build151 feat: update injector, updated main userscript to handle themes saving",
     "hash": "919ab1a283fe2543bc0c85c230fe0b146e3f15e8"
+  },
+  {
+    "version": "1.7.2+build152",
+    "date": "2025-09-14",
+    "comment": "1.7.2+build152 feat: rename theme storage keys",
+    "hash": "309975e1341dd0043f55bca8a4efc15020218217"
   }
 ]
