@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build151
+// @version			1.7.2+build152
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -345,7 +345,7 @@
 			if (!loadEverything && !loadOnlyImages) {
 				// Load all resources from cache if nothing changed
 				logger.log(`Loading resources from cache.`, 'info');
-				script.theme = GM_getValue('SeveritiumTheme', { active: 'default', themes: {} });
+				script.theme = GM_getValue('SeveritiumThemes', { active: 'default', themes: {} });
 				script.CSS = GM_getValue('SeveritiumCSS', {});
 				script.JS = GM_getValue('SeveritiumJS', {});
 				script.images = GM_getValue('SeveritiumImages', {});
@@ -353,7 +353,7 @@
 				logger.log(`Fetching ${loadOnlyImages ? 'only images' : 'all resources'}.`, 'info');
 
 				// Get cached themes
-				script.theme = GM_getValue('SeveritiumTheme', { active: 'default', themes: {} });
+				script.theme = GM_getValue('SeveritiumThemes', { active: 'default', themes: {} });
 
 				let jsonPromise = null;
 				let cssPromise = null;
@@ -424,12 +424,12 @@
 						updateCustomThemesWithNewVariables();
 					}
 					
-					GM_setValue('SeveritiumTheme', script.theme);
+					GM_setValue('SeveritiumThemes', script.theme);
 					GM_setValue('SeveritiumCSS', script.CSS);
 					GM_setValue('SeveritiumJS', script.JS);
 				} else {
 					// If only images, reload CSS/JS from cache
-					script.theme = GM_getValue('SeveritiumTheme', { active: 'default', themes: {} });
+					script.theme = GM_getValue('SeveritiumThemes', { active: 'default', themes: {} });
 					script.CSS = GM_getValue('SeveritiumCSS', {});
 					script.JS = GM_getValue('SeveritiumJS', {});
 				}
@@ -523,7 +523,7 @@
 		if (!defaultTheme) return;
 
 		// Get existing themes from storage, but preserve current script.theme structure
-		const existingThemes = GM_getValue('SeveritiumTheme', { active: 'default', themes: {} });
+		const existingThemes = GM_getValue('SeveritiumThemes', { active: 'default', themes: {} });
 		
 		// Merge existing themes with current script.theme to preserve new default
 		if (!existingThemes.themes) {
