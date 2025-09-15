@@ -2044,5 +2044,11 @@
     "date": "2025-09-14",
     "comment": "1.7.2+build152 feat: rename theme storage keys",
     "hash": "309975e1341dd0043f55bca8a4efc15020218217"
+  },
+  {
+    "version": "1.7.2+build153",
+    "date": "2025-09-16",
+    "comment": "1.7.2+build153 feat: added theme settings js code",
+    "hash": "2f7f25972ccdd1eb06c8590eed057380cd99ca2c"
   }
 ]
