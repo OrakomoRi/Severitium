@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build152
+// @version			1.7.2+build153
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
