@@ -2050,5 +2050,11 @@
     "date": "2025-09-16",
     "comment": "1.7.2+build153 feat: added theme settings js code",
     "hash": "2f7f25972ccdd1eb06c8590eed057380cd99ca2c"
+  },
+  {
+    "version": "1.7.2+build154",
+    "date": "2025-09-16",
+    "comment": "1.7.2+build153 feat: added theme settings js code",
+    "hash": "ce468be254a942001e7d329de1509462520900eb"
   }
 ]
