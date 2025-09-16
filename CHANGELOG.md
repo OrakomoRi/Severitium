@@ -1,46 +1,120 @@
 # CHANGELOG
 
+## [1.8.0] - 2025-09-16
+
+### Added
+
+- General
+  - RetriationBonus
+- Settings
+  - SettingsContent
+  - ThemeSettings
+- New completely custom `svg` theme icon
+- Auto-build and release workflow enhancements :tada:
+- `Coloris` library for color inputs inside the theme tab
+- Variable extraction and injection functionality
+- Resource caching and optimization system :tada:
+
+### Changed
+
+- Battle
+  - BattleChat
+  - BattlePause
+- Clan
+  - ClanModal
+  - ExistingClan
+- Containers
+  - ContainersOpening
+  - ContainersScreen
+  - PossibleRewardsMenu
+  - PossibleRewardsScreen
+- Entrance
+  - EntranceForms
+- Friends
+  - FriendsScreen
+  - InviteScreen
+- General
+  - Dropdown
+  - LoadingScreen
+  - Modal
+  - NotificatorIcon
+  - PlayerContextMenu
+  - TopMenu
+  - TopPanel
+  - XP
+- Lobby
+  - BattleSelect
+    - BattleType
+  - ChatWindow
+  - FooterMenu
+  - GroupBlock
+  - MainMenu
+- Quests
+  - ContractsScreen
+  - QuestsScreen
+- Shop
+  - MainScreen
+  - PaymentScreen
+  - PurchaseScreen
+  - SectionMenu
+  - ShopWindow
+- Variables
+- All CSS selectors updated to use single quotes
+- `BreeziumSelect` library integration (using the downloaded modules) and styling updates
+- Enhanced main userscript with detailed comments and theme handling
+- Image optimization and .webp format support
+- Improved file name extraction helper script
+- Updated links to use 'builds' branch for CSS and JS resources
+
+### Fixed
+
+- Entrance
+  - EntranceForms (input selectors)
+- General
+  - Modal (change creator tag apply button, disabled button styles)
+- Theme loading and integration fixes
+- Injector logic for theme functionality
+
 ## [1.7.2] - 2025-04-01
 
 ### Added
 
 - General
-	- CheckboxInput
+  - CheckboxInput
 - Lobby
-	- GroupBlock
+  - GroupBlock
 - Shop
-	- PaymentScreen
+  - PaymentScreen
 
 ### Changed
 
 - Clan
-	- ExistingClan
+  - ExistingClan
 - Entrance
-	- EntranceForms
+  - EntranceForms
 - General
-	- Modal
-	- RangeInput
-	- TopPanel
+  - Modal
+  - RangeInput
+  - TopPanel
 - Lobby
-	- BattleSelect
-		- BattleType
-	- MainMenu
-	- NewsWindow
+  - BattleSelect
+    - BattleType
+  - MainMenu
+  - NewsWindow
 - Quests
-	- QuestsScreen
+  - QuestsScreen
 - Shop
-	- MainScreen
-	- PurchaseScreen
-	- ShopWindow
+  - MainScreen
+  - PurchaseScreen
+  - ShopWindow
 - Now when the seasons change, the main userscript will only update the images.
-
 
 ### Fixed
 
 - Entrance
-	- EntranceForms (social media buttons)
+  - EntranceForms (social media buttons)
 - General
-	- Modal (tooltips, captcha)
+  - Modal (tooltips, captcha)
 
 ---
 
@@ -53,9 +127,9 @@
 ### Changed
 
 - Clan
-	- ExistingClan
+  - ExistingClan
 - Lobby
-	- NewsWindow
+  - NewsWindow
 
 ---
 
@@ -64,15 +138,15 @@
 ### Added
 
 - Containers
-	- PossibleRewardsMenu
+  - PossibleRewardsMenu
 - General
-	- CommonSort
-	- RangeInput
+  - CommonSort
+  - RangeInput
 - Shop
-	- MainScreen
-	- PurchaseScreen
-	- SectionMenu
-	- SuccessfulPurchase
+  - MainScreen
+  - PurchaseScreen
+  - SectionMenu
+  - SuccessfulPurchase
 - `JSON` with stable versions so that auto-updates only occur for stable versions :tada:
 - `Logger` class designed for `userscript` logging; supports different logging modes :tada:
 - Few new `SVGs`
@@ -86,40 +160,40 @@
 ### Changed
 
 - Battle
-	- BattleChat
-	- BattleTab
-		- ColorfulResists
+  - BattleChat
+  - BattleTab
+    - ColorfulResists
 - Clan
-	- ClanModal
-	- ExistingClan
-	- JoinClan
+  - ClanModal
+  - ExistingClan
+  - JoinClan
 - Containers
-	- PossibleRewardsScreen
+  - PossibleRewardsScreen
 - Entrance
-	- EntranceForms
-	- EntranceIcons
-	- EntranceLinks
+  - EntranceForms
+  - EntranceIcons
+  - EntranceLinks
 - Friends
-	- FriendsScreen
-	- InviteScreen
+  - FriendsScreen
+  - InviteScreen
 - General
-	- CommonContainer
-	- LoadingScreen
-	- Modal
-	- ScrollingCards
-	- TopMenu
-	- TopPanel
+  - CommonContainer
+  - LoadingScreen
+  - Modal
+  - ScrollingCards
+  - TopMenu
+  - TopPanel
 - Lobby
-	- BattleSelect
-		- BattleType
-	- Challenges
-		- CommonChallenges
-	- ChatWindow
-	- NewsWindow
-	- PlayButton
+  - BattleSelect
+    - BattleType
+  - Challenges
+    - CommonChallenges
+  - ChatWindow
+  - NewsWindow
+  - PlayButton
 - Quests
-	- ContractsScreen
-	- QuestsScreen
+  - ContractsScreen
+  - QuestsScreen
 - Variables
 - Optimized main userscript
 - Optimized all `JS` files of modules
@@ -129,13 +203,13 @@
 ### Fixed
 
 - Entrance
-	- EntranceForms
-	- EntranceIcons
+  - EntranceForms
+  - EntranceIcons
 - General
-	- TopPanel (currency support for shop screen)
+  - TopPanel (currency support for shop screen)
 - Quests
-	- QuestsScreen
- - Set default border radius for all hotkeys tooltips blocks
+  - QuestsScreen
+- Set default border radius for all hotkeys tooltips blocks
 
 ---
 
@@ -148,11 +222,11 @@
 ### Changed
 
 - Friends
-	- FriendsScreen
+  - FriendsScreen
 - General
-	- ScrollingCards
+  - ScrollingCards
 - Lobby
-	- Announcements
+  - Announcements
 - Optimized & updated images (added `.webp` format)
 
 ---
@@ -166,12 +240,12 @@
 ### Changed
 
 - Battle
-	- BattleChat
+  - BattleChat
 - General
-	- TopMenu
+  - TopMenu
 - Quests
-	- ContractsScreen
-	- QuestsScreen
+  - ContractsScreen
+  - QuestsScreen
 
 ### Fixed
 
@@ -185,12 +259,12 @@
 ### Added
 
 - Containers
-	- ContainersOpening
-	- ContainersScreen
-	- PossibleRewardsScreen
+  - ContainersOpening
+  - ContainersScreen
+  - PossibleRewardsScreen
 - Quests
-	- ContractsScreen
-	- QuestsScreen
+  - ContractsScreen
+  - QuestsScreen
 - Logic for new animated wallpapers
 - New custom icons
 - Screenshots of the standard and theme views :tada:
@@ -200,48 +274,48 @@
 ### Changed
 
 - Battle
-	- BattleChat
-	- BattlePause
-	- BattleTab
-		- ColorfulResists
-		- TabContainer
+  - BattleChat
+  - BattlePause
+  - BattleTab
+    - ColorfulResists
+    - TabContainer
 - Clan
-	- ClanModal
-	- ExistingClan
-	- JoinClan
+  - ClanModal
+  - ExistingClan
+  - JoinClan
 - Entrance
-	- EntranceBackground
-	- EntranceForms
-	- EntranceIcons
-	- EntranceLinks
+  - EntranceBackground
+  - EntranceForms
+  - EntranceIcons
+  - EntranceLinks
 - Friends
-	- FriendsScreen
-	- InviteScreen
+  - FriendsScreen
+  - InviteScreen
 - General
-	- CommonContainer
-	- Dropdown
-	- LoadingScreen
-	- Modal
-	- NotificatorIcon
-	- PlayerContextMenu
-	- ScrollingCards
-	- TopMenu
-	- TopPanel
-	- XP
+  - CommonContainer
+  - Dropdown
+  - LoadingScreen
+  - Modal
+  - NotificatorIcon
+  - PlayerContextMenu
+  - ScrollingCards
+  - TopMenu
+  - TopPanel
+  - XP
 - Lobby
-	- Announcements
-	- BattleSelect
-		- BattleMode
-		- BattleType
-	- Challenges
-		- CommonChallenges
-		- EliteChallenges
-	- ChatWindow
-	- FooterMenu
-	- MainMenu
-	- MatchmaikingWaitBlock
-	- NewsWindow
-	- PlayButton
+  - Announcements
+  - BattleSelect
+    - BattleMode
+    - BattleType
+  - Challenges
+    - CommonChallenges
+    - EliteChallenges
+  - ChatWindow
+  - FooterMenu
+  - MainMenu
+  - MatchmaikingWaitBlock
+  - NewsWindow
+  - PlayButton
 - Variables
 - All `svg` format images are now stored in the `.images/svg/` folder instead of `.images/`
 - All used png images are now stored as regular `.png` files in the `.images/png/` folder
@@ -262,37 +336,37 @@
 ### Changed
 
 - Battle
-	- Pause -> BattlePause
-	- BattleTab
-		- TabContainer
+  - Pause -> BattlePause
+  - BattleTab
+    - TabContainer
 - Clan
-	- ClanModal
-	- ExistingClan
-	- JoinClan
+  - ClanModal
+  - ExistingClan
+  - JoinClan
 - Entrance
-	- EntranceForms
+  - EntranceForms
 - Friends
-	- FriendsScreen
-	- InviteScreen
+  - FriendsScreen
+  - InviteScreen
 - General
-	- CommonContainer
-	- Dropdown
-	- LoadingScreen
-	- Modal
-	- NotificatorIcon
-	- PlayerContextMenu
-	- TopPanel
-	- XP
+  - CommonContainer
+  - Dropdown
+  - LoadingScreen
+  - Modal
+  - NotificatorIcon
+  - PlayerContextMenu
+  - TopPanel
+  - XP
 - Lobby
-	- Announcements
-	- Challenges
-		- CommonChallenges
-		- EliteChallenges
-	- FooterMenu
-	- MainMenu
-	- MatchmaikingWaitBlock
-	- NewsWindow
-	- PlayButton
+  - Announcements
+  - Challenges
+    - CommonChallenges
+    - EliteChallenges
+  - FooterMenu
+  - MainMenu
+  - MatchmaikingWaitBlock
+  - NewsWindow
+  - PlayButton
 - Variables
 
 ### Fixed
@@ -311,27 +385,27 @@
 ### Changed
 
 - Battle
-	- Pause
+  - Pause
 - Entrance
-	- EntranceBackground
-	- EntranceForms
-	- EntranceLinks
+  - EntranceBackground
+  - EntranceForms
+  - EntranceLinks
 - Friends
-	- FriendsScreen
-	- InviteScreen
+  - FriendsScreen
+  - InviteScreen
 - General
-	- Dropdown
-	- LoadingScreen
-	- NotificatorIcon
-	- PlayerContextMenu
-	- ScrollingCards
-	- TopMenu
-	- TopPanel
-	- XP
+  - Dropdown
+  - LoadingScreen
+  - NotificatorIcon
+  - PlayerContextMenu
+  - ScrollingCards
+  - TopMenu
+  - TopPanel
+  - XP
 - Lobby
-	- ChatWindow
-	- MainMenu
-	- PlayButton
+  - ChatWindow
+  - MainMenu
+  - PlayButton
 - Variables
 - Background for CommonContainer
 
@@ -342,17 +416,17 @@
 ### Changed
 
 - Clan
-	- ExistingClan
+  - ExistingClan
 - Entrance
-	- EntranceIcons
-	- EntranceLinks
+  - EntranceIcons
+  - EntranceLinks
 - Friends
-	- FriendsScreen
+  - FriendsScreen
 - General
-	- LoadingScreen
-	- NotificatorIcon
+  - LoadingScreen
+  - NotificatorIcon
 - ProBattles
-	- BattleModes -> General/ScrollingCards
+  - BattleModes -> General/ScrollingCards
 
 ---
 
@@ -361,28 +435,28 @@
 ### Added
 
 - ProBattles
-	- BattleModes
+  - BattleModes
 
 ### Changed
 
 - Battle
-	- BattleTab
-		- TabContainer
+  - BattleTab
+    - TabContainer
 - Battle
-	- Pause
+  - Pause
 - Clan
-	- ExistingClan
+  - ExistingClan
 - Entrance
-	- EntranceLinks
+  - EntranceLinks
 - General
-	- Dropdown
-	- Modal
-	- PlayerContextMenu
+  - Dropdown
+  - Modal
+  - PlayerContextMenu
 - Lobby
-	- BattleSelect
-	- BattleMode
-		- BattleType
-	- ChatWindow
+  - BattleSelect
+  - BattleMode
+    - BattleType
+  - ChatWindow
 - Variables
 
 ---
@@ -392,19 +466,19 @@
 ### Added
 
 - Battle
-	- Pause
+  - Pause
 
 ### Changed
 
 - Lobby
-	- Announcements
-	- Challenges
-		- CommonChallenges
-		- EliteChallenges
-	- FooterMenu
-	- MainMenu
-	- MatchmakingWaitBlock
-	- PlayButton
+  - Announcements
+  - Challenges
+    - CommonChallenges
+    - EliteChallenges
+  - FooterMenu
+  - MainMenu
+  - MatchmakingWaitBlock
+  - PlayButton
 - Variables
 
 ---
@@ -414,15 +488,15 @@
 ### Added
 
 - Lobby
-	- MatchmakingWaitBlock
+  - MatchmakingWaitBlock
 
 ### Changed
 
 - General
-	- Dropdown
-	- PlayerContextMenu
+  - Dropdown
+  - PlayerContextMenu
 - Lobby
-	- ChatWindow
+  - ChatWindow
 
 ---
 
@@ -431,18 +505,18 @@
 ### Changed
 
 - Clan
-	- ExistingClan
-	- JoinClan
+  - ExistingClan
+  - JoinClan
 - Entrance
-	- EntranceLinks
+  - EntranceLinks
 - Friends
-	- FriendsScreen
-	- InviteScreen
+  - FriendsScreen
+  - InviteScreen
 - General
-	- CommonContainer
-	- Modal
+  - CommonContainer
+  - Modal
 - Lobby
-	- FooterMenu
+  - FooterMenu
 - Variables
 - Background for CommonContainer
 - Project management (file paths)
@@ -454,11 +528,11 @@
 ### Changed
 
 - Clan
-	- ClanModal
-	- ExistingClan
-	- JoinClan
+  - ClanModal
+  - ExistingClan
+  - JoinClan
 - Entrance
-	- EntranceBackground
+  - EntranceBackground
 - Variables
 
 ---
@@ -468,25 +542,25 @@
 ### Added
 
 - Clan
-	- ClanModal
-	- ExistingClan
-	- JoinClan
+  - ClanModal
+  - ExistingClan
+  - JoinClan
 
 ### Changed
 
 - Battle
-	- BattleTab
-		- TabContainer
+  - BattleTab
+    - TabContainer
 - Entrance
-	- EntranceForms
+  - EntranceForms
 - Friends
-	- FriendsScreen
+  - FriendsScreen
 - General
-	- Modal
-	- TopMenu
-	- XP
+  - Modal
+  - TopMenu
+  - XP
 - Lobby
-	- ChatWindow
+  - ChatWindow
 
 ---
 
@@ -495,20 +569,20 @@
 ### Changed
 
 - Battle
-	- BattleTab
-		- ColorfulResists
-		- TabContainer
+  - BattleTab
+    - ColorfulResists
+    - TabContainer
 - Friends
-	- FriendsScreen
+  - FriendsScreen
 - General
-	- CommonContainer
-	- Modal
-	- PlayerContextMenu
+  - CommonContainer
+  - Modal
+  - PlayerContextMenu
 - Lobby
-	- Challenges
-		- CommonChallenges
+  - Challenges
+    - CommonChallenges
 - Lobby
-	- ChatWindow
+  - ChatWindow
 - Variables
 
 ---
@@ -518,15 +592,15 @@
 ### Added
 
 - General
-	- PlayerContextMenu
+  - PlayerContextMenu
 - General
-	- XP
+  - XP
 
 ### Changed
 
 - General
-	- CommonContainer
-	- NotificatorIcon
+  - CommonContainer
+  - NotificatorIcon
 - Background for CommonContainer
 
 ---
@@ -536,42 +610,42 @@
 ### Added
 
 - Friends
-	- InviteScreen
+  - InviteScreen
 - General
-	- CommonContainer
+  - CommonContainer
 - Background for CommonContainer
 
 ### Changed
 
 - Battle
-	- BattleTab
-	- BattleTab/ColorfulResists
+  - BattleTab
+  - BattleTab/ColorfulResists
 - Entrance
-	- EntranceForms
-	- EntranceIcons
-	- EntranceLinks
+  - EntranceForms
+  - EntranceIcons
+  - EntranceLinks
 - Friends
-	- FriendsScreen
+  - FriendsScreen
 - General
-	- Dropdown
-	- LoadingScreen
-	- Modal
-	- NotificatorIcon
-	- TopMenu
-	- TopPanel
+  - Dropdown
+  - LoadingScreen
+  - Modal
+  - NotificatorIcon
+  - TopMenu
+  - TopPanel
 - Lobby
-	- Announcements
-	- BattleSelect
-		- BattleMode
-		- BattleType
-	- Challenges
-		- CommonChallenges
-		- EliteChallenges
-	- ChatWindow
-	- FooterMenu
-	- MainMenu
-	- NewsWindow
-	- PlayButton
+  - Announcements
+  - BattleSelect
+    - BattleMode
+    - BattleType
+  - Challenges
+    - CommonChallenges
+    - EliteChallenges
+  - ChatWindow
+  - FooterMenu
+  - MainMenu
+  - NewsWindow
+  - PlayButton
 - Variables
 
 ### Removed
@@ -585,27 +659,27 @@
 ### Added
 
 - Friends
-	- FriendsScreen
+  - FriendsScreen
 - General
-	- TopMenu
+  - TopMenu
 - Lobby
-	- BattleSelect
-		- BattleMode
-		- BattleType
+  - BattleSelect
+    - BattleMode
+    - BattleType
 
 ### Changed
 
 - General
-	- Modal
-	- TopPanel
+  - Modal
+  - TopPanel
 - Lobby
-	- Announcements
-	- Challenges
-		- CommonChallenges
-		- EliteChallenges
-	- FooterMenu
-	- MainMenu
-	- PlayButton
+  - Announcements
+  - Challenges
+    - CommonChallenges
+    - EliteChallenges
+  - FooterMenu
+  - MainMenu
+  - PlayButton
 - Variables
 
 ---
@@ -615,25 +689,25 @@
 ### Added
 
 - Lobby
-	- Announcements
-	- Challenges
-		- CommonChallenges
-		- EliteChallenges
+  - Announcements
+  - Challenges
+    - CommonChallenges
+    - EliteChallenges
 
 ### Changed
 
 - Entrance
-	- EntranceBackground
-	- EntranceIcons
+  - EntranceBackground
+  - EntranceIcons
 - General
-	- Modal
-	- NotificatorIcon
-	- TopPanel
+  - Modal
+  - NotificatorIcon
+  - TopPanel
 - Lobby
-	- ChatWindow
-	- FooterMenu
-	- NewsWindow
-	- PlayButton
+  - ChatWindow
+  - FooterMenu
+  - NewsWindow
+  - PlayButton
 - Variables
 - Main file of the theme
 
@@ -648,18 +722,18 @@
 ### Added
 
 - Lobby
-	- ChatWindow
-	- NewsWindow
+  - ChatWindow
+  - NewsWindow
 
 ### Changed
 
 - Entrance
-	- EntranceLinks
+  - EntranceLinks
 - General
-	- LoadingScreen
-	- Modal
+  - LoadingScreen
+  - Modal
 - Lobby
-	- FooterMenu
+  - FooterMenu
 - Variables
 - Path to the folder with additional functions
 
@@ -677,20 +751,20 @@
 ### Changed
 
 - Battle
-	- ClassedTab
-	- ColorfulResists
+  - ClassedTab
+  - ColorfulResists
 - Entrance
-	- EntranceForms
-	- EntranceIcons
-	- EntranceLinks
+  - EntranceForms
+  - EntranceIcons
+  - EntranceLinks
 - General
-	- LoadingScreen
-	- Modal
-	- NotificatorIcon
-	- TopPanel
+  - LoadingScreen
+  - Modal
+  - NotificatorIcon
+  - TopPanel
 - Lobby
-	- FooterMenu
-	- PlayButton
+  - FooterMenu
+  - PlayButton
 
 ### Fixed
 
@@ -703,25 +777,25 @@
 ### Added
 
 - Battle
-	- BattleChat
-	- BattleTab
-	- ClassedTab
-	- ColorfulResists
+  - BattleChat
+  - BattleTab
+  - ClassedTab
+  - ColorfulResists
 - Entrance
-	- EntranceBackground
-	- EntranceForms
-	- EntranceIcons
-	- EntranceLinks
+  - EntranceBackground
+  - EntranceForms
+  - EntranceIcons
+  - EntranceLinks
 - General
-	- Dropdown
-	- LoadingScreen
-	- Modal
-	- NotificatorIcon
-	- TopPanel
+  - Dropdown
+  - LoadingScreen
+  - Modal
+  - NotificatorIcon
+  - TopPanel
 - Lobby
-	- FooterMenu
-	- MainMenu
-	- PlayButton
+  - FooterMenu
+  - MainMenu
+  - PlayButton
 - Settings
 - Shop
 - Variables
