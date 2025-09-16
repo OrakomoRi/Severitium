@@ -1,8 +1,8 @@
-# ✨ Modal
+# :sparkles: Modal
 
 Stylization of all modal and dialog windows in the game. They appear when shopping in the store, when exiting a battle/game, when entering pro-battles and many other places.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Quit game modal
 

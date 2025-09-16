@@ -1,8 +1,8 @@
-# ✨ Common Challenges
+# :sparkles: Common Challenges
 
 Common challenges card in the lobby.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Common challenges card
 

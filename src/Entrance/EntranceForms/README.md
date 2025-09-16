@@ -1,8 +1,8 @@
-# ✨ Entrance Forms
+# :sparkles: Entrance Forms
 
 Changes the default authorization and registration forms. Changes fields for two-factor authentication, account recovery. Changes buttons associated with these forms.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Registration
 

@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.7.2+build153
+// @version			1.7.2+build154
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -262,7 +262,7 @@
 						const endTime = performance.now();
 						const duration = ((endTime - startTime) / 1000).toFixed(3);
 						logger.log(`[END] ${new Date().toISOString()} (Time: ${duration}s)\n${fileName} ${fileType}`, 'debug');
-	
+
 						if (format === 'base64') {
 							// Convert blob to Base64 string for image embedding
 							if (!response.response || response.response.size === 0) {
@@ -270,7 +270,7 @@
 								reject(new Error(`Empty blob response from ${url}`));
 								return;
 							}
-							
+
 							const reader = new FileReader();
 							reader.onloadend = () => resolve(reader.result.split(',')[1]);
 							reader.readAsDataURL(response.response);
@@ -308,7 +308,7 @@
 	 */
 	async function loadResources(forceReload = false) {
 		logger.log(`Load resources started.`, 'debug');
-		
+
 		// Show loading screen
 		const loadingScreen = LoadingScreen.add(`${script.name}`);
 
@@ -423,7 +423,7 @@
 					if (script.theme.themes?.default) {
 						updateCustomThemesWithNewVariables();
 					}
-					
+
 					GM_setValue('SeveritiumThemes', script.theme);
 					GM_setValue('SeveritiumCSS', script.CSS);
 					GM_setValue('SeveritiumJS', script.JS);
@@ -457,7 +457,7 @@
 				if (activeVariables) {
 					severitiumInjector.applyTheme();
 				}
-				
+
 				// Update localStorage for external access
 				if (script.theme.themes?.default) {
 					localStorage.setItem('SeveritiumThemes', JSON.stringify(script.theme, null, 2));
@@ -474,25 +474,25 @@
 					const formattedUrl = element.url
 						.replace('SEASON_PLACEHOLDER', currentSeason)
 						+ `?v=${script.version}`;
-					
+
 					// Check if we have valid image data for this URL
 					const imageData = script.images[formattedUrl];
 					const hasValidData = imageData && imageData !== 'undefined' && typeof imageData === 'string' && imageData.length > 0;
-					
+
 					if (!hasValidData) {
 						logger.log(`Missing or invalid image data for: ${formattedUrl}`, 'warn');
 					}
-					
+
 					return {
 						...element,
 						url: formattedUrl,
 						hasValidData: hasValidData
 					};
 				});
-				
+
 				// Filter out images without valid data
 				const validImageLinks = preparedImageLinks.filter(element => element.hasValidData);
-				
+
 				logger.log(`Applying ${validImageLinks.length} valid images out of ${imageLinks.length} total`, 'info');
 				if (validImageLinks.length > 0) {
 					severitiumInjector.applyImages(validImageLinks);
@@ -524,12 +524,12 @@
 
 		// Get existing themes from storage, but preserve current script.theme structure
 		const existingThemes = GM_getValue('SeveritiumThemes', { active: 'default', themes: {} });
-		
+
 		// Merge existing themes with current script.theme to preserve new default
 		if (!existingThemes.themes) {
 			existingThemes.themes = {};
 		}
-		
+
 		// Keep the new default theme from script.theme
 		existingThemes.themes.default = defaultTheme;
 
@@ -537,7 +537,7 @@
 		if (!existingThemes.active) {
 			existingThemes.active = 'default';
 		}
-		
+
 		// Add missing variables to custom themes only
 		Object.keys(existingThemes.themes).forEach(uuid => {
 			if (uuid !== 'default') {
@@ -548,7 +548,7 @@
 				});
 			}
 		});
-		
+
 		// Update script.theme with merged data
 		script.theme = existingThemes;
 	}

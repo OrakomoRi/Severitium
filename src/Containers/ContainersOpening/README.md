@@ -1,8 +1,8 @@
-# ✨ Containers Opening
+# :sparkles: Containers Opening
 
 Stylizes the opening window of the containers: the buttons, the dropped rewards, the containers themselves.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Fast open containers
 

@@ -1,8 +1,8 @@
-# ✨ Matchmaking Wait Block
+# :sparkles: Matchmaking Wait Block
 
 Block with information about the duration of the battle wait, as well as the selected matchmaking mode (upper right corner).
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Matchmaiking wait block
 

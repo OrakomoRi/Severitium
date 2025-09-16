@@ -1,8 +1,8 @@
-# ✨ Main Menu
+# :sparkles: Main Menu
 
 Left menu buttons (main menu) in the lobby: containers, missions, garage, store, settings.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Main menu
 

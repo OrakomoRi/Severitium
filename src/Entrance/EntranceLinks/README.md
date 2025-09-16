@@ -1,9 +1,9 @@
-# ✨ Entrance Links
+# :sparkles: Entrance Links
 
 Stylizes the auxiliary links in the input, as well as the icon that opens them. The animation of the icon is always random.
 
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Entrance links
 

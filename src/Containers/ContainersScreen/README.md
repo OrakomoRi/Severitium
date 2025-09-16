@@ -1,8 +1,8 @@
-# ✨ Containers Screen
+# :sparkles: Containers Screen
 
 Stylizes the container screen, buttons, and appearance related to this.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Containers screen
 

@@ -1,8 +1,8 @@
-# ✨ Retriation Bonus
+# :sparkles: Retriation Bonus
 
 Changed the appearance of the return bonus container.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Retriation bonus
 

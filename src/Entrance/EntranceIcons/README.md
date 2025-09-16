@@ -1,9 +1,9 @@
-# ✨ Entrance Icons
+# :sparkles: Entrance Icons
 
 Redesign static boring option selection icons at the entrance into dynamic and matching the main color of the theme.
 
 
-## ℹ️ Design
+## :information_source: Design
 
 ### First choice
 

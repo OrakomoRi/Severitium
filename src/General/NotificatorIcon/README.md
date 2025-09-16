@@ -1,8 +1,8 @@
-# ✨ Notificator Icon
+# :sparkles: Notificator Icon
 
 Styles the notificator icon to match the main color of the theme.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Notificator icon in lobby's main menu
 

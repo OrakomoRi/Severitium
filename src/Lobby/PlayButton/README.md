@@ -1,4 +1,4 @@
-# ✨ Play Button
+# :sparkles: Play Button
 
 Play button in the lobby. Button logic when searching for a battle, default state of the button.
 
@@ -6,7 +6,7 @@ The default state of the button became static, so as not to burden the user with
 
 The button animation is always random, and the color of the button depends on the main color of the theme selected by the user.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Play button default state
 

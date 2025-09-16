@@ -1,8 +1,8 @@
-# ✨ Battle Pause
+# :sparkles: Battle Pause
 
 Stylizes the pause menu, bringing back the old look. The pause menu is centered, the buttons now with proper animations, as well as adding an animation of the pause menu window appearing.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Battle pause
 

@@ -1,8 +1,8 @@
-# ✨ Checkbox Input
+# :sparkles: Checkbox Input
 
 Styles all inputs of type “checkbox” to “toggle switch”.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Checkbox input
 

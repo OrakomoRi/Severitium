@@ -1,8 +1,8 @@
-# ✨ Existing Clan
+# :sparkles: Existing Clan
 
 Modifies elements of an existing clan. Clan information field, icons, player table, buttons, basically everything that is there.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Own clan info
 

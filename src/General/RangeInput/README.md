@@ -1,8 +1,8 @@
-# ✨ Range Input
+# :sparkles: Range Input
 
 Styles all elements where there is a choice on which value to select from the range of slider movement.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Range input
 

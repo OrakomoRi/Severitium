@@ -1,4 +1,4 @@
-# ✨ Successful Purchase
+# :sparkles: Successful Purchase
 
 Stylizes a modal window with a notification of a successful in-game purchase.
 
@@ -6,7 +6,7 @@ Stylizes a modal window with a notification of a successful in-game purchase.
 
 This module inherits the styles of the [Modal](/src/General/Modal/README.md) module.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Successful purchase modal
 

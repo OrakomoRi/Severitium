@@ -1,8 +1,8 @@
-# ✨ Dropdown
+# :sparkles: Dropdown
 
 Stylization of all drop-down menus in the game. Such as language selection on the login screen.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Clear background
 

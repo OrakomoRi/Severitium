@@ -1,8 +1,8 @@
-# ✨ Top Panel
+# :sparkles: Top Panel
 
 Stylizes the top bar: nickname, buttons, currencies, experience, and so on. This works both in all tabs and directly in battle.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Top panel in lobby
 

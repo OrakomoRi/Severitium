@@ -1,8 +1,8 @@
-# ✨ Purchase Screen
+# :sparkles: Purchase Screen
 
 Stylizes the window for buying an offer from the store.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Purchase screen
 

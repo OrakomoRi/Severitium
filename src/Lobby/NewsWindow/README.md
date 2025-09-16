@@ -1,8 +1,8 @@
-# ✨ News Window
+# :sparkles: News Window
 
 The news window in the lobby. Received an update in the form of a more modern interface, as well as hightlighting of links in the main color of the theme. And other small additions.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### News window
 

@@ -1,8 +1,8 @@
-# ✨ Top Menu
+# :sparkles: Top Menu
 
 Styles for top menu in the game inside all screens that uses it (containers, quests, garage, pro battles, etc).
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Top menu in the friends tab
 

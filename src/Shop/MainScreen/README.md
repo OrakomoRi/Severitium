@@ -1,8 +1,8 @@
-# ✨ Main Screen
+# :sparkles: Main Screen
 
 Stylizes the main window with a selection of sections in the store.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Main screen limited cards
 

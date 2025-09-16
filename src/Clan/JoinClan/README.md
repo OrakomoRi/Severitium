@@ -1,8 +1,8 @@
-# ✨ Join Clan
+# :sparkles: Join Clan
 
 Stylizes the clan join search screen, the clan creation window, all tables and buttons related to this.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Search for clan screen
 

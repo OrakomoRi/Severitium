@@ -1,8 +1,8 @@
-# ✨ Possible Rewards Screen
+# :sparkles: Possible Rewards Screen
 
 Stylizes the screen of possible rewards from containers. Categories, table, individual reward information block.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Possible rewards screen
 

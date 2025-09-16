@@ -1,8 +1,8 @@
-# ✨ Battle Type
+# :sparkles: Battle Type
 
 Selection of battle type in the lobby: quick battle, special mode, button to select standard matchmaking or pro-battle mode.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Battle types
 

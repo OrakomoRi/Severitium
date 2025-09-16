@@ -1,8 +1,8 @@
-# ✨ Possible Rewards Menu
+# :sparkles: Possible Rewards Menu
 
 Stylizes the menu of possible winnings. These are buttons with category rarity.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Possible rewards menu
 

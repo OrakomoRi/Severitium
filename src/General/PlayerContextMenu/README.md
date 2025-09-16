@@ -1,8 +1,8 @@
-# ✨ Player Context Menu
+# :sparkles: Player Context Menu
 
 Stylizes context menus that appear when a player is clicked. Adds animations on appearance and disappearance of context menus, fixes original bugs.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Player context menu
 

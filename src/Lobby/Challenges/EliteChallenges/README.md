@@ -1,8 +1,8 @@
-# ✨ Elite Challenges
+# :sparkles: Elite Challenges
 
 Elite challenges card in the lobby.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Elite challenges card
 

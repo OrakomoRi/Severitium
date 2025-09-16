@@ -1,8 +1,8 @@
-# ✨ Loading Screen
+# :sparkles: Loading Screen
 
 Stylizes the loading screen between any game states. For example, when loading after registration/authorization. Or when loading the garage.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Loading screen
 

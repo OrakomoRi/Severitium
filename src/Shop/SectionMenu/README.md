@@ -1,8 +1,8 @@
-# ✨ Section Menu
+# :sparkles: Section Menu
 
 Stylizes the section selection menu on the left in already open sections of the store.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Section menu
 

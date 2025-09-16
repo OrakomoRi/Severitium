@@ -1,8 +1,8 @@
-# ✨ Shop Window
+# :sparkles: Shop Window
 
 Styles the window of a section of the store with individual products: limited offers, regular products, promocodes.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Shop window
 

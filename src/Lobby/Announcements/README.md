@@ -1,8 +1,8 @@
-# ✨ Announcements
+# :sparkles: Announcements
 
 Announcement card in the lobby.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Announcement card
 

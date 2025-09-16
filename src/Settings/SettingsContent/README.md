@@ -1,15 +1,25 @@
-# ✨ Settings Content
+# :sparkles: Settings Content 
 
 Styles the settings tabs, buttons, scales, navigation and so on.
 
-## ℹ️ Design
+## :information_source: Design
 
-### Settings content
+### Game settings
 
 #### Old
 
-![](/images/settings/old/settingscontent.png)
+![](/images/settings/old/gamesettings.webp)
 
 #### New
 
-![](/images/settings/new/settingscontent.png)
+![](/images/settings/new/gamesettings.webp)
+
+### Controls settings
+
+#### Old
+
+![](/images/settings/old/controlssettings.webp)
+
+#### New
+
+![](/images/settings/new/controlssettings.webp)

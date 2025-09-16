@@ -1,8 +1,8 @@
-# ✨ Common Sort
+# :sparkles: Common Sort
 
 Stylizes sorting icons in table headers (looks like 2 arrows: up and down).
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Common Sort inactive in friends screen
 

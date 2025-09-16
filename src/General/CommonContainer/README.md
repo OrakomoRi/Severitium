@@ -1,8 +1,8 @@
-# ✨ Common container
+# :sparkles: Common container
 
 Styles backgrounds in tabs such as missions, garage, friends, clan, pro-battles, etc.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Clear background
 

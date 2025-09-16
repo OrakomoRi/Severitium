@@ -1,8 +1,8 @@
-# ✨ Friends Screen
+# :sparkles: Friends Screen
 
 Stylizes the elements of the friends window. The friends list, adding new friends, and the list of fellow clansmen have all been redesigned to fit the new theme.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Friends screen
 

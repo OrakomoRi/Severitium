@@ -1,8 +1,8 @@
-# ✨ Quests Screen
+# :sparkles: Quests Screen
 
 Styles the quest tab, buttons, scales, timers and so on.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Quests screen
 

@@ -1,8 +1,8 @@
-# ✨ XP
+# :sparkles: XP
 
 Replaces the original XP icon with a custom icon. I find the original one ugly. Also removes the XP icon inside the [top panel](/src/General/TopPanel/README.md).
 
-## ℹ️ Design
+## :information_source: Design
 
 ### XP icon
 

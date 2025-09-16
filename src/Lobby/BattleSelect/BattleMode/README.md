@@ -1,8 +1,8 @@
-# ✨ Battle Mode
+# :sparkles: Battle Mode
 
 Menu for selecting a matchmaking battle mode from the standard modes.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Battle modes
 

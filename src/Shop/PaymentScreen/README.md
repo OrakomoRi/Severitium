@@ -1,8 +1,8 @@
-# ✨ Payment Screen
+# :sparkles: Payment Screen
 
 Stylizes the store screen where payment methods (with real funds) are presented.
 
-## ℹ️ Design
+## :information_source: Design
 
 ### Choise of payment type
 
