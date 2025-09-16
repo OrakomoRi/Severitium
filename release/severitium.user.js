@@ -81,7 +81,7 @@
 
 	const customModal = {
 		enable: true,
-		timer: 5000,
+		timer: 10000,
 	};
 
 	const script = {
@@ -198,15 +198,14 @@
 		if (customModal.enable) {
 			// Inject custom styles for the modal to ensure visibility and readability
 			const style = document.createElement('style');
-			style.textContent = '.swal2-container { z-index: 10000; } .swal2-container h1, .swal2-container h2, .swal2-container h3, .swal2-container h4, .swal2-container span, .swal2-container p { color: #000000; } ';
+			style.textContent = '.swal2-container { z-index: 10000; }';
 			document.head.appendChild(style);
 
 			// Show SweetAlert2 modal for update prompt
 			Swal.fire({
 				position: 'top-end',
 				backdrop: false,
-				color: "#000000",
-				background: "#ffffff",
+				theme: 'dark',
 				title: `${script.name}: new version is available!`,
 				text: `Do you want to update to version ${newVersion}?`,
 				icon: 'info',
@@ -215,7 +214,7 @@
 				confirmButtonText: 'Update',
 				denyButtonText: 'Skip',
 				cancelButtonText: 'Close',
-				timer: customModal.timer ?? 5000,
+				timer: customModal.timer ?? 10000,
 				timerProgressBar: true,
 				didOpen: (modal) => {
 					// Pause timer on mouse hover for better UX
