@@ -2068,5 +2068,11 @@
     "date": "2025-09-18",
     "comment": "1.8.0+build.1 feat: added user progress modal styles",
     "hash": "003412a37c3f5c4998afb031db61bf93b7accc38"
+  },
+  {
+    "version": "1.8.0+build.2",
+    "date": "2025-09-18",
+    "comment": "1.8.0+build.2 feat: updated modal to style new premium modal",
+    "hash": "8a869fabdc06e86bab9bdf8b40498f4f776cdc72"
   }
 ]
