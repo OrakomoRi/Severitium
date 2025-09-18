@@ -755,3 +755,103 @@
 	color: var(--severitium-gray-button-color);
 	opacity: .5;
 }
+
+/* User progress modal wrapper */
+
+.ModalStyle-rootHover > div.UserProgressComponentStyle-modalWrapper {
+	width: 100%;
+	border-radius: 0;
+	border-left: none;
+	border-right: none;
+	padding: 3em 0;
+}
+
+/* User progress modal title */
+
+.UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-modalTitle {
+	font-size: 2em;
+	color: var(--severitium-white-text-color);
+	text-transform: uppercase;
+	letter-spacing: .1em;
+}
+
+/* User progress modal items container */
+
+.UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-itemsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+/* User progress scrollbar items container */
+
+.UserProgressComponentStyle-modalWrapper .ScrollBarStyle-itemsContainer {
+	margin: 0;
+}
+
+/* User progress scrollbar single item container */
+
+.UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-itemContainer {
+	background: none;
+	background-color: var(--severitium-dark-transparent-background1);
+	box-shadow: none;
+	-webkit-backdrop-filter: blur(.25em);
+	        backdrop-filter: blur(.25em);
+	border: .1em solid var(--severitium-gray-color);
+	border-radius: var(--severitium-border-radius);
+}
+
+/* User progress modal items scrolling arrows */
+
+.UserProgressComponentStyle-modalWrapper .ScrollBarStyle-arrowsWrapper > div {
+	background: radial-gradient(100% 50% at 100% 50%, var(--severitium-light-transparent-background3) 0%, transparent 100%);
+	height: 100%;
+	width: auto;
+	padding: 0 0 0 2em;
+	transition: opacity .2s ease;
+}
+
+/* User progress modal single item title */
+
+.UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-itemContainer .UserProgressComponentStyle-itemName {
+	font-size: 1em;
+	color: var(--severitium-white-text-color);
+	margin: 0;
+	padding: 0;
+}
+
+/* User progress modal items title */
+
+.UserProgressComponentStyle-modalWrapper h1.UserProgressComponentStyle-itemsHeader:not(:root):not(:root) {
+	font-size: 1.25em;
+	color: var(--severitium-light-gray-text-color);
+	text-transform: uppercase;
+	margin: 0;
+}
+
+/* User progress modal OK button */
+
+.UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-buttonOk {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-buttonOk:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-buttonOk h2,
+.UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-buttonOk span {
+	color: var(--severitium-green-button-color);
+}

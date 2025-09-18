@@ -258,11 +258,11 @@
 /* Both arrow containers for scrolling arrows (left & right) */
 
 .ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-arrowsWrapper > div {
-	transition: opacity .2s ease;
 	background: radial-gradient(100% 50% at 100% 50%, var(--severitium-light-transparent-background3) 0%, transparent 100%);
 	height: 100%;
 	width: auto;
 	padding: 0 0 0 2em;
+	transition: opacity .2s ease;
 }
 
 /* Left arrow container */
