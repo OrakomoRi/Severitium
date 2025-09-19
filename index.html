@@ -136,18 +136,18 @@
 	</footer>
 
 	<script>
-		$(document).ready(function () {
+		document.addEventListener('DOMContentLoaded', function () {
 			function updateResourceVersions() {
-				var styles = $(`link[href^='css/']`);
-				var scripts = $(`script[src^='js/']`);
+				const styles = document.querySelectorAll('link[href^="css/"]');
+				const scripts = document.querySelectorAll('script[src^="js/"]');
 
-				var newVersion = new Date().getTime();
+				const newVersion = new Date().getTime();
 
-				styles.each(function () {
-					$(this).attr('href', `${$(this).attr('href')}?v=${newVersion}`);
+				styles.forEach(function (style) {
+					style.href = `${style.href}?v=${newVersion}`;
 				});
-				scripts.each(function () {
-					$(this).attr('src', `${$(this).attr('src')}?v=${newVersion}`);
+				scripts.forEach(function (script) {
+					script.src = `${script.src}?v=${newVersion}`;
 				});
 			}
 			updateResourceVersions();
