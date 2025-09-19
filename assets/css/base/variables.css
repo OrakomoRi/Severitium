@@ -245,6 +245,27 @@
 	--z-tooltip: 70;
 	
 	/* ============================
+	   BACKGROUND ANIMATION - Dynamic background particles
+	   ============================ */
+	
+	/* Particle positions */
+	--particle-1-x: 20%;
+	--particle-1-y: 50%;
+	--particle-2-x: 80%;
+	--particle-2-y: 20%;
+	--particle-3-x: 40%;
+	--particle-3-y: 80%;
+	
+	/* Particle colors with transparency */
+	--particle-1-color: rgba(99, 102, 241, .08);
+	--particle-2-color: rgba(255, 107, 107, .02);
+	--particle-3-color: rgba(69, 183, 209, .03);
+	
+	/* Animation settings */
+	--animation-speed: 1;
+	--animation-scale: 1;
+	
+	/* ============================
 	   BREAKPOINTS - Responsive Design
 	   ============================ */
 	

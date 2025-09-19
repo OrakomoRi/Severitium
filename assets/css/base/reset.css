@@ -30,9 +30,9 @@ body {
 	color: var(--color-text-primary);
 	background: var(--color-bg-primary);
 	background-image: 
-		radial-gradient(circle at 20% 50%, var(--color-primary-light) 0%, transparent 50%),
-		radial-gradient(circle at 80% 20%, rgba(255, 107, 107, .02) 0%, transparent 50%),
-		radial-gradient(circle at 40% 80%, rgba(69, 183, 209, .03) 0%, transparent 50%);
+		radial-gradient(circle at var(--particle-1-x) var(--particle-1-y), var(--particle-1-color) 0%, transparent 50%),
+		radial-gradient(circle at var(--particle-2-x) var(--particle-2-y), var(--particle-2-color) 0%, transparent 50%),
+		radial-gradient(circle at var(--particle-3-x) var(--particle-3-y), var(--particle-3-color) 0%, transparent 50%);
 	background-attachment: fixed;
 	min-height: 100vh;
 	overflow-x: hidden;
