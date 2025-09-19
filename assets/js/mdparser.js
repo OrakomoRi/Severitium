@@ -54,13 +54,13 @@ const SECTION_CONFIG = {
 		color: '#4ade80' // Green for added
 	},
 	'changed': {
-		class: 'section-changed', 
+		class: 'section-changed',
 		icon: 'swap-horizontal-outline',
 		color: '#3b82f6' // Blue for changes
 	},
 	'fixed': {
 		class: 'section-fixed',
-		icon: 'checkmark-circle-outline', 
+		icon: 'checkmark-circle-outline',
 		color: '#f59e0b' // Yellow for fixes
 	},
 	'removed': {
@@ -93,6 +93,78 @@ function parseEmojis(text) {
 		result = result.replace(new RegExp(escapedCode, 'g'), emoji);
 	}
 	return result;
+}
+
+/**
+ * Parse inline code blocks and other markdown formatting
+ * @param {string} text - Text with markdown formatting
+ * @returns {string} Text with HTML formatting
+ */
+function parseInlineFormatting(text) {
+	let result = text;
+
+	// First, handle bold, italic, and links to avoid conflicts
+	result = result.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+	result = result.replace(/__([^_]+)__/g, '<strong>$1</strong>');
+	result = result.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+	result = result.replace(/_([^_]+)_/g, '<em>$1</em>');
+	result = result.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+
+	// Split text into code and non-code parts
+	const parts = [];
+	let lastIndex = 0;
+	let match;
+	const codeRegex = /`([^`]+)`/g;
+
+	while ((match = codeRegex.exec(result)) !== null) {
+		// Add text before code block
+		if (match.index > lastIndex) {
+			const textBefore = result.substring(lastIndex, match.index);
+			if (textBefore.trim()) {
+				parts.push({ type: 'text', content: textBefore });
+			}
+		}
+
+		// Add code block
+		parts.push({ type: 'code', content: match[1] });
+		lastIndex = match.index + match[0].length;
+	}
+
+	// Add remaining text after last code block
+	if (lastIndex < result.length) {
+		const textAfter = result.substring(lastIndex);
+		if (textAfter.trim()) {
+			parts.push({ type: 'text', content: textAfter });
+		}
+	}
+
+	// If no code blocks found, treat entire text as regular text
+	if (parts.length === 0) {
+		parts.push({ type: 'text', content: result });
+	}
+
+	// Convert parts to HTML with proper spacing
+	let htmlResult = '';
+	for (let i = 0; i < parts.length; i++) {
+		const part = parts[i];
+
+		if (part.type === 'code') {
+			htmlResult += `<span class="changelog__code">${part.content}</span>`;
+		} else {
+			// Wrap text content in changelog__text span
+			const trimmedContent = part.content.trim();
+			if (trimmedContent) {
+				htmlResult += `<span class="changelog__text">${trimmedContent}</span>`;
+			}
+		}
+
+		// Add space between parts (except for the last part)
+		if (i < parts.length - 1) {
+			htmlResult += '<span>&nbsp;</span>';
+		}
+	}
+
+	return htmlResult;
 }
 
 /**
@@ -149,8 +221,8 @@ function parseChangelog(markdownContent) {
 			continue;
 		}
 
-		// Version header (## [1.8.0] - 2025-09-16)
-		if (trimmedLine.match(/^## \[[\d.]+\]/)) {
+		// Version header (## [1.8.0] - 2025-09-16 or ## [Initial] - 2024-03-06)
+		if (trimmedLine.match(/^## /)) {
 			// Close all open lists and sections
 			while (listStack.length > 0) {
 				html += '</ul>';
@@ -159,17 +231,21 @@ function parseChangelog(markdownContent) {
 			if (currentSection) html += '</div>';
 			if (currentVersion) html += '</div>';
 
-			const versionMatch = trimmedLine.match(/^## \[([\d.]+)\] - (.+)$/);
+			// Try different version formats
+			let versionMatch = trimmedLine.match(/^## \[([\d.]+)\] - (.+)$/) ||
+				trimmedLine.match(/^## \[([^\]]+)\] - (.+)$/) ||
+				trimmedLine.match(/^## ([^-]+) - (.+)$/);
+
 			if (versionMatch) {
 				const [, version, rawDate] = versionMatch;
 				const formattedDate = formatDate(rawDate);
-				currentVersion = version;
+				currentVersion = version.trim();
 				html += `
 					<div class="changelog__version">
 						<div class="changelog__version-header">
 							<div class="changelog__version-title">
 								<ion-icon name="pricetag-outline"></ion-icon>
-								Version ${version}
+								Version ${version.trim()}
 							</div>
 							<div class="changelog__version-date">${formattedDate}</div>
 						</div>
@@ -224,9 +300,9 @@ function parseChangelog(markdownContent) {
 				listStack.push(currentIndent);
 			}
 
-			// Add list item with emoji parsing (all items are uniform)
-			const parsedText = parseEmojis(itemText);
-			html += `<li class="changelog__item">${parsedText}</li>`;
+			// Add list item with inline marker and emoji parsing
+			const parsedText = parseInlineFormatting(parseEmojis(itemText));
+			html += `<li class="changelog__item"><span class="changelog__marker"></span><span>${parsedText}</span></li>`;
 			continue;
 		}
 
@@ -249,7 +325,7 @@ function parseChangelog(markdownContent) {
 
 		// Regular paragraphs
 		if (trimmedLine && !trimmedLine.match(/^[#-]/)) {
-			const parsedText = parseEmojis(trimmedLine);
+			const parsedText = parseInlineFormatting(parseEmojis(trimmedLine));
 			html += `<p class="changelog__paragraph">${parsedText}</p>`;
 		}
 	}
@@ -287,5 +363,6 @@ window.ChangelogParser = {
 	parseChangelog,
 	fetchChangelog,
 	parseEmojis,
+	parseInlineFormatting,
 	formatDate
 };
