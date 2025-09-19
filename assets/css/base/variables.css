@@ -1,0 +1,256 @@
+/**
+ * CSS Variables - Design System
+ */
+
+:root {
+	/* ============================
+	   COLORS - Color Palette
+	   ============================ */
+	
+	/* Primary brand colors */
+	--color-primary: #6366f1;
+	--color-primary-hover: #818cf8;
+	--color-primary-light: rgba(99, 102, 241, .08);
+	--color-primary-glow: rgba(99, 102, 241, .3);
+	
+	/* Secondary colors */
+	--color-secondary: #06b6d4;
+	--color-accent: #f59e0b;
+	--color-accent-hover: #fbbf24;
+	--color-success: #10b981;
+	--color-warning: #f59e0b;
+	--color-error: #ef4444;
+	
+	/* Background colors - Modern dark theme */
+	--color-bg-primary: #0a0a0a;
+	--color-bg-secondary: #111111;
+	--color-bg-tertiary: #1a1a1a;
+	--color-bg-surface: #1f1f1f;
+	--color-bg-elevated: #262626;
+	--color-bg-card: rgba(255, 255, 255, .02);
+	
+	/* Text colors */
+	--color-text-primary: #ffffff;
+	--color-text-secondary: #e5e5e5;
+	--color-text-muted: #a3a3a3;
+	--color-text-subtle: #737373;
+	
+	/* Border and outline colors */
+	--color-border: rgba(255, 255, 255, .08);
+	--color-border-hover: rgba(255, 255, 255, .16);
+	--color-border-focus: rgba(99, 102, 241, .4);
+	
+	/* ============================
+	   GRADIENTS - Background gradients
+	   ============================ */
+	
+	--gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+	--gradient-card: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated));
+	
+	/* ============================
+	   SPACING - rem-based spacing scale
+	   ============================ */
+	
+	--space-0: 0;
+	--space-1: .25rem;     /* 4px */
+	--space-2: .5rem;      /* 8px */
+	--space-3: .75rem;     /* 12px */
+	--space-4: 1rem;       /* 16px */
+	--space-5: 1.25rem;    /* 20px */
+	--space-6: 1.5rem;     /* 24px */
+	--space-8: 2rem;       /* 32px */
+	--space-10: 2.5rem;    /* 40px */
+	--space-12: 3rem;      /* 48px */
+	--space-16: 4rem;      /* 64px */
+	--space-20: 5rem;      /* 80px */
+	--space-24: 6rem;      /* 96px */
+	
+	/* ============================
+	   TYPOGRAPHY - Font scale and weights
+	   ============================ */
+	
+	/* Font sizes */
+	--text-xs: .75rem;      /* 12px */
+	--text-sm: .875rem;     /* 14px */
+	--text-base: 1rem;      /* 16px */
+	--text-lg: 1.125rem;    /* 18px */
+	--text-xl: 1.25rem;     /* 20px */
+	--text-2xl: 1.5rem;     /* 24px */
+	--text-3xl: 1.875rem;   /* 30px */
+	--text-4xl: 2.25rem;    /* 36px */
+	--text-5xl: 3rem;       /* 48px */
+	--text-6xl: 3.75rem;    /* 60px */
+	
+	/* Font weights */
+	--font-thin: 100;
+	--font-light: 300;
+	--font-normal: 400;
+	--font-medium: 500;
+	--font-semibold: 600;
+	--font-bold: 700;
+	--font-extrabold: 800;
+	
+	/* Line heights */
+	--leading-none: 1;
+	--leading-tight: 1.25;
+	--leading-snug: 1.375;
+	--leading-normal: 1.5;
+	--leading-relaxed: 1.625;
+	--leading-loose: 2;
+	
+	/* ============================
+	   BORDER RADIUS - Professional Radii
+	   ============================ */
+	
+	--radius-sm: .25rem;       /* 4px */
+	--radius-md: .375rem;      /* 6px */
+	--radius-lg: .5rem;        /* 8px */
+	--radius-xl: .75rem;       /* 12px */
+	--radius-2xl: 1rem;        /* 16px */
+	--radius-full: 9999px;
+	
+	/* ============================
+	   SHADOWS - Modern Shadow System
+	   ============================ */
+	
+	--shadow-sm: 0 .0625rem .125rem rgba(0, 0, 0, .05);
+	--shadow-md: 0 .25rem .375rem -.0625rem rgba(0, 0, 0, .1), 0 .125rem .25rem -.125rem rgba(0, 0, 0, .06);
+	--shadow-lg: 0 .625rem .9375rem -.1875rem rgba(0, 0, 0, .1), 0 .25rem .375rem -.125rem rgba(0, 0, 0, .05);
+	--shadow-xl: 0 1.25rem 1.5625rem -.3125rem rgba(0, 0, 0, .1), 0 .625rem .625rem -.3125rem rgba(0, 0, 0, .04);
+	--shadow-primary: 0 .5rem 1.5rem rgba(99, 102, 241, .25);
+	--shadow-accent: 0 .25rem .75rem rgba(245, 158, 11, .2);
+	--shadow-glow: 0 0 2rem rgba(99, 102, 241, .15);
+	
+	/* Scrollbar colors */
+	--color-scrollbar-track: #111111;
+	--color-scrollbar-thumb: #404040;
+	--color-scrollbar-thumb-hover: #525252;
+	
+	/* ============================
+	   SPACING - Modern Spacing Scale
+	   ============================ */
+	
+	--space-px: .0625rem;      /* 1px */
+	--space-1: .25rem;         /* 4px */
+	--space-2: .5rem;          /* 8px */
+	--space-3: .75rem;         /* 12px */
+	--space-4: 1rem;           /* 16px */
+	--space-5: 1.25rem;        /* 20px */
+	--space-6: 1.5rem;         /* 24px */
+	--space-8: 2rem;           /* 32px */
+	--space-10: 2.5rem;        /* 40px */
+	--space-12: 3rem;          /* 48px */
+	--space-16: 4rem;          /* 64px */
+	--space-20: 5rem;          /* 80px */
+	--space-24: 6rem;          /* 96px */
+	
+	/* ============================
+	   TYPOGRAPHY - Typography Scale
+	   ============================ */
+	
+	--font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+	--font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+	
+	/* Font sizes */
+	--text-xs: .75rem;         /* 12px */
+	--text-sm: .875rem;        /* 14px */
+	--text-base: 1rem;         /* 16px */
+	--text-lg: 1.125rem;       /* 18px */
+	--text-xl: 1.25rem;        /* 20px */
+	--text-2xl: 1.5rem;        /* 24px */
+	--text-3xl: 1.875rem;      /* 30px */
+	--text-4xl: 2.25rem;       /* 36px */
+	--text-5xl: 3rem;          /* 48px */
+	--text-6xl: 3.75rem;       /* 60px */
+	
+	/* Font weights */
+	--font-light: 300;
+	--font-normal: 400;
+	--font-medium: 500;
+	--font-semibold: 600;
+	--font-bold: 700;
+	
+	/* Line heights */
+	--leading-tight: 1.25;
+	--leading-normal: 1.5;
+	--leading-relaxed: 1.625;
+	--leading-loose: 2;
+	
+	/* ============================
+	   BORDER RADIUS - Professional Radii
+	   ============================ */
+	
+	--radius-sm: .25rem;       /* 4px */
+	--radius-md: .375rem;      /* 6px */
+	--radius-lg: .5rem;        /* 8px */
+	--radius-xl: .75rem;       /* 12px */
+	--radius-2xl: 1rem;        /* 16px */
+	--radius-full: 9999px;
+	
+	/* ============================
+	   SHADOWS - Modern Shadow System
+	   ============================ */
+	
+	--shadow-sm: 0 .0625rem .125rem rgba(0, 0, 0, .05);
+	--shadow-md: 0 .25rem .375rem -.0625rem rgba(0, 0, 0, .1), 0 .125rem .25rem -.125rem rgba(0, 0, 0, .06);
+	--shadow-lg: 0 .625rem .9375rem -.1875rem rgba(0, 0, 0, .1), 0 .25rem .375rem -.125rem rgba(0, 0, 0, .05);
+	--shadow-xl: 0 1.25rem 1.5625rem -.25rem rgba(0, 0, 0, .25);
+	--shadow-2xl: 0 1.5625rem 3.125rem -.75rem rgba(0, 0, 0, .5);
+	--shadow-inner: inset 0 .125rem .25rem 0 rgba(0, 0, 0, .06);
+	
+	/* Colored shadows */
+	--shadow-primary: 0 .5rem 1.5rem rgba(78, 205, 196, .25);
+	--shadow-accent: 0 .5rem 1.5rem rgba(255, 107, 107, .25);
+	--shadow-glow: 0 0 2rem rgba(78, 205, 196, .15);
+	
+	/* ============================
+	   SIZES - Component Sizes
+	   ============================ */
+	
+	--container-max: 75rem;     /* 1200px */
+	--content-max: 65rem;       /* 1040px */
+	--prose-max: 40rem;         /* 640px */
+	
+	/* Button sizes */
+	--btn-height-sm: 2.25rem;   /* 36px */
+	--btn-height-md: 2.75rem;   /* 44px */
+	--btn-height-lg: 3.25rem;   /* 52px */
+	--btn-padding-x: 1.5rem;
+	--btn-padding-x-lg: 2rem;
+	
+	/* Icon sizes */
+	--icon-sm: 1rem;
+	--icon-md: 1.25rem;
+	--icon-lg: 1.5rem;
+	--icon-xl: 2rem;
+	
+	/* ============================
+	   TRANSITIONS - Animation System
+	   ============================ */
+	
+	--transition-fast: .15s cubic-bezier(.4, 0, .2, 1);
+	--transition-normal: .25s cubic-bezier(.4, 0, .2, 1);
+	--transition-slow: .35s cubic-bezier(.4, 0, .2, 1);
+	
+	/* ============================
+	   Z-INDEX - Layer Management
+	   ============================ */
+	
+	--z-dropdown: 10;
+	--z-sticky: 20;
+	--z-fixed: 30;
+	--z-modal-backdrop: 40;
+	--z-modal: 50;
+	--z-popover: 60;
+	--z-tooltip: 70;
+	
+	/* ============================
+	   BREAKPOINTS - Responsive Design
+	   ============================ */
+	
+	--breakpoint-sm: 640px;
+	--breakpoint-md: 768px;
+	--breakpoint-lg: 1024px;
+	--breakpoint-xl: 1280px;
+	--breakpoint-2xl: 1536px;
+}

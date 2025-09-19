@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/svg" href="images/icon.svg">
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/main.css">
 	<title>Severitium</title>
 
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -13,120 +13,123 @@
 </head>
 
 <body>
-	<div class="container">
-		<header>
-			<h1>Severitium</h1>
-			<p class="tagline"><ion-icon name="heart"></ion-icon> Vibrant, interactive, memorable</p>
-			<p>Free open-source theme for Tanki Online</p>
-			
-			<div class="quick-download">
-				<a href="#" target="_blank" class="quick-btn latest-btn" id="latest-btn">
-					<ion-icon name="rocket-outline"></ion-icon> Latest Version
+	<header class="header animate-fade-in">
+		<h1 class="header__title">Severitium</h1>
+		<p class="header__tagline"><ion-icon name="heart"></ion-icon> Vibrant, interactive, memorable</p>
+		<p class="header__description">Free open-source theme for Tanki Online</p>
+	</header>
+
+	<main class="container">
+
+
+		<section class="cta-section">
+			<h2 class="cta-section__title">Getting Started</h2>
+			<p class="cta-section__description">Install the theme in a few simple steps:</p>
+
+			<div class="cta-section__buttons">
+				<a href="https://www.tampermonkey.net/" target="_blank" class="btn btn--step">
+					1. Download Tampermonkey
 				</a>
-				<a href="#" target="_blank" class="quick-btn stable-btn" id="stable-btn">
-					<ion-icon name="checkmark-circle-outline"></ion-icon> Stable Version
+
+				<a href="https://github.com/OrakomoRi/Severitium/blob/main/release/severitium.user.js?raw=true"
+					target="_blank" class="btn btn--step" id="install-script-btn">
+					2. Install Script
 				</a>
 			</div>
-		</header>
+		</section>
 
-		<section class="features">
-			<div class="feature-card">
-				<div class="feature-icon"><ion-icon name="color-palette-outline"></ion-icon></div>
-				<h3 class="feature-title">Modern Design</h3>
-				<p class="feature-description">Vibrant animations, custom colors and stylish interface for enhanced
+		<section class="features animate-slide-up">
+			<div class="features__card">
+				<div class="features__icon"><ion-icon name="color-palette-outline"></ion-icon></div>
+				<h3 class="features__title">Modern Design</h3>
+				<p class="features__description">Vibrant animations, custom colors and stylish interface for enhanced
 					gaming experience</p>
 			</div>
 
-			<div class="feature-card">
-				<div class="feature-icon"><ion-icon name="build-outline"></ion-icon></div>
-				<h3 class="feature-title">Bug Fixes</h3>
-				<p class="feature-description">Original bug fixes for more stable game performance</p>
+			<div class="features__card">
+				<div class="features__icon"><ion-icon name="build-outline"></ion-icon></div>
+				<h3 class="features__title">Bug Fixes</h3>
+				<p class="features__description">Original bug fixes for more stable game performance</p>
 			</div>
 
-			<div class="feature-card">
-				<div class="feature-icon"><ion-icon name="rocket-outline"></ion-icon></div>
-				<h3 class="feature-title">Open Source</h3>
-				<p class="feature-description">Fully open project with community contribution capabilities</p>
+			<div class="features__card">
+				<div class="features__icon"><ion-icon name="rocket-outline"></ion-icon></div>
+				<h3 class="features__title">Open Source</h3>
+				<p class="features__description">Fully open project with community contribution capabilities</p>
 			</div>
 		</section>
 
 		<section class="preview-video">
-			<a href="https://youtu.be/pFkgSHNhcug" target="_blank" class="video-link">
+			<a href="https://youtu.be/pFkgSHNhcug" target="_blank" class="preview-video__link">
 				<ion-icon name="play-circle-outline"></ion-icon> Watch Severitium theme preview
 			</a>
 		</section>
 
-		<section class="cta-section">
-			<h2>Getting Started</h2>
-			<p style="margin: 1.25rem 0; color: #d0d0d0;">Install the theme in a few simple steps:</p>
-
-			<a href="https://www.tampermonkey.net/" target="_blank" class="download-btn step-btn">
-				1. Download Tampermonkey
-			</a>
-
-			<a href="https://github.com/OrakomoRi/Severitium/blob/main/release/severitium.user.js?raw=true"
-				target="_blank" class="download-btn step-btn" id="install-script-btn">
-				2. Install Script
-			</a>
-		</section>
 
 		<section class="github-section">
-			<h2>Source Code</h2>
-			<p style="margin: 1.25rem 0; color: #d0d0d0;">View the project on GitHub:</p>
-			<a href="https://github.com/OrakomoRi/Severitium" target="_blank" class="download-btn github-btn">
+			<h2 class="github-section__title">Developer Resources</h2>
+			<p class="github-section__description">Access the source code and development builds:</p>
+			<a href="https://github.com/OrakomoRi/Severitium" target="_blank" class="btn btn--github">
 				<ion-icon name="logo-github"></ion-icon> GitHub Repository
+			</a>
+			<a href="#" target="_blank" class="btn btn--latest" id="latest-btn">
+				<ion-icon name="rocket-outline"></ion-icon> Latest Development Version
 			</a>
 		</section>
 
 		<section class="support-section">
-			<h2>Support the Project</h2>
-			<p style="margin: 1.25rem 0; color: #d0d0d0;">Help us continue developing Severitium:</p>
+			<h2 class="support-section__title">Support the Project</h2>
+			<p class="support-section__description">Help us continue developing Severitium:</p>
 
-			<a href="https://boosty.to/orakomori/donate" target="_blank" class="download-btn support-btn">
+			<a href="https://boosty.to/orakomori/donate" target="_blank" class="btn btn--support">
 				<ion-icon name="heart-outline"></ion-icon> Support on Boosty
 			</a>
 
-			<a href="https://www.patreon.com/orakomori" target="_blank" class="download-btn patreon-btn">
+			<a href="https://www.patreon.com/orakomori" target="_blank" class="btn btn--patreon">
 				<ion-icon name="gift-outline"></ion-icon> Support on Patreon
 			</a>
 		</section>
 
 		<section class="compatibility">
-			<h2>Browser Compatibility</h2>
-			<div class="browser-grid">
-				<div class="browser-item">
+			<h2 class="compatibility__title">Browser Compatibility</h2>
+			<div class="compatibility__grid">
+				<div class="compatibility__item">
 					<strong>Chrome</strong><br>
 					105+
 				</div>
-				<div class="browser-item">
+				<div class="compatibility__item">
 					<strong>Firefox</strong><br>
 					121+
 				</div>
-				<div class="browser-item">
+				<div class="compatibility__item">
 					<strong>Edge</strong><br>
 					105+
 				</div>
-				<div class="browser-item">
+				<div class="compatibility__item">
 					<strong>Safari</strong><br>
 					15.4+
 				</div>
-				<div class="browser-item">
+				<div class="compatibility__item">
 					<strong>Opera</strong><br>
 					91+
 				</div>
 			</div>
 		</section>
 
-		<footer class="footer">
-			<p>Made with <ion-icon name="heart"></ion-icon> by OrakomoRi</p>
-			<p>Distributed under the MIT License</p>
-			<p style="margin-top: 0.9375rem;">
-				<a href="https://github.com/OrakomoRi/Severitium/blob/main/CHANGELOG.md" style="color: #4ecdc4; text-decoration: none;">Changelog</a> |
-				<a href="https://github.com/OrakomoRi/Severitium/blob/main/LICENSE" style="color: #4ecdc4; text-decoration: none;">License</a>
-			</p>
-		</footer>
-	</div>
 
+	</main>
+
+	<footer class="footer">
+		<p class="footer__info">Made with <ion-icon name="heart"></ion-icon> by OrakomoRi</p>
+		<p class="footer__info">Distributed under the MIT License</p>
+		<p class="footer__links">
+			<a href="#" id="changelog-btn" class="footer__link">Changelog</a>
+			<a href="#" id="license-btn" class="footer__link">License</a>
+		</p>
+	</footer>
+
+	<script src="assets/js/mdparser.js"></script>
+	<script src="assets/js/modal.js"></script>
 	<script src="assets/js/main.js"></script>
 </body>
 

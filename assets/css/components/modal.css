@@ -1,0 +1,131 @@
+/**
+ * Modal Component
+ */
+
+/* ============================
+   MODAL - Base modal structure
+   ============================ */
+
+.modal {
+	position: fixed;
+	inset: 0;
+	z-index: var(--z-modal);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	visibility: hidden;
+	transition: all var(--transition-normal);
+}
+
+.modal--show {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* ============================
+   MODAL OVERLAY - Backdrop
+   ============================ */
+
+.modal__overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, .8);
+	backdrop-filter: blur(8px);
+	z-index: var(--z-modal-backdrop);
+}
+
+/* ============================
+   MODAL CONTENT - Main container
+   ============================ */
+
+.modal__content {
+	background: var(--color-bg-secondary);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-2xl);
+	width: 90%;
+	max-width: 50rem;
+	max-height: 90vh;
+	position: relative;
+	z-index: var(--z-modal);
+	overflow: hidden;
+	box-shadow: var(--shadow-2xl);
+	transform: scale(.95);
+	transition: transform var(--transition-normal);
+}
+
+.modal--show .modal__content {
+	transform: scale(1);
+}
+
+/* Changelog modal specific styling */
+.modal__content--changelog {
+	max-width: 60rem;
+}
+
+/* ============================
+   MODAL HEADER - Title and close
+   ============================ */
+
+.modal__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--space-6) var(--space-8);
+	border-bottom: 1px solid var(--color-border);
+	background: var(--color-bg-surface);
+}
+
+.modal__title {
+	font-size: var(--text-2xl);
+	font-weight: var(--font-semibold);
+	color: var(--color-text-primary);
+	display: flex;
+	align-items: center;
+	gap: var(--space-3);
+}
+
+.modal__title ion-icon {
+	color: var(--color-primary);
+	font-size: var(--icon-lg);
+}
+
+/* ============================
+   MODAL CLOSE - Close button
+   ============================ */
+
+.modal__close {
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: var(--radius-lg);
+	background: var(--color-bg-elevated);
+	border: 1px solid var(--color-border);
+	color: var(--color-text-muted);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all var(--transition-fast);
+	cursor: pointer;
+}
+
+.modal__close:hover {
+	background: var(--color-bg-surface);
+	color: var(--color-text-primary);
+	border-color: var(--color-border-hover);
+	transform: scale(1.05);
+}
+
+.modal__close ion-icon {
+	font-size: var(--icon-lg);
+}
+
+/* ============================
+   MODAL BODY - Content area
+   ============================ */
+
+.modal__body {
+	padding: var(--space-8);
+	max-height: calc(90vh - 5rem);
+	overflow-y: auto;
+	position: relative;
+}

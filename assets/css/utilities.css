@@ -1,0 +1,111 @@
+/**
+ * Utilities - Helper Classes
+ * ==========================
+ * Modern utility classes for common styling patterns
+ */
+
+/* ============================
+   ANIMATIONS - Modern animations
+   ============================ */
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(1rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideInUp {
+	from {
+		opacity: 0;
+		transform: translateY(2rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes glow {
+	0%, 100% {
+		opacity: .5;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+/* ============================
+   ANIMATION CLASSES - Animation utilities
+   ============================ */
+
+.animate-fade-in {
+	animation: fadeIn .6s ease-out;
+}
+
+.animate-slide-up {
+	animation: slideInUp .8s ease-out;
+}
+
+.animate-glow {
+	animation: glow 2s ease-in-out infinite;
+}
+
+/* ============================
+   SPACING UTILITIES - Margin and padding
+   ============================ */
+
+.mt-auto { margin-top: auto; }
+.mb-auto { margin-bottom: auto; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* ============================
+   GLASS MORPHISM - Modern glass effects
+   ============================ */
+
+.glass {
+	background: rgba(255, 255, 255, .02);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.glass-strong {
+	background: rgba(255, 255, 255, .05);
+	backdrop-filter: blur(20px);
+	border: 1px solid rgba(255, 255, 255, .12);
+}
+
+/* ============================
+   GRADIENTS - Gradient utilities
+   ============================ */
+
+.gradient-text {
+	background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.gradient-border {
+	position: relative;
+}
+
+.gradient-border::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	padding: 1px;
+	background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+	border-radius: inherit;
+	mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	mask-composite: xor;
+	-webkit-mask-composite: xor;
+}

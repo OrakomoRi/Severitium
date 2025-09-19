@@ -1,0 +1,125 @@
+/**
+ * Responsive Design - Mobile Adaptations
+ */
+
+/* ============================
+   TABLET - Medium screens
+   ============================ */
+
+@media (max-width: 1024px) {
+	.container {
+		padding: 0 var(--space-4);
+	}
+	
+	.features {
+		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+		gap: var(--space-6);
+	}
+}
+
+/* ============================
+   MOBILE - Small screens
+   ============================ */
+
+@media (max-width: 768px) {
+	/* Header adaptations */
+	.header {
+		padding: var(--space-16) 0 var(--space-12);
+	}
+	
+	.header__title {
+		font-size: var(--text-4xl);
+	}
+	
+	.header__tagline {
+		font-size: var(--text-lg);
+	}
+	
+	.header__description {
+		font-size: var(--text-base);
+		margin-bottom: var(--space-10);
+	}
+
+	/* Features grid - single column */
+	.features {
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+		margin: var(--space-12) 0;
+	}
+
+	/* Quick download buttons */
+	.quick-download {
+		flex-direction: column;
+		gap: var(--space-3);
+	}
+
+	.quick-download__btn {
+		width: 100%;
+		max-width: 20rem;
+		padding: var(--space-4) var(--space-6);
+	}
+
+	/* Modal adaptations */
+	.modal__content {
+		width: 95%;
+		max-height: 85vh;
+		margin: 7.5vh auto;
+	}
+	
+	.modal__header {
+		padding: var(--space-4) var(--space-6);
+	}
+	
+	.modal__body {
+		padding: var(--space-6);
+	}
+
+	/* Changelog adaptations */
+	.changelog__version-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--space-3);
+	}
+	
+	/* Sections spacing */
+	section {
+		margin: var(--space-12) 0;
+	}
+	
+	section h2 {
+		font-size: var(--text-2xl);
+	}
+	
+	/* CTA section */
+	.cta-section {
+		padding: var(--space-8);
+	}
+	
+	/* Compatibility grid */
+	.compatibility__grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--space-4);
+	}
+}
+
+/* ============================
+   SMALL MOBILE - Very small screens
+   ============================ */
+
+@media (max-width: 480px) {
+	.header__title {
+		font-size: var(--text-3xl);
+	}
+	
+	.features__card {
+		padding: var(--space-6);
+	}
+	
+	.quick-download__btn {
+		font-size: var(--text-xs);
+	}
+	
+	.compatibility__grid {
+		grid-template-columns: 1fr;
+	}
+}

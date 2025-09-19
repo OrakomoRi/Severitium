@@ -1,0 +1,68 @@
+/**
+ * Footer Component - Site Footer
+ */
+
+/* ============================
+   FOOTER - Main footer container
+   ============================ */
+
+.footer {
+	text-align: center;
+	padding: var(--space-12) var(--space-6) var(--space-8);
+	margin-top: var(--space-16);
+	border-top: 1px solid var(--color-border);
+	background: linear-gradient(135deg, var(--color-bg-card), transparent);
+	backdrop-filter: blur(10px);
+}
+
+/* ============================
+   FOOTER INFO - Information text
+   ============================ */
+
+.footer__info {
+	font-size: var(--text-sm);
+	color: var(--color-text-muted);
+	margin-bottom: var(--space-3);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-1);
+	line-height: var(--leading-relaxed);
+}
+
+.footer__info ion-icon {
+	color: var(--color-accent);
+	font-size: var(--icon-sm);
+}
+
+/* ============================
+   FOOTER LINKS - Navigation links
+   ============================ */
+
+.footer__links {
+	font-size: var(--text-sm);
+	color: var(--color-text-subtle);
+	margin-top: var(--space-4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-4);
+	flex-wrap: wrap;
+}
+
+.footer__link {
+	color: var(--color-primary);
+	text-decoration: none;
+	transition: all var(--transition-normal);
+	padding: var(--space-2) var(--space-3);
+	border-radius: var(--radius-md);
+	background: rgba(99, 102, 241, .05);
+	border: 1px solid rgba(99, 102, 241, .1);
+}
+
+.footer__link:hover {
+	color: var(--color-primary-hover);
+	background: rgba(99, 102, 241, .1);
+	border-color: rgba(99, 102, 241, .2);
+	transform: translateY(-1px);
+}

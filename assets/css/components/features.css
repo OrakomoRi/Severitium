@@ -1,0 +1,94 @@
+/**
+ * Features Component - Feature Cards Grid
+ * =======================================
+ * Modern card layout with hover effects and professional spacing
+ */
+
+/* ============================
+   FEATURES - Main container
+   ============================ */
+
+.features {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	gap: var(--space-6);
+	margin: var(--space-12) 0;
+}
+
+/* ============================
+   FEATURE CARD - Individual cards
+   ============================ */
+
+.features__card {
+	background: var(--color-bg-card);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-xl);
+	padding: var(--space-6);
+	text-align: center;
+	transition: all var(--transition-normal);
+	position: relative;
+	overflow: hidden;
+	backdrop-filter: blur(10px);
+}
+
+.features__card::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(135deg, var(--color-primary-light), transparent);
+	opacity: 0;
+	transition: opacity var(--transition-normal);
+}
+
+.features__card:hover {
+	transform: translateY(-4px);
+	border-color: var(--color-border-hover);
+	box-shadow: var(--shadow-lg);
+}
+
+.features__card:hover::before {
+	opacity: .5;
+}
+
+/* ============================
+   FEATURE ICON - Card icons
+   ============================ */
+
+.features__icon {
+	width: 3rem;
+	height: 3rem;
+	background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+	border-radius: var(--radius-full);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto var(--space-4);
+	position: relative;
+	z-index: 1;
+}
+
+.features__icon ion-icon {
+	font-size: var(--icon-xl);
+	color: white;
+}
+
+/* ============================
+   FEATURE CONTENT - Text content
+   ============================ */
+
+.features__title {
+	font-size: var(--text-lg);
+	font-weight: var(--font-semibold);
+	color: var(--color-text-primary);
+	margin-bottom: var(--space-2);
+	position: relative;
+	z-index: 1;
+}
+
+.features__description {
+	font-size: var(--text-base);
+	color: var(--color-text-muted);
+	line-height: var(--leading-relaxed);
+	position: relative;
+	z-index: 1;
+}

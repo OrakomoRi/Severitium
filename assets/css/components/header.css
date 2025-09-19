@@ -1,0 +1,135 @@
+/**
+ * Header Component
+ */
+
+/* ============================
+   HEADER - Main header container
+   ======================.quick-download__btn:hover {
+	background: linear-gradient(135deg, rgba(99, 102, 241, .12), rgba(99, 102, 241, .06));
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-primary);
+}= */
+
+.header {
+	text-align: center;
+	padding: var(--space-20) 0 var(--space-16);
+	position: relative;
+}
+
+/* ============================
+   HEADER TITLE - Main heading
+   ============================ */
+
+.header__title {
+	font-size: var(--text-6xl);
+	font-weight: var(--font-bold);
+	margin-bottom: var(--space-6);
+	background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	letter-spacing: -.025em;
+}
+
+/* ============================
+   HEADER TAGLINE - Subtitle with icon
+   ============================ */
+
+.header__tagline {
+	font-size: var(--text-xl);
+	font-weight: var(--font-medium);
+	color: var(--color-text-secondary);
+	margin-bottom: var(--space-3);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-2);
+}
+
+.header__tagline ion-icon {
+	color: var(--color-accent);
+	font-size: var(--icon-md);
+}
+
+/* ============================
+   HEADER DESCRIPTION - Supporting text
+   ============================ */
+
+.header__description {
+	font-size: var(--text-lg);
+	color: var(--color-text-muted);
+	margin-bottom: var(--space-12);
+	font-weight: var(--font-normal);
+}
+
+/* ============================
+   QUICK DOWNLOAD - Action buttons
+   ============================ */
+
+.quick-download {
+	display: flex;
+	gap: var(--space-4);
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.quick-download__btn {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-2);
+	padding: var(--space-3) var(--space-6);
+	font-size: var(--text-sm);
+	font-weight: var(--font-medium);
+	border-radius: var(--radius-lg);
+	transition: all var(--transition-normal);
+	text-decoration: none;
+	position: relative;
+	overflow: hidden;
+	min-width: 10rem;
+	justify-content: center;
+}
+
+.quick-download__btn::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	padding: 1px;
+	background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+	mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	mask-composite: xor;
+	-webkit-mask-composite: xor;
+	opacity: .6;
+	transition: opacity var(--transition-fast);
+}
+
+.quick-download__btn:hover::before {
+	opacity: 1;
+}
+
+/* Latest version button */
+.quick-download__btn--latest {
+	background: linear-gradient(135deg, rgba(255, 107, 107, .1), rgba(255, 107, 107, .05));
+	color: var(--color-accent);
+	border: 1px solid rgba(255, 107, 107, .2);
+}
+
+.quick-download__btn--latest:hover {
+	background: linear-gradient(135deg, rgba(255, 107, 107, .15), rgba(255, 107, 107, .1));
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-accent);
+}
+
+/* Stable version button */
+.quick-download__btn--stable {
+	background: linear-gradient(135deg, var(--color-primary-light), rgba(99, 102, 241, .02));
+	color: var(--color-primary);
+	border: 1px solid rgba(99, 102, 241, .2);
+}
+
+.quick-download__btn--stable:hover {
+	background: linear-gradient(135deg, rgba(78, 205, 196, .12), rgba(78, 205, 196, .06));
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-primary);
+}

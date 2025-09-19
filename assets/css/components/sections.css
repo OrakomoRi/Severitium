@@ -1,0 +1,203 @@
+/**
+ * Sections Component - Content Sections
+ */
+
+/* ============================
+   BASE SECTION - Common section styles
+   ============================ */
+
+section {
+	margin: var(--space-12) 0;
+	position: relative;
+}
+
+section h2 {
+	font-size: var(--text-2xl);
+	font-weight: var(--font-bold);
+	text-align: center;
+	margin-bottom: var(--space-4);
+	color: var(--color-text-primary);
+}
+
+section p {
+	font-size: var(--text-base);
+	color: var(--color-text-muted);
+	text-align: center;
+	margin-bottom: var(--space-6);
+	line-height: var(--leading-relaxed);
+}
+
+/* ============================
+   PREVIEW VIDEO - Video section
+   ============================ */
+
+.preview-video {
+	text-align: center;
+	margin: var(--space-8) 0;
+}
+
+.preview-video__link {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-3);
+	padding: var(--space-4) var(--space-8);
+	font-size: var(--text-lg);
+	font-weight: var(--font-semibold);
+	color: var(--color-primary);
+	background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated));
+	border: 2px solid var(--color-primary);
+	border-radius: var(--radius-lg);
+	transition: all var(--transition-normal);
+	text-decoration: none;
+	backdrop-filter: blur(10px);
+	box-shadow: var(--shadow-md);
+}
+
+.preview-video__link:hover {
+	background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+	color: white !important;
+	transform: translateY(-3px) scale(1.02);
+	box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.preview-video__link ion-icon {
+	font-size: var(--text-2xl);
+	color: var(--color-primary);
+}
+
+/* ============================
+   CTA SECTION - Call to action
+   ============================ */
+
+.cta-section {
+	background: var(--color-bg-card);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-xl);
+	padding: var(--space-8);
+	margin: var(--space-12) 0;
+	backdrop-filter: blur(10px);
+	position: relative;
+	overflow: hidden;
+}
+
+.cta-section::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(135deg, var(--color-primary-light), transparent);
+	opacity: .3;
+}
+
+.cta-section__title {
+	position: relative;
+	z-index: 1;
+	margin-bottom: var(--space-3);
+}
+
+.cta-section__description {
+	position: relative;
+	z-index: 1;
+	margin-bottom: var(--space-6);
+}
+
+.cta-section__buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-4);
+	position: relative;
+	z-index: 1;
+}
+
+@media (min-width: 768px) {
+	.cta-section__buttons {
+		flex-direction: row;
+		justify-content: center;
+		gap: var(--space-6);
+	}
+}
+
+/* ============================
+   GITHUB SECTION - Source code
+   ============================ */
+
+.github-section {
+	text-align: center;
+}
+
+.github-section__title {
+	margin-bottom: var(--space-4);
+}
+
+.github-section__description {
+	margin-bottom: var(--space-8);
+}
+
+/* ============================
+   SUPPORT SECTION - Donation links
+   ============================ */
+
+.support-section {
+	text-align: center;
+}
+
+.support-section__title {
+	margin-bottom: var(--space-4);
+}
+
+.support-section__description {
+	margin-bottom: var(--space-8);
+}
+
+/* Support buttons container */
+.support-section .btn {
+	margin: var(--space-2) var(--space-3);
+}
+
+/* ============================
+   COMPATIBILITY - Browser grid
+   ============================ */
+
+.compatibility {
+	text-align: center;
+	margin: var(--space-12) 0;
+}
+
+.compatibility__title {
+	margin-bottom: var(--space-6);
+}
+
+.compatibility__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+	gap: var(--space-6);
+	max-width: 100%;
+}
+
+.compatibility__item {
+	background: var(--color-bg-card);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-lg);
+	padding: var(--space-4);
+	text-align: center;
+	transition: all var(--transition-normal);
+	backdrop-filter: blur(10px);
+}
+
+.compatibility__item:hover {
+	background: var(--color-bg-elevated);
+	border-color: var(--color-border-hover);
+	transform: translateY(-2px);
+}
+
+.compatibility__item strong {
+	display: block;
+	color: var(--color-text-primary);
+	font-weight: var(--font-semibold);
+	margin-bottom: var(--space-1);
+}
+
+.compatibility__item {
+	color: var(--color-text-muted);
+	font-size: var(--text-sm);
+}
