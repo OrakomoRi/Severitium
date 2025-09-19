@@ -1,0 +1,19 @@
+/**
+ * License CSS - Styles for License Modal
+ */
+
+/* ============================
+   LICENSE - Simple license text formatting
+   ============================ */
+
+.license {
+	color: var(--color-text-secondary);
+	line-height: var(--leading-relaxed);
+	white-space: pre-wrap; /* Preserve line breaks and wrap long lines */
+	font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+	font-size: var(--text-sm);
+	padding: 0;
+	margin: 0;
+	background: transparent;
+	border: none;
+}

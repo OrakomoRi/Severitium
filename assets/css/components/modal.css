@@ -63,6 +63,15 @@
 	max-width: 60rem;
 }
 
+/* License modal specific styling */
+.modal__content--license {
+	max-width: 50rem;
+}
+
+.modal__content--license .modal__body {
+	padding: var(--space-4); /* Reduced padding for license */
+}
+
 /* ============================
    MODAL HEADER - Title and close
    ============================ */

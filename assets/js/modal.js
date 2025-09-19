@@ -175,13 +175,9 @@ class ModalManager {
 				const response = await fetch('https://raw.githubusercontent.com/OrakomoRi/Severitium/main/LICENSE');
 				const licenseText = await response.text();
 				
-				return licenseText
-					.split('\n')
-					.map(line => line.trim())
-					.filter(line => line.length > 0)
-					.map(line => `<p class="changelog__text">${line}</p>`)
-					.join('');
-			}
+				return `<pre class="license">${licenseText}</pre>`;
+			},
+			'license'
 		);
 	}
 }
