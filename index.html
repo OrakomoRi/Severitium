@@ -10,6 +10,10 @@
 
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+	<script src="assets/js/mdparser.js" defer></script>
+	<script src="assets/js/modal.js" defer></script>
+	<script src="assets/js/main.js" defer></script>
 </head>
 
 <body>
@@ -120,8 +124,6 @@
 				</div>
 			</div>
 		</section>
-
-
 	</main>
 
 	<footer class="footer">
@@ -133,9 +135,24 @@
 		</p>
 	</footer>
 
-	<script src="assets/js/mdparser.js"></script>
-	<script src="assets/js/modal.js"></script>
-	<script src="assets/js/main.js"></script>
+	<script>
+		$(document).ready(function () {
+			function updateResourceVersions() {
+				var styles = $(`link[href^='css/']`);
+				var scripts = $(`script[src^='js/']`);
+
+				var newVersion = new Date().getTime();
+
+				styles.each(function () {
+					$(this).attr('href', `${$(this).attr('href')}?v=${newVersion}`);
+				});
+				scripts.each(function () {
+					$(this).attr('src', `${$(this).attr('src')}?v=${newVersion}`);
+				});
+			}
+			updateResourceVersions();
+		});
+	</script>
 </body>
 
 </html>
