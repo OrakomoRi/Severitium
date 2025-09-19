@@ -152,6 +152,7 @@
 	--font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 	
 	/* Font sizes */
+	--text-xxs: .7rem;         /* 11px */
 	--text-xs: .75rem;         /* 12px */
 	--text-sm: .875rem;        /* 14px */
 	--text-base: 1rem;         /* 16px */
