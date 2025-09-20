@@ -1,0 +1,112 @@
+/* ============================
+   ABOUT SECTION - Project description
+   ============================ */
+
+.about-section {
+	text-align: center;
+	margin: var(--space-12) 0;
+}
+
+.about-section__title {
+	margin-bottom: var(--space-8);
+	color: var(--color-text-primary);
+}
+
+.about-section__content {
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.about-section__qa {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-8);
+	text-align: left;
+}
+
+.qa-item {
+	position: relative;
+	border-left: .25rem solid var(--color-primary);
+	padding-left: var(--space-6);
+	transition: border-left-color .2s ease;
+}
+
+.qa-item::after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	right: 100%;
+	bottom: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0);
+	pointer-events: none;
+	transition: right .2s ease, background .2s ease;
+}
+
+.qa-item:hover {
+	border-left-color: var(--color-primary-hover);
+}
+
+.qa-item:hover::after {
+	right: 0;
+	background: linear-gradient(90deg, var(--color-primary-light), transparent);
+	animation: qa-hover .3s ease;
+}
+
+@keyframes qa-hover {
+	from {
+		right: 100%;
+		background: linear-gradient(90deg, var(--color-primary-light), transparent);
+	}
+	to {
+		right: 0;
+		background: linear-gradient(90deg, var(--color-primary-light), transparent);
+	}
+}
+
+.qa-item__question {
+	color: var(--color-text-primary);
+	font-size: var(--text-lg);
+	font-weight: var(--font-semibold);
+	margin-bottom: var(--space-3);
+	line-height: var(--leading-tight);
+	text-align: left;
+}
+
+.qa-item__answer {
+	color: var(--color-text-muted);
+	font-size: var(--text-base);
+	line-height: var(--leading-relaxed);
+	margin: 0;
+	text-align: left;
+}
+
+@media (max-width: 768px) {
+	.about-section__qa {
+		text-align: center;
+		gap: var(--space-6);
+		padding: 0 var(--space-4);
+	}
+	
+	.qa-item {
+		border-left: none;
+		border-top: .2rem solid var(--color-primary);
+		padding-left: 0;
+		padding-top: var(--space-4);
+	}
+	
+	.qa-item:hover {
+		border-top-color: var(--color-primary-hover);
+		background: linear-gradient(180deg, var(--color-primary-light), transparent);
+	}
+	
+	.qa-item__question {
+		font-size: var(--text-base);
+	}
+	
+	.qa-item__answer {
+		font-size: var(--text-sm);
+		text-align: left;
+	}
+}

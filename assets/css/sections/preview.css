@@ -1,0 +1,37 @@
+/* ============================
+   PREVIEW VIDEO - Video section
+   ============================ */
+
+.preview-video {
+	text-align: center;
+	margin: var(--space-8) 0;
+}
+
+.preview-video__link {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-3);
+	padding: var(--space-4) var(--space-8);
+	font-size: var(--text-lg);
+	font-weight: var(--font-semibold);
+	color: var(--color-primary);
+	background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated));
+	border: .2rem solid var(--color-primary);
+	border-radius: var(--radius-lg);
+	transition: all var(--transition-normal);
+	text-decoration: none;
+	backdrop-filter: blur(1rem);
+	box-shadow: var(--shadow-md);
+}
+
+.preview-video__link:hover {
+	background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+	color: white !important;
+	transform: translateY(-.25rem) scale(1.02);
+	box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.preview-video__link ion-icon {
+	font-size: var(--text-2xl);
+	color: var(--color-primary);
+}

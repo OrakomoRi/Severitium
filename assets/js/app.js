@@ -6,12 +6,16 @@
 import MarkdownParser from './components/MarkdownParser.js';
 import ModalManager from './components/ModalManager.js';
 import BackgroundAnimation from './components/BackgroundAnimation.js';
+import I18n from '../libs/i18n.js';
+import I18nManager from './components/I18nManager.js';
 
 class SeveritiumApp {
 	constructor() {
 		this.modalManager = null;
 		this.markdownParser = null;
 		this.backgroundAnimation = null;
+		this.i18n = null;
+		this.i18nManager = null;
 
 		this.init();
 	}
@@ -21,10 +25,93 @@ class SeveritiumApp {
 	 * @private
 	 */
 	async init() {
+		await this.initializeI18n();
 		this.initializeComponents();
 		this.setupGlobalReferences();
 		await this.initializeDownloadButtons();
+
+		this.availableLocales = await this.fetchAvailableLocales();
+
+		this._createLanguageSelector();
 		console.log('🖤 Severitium website loaded');
+	}
+
+	/**
+	 * Initialize internationalization
+	 * @private
+	 */
+	async initializeI18n() {
+		// Create I18n instance
+		this.i18n = new I18n({
+			locale: this.detectLocale(),
+			fallbacks: ['en'],
+			missingHandler: (key) => key // Return key if translation missing
+		});
+
+		// Add initial translations
+		await this.loadTranslations();
+
+		// Create DOM manager
+		this.i18nManager = new I18nManager(this.i18n, {
+			autoWatch: true,
+			translateOnInit: true
+		});
+	}
+
+	/**
+	 * Detect user locale from browser
+	 * @returns {string} - Detected locale
+	 * @private
+	 */
+	detectLocale() {
+		// Check localStorage first
+		const savedLocale = localStorage.getItem('severitium-locale');
+		if (savedLocale) return savedLocale;
+
+		// Detect from browser
+		const browserLang = navigator.language || navigator.languages[0] || 'en';
+		return browserLang.split('-')[0]; // 'en-US' -> 'en'
+	}
+
+	/**
+	 * Load translation files dynamically from lang folder
+	 * @param {string} locale - Locale to load
+	 * @returns {Promise<Object|null>} - Translation data or null if failed
+	 * @private
+	 */
+	async loadTranslationFile(locale) {
+		try {
+			const response = await fetch(`assets/lang/${locale}.json`);
+			if (!response.ok) {
+				throw new Error(`Failed to load ${locale}.json: ${response.status}`);
+			}
+			return await response.json();
+		} catch (error) {
+			console.warn(`Could not load translations for ${locale}:`, error);
+			return null;
+		}
+	}
+
+	/**
+	 * Initialize translations - load default locale
+	 * @private
+	 */
+	async loadTranslations() {
+		const defaultLocale = this.detectLocale();
+
+		// Load initial locale
+		const translations = await this.loadTranslationFile(defaultLocale);
+		if (translations) {
+			this.i18n.add(defaultLocale, translations);
+		}
+
+		// Load fallback (en) if different from default
+		if (defaultLocale !== 'en') {
+			const fallbackTranslations = await this.loadTranslationFile('en');
+			if (fallbackTranslations) {
+				this.i18n.add('en', fallbackTranslations);
+			}
+		}
 	}
 
 	/**
@@ -62,6 +149,81 @@ class SeveritiumApp {
 			resume: () => this.backgroundAnimation?.resume(),
 			destroy: () => this.backgroundAnimation?.destroy()
 		};
+
+		// For i18n access
+		window.i18n = this.i18n;
+		window.i18nManager = this.i18nManager;
+	}
+
+	/**
+	 * Switch language and save preference
+	 * @param {string} locale - New locale
+	 */
+	async switchLanguage(locale) {
+		try {
+			// Load translations dynamically
+			const translations = await this.loadTranslationFile(locale);
+			if (translations) {
+				this.i18n.add(locale, translations);
+			} else {
+				console.warn(`Failed to load translations for ${locale}`);
+				return;
+			}
+
+			// Switch locale and update DOM
+			await this.i18nManager.setLocale(locale);
+			localStorage.setItem('severitium-locale', locale);
+
+			console.log(`Language switched to: ${locale}`);
+		} catch (error) {
+			console.error('Error switching language:', error);
+		}
+	}
+
+	/**
+	 * Fetch available locales from locales.json
+	 * @returns {Promise<Array>} - Array of available locales
+	 * @private
+	 */
+	async fetchAvailableLocales() {
+		try {
+			const res = await fetch('assets/config/locales.json?t=' + Date.now());
+			if (!res.ok) throw new Error('locales.json not found');
+			const data = await res.json();
+			return Array.isArray(data.locales) ? data.locales : [];
+		} catch (e) {
+			console.warn('Locales manifest error:', e);
+			// Fallback to hardcoded list
+			return [
+				{ code: 'en', name: 'English' }
+			];
+		}
+	}
+
+	/**
+	 * Create and insert language selector into the header
+	 * @private
+	 */
+	_createLanguageSelector() {
+		const header = document.querySelector('header .header__language-selector');
+		if (!header) return;
+
+		if (typeof window.BreeziumSelect === 'undefined') {
+			throw new Error('BreeziumSelect not loaded');
+		}
+
+		const options = (this.availableLocales || []).map(l => ({
+			code: l.code,
+			name: l.name
+		}));
+
+		const select = new window.BreeziumSelect(
+			options,
+			(newLocale) => this.switchLanguage(newLocale),
+			this.i18n.locale,
+		);
+
+		select.render(header);
 	}
 
 	/**
@@ -172,6 +334,22 @@ class SeveritiumApp {
 	}
 
 	/**
+	 * Get current locale
+	 * @returns {string} Current locale
+	 */
+	get locale() {
+		return this.i18n?.locale || 'en';
+	}
+
+	/**
+	 * Get I18n manager instance
+	 * @returns {I18nManager} I18n manager instance
+	 */
+	getI18nManager() {
+		return this.i18nManager;
+	}
+
+	/**
 	 * Get modal manager instance
 	 * @returns {ModalManager} Modal manager instance
 	 */
@@ -248,10 +426,16 @@ class SeveritiumApp {
 			this.backgroundAnimation.destroy();
 		}
 
+		if (this.i18nManager) {
+			this.i18nManager.destroy();
+		}
+
 		// Clean up global references
 		delete window.markdownParser;
 		delete window.modalManager;
 		delete window.BackgroundAnimation;
+		delete window.i18n;
+		delete window.i18nManager;
 		delete window.severitiumApp;
 	}
 }

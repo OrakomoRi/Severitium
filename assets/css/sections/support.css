@@ -1,0 +1,35 @@
+/* ============================
+   SUPPORT SECTION - Donation links
+   ============================ */
+
+.support-section {
+	text-align: center;
+}
+
+.support-section__title {
+	margin-bottom: var(--space-4);
+}
+
+.support-section__description {
+	margin-bottom: var(--space-8);
+}
+
+.support-section__buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+	.support-section__buttons {
+		flex-direction: row;
+		justify-content: center;
+		gap: var(--space-6);
+	}
+}
+
+/* Support buttons container */
+.support-section .btn {
+	margin: 0; /* Remove old margin */
+}

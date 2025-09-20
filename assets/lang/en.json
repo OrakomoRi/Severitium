@@ -1,0 +1,58 @@
+{
+	"main": {
+		"slogan": "Vibrant, interactive, memorable",
+		"description": "Free open-source theme for Tanki Online"
+	},
+	"about": {
+		"title": "What is Severitium?",
+		"Q1": "Q: What exactly is Severitium?",
+		"A1": "A: Severitium is a visual customization project that transforms the appearance of Tanki Online, a popular browser-based multiplayer tank game. Think of it as a \"skin\" or \"theme\" that changes how the game looks without affecting gameplay mechanics.",
+		"Q2": "Q: What does it actually do?",
+		"A2": "A: The original game interface can feel outdated or bland. Severitium replaces the game's visual elements with modern, animated designs featuring vibrant colors, smooth transitions, and improved user interface components. It's like giving the game a complete visual makeover.",
+		"Q3": "Q: How does it work technically?",
+		"A3": "A: The project uses CSS (styling language for websites) and JavaScript (programming language for web interactivity) to override the game's default appearance. When installed via a browser extension called Tampermonkey, it automatically applies these visual changes whenever you play the game.",
+		"Q4": "Q: Why is this project valuable from a development perspective?",
+		"A4": "A: This project demonstrates advanced front-end web development skills including CSS animations, JavaScript programming, cross-browser compatibility, and user experience design. It shows ability to reverse-engineer existing interfaces and create comprehensive visual overhauls while maintaining functionality.",
+		"Q5": "Q: Who can use it and how difficult is installation?",
+		"A5": "A: Any Tanki Online player who wants a more modern, visually appealing gaming experience. The installation process is designed to be simple - no programming knowledge required for end users. Just install Tampermonkey and click the script installation link."
+	},
+	"cta": {
+		"title": "Getting Started",
+		"description": "Install the theme in a few simple steps:",
+		"download": "1. Download Tampermonkey",
+		"install": "2. Install Script"
+	},
+	"features": {
+		"subtitle1": "Modern Design",
+		"description1": "Vibrant animations, custom colors and stylish interface for enhanced gaming experience",
+		"subtitle2": "Bug Fixes",
+		"description2": "Original bug fixes for more stable game performance",
+		"subtitle3": "Open Source",
+		"description3": "Fully open project with community contribution capabilities"
+	},
+	"preview": {
+		"title": "Watch Severitium theme preview"
+	},
+	"github": {
+		"title": "Developer Resources",
+		"description": "Access the source code and dev builds:",
+		"repo": "GitHub Repository",
+		"latest": "Latest Development Version"
+	},
+	"support": {
+		"title": "Support the Project",
+		"description": "Help us continue developing Severitium:",
+		"boosty": "Support on Boosty",
+		"patreon": "Support on Patreon"
+	},
+	"compatibility": {
+		"title": "Browser Compatibility"
+	},
+	"footer": {
+		"made": "Made with",
+		"by": "by OrakomoRi",
+		"copyright": "Distributed under the MIT License",
+		"changelog": "Changelog",
+		"license": "License"
+	}
+}

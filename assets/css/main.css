@@ -5,30 +5,56 @@
  * Import order is important for proper CSS cascade
  */
 
-/* ============================
-   BASE - Base styles
-   ============================ */
+/*
+	============================
+	BASE - Base styles
+	============================
+*/
+
 @import url('./base/variables.css');
 @import url('./base/reset.css');
 
-/* ============================
-   COMPONENTS - UI Components
-   ============================ */
+/*
+	=============================
+	COMPONENTS - UI Components
+	============================
+*/
+
 @import url('./components/header.css');
-@import url('./components/features.css');
 @import url('./components/buttons.css');
-@import url('./components/sections.css');
+@import url('./components/section.css');
 @import url('./components/modal.css');
 @import url('./components/changelog.css');
 @import url('./components/license.css');
 @import url('./components/footer.css');
 
-/* ============================
-   UTILITIES - Helper classes
-   ============================ */
+/*
+	============================
+	SECTIONS - Section styles
+	============================
+*/
+
+@import url('./sections/main.css');
+@import url('./sections/about.css');
+@import url('./sections/cta.css');
+@import url('./sections/features.css');
+@import url('./sections/preview.css');
+@import url('./sections/github.css');
+@import url('./sections/support.css');
+@import url('./sections/compatibility.css');
+
+/*
+	============================
+	UTILITIES - Helper classes
+	============================
+*/
+
 @import url('./utilities.css');
 
-/* ============================
-   RESPONSIVE - Media queries
-   ============================ */
+/*
+	============================
+	RESPONSIVE - Media queries
+	============================
+*/
+
 @import url('./responsive.css');

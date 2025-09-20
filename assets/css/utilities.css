@@ -73,14 +73,14 @@
 
 .glass {
 	background: rgba(255, 255, 255, .02);
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(255, 255, 255, .08);
+	backdrop-filter: blur(1rem);
+	border: .1rem solid rgba(255, 255, 255, .08);
 }
 
 .glass-strong {
 	background: rgba(255, 255, 255, .05);
-	backdrop-filter: blur(20px);
-	border: 1px solid rgba(255, 255, 255, .12);
+	backdrop-filter: blur(2rem);
+	border: .1rem solid rgba(255, 255, 255, .12);
 }
 
 /* ============================
@@ -102,7 +102,7 @@
 	content: '';
 	position: absolute;
 	inset: 0;
-	padding: 1px;
+	padding: .1rem;
 	background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
 	border-radius: inherit;
 	mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);

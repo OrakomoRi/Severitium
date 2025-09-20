@@ -18,7 +18,8 @@
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="https://https://orakomori.github.io/Severitium/">
 	<meta property="twitter:title" content="Severitium">
-	<meta property="twitter:description" content="Free open-source theme for Tanki Online - Vibrant, interactive, memorable">
+	<meta property="twitter:description"
+		content="Free open-source theme for Tanki Online - Vibrant, interactive, memorable">
 	<meta property="twitter:image" content="images/icon.svg">
 
 	<link rel="icon" type="image/svg" href="images/icon.svg">
@@ -28,9 +29,11 @@
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 	<!-- BreeziumSelect -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OrakomoRi/Breezium@latest/modules/BreeziumSelect/css/BreeziumSelect.min.css">
-	<script src="https://cdn.jsdelivr.net/gh/OrakomoRi/Breezium@latest/modules/BreeziumSelect/js/BreeziumSelect.min.js" defer></script>
-	
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/gh/OrakomoRi/Breezium@latest/modules/BreeziumSelect/css/BreeziumSelect.min.css">
+	<script src="https://cdn.jsdelivr.net/gh/OrakomoRi/Breezium@latest/modules/BreeziumSelect/js/BreeziumSelect.min.js"
+		defer></script>
+
 	<link rel="stylesheet" href="assets/css/main.css">
 
 	<script type="module" src="assets/js/app.js" defer></script>
@@ -38,52 +41,73 @@
 
 <body>
 	<header class="header">
-		<h1 class="header__title">Severitium</h1>
-		<p class="header__tagline"><ion-icon name="heart"></ion-icon> Vibrant, interactive, memorable</p>
-		<p class="header__description">Free open-source theme for Tanki Online</p>
+		<a href="/" class="header__logo-link">
+			<img src="images/icon.svg" alt="Severitium Logo" class="header__logo">
+			<span class="header__logo-text">Severitium</span>
+		</a>
+		<div class="header__language-selector"></div>
 	</header>
 
 	<main class="container">
 
+		<section class="main-section">
+			<h1 class="main-section__title">Severitium</h1>
+			<p class="main-section__tagline">
+				<span><ion-icon name="heart"></ion-icon></span>
+				<span class="main-section__tagline-separator">&nbsp;</span>
+				<span data-i18n-key="main.slogan">Vibrant, interactive, memorable</span>
+			</p>
+			<p class="main-section__description" data-i18n-key="main.description">Free open-source theme for Tanki
+				Online
+			</p>
+		</section>
+
 		<section class="about-section">
-			<h2 class="about-section__title">What is Severitium?</h2>
+			<h2 class="about-section__title" data-i18n-key="about.title">What is Severitium?</h2>
 			<div class="about-section__content">
 				<div class="about-section__qa">
 					<div class="qa-item">
-						<h3 class="qa-item__question">Q: What exactly is Severitium?</h3>
-						<p class="qa-item__answer">A: Severitium is a visual customization project that transforms the
+						<h3 class="qa-item__question" data-i18n-key="about.Q1">Q: What exactly is Severitium?</h3>
+						<p class="qa-item__answer" data-i18n-key="about.A1">A: Severitium is a visual customization
+							project that transforms the
 							appearance of Tanki Online, a popular browser-based multiplayer tank game. Think of it as a
 							"skin" or "theme" that changes how the game looks without affecting gameplay mechanics.</p>
 					</div>
 
 					<div class="qa-item">
-						<h3 class="qa-item__question">Q: What does it actually do?</h3>
-						<p class="qa-item__answer">A: The original game interface can feel outdated or bland. Severitium
+						<h3 class="qa-item__question" data-i18n-key="about.Q2">Q: What does it actually do?</h3>
+						<p class="qa-item__answer" data-i18n-key="about.A2">A: The original game interface can feel
+							outdated or bland. Severitium
 							replaces the game's visual elements with modern, animated designs featuring vibrant colors,
 							smooth transitions, and improved user interface components. It's like giving the game a
 							complete visual makeover.</p>
 					</div>
 
 					<div class="qa-item">
-						<h3 class="qa-item__question">Q: How does it work technically?</h3>
-						<p class="qa-item__answer">A: The project uses CSS (styling language for websites) and
+						<h3 class="qa-item__question" data-i18n-key="about.Q3">Q: How does it work technically?</h3>
+						<p class="qa-item__answer" data-i18n-key="about.A3">A: The project uses CSS (styling language
+							for websites) and
 							JavaScript (programming language for web interactivity) to override the game's default
 							appearance. When installed via a browser extension called Tampermonkey, it automatically
 							applies these visual changes whenever you play the game.</p>
 					</div>
 
 					<div class="qa-item">
-						<h3 class="qa-item__question">Q: Why is this project valuable from a development perspective?
+						<h3 class="qa-item__question" data-i18n-key="about.Q4">Q: Why is this project valuable from a
+							development perspective?
 						</h3>
-						<p class="qa-item__answer">A: This project demonstrates advanced front-end web development
+						<p class="qa-item__answer" data-i18n-key="about.A4">A: This project demonstrates advanced
+							front-end web development
 							skills including CSS animations, JavaScript programming, cross-browser compatibility, and
 							user experience design. It shows ability to reverse-engineer existing interfaces and create
 							comprehensive visual overhauls while maintaining functionality.</p>
 					</div>
 
 					<div class="qa-item">
-						<h3 class="qa-item__question">Q: Who can use it and how difficult is installation?</h3>
-						<p class="qa-item__answer">A: Any Tanki Online player who wants a more modern, visually
+						<h3 class="qa-item__question" data-i18n-key="about.Q5">Q: Who can use it and how difficult is
+							installation?</h3>
+						<p class="qa-item__answer" data-i18n-key="about.A5">A: Any Tanki Online player who wants a more
+							modern, visually
 							appealing gaming experience. The installation process is designed to be simple - no
 							programming knowledge required for end users. Just install Tampermonkey and click the script
 							installation link.</p>
@@ -93,17 +117,18 @@
 		</section>
 
 		<section class="cta-section">
-			<h2 class="cta-section__title">Getting Started</h2>
-			<p class="cta-section__description">Install the theme in a few simple steps:</p>
+			<h2 class="cta-section__title" data-i18n-key="cta.title">Getting Started</h2>
+			<p class="cta-section__description" data-i18n-key="cta.description">Install the theme in a few simple steps:
+			</p>
 
 			<div class="cta-section__buttons">
 				<a href="https://www.tampermonkey.net/" target="_blank" class="btn btn--step">
-					1. Download Tampermonkey
+					<span data-i18n-key="cta.download">1. Download Tampermonkey</span>
 				</a>
 
 				<a href="https://github.com/OrakomoRi/Severitium/blob/main/release/severitium.user.js?raw=true"
 					target="_blank" class="btn btn--step" id="install-script-btn">
-					2. Install Script
+					<span data-i18n-key="cta.install">2. Install Script</span>
 				</a>
 			</div>
 		</section>
@@ -111,82 +136,97 @@
 		<section class="features">
 			<div class="features__card">
 				<div class="features__icon"><ion-icon name="color-palette-outline"></ion-icon></div>
-				<h3 class="features__title">Modern Design</h3>
-				<p class="features__description">Vibrant animations, custom colors and stylish interface for enhanced
+				<h3 class="features__title" data-i18n-key="features.subtitle1">Modern Design</h3>
+				<p class="features__description" data-i18n-key="features.description1">Vibrant animations, custom colors
+					and stylish interface for enhanced
 					gaming experience</p>
 			</div>
 
 			<div class="features__card">
 				<div class="features__icon"><ion-icon name="build-outline"></ion-icon></div>
-				<h3 class="features__title">Bug Fixes</h3>
-				<p class="features__description">Original bug fixes for more stable game performance</p>
+				<h3 class="features__title" data-i18n-key="features.subtitle2">Bug Fixes</h3>
+				<p class="features__description" data-i18n-key="features.description2">Original bug fixes for more
+					stable game performance</p>
 			</div>
 
 			<div class="features__card">
 				<div class="features__icon"><ion-icon name="rocket-outline"></ion-icon></div>
-				<h3 class="features__title">Open Source</h3>
-				<p class="features__description">Fully open project with community contribution capabilities</p>
+				<h3 class="features__title" data-i18n-key="features.subtitle3">Open Source</h3>
+				<p class="features__description" data-i18n-key="features.description3">Fully open project with community
+					contribution capabilities</p>
 			</div>
 		</section>
 
 		<section class="preview-video">
 			<a href="https://youtu.be/pFkgSHNhcug" target="_blank" class="preview-video__link">
-				<ion-icon name="play-circle-outline"></ion-icon> Watch Severitium theme preview
+				<ion-icon name="play-circle-outline"></ion-icon>
+				<span>&nbsp;</span>
+				<span data-i18n-key="preview.title">Watch Severitium theme preview</span>
 			</a>
 		</section>
 
 
 		<section class="github-section">
-			<h2 class="github-section__title">Developer Resources</h2>
-			<p class="github-section__description">Access the source code and development builds:</p>
+			<h2 class="github-section__title" data-i18n-key="github.title">Developer Resources</h2>
+			<p class="github-section__description" data-i18n-key="github.description">Access the source code and
+				development builds:</p>
 
 			<div class="github-section__buttons">
 				<a href="https://github.com/OrakomoRi/Severitium" target="_blank" class="btn btn--github">
-					<ion-icon name="logo-github"></ion-icon> GitHub Repository
+					<ion-icon name="logo-github"></ion-icon>
+					<span>&nbsp;</span>
+					<span data-i18n-key="github.repo">GitHub Repository</span>
 				</a>
 				<a href="#" target="_blank" class="btn btn--latest" id="latest-btn">
-					<ion-icon name="rocket-outline"></ion-icon> Latest Development Version
+					<ion-icon name="rocket-outline"></ion-icon>
+					<span>&nbsp;</span>
+					<span data-i18n-key="github.latest">Latest Development Version</span>
 				</a>
 			</div>
 		</section>
 
 		<section class="support-section">
-			<h2 class="support-section__title">Support the Project</h2>
-			<p class="support-section__description">Help us continue developing Severitium:</p>
+			<h2 class="support-section__title" data-i18n-key="support.title">Support the Project</h2>
+			<p class="support-section__description" data-i18n-key="support.description">Help us continue developing
+				Severitium:</p>
 
 			<div class="support-section__buttons">
 				<a href="https://boosty.to/orakomori/donate" target="_blank" class="btn btn--support">
-					<ion-icon name="heart-outline"></ion-icon> Support on Boosty
+					<ion-icon name="heart-outline"></ion-icon>
+					<span>&nbsp;</span>
+					<span data-i18n-key="support.boosty">Support on Boosty</span>
 				</a>
 
 				<a href="https://www.patreon.com/orakomori" target="_blank" class="btn btn--patreon">
-					<ion-icon name="gift-outline"></ion-icon> Support on Patreon
+					<ion-icon name="gift-outline"></ion-icon>
+					<span>&nbsp;</span>
+					<span data-i18n-key="support.patreon">Support on Patreon</span>
 				</a>
 			</div>
 		</section>
 
 		<section class="compatibility">
-			<h2 class="compatibility__title">Browser Compatibility</h2>
+			<h2 class="compatibility__title" data-i18n-key="compatibility.title">Browser Compatibility</h2>
 			<div class="compatibility__grid">
 				<div class="compatibility__item">
 					<strong>Chrome</strong><br>
-					105+
+					<span>105+</span>
 				</div>
 				<div class="compatibility__item">
 					<strong>Firefox</strong><br>
-					121+
+					<span>121+</span>
 				</div>
 				<div class="compatibility__item">
 					<strong>Edge</strong><br>
-					105+
+					<span>105+</span>
 				</div>
 				<div class="compatibility__item">
 					<strong>Safari</strong><br>
-					15.4+
+					<span>15.4+</span>
 				</div>
 				<div class="compatibility__item">
 					<strong>Opera</strong><br>
-					91+
+					<span>91+</span>
 				</div>
 			</div>
 		</section>
@@ -195,16 +235,16 @@
 	<footer class="footer">
 		<div class="footer__inner">
 			<span class="footer__info">
-				<span>Made with</span>
+				<span data-i18n-key="footer.made">Made with</span>
 				<span>&nbsp;</span>
 				<ion-icon name="heart"></ion-icon>
 				<span>&nbsp;</span>
-				<span>by OrakomoRi</span>
+				<span data-i18n-key="footer.by">by OrakomoRi</span>
 			</span>
-			<p class="footer__info">Distributed under the MIT License</p>
+			<p class="footer__info" data-i18n-key="footer.copyright">Distributed under the MIT License</p>
 			<p class="footer__links">
-				<a href="#" id="changelog-btn" class="footer__link">Changelog</a>
-				<a href="#" id="license-btn" class="footer__link">License</a>
+				<a href="#" id="changelog-btn" class="footer__link" data-i18n-key="footer.changelog">Changelog</a>
+				<a href="#" id="license-btn" class="footer__link" data-i18n-key="footer.license">License</a>
 			</p>
 		</div>
 	</footer>

@@ -1,0 +1,71 @@
+/**
+ * Main Section Styles
+ */
+
+.main-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-4);
+	text-align: center;
+	padding: var(--space-20) 0 var(--space-16);
+	position: relative;
+}
+
+/* ============================
+   MAIN SECTION TITLE - Main heading
+   ============================ */
+
+.main-section__title {
+	font-size: var(--text-6xl);
+	font-weight: var(--font-bold);
+	margin-bottom: var(--space-6);
+	background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	letter-spacing: -.025em;
+}
+
+/* ============================
+   MAIN SECTION TAGLINE - Subtitle with icon
+   ============================ */
+
+.main-section__tagline {
+	font-size: var(--text-xl);
+	font-weight: var(--font-medium);
+	color: var(--color-text-secondary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main-section__tagline ion-icon {
+	color: var(--color-accent);
+	font-size: var(--icon-md);
+}
+
+/* ============================
+   MAIN SECTION DESCRIPTION - Supporting text
+   ============================ */
+
+.main-section__description {
+	font-size: var(--text-lg);
+	color: var(--color-text-muted);
+	font-weight: var(--font-normal);
+}
+
+/* ============================
+   RESPONSIVE STYLES
+   ============================ */
+
+@media (max-width: 640px) {
+	.main-section__tagline {
+		font-size: var(--text-lg);
+	}
+
+	.main-section__tagline ion-icon {
+		display: none;
+	}
+}

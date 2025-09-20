@@ -1,0 +1,28 @@
+/**
+ * Sections Component - Content Sections
+ */
+
+/* ============================
+   BASE SECTION - Common section styles
+   ============================ */
+
+section {
+	margin: var(--space-12) 0;
+	position: relative;
+}
+
+section h2 {
+	font-size: var(--text-2xl);
+	font-weight: var(--font-bold);
+	text-align: center;
+	margin-bottom: var(--space-4);
+	color: var(--color-text-primary);
+}
+
+section p {
+	font-size: var(--text-base);
+	color: var(--color-text-muted);
+	text-align: center;
+	margin-bottom: var(--space-6);
+	line-height: var(--leading-relaxed);
+}
