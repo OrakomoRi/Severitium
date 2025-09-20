@@ -333,6 +333,15 @@ class SeveritiumApp {
 		]);
 	}
 
+	setupLogo() {
+		const logo = document.querySelector('[data-element="logo"]');
+		if (!logo) return;
+
+		logo.addEventListener('click', (e) => {
+			window.location.href = '';
+		});
+	}
+
 	/**
 	 * Get current locale
 	 * @returns {string} Current locale
