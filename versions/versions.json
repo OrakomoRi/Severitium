@@ -2074,5 +2074,11 @@
     "date": "2025-09-18",
     "comment": "1.8.0+build.2 feat: updated modal to style new premium modal",
     "hash": "8a869fabdc06e86bab9bdf8b40498f4f776cdc72"
+  },
+  {
+    "version": "1.8.0+build.3",
+    "date": "2025-09-24",
+    "comment": "1.8.0+build.3 fix: adjust chat window alignment",
+    "hash": "17d732a3c1990eefdf4ae4dbdb6cb7aa4bf4d059"
   }
 ]
