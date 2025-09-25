@@ -297,3 +297,11 @@ div:has(> .ChatComponentStyle-sendButton) {
 .ChatComponentStyle-closeArea {
 	background-color: var(--severitium-dark-transparent-background1);
 }
+
+/* All selected text inside chat window */
+
+.ChatComponentStyle-messageRow > *::selection {
+	background-color: var(--severitium-dark-violet-color);
+	color: var(--severitium-white-text-color);
+	border-radius: .25rem;
+}

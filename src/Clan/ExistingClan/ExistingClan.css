@@ -23,8 +23,9 @@
 /* All selected text inside description container */
 
 .ClanInfoComponentStyle-messageClan > *::selection {
-	background-color: var(--severitium-main-color);
-	color: var(--severitium-black-text-color);
+	background-color: var(--severitium-dark-violet-color);
+	color: var(--severitium-white-text-color);
+	border-radius: .25rem;
 }
 
 /* Clan name */

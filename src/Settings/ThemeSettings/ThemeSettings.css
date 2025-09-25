@@ -333,7 +333,8 @@
 /* Input selection styling */
 
 .SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-nameInput::selection {
-	background: var(--severitium-blue-color);
+	background-color: var(--severitium-dark-violet-color);
+	color: var(--severitium-white-text-color);
 	border-radius: .25rem;
 }
 
