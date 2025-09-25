@@ -2080,5 +2080,11 @@
     "date": "2025-09-24",
     "comment": "1.8.0+build.3 fix: adjust chat window alignment",
     "hash": "17d732a3c1990eefdf4ae4dbdb6cb7aa4bf4d059"
+  },
+  {
+    "version": "1.8.0+build.4",
+    "date": "2025-09-25",
+    "comment": "1.8.0+build.4 feat: updated theme colors and styles for selection in various components",
+    "hash": "7b8b8d88d5a36186c3f4970a1a781c112f3f8b9f"
   }
 ]
