@@ -2098,5 +2098,11 @@
     "date": "2025-09-27",
     "comment": "1.8.0+build.6 fix: fixed loading screen display",
     "hash": "09138c90ace738399420d80c7ccdf1d1a6bfa0b7"
+  },
+  {
+    "version": "1.8.0+build.7",
+    "date": "2025-09-27",
+    "comment": "1.8.0+build.7 feat: updated purchase screen to cover new eula licenses with theme fix: fixed payment screen icon sold",
+    "hash": "5682c46344983fbfb8988f664911b5d94619e293"
   }
 ]
