@@ -823,6 +823,26 @@
 	border-right: .1em solid var(--severitium-gray-color);
 	-webkit-backdrop-filter: blur(.5em);
 			backdrop-filter: blur(.5em);
+	scrollbar-width: thin;
+	scrollbar-color: var(--severitium-light-gray-color) var(--severitium-dark-gray-color);
+	overflow-y: auto;
+}
+
+
+/* Supermisson container scroll */
+
+.SuperMissionComponentStyle-descriptionSuperMission::-webkit-scrollbar {
+	width: .5em;
+}
+
+.SuperMissionComponentStyle-descriptionSuperMission::-webkit-scrollbar-thumb {
+	background-color: var(--severitium-light-gray-color);
+	border-radius: var(--severitium-border-radius);
+}
+
+.SuperMissionComponentStyle-descriptionSuperMission::-webkit-scrollbar-track {
+	background-color: var(--severitium-dark-gray-color);
+	border-radius: var(--severitium-border-radius);
 }
 
 /* All elements that are childs of a supermisson container */
@@ -961,6 +981,11 @@
 	height: -webkit-fit-content;
 	height: -moz-fit-content;
 	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	gap: .25em;
 	margin: 0;
 	padding: 1em 0;
 	border: none;
