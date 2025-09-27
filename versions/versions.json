@@ -2140,5 +2140,11 @@
     "date": "2025-09-28",
     "comment": "1.8.0+build.13 feat: enhanced styles for large supermissions",
     "hash": "b16a20b8dd8cbb803c2990e58249b9668f1cf371"
+  },
+  {
+    "version": "1.8.0+build.14",
+    "date": "2025-09-28",
+    "comment": "1.8.0+build.14 feat: removed js code for notificator icon",
+    "hash": "3c39e4f9c0c59158ac64c2f0fd62d87aaf903d97"
   }
 ]
