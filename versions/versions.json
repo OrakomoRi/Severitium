@@ -2086,5 +2086,11 @@
     "date": "2025-09-25",
     "comment": "1.8.0+build.4 feat: updated theme colors and styles for selection in various components",
     "hash": "7b8b8d88d5a36186c3f4970a1a781c112f3f8b9f"
+  },
+  {
+    "version": "1.8.0+build.5",
+    "date": "2025-09-27",
+    "comment": "1.8.0+build.5 feat: updated shop window styles for promocode section fix: fixed loading screen display",
+    "hash": "f9355298a985f636dc0cd37e32ed264042faabb5"
   }
 ]
