@@ -50,7 +50,7 @@
 
 .PaymentInfoComponentStyle-descriptionBlock .CoinPaymentComponentStyle-itemsContainer > .iconSold > .PaymentInfoComponentStyle-goodsCountContainer,
 .CoinPaymentComponentStyle-commonContainer > .iconSold > .PaymentInfoComponentStyle-goodsCountContainer {
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-blue-color);
 }
 
 /* Sold amount text */
