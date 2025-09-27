@@ -8,7 +8,8 @@ body {
 /* Loading background on the entrance screen and also after login/register */
 
 .ApplicationLoaderComponentStyle-container {
-	background-image: none;
+	background-image: none !important;
+	background: none;
 	z-index: -1;
 }
 

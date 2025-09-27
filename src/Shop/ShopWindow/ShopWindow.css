@@ -421,6 +421,8 @@
 	color: var(--severitium-white-color);
 }
 
+/* PROMOCODES */
+
 /* Promocode container */
 
 .PromoCodesComponentStyle-controlsWrapper {
@@ -436,6 +438,14 @@
 	        backdrop-filter: blur(.25em);
 	border: .1em solid var(--severitium-gray-color);
 	border-radius: var(--severitium-border-radius);
+}
+
+/* Promocode title */
+
+.PromoCodesComponentStyle-controlsWrapper .PromoCodesComponentStyle-inputHeaderText {
+	color: var(--severitium-white-text-color);
+	font-family: BaseFontMedium, FallbackFontMedium;
+	font-size: 1.5em;
 }
 
 /* Promocode input */
@@ -537,14 +547,16 @@
 
 /* Input error message */
 
-.PromoCodesComponentStyle-controlsWrapper .SearchInputComponentStyle-searchInput + span {
+.ShopCategoryOfferSectionStyle-promoCodesItemsContainer .SearchInputComponentStyle-searchInput + span {
+	margin: 0;
+	margin-top: .25em;
 	font-size: .9em;
 	color: var(--severitium-red-color);
 }
 
 /* Promocode button */
 
-.PromoCodesComponentStyle-sendButton {
+.ShopCategoryOfferSectionStyle-promoCodesItemsContainer .PromoCodesComponentStyle-sendButton:not(:root) {
 	margin: 0;
 	background: none;
 	outline: none;
@@ -554,7 +566,7 @@
 
 /* Promocode enabled button */
 
-.PromoCodesComponentStyle-sendButton:not([class*='disabled'i]) {
+.ShopCategoryOfferSectionStyle-promoCodesItemsContainer .PromoCodesComponentStyle-sendButton:not([class*='disabled'i]) {
 	border-radius: var(--severitium-border-radius);
 	background-color: var(--severitium-green-button-background);
 	border: var(--severitium-green-button-border-color) solid .1em;
@@ -563,7 +575,7 @@
 
 /* Button on hover */
 
-.PromoCodesComponentStyle-sendButton:not([class*='disabled'i]):hover {
+.ShopCategoryOfferSectionStyle-promoCodesItemsContainer .PromoCodesComponentStyle-sendButton:not([class*='disabled'i]):hover {
 	background-color: var(--severitium-green-button-background);
 	outline: none;
 	box-shadow: none;
@@ -572,13 +584,13 @@
 
 /* Button text */
 
-.PromoCodesComponentStyle-sendButton:not([class*='disabled'i]) > span {
+.ShopCategoryOfferSectionStyle-promoCodesItemsContainer .PromoCodesComponentStyle-sendButton:not([class*='disabled'i]) > span {
 	color: var(--severitium-green-button-color);
 }
 
 /* Promocode disabled button */
 
-.PromoCodesComponentStyle-sendButton[class*='disabled'i] {
+.ShopCategoryOfferSectionStyle-promoCodesItemsContainer .PromoCodesComponentStyle-sendButton[class*='disabled'i] {
 	outline: none;
 	box-shadow: none;
 	border: transparent solid .1em;
@@ -589,7 +601,7 @@
 
 /* Button text */
 
-.PromoCodesComponentStyle-sendButton[class*='disabled'i] > span {
+.ShopCategoryOfferSectionStyle-promoCodesItemsContainer .PromoCodesComponentStyle-sendButton[class*='disabled'i] > span {
 	color: var(--severitium-gray-button-color);
 	opacity: .5;
 }
