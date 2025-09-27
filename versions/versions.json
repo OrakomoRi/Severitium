@@ -2128,5 +2128,11 @@
     "date": "2025-09-27",
     "comment": "1.8.0+build.11 fix: fixed payment screen icon sold",
     "hash": "7ec1d02e5e974b25ce48134e9968b1b46ef8c0d1"
+  },
+  {
+    "version": "1.8.0+build.12",
+    "date": "2025-09-27",
+    "comment": "1.8.0+build.12 fix: fixed payment screen icon sold",
+    "hash": "778dc6e529d5d1f1a664f288a9cdc8e7a683bdcd"
   }
 ]
