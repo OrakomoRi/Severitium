@@ -5,6 +5,13 @@ body {
 	background: #000 !important;
 }
 
+/* Wrapper for loading screen */
+
+.wrapper:has(.ApplicationLoaderComponentStyle-container) {
+	background: none;
+	background-color: transparent;
+}
+
 /* Loading background on the entrance screen and also after login/register */
 
 .ApplicationLoaderComponentStyle-container {
