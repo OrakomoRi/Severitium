@@ -75,7 +75,7 @@
 	box-shadow: none;
 	margin: 0;
 	font-size: .9em;
-	border-radius: calc(var(--severitium-border-radius) / 0.9);
+	border-radius: calc(var(--severitium-border-radius) / .9);
 }
 
 /* Name on card */
@@ -204,5 +204,162 @@
 
 .ChoosePaymentMethodComponentStyle-warningContainer > span {
 	font-size: .8em;
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* EULA */
+
+/* License container */
+
+.EulaComponentStyle-buttonAndTextContainer {
+	position: absolute;
+	left: 2.5em;
+	bottom: 5em;
+	width: auto;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+}
+
+/* Icon container */
+
+.EulaComponentStyle-buttonAndTextContainer > div {
+	width: auto;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	background: none;
+	background-color: var(--severitium-dark-transparent-background1);
+	box-shadow: none;
+	-webkit-backdrop-filter: blur(.25em);
+	        backdrop-filter: blur(.25em);
+	outline: none;
+	border: .1em solid var(--severitium-gray-color);
+	border-radius: var(--severitium-border-radius);
+	padding: 1em;
+	transition: border .2s ease;
+}
+
+/* Icon container on hover */
+
+.EulaComponentStyle-buttonAndTextContainer > div:hover {
+	box-shadow: none;
+	outline: none;
+	border: var(--severitium-white-color) solid .1em;
+}
+
+/* Icon container when license list is opened */
+
+.EulaComponentStyle-eulaList + .EulaComponentStyle-buttonAndTextContainer > div {
+	box-shadow: none;
+	outline: none;
+
+	border: var(--severitium-white-color) solid .1em;
+}
+
+/* Original icon */
+
+.EulaComponentStyle-buttonAndTextContainer > div .Common-backgroundImage {
+	display: none;
+}
+
+/* Custom icon */
+
+.EulaComponentStyle-buttonAndTextContainer > div::after {
+	content: '';
+	display: block;
+	width: 1em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-gray-color);
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.5 0c-.69 0-1.25.56-1.25 1.25v17.5c0 .69.56 1.25 1.25 1.25h10a2.5 2.5 0 0 0 2.5-2.5v-.625c0-.345.28-.625.625-.625h.625a2.5 2.5 0 0 0 2.5-2.5V1.25C18.75.56 18.19 0 17.5 0zm3.125 3.75A.625.625 0 0 0 5 4.375v1.25c0 .345.28.625.625.625h8.75c.345 0 .625-.28.625-.625v-1.25a.625.625 0 0 0-.625-.625zM5 8.125c0-.345.28-.625.625-.625h8.75c.345 0 .625.28.625.625v1.25c0 .345-.28.625-.625.625h-8.75A.625.625 0 0 1 5 9.375zm.625 3.125a.625.625 0 0 0-.625.625v1.25c0 .345.28.625.625.625h3.75c.345 0 .625-.28.625-.625v-1.25a.625.625 0 0 0-.625-.625z" clip-rule="evenodd"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.5 0c-.69 0-1.25.56-1.25 1.25v17.5c0 .69.56 1.25 1.25 1.25h10a2.5 2.5 0 0 0 2.5-2.5v-.625c0-.345.28-.625.625-.625h.625a2.5 2.5 0 0 0 2.5-2.5V1.25C18.75.56 18.19 0 17.5 0zm3.125 3.75A.625.625 0 0 0 5 4.375v1.25c0 .345.28.625.625.625h8.75c.345 0 .625-.28.625-.625v-1.25a.625.625 0 0 0-.625-.625zM5 8.125c0-.345.28-.625.625-.625h8.75c.345 0 .625.28.625.625v1.25c0 .345-.28.625-.625.625h-8.75A.625.625 0 0 1 5 9.375zm.625 3.125a.625.625 0 0 0-.625.625v1.25c0 .345.28.625.625.625h3.75c.345 0 .625-.28.625-.625v-1.25a.625.625 0 0 0-.625-.625z" clip-rule="evenodd"/></svg>');
+	transition: background-color .2s ease;
+}
+
+/* Custom icon on icon container hover */
+
+.EulaComponentStyle-buttonAndTextContainer > div:hover::after {
+	background-color: var(--severitium-white-color);
+}
+
+/* Custom icon when license list is opened */
+
+.EulaComponentStyle-eulaList + .EulaComponentStyle-buttonAndTextContainer > div::after {
+	background-color: var(--severitium-white-color);
+}
+
+/* License text */
+
+.EulaComponentStyle-buttonAndTextContainer > span {
+	font-size: .75em;
+	color: var(--severitium-light-gray-text-color);
+	margin: 0;
+	width: 0;
+	white-space: pre-wrap;
+}
+
+/* License list */
+
+.EulaComponentStyle-eulaList {
+	position: absolute;
+	bottom: 9.5em;
+	left: 2.5em;
+	background: none;
+	background-color: var(--severitium-dark-transparent-background1);
+	box-shadow: none;
+	-webkit-backdrop-filter: blur(.25em);
+	        backdrop-filter: blur(.25em);
+	outline: none;
+	border: .1em solid var(--severitium-gray-color);
+	border-radius: var(--severitium-border-radius);
+	padding: 1em;
+}
+
+/* License item */
+
+.EulaComponentStyle-eulaItem {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
+	margin: 0;
+	border-radius: var(--severitium-border-radius);
+	background-color: transparent;
+	transition: background-color .2s ease;
+}
+
+/* License item on hover */
+
+.EulaComponentStyle-eulaItem:hover {
+	background-color: var(--severitium-light-transparent-background2);
+}
+
+/* License item icon */
+
+.EulaComponentStyle-eulaItem .Common-maskImageContain {
+	background-color: var(--severitium-light-gray-color);
+}
+
+/* License icon text container */
+
+.EulaComponentStyle-eulaItem .EulaComponentStyle-textContainer {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin: 0;
+}
+
+/* License icon text */
+
+.EulaComponentStyle-eulaItem span {
+	font-size: 1em;
 	color: var(--severitium-light-gray-text-color);
 }

@@ -28,8 +28,8 @@
 
 /* Sold amount icon */
 
-.PaymentInfoComponentStyle-descriptionBlock .CoinPaymentComponentStyle-itemsContainer > .iconSold > div,
-.CoinPaymentComponentStyle-commonContainer > .iconSold > div {
+.PaymentInfoComponentStyle-descriptionBlock .CoinPaymentComponentStyle-itemsContainer > .iconSold > div:not(:has(> h2)),
+.CoinPaymentComponentStyle-commonContainer > .iconSold > div:not(:has(> h2)) {
 	margin: 0;
 	width: 2em;
 	height: 2em;
@@ -48,8 +48,8 @@
 
 /* Sold amount text */
 
-.PaymentInfoComponentStyle-descriptionBlock .CoinPaymentComponentStyle-itemsContainer > .iconSold > h2,
-.CoinPaymentComponentStyle-commonContainer > .iconSold > h2 {
+.PaymentInfoComponentStyle-descriptionBlock .CoinPaymentComponentStyle-itemsContainer > .iconSold h2,
+.CoinPaymentComponentStyle-commonContainer > .iconSold h2 {
 	font-family: BaseFontMedium, FallbackFontMedium;
 	color: var(--severitium-main-color);
 }
