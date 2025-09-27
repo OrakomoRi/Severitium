@@ -2104,5 +2104,11 @@
     "date": "2025-09-27",
     "comment": "1.8.0+build.7 feat: updated purchase screen to cover new eula licenses with theme fix: fixed payment screen icon sold",
     "hash": "5682c46344983fbfb8988f664911b5d94619e293"
+  },
+  {
+    "version": "1.8.0+build.8",
+    "date": "2025-09-27",
+    "comment": "1.8.0+build.8 fix: fixed payment screen icon sold",
+    "hash": "cd2ebb0a00d3aaf3d3af116e82d5c0eed497d358"
   }
 ]
