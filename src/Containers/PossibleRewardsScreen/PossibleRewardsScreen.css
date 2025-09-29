@@ -64,11 +64,16 @@
 	width: auto;
 	height: auto;
 	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 /* Possible rewards description name text */
 
 .ContainerInfoComponentStyle-lootBoxDescriptionContainer .ContainerInfoComponentStyle-rewardNameContainer > span {
+	max-width: 80%;
 	margin: 0;
 	font-size: 1.5em;
 	font-weight: bold;
