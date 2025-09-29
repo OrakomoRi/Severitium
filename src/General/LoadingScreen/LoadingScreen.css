@@ -7,7 +7,7 @@ body {
 
 /* Wrapper for loading screen */
 
-.wrapper:has(.ApplicationLoaderComponentStyle-container) {
+.wrapper {
 	background: none;
 	background-color: transparent;
 }
