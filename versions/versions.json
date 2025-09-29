@@ -2146,5 +2146,11 @@
     "date": "2025-09-28",
     "comment": "1.8.0+build.14 feat: removed js code for notificator icon",
     "hash": "3c39e4f9c0c59158ac64c2f0fd62d87aaf903d97"
+  },
+  {
+    "version": "1.8.0+build.16",
+    "date": "2025-09-30",
+    "comment": "1.8.0+build.16 feat: loading screen overlay should be removed",
+    "hash": "e1abb1ea71f9aafcfde98fcdb77466ebe4ab1018"
   }
 ]
