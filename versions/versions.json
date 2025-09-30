@@ -2152,5 +2152,11 @@
     "date": "2025-09-30",
     "comment": "1.8.0+build.16 feat: loading screen overlay should be removed",
     "hash": "e1abb1ea71f9aafcfde98fcdb77466ebe4ab1018"
+  },
+  {
+    "version": "1.8.0+build.18",
+    "date": "2025-09-30",
+    "comment": "1.8.0+build.18 feat: added styles challenges",
+    "hash": "e6cfdad87ea8e4097a1173451aaea68308348634"
   }
 ]
