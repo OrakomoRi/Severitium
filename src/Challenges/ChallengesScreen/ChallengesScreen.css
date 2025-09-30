@@ -1,0 +1,1213 @@
+/* INFO */
+
+/* Header of challenges  */
+
+.ChallengeInfoComponentStyle-parametrsChallenges {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1em;
+	padding: .5em 2em;
+}
+
+/* All elements inside the header */
+
+.ChallengeInfoComponentStyle-parametrsChallenges * {
+	position: relative;
+	top: unset;
+	left: unset;
+	right: unset;
+	bottom: unset;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	margin: 0;
+}
+
+/* Progress block */
+
+.ChallengeInfoComponentStyle-blockStarsCount {
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: -webkit-max-content .5em 1fr;
+	-ms-grid-columns: max-content .5em 1fr;
+	grid-template-columns: -webkit-max-content 1fr;
+	grid-template-columns: max-content 1fr;
+	-ms-grid-rows: auto .25em auto;
+	grid-template-rows: auto auto;
+	        grid-template-areas: 'tier stars' 'tier progress';
+	-webkit-column-gap: .5em;
+	        column-gap: .5em;
+	row-gap: .25em;
+	align-items: center;
+}
+
+/* Level block */
+
+.ChallengeInfoComponentStyle-blockStarsCount .ChallengeBarInfoComponentStyle-commonBlockTier {
+	-ms-grid-row: 1;
+	-ms-grid-row-span: 3;
+	-ms-grid-column: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 0;
+	grid-area: tier;
+	-ms-grid-row-align: stretch;
+	    align-self: stretch;
+}
+
+/* Original level icon */
+
+.ChallengeInfoComponentStyle-blockStarsCount .ChallengeBarInfoComponentStyle-commonBlockTier > img {
+	display: none;
+}
+
+/* Custom level icon */
+
+.ChallengeInfoComponentStyle-blockStarsCount .ChallengeBarInfoComponentStyle-commonBlockTier::before {
+	content: '';
+	display: block;
+	width: 3em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-orange-color);
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill-opacity=".15" d="M1.757 13.243 13.243 1.757A6 6 0 0 1 17.485 0h13.03a6 6 0 0 1 4.242 1.757l11.486 11.486A6 6 0 0 1 48 17.485v13.03a6 6 0 0 1-1.757 4.242L34.757 46.243A6 6 0 0 1 30.515 48h-13.03a6 6 0 0 1-4.242-1.757L1.757 34.757A6 6 0 0 1 0 30.515v-13.03a6 6 0 0 1 1.757-4.242"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill-opacity=".15" d="M1.757 13.243 13.243 1.757A6 6 0 0 1 17.485 0h13.03a6 6 0 0 1 4.242 1.757l11.486 11.486A6 6 0 0 1 48 17.485v13.03a6 6 0 0 1-1.757 4.242L34.757 46.243A6 6 0 0 1 30.515 48h-13.03a6 6 0 0 1-4.242-1.757L1.757 34.757A6 6 0 0 1 0 30.515v-13.03a6 6 0 0 1 1.757-4.242"/></svg>');
+}
+
+/* Level text */
+
+.ChallengeInfoComponentStyle-blockStarsCount .ChallengeBarInfoComponentStyle-commonBlockTier > span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.5em;
+	color: var(--severitium-yellow-text-color);
+	font-weight: 600;
+}
+
+/* Star count block */
+
+.ChallengeBarInfoComponentStyle-starCount {
+	-ms-grid-row: 1;
+	-ms-grid-column: 3;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .25em;
+	grid-area: stars;
+	-ms-grid-column-align: start;
+	    justify-self: start;
+}
+
+/* Star count title */
+
+.ChallengeBarInfoComponentStyle-starCount > div > h2 {
+	font-size: 1em;
+	color: var(--severitium-white-text-color);
+	font-weight: 500;
+}
+
+/* Star icon */
+
+.ChallengeBarInfoComponentStyle-starCount > div > svg > path {
+	fill: var(--severitium-yellow-color) !important;
+}
+
+/* Stars count values */
+
+.ChallengeBarInfoComponentStyle-starCount > div > .ChallengeBarInfoComponentStyle-parametersStars > h3 {
+	font-size: 1.25em;
+	color: var(--severitium-yellow-text-color);
+	font-weight: 500;
+}
+
+/* Progress bar container */
+
+.ChallengeProgressBarComponentStyle-calcProgressChallenges {
+	-ms-grid-row: 3;
+	-ms-grid-column: 3;
+	grid-area: progress;
+	width: 100%;
+	height: .5em;
+	border-radius: var(--severitium-border-radius);
+	overflow: hidden;
+}
+
+/* Progress bar */
+
+.ChallengeProgressBarComponentStyle-calcProgressChallenges .ChallengeProgressBarComponentStyle-progressBar {
+	width: auto;
+	border-radius: var(--severitium-border-radius);
+	height: 100%;
+}
+
+.ChallengeProgressBarComponentStyle-calcProgressChallenges .ChallengeProgressBarComponentStyle-progressBar::-webkit-progress-bar {
+	width: auto;
+	border-radius: var(--severitium-border-radius);
+	background-color: var(--severitium-gray-color);
+	height: 100%;
+}
+
+.ChallengeProgressBarComponentStyle-calcProgressChallenges .ChallengeProgressBarComponentStyle-progressBar::-webkit-progress-value {
+	height: 100%;
+	background-color: var(--severitium-yellow-color);
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Header challenge timer */
+
+.ChallengeInfoComponentStyle-parametrsChallenges .ChallengeTimerComponentStyle-timer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: .25em;
+	margin-left: 4em;
+}
+
+/* Timer title */
+
+.ChallengeInfoComponentStyle-parametrsChallenges .ChallengeTimerComponentStyle-timer > h3 {
+	font-size: .9em;
+	letter-spacing: .05em;
+	text-transform: uppercase;
+	color: var(--severitium-white-text-color);
+	font-weight: 500;
+}
+
+/* Timer text */
+
+.ChallengeInfoComponentStyle-parametrsChallenges .ChallengeTimerComponentStyle-textTime {
+	width: 100%;
+	padding: 0 .25em;
+	background-color: var(--severitium-main-color);
+	font-size: 1.1em;
+	letter-spacing: .05em;
+	color: var(--severitium-white-text-color);
+	border-radius: var(--severitium-border-radius);
+	border: none;
+	outline: none;
+	box-shadow: none;
+}
+
+/* LEFT SIDE */
+
+/* COMMON CHALLENGES */
+
+/* Common challenges tiers block (left side) */
+
+.QuestsChallengesComponentStyle-blockTiers {
+	margin: 0;
+	left: 0;
+}
+
+/* Free tier block */
+
+.QuestsChallengesComponentStyle-blockTiers .QuestsChallengesComponentStyle-tiers {
+	background: radial-gradient(100% 100% at 100% 100%, var(--severitium-gray-color) 0%, transparent 100%);
+}
+
+/* Free tier text */
+
+.QuestsChallengesComponentStyle-blockTiers .QuestsChallengesComponentStyle-tiers > span {
+	color: var(--severitium-white-text-color);
+}
+
+/* Free tier left border */
+
+.QuestsChallengesComponentStyle-blockTiers .QuestsChallengesComponentStyle-blockGradientTiersCommon {
+	height: 100%;
+	width: .1em;
+	background: linear-gradient(transparent 0%, var(--severitium-white-color) 100%) center center / contain no-repeat;
+}
+
+/* Premium tier block */
+
+.QuestsChallengesComponentStyle-blockTiers .QuestsChallengesComponentStyle-premiumTier {
+	background: radial-gradient(100% 100% at 100% 0%, var(--severitium-orange-color) 0%, transparent 100%);
+}
+
+/* Premium tier locked original icon */
+
+.QuestsChallengesComponentStyle-blockTiers .QuestsChallengesComponentStyle-premiumTier > img[src*='iconlock'i] {
+	display: none;
+}
+
+/* Premium tier locked custom icon */
+
+.QuestsChallengesComponentStyle-blockTiers .QuestsChallengesComponentStyle-premiumTier > img[src*='iconlock'i] {
+	content: '';
+	position: absolute;
+	top: .5em;
+	right: .5em;
+	display: block;
+	width: 2em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-yellow-color);
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
+}
+
+/* Premium tier text */
+
+.QuestsChallengesComponentStyle-blockTiers .QuestsChallengesComponentStyle-premiumTier > span {
+	color: var(--severitium-gold-text-color);
+}
+
+/* Premium tier left border */
+
+.QuestsChallengesComponentStyle-blockTiers .QuestsChallengesComponentStyle-blockGradientTiersPremium {
+	height: 100%;
+	width: .1em;
+	background: linear-gradient(var(--severitium-yellow-color) 0%, transparent 100%) center center / contain no-repeat;
+}
+
+/* ELITE CHALLENGES */
+
+/* Tier block */
+
+.QuestsChallengesComponentStyle-containerTiers .QuestsChallengesComponentStyle-eventTier {
+	position: relative;
+	background: none;
+}
+
+/* Tier block custom background */
+
+.QuestsChallengesComponentStyle-containerTiers .QuestsChallengesComponentStyle-eventTier::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: radial-gradient(100% 50% at 100% 50%, var(--severitium-yellow-color) 0%, var(--severitium-red-color) 68.57%, rgba(255, 51, 51, 0) 100%);
+	z-index: -1;
+	opacity: .5;
+}
+
+/* Locked tier original icon */
+
+.QuestsChallengesComponentStyle-containerTiers .QuestsChallengesComponentStyle-eventTier > img[src*='iconlock'i] {
+	display: none;
+}
+
+/* Locked tier custom icon */
+
+.QuestsChallengesComponentStyle-containerTiers .QuestsChallengesComponentStyle-eventTier:has(> img[src*='iconlock'i])::after {
+	content: '';
+	position: absolute;
+	top: .5em;
+	right: .5em;
+	display: block;
+	width: 2em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-yellow-color);
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
+}
+
+/* Block text */
+
+.QuestsChallengesComponentStyle-containerTiers .QuestsChallengesComponentStyle-eventTier > span {
+	color: var(--severitium-gold-text-color);
+	font-weight: 600;
+}
+
+/* Block right border */
+
+.QuestsChallengesComponentStyle-containerTiers .QuestsChallengesComponentStyle-blockGradientTiersEvent {
+	height: 100%;
+	width: .1em;
+	background: linear-gradient(transparent 0%, var(--severitium-orange-color) 50%, transparent 100%) center center / contain no-repeat;
+}
+
+/* ITEMS */
+
+/* Rewards outer container */
+
+.QuestsChallengesComponentStyle-containerParametrsChallenge div:has(> .ScrollBarStyle-scrollBarWrapper) {
+	height: 100%;
+}
+
+/* Both arrow containers for scrolling arrows (left & right) */
+
+.QuestsChallengesComponentStyle-containerParametrsChallenge .ScrollBarStyle-scrollBarWrapper .ScrollBarStyle-arrowsWrapper > div {
+	background: radial-gradient(100% 50% at 100% 50%, var(--severitium-light-transparent-background3) 0%, transparent 100%);
+	height: 100%;
+	width: auto;
+	padding: 0 0 0 2em;
+	transition: opacity .2s ease;
+}
+
+/* COMMON CHALLENGES */
+
+/* Common challenges free unavailable items */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-tierCommon {
+	background: none;
+	background: linear-gradient(transparent 0%, var(--severitium-gray-button-background) 100%);
+	border-radius: var(--severitium-border-radius);
+	border: none;
+	box-shadow: none;
+	pointer-events: none;
+}
+
+/* Free unavailable item image */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-tierCommon > .Common-backgroundImageContain {
+	opacity: 1;
+}
+
+/* Free unavailable item text */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-tierCommon h3 {
+	color: var(--severitium-gray-button-color);
+}
+
+/* Common challenges free unclaimed items */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNow {
+	background: none;
+	background-color: var(--severitium-green-button-background);
+	border-radius: var(--severitium-border-radius);
+	border: .1em solid var(--severitium-green-button-border-color);
+	box-shadow: none;
+	transition: border .2s ease;
+}
+
+/* Common challenges free unclaimed items on hover */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNow:hover {
+	background-color: var(--severitium-green-button-background);
+	border: .1em solid var(--severitium-green-button-border-color-hover);
+	box-shadow: none;
+}
+
+/* Free unclaimed item image */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNow > .Common-backgroundImageContain {
+	opacity: 1;
+}
+
+/* Free unclaimed item text */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNow h3 {
+	color: var(--severitium-green-button-color);
+}
+
+/* Common challenges free claimed items */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-availableItem {
+	background: none;
+	background: linear-gradient(transparent 0%, var(--severitium-green-button-background) 100%);
+	border-radius: var(--severitium-border-radius);
+	border: none;
+	box-shadow: none;
+	pointer-events: none;
+}
+
+/* Free claimed item original icon */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-availableItem > img {
+	display: none;
+}
+
+/* Free claimed item custom icon */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-availableItem::before {
+	content: '';
+	position: absolute;
+	bottom: .5em;
+	right: .5em;
+	display: block;
+	width: 2.5em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-green-color);
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M464 128 240 384l-96-96m0 96-96-96m320-160L232 284"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M464 128 240 384l-96-96m0 96-96-96m320-160L232 284"/></svg>');
+}
+
+/* Free claimed item image */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-availableItem > .Common-backgroundImageContain {
+	opacity: .5;
+}
+
+/* Free claimed item text */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-availableItem h3 {
+	color: var(--severitium-green-button-color);
+}
+
+/* Common challenges premium unavailable items */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-tierPremium {
+	background: none;
+	background: linear-gradient(var(--severitium-gold-button-background) 0%, transparent 100%);
+	border-radius: var(--severitium-border-radius);
+	border: none;
+	box-shadow: none;
+	pointer-events: none;
+}
+
+/* Premium unavailable item original icon */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-tierPremium > img {
+	display: none;
+}
+
+/* Premium unavailable item custom icon */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-tierPremium::before {
+	content: '';
+	position: absolute;
+	top: .5em;
+	right: .5em;
+	display: block;
+	width: 2em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-yellow-color);
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
+}
+
+/* Premium unavailable item image */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-tierPremium > .Common-backgroundImageContain {
+	opacity: 1;
+}
+
+/* Premium unavailable item text */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-tierPremium h3 {
+	color: var(--severitium-gold-button-color);
+}
+
+/* Common challenges premium unclaimed items */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNowPremium {
+	background: none;
+	background-color: var(--severitium-gold-button-background);
+	border-radius: var(--severitium-border-radius);
+	border: .1em solid var(--severitium-gold-button-border-color);
+	box-shadow: none;
+	transition: border .2s ease;
+}
+
+/* Common challenges premium unclaimed items on hover */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNowPremium:hover {
+	background-color: var(--severitium-gold-button-background);
+	border: .1em solid var(--severitium-gold-button-border-color-hover);
+	box-shadow: none;
+}
+
+/* Premium unclaimed item image */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNowPremium > .Common-backgroundImageContain {
+	opacity: 1;
+}
+
+/* Premium unclaimed item text */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNowPremium h3 {
+	color: var(--severitium-gold-button-color);
+}
+
+/* Common challenges premium claimed items */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-availableItemPremium:not(.TierItemComponentStyle-getItemNowPremium) {
+	background: none;
+	background: linear-gradient(var(--severitium-gold-button-background) 0%, transparent 100%);
+	border-radius: var(--severitium-border-radius);
+	border: none;
+	box-shadow: none;
+	pointer-events: none;
+}
+
+/* Premium claimed item original icon */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-availableItemPremium:not(.TierItemComponentStyle-getItemNowPremium) > img {
+	display: none;
+}
+
+/* Premium claimed item custom icon */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-availableItemPremium:not(.TierItemComponentStyle-getItemNowPremium)::before {
+	content: '';
+	position: absolute;
+	top: .5em;
+	right: .5em;
+	display: block;
+	width: 2.5em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-yellow-color);
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M464 128 240 384l-96-96m0 96-96-96m320-160L232 284"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M464 128 240 384l-96-96m0 96-96-96m320-160L232 284"/></svg>');
+}
+
+/* Premium claimed item image */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-availableItemPremium:not(.TierItemComponentStyle-getItemNowPremium) > .Common-backgroundImageContain {
+	opacity: .5;
+}
+
+/* Premium claimed item text */
+
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-availableItemPremium:not(.TierItemComponentStyle-getItemNowPremium) h3 {
+	color: var(--severitium-gold-button-color);
+}
+
+/* ELITE CHALLENGES */
+
+/* Elite challenges unavailable items */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) .ChallengeTierComponentStyle-blockTier .Common-flexCenterAlignCenterColumn {
+	background: none;
+	background: linear-gradient(transparent 0%, var(--severitium-gold-button-background) 100%);
+	border-radius: var(--severitium-border-radius);
+	border: none;
+	box-shadow: none;
+	pointer-events: none;
+}
+
+/* Unavailable item original icon */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) .ChallengeTierComponentStyle-blockTier .Common-flexCenterAlignCenterColumn > img {
+	display: none;
+}
+
+/* Unavailable item custom icon */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) .ChallengeTierComponentStyle-blockTier .Common-flexCenterAlignCenterColumn::before {
+	content: '';
+	position: absolute;
+	top: .5em;
+	right: .5em;
+	display: block;
+	width: 2em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-yellow-color);
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
+}
+
+/* Unavailable item image */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) .ChallengeTierComponentStyle-blockTier .Common-flexCenterAlignCenterColumn > .Common-backgroundImageContain {
+	opacity: 1;
+}
+
+/* Unavailable item text */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) .ChallengeTierComponentStyle-blockTier .Common-flexCenterAlignCenterColumn h3 {
+	color: var(--severitium-gold-button-color);
+}
+
+/* PROGRESSBAR */
+
+/* Challenge progress bar */
+
+.TierHeaderComponentStyle-descriptionTier progress {
+	background: none;
+	background-color: var(--severitium-gray-color);
+	border: none;
+	border-radius: 0;
+}
+
+.TierHeaderComponentStyle-descriptionTier progress::-webkit-progress-bar {
+	background: none;
+	background-color: var(--severitium-gray-color);
+	border: none;
+	border-radius: 0;
+}
+
+.TierHeaderComponentStyle-descriptionTier progress::-webkit-progress-value {
+	background-color: var(--severitium-main-color);
+	border: none;
+	border-radius: 0;
+}
+
+/* Progress level original image */
+
+.TierHeaderComponentStyle-descriptionTier .TierHeaderComponentStyle-commonBlockForProgressBar + div > img {
+	display: none;
+}
+
+/* Progress level custom image */
+
+.TierHeaderComponentStyle-descriptionTier .TierHeaderComponentStyle-commonBlockForProgressBar + div:has(> img)::before {
+	content: '';
+	display: block;
+	width: 2.75em;
+	aspect-ratio: 1 / 1;
+	z-index: 2;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M1.757 13.243 13.243 1.757A6 6 0 0 1 17.485 0h13.03a6 6 0 0 1 4.242 1.757l11.486 11.486A6 6 0 0 1 48 17.485v13.03a6 6 0 0 1-1.757 4.242L34.757 46.243A6 6 0 0 1 30.515 48h-13.03a6 6 0 0 1-4.242-1.757L1.757 34.757A6 6 0 0 1 0 30.515v-13.03a6 6 0 0 1 1.757-4.242"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M1.757 13.243 13.243 1.757A6 6 0 0 1 17.485 0h13.03a6 6 0 0 1 4.242 1.757l11.486 11.486A6 6 0 0 1 48 17.485v13.03a6 6 0 0 1-1.757 4.242L34.757 46.243A6 6 0 0 1 30.515 48h-13.03a6 6 0 0 1-4.242-1.757L1.757 34.757A6 6 0 0 1 0 30.515v-13.03a6 6 0 0 1 1.757-4.242"/></svg>');
+}
+
+/* Disabled image */
+
+.TierHeaderComponentStyle-descriptionTier .TierHeaderComponentStyle-commonBlockForProgressBar + div:has(> img[src*='disableicon'i])::before {
+	background-color: var(--severitium-gray-color);
+}
+
+/* Enabled image */
+
+.TierHeaderComponentStyle-descriptionTier .TierHeaderComponentStyle-commonBlockForProgressBar + div:has(> img:not([src*='disableicon'i]))::before {
+	background-color: var(--severitium-main-color);
+}
+
+/* Progress level text */
+
+.TierHeaderComponentStyle-descriptionTier .TierHeaderComponentStyle-commonBlockForProgressBar + div > h3 {
+	font-size: 1.25em;
+	color: var(--severitium-white-text-color);
+	font-weight: 600;
+}
+
+/* Progress bar helper line disabled */
+
+.TierHeaderComponentStyle-descriptionTier .TierHeaderComponentStyle-commonBlockForProgressBar + div:has(> img[src*='disableicon'i]) + div:not(:has(*)) {
+	background-color: var(--severitium-gray-color);
+}
+
+/* Progress bar helper line enabled */
+
+.TierHeaderComponentStyle-descriptionTier .TierHeaderComponentStyle-commonBlockForProgressBar + div:not(:has(> img[src*='disableicon'i])) + div:not(:has(*)) {
+	z-index: 1;
+	background-color: var(--severitium-main-color);
+}
+
+/* RIGHT SIDE */
+
+/* COMMON CHALLENGES */
+
+/* Common challenges max tiers block (right side) */
+
+.QuestsChallengesComponentStyle-maxTierBlock {
+	top: 0;
+	right: 0;
+	height: 100%;
+	margin: 0;
+	border: none;
+	border-radius: 0;
+	border-left: .1em solid var(--severitium-gray-color);
+}
+
+/* Max tiers free block */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:first-of-type {
+	height: 50%;
+	background: none;
+}
+
+/* Max tiers free block custom background gradients */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:first-of-type::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: linear-gradient(transparent 0%, var(--severitium-green-color) 100%);
+	opacity: .4;
+	pointer-events: none;
+}
+
+/* Max tiers free block label */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:first-of-type > h3 {
+	font-size: 1.25em;
+	font-weight: 600;
+	color: var(--severitium-green-text-color);
+}
+
+/* Max tiers free block text */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:first-of-type > span {
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Max tiers premium block */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:last-of-type {
+	height: 50%;
+	background: none;
+}
+
+/* Max tiers premium block custom background gradients */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:last-of-type::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: radial-gradient(170.14% 100% at 50% 0%, var(--severitium-yellow-color) 0%, var(--severitium-red-color) 50%, transparent 100%);
+	opacity: .4;
+	pointer-events: none;
+}
+
+/* Max tiers premium block label */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:last-of-type > h3 {
+	font-size: 1.25em;
+	font-weight: 600;
+	color: var(--severitium-gold-text-color);
+}
+
+/* Max tiers premium block text */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:last-of-type > span {
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Max tiers blocks original background gradients */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn .QuestsChallengesComponentStyle-blockGradient {
+	display: none;
+}
+
+/* Max tier block image container */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier {
+	position: relative;
+}
+
+/* Max tiers block images */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > .Common-backgroundImageContain {
+	opacity: 1;
+}
+
+/* Image when a reward is claimed */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > img[src*='checker'i] + .Common-backgroundImageContain {
+	opacity: .5;
+}
+
+/* Max tiers both block original checker icon */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > img {
+	display: none;
+}
+
+/* Max tiers free block custom checker icon */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:first-of-type .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier:has(> img[src*='checker'i])::before {
+	position: absolute;
+	bottom: .5em;
+	left: .5em;
+	content: '';
+	display: block;
+	width: 2.5em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-green-color);
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M464 128 240 384l-96-96m0 96-96-96m320-160L232 284"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M464 128 240 384l-96-96m0 96-96-96m320-160L232 284"/></svg>');
+}
+
+/* Max tiers premium block custom checker icon */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:last-of-type .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier:has(> img[src*='checker'i])::before {
+	position: absolute;
+	top: .5em;
+	left: .5em;
+	content: '';
+	display: block;
+	width: 2.5em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-yellow-color);
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M464 128 240 384l-96-96m0 96-96-96m320-160L232 284"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M464 128 240 384l-96-96m0 96-96-96m320-160L232 284"/></svg>');
+}
+
+/* Max tiers progress block */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .EventBattlePassLobbyComponentStyle-commonBlockProgressBarChallenge {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	background: none;
+	background-color: var(--severitium-black-color);
+}
+
+/* Progress bar block */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .EventBattlePassLobbyComponentStyle-commonBlockProgressBarChallenge .EventBattlePassLobbyComponentStyle-progressBar {
+	border-radius: 50%;
+	background: none;
+}
+
+/* Progress bar circles */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .EventBattlePassLobbyComponentStyle-commonBlockProgressBarChallenge .EventBattlePassLobbyComponentStyle-progressBar > div {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+/* Progress bar full circle */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .EventBattlePassLobbyComponentStyle-commonBlockProgressBarChallenge .EventBattlePassLobbyComponentStyle-progressBar > div:first-of-type {
+	border-color: var(--severitium-gray-color);
+	border-width: .25em;
+}
+
+/* Progress bar value circles */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .EventBattlePassLobbyComponentStyle-commonBlockProgressBarChallenge .EventBattlePassLobbyComponentStyle-progressBar > div > div {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border-color: var(--severitium-yellow-color);
+	border-width: .25em;
+}
+
+/* Progress bar value text */
+
+.QuestsChallengesComponentStyle-maxTierBlock > .EventBattlePassLobbyComponentStyle-commonBlockProgressBarChallenge h2 {
+	color: var(--severitium-yellow-text-color);
+	font-weight: 600;
+	font-size: 1.5em;
+}
+
+/* ELITE CHALLENGES */
+
+/* Elite challenges max tiers block */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div {
+	top: 0;
+	right: 0;
+	height: 100%;
+	margin: 0;
+	border: none;
+	border-radius: 0;
+	border: none;
+}
+
+/* Custom left border */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: .1em;
+	background: linear-gradient(transparent 0%, var(--severitium-orange-color) 50%, transparent 100%) center center / contain no-repeat;
+}
+
+/* Original background */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .QuestsChallengesComponentStyle-blockGradientEvent {
+	display: none;
+}
+
+/* Custom background */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: radial-gradient(170.83% 50% at 0% 50%, var(--severitium-yellow-color) 0%, var(--severitium-red-color) 50%, transparent 100%);
+	opacity: .5;
+	pointer-events: none;
+	z-index: -1;
+}
+
+/* Original locked icon */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > img[src*='iconlock'i] {
+	display: none;
+}
+
+/* Custom locked icon */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier:has(> img[src*='iconlock'i])::before {
+	content: '';
+	position: absolute;
+	top: .5em;
+	right: .5em;
+	display: block;
+	width: 2.5em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-yellow-color);
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
+}
+
+/* Progress block */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockProgressBarEvent {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	background: none;
+	background-color: var(--severitium-black-color);
+}
+
+/* Progress bar block */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockProgressBarEvent .EventBattlePassLobbyComponentStyle-progressBar {
+	border-radius: 50%;
+	background: none;
+}
+
+/* Progress bar circles */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockProgressBarEvent .EventBattlePassLobbyComponentStyle-progressBar > div {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+/* Progress bar full circle */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockProgressBarEvent .EventBattlePassLobbyComponentStyle-progressBar > div:first-of-type {
+	border-color: var(--severitium-gray-color);
+	border-width: .25em;
+}
+
+/* Progress bar value circles */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockProgressBarEvent .EventBattlePassLobbyComponentStyle-progressBar > div > div {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border-color: var(--severitium-yellow-color);
+	border-width: .25em;
+}
+
+/* Progress bar value text */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockProgressBarEvent h2 {
+	color: var(--severitium-yellow-text-color);
+	font-weight: 600;
+	font-size: 1.5em;
+}
+
+/* Block text */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div h3 {
+	font-size: 1.5em;
+	font-weight: 600;
+	color: var(--severitium-gold-text-color);
+}
+
+/* BOTTOM ELEMENTS */
+
+/* Bottom container */
+
+.ChallengePurchaseComponentStyle-blockPurchase {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+	padding: 1em;
+}
+
+/* Claim all inactive button */
+
+.QuestsChallengesComponentStyle-containerTiers:not(:has(.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNow)) + .ChallengePurchaseComponentStyle-blockPurchase > div:first-of-type {
+	margin: 0;
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-gray-button-background);
+	border: none; 
+	border-radius: var(--severitium-border-radius);
+	pointer-events: none;
+}
+
+/* Button text */
+
+.QuestsChallengesComponentStyle-containerTiers:not(:has(.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNow)) + .ChallengePurchaseComponentStyle-blockPurchase > div:first-of-type > span {
+	color: var(--severitium-gray-button-color);
+}
+
+/* Claim all active button */
+
+.QuestsChallengesComponentStyle-containerTiers:has(.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNow) + .ChallengePurchaseComponentStyle-blockPurchase > div:first-of-type {
+	margin: 0;
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em; 
+	border-radius: var(--severitium-border-radius);
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.QuestsChallengesComponentStyle-containerTiers:has(.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNow) + .ChallengePurchaseComponentStyle-blockPurchase > div:first-of-type:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em; 
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Button text */
+
+.QuestsChallengesComponentStyle-containerTiers:has(.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNow) + .ChallengePurchaseComponentStyle-blockPurchase > div:first-of-type > span {
+	color: var(--severitium-green-button-color);
+}
+
+/* Purchase button */
+
+.ChallengePurchaseComponentStyle-blockPurchase .ChallengePurchaseComponentStyle-buttonBattlePass {
+	margin: 0;
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-gold-button-background);
+	border: var(--severitium-gold-button-border-color) solid .1em; 
+	border-radius: var(--severitium-border-radius);
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.ChallengePurchaseComponentStyle-blockPurchase .ChallengePurchaseComponentStyle-buttonBattlePass:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-gold-button-background);
+	border: var(--severitium-gold-button-border-color-hover) solid .1em; 
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Button text */
+
+.ChallengePurchaseComponentStyle-blockPurchase .ChallengePurchaseComponentStyle-buttonBattlePass > span {
+	color: var(--severitium-gold-button-color);
+}
+
+/* Helper text block */
+
+.ChallengePurchaseComponentStyle-blockPurchase .ChallengePurchaseComponentStyle-infoPurchase,
+.ChallengePurchaseComponentStyle-blockPurchase .ChallengePurchaseComponentStyle-allLevel {
+	width: auto;
+	height: -webkit-max-content;
+	height: max-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: .5em 1em;
+	background-color: var(--severitium-dark-transparent-background4);
+	border: .1em solid var(--severitium-gray-color);
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Helper text */
+
+.ChallengePurchaseComponentStyle-blockPurchase .ChallengePurchaseComponentStyle-infoPurchase > span,
+.ChallengePurchaseComponentStyle-blockPurchase .ChallengePurchaseComponentStyle-allLevel > span {
+	color: var(--severitium-light-gray-text-color);
+	font-size: .9em;
+	margin: 0;
+}
