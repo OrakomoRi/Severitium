@@ -881,3 +881,25 @@ div > .HeaderComponentStyle-messageBody {
 	height: auto;
 	color: var(--severitium-main-color) !important;
 }
+
+/* License text */
+
+.LicenseComponentStyle-textBlock > span {
+	color: var(--severitium-extra-light-gray-color);
+}
+
+/* License links */
+
+.LicenseComponentStyle-textBlock a {
+	position: relative;
+	color: var(--severitium-main-color);
+	text-decoration: none;
+	transition: color .2s ease;
+}
+
+/* License links on hover */
+
+.LicenseComponentStyle-textBlock a:hover {
+	color: var(--severitium-white-text-color);
+	text-decoration: none;
+}
