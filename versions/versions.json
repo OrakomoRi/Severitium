@@ -2158,5 +2158,11 @@
     "date": "2025-09-30",
     "comment": "1.8.0+build.18 feat: added styles challenges",
     "hash": "e6cfdad87ea8e4097a1173451aaea68308348634"
+  },
+  {
+    "version": "1.8.0+build.19",
+    "date": "2025-10-02",
+    "comment": "1.8.0+build.19 feat: updated styles for challenges",
+    "hash": "0cd08e97a47d601179aaaa8a6083a82226279479"
   }
 ]
