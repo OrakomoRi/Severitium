@@ -175,7 +175,7 @@
 
 .ChallengeProgressBarComponentStyle-calcProgressChallenges .ChallengeProgressBarComponentStyle-progressBar::-webkit-progress-value {
 	height: 100%;
-	background-color: var(--severitium-yellow-color);
+	background-color: var(--severitium-main-color);
 	border-radius: var(--severitium-border-radius);
 }
 
