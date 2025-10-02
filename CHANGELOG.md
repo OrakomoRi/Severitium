@@ -7,7 +7,7 @@
 - Challenges
   - ChallengesScreen
 
-## Changed
+### Changed
 
 - Clan
   - ExistingClan
@@ -28,7 +28,7 @@
 - Shop
   - PaymentScreen
   - PurchaseScreen
-- Updated the theme website to look modern :tada:
+- Revamped the website design to look more contemporary :tada:
 
 ## [1.8.0] - 2025-09-16
 
