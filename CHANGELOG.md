@@ -1,5 +1,34 @@
 # CHANGELOG
 
+## [1.8.1] - 2025-10-02
+
+### Added
+
+- Challenges
+  - ChallengesScreen
+
+## Changed
+
+- Clan
+  - ExistingClan
+- Containers
+  - PossibleRewardsScreen
+- Entrance
+  - EntranceForms
+- General
+  - LoadingScreen
+  - Modal
+  - NotificatorIcon
+- Lobby
+  - ChatWindow
+- Quests
+  - QuestsScreen
+- Settings
+  - ThemeSettings
+- Shop
+  - PaymentScreen
+  - PurchaseScreen
+
 ## [1.8.0] - 2025-09-16
 
 ### Added
