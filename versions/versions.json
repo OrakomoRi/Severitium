@@ -2164,5 +2164,11 @@
     "date": "2025-10-02",
     "comment": "1.8.0+build.19 feat: updated styles for challenges",
     "hash": "0cd08e97a47d601179aaaa8a6083a82226279479"
+  },
+  {
+    "version": "1.8.0+build.20",
+    "date": "2025-10-02",
+    "comment": "1.8.0+build.20 feat: updated modal styles",
+    "hash": "f0d45af2e4b221656c32cb1d82bd245ab984f4ee"
   }
 ]
