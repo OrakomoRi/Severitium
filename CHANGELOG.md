@@ -28,6 +28,7 @@
 - Shop
   - PaymentScreen
   - PurchaseScreen
+- Updated the theme website to look modern :tada:
 
 ## [1.8.0] - 2025-09-16
 
