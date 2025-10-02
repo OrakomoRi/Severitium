@@ -2170,5 +2170,11 @@
     "date": "2025-10-02",
     "comment": "1.8.0+build.20 feat: updated modal styles",
     "hash": "f0d45af2e4b221656c32cb1d82bd245ab984f4ee"
+  },
+  {
+    "version": "1.8.0+build.21",
+    "date": "2025-10-02",
+    "comment": "1.8.0+build.21 feat: updated modal styles",
+    "hash": "f300877d5faa1f88f6a737627876ed4299b98ce9"
   }
 ]
