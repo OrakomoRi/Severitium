@@ -142,7 +142,7 @@
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .SuccessfulPurchaseComponentStyle-content > div:last-child,
 .ModalStyle-rootHover > .Need2FaDialogComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2),
 .ModalStyle-rootHover > .ChangeOwnerDialogComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2),
-.ModalStyle-rootHover > .RulesUpdatedComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(1) {
+.ModalStyle-rootHover > .RulesUpdatedComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(1):not(:root) {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
