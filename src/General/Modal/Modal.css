@@ -156,7 +156,8 @@
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-enterButton:hover,
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .SuccessfulPurchaseComponentStyle-content > div:last-child:hover,
 .ModalStyle-rootHover > .Need2FaDialogComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):hover,
-.ModalStyle-rootHover > .ChangeOwnerDialogComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):hover {
+.ModalStyle-rootHover > .ChangeOwnerDialogComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):hover,
+.ModalStyle-rootHover > .RulesUpdatedComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(1):not(:root):hover {
 	border: var(--severitium-green-button-border-color-hover) solid .1em;
 }
 
@@ -165,10 +166,10 @@
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-enterButton span,
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .SuccessfulPurchaseComponentStyle-content > div:last-child span,
 .ModalStyle-rootHover > .Need2FaDialogComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) span,
-.ModalStyle-rootHover > .ChangeOwnerDialogComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) span {
+.ModalStyle-rootHover > .ChangeOwnerDialogComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) span,
+.ModalStyle-rootHover > .RulesUpdatedComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(1):not(:root) span {
 	color: var(--severitium-green-button-color);
 }
-
 
 /* Apply red (warning) button of the modal window */
 
