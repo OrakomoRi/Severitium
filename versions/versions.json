@@ -2188,5 +2188,11 @@
     "date": "2025-10-02",
     "comment": "1.8.1",
     "hash": "76fe0d49f45381789333f18a406ddfb221eeff70"
+  },
+  {
+    "version": "1.8.1+build1",
+    "date": "2025-10-04",
+    "comment": "1.8.1+build1 feat: updated quests screen completion progress text",
+    "hash": "686ba4dc90e5b15258f0dea2715c3295e591d0d3"
   }
 ]
