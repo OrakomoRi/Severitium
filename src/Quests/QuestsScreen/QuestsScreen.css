@@ -953,7 +953,7 @@
 	margin: 0;
 	padding: 0 .5em;
 	scrollbar-width: thin;
-	scrollbar-color: var(--severitium-light-gray-color) var(--severitium-dark-gray-color);
+	scrollbar-color: var(--severitium-gray-color) transparent;
 	overflow-y: auto;
 }
 
@@ -964,12 +964,12 @@
 }
 
 .SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div:has(.SuperMissionComponentStyle-conditionContextItems)::-webkit-scrollbar-thumb {
-	background-color: var(--severitium-light-gray-color);
+	background-color: var(--severitium-gray-color);
 	border-radius: var(--severitium-border-radius);
 }
 
 .SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div:has(.SuperMissionComponentStyle-conditionContextItems)::-webkit-scrollbar-track {
-	background-color: var(--severitium-dark-gray-color);
+	background-color: transparent;
 	border-radius: var(--severitium-border-radius);
 }
 
