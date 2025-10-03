@@ -2200,5 +2200,11 @@
     "date": "2025-10-04",
     "comment": "1.8.1+build2 feat: updated quests screen completion conditions container",
     "hash": "5222e6f741ebf8721d96af8400a7659748317227"
+  },
+  {
+    "version": "1.8.1+build3",
+    "date": "2025-10-04",
+    "comment": "1.8.1+build3 feat: updated quests screen",
+    "hash": "c21aae637872152b452793db5fb2649d6d1923f4"
   }
 ]
