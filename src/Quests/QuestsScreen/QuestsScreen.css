@@ -809,40 +809,21 @@
 /* Supermisson container */
 
 .SuperMissionComponentStyle-descriptionSuperMission {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: var(--supermisson-width-var);
 	min-width: auto;
 	max-width: none;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 	z-index: 10;
 	background-color: var(--severitium-dark-transparent-background1);
 	border-right: .1em solid var(--severitium-gray-color);
 	-webkit-backdrop-filter: blur(.5em);
 			backdrop-filter: blur(.5em);
-	scrollbar-width: thin;
-	scrollbar-color: var(--severitium-light-gray-color) var(--severitium-dark-gray-color);
-	overflow-y: auto;
-}
-
-
-/* Supermisson container scroll */
-
-.SuperMissionComponentStyle-descriptionSuperMission::-webkit-scrollbar {
-	width: .5em;
-}
-
-.SuperMissionComponentStyle-descriptionSuperMission::-webkit-scrollbar-thumb {
-	background-color: var(--severitium-light-gray-color);
-	border-radius: var(--severitium-border-radius);
-}
-
-.SuperMissionComponentStyle-descriptionSuperMission::-webkit-scrollbar-track {
-	background-color: var(--severitium-dark-gray-color);
-	border-radius: var(--severitium-border-radius);
 }
 
 /* All elements that are childs of a supermisson container */
@@ -866,12 +847,12 @@
 /* Supermisson name and timer outer container */
 
 .SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) {
+	height: calc(100% - 15em);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
 	gap: 2em;
-	height: auto;
 	flex-grow: 1;
 	margin: 0;
 	padding: 1em 2em;
@@ -970,7 +951,26 @@
 	width: 100%;
 	height: auto;
 	margin: 0;
-	padding: 0;
+	padding: 0 .5em;
+	scrollbar-width: thin;
+	scrollbar-color: var(--severitium-light-gray-color) var(--severitium-dark-gray-color);
+	overflow-y: auto;
+}
+
+/* Supermisson conditions container scroll */
+
+.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div:has(.SuperMissionComponentStyle-conditionContextItems)::-webkit-scrollbar {
+	width: .5em;
+}
+
+.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div:has(.SuperMissionComponentStyle-conditionContextItems)::-webkit-scrollbar-thumb {
+	background-color: var(--severitium-light-gray-color);
+	border-radius: var(--severitium-border-radius);
+}
+
+.SuperMissionComponentStyle-descriptionSuperMission > div:has(.SuperMissionComponentStyle-commonBlockTitleDescription) div:has(.SuperMissionComponentStyle-conditionContextItems)::-webkit-scrollbar-track {
+	background-color: var(--severitium-dark-gray-color);
+	border-radius: var(--severitium-border-radius);
 }
 
 /* Supermisson single condition container */
