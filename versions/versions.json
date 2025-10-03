@@ -2194,5 +2194,11 @@
     "date": "2025-10-04",
     "comment": "1.8.1+build1 feat: updated quests screen completion progress text",
     "hash": "686ba4dc90e5b15258f0dea2715c3295e591d0d3"
+  },
+  {
+    "version": "1.8.1+build2",
+    "date": "2025-10-04",
+    "comment": "1.8.1+build2 feat: updated quests screen completion conditions container",
+    "hash": "5222e6f741ebf8721d96af8400a7659748317227"
   }
 ]
