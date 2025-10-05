@@ -83,8 +83,21 @@ class I18nManager {
 	 * @returns {Promise<I18nManager>} - Promise resolving to this instance
 	 */
 	async setLocale(locale, options = {}) {
+		const oldLocale = this.i18n.locale;
 		await this.i18n.setLocale(locale, options);
 		this.updateDOM();
+		
+		// Dispatch custom event for components to listen to language changes
+		if (oldLocale !== this.i18n.locale) {
+			const event = new CustomEvent('languageChanged', {
+				detail: {
+					oldLocale,
+					newLocale: this.i18n.locale
+				}
+			});
+			document.dispatchEvent(event);
+		}
+		
 		return this;
 	}
 

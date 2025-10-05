@@ -1,0 +1,431 @@
+{
+  "version": "1.0.0",
+  "generated": "2025-10-05T02:54:25.827Z",
+  "categories": {
+    "battle": {
+      "matched": [
+        {
+          "baseName": "battlechat",
+          "new": "battlechat.png",
+          "old": "battlechat.png"
+        },
+        {
+          "baseName": "battlepause",
+          "new": "battlepause.gif",
+          "old": "battlepause.gif"
+        },
+        {
+          "baseName": "battletab",
+          "new": "battletab.gif",
+          "old": "battletab.gif"
+        }
+      ]
+    },
+    "challenges": {
+      "matched": [
+        {
+          "baseName": "commonchallenges",
+          "new": "commonchallenges.webp",
+          "old": "commonchallenges.webp"
+        },
+        {
+          "baseName": "elitechallenges",
+          "new": "elitechallenges.webp",
+          "old": "elitechallenges.webp"
+        }
+      ]
+    },
+    "clan": {
+      "matched": [
+        {
+          "baseName": "clanaction",
+          "new": "clanaction.png",
+          "old": "clanaction.png"
+        },
+        {
+          "baseName": "clanmembers",
+          "new": "clanmembers.png",
+          "old": "clanmembers.png"
+        },
+        {
+          "baseName": "clanmodal",
+          "new": "clanmodal.png",
+          "old": "clanmodal.png"
+        },
+        {
+          "baseName": "clansearch",
+          "new": "clansearch.png",
+          "old": "clansearch.png"
+        },
+        {
+          "baseName": "otherclan",
+          "new": "otherclan.png",
+          "old": "otherclan.png"
+        },
+        {
+          "baseName": "ownclan",
+          "new": "ownclan.png",
+          "old": "ownclan.png"
+        }
+      ]
+    },
+    "containers": {
+      "matched": [
+        {
+          "baseName": "containersscreen",
+          "new": "containersscreen.png",
+          "old": "containersscreen.png"
+        },
+        {
+          "baseName": "openedcontainers",
+          "new": "openedcontainers.png",
+          "old": "openedcontainers.png"
+        },
+        {
+          "baseName": "possiblerewardsmenu",
+          "new": "possiblerewardsmenu.png",
+          "old": "possiblerewardsmenu.png"
+        },
+        {
+          "baseName": "possiblerewardsscreen",
+          "new": "possiblerewardsscreen.gif",
+          "old": "possiblerewardsscreen.gif"
+        },
+        {
+          "baseName": "skipopening",
+          "new": "skipopening.png",
+          "old": "skipopening.png"
+        }
+      ]
+    },
+    "entrance": {
+      "matched": [
+        {
+          "baseName": "2fa",
+          "new": "2fa.png",
+          "old": "2fa.png"
+        },
+        {
+          "baseName": "buttons1",
+          "new": "buttons1.png",
+          "old": "buttons1.png"
+        },
+        {
+          "baseName": "buttons2",
+          "new": "buttons2.png",
+          "old": "buttons2.png"
+        },
+        {
+          "baseName": "firstscreen",
+          "new": "firstscreen.png",
+          "old": "firstscreen.png"
+        },
+        {
+          "baseName": "links",
+          "new": "links.png",
+          "old": "links.png"
+        },
+        {
+          "baseName": "login",
+          "new": "login.png",
+          "old": "login.png"
+        },
+        {
+          "baseName": "register",
+          "new": "register.png",
+          "old": "register.png"
+        },
+        {
+          "baseName": "support",
+          "new": "support.png",
+          "old": "support.png"
+        }
+      ],
+      "warnings": {
+        "unmatchedNew": [
+          "button-animation.gif",
+          "linksbutton-animation.gif"
+        ]
+      }
+    },
+    "friends": {
+      "matched": [
+        {
+          "baseName": "clanmates",
+          "new": "clanmates.png",
+          "old": "clanmates.png"
+        },
+        {
+          "baseName": "friendsscreen",
+          "new": "friendsscreen.png",
+          "old": "friendsscreen.png"
+        },
+        {
+          "baseName": "incommingrequests",
+          "new": "incommingrequests.png",
+          "old": "incommingrequests.png"
+        },
+        {
+          "baseName": "invitefriends",
+          "new": "invitefriends.png",
+          "old": "invitefriends.png"
+        }
+      ]
+    },
+    "general": {
+      "matched": [
+        {
+          "baseName": "XP",
+          "new": "XP.png",
+          "old": "XP.png"
+        },
+        {
+          "baseName": "XPprobattles",
+          "new": "XPprobattles.png",
+          "old": "XPprobattles.png"
+        },
+        {
+          "baseName": "checkboxinput",
+          "new": "checkboxinput.png",
+          "old": "checkboxinput.png"
+        },
+        {
+          "baseName": "commoncontainerbackground",
+          "new": "commoncontainerbackground.png",
+          "old": "commoncontainerbackground.png"
+        },
+        {
+          "baseName": "commonsortactive",
+          "new": "commonsortactive.png",
+          "old": "commonsortactive.png"
+        },
+        {
+          "baseName": "commonsortinactive",
+          "new": "commonsortinactive.png",
+          "old": "commonsortinactive.png"
+        },
+        {
+          "baseName": "conversionmodal",
+          "new": "conversionmodal.png",
+          "old": "conversionmodal.png"
+        },
+        {
+          "baseName": "dropdown",
+          "new": "dropdown.png",
+          "old": "dropdown.png"
+        },
+        {
+          "baseName": "loadingscreen",
+          "new": "loadingscreen.gif",
+          "old": "loadingscreen.gif"
+        },
+        {
+          "baseName": "modal",
+          "new": "modal.png",
+          "old": "modal.png"
+        },
+        {
+          "baseName": "notificatoriconfootermenu",
+          "new": "notificatoriconfootermenu.gif",
+          "old": "notificatoriconfootermenu.png"
+        },
+        {
+          "baseName": "notificatoriconmainmenu",
+          "new": "notificatoriconmainmenu.png",
+          "old": "notificatoriconmainmenu.png"
+        },
+        {
+          "baseName": "notificatoriconscrollingcards",
+          "new": "notificatoriconscrollingcards.png",
+          "old": "notificatoriconscrollingcards.png"
+        },
+        {
+          "baseName": "playercontextmenu",
+          "new": "playercontextmenu.gif",
+          "old": "playercontextmenu.gif"
+        },
+        {
+          "baseName": "probattlesmodes",
+          "new": "probattlesmodes.png",
+          "old": "probattlesmodes.png"
+        },
+        {
+          "baseName": "rangeinput",
+          "new": "rangeinput.png",
+          "old": "rangeinput.png"
+        },
+        {
+          "baseName": "retriationbonus",
+          "new": "retriationbonus.png",
+          "old": "retriationbonus.png"
+        },
+        {
+          "baseName": "topmenu",
+          "new": "topmenu.png",
+          "old": "topmenu.png"
+        },
+        {
+          "baseName": "toppanel",
+          "new": "toppanel.png",
+          "old": "toppanel.png"
+        }
+      ]
+    },
+    "lobby": {
+      "matched": [
+        {
+          "baseName": "announcements",
+          "new": "announcements.gif",
+          "old": "announcements.gif"
+        },
+        {
+          "baseName": "battlemode",
+          "new": "battlemode.png",
+          "old": "battlemode.png"
+        },
+        {
+          "baseName": "battletype",
+          "new": "battletype.png",
+          "old": "battletype.png"
+        },
+        {
+          "baseName": "chat",
+          "new": "chat.png",
+          "old": "chat.png"
+        },
+        {
+          "baseName": "commonchallenges",
+          "new": "commonchallenges.gif",
+          "old": "commonchallenges.gif"
+        },
+        {
+          "baseName": "elitechallenges",
+          "new": "elitechallenges.gif",
+          "old": "elitechallenges.gif"
+        },
+        {
+          "baseName": "footermenu",
+          "new": "footermenu.gif",
+          "old": "footermenu.gif"
+        },
+        {
+          "baseName": "groupblock",
+          "new": "groupblock.png",
+          "old": "groupblock.png"
+        },
+        {
+          "baseName": "lobby",
+          "new": "lobby.png",
+          "old": "lobby.png"
+        },
+        {
+          "baseName": "mainmenu",
+          "new": "mainmenu.gif",
+          "old": "mainmenu.gif"
+        },
+        {
+          "baseName": "matchmaikingwatblock",
+          "new": "matchmaikingwatblock.png",
+          "old": "matchmaikingwatblock.png"
+        },
+        {
+          "baseName": "news",
+          "new": "news.png",
+          "old": "news.png"
+        },
+        {
+          "baseName": "playbutton-default",
+          "new": "playbutton-default.png",
+          "old": "playbutton-default.gif"
+        },
+        {
+          "baseName": "playbutton-search",
+          "new": "playbutton-search.gif",
+          "old": "playbutton-search.gif"
+        }
+      ]
+    },
+    "quests": {
+      "matched": [
+        {
+          "baseName": "claimbutton",
+          "new": "claimbutton.gif",
+          "old": "claimbutton.gif"
+        },
+        {
+          "baseName": "contractsscreen",
+          "new": "contractsscreen.png",
+          "old": "contractsscreen.png"
+        },
+        {
+          "baseName": "questsscreen",
+          "new": "questsscreen.png",
+          "old": "questsscreen.png"
+        }
+      ]
+    },
+    "settings": {
+      "matched": [
+        {
+          "baseName": "controlssettings",
+          "new": "controlssettings.webp",
+          "old": "controlssettings.webp"
+        },
+        {
+          "baseName": "gamesettings",
+          "new": "gamesettings.webp",
+          "old": "gamesettings.webp"
+        }
+      ],
+      "warnings": {
+        "unmatchedNew": [
+          "themesettings.webp"
+        ]
+      }
+    },
+    "shop": {
+      "matched": [
+        {
+          "baseName": "mainscreen1",
+          "new": "mainscreen1.png",
+          "old": "mainscreen1.png"
+        },
+        {
+          "baseName": "mainscreen2",
+          "new": "mainscreen2.png",
+          "old": "mainscreen2.png"
+        },
+        {
+          "baseName": "paymentscreen1",
+          "new": "paymentscreen1.png",
+          "old": "paymentscreen1.png"
+        },
+        {
+          "baseName": "paymentscreen2",
+          "new": "paymentscreen2.png",
+          "old": "paymentscreen2.png"
+        },
+        {
+          "baseName": "purchasescreen",
+          "new": "purchasescreen.png",
+          "old": "purchasescreen.png"
+        },
+        {
+          "baseName": "sectionmenu",
+          "new": "sectionmenu.gif",
+          "old": "sectionmenu.gif"
+        },
+        {
+          "baseName": "shopwindow",
+          "new": "shopwindow.png",
+          "old": "shopwindow.png"
+        },
+        {
+          "baseName": "successfulpurchase",
+          "new": "successfulpurchase.png",
+          "old": "successfulpurchase.png"
+        }
+      ]
+    }
+  }
+}

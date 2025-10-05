@@ -45,6 +45,31 @@
 		"boosty": "Support on Boosty",
 		"patreon": "Support on Patreon"
 	},
+	"gallery": {
+		"title": "Visual Comparison",
+		"description": "See the difference between original and Severitium theme",
+		"toggle": "Show Original",
+		"showOriginal": "Show Original",
+		"showSeveritium": "Show Severitium",
+		"all": "All",
+		"battle": "Battle",
+		"lobby": "Lobby",
+		"clan": "Clan",
+		"shop": "Shop",
+		"general": "General",
+		"entrance": "Entrance",
+		"containers": "Containers",
+		"friends": "Friends",
+		"challenges": "Challenges",
+		"quests": "Quests",
+		"settings": "Settings",
+		"showing": "Showing",
+		"of": "of",
+		"images": "images",
+		"page": "Page",
+		"loading": "Loading...",
+		"imageNotFound": "Image not found"
+	},
 	"compatibility": {
 		"title": "Browser Compatibility"
 	},

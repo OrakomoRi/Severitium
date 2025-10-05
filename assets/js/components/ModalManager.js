@@ -158,6 +158,9 @@ class ModalManager {
 		document.body.appendChild(modal);
 		this.activeModal = modal;
 
+		// Lock body scroll
+		document.body.style.overflow = 'hidden';
+
 		// Show with animation
 		requestAnimationFrame(() => {
 			modal.classList.add('modal--show');
@@ -189,12 +192,15 @@ class ModalManager {
 	}
 
 	/**
-	 * Hide active modal
+	 * Hide active modal with animation
 	 */
 	hide() {
 		if (!this.activeModal) return;
 
 		this.activeModal.classList.remove('modal--show');
+
+		// Unlock body scroll
+		document.body.style.overflow = '';
 
 		setTimeout(() => {
 			if (this.activeModal?.parentNode) {

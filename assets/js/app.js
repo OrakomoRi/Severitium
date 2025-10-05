@@ -8,6 +8,7 @@ import ModalManager from './components/ModalManager.js';
 import BackgroundAnimation from './components/BackgroundAnimation.js';
 import I18n from '../libs/i18n.js';
 import I18nManager from './components/I18nManager.js';
+import GalleryManager from './components/GalleryManager.js';
 
 class SeveritiumApp {
 	constructor() {
@@ -16,6 +17,7 @@ class SeveritiumApp {
 		this.backgroundAnimation = null;
 		this.i18n = null;
 		this.i18nManager = null;
+		this.galleryManager = null;
 
 		this.init();
 	}
@@ -127,6 +129,7 @@ class SeveritiumApp {
 			smoothness: 0.98,
 			targetFPS: 60
 		});
+		this.galleryManager = new GalleryManager();
 	}
 
 	/**
@@ -153,6 +156,9 @@ class SeveritiumApp {
 		// For i18n access
 		window.i18n = this.i18n;
 		window.i18nManager = this.i18nManager;
+		
+		// For gallery access
+		window.galleryManager = this.galleryManager;
 	}
 
 	/**
@@ -208,22 +214,33 @@ class SeveritiumApp {
 		const header = document.querySelector('header .header__language-selector');
 		if (!header) return;
 
-		if (typeof window.BreeziumSelect === 'undefined') {
-			throw new Error('BreeziumSelect not loaded');
-		}
+		// Wait for BreeziumSelect to load
+		const initSelector = () => {
+			if (typeof window.BreeziumSelect === 'undefined') {
+				// Retry after a short delay
+				setTimeout(initSelector, 100);
+				return;
+			}
 
-		const options = (this.availableLocales || []).map(l => ({
-			code: l.code,
-			name: l.name
-		}));
+			try {
+				const options = (this.availableLocales || []).map(l => ({
+					code: l.code,
+					name: l.name
+				}));
 
-		const select = new window.BreeziumSelect(
-			options,
-			(newLocale) => this.switchLanguage(newLocale),
-			this.i18n.locale,
-		);
+				const select = new window.BreeziumSelect(
+					options,
+					(newLocale) => this.switchLanguage(newLocale),
+					this.i18n.locale,
+				);
 
-		select.render(header);
+				select.render(header);
+			} catch (error) {
+				console.error('Error creating language selector:', error);
+			}
+		};
+
+		initSelector();
 	}
 
 	/**
@@ -383,6 +400,14 @@ class SeveritiumApp {
 	}
 
 	/**
+	 * Get gallery manager instance
+	 * @returns {GalleryManager} Gallery manager instance
+	 */
+	getGalleryManager() {
+		return this.galleryManager;
+	}
+
+	/**
 	 * Control background animation
 	 * @param {string} action - Action to perform (start, stop, pause, resume)
 	 */
@@ -445,6 +470,7 @@ class SeveritiumApp {
 		delete window.BackgroundAnimation;
 		delete window.i18n;
 		delete window.i18nManager;
+		delete window.galleryManager;
 		delete window.severitiumApp;
 	}
 }

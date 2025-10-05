@@ -45,6 +45,31 @@
 		"boosty": "Поддержать на Boosty",
 		"patreon": "Поддержать на Patreon"
 	},
+	"gallery": {
+		"title": "Визуальное сравнение",
+		"description": "Посмотрите разницу между оригинальной темой и Severitium",
+		"toggle": "Показать оригинал",
+		"showOriginal": "Показать оригинал",
+		"showSeveritium": "Показать Severitium",
+		"all": "Все",
+		"battle": "Бой",
+		"lobby": "Лобби",
+		"clan": "Клан",
+		"shop": "Магазин",
+		"general": "Общее",
+		"entrance": "Вход",
+		"containers": "Контейнеры",
+		"friends": "Друзья",
+		"challenges": "Вызовы",
+		"quests": "Квесты",
+		"settings": "Настройки",
+		"showing": "Показано",
+		"of": "из",
+		"images": "изображений",
+		"page": "Страница",
+		"loading": "Загрузка...",
+		"imageNotFound": "Изображение не найдено"
+	},
 	"compatibility": {
 		"title": "Совместимость с браузерами"
 	},
