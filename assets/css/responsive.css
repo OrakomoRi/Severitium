@@ -22,13 +22,8 @@
    ============================ */
 
 @media (max-width: 768px) {
-	/* Header adaptations */
-	.header {
-		padding: var(--space-4) var(--space-8);
-	}
-
 	.main-section {
-		padding: var(--space-16) 0 var(--space-12);
+		padding: var(--space-12) 0 var(--space-10);
 	}
 	
 	.main-section__title {
