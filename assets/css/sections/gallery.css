@@ -354,18 +354,20 @@
 
 /* Modal body */
 .gallery-modal__body {
-	padding: var(--space-6);
+	position: relative;
 	display: flex;
-	align-items: center;
+	align-items: safe-center;
 	justify-content: center;
+	flex: 1;
+	padding: var(--space-6);
 	background: var(--color-bg-primary);
-	max-height: calc(90vh - 5rem);
 	overflow: auto;
 }
 
 .gallery-modal__image {
-	max-width: 100%;
-	max-height: calc(90vh - 6rem);
+	position: relative;
+	flex: 1;
+	aspect-ratio: auto;
 	width: auto;
 	height: auto;
 	object-fit: contain;
