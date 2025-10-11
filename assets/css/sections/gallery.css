@@ -361,16 +361,24 @@
 	flex: 1;
 	padding: var(--space-6);
 	background: var(--color-bg-primary);
-	overflow: auto;
+	overflow: hidden;
+}
+
+.gallery-modal__image-wrapper {
+	overflow: hidden;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .gallery-modal__image {
-	position: relative;
-	flex: 1;
-	aspect-ratio: auto;
-	width: auto;
-	height: auto;
 	object-fit: contain;
+	width: 100%;
+	height: 100%;
 }
 
 .gallery-modal__error {
@@ -404,8 +412,13 @@
 }
 
 @keyframes spin {
-	0% { transform: rotate(0deg); }
-	100% { transform: rotate(360deg); }
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 /* Pagination */
@@ -488,51 +501,51 @@
 		margin: var(--space-12) 0;
 		padding: var(--space-8) var(--space-4);
 	}
-	
+
 	.gallery-section__title {
 		font-size: var(--text-3xl);
 	}
-	
+
 	.gallery-controls-row {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		width: 100%;
 	}
-	
+
 	.gallery-controls-row .breezium-selected {
 		width: 100%;
 		max-width: 20rem;
 	}
-	
+
 	.gallery-grid {
 		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
 		gap: var(--space-4);
 		padding: 0;
 	}
-	
+
 	.gallery-item__image-container {
 		height: 12rem;
 	}
-	
+
 	.gallery-modal__content {
 		max-width: 95vw;
 		max-height: 95vh;
 	}
-	
+
 	.gallery-modal__header {
 		padding: var(--space-3) var(--space-4);
 	}
-	
+
 	.gallery-modal__body {
 		padding: var(--space-4);
 	}
-	
+
 	.gallery-modal__close {
 		width: 2.25rem;
 		height: 2.25rem;
 	}
-	
+
 	.gallery-pagination {
 		flex-wrap: wrap;
 		gap: var(--space-1);
@@ -543,7 +556,7 @@
 	.gallery-grid {
 		grid-template-columns: 1fr;
 	}
-	
+
 	.gallery-modal__title {
 		font-size: var(--text-base);
 	}

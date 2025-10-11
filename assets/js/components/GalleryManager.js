@@ -517,7 +517,9 @@ class GalleryManager {
 					</button>
 				</div>
 				<div class="gallery-modal__body">
-					<img class="gallery-modal__image" alt="">
+					<div class="gallery-modal__image-container">
+						<img class="gallery-modal__image" alt="">
+					</div>
 					<div class="gallery-modal__error" style="display: none;">
 						<ion-icon name="image-outline" style="font-size: 3rem;"></ion-icon>
 						<span>Image not found</span>
