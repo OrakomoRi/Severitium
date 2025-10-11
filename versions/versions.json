@@ -2206,5 +2206,11 @@
     "date": "2025-10-04",
     "comment": "1.8.1+build3 feat: updated quests screen",
     "hash": "c21aae637872152b452793db5fb2649d6d1923f4"
+  },
+  {
+    "version": "1.8.1+build5",
+    "date": "2025-10-11",
+    "comment": "1.8.1+build5 feat: updated modal (invite a friend)",
+    "hash": "a345de4a89fb1733415a8caaeecde444488c78c3"
   }
 ]
