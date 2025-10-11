@@ -1,6 +1,7 @@
 /* Modal overlay */
 
-.ModalStyle-rootHover {
+.ModalStyle-rootHover,
+.ModalStyle-root {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -26,6 +27,8 @@
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
 }
+
+/* Modal inner element for reCAPTCHA */
 
 .ModalStyle-rootHover > div:has(> .ReCaptchaComponentStyle-captchaBlock) {
 	height: -webkit-fit-content;
@@ -264,7 +267,7 @@
 
 /* Close icon container */
 
-:has(> .DialogContainerComponentStyle-imgClose) {
+.ModalStyle-rootHover *:has(> .DialogContainerComponentStyle-imgClose) {
 	position: unset;
 }
 
@@ -950,4 +953,132 @@
 .UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-buttonOk h2,
 .UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-buttonOk span {
 	color: var(--severitium-green-button-color);
+}
+
+/* Inner element for secondary modals */
+
+.ModalStyle-root > div {
+	position: relative;
+	border: none !important;
+	border-radius: var(--severitium-border-radius) !important;
+	box-shadow: none !important;
+	outline: var(--severitium-gray-color) solid .1em;
+}
+
+/* Another level of modal inner element */
+
+.ModalStyle-root > div > div[style*='background'i] {
+	border-radius: var(--severitium-border-radius) !important;
+	outline: none !important;
+	background: none !important;
+	background-color: var(--severitium-dark-transparent-background1) !important;
+	-webkit-backdrop-filter: blur(.5em);
+			backdrop-filter: blur(.5em);
+}
+
+/* Image element */
+
+.ModalStyle-root > div > div > div[style*='background-image'i] {
+	border-top-left-radius: var(--severitium-border-radius) !important;
+	border-bottom-left-radius: var(--severitium-border-radius) !important;
+	border-right: var(--severitium-gray-color) solid .1em !important;
+}
+
+/* Hotkey */
+
+.ModalStyle-root > div > div > div h3[class*='hotkey'i] {
+	background: none !important;
+	color: var(--severitium-dark-white-text-color) !important;
+	border: var(--severitium-gray-color) dashed .1em !important;
+	border-radius: var(--severitium-border-radius) !important;
+}
+
+/* Button */
+
+.ModalStyle-root > div > div > div > div:last-of-type > div:not(.ButtonComponentStyle-disabled) {
+	outline: none !important;
+	box-shadow: none !important;
+	border-radius: var(--severitium-border-radius) !important;
+	background: var(--severitium-green-button-background) !important;
+	border: var(--severitium-green-button-border-color) solid .1em !important;
+	transition: border .2s ease !important;
+}
+
+/* Button on hover */
+
+.ModalStyle-root > div > div > div > div:last-of-type > div:not(.ButtonComponentStyle-disabled):hover {
+	border: var(--severitium-green-button-border-color-hover) solid .1em !important;
+}
+
+/* Button text */
+
+.ModalStyle-root > div > div > div > div:last-of-type > div:not(.ButtonComponentStyle-disabled) > span {
+	color: var(--severitium-green-button-color) !important;
+}
+
+/* Disabled button */
+
+.ModalStyle-root > div > div > div > div:last-of-type > div.ButtonComponentStyle-disabled {
+	pointer-events: none !important;
+	background-color: var(--severitium-light-transparent-background3) !important;
+	border-radius: var(--severitium-border-radius) !important;
+	border: transparent solid .1em !important;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+/* Disabled button text */
+
+.ModalStyle-root > div > div > div > div:last-of-type > div.ButtonComponentStyle-disabled > span {
+	color: var(--severitium-white-text-color) !important;
+	text-shadow: none !important;
+	opacity: .25 !important;
+}
+
+/* Happy tanker dialog image */
+
+.ModalStyle-root > div > div > div > div div[style*='happytankerballoon'i] {
+	background: none !important;
+}
+
+/* Happy tanker dialog text */
+
+.ModalStyle-root > div > div > div > div div[style*='happytankerballoon'i] > div {
+	color: var(--severitium-white-text-color) !important;
+}
+
+/* Close icon container */
+
+.ModalStyle-root *:has(> .GSWarningComponentStyle-closeImage) {
+	position: unset;
+}
+
+/* Close (cross) icon of the secondary modal container */
+
+.ModalStyle-root .GSWarningComponentStyle-closeImage {
+	width: 1.5em;
+	height: 1.5em;
+	margin-left: .5em;
+	padding: 0;
+	background: none;
+	background-image: none;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><path d="m84 0 12 12-48 48-36 36L0 84l36-36L0 12 12 0l36 36z"/><path d="M48 60h24l24 24-12 12z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><path d="m84 0 12 12-48 48-36 36L0 84l36-36L0 12 12 0l36 36z"/><path d="M48 60h24l24 24-12 12z"/></svg>');
+	background-color: var(--severitium-white-color);
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	transition: background-color .2s ease;
+}
+
+/* Close (cross) icon of the secondary modal container on hover */
+
+.ModalStyle-root .GSWarningComponentStyle-closeImage:hover {
+	width: 1.5em;
+	height: 1.5em;
+	background-image: none;
+	background-color: var(--severitium-red-color);
 }
