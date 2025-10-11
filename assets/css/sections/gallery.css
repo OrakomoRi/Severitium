@@ -371,7 +371,6 @@
 	width: auto;
 	height: auto;
 	object-fit: contain;
-	border-radius: var(--radius-lg);
 }
 
 .gallery-modal__error {
