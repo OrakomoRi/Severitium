@@ -1,5 +1,5 @@
 /**
- * Main Section Styles
+ * Main Section Styles - GPU Optimized
  */
 
 .main-section {
@@ -26,6 +26,9 @@
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	letter-spacing: -.025em;
+	/* GPU acceleration for gradient text */
+	transform: translateZ(0);
+	backface-visibility: hidden;
 }
 
 /* ============================
@@ -39,6 +42,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	/* GPU-accelerated text */
+	transform: translateZ(0);
+	backface-visibility: hidden;
 }
 
 .main-section__tagline ion-icon {
@@ -54,6 +60,9 @@
 	font-size: var(--text-lg);
 	color: var(--color-text-muted);
 	font-weight: var(--font-normal);
+	/* GPU-accelerated text */
+	transform: translateZ(0);
+	backface-visibility: hidden;
 }
 
 /* ============================

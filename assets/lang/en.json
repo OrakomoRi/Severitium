@@ -51,6 +51,8 @@
 		"toggle": "Show Original",
 		"showOriginal": "Show Original",
 		"showSeveritium": "Show Severitium",
+		"original": "Original",
+		"severitium": "Severitium",
 		"all": "All",
 		"battle": "Battle",
 		"lobby": "Lobby",

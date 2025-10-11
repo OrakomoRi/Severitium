@@ -42,7 +42,7 @@
 	width: fit-content;
 }
 
-/* Selected (header) */
+/* Selected (header) - GPU Optimized */
 .breezium-select .breezium-selected {
 	min-width: var(--breezium-min-width, 5rem);
 	width: var(--breezium-select-selected-width, 5rem);
@@ -64,6 +64,10 @@
 	text-overflow: ellipsis;
 	cursor: pointer;
 	transition: background-color var(--breezium-transition-duration, .2s) ease;
+	/* GPU acceleration for smooth interactions */
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	will-change: background-color;
 }
 
 /* Hover on header */
@@ -72,7 +76,7 @@
 	background-color: var(--breezium-hover-bg-color, rgba(100, 100, 100, .25));
 }
 
-/* Options panel (dropdown) */
+/* Options panel (dropdown) - GPU Optimized */
 .breezium-select .breezium-options {
 	display: none;
 	position: absolute;
@@ -90,6 +94,9 @@
 	box-shadow: var(--breezium-box-shadow, 0 .25rem .5rem rgba(0, 0, 0, .25));
 	overflow: hidden auto;
 	will-change: transform, opacity;
+	/* GPU acceleration for dropdown animation and scrolling */
+	transform: translateZ(0);
+	backface-visibility: hidden;
 }
 
 /* Down/up positioning*/
@@ -110,7 +117,7 @@
 	animation: breezium-fade-in var(--breezium-transition-duration, .2s) ease-out;
 }
 
-/* Option */
+/* Option - GPU Optimized */
 .breezium-select .breezium-option {
 	max-width: 100%;
 	height: var(--breezium-select-option-height, 2.5rem);
@@ -126,6 +133,10 @@
 	font-size: var(--breezium-font-size, 1rem);
 	text-overflow: ellipsis;
 	transition: background-color var(--breezium-transition-duration, .2s) ease;
+	/* GPU acceleration for smooth hover */
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	will-change: background-color;
 }
 
 /* Hover */
@@ -174,16 +185,16 @@
 	scrollbar-color: var(--breezium-select-scroll-thumb-background, rgba(255, 255, 255, .3)) var(--breezium-select-scroll-track-background, rgba(255, 255, 255, .1));
 }
 
-/* Keyframes (subtle) */
+/* Keyframes (GPU-accelerated) */
 @keyframes breezium-fade-in {
 	from {
 		opacity: 0;
-		transform: translateY(-.15rem);
+		transform: translate3d(0, -.15rem, 0);
 	}
 
 	to {
 		opacity: 1;
-		transform: translateY(0);
+		transform: translate3d(0, 0, 0);
 	}
 }
 

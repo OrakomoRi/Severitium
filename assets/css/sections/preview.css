@@ -1,5 +1,5 @@
 /* ============================
-   PREVIEW VIDEO - Video section
+   PREVIEW VIDEO - Video section (GPU Optimized)
    ============================ */
 
 .preview-video {
@@ -18,16 +18,20 @@
 	background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-elevated));
 	border: .2rem solid var(--color-primary);
 	border-radius: var(--radius-lg);
-	transition: all var(--transition-normal);
+	transition: var(--transition-transform), var(--transition-box-shadow);
 	text-decoration: none;
 	backdrop-filter: blur(1rem);
 	box-shadow: var(--shadow-md);
+	/* GPU acceleration for smooth hover */
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	will-change: transform;
 }
 
 .preview-video__link:hover {
 	background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
 	color: white !important;
-	transform: translateY(-.25rem) scale(1.02);
+	transform: translate3d(0, -.25rem, 0) scale3d(1.02, 1.02, 1);
 	box-shadow: var(--shadow-lg), var(--shadow-glow);
 }
 

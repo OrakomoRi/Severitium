@@ -1,5 +1,5 @@
 /**
- * Modal Component
+ * Modal Component - GPU Optimized
  */
 
 /* ============================
@@ -15,7 +15,11 @@
 	justify-content: center;
 	opacity: 0;
 	visibility: hidden;
-	transition: all var(--transition-normal);
+	transition: var(--transition-opacity);
+	/* GPU acceleration for smooth fade-in */
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	will-change: opacity, visibility;
 }
 
 .modal--show {
@@ -33,6 +37,9 @@
 	background: rgba(0, 0, 0, .8);
 	backdrop-filter: blur(.75rem);
 	z-index: var(--z-modal-backdrop);
+	/* GPU acceleration for blur effect */
+	transform: translateZ(0);
+	backface-visibility: hidden;
 }
 
 /* ============================
@@ -50,12 +57,17 @@
 	z-index: var(--z-modal);
 	overflow: hidden;
 	box-shadow: var(--shadow-2xl);
-	transform: scale(.95);
-	transition: transform var(--transition-normal);
+	transform: scale3d(.95, .95, 1);
+	transition: var(--transition-transform);
+	/* GPU acceleration for scale animation */
+	backface-visibility: hidden;
+	will-change: transform;
+	display: flex;
+	flex-direction: column;
 }
 
 .modal--show .modal__content {
-	transform: scale(1);
+	transform: scale3d(1, 1, 1);
 }
 
 /* Changelog modal specific styling */
@@ -113,15 +125,19 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: all var(--transition-fast);
+	transition: var(--transition-transform), var(--transition-color);
 	cursor: pointer;
+	/* GPU acceleration for smooth hover */
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	will-change: transform;
 }
 
 .modal__close:hover {
 	background: var(--color-bg-surface);
 	color: var(--color-text-primary);
 	border-color: var(--color-border-hover);
-	transform: scale(1.05);
+	transform: scale3d(1.05, 1.05, 1);
 }
 
 .modal__close ion-icon {
@@ -140,4 +156,7 @@
 	/* Better scrolling on mobile */
 	-webkit-overflow-scrolling: touch;
 	scroll-behavior: smooth;
+	/* GPU acceleration for smooth scrolling */
+	transform: translateZ(0);
+	backface-visibility: hidden;
 }

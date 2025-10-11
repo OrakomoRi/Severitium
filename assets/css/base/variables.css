@@ -226,12 +226,23 @@
 	--icon-xl: 2rem;
 	
 	/* ============================
-	   TRANSITIONS - Animation System
+	   TRANSITIONS - Optimized Animation System
 	   ============================ */
 	
+	/* Hardware-accelerated easing functions */
 	--transition-fast: .15s cubic-bezier(.4, 0, .2, 1);
 	--transition-normal: .25s cubic-bezier(.4, 0, .2, 1);
 	--transition-slow: .35s cubic-bezier(.4, 0, .2, 1);
+	
+	/* GPU-optimized properties (transform, opacity) */
+	--transition-transform: transform .25s cubic-bezier(.4, 0, .2, 1);
+	--transition-opacity: opacity .25s cubic-bezier(.4, 0, .2, 1);
+	--transition-all-fast: transform .15s cubic-bezier(.4, 0, .2, 1), opacity .15s cubic-bezier(.4, 0, .2, 1);
+	
+	/* Additional GPU-optimized transitions */
+	--transition-color: color .25s cubic-bezier(.4, 0, .2, 1);
+	--transition-box-shadow: box-shadow .25s cubic-bezier(.4, 0, .2, 1);
+	--transition-filter: filter .25s cubic-bezier(.4, 0, .2, 1);
 	
 	/* ============================
 	   Z-INDEX - Layer Management

@@ -1,4 +1,4 @@
-/* Header Component */
+/* Header Component - GPU Optimized */
 
 .header {
 	display: flex;
@@ -12,6 +12,10 @@
 	position: sticky;
 	top: 0;
 	z-index: 1;
+	/* GPU acceleration for smooth sticky positioning */
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	will-change: transform;
 }
 
 .header__logo-link {
@@ -25,20 +29,26 @@
 .header__logo-link img {
 	height: 3rem;
 	width: 3rem;
+	/* Smooth image rendering */
+	transform: translateZ(0);
+	backface-visibility: hidden;
 }
 
 .header__logo-text {
 	font-size: 2rem;
 	font-weight: bold;
 	user-select: none;
-	transition: color .3s ease;
+	transition: var(--transition-color);
+	/* GPU-accelerated text */
+	transform: translateZ(0);
+	backface-visibility: hidden;
 }
 
 .header__logo-link:hover .header__logo-text {
 	color: var(--color-accent);
 }
 
-/* Language Selector Styles */
+/* Language Selector Styles - GPU Optimized */
 .header__language-selector .breezium-selected {
 	min-width: 10rem;
 	background: var(--color-bg-surface);
@@ -49,8 +59,12 @@
 	font-size: var(--text-sm);
 	font-weight: var(--font-medium);
 	color: var(--color-text-primary);
-	transition: all var(--transition-normal);
+	transition: var(--transition-all-fast);
 	cursor: pointer;
+	/* GPU acceleration */
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	will-change: transform;
 }
 
 .header__language-selector .breezium-selected:hover {
@@ -67,14 +81,21 @@
 	margin-top: var(--space-1);
 	max-height: 18rem;
 	overflow-y: auto;
+	/* GPU acceleration for smooth scrolling */
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	will-change: transform, opacity;
 }
 
 .header__language-selector .breezium-option {
 	padding: var(--space-3) var(--space-4);
 	font-size: var(--text-sm);
 	color: var(--color-text-secondary);
-	transition: all var(--transition-fast);
+	transition: var(--transition-all-fast);
 	cursor: pointer;
+	/* GPU acceleration for hover */
+	transform: translateZ(0);
+	backface-visibility: hidden;
 }
 
 .header__language-selector .breezium-option:hover {

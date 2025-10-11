@@ -1,5 +1,6 @@
 /**
  * Buttons Component
+ * Optimized for smooth performance with GPU acceleration
  */
 
 /* ============================
@@ -17,12 +18,16 @@
 	border-radius: var(--radius-lg);
 	border: .1rem solid transparent;
 	cursor: pointer;
-	transition: all var(--transition-normal);
+	transition: var(--transition-transform), var(--transition-box-shadow);
 	text-decoration: none;
 	position: relative;
 	overflow: hidden;
 	min-height: var(--btn-height-md);
 	white-space: nowrap;
+	/* GPU acceleration for smooth hover effects */
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	will-change: transform;
 }
 
 .btn:focus-visible {
@@ -41,7 +46,7 @@
 }
 
 .btn--primary:hover {
-	transform: translateY(-.2rem);
+	transform: translate3d(0, -.2rem, 0);
 	box-shadow: var(--shadow-lg), var(--shadow-glow);
 }
 
@@ -55,7 +60,7 @@
 .btn--secondary:hover {
 	background: var(--color-bg-elevated);
 	border-color: var(--color-border-hover);
-	transform: translateY(-.1rem);
+	transform: translate3d(0, -.1rem, 0);
 }
 
 /* Step button */
@@ -71,7 +76,7 @@
 	background: linear-gradient(135deg, var(--color-bg-elevated), var(--color-bg-surface));
 	border-color: var(--color-primary);
 	color: var(--color-primary);
-	transform: translateY(-.2rem);
+	transform: translate3d(0, -.2rem, 0);
 	box-shadow: var(--shadow-md);
 }
 
@@ -85,7 +90,7 @@
 .btn--github:hover {
 	background: linear-gradient(135deg, #30363d, #24292e);
 	color: white !important;
-	transform: translateY(-.2rem);
+	transform: translate3d(0, -.2rem, 0);
 	box-shadow: 0 .5rem 1rem rgba(36, 41, 46, .3);
 }
 
@@ -99,7 +104,7 @@
 .btn--support:hover {
 	background: linear-gradient(135deg, rgba(255, 154, 158, .15), rgba(255, 154, 158, .1));
 	color: #ff9a9e !important;
-	transform: translateY(-.2rem);
+	transform: translate3d(0, -.2rem, 0);
 	box-shadow: 0 .5rem 1rem rgba(255, 154, 158, .25);
 }
 
@@ -113,7 +118,7 @@
 .btn--patreon:hover {
 	background: linear-gradient(135deg, rgba(255, 66, 77, .15), rgba(255, 66, 77, .1));
 	color: #ff424d !important;
-	transform: translateY(-.2rem);
+	transform: translate3d(0, -.2rem, 0);
 	box-shadow: 0 .5rem 1rem rgba(255, 66, 77, .25);
 }
 
@@ -127,7 +132,7 @@
 .btn--latest:hover {
 	background: linear-gradient(135deg, rgba(245, 158, 11, .15), rgba(245, 158, 11, .1));
 	color: var(--color-accent) !important;
-	transform: translateY(-.2rem);
+	transform: translate3d(0, -.2rem, 0);
 	box-shadow: 0 .5rem 1rem rgba(245, 158, 11, .25);
 }
 

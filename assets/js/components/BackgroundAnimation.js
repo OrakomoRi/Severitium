@@ -190,22 +190,26 @@ class BackgroundAnimation {
 	}
 
 	/**
-	 * Animation loop
+	 * Animation loop with FPS throttling
 	 * @private
 	 */
 	animate() {
 		if (!this.isRunning) return;
 
 		const currentTime = performance.now();
+		const deltaTime = currentTime - this.lastFrameTime;
 
-		// Frame rate limiting for consistent 60fps
-		if (currentTime - this.lastFrameTime >= this.frameInterval) {
-			this.particles.forEach(particle => {
-				particle.update();
-				particle.updateCSS(this.documentRoot);
+		// Frame rate limiting for smooth 60fps with adaptive throttling
+		if (deltaTime >= this.frameInterval) {
+			// Batch CSS updates for better performance
+			this.particles.forEach(particle => particle.update());
+			
+			// Use single style update batch
+			requestAnimationFrame(() => {
+				this.particles.forEach(particle => particle.updateCSS(this.documentRoot));
 			});
 
-			this.lastFrameTime = currentTime;
+			this.lastFrameTime = currentTime - (deltaTime % this.frameInterval);
 		}
 
 		this.animationId = requestAnimationFrame(() => this.animate());
