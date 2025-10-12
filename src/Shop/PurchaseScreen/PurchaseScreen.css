@@ -152,7 +152,7 @@
 
 /* Container for price icon and text */
 
-.BasePaymentComponentStyle-buttonContainer > div .ShopBuyButtonComponentStyle-container > div {
+.BasePaymentComponentStyle-buttonContainer > div .ShopBuyButtonComponentStyle-price {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -162,7 +162,7 @@
 
 /* Button price icon */
 
-.BasePaymentComponentStyle-buttonContainer > div .ShopBuyButtonComponentStyle-container > div > div {
+.BasePaymentComponentStyle-buttonContainer > div .ShopBuyButtonComponentStyle-price > div {
 	margin: 0;
 	-webkit-filter: grayscale(1) invert(1);
 	        filter: grayscale(1) invert(1);
@@ -170,8 +170,8 @@
 
 /* Button price text */
 
-.BasePaymentComponentStyle-buttonContainer > div .ShopBuyButtonComponentStyle-container > div > h4,
-.BasePaymentComponentStyle-buttonContainer > div .ShopBuyButtonComponentStyle-container > h4 {
+.BasePaymentComponentStyle-buttonContainer > div .ShopBuyButtonComponentStyle-price > div > h4,
+.BasePaymentComponentStyle-buttonContainer > div .ShopBuyButtonComponentStyle-price > h4 {
 	margin: 0;
 	color: var(--severitium-white-text-color);
 }
