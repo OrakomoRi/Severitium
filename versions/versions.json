@@ -2212,5 +2212,11 @@
     "date": "2025-10-11",
     "comment": "1.8.1+build5 feat: updated modal (invite a friend)",
     "hash": "a345de4a89fb1733415a8caaeecde444488c78c3"
+  },
+  {
+    "version": "1.8.1+build6",
+    "date": "2025-10-12",
+    "comment": "1.8.1+build6 feat: updated purchase screen",
+    "hash": "e10c6d5187dec12dc707c010105463992383769f"
   }
 ]
