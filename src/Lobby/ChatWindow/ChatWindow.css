@@ -26,7 +26,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: auto;
+	height: 3.5em;
 	background-color: var(--severitium-light-transparent-background3);
 	box-sizing: border-box;
 	padding: 1em 1em;
@@ -112,6 +112,10 @@
 /* Chat messages container */
 
 .ChatComponentStyle-messagesContainer {
+	position: absolute;
+	top: 3.75em;
+	bottom: 4em;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
