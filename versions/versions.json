@@ -2218,5 +2218,11 @@
     "date": "2025-10-12",
     "comment": "1.8.1+build6 feat: updated purchase screen",
     "hash": "e10c6d5187dec12dc707c010105463992383769f"
+  },
+  {
+    "version": "1.8.1+build7",
+    "date": "2025-10-13",
+    "comment": "1.8.1+build7 feat: updated chat window",
+    "hash": "d18c3287d00a23c5494f1c2a1208f93ce1c3c9eb"
   }
 ]
