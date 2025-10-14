@@ -2224,5 +2224,11 @@
     "date": "2025-10-13",
     "comment": "1.8.1+build7 feat: updated chat window",
     "hash": "d18c3287d00a23c5494f1c2a1208f93ce1c3c9eb"
+  },
+  {
+    "version": "1.8.1+build8",
+    "date": "2025-10-14",
+    "comment": "1.8.1+build8 feat: updated settings content",
+    "hash": "73ec22550de933e013f8fbdccd1a1e9f2f417d43"
   }
 ]
