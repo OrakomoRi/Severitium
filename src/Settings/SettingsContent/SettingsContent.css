@@ -565,6 +565,12 @@
 	width: 100%;
 }
 
+/* Reset all button */
+
+.SettingsComponentStyle-commonBlock:has(.KeyboardSettingsComponentStyle-main) + .SettingsButtonsComponentStyle-containerGroupButton > .SettingsButtonsComponentStyle-buttonsWidthBackReset:not(:root) {
+	width: 21em;
+}
+
 /* LOCATION SECTION */
 
 /* Location block */
