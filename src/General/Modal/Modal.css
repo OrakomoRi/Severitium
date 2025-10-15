@@ -967,7 +967,7 @@
 
 /* Another level of modal inner element */
 
-.ModalStyle-root > div > div[style*='background'i] {
+.ModalStyle-root > div:has(img[src*='happytanker'i]) > div[style*='background'i] {
 	border-radius: var(--severitium-border-radius) !important;
 	outline: none !important;
 	background: none !important;
@@ -978,7 +978,7 @@
 
 /* Image element */
 
-.ModalStyle-root > div > div > div[style*='background-image'i] {
+.ModalStyle-root > div:has(img[src*='happytanker'i]) > div > div[style*='background-image'i] {
 	border-top-left-radius: var(--severitium-border-radius) !important;
 	border-bottom-left-radius: var(--severitium-border-radius) !important;
 	border-right: var(--severitium-gray-color) solid .1em !important;
@@ -986,7 +986,7 @@
 
 /* Hotkey */
 
-.ModalStyle-root > div > div > div h3[class*='hotkey'i] {
+.ModalStyle-root > div:has(img[src*='happytanker'i]) > div > div h3[class*='hotkey'i] {
 	background: none !important;
 	color: var(--severitium-dark-white-text-color) !important;
 	border: var(--severitium-gray-color) dashed .1em !important;
@@ -995,7 +995,7 @@
 
 /* Button */
 
-.ModalStyle-root > div > div > div > div:last-of-type > div:not(.ButtonComponentStyle-disabled) {
+.ModalStyle-root > div:has(img[src*='happytanker'i]) > div > div > div:last-of-type > div:not(.ButtonComponentStyle-disabled) {
 	outline: none !important;
 	box-shadow: none !important;
 	border-radius: var(--severitium-border-radius) !important;
@@ -1006,19 +1006,19 @@
 
 /* Button on hover */
 
-.ModalStyle-root > div > div > div > div:last-of-type > div:not(.ButtonComponentStyle-disabled):hover {
+.ModalStyle-root > div:has(img[src*='happytanker'i]) > div > div > div:last-of-type > div:not(.ButtonComponentStyle-disabled):hover {
 	border: var(--severitium-green-button-border-color-hover) solid .1em !important;
 }
 
 /* Button text */
 
-.ModalStyle-root > div > div > div > div:last-of-type > div:not(.ButtonComponentStyle-disabled) > span {
+.ModalStyle-root > div:has(img[src*='happytanker'i]) > div > div > div:last-of-type > div:not(.ButtonComponentStyle-disabled) > span {
 	color: var(--severitium-green-button-color) !important;
 }
 
 /* Disabled button */
 
-.ModalStyle-root > div > div > div > div:last-of-type > div.ButtonComponentStyle-disabled {
+.ModalStyle-root > div:has(img[src*='happytanker'i]) > div > div > div:last-of-type > div.ButtonComponentStyle-disabled {
 	pointer-events: none !important;
 	background-color: var(--severitium-light-transparent-background3) !important;
 	border-radius: var(--severitium-border-radius) !important;
@@ -1029,7 +1029,7 @@
 
 /* Disabled button text */
 
-.ModalStyle-root > div > div > div > div:last-of-type > div.ButtonComponentStyle-disabled > span {
+.ModalStyle-root > div:has(img[src*='happytanker'i]) > div > div > div:last-of-type > div.ButtonComponentStyle-disabled > span {
 	color: var(--severitium-white-text-color) !important;
 	text-shadow: none !important;
 	opacity: .25 !important;
@@ -1037,13 +1037,13 @@
 
 /* Happy tanker dialog image */
 
-.ModalStyle-root > div > div > div > div div[style*='happytankerballoon'i] {
+.ModalStyle-root > div:has(img[src*='happytankerballoon'i]) > div > div > div div[style*='happytankerballoon'i] {
 	background: none !important;
 }
 
 /* Happy tanker dialog text */
 
-.ModalStyle-root > div > div > div > div div[style*='happytankerballoon'i] > div {
+.ModalStyle-root > div:has(img[src*='happytanker'i]) > div > div > div div[style*='happytankerballoon'i] > div {
 	color: var(--severitium-white-text-color) !important;
 }
 
