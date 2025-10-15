@@ -957,7 +957,7 @@
 
 /* Inner element for secondary modals */
 
-.ModalStyle-root > div {
+.ModalStyle-root > div:has(img[src*='happytanker'i]) {
 	position: relative;
 	border: none !important;
 	border-radius: var(--severitium-border-radius) !important;
