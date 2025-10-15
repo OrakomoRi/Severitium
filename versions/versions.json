@@ -2236,5 +2236,11 @@
     "date": "2025-10-15",
     "comment": "1.8.1+build9 feat: updated modal",
     "hash": "cc5867cc2cf65e474373c9cb9683fc4e3eb9bc1e"
+  },
+  {
+    "version": "1.8.1+build10",
+    "date": "2025-10-15",
+    "comment": "1.8.1+build10 feat: updated modal",
+    "hash": "a6fb724a51a536b783ddb7406fe42a3495e7df5e"
   }
 ]
