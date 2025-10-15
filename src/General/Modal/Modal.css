@@ -1037,7 +1037,7 @@
 
 /* Happy tanker dialog image */
 
-.ModalStyle-root > div:has(img[src*='happytankerballoon'i]) > div > div > div div[style*='happytankerballoon'i] {
+.ModalStyle-root > div > div > div > div div[style*='happytankerballoon'i] {
 	background: none !important;
 }
 
