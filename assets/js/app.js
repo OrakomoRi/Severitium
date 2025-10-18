@@ -1,14 +1,10 @@
-/**
- * Severitium Website Main Application
- * Handles initialization, version fetching, and component management
- */
-
 import MarkdownParser from './components/MarkdownParser.js';
 import ModalManager from './components/ModalManager.js';
 import BackgroundAnimation from './components/BackgroundAnimation.js';
 import I18n from '../libs/i18n.js';
 import I18nManager from './components/I18nManager.js';
 import GalleryManager from './components/GalleryManager.js';
+import { HeaderController } from './components/HeaderController.js';
 
 class SeveritiumApp {
 	constructor() {
@@ -31,6 +27,7 @@ class SeveritiumApp {
 		this.initializeComponents();
 		this.setupGlobalReferences();
 		await this.initializeDownloadButtons();
+		new HeaderController();
 
 		this.availableLocales = await this.fetchAvailableLocales();
 
