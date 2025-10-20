@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.8.1+build11
+// @version			1.8.1+build12
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -35,7 +35,6 @@
 // @grant			GM_getValue
 // @grant			GM_setValue
 // @grant			GM_openInTab
-// @grant			GM_getResourceText
 
 // ==/UserScript==
 
