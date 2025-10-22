@@ -4,6 +4,7 @@ import BackgroundAnimation from './components/BackgroundAnimation.js';
 import I18n from '../libs/i18n.js';
 import I18nManager from './components/I18nManager.js';
 import GalleryManager from './components/GalleryManager.js';
+import ImageComparisonSlider from './components/ImageComparisonSlider.js';
 import { HeaderController } from './components/HeaderController.js';
 
 class SeveritiumApp {
@@ -156,6 +157,9 @@ class SeveritiumApp {
 		
 		// For gallery access
 		window.galleryManager = this.galleryManager;
+		
+		// For image comparison component
+		window.ImageComparisonSlider = ImageComparisonSlider;
 	}
 
 	/**

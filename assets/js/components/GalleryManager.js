@@ -456,9 +456,9 @@ class GalleryManager {
 	}
 
 	/**
-	 * Open modal with full-size image
+	 * Open modal with full-size image comparison
 	 * @param {Object} image - Image data object
-	 * @param {string} imagePath - Path to the image
+	 * @param {string} imagePath - Path to the currently displayed image (unused, kept for compatibility)
 	 */
 	openModal(image, imagePath) {
 		// Create modal if it doesn't exist
@@ -468,32 +468,45 @@ class GalleryManager {
 			document.body.appendChild(modal);
 		}
 
-		// Update modal content
-		const modalImage = modal.querySelector('.gallery-modal__image');
+		// Update modal header
 		const modalTitle = modal.querySelector('.gallery-modal__title');
 		const modalCategory = modal.querySelector('.gallery-modal__category');
-		const errorDiv = modal.querySelector('.gallery-modal__error');
-
-		// Reset visibility
-		modalImage.style.display = 'block';
-		if (errorDiv) {
-			errorDiv.style.display = 'none';
-		}
-
-		modalImage.src = imagePath;
-		modalImage.alt = image.title;
-		modalImage.onerror = () => {
-			modalImage.style.display = 'none';
-			if (errorDiv) {
-				errorDiv.style.display = 'flex';
-			}
-		};
 		modalTitle.textContent = image.title;
 		modalCategory.textContent = image.category;
+
+		// Get modal body
+		const modalBody = modal.querySelector('.gallery-modal__body');
+		
+		// Show loading state
+		modalBody.innerHTML = `
+			<div class="gallery-modal__loading">
+				<div class="gallery-modal__loading-spinner"></div>
+				<span>${window.i18n ? window.i18n.t('gallery.loading') : 'Loading...'}</span>
+			</div>
+		`;
 
 		// Show modal
 		modal.classList.add('active');
 		document.body.style.overflow = 'hidden';
+
+		// Initialize image comparison component
+		// Use setTimeout to ensure modal is visible before initializing
+		setTimeout(() => {
+			const container = document.createElement('div');
+			container.className = 'gallery-modal__image-container';
+			modalBody.innerHTML = '';
+			modalBody.appendChild(container);
+
+			// Create comparison slider
+			const comparisonSlider = new window.ImageComparisonSlider(
+				container,
+				image.oldPath,
+				image.newPath
+			);
+
+			// Store reference for cleanup
+			modal._comparisonSlider = comparisonSlider;
+		}, 50);
 	}
 
 	/**
@@ -517,13 +530,7 @@ class GalleryManager {
 					</button>
 				</div>
 				<div class="gallery-modal__body">
-					<div class="gallery-modal__image-container">
-						<img class="gallery-modal__image" alt="">
-					</div>
-					<div class="gallery-modal__error" style="display: none;">
-						<ion-icon name="image-outline" style="font-size: 3rem;"></ion-icon>
-						<span>Image not found</span>
-					</div>
+					<!-- Image comparison will be inserted here -->
 				</div>
 			</div>
 		`;
@@ -532,10 +539,18 @@ class GalleryManager {
 		const closeButton = modal.querySelector('.gallery-modal__close');
 		closeButton.addEventListener('click', () => this.closeModal());
 		
-		modal.addEventListener('click', (e) => {
+		modal.addEventListener('mousedown', (e) => {
 			if (e.target === modal) {
+				modal._clickStartTarget = e.target;
+			}
+		});
+		
+		modal.addEventListener('mouseup', (e) => {
+			if (e.target === modal && modal._clickStartTarget === modal && !modal._wasDragging) {
 				this.closeModal();
 			}
+			modal._clickStartTarget = null;
+			modal._wasDragging = false;
 		});
 
 		return modal;
@@ -547,6 +562,12 @@ class GalleryManager {
 	closeModal() {
 		const modal = document.getElementById('gallery-modal');
 		if (modal) {
+			// Cleanup comparison slider if exists
+			if (modal._comparisonSlider) {
+				modal._comparisonSlider.destroy();
+				modal._comparisonSlider = null;
+			}
+			
 			modal.classList.remove('active');
 			document.body.style.overflow = '';
 		}

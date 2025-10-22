@@ -1,0 +1,399 @@
+/**
+ * Image Comparison Component
+ * Interactive slider and toggle modes for comparing images
+ */
+
+/* ============================
+   BASE STYLES
+   ============================ */
+
+.image-comparison {
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: none;
+}
+
+.image-comparison:focus,
+.image-comparison:focus-visible {
+	outline: none;
+}
+
+.image-comparison__images {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.image-comparison__image-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.image-comparison__image {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	display: block;
+	pointer-events: none;
+	user-select: none;
+}
+
+/* ============================
+   SLIDER MODE
+   ============================ */
+
+.image-comparison--slider .image-comparison__image-wrapper--new {
+	z-index: 1;
+}
+
+.image-comparison--slider .image-comparison__image-wrapper--old {
+	z-index: 2;
+	clip-path: inset(0 0 0 50%);
+	will-change: clip-path;
+}
+
+/* Image labels */
+.image-comparison__label {
+	position: absolute;
+	top: var(--space-4);
+	padding: var(--space-2) var(--space-4);
+	background: rgba(0, 0, 0, 0.75);
+	backdrop-filter: blur(0.5rem);
+	color: var(--color-text-primary);
+	font-size: var(--text-sm);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-lg);
+	z-index: 3;
+	pointer-events: none;
+	box-shadow: var(--shadow-md);
+	opacity: 0;
+	animation: fadeInLabel 0.3s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInLabel {
+	to {
+		opacity: 1;
+	}
+}
+
+.image-comparison__label--new {
+	left: var(--space-4);
+}
+
+.image-comparison__label--old {
+	right: var(--space-4);
+}
+
+/* Slider control */
+.image-comparison__slider {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 4rem;
+	height: 100%;
+	transform: translateX(-50%);
+	z-index: 10;
+	cursor: ew-resize;
+	touch-action: none;
+}
+
+.image-comparison__slider:focus,
+.image-comparison__slider:focus-visible {
+	outline: none;
+}
+
+.image-comparison__slider-line {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 0.2rem;
+	height: 100%;
+	background: var(--color-primary);
+	transform: translateX(-50%);
+	pointer-events: none;
+}
+
+.image-comparison__slider-handle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 4rem;
+	height: 4rem;
+	transform: translate(-50%, -50%);
+	background: var(--color-bg-surface);
+	border: 0.2rem solid var(--color-primary);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: var(--shadow-xl);
+	transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+	pointer-events: none;
+	cursor: ew-resize;
+}
+
+.image-comparison__slider:hover .image-comparison__slider-handle,
+.image-comparison__slider:active .image-comparison__slider-handle {
+	transform: translate(-50%, -50%) scale(1.1);
+	box-shadow: var(--shadow-2xl);
+}
+
+.image-comparison__slider-handle-inner {
+	display: flex;
+	align-items: center;
+	gap: 0.2rem;
+}
+
+.image-comparison__slider-handle ion-icon {
+	font-size: var(--icon-lg);
+	color: var(--color-primary);
+}
+
+/* ============================
+   TOGGLE MODE
+   ============================ */
+
+.image-comparison--toggle {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-4);
+	padding-bottom: var(--space-2);
+}
+
+.image-comparison--toggle .image-comparison__images {
+	flex: 1;
+	border-radius: var(--radius-xl);
+	overflow: hidden;
+}
+
+.image-comparison--toggle .image-comparison__image-wrapper {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.image-comparison--toggle .image-comparison__image-wrapper.active {
+	opacity: 1;
+	visibility: visible;
+	z-index: 1;
+}
+
+/* Toggle switch */
+.image-comparison__toggle-switch {
+	display: flex;
+	justify-content: center;
+	padding: 0;
+}
+
+.image-comparison__toggle-track {
+	position: relative;
+	display: inline-flex;
+	background: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(0.5rem);
+	border-radius: 2rem;
+	padding: 0.3rem;
+	gap: 0;
+}
+
+.image-comparison__toggle-option {
+	position: relative;
+	z-index: 2;
+	padding: 0.6rem 2rem;
+	background: transparent;
+	color: var(--color-text-secondary);
+	border: none;
+	border-radius: 1.6rem;
+	font-size: var(--text-sm);
+	font-weight: var(--font-semibold);
+	cursor: pointer;
+	transition: color var(--transition-normal);
+	white-space: nowrap;
+}
+
+.image-comparison__toggle-option:hover {
+	color: var(--color-text-primary);
+}
+
+.image-comparison__toggle-option.active {
+	color: var(--color-text-primary);
+}
+
+.image-comparison__toggle-slider {
+	position: absolute;
+	top: 0.3rem;
+	left: 0.3rem;
+	bottom: 0.3rem;
+	width: calc(50% - 0.3rem);
+	background: var(--color-primary);
+	border-radius: 1.6rem;
+	transition: transform var(--transition-normal);
+	z-index: 1;
+	pointer-events: none;
+}
+
+.image-comparison__toggle-option:focus,
+.image-comparison__toggle-option:focus-visible {
+	outline: none;
+}
+
+/* ============================
+   ERROR STATE
+   ============================ */
+
+.image-comparison__error {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-3);
+	padding: var(--space-12);
+	color: var(--color-text-muted);
+	text-align: center;
+}
+
+.image-comparison__error ion-icon {
+	font-size: 3rem;
+	color: var(--color-error);
+}
+
+/* ============================
+   RESPONSIVE DESIGN
+   ============================ */
+
+@media (max-width: 768px) {
+	.image-comparison__label {
+		font-size: var(--text-xs);
+		padding: var(--space-1) var(--space-3);
+		top: var(--space-2);
+	}
+	
+	.image-comparison__label--new {
+		left: var(--space-2);
+	}
+	
+	.image-comparison__label--old {
+		right: var(--space-2);
+	}
+	
+	.image-comparison__slider {
+		width: 3rem;
+	}
+	
+	.image-comparison__slider-handle {
+		width: 3.5rem;
+		height: 3.5rem;
+	}
+	
+	.image-comparison__slider-handle ion-icon {
+		font-size: var(--icon-md);
+	}
+	
+	.image-comparison__toggle-option {
+		padding: 0.5rem 1.5rem;
+		font-size: var(--text-xs);
+	}
+}
+
+@media (max-width: 480px) {
+	.image-comparison__slider {
+		width: 2.5rem;
+	}
+	
+	.image-comparison__slider-handle {
+		width: 3rem;
+		height: 3rem;
+	}
+	
+	.image-comparison__slider-handle-inner {
+		gap: 0;
+	}
+	
+	.image-comparison__slider-handle ion-icon {
+		font-size: var(--icon-sm);
+	}
+	
+	.image-comparison__toggle-option {
+		padding: 0.4rem 1.2rem;
+		font-size: var(--text-xs);
+	}
+}
+
+/* ============================
+   LOADING STATE
+   ============================ */
+
+.image-comparison__loading {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-4);
+	min-height: 20rem;
+	color: var(--color-text-muted);
+	padding: var(--space-12);
+}
+
+.image-comparison__loading-spinner {
+	width: 3rem;
+	height: 3rem;
+	border: 0.3rem solid var(--color-border);
+	border-top: 0.3rem solid var(--color-primary);
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+.image-comparison__loading p {
+	font-size: var(--text-sm);
+	margin: 0;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* ============================
+   ACCESSIBILITY
+   ============================ */
+
+@media (prefers-reduced-motion: reduce) {
+	.image-comparison__toggle-btn,
+	.image-comparison__slider-handle,
+	.image-comparison__image-wrapper {
+		transition: none;
+	}
+	
+	.image-comparison__label {
+		animation: none;
+		opacity: 1;
+	}
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+	.image-comparison__slider-line {
+		background: white;
+		box-shadow: none;
+	}
+	
+	.image-comparison__slider-handle {
+		border-width: 0.3rem;
+	}
+	
+	.image-comparison__label {
+		background: black;
+		border: 0.1rem solid white;
+	}
+}
