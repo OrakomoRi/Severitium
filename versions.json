@@ -2309,6 +2309,12 @@
       "date": "2025-10-23",
       "comment": "1.8.2+build.4",
       "hash": "fd12c2f29d378770f8a49416009b45a86381510d"
+    },
+    {
+      "version": "1.6.1+build64",
+      "date": "2025-01-30",
+      "comment": "1.6.1+build63 fix: fixed friend screen buttons",
+      "hash": "795fe3e5f81fd71daef18d813acf70fd772b5aa6"
     }
   ]
 }
