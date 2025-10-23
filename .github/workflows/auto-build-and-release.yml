@@ -42,6 +42,19 @@ jobs:
               with:
                   fetch-depth: 0  # Full history for range mode
 
+            - name: Extract version (for auto push only)
+              if: github.event_name == 'push'
+              run: |
+                  VERSION=$(grep -oP '@version\s+\K[\w.+-]+' release/severitium.user.js)
+                  echo "VERSION=$VERSION" >> $GITHUB_ENV
+                  
+                  semver_regex='^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$'
+                  if [[ "$VERSION" =~ $semver_regex ]]; then
+                    echo "IS_STABLE=true" >> $GITHUB_ENV
+                  else
+                    echo "IS_STABLE=false" >> $GITHUB_ENV
+                  fi
+
             - name: Determine commits to process
               id: determine_commits
               run: |
@@ -338,22 +351,8 @@ jobs:
                   
                   git push origin builds
 
-            - name: Create GitHub release
-              if: github.event_name == 'push'
-              run: |
-                  # Extract version and check if stable
-                  VERSION=$(grep -oP '@version\s+\K[\w.+-]+' release/severitium.user.js)
-                  semver_regex='^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$'
-                  
-                  if [[ "$VERSION" =~ $semver_regex ]]; then
-                    echo "VERSION=$VERSION" >> $GITHUB_ENV
-                    echo "CREATE_RELEASE=true" >> $GITHUB_ENV
-                  else
-                    echo "CREATE_RELEASE=false" >> $GITHUB_ENV
-                  fi
-
             - name: Create GitHub release tag
-              if: github.event_name == 'push' && env.CREATE_RELEASE == 'true'
+              if: github.event_name == 'push' && env.IS_STABLE == 'true'
               uses: softprops/action-gh-release@v2
               with:
                   tag_name: ${{ env.VERSION }}
