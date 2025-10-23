@@ -2315,6 +2315,12 @@
       "date": "2025-01-30",
       "comment": "1.6.1+build63 fix: fixed friend screen buttons",
       "hash": "795fe3e5f81fd71daef18d813acf70fd772b5aa6"
+    },
+    {
+      "version": "1.7.2+build27",
+      "date": "2025-08-25",
+      "comment": "1.7.2+build27 feat: add transition effects to shop window styles",
+      "hash": "42d881a454d00cea7d52a7a0e81f13cbe5e87964"
     }
   ]
 }
