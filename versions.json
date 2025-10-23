@@ -517,7 +517,7 @@
       "hash": "5fd83373293b9780e0eeec35a85367e248370e8c"
     },
     {
-      "version": "1.6.1+build63",
+      "version": "1.6.1+build64",
       "date": "2025-01-30",
       "comment": "1.6.1+build63 fix: fixed friend screen buttons",
       "hash": "795fe3e5f81fd71daef18d813acf70fd772b5aa6"
@@ -1307,6 +1307,12 @@
       "date": "2025-07-14",
       "comment": "1.7.2+build26 feat: updated link to logo inside main userscript",
       "hash": "21b14fc33914a3ff48990766159c61e91583dcf7"
+    },
+    {
+      "version": "1.7.2+build27",
+      "date": "2025-08-25",
+      "comment": "1.7.2+build27 feat: add transition effects to shop window styles",
+      "hash": "42d881a454d00cea7d52a7a0e81f13cbe5e87964"
     },
     {
       "version": "1.7.2+build28",
@@ -2309,18 +2315,6 @@
       "date": "2025-10-23",
       "comment": "1.8.2+build.4",
       "hash": "fd12c2f29d378770f8a49416009b45a86381510d"
-    },
-    {
-      "version": "1.6.1+build64",
-      "date": "2025-01-30",
-      "comment": "1.6.1+build63 fix: fixed friend screen buttons",
-      "hash": "795fe3e5f81fd71daef18d813acf70fd772b5aa6"
-    },
-    {
-      "version": "1.7.2+build27",
-      "date": "2025-08-25",
-      "comment": "1.7.2+build27 feat: add transition effects to shop window styles",
-      "hash": "42d881a454d00cea7d52a7a0e81f13cbe5e87964"
     }
   ]
 }
