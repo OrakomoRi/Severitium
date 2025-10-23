@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.8.1+build12
+// @version			1.8.1+build13
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -15,9 +15,6 @@
 // @connect			raw.githubusercontent.com
 // @connect			github.com
 // @connect			cdn.jsdelivr.net
-
-// @updateURL		https://raw.githubusercontent.com/OrakomoRi/Severitium/main/release/severitium.user.js
-// @downloadURL		https://raw.githubusercontent.com/OrakomoRi/Severitium/main/release/severitium.user.js
 
 // @require			https://cdn.jsdelivr.net/npm/sweetalert2@11
 // @require			https://cdn.jsdelivr.net/gh/OrakomoRi/CompareVersions/JS/compareversions.min.js
