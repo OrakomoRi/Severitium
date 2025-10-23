@@ -1,39 +1,125 @@
-# Builds branch
+# Severitium builds
 
-This is the `builds` branch containing **compiled artifacts** for all stable versions of the **Severitium** theme.
+This is the `builds` branch containing **compiled artifacts** and **version metadata** for the Severitium theme.
 
-Each folder in the root represents a specific version and contains:
+## 📦 What's Inside
 
-- `script.release.min.js` – minified JavaScript
-- `style.release.min.css` – minified CSS
+### Version Artifacts
+Each version is stored in its own directory under `versions/` containing:
 
-Additionally, the repository includes:
+- `script.release.min.js` — Minified JavaScript bundle
+- `style.release.min.css` — Minified CSS bundle
+- `variables.css` — Theme CSS variables (unminified)
+- `variables.min.css` — Theme CSS variables (minified)
+- `variables.json` — Theme variables in JSON format for programmatic access
 
-- `versions/versions.json` – complete version history with full Git commit hashes, dates, comments, and version numbers for all releases
+### Version Registry
+- **`versions.json`** — Complete version history with metadata (commit hash, date, message)
+- **`stable.json`** — Registry of stable releases only (following [SemVer]) with direct download links
 
-Example structure:
+### Deployment Configuration
+- **`vercel.json`** — CDN caching and CORS headers for optimal delivery
+
+## 📂 Directory Structure
 
 ```
-├── 1.7.2+build16/
-│ ├── script.release.min.js
-│ └── style.release.min.css
-├── 1.7.2+build17/
-│ ├── script.release.min.js
-│ └── style.release.min.css
+builds/
+├── README.md                        # This file
+├── versions.json                    # All versions (stable + dev/alpha/beta/rc)
+├── stable.json                      # Stable versions only
+├── vercel.json                      # Deployment configuration
+└── versions/
+    ├── 1.7.2/                       # Stable release
+    │   ├── script.release.min.js
+    │   ├── style.release.min.css
+    │   ├── variables.css
+    │   ├── variables.min.css
+    │   └── variables.json
+    └── 1.7.2+build16/               # Development build
+        ├── script.release.min.js
+        ├── style.release.min.css
+        ├── variables.css
+        ├── variables.min.css
+        └── variables.json
 ```
 
-## :repeat: Updates
+## 🔄 Automated Build Process
 
-Builds are generated **automatically** whenever the version in `release/severitium.user.js` is updated in the `main` branch.
+Builds are generated automatically via GitHub Actions when `release/severitium.user.js` is updated in the [`main` branch](https://github.com/OrakomoRi/Severitium/tree/main).
 
-## :link: Main Source
+**Build Workflow:**
+1. Extract version from userscript
+2. Validate if version is stable (matches [SemVer] pattern: `X.Y.Z`)
+3. Compile and minify all source files
+4. Extract CSS variables to JSON
+5. Push artifacts to `builds` branch
+6. Update version registries
+7. Create GitHub Release (stable versions only)
 
-The main source code is located in the [`main` branch](https://github.com/OrakomoRi/Severitium/tree/main).
+## 🔗 Usage
 
-## :gear: Usage
+### CDN Links (via jsDelivr)
+```javascript
+// Latest stable version
+https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/stable.json
 
-Links from this branch can be used in `@require`, `@updateURL`, `@downloadURL`, etc., if you want to reference a specific stable/unstable version.
+// Specific version artifacts
+https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/1.7.2/script.release.min.js
+https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/1.7.2/style.release.min.css
+https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/1.7.2/variables.json
+```
 
----
+### Userscript Integration
+Use these links in your userscript metadata:
+```javascript
+// @updateURL    https://raw.githubusercontent.com/OrakomoRi/Severitium/main/release/severitium.user.js
+// @downloadURL  https://raw.githubusercontent.com/OrakomoRi/Severitium/main/release/severitium.user.js
+// @require      https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/1.7.2/script.release.min.js
+```
 
-> :warning: Do not edit files in this branch manually — they will be overwritten by the next build.
+## 📋 Version Registry Format
+
+### `versions.json`
+Contains **all versions** (including dev builds):
+```json
+{
+  "versions": [
+    {
+      "version": "1.7.2+build16",
+      "date": "2025-07-14",
+      "comment": "1.7.2+build16 feat: moved auto-release and build-theme into one yml: auto-build-and-release",
+      "hash": "abc123"
+    }
+  ]
+}
+```
+
+### `stable.json`
+Contains **stable versions only** with direct links:
+```json
+{
+  "versions": [
+    {
+      "version": "1.7.2",
+      "date": "2025-04-01",
+      "hash": "abc123",
+      "link": "https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@abc123/release/severitium.user.js"
+    }
+  ]
+}
+```
+
+## ⚠️ Important Notes
+
+- **Do not manually edit files** in this branch — they are automatically generated and will be overwritten
+- Stable versions follow [Semantic Versioning][SemVer] (`MAJOR.MINOR.PATCH`)
+- Development builds use version suffixes: `+buildN`, `-alpha`, `-beta`, `-rc`
+- Only stable versions trigger GitHub Releases
+
+## 📚 Related Resources
+
+- [Main Repository](https://github.com/OrakomoRi/Severitium/tree/main) — Source code and development
+- [Releases](https://github.com/OrakomoRi/Severitium/releases) — Stable version releases
+- [Website](https://orakomori.github.io/Severitium/) — Installation guide and documentation
+
+[SemVer]: https://semver.org/
