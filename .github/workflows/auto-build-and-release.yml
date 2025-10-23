@@ -277,6 +277,10 @@ jobs:
                       
                       echo "✅ Completed $VERSION"
                       
+                      # Commit changes for this version
+                      git add -A
+                      git commit -m "$VERSION" || echo "No changes for $VERSION"
+                      
                   done < /tmp/commits.txt
                   
                   # Create vercel.json
@@ -328,19 +332,28 @@ jobs:
                   }
                   EOF
                   
-                  # Commit and push
-                  git add -A
-                  
-                  if [ "$MANUAL_RUN" == "true" ]; then
-                    git commit -m "build: manual rebuild for historical commits" || echo "No changes"
-                  else
-                    git commit -m "build: $VERSION" || echo "No changes"
-                  fi
+                  # Commit vercel.json and push everything
+                  git add vercel.json
+                  git commit -m "chore: update vercel.json" || true
                   
                   git push origin builds
 
             - name: Create GitHub release
-              if: github.event_name == 'push' && steps.determine_commits.outputs.IS_STABLE == 'true'
+              if: github.event_name == 'push'
+              run: |
+                  # Extract version and check if stable
+                  VERSION=$(grep -oP '@version\s+\K[\w.+-]+' release/severitium.user.js)
+                  semver_regex='^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$'
+                  
+                  if [[ "$VERSION" =~ $semver_regex ]]; then
+                    echo "VERSION=$VERSION" >> $GITHUB_ENV
+                    echo "CREATE_RELEASE=true" >> $GITHUB_ENV
+                  else
+                    echo "CREATE_RELEASE=false" >> $GITHUB_ENV
+                  fi
+
+            - name: Create GitHub release tag
+              if: github.event_name == 'push' && env.CREATE_RELEASE == 'true'
               uses: softprops/action-gh-release@v2
               with:
                   tag_name: ${{ env.VERSION }}
@@ -354,7 +367,5 @@ jobs:
                       - [severitium.user.js](https://raw.githubusercontent.com/OrakomoRi/Severitium/main/release/severitium.user.js)
                       - [script.release.min.js](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${{ env.VERSION }}/script.release.min.js)
                       - [style.release.min.css](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${{ env.VERSION }}/style.release.min.css)
-                  files: |
-                      /tmp/build-artifacts/*
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
