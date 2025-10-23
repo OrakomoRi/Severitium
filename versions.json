@@ -115,7 +115,7 @@
       "hash": "6aa3a770ae90731c99e102899e1b701687ec315f"
     },
     {
-      "version": "1.6.0-alpha13",
+      "version": "1.6.0-alpha14",
       "date": "2024-12-19",
       "comment": "1.6.0-alpha13 feat: new console log message is user script's version has `-pre-release` or `+build` fix: some changelog entries",
       "hash": "dec31b07a8a9b8b7eb81cdb8156a9125e71ec2e2"
@@ -2303,12 +2303,6 @@
       "date": "2025-10-23",
       "comment": "1.8.2+build.3",
       "hash": "693ca48d1cd0ddd2d8527cdb21ceabfbf11c7082"
-    },
-    {
-      "version": "1.6.0-alpha14",
-      "date": "2024-12-19",
-      "comment": "1.6.0-alpha13 feat: new console log message is user script's version has `-pre-release` or `+build` fix: some changelog entries",
-      "hash": "dec31b07a8a9b8b7eb81cdb8156a9125e71ec2e2"
     }
   ]
 }
