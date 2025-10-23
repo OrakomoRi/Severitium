@@ -2,30 +2,44 @@
   "versions": [
     {
       "version": "1.6.0",
+      "date": "2024-08-30",
+      "hash": "2798d61ad9f6a900025ce41819ad8db8b003b8ac",
       "link": "https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@2798d61ad9f6a900025ce41819ad8db8b003b8ac/release/severitium.user.js"
     },
     {
       "version": "1.6.1",
+      "date": "2024-12-20",
+      "hash": "d236aaf6c6ad159e5a68e41a6e0246d2c1e23820",
       "link": "https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@d236aaf6c6ad159e5a68e41a6e0246d2c1e23820/release/severitium.user.js"
     },
     {
       "version": "1.7.0",
+      "date": "2025-02-26",
+      "hash": "ee0221df9c445db069a4c9863737ed7043a3bb8f",
       "link": "https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@ee0221df9c445db069a4c9863737ed7043a3bb8f/release/severitium.user.js"
     },
     {
       "version": "1.7.1",
+      "date": "2025-03-06",
+      "hash": "23ec03baa82e58a4e20cff343abdae6fed3aa4f6",
       "link": "https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@23ec03baa82e58a4e20cff343abdae6fed3aa4f6/release/severitium.user.js"
     },
     {
       "version": "1.7.2",
+      "date": "2025-04-01",
+      "hash": "9fec6705f66b8f2045d531c1b45e73b696daf927",
       "link": "https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@9fec6705f66b8f2045d531c1b45e73b696daf927/release/severitium.user.js"
     },
     {
       "version": "1.8.0",
+      "date": "2025-09-16",
+      "hash": "e0a4a7779004a1712c761943c7a7cd2d0675d882",
       "link": "https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@e0a4a7779004a1712c761943c7a7cd2d0675d882/release/severitium.user.js"
     },
     {
       "version": "1.8.1",
+      "date": "2025-10-02",
+      "hash": "548abbd937fa5ac4bfd2a8c912628bb0dad94243",
       "link": "https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@548abbd937fa5ac4bfd2a8c912628bb0dad94243/release/severitium.user.js"
     },
     {
