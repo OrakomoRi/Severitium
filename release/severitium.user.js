@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.8.1+build14
+// @version			1.8.1+build15
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -15,6 +15,7 @@
 // @connect			raw.githubusercontent.com
 // @connect			github.com
 // @connect			cdn.jsdelivr.net
+// @connect			severitium-builds.vercel.app
 
 // @require			https://cdn.jsdelivr.net/npm/sweetalert2@11
 // @require			https://cdn.jsdelivr.net/gh/OrakomoRi/CompareVersions/JS/compareversions.min.js
@@ -92,7 +93,7 @@
 	let imageLinks;
 
 	const GITHUB_SCRIPT_URL = GM_info.script.updateURL;
-	const STABLE_JSON_URL = `https://orakomori.github.io/Severitium/src/_preload/stable.json?v=${script.version}`;
+	const STABLE_JSON_URL = `https://severitium-builds.vercel.app/stable.json?v=${script.version}`;
 
 	const lastSeason = GM_getValue('SeveritiumSeason', '');
 	const currentSeason = _getSeason();
@@ -318,9 +319,9 @@
 			const loadEverything = forceReload || !isSameVersion;
 
 			// Construct URLs for CSS and JS for the current version using jsDelivr CDN
-			const RELEASE_VARIABLES_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/${script.version}/variables.json`;
-			const RELEASE_CSS_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/${script.version}/style.release.min.css`;
-			const RELEASE_JS_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/${script.version}/script.release.min.js`;
+			const RELEASE_VARIABLES_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${script.version}/variables.json`;
+			const RELEASE_CSS_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${script.version}/style.release.min.css`;
+			const RELEASE_JS_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${script.version}/script.release.min.js`;
 			logger.log(`Resolved CSS path: ${RELEASE_CSS_URL}`, 'debug');
 			logger.log(`Resolved JS path: ${RELEASE_JS_URL}`, 'debug');
 			logger.log(`Resolved Variables path: ${RELEASE_VARIABLES_URL}`, 'debug');

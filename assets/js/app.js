@@ -254,7 +254,7 @@ class SeveritiumApp {
 		const fallbackUrl = `https://orakomori.github.io/Severitium/release/severitium.user.js?t=${timestamp}`;
 
 		try {
-			const response = await fetch(`https://orakomori.github.io/Severitium/src/_preload/stable.json?t=${timestamp}`);
+			const response = await fetch(`https://severitium-builds.vercel.app/stable.json?t=${timestamp}`);
 
 			if (!response.ok) {
 				throw new Error(`HTTP error! status: ${response.status}`);
