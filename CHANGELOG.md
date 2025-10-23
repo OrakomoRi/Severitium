@@ -1,5 +1,26 @@
 # CHANGELOG
 
+## [1.8.2] - 2025-10-23
+
+### Changed
+
+- General
+  - Modal
+- Lobby
+  - ChatWindow
+- Quests
+  - QuestsScreen
+- Settings
+  - SettingsContent
+- Shop
+  - PurchaseScreen
+- Auto-build and release workflow improvements
+- Link to stable.json for userscript updates (now automatically generated and works on vercel)
+
+### Removed
+
+- Userscript incorrect updateURL and downloadURL fields
+
 ## [1.8.1] - 2025-10-02
 
 ### Added

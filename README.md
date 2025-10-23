@@ -34,7 +34,7 @@ Keep in mind that when you first load or update the script, it takes some time f
 
 1. Download [Tampermonkey](https://www.tampermonkey.net/)
 
-2. Add or update [script](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@548abbd937fa5ac4bfd2a8c912628bb0dad94243/release/severitium.user.js) in Tampermonkey
+2. Add or update [script](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@afc12828fc42ec2552e0e5d605b9eb5e02d19626/release/severitium.user.js) in Tampermonkey
 
 ## :rocket: Browser Compatibility
 
