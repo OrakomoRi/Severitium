@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.8.2+build.6
+// @version			1.8.2+build.7
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -448,16 +448,12 @@
 					script.JS = GM_getValue('SeveritiumJS', {});
 				}
 
-				try {
-					// Save images, version, and season to cache
-					GM_setValue('SeveritiumImages', script.images);
-					GM_setValue('SeveritiumVersion', script.version);
-					GM_setValue('SeveritiumSeason', currentSeason);
-				} catch (error) {
-					logger.log(`Error caching resources:\n${error}`, 'error');
-				} finally {
-					logger.log(`All resources cached successfully.`, 'success');
-				}
+				// Save images, version, and season to cache
+				GM_setValue('SeveritiumImages', script.images);
+				GM_setValue('SeveritiumVersion', script.version);
+				GM_setValue('SeveritiumSeason', currentSeason);
+				
+				logger.log(`All resources cached successfully.`, 'success');
 
 				logger.log(`Resources loaded.`, 'success');
 			}
@@ -467,7 +463,7 @@
 		} finally {
 			// Apply loaded resources to the page
 			severitiumInjector.updateSeveritium(script);
-			logger.log(`Theme found: ${script.theme ? 'yes' : 'no'}.\nCSS found: ${script.CSS['main'] ? 'yes' : 'no'}.\nJS found: ${script.JS['main'] ? 'yes' : 'no'}.`, 'debug');
+			logger.log(`Theme found: ${script.theme ? 'yes' : 'no'}.\nCSS found: ${script.CSS['main'] ? 'yes' : 'no'}.\nJS found: ${script.JS['main'] ? 'yes' : 'no'}.`, 'info');
 			if (script.CSS['main']) {
 				logger.log(`Type of CSS['main']: ${typeof script.CSS['main']}`, 'debug');
 				severitiumInjector.applyCSS('main');
