@@ -158,7 +158,14 @@ jobs:
                           continue
                       fi
                       
-                      echo "📦 Version: $VERSION"
+                      # Extract MAJOR.MINOR.PATCH using SemVer regex
+                      STABLE_BASE=$(echo "$VERSION" | grep -oP '^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)')
+                      if [ -z "$STABLE_BASE" ]; then
+                        echo "❌ Invalid SemVer format: $VERSION"
+                        continue
+                      fi
+
+                      echo "📦 Version: $VERSION (base: $STABLE_BASE)"
                       
                       # Check if stable
                       semver_regex='^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$'
@@ -236,26 +243,26 @@ jobs:
                       # Switch back to builds branch
                       git checkout builds
                       
-                      # Create version directory
-                      mkdir -p "versions/$VERSION"
+                      # Create nested directory structure
+                      mkdir -p "versions/$STABLE_BASE/$VERSION"
                       
                       # Copy artifacts
-                      cp /tmp/build-artifacts/script.release.min.js "versions/$VERSION/"
-                      cp /tmp/build-artifacts/style.release.min.css "versions/$VERSION/"
+                      cp /tmp/build-artifacts/script.release.min.js "versions/$STABLE_BASE/$VERSION/"
+                      cp /tmp/build-artifacts/style.release.min.css "versions/$STABLE_BASE/$VERSION/"
                       
                       if [ -f /tmp/build-artifacts/variables.css ]; then
-                        cp /tmp/build-artifacts/variables.css "versions/$VERSION/"
+                        cp /tmp/build-artifacts/variables.css "versions/$STABLE_BASE/$VERSION/"
                       fi
                       
                       if [ -f /tmp/build-artifacts/variables.min.css ]; then
-                        cp /tmp/build-artifacts/variables.min.css "versions/$VERSION/"
+                        cp /tmp/build-artifacts/variables.min.css "versions/$STABLE_BASE/$VERSION/"
                       fi
                       
                       if [ -f /tmp/build-artifacts/variables.json ]; then
-                        cp /tmp/build-artifacts/variables.json "versions/$VERSION/"
+                        cp /tmp/build-artifacts/variables.json "versions/$STABLE_BASE/$VERSION/"
                       fi
                       
-                      echo "✅ Copied artifacts to versions/$VERSION"
+                      echo "✅ Copied artifacts to versions/$STABLE_BASE/$VERSION"
                       
                       # Update versions.json
                       if ! grep -q "\"version\": \"$VERSION\"" versions.json 2>/dev/null; then

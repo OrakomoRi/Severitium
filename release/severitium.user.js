@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.8.2+build.4
+// @version			1.8.2+build.5
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -139,6 +139,16 @@
 				logger.log(`Failed to check for updates:\n${error}`, 'error');
 			}
 		});
+	}
+
+	/**
+	 * Extract MAJOR.MINOR.PATCH from SemVer version
+	 * @param {string} version - Full SemVer version
+	 * @returns {string|null} - Base version (e.g., "1.8.2") or null if invalid
+	 */
+	function extractStableBase(version) {
+		const match = version.match(/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)/);
+		return match ? match[0] : null;
 	}
 
 	/**
@@ -316,12 +326,17 @@
 			// If only season changed, only images need to be reloaded
 			const loadOnlyImages = isSameVersion && isSeasonChanged;
 			// If version changed or force reload, reload everything
-			const loadEverything = forceReload || !isSameVersion;
+			const loadEverything = forceReload || !isSameVersion
+
+			// Extract stable base version
+			const STABLE_BASE = extractStableBase(script.version);
 
 			// Construct URLs for CSS and JS for the current version using jsDelivr CDN
-			const RELEASE_VARIABLES_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${script.version}/variables.json`;
-			const RELEASE_CSS_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${script.version}/style.release.min.css`;
-			const RELEASE_JS_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${script.version}/script.release.min.js`;
+			const RELEASE_VARIABLES_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${STABLE_BASE}/${script.version}/variables.json`;
+			const RELEASE_CSS_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${STABLE_BASE}/${script.version}/style.release.min.css`;
+			const RELEASE_JS_URL = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${STABLE_BASE}/${script.version}/script.release.min.js`;
+
+			logger.log(`Stable base: ${STABLE_BASE}`, 'debug');
 			logger.log(`Resolved CSS path: ${RELEASE_CSS_URL}`, 'debug');
 			logger.log(`Resolved JS path: ${RELEASE_JS_URL}`, 'debug');
 			logger.log(`Resolved Variables path: ${RELEASE_VARIABLES_URL}`, 'debug');
@@ -429,10 +444,17 @@
 					script.CSS = GM_getValue('SeveritiumCSS', {});
 					script.JS = GM_getValue('SeveritiumJS', {});
 				}
-				// Save images, version, and season to cache
-				GM_setValue('SeveritiumImages', script.images);
-				GM_setValue('SeveritiumVersion', script.version);
-				GM_setValue('SeveritiumSeason', currentSeason);
+
+				try {
+					// Save images, version, and season to cache
+					GM_setValue('SeveritiumImages', script.images);
+					GM_setValue('SeveritiumVersion', script.version);
+					GM_setValue('SeveritiumSeason', currentSeason);
+				} catch (error) {
+					logger.log(`Error caching resources:\n${error}`, 'error');
+				} finally {
+					logger.log(`All resources cached successfully.`, 'success');
+				}
 
 				logger.log(`Resources loaded.`, 'success');
 			}

@@ -5,6 +5,13 @@ body {
 	background: #000 !important;
 }
 
+/* Preloader styles */
+
+.preloader {
+	background: none;
+	background-color: rgb(0, 0, 0);
+}
+
 /* Wrapper for loading screen */
 
 .wrapper {
