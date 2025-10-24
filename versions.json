@@ -2327,6 +2327,12 @@
       "date": "2025-10-24",
       "comment": "1.8.2+build.6",
       "hash": "906ce91a3cef0c157ed2a4410d13cda41bccc9c5"
+    },
+    {
+      "version": "1.8.2+build.7",
+      "date": "2025-10-24",
+      "comment": "1.8.2+build.7",
+      "hash": "79e2d22c7b16f681a4d7ec6ff2d309b2027ae746"
     }
   ]
 }
