@@ -449,3 +449,26 @@
 	background-image: none;
 	background-color: var(--severitium-white-color);
 }
+
+/* Tanki Online icon */
+
+.UserInfoContainerStyle-blockForIconTankiOnline > img {
+	/* display: none; */
+}
+
+/* Custom icon */
+
+.UserInfoContainerStyle-blockForIconTankiOnline::before {
+	display: none;
+	content: '';
+	height: 4em;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	background-color: var(--severitium-white-color);
+	-webkit-mask-image: url('data:image/svg+xml,');
+			mask-image: url('data:image/svg+xml,');
+}
