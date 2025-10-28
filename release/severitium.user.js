@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.8.2+build.13
+// @version			1.8.2+build.14
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -101,11 +101,7 @@
 	const severitiumInjector = new SeveritiumInjector(script, currentSeason);
 
 	const logger = new Logger(script.name);
-	const isLoggerEnabled = GM_getValue('SeveritiumLoggerEnabled', false); // Set to true to enable debug logging	
-	if (isLoggerEnabled) {
-		logger.enableLogging();
-	}
-	GM_setValue('SeveritiumLoggerEnabled', isLoggerEnabled);
+	// logger.enableLogging();
 
 	/**
 	 * Function to check if the script is updated 
