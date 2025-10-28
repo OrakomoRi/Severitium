@@ -886,6 +886,7 @@
 
 .UserProgressComponentStyle-modalWrapper .ScrollBarStyle-itemsContainer {
 	margin: 0;
+	padding: 0 .25em;
 }
 
 /* User progress scrollbar single item container */
