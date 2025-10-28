@@ -73,13 +73,13 @@
 /* Gained rank progress indicator */
 
 .UserProgressComponentStyle-rankGainedIndicator {
-	border-left: .2em solid var(--severitium-green-color);
+	border-left: 1px solid var(--severitium-green-color);
 }
 
 /* Uncompleted rank progress indicator */
 
 .UserProgressComponentStyle-rankGainIndicator {
-	border-left: .2em solid var(--severitium-light-gray-color);
+	border-left: 1px solid var(--severitium-light-gray-color);
 }
 
 /* Gained progress bar */
