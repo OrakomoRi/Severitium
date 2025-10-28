@@ -65,6 +65,8 @@
 
 .UserProgressComponentStyle-rankGainedIndicator,
 .UserProgressComponentStyle-rankGainIndicator {
+	margin: 0;
+	height: 1em;
 	border-bottom: .2em solid var(--severitium-light-gray-color);
 }
 
