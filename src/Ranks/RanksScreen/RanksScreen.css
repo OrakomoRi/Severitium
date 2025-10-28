@@ -1,0 +1,147 @@
+/* Main ranks container */
+
+.UserProgressComponentStyle-rankProgressItemsContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+/* Completed and uncompleted ranks containers */
+
+.UserProgressComponentStyle-progressItemCompleted,
+.UserProgressComponentStyle-progressItemUncompleted {
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Completed ranks container */
+
+.UserProgressComponentStyle-progressItemCompleted {
+	background: linear-gradient(transparent 0%, var(--severitium-dark-green-color) 100%);
+	box-shadow: var(--severitium-dark-gray-color) 0 0 0 .1em;
+	transition: box-shadow .2s ease;
+}
+
+/* Completed ranks container on hover */
+
+.UserProgressComponentStyle-progressItemCompleted:hover {
+	box-shadow: var(--severitium-green-color) 0 0 0 .2em;
+}
+
+/* Uncompleted ranks container */
+
+.UserProgressComponentStyle-progressItemUncompleted {
+	background: linear-gradient(transparent 0%, var(--severitium-dark-gray-color) 100%);
+	box-shadow: var(--severitium-dark-gray-color) 0 0 0 .1em;
+	transition: box-shadow .2s ease;
+}
+
+/* Uncompleted ranks container on hover */
+
+.UserProgressComponentStyle-progressItemUncompleted:hover {
+	box-shadow: var(--severitium-light-gray-color) 0 0 0 .2em;
+}
+
+/* Rank title container */
+
+.UserProgressComponentStyle-rankTitleInner > span {
+	font-size: 1em;
+	color: var(--severitium-white-text-color);
+	font-weight: normal;
+}
+
+/* XP score container */
+
+.UserProgressComponentStyle-rankScore {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	color: var(--severitium-green-text-color);
+	font-weight: normal;
+}
+
+/* Rank progress indicator */
+
+.UserProgressComponentStyle-rankGainedIndicator,
+.UserProgressComponentStyle-rankGainIndicator {
+	border-bottom: .2em solid var(--severitium-light-gray-color);
+}
+
+/* Gained rank progress indicator */
+
+.UserProgressComponentStyle-rankGainedIndicator {
+	border-left: .2em solid var(--severitium-green-color);
+}
+
+/* Uncompleted rank progress indicator */
+
+.UserProgressComponentStyle-rankGainIndicator {
+	border-left: .2em solid var(--severitium-light-gray-color);
+}
+
+/* Gained progress bar */
+
+.UserProgressComponentStyle-rankProgressBarGained {
+	margin-top: -.2em;
+	border-top: .2em solid var(--severitium-green-color);
+}
+
+/* User current progress container */
+
+.UserProgressComponentStyle-rankProgressGeneral {
+	color: var(--severitium-green-text-color);
+	border-right: .2em solid var(--severitium-green-color);
+	background: linear-gradient(270deg, var(--severitium-dark-green-color) 0%, transparent 100%) right center / auto repeat-y;
+}
+
+/* User current progress XP container */
+
+.UserProgressComponentStyle-rankProgressGeneral > div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	color: var(--severitium-green-text-color);
+	font-weight: normal;
+}
+
+/* Buy premium button */
+
+.UserProgressComponentStyle-buyPremium > div:nth-child(1) {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-gold-button-background);
+	border: var(--severitium-gold-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.UserProgressComponentStyle-buyPremium > div:nth-child(1):hover {
+	outline: none;
+	box-shadow: none;
+	border: var(--severitium-gold-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.UserProgressComponentStyle-buyPremium > div:nth-child(1) > span {
+	color: var(--severitium-gold-button-color);
+}
+
+/* Hotkey block of the button */
+
+.UserProgressComponentStyle-buyPremium > div:nth-child(1) h3[class*='hotkey'i] {
+	background: transparent;
+	color: var(--severitium-dark-white-text-color);
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Buy premiun description text */
+
+.UserProgressComponentStyle-buyPremiumText {
+	color: var(--severitium-light-gray-text-color);
+}
