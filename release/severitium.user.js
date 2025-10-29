@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.8.2+build.15
+// @version			1.8.2+build.16
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -20,12 +20,12 @@
 // @require			https://cdn.jsdelivr.net/npm/sweetalert2@11
 // @require			https://cdn.jsdelivr.net/gh/OrakomoRi/CompareVersions/JS/compareversions.min.js
 
-// @require			https://raw.githubusercontent.com/OrakomoRi/Severitium/main/src/_Additional/_getSeason.min.js
-// @require			https://raw.githubusercontent.com/OrakomoRi/Severitium/main/src/_Additional/_extractFileName.min.js
+// @require			https://orakomori.github.io/Severitium/src/_Additional/_getSeason.min.js
+// @require			https://orakomori.github.io/Severitium/src/_Additional/_extractFileName.min.js
 
-// @require			https://raw.githubusercontent.com/OrakomoRi/Severitium/main/src/_Additional/class/LoadingScreen.min.js
-// @require			https://raw.githubusercontent.com/OrakomoRi/Severitium/main/src/_Additional/class/Logger.min.js
-// @require			https://raw.githubusercontent.com/OrakomoRi/Severitium/main/src/_Additional/class/SeveritiumInjector.min.js
+// @require			https://orakomori.github.io/Severitium/src/_Additional/class/LoadingScreen.min.js
+// @require			https://orakomori.github.io/Severitium/src/_Additional/class/Logger.min.js
+// @require			https://orakomori.github.io/Severitium/src/_Additional/class/SeveritiumInjector.min.js
 
 // @run-at			document-start
 // @grant			unsafeWindow
