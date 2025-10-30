@@ -14,6 +14,9 @@
 	user-select: none;
 	-webkit-user-select: none;
 	touch-action: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .image-comparison:focus,
@@ -26,6 +29,9 @@
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .image-comparison__image-wrapper {
@@ -35,12 +41,16 @@
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .image-comparison__image {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
+	object-position: center;
 	display: block;
 	pointer-events: none;
 	user-select: none;
@@ -75,13 +85,32 @@
 	pointer-events: none;
 	box-shadow: var(--shadow-md);
 	opacity: 0;
-	animation: fadeInLabel 0.3s ease-out 0.5s forwards;
+	transition: opacity 0.3s ease-out;
 }
 
-@keyframes fadeInLabel {
-	to {
+/* Show labels on hover and initially for 3 seconds */
+.image-comparison:hover .image-comparison__label {
+	opacity: 1;
+}
+
+/* Show labels initially, then fade out */
+@keyframes fadeInThenOut {
+	0% {
+		opacity: 0;
+	}
+	10% {
 		opacity: 1;
 	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.image-comparison__label {
+	animation: fadeInThenOut 3s ease-out forwards;
 }
 
 .image-comparison__label--new {
@@ -283,6 +312,11 @@
 		right: var(--space-2);
 	}
 	
+	/* On mobile, show labels on touch/interaction */
+	.image-comparison__label {
+		animation: fadeInThenOut 4s ease-out forwards;
+	}
+	
 	.image-comparison__slider {
 		width: 3rem;
 	}
@@ -323,6 +357,76 @@
 	.image-comparison__toggle-option {
 		padding: 0.4rem 1.2rem;
 		font-size: var(--text-xs);
+	}
+}
+
+/* ============================
+   LANDSCAPE ORIENTATION
+   ============================ */
+
+/* Landscape mode on mobile devices */
+@media (max-height: 600px) and (orientation: landscape) {
+	.image-comparison {
+		max-height: 60vh;
+	}
+	
+	.image-comparison__label {
+		font-size: var(--text-xs);
+		padding: var(--space-1) var(--space-2);
+		top: var(--space-2);
+	}
+	
+	.image-comparison__label--new {
+		left: var(--space-2);
+	}
+	
+	.image-comparison__label--old {
+		right: var(--space-2);
+	}
+	
+	/* Smaller slider controls in landscape */
+	.image-comparison__slider {
+		width: 2.5rem;
+	}
+	
+	.image-comparison__slider-handle {
+		width: 2.8rem;
+		height: 2.8rem;
+	}
+	
+	.image-comparison__slider-handle ion-icon {
+		font-size: var(--icon-sm);
+	}
+	
+	/* Compact toggle controls */
+	.image-comparison__toggle-switch {
+		padding-top: 0;
+	}
+	
+	.image-comparison__toggle-option {
+		padding: 0.4rem 1rem;
+		font-size: var(--text-xs);
+	}
+	
+	/* Adjust minimum sizes for landscape */
+	.image-comparison--slider {
+		min-height: 150px;
+	}
+	
+	.image-comparison--toggle {
+		min-height: 180px;
+	}
+}
+
+/* Landscape on tablets and small laptops */
+@media (min-width: 481px) and (max-width: 1024px) and (orientation: landscape) {
+	.image-comparison {
+		max-height: 75vh;
+	}
+	
+	.image-comparison__label {
+		font-size: var(--text-sm);
+		padding: var(--space-2) var(--space-3);
 	}
 }
 
@@ -377,6 +481,10 @@
 	
 	.image-comparison__label {
 		animation: none;
+		opacity: 0;
+	}
+	
+	.image-comparison:hover .image-comparison__label {
 		opacity: 1;
 	}
 }
@@ -397,3 +505,31 @@
 		border: 0.1rem solid white;
 	}
 }
+
+/* ============================
+   SMALL IMAGES SUPPORT
+   ============================ */
+
+/* Ensure small images are properly centered and visible */
+.image-comparison {
+	min-width: 200px;
+	min-height: 150px;
+}
+
+/* For very small images, ensure the container doesn't collapse */
+.image-comparison--slider {
+	min-width: 300px;
+	min-height: 200px;
+}
+
+.image-comparison--toggle {
+	min-width: 300px;
+	min-height: 250px; /* Extra space for toggle buttons */
+}
+
+/* Ensure images maintain their aspect ratio even when small */
+.image-comparison__image-wrapper {
+	min-width: 100%;
+	min-height: 100%;
+}
+

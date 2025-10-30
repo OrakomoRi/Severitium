@@ -236,6 +236,10 @@ class ImageComparisonSlider {
 		const maxWidth = Math.min(window.innerWidth * 0.85, 1400);
 		const maxHeight = Math.min(window.innerHeight * 0.7, 900);
 		
+		// Set minimum dimensions to ensure small images are visible
+		const minWidth = 300;
+		const minHeight = 200;
+		
 		let width = targetWidth;
 		let height = targetHeight;
 		
@@ -247,6 +251,17 @@ class ImageComparisonSlider {
 		
 		if (height > maxHeight) {
 			height = maxHeight;
+			width = height * targetRatio;
+		}
+		
+		// Ensure minimum size for small images
+		if (width < minWidth) {
+			width = minWidth;
+			height = width / targetRatio;
+		}
+		
+		if (height < minHeight) {
+			height = minHeight;
 			width = height * targetRatio;
 		}
 		
@@ -265,6 +280,10 @@ class ImageComparisonSlider {
 		const maxWidth = Math.min(window.innerWidth * 0.85, 1400);
 		const maxHeight = Math.min(window.innerHeight * 0.65, 850); // Less height for toggle buttons
 		
+		// Set minimum dimensions to ensure small images are visible
+		const minWidth = 300;
+		const minHeight = 200;
+		
 		// Find dimensions that fit both images
 		const oldScaleW = maxWidth / oldDim.width;
 		const oldScaleH = maxHeight / oldDim.height;
@@ -280,9 +299,21 @@ class ImageComparisonSlider {
 		const newFinalW = newDim.width * newScale;
 		const newFinalH = newDim.height * newScale;
 		
+		let width = Math.max(oldFinalW, newFinalW);
+		let height = Math.max(oldFinalH, newFinalH);
+		
+		// Ensure minimum size for small images
+		if (width < minWidth) {
+			width = minWidth;
+		}
+		
+		if (height < minHeight) {
+			height = minHeight;
+		}
+		
 		return {
-			width: Math.round(Math.max(oldFinalW, newFinalW)),
-			height: Math.round(Math.max(oldFinalH, newFinalH))
+			width: Math.round(width),
+			height: Math.round(height)
 		};
 	}
 
@@ -360,6 +391,9 @@ class ImageComparisonSlider {
 			modal._wasDragging = true;
 		}
 		
+		// Show labels temporarily when dragging
+		this.showLabelsTemporarily();
+		
 		this.updateSliderFromEvent(e);
 		e.preventDefault();
 		e.stopPropagation();
@@ -390,6 +424,10 @@ class ImageComparisonSlider {
 	 */
 	handleTouchMove(e) {
 		if (!this.isDragging) return;
+		
+		// Show labels temporarily when dragging on touch
+		this.showLabelsTemporarily();
+		
 		this.updateSliderFromEvent(e.touches[0]);
 		e.preventDefault();
 	}
@@ -495,6 +533,29 @@ class ImageComparisonSlider {
 	}
 
 	/**
+	 * Show labels temporarily when interacting
+	 */
+	showLabelsTemporarily() {
+		if (this.labelTimeout) {
+			clearTimeout(this.labelTimeout);
+		}
+		
+		// Add temporary class to show labels
+		const labels = this.container.querySelectorAll('.image-comparison__label');
+		labels.forEach(label => {
+			label.style.opacity = '1';
+			label.style.animation = 'none';
+		});
+		
+		// Hide after 2 seconds of no interaction
+		this.labelTimeout = setTimeout(() => {
+			labels.forEach(label => {
+				label.style.opacity = '0';
+			});
+		}, 2000);
+	}
+
+	/**
 	 * Cleanup and remove event listeners
 	 */
 	destroy() {
@@ -503,6 +564,10 @@ class ImageComparisonSlider {
 			document.removeEventListener('mouseup', this.handleMouseUp);
 			document.removeEventListener('touchmove', this.handleTouchMove);
 			document.removeEventListener('touchend', this.handleTouchEnd);
+		}
+		
+		if (this.labelTimeout) {
+			clearTimeout(this.labelTimeout);
 		}
 		
 		this.container.innerHTML = '';
