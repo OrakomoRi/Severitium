@@ -53,7 +53,6 @@ const addCustomTip = () => {
 		const exists = tipsData.data.some(tip => tip.tip === tipText);
 
 		if (exists) {
-			console.log('Custom tip already exists');
 			return;
 		}
 
@@ -65,7 +64,6 @@ const addCustomTip = () => {
 		});
 
 		localStorage.setItem('tips.data', JSON.stringify(tipsData));
-		console.log('Custom tip added successfully');
 
 	} catch (error) {
 		console.error('Failed to add custom tip:', error);
