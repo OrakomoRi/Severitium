@@ -70,6 +70,12 @@
 	border-radius: 0;
 }
 
+/* Divs inside hovered button element */
+
+.MainScreenComponentStyle-blockMainMenu > ul > li:hover > div {
+	background: none;
+}
+
 /* Button icon */
 
 .MainScreenComponentStyle-blockMainMenu > ul > li [class*='itemli'i] {
