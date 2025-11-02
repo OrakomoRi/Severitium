@@ -210,6 +210,7 @@
 .ShopFooterComponentStyle-exclamation {
 	margin: 0;
 	padding: 0;
+	margin-left: .75em;
 	font-size: 1em;
 	color: var(--severitium-light-gray-text-color);
 	opacity: 1;
