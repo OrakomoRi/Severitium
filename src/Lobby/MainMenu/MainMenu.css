@@ -70,9 +70,14 @@
 	border-radius: 0;
 }
 
+.PrimaryMenuItemComponentStyle-itemCommonLi:hover div {
+	background: none;
+	background-color: var(--severitium-white-text-color);
+}
+
 /* Divs inside hovered button element */
 
-.MainScreenComponentStyle-blockMainMenu > ul > li:hover > div {
+.MainScreenComponentStyle-blockMainMenu > ul > li:hover div:not([class*='itemli'i]) {
 	background: none;
 }
 
