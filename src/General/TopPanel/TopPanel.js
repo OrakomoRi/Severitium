@@ -1,4 +1,8 @@
 (function () {
+	if (typeof Glitchium === 'undefined') {
+		return;
+	}
+
 	const selector = '.UserInfoContainerStyle-blockForIconTankiOnline';
 
 	const glitchOptions = {
@@ -147,7 +151,7 @@
 	});
 
 	// Watch for new elements
-	const observer = new MutationObserver(() => {
+	const observer = new MutationObserver(mutations => {
 		mutations.forEach(mutation => {
 			mutation.addedNodes.forEach(node => {
 				// Check if added node is element (not text/comment)
@@ -155,12 +159,18 @@
 
 				// Check if node itself matches selector
 				if (node.matches && node.matches(selector)) {
-					applyGlitch(node);
+					appliedElements.add(node);
+					randomGlitchOnHover(node, glitchOptions);
 				}
 
 				// Check if node contains matching children
 				if (node.querySelectorAll) {
-					node.querySelectorAll(selector).forEach(applyGlitch);
+					node.querySelectorAll(selector).forEach(el => {
+						if (!appliedElements.has(el)) {
+							appliedElements.add(el);
+							randomGlitchOnHover(el, glitchOptions);
+						}
+					});
 				}
 			});
 		});
