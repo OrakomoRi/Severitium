@@ -3,16 +3,6 @@
 		return;
 	}
 
-	const selector = '.UserInfoContainerStyle-blockForIconTankiOnline';
-
-	const glitchOptions = {
-		intensity: 0.9,
-		minDuration: 200,
-		maxDuration: 400
-	};
-
-	const appliedElements = new WeakSet();
-
 	/**
 	 * Apply random glitch effect on hover with configurable intervals
 	 * @param {string|HTMLElement} selector - CSS selector or HTMLElement to apply glitch
@@ -142,45 +132,4 @@
 			}
 		};
 	}
-
-	// Try to apply immediately if element exists
-	const existing = document.querySelectorAll(selector);
-	existing.forEach(el => {
-		appliedElements.add(el);
-		randomGlitchOnHover(el, glitchOptions);
-	});
-
-	// Watch for new elements
-	const observer = new MutationObserver(mutations => {
-		mutations.forEach(mutation => {
-			mutation.addedNodes.forEach(node => {
-				// Check if added node is element (not text/comment)
-				if (node.nodeType !== 1) return;
-
-				// Ignore glitchium-generated containers
-				if (node.classList && node.classList.contains('glitchium-container')) return;
-
-				// Check if node itself matches selector
-				if (node.matches && node.matches(selector)) {
-					appliedElements.add(node);
-					randomGlitchOnHover(node, glitchOptions);
-				}
-
-				// Check if node contains matching children
-				if (node.querySelectorAll) {
-					node.querySelectorAll(selector).forEach(el => {
-						if (!appliedElements.has(el)) {
-							appliedElements.add(el);
-							randomGlitchOnHover(el, glitchOptions);
-						}
-					});
-				}
-			});
-		});
-	});
-
-	observer.observe(document.body, {
-		childList: true,
-		subtree: true
-	});
 })();
