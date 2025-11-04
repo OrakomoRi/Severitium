@@ -157,6 +157,9 @@
 				// Check if added node is element (not text/comment)
 				if (node.nodeType !== 1) return;
 
+				// Ignore glitchium-generated containers
+				if (node.classList && node.classList.contains('glitchium-container')) return;
+
 				// Check if node itself matches selector
 				if (node.matches && node.matches(selector)) {
 					appliedElements.add(node);
