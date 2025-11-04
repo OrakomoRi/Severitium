@@ -40,6 +40,17 @@
 	color: var(--severitium-white-text-color);
 }
 
+.SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-textHeadlineOptions {
+	height: fit-content;
+	font-size: 1.25em;
+	color: var(--severitium-white-color);
+	text-transform: uppercase;
+	font-family: BaseFontBold, FallbackFontBold;
+	letter-spacing: .05em;
+	margin: 0;
+	margin-bottom: 1em;
+}
+
 /* Theme settings button component */
 
 .SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-actionButton {

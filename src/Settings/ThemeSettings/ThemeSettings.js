@@ -480,7 +480,7 @@
 
 			el.innerHTML = `
 				<div class="ThemeSettingsComponentStyle-settingsTab">
-					<p class="AccountSettingsComponentStyle-textHeadlineOptions">${Utils.t('Theme Settings')}</p>
+					<p class="ThemeSettingsComponentStyle-textHeadlineOptions">${Utils.t('Theme Settings')}</p>
 
 					<div class="ThemeSettingsComponentStyle-row" data-select="theme-select-container"></div>
 

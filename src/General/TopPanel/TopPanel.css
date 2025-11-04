@@ -450,10 +450,23 @@
 	background-color: var(--severitium-white-color);
 }
 
+/* Tanki Online icon container */
+
+.UserInfoContainerStyle-blockForIconTankiOnline {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-self: center;
+	position: absolute;
+	margin: auto;
+	inset: 0;
+}
+
 /* Tanki Online icon */
 
 .UserInfoContainerStyle-blockForIconTankiOnline > img {
 	/* display: none; */
+	height: 4em;
 }
 
 /* Custom icon */
