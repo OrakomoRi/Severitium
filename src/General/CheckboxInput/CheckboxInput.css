@@ -22,8 +22,8 @@
 	position: absolute;
 	top: .25em;
 	left: .25em;
-	width: 1em;
-	height: 1em;
+	width: .9em;
+	height: .9em;
 	border-radius: 50%;
 	transition: -webkit-transform .2s;
 	transition: transform .2s;

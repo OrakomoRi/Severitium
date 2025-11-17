@@ -240,7 +240,7 @@
 /* Pseudo element for tancoin currency on hover */
 
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*='coin'i]):hover::before,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='coin'i]):hover::before {
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(div > img[src*='coin'i]):hover::before {
 	background: linear-gradient(270deg, var(--severitium-tancoin-color) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
@@ -251,10 +251,17 @@
 	background: linear-gradient(270deg, var(--severitium-crystal-color) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
+/* Text on ruby button */
+
+.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='ruby'i]) > span,
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='ruby'i]) > span {
+	color: var(--severitium-ruby-color);
+}
+
 /* Text on tancoin button */
 
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*='coin'i]) > span,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='coin'i]) > span {
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(div > img[src*='coin'i]) > span {
 	color: var(--severitium-tancoin-color);
 }
 
@@ -263,13 +270,6 @@
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*='crystal'i]) > span,
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='crystal'i]) > span {
 	color: var(--severitium-crystal-color);
-}
-
-/* Text on ruby button */
-
-.UserScoreComponentStyle-blockRightPanel div:has(> img[src*='ruby'i]) > span,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='ruby'i]) > span {
-	color: var(--severitium-ruby-color);
 }
 
 /* Original plus sign icons on currency buttons */
