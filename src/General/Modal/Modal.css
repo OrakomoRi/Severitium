@@ -1154,7 +1154,8 @@
 /* Empty media inside the tutorial modal */
 
 .TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-mediaContainer > *[src*='tutorial_empty'i],
-.TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-mediaContainer > *[src*='tutorial-empty'i] {
+.TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-mediaContainer > *[src*='tutorial-empty'i],
+.TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-mediaContainer > *[src*='imgmodal.'i] {
 	filter: grayscale(1);
 }
 
@@ -1287,17 +1288,7 @@
 /* Item description modal header hotkey block */
 
 .ItemDescriptionComponentStyle-commonBlockModal > div .HotKey-commonBlockForHotKey {
-	background: transparent;
-	border: var(--severitium-gray-color) dashed .1em;
-	border-radius: var(--severitium-border-radius);
-	color: var(--severitium-dark-white-text-color);
-	height: auto;
-	min-height: auto;
-	max-height: none;
-	width: auto;
-	min-width: auto;
-	max-width: none;
-	padding: .1em .2em;
+	display: none;
 }
 
 /* Item description modal cross close button */
@@ -1320,14 +1311,19 @@
 
 /* Item description modal media element */
 
-.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .ItemDescriptionComponentStyle-commonBlockModal > * {
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .ItemDescriptionComponentStyle-commonBlockModal > *,
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TutorialModalComponentStyle-mediaContainer > * {
 	border-radius: var(--severitium-border-radius);
 }
 
 /* Empty media inside the item description modal */
 
 .ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .ItemDescriptionComponentStyle-commonBlockModal > *[src*='tutorial_empty'i],
-.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .ItemDescriptionComponentStyle-commonBlockModal > *[src*='tutorial-empty'i] {
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .ItemDescriptionComponentStyle-commonBlockModal > *[src*='tutorial-empty'i],
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .ItemDescriptionComponentStyle-commonBlockModal > *[src*='imgmodal.'i],
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TutorialModalComponentStyle-mediaContainer > *[src*='tutorial_empty'i],
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TutorialModalComponentStyle-mediaContainer > *[src*='tutorial-empty'i],
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TutorialModalComponentStyle-mediaContainer > *[src*='imgmodal.'i] {
 	filter: grayscale(1);
 }
 
@@ -1371,7 +1367,7 @@
 
 /* Button on hover */
 
-	.ItemDescriptionComponentStyle-commonBlockModal > div.TutorialModalComponentStyle-navigationButton:not(.ButtonComponentStyle-disabled):hover {
+.ItemDescriptionComponentStyle-commonBlockModal > div.TutorialModalComponentStyle-navigationButton:not(.ButtonComponentStyle-disabled):hover {
 	outline: none;
 	box-shadow: none;
 	background: var(--severitium-green-button-background);
@@ -1382,4 +1378,26 @@
 
 .ItemDescriptionComponentStyle-commonBlockModal > div.TutorialModalComponentStyle-navigationButton:not(.ButtonComponentStyle-disabled) > span {
 	color: var(--severitium-green-button-color);
+}
+
+/* Custom button hothey */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div.TutorialModalComponentStyle-navigationButton::after {
+	content: 'Z';
+	position: absolute;
+	top: 50%;
+	left: 2em;
+	-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+	background: transparent;
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: var(--severitium-border-radius);
+	color: var(--severitium-dark-white-text-color);
+	height: auto;
+	min-height: auto;
+	max-height: none;
+	width: auto;
+	min-width: auto;
+	max-width: none;
+	padding: .1em .2em;
 }
