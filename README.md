@@ -105,3 +105,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - [CSS Autoprefixer](https://autoprefixer.github.io/)
 - [Tampermonkey Docs](https://www.tampermonkey.net/documentation.php?locale=en)
 - [SVG Viewer](https://www.svgviewer.dev/)
+- [Animate.css](https://animate.style/)
