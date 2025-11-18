@@ -196,6 +196,7 @@
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='coin'i]),
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='crystal'i]),
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='ruby'i]) {
+	box-sizing: border-box;
 	position: relative;
 	background-color: transparent;
 }
@@ -255,6 +256,7 @@
 
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*='ruby'i]) > span,
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='ruby'i]) > span {
+	margin: 0 1.5em 0 .5em;
 	color: var(--severitium-ruby-color);
 }
 
@@ -262,6 +264,7 @@
 
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*='coin'i]) > span,
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(div > img[src*='coin'i]) > span {
+	margin: 0 1.5em 0 .5em;
 	color: var(--severitium-tancoin-color);
 }
 
@@ -269,6 +272,7 @@
 
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*='crystal'i]) > span,
 .BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='crystal'i]) > span {
+	margin: 0 1.5em 0 .5em;
 	color: var(--severitium-crystal-color);
 }
 
