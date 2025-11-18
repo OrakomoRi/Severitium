@@ -5,8 +5,8 @@
 .ProBattlesComponentStyle-navigationBlock,
 .ContainersComponentStyle-navigationBlockForCategories {
 	width: 100%;
-	-webkit-backdrop-filter: blur(.25em);
-			backdrop-filter: blur(.25em);
+	-webkit-backdrop-filter: blur(.25em) grayscale(1);
+			backdrop-filter: blur(.25em) grayscale(1);
 	border: none;
 	position: relative;
 }
@@ -247,4 +247,54 @@ div[class*='menucomponent'i] .Common-buttonQE {
 
 div[class*='menucomponent'i] .Common-buttonQE > span {
 	color: var(--severitium-dark-white-text-color);
+}
+
+/* Arrows (left & right) inside the top menu */
+
+.ContainersComponentStyle-navigationBlock > div > [class*='common-arrow'i],
+.GarageMenuComponentStyle-garageMenuContainer > div > [class*='common-arrow'i],
+.ProBattlesComponentStyle-navigationBlock > div > [class*='common-arrow'i],
+.ContainersComponentStyle-navigationBlockForCategories  > div > [class*='common-arrow'i] {
+	background: none;
+	width: 1.5em;
+	height: 1.5em;
+	aspect-ratio: 1 / 1;
+	margin: 0;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	background-color: var(--severitium-light-gray-color);
+	transition: background-color .2s ease, opacity .2s ease;
+}
+
+/* Arrows (left & right) inside the top menu on hover */
+
+.ContainersComponentStyle-navigationBlock > div > [class*='common-arrow'i]:hover,
+.GarageMenuComponentStyle-garageMenuContainer > div > [class*='common-arrow'i]:hover,
+.ProBattlesComponentStyle-navigationBlock > div > [class*='common-arrow'i]:hover,
+.ContainersComponentStyle-navigationBlockForCategories  > div > [class*='common-arrow'i]:hover {
+	background-color: var(--severitium-white-color);
+}
+
+/* Arrow left */
+
+.ContainersComponentStyle-navigationBlock > div > [class*='common-arrow'i][class*='left'i],
+.GarageMenuComponentStyle-garageMenuContainer > div > [class*='common-arrow'i][class*='left'i],
+.ProBattlesComponentStyle-navigationBlock > div > [class*='common-arrow'i][class*='left'i],
+.ContainersComponentStyle-navigationBlockForCategories  > div > [class*='common-arrow'i][class*='left'i] {
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 24"><path d="M16 0h-4L0 12l12 12h4L4 12z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 24"><path d="M16 0h-4L0 12l12 12h4L4 12z"/></svg>');
+}
+
+/* Arrow right */
+
+.ContainersComponentStyle-navigationBlock > div > [class*='common-arrow'i][class*='right'i],
+.GarageMenuComponentStyle-garageMenuContainer > div > [class*='common-arrow'i][class*='right'i],
+.ProBattlesComponentStyle-navigationBlock > div > [class*='common-arrow'i][class*='right'i],
+.ContainersComponentStyle-navigationBlockForCategories  > div > [class*='common-arrow'i][class*='right'i] {
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 24"><path d="M0 0h4l12 12L4 24H0l12-12z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 24"><path d="M0 0h4l12 12L4 24H0l12-12z"/></svg>');
 }

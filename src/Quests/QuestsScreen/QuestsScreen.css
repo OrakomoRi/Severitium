@@ -155,14 +155,16 @@
 
 /* Quest completed solo card */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted {
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted,
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven {
 	background-color: var(--severitium-green-button-background);
 	border-color: var(--severitium-green-button-border-color);
 }
 
 /* Quest completed solo card on hover */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted:hover {
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted:hover,
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven:hover {
 	border-color: var(--severitium-green-button-border-color-hover);
 }
 
@@ -370,13 +372,20 @@
 	background-color: var(--severitium-main-color);
 }
 
-/* Quest card's progress numbers */
+/* Quest card's header */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > div:nth-child(2) > h4 {
-	font-size: 1em;
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > div > h4 {
+	font-size: 1.25em;
 	font-weight: normal;
 	margin: 0;
 	color: var(--severitium-main-color);
+}
+
+/* Completed quest card's header */
+
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted > div > h4,
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven > div > h4 {
+	color: var(--severitium-green-text-color);
 }
 
 /* Quest line's progress numbers */
@@ -397,7 +406,7 @@
 
 /* Quest card's name */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > div:nth-child(2) > span {
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > div > span {
 	font-size: 1.2em;
 	font-weight: normal;
 	text-transform: uppercase;
