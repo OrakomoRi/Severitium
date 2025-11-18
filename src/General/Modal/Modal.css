@@ -1,3 +1,17 @@
+/* Fade in from right animation */
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 100%, 0);
+	}
+
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
 /* Modal overlay */
 
 .ModalStyle-rootHover,
@@ -1082,4 +1096,288 @@
 	height: 1.5em;
 	background-image: none;
 	background-color: var(--severitium-red-color);
+}
+
+/* TUTORIAL MODAL */
+
+/* Tutorial modal visible background area */
+
+.TutorialModalComponentStyle-backgroundClickArea {
+	background: none;
+}
+
+/* Tutorial modal content container */
+
+.TutorialModalComponentStyle-contentWrapper {
+	position: relative;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1em;
+	padding: 1em 2em;
+	background: var(--severitium-dark-transparent-background1);
+	-webkit-backdrop-filter: blur(.5em);
+			backdrop-filter: blur(.5em);
+	outline: none;
+	border: none;
+	border-left: .1em solid var(--severitium-gray-color);
+	box-shadow: none;
+	border-radius: 0;
+	-webkit-animation: fadeInUp .3s ease;
+			animation: fadeInUp .3s ease;
+}
+
+/* All direct childs inside the modal content container */
+
+.TutorialModalComponentStyle-contentWrapper > * {
+	padding: 0;
+	margin: 0;
+}
+
+/* Tutorial modal header container element */
+
+.TutorialModalComponentStyle-contentWrapper > div .HeadlineComponentStyle-popupHeadlineContent {
+	font-size: 1.25em;
+	color: var(--severitium-white-text-color);
+	text-transform: uppercase;
+	letter-spacing: .05em;
+}
+
+/* Tutorial modal media element */
+
+.TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-mediaContainer > * {
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Empty media inside the tutorial modal */
+
+.TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-mediaContainer > *[src*='tutorial_empty'i],
+.TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-mediaContainer > *[src*='tutorial-empty'i] {
+	filter: grayscale(1);
+}
+
+/* Tutorial modal content container */
+
+.TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-contentContainer {
+	flex: 1 1 auto;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1em;
+}
+
+/* Tutorial modal content paragraph */
+
+.TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-contentContainer > p {
+	font-size: 1em;
+	color: var(--severitium-extra-light-gray-text-color);
+	line-height: 1.4;
+	text-align: justify;
+	padding: 0;
+	margin: 0;
+}
+
+/* Tutorial modal navigation container */
+
+.TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-navigationContainer {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+}
+
+/* Tutorial modal navigation pages numbers */
+
+.TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-navigationContainer .TutorialModalComponentStyle-navigationPages {
+	width: fit-content;
+	font-size: 1.25em;
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* Tutorial modal buttons container */
+
+.TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-navigationContainer > div:last-of-type {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+}
+
+/* Tutorial modal buttons */
+
+.TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-navigationContainer > div:last-of-type > div {
+	padding: 0;
+	margin: 0;
+}
+
+/* Tutorial modal navigation button active */
+
+.TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-navigationContainer .TutorialModalComponentStyle-navigationButton:not(.ButtonComponentStyle-disabled) {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-navigationContainer .TutorialModalComponentStyle-navigationButton:not(.ButtonComponentStyle-disabled):hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-navigationContainer .TutorialModalComponentStyle-navigationButton:not(.ButtonComponentStyle-disabled) > span {
+	color: var(--severitium-green-button-color);
+}
+
+/* ITEM DESCRIPTION MODAL */
+
+/* Item description modal content container */
+
+.ItemDescriptionComponentStyle-commonBlockModal {
+	position: relative;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1em;
+	padding: 1em 2em;
+	background: var(--severitium-dark-transparent-background1);
+	-webkit-backdrop-filter: blur(.5em);
+			backdrop-filter: blur(.5em);
+	outline: none;
+	border: none;
+	border-left: .1em solid var(--severitium-gray-color);
+	box-shadow: none;
+	border-radius: 0;
+	-webkit-animation: fadeInUp .3s ease;
+			animation: fadeInUp .3s ease;
+}
+
+/* All direct childs inside the modal content container */
+
+.ItemDescriptionComponentStyle-commonBlockModal > * {
+	padding: 0;
+	margin: 0;
+}
+
+/* Item description modal header container element */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div .HeadlineComponentStyle-popupHeadlineContent {
+	font-size: 1.25em;
+	color: var(--severitium-white-text-color);
+	text-transform: uppercase;
+	letter-spacing: .05em;
+}
+
+/* Item description modal header hotkey block */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div .HotKey-commonBlockForHotKey {
+	background: transparent;
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: var(--severitium-border-radius);
+	color: var(--severitium-dark-white-text-color);
+	height: auto;
+	min-height: auto;
+	max-height: none;
+	width: auto;
+	min-width: auto;
+	max-width: none;
+	padding: .1em .2em;
+}
+
+/* Item description modal cross close button */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div .DialogContainerComponentStyle-imgClose {
+	display: none;
+}
+
+/* Item description modal content outer container */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal {
+	flex: 1 1 auto;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1em;
+}
+
+/* Item description modal media element */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .ItemDescriptionComponentStyle-commonBlockModal > * {
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Empty media inside the item description modal */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .ItemDescriptionComponentStyle-commonBlockModal > *[src*='tutorial_empty'i],
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .ItemDescriptionComponentStyle-commonBlockModal > *[src*='tutorial-empty'i] {
+	filter: grayscale(1);
+}
+
+/* Item description modal content inner container */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TanksPartComponentStyle-contentContainer {
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1em;
+}
+
+/* Item description modal content paragraph */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TanksPartComponentStyle-contentContainer > p {
+	font-size: 1em;
+	color: var(--severitium-extra-light-gray-text-color);
+	line-height: 1.4;
+	text-align: justify;
+	padding: 0;
+	margin: 0;
+}
+
+/* Item description modal navigation button active */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div.TutorialModalComponentStyle-navigationButton:not(.ButtonComponentStyle-disabled) {
+	position: relative;
+	bottom: 0;
+	right: 0;
+	margin: 0;
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+	.ItemDescriptionComponentStyle-commonBlockModal > div.TutorialModalComponentStyle-navigationButton:not(.ButtonComponentStyle-disabled):hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div.TutorialModalComponentStyle-navigationButton:not(.ButtonComponentStyle-disabled) > span {
+	color: var(--severitium-green-button-color);
 }
