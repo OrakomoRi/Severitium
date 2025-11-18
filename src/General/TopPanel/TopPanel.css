@@ -467,3 +467,79 @@
 .UserInfoContainerStyle-blockForIconTankiOnline > img {
 	display: none;
 }
+
+/* Top title */
+
+.BreadcrumbsComponentStyle-breadcrumbs .BreadcrumbsComponentStyle-rootTitle {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+}
+
+/* Top title text */
+
+.BreadcrumbsComponentStyle-breadcrumbs .BreadcrumbsComponentStyle-rootTitle > span {
+	margin: 0;
+	padding: 0;
+	font-size: 2em;
+	font-family: BaseFontBold, FallbackFontBold;
+	font-weight: normal;
+	color: var(--severitium-white-text-color);
+	text-transform: uppercase;
+	letter-spacing: .05em;
+}
+
+/* Top title info icon */
+
+.BreadcrumbsComponentStyle-breadcrumbs .BreadcrumbsComponentStyle-rootTitle > div {
+	width: fit-content;
+	height: fit-content;
+	aspect-ratio: 1 / 1;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 1;
+	padding: .25em;
+	margin: 0;
+	background: none;
+	border-radius: 50%;
+	border: .2em solid var(--severitium-light-gray-color);
+	transition: border-color .2s ease;
+}
+
+/* Top title info icon on hover */
+
+.BreadcrumbsComponentStyle-breadcrumbs .BreadcrumbsComponentStyle-rootTitle > div:hover {
+	background: none;
+	border-color: var(--severitium-blue-color);
+}
+
+/* Custom info icon */
+
+.BreadcrumbsComponentStyle-breadcrumbs .BreadcrumbsComponentStyle-rootTitle > div::before {
+	position: relative;
+	display: block;
+	content: '';
+	width: 1em;
+	height: 1em;
+	aspect-ratio: 1 / 1;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14"><path d="M2 0h4v2H2zM0 6h2v6a2 2 0 0 0 2 2h4v-2H6V4H0z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14"><path d="M2 0h4v2H2zM0 6h2v6a2 2 0 0 0 2 2h4v-2H6V4H0z"/></svg>');
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	background-color: var(--severitium-light-gray-color);
+	transition: background-color .2s ease;
+}
+
+/* Custom icon on hover */
+
+.BreadcrumbsComponentStyle-breadcrumbs .BreadcrumbsComponentStyle-rootTitle > div:hover::before {
+	background-color: var(--severitium-blue-color);
+}
