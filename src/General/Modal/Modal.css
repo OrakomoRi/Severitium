@@ -1136,9 +1136,16 @@
 	margin: 0;
 }
 
+/* All childs and the container itself */
+
+.TutorialModalComponentStyle-contentWrapper,
+.TutorialModalComponentStyle-contentWrapper * {
+	box-sizing: border-box;
+}
+
 /* Tutorial modal header container element */
 
-.TutorialModalComponentStyle-contentWrapper > div .HeadlineComponentStyle-popupHeadlineContent {
+.TutorialModalComponentStyle-contentWrapper > div .HeadlineComponentStyle-popupHeadlineContent > span {
 	font-size: 1.25em;
 	color: var(--severitium-white-text-color);
 	text-transform: uppercase;
@@ -1276,10 +1283,17 @@
 	margin: 0;
 }
 
+/* All childs and the container itself */
+
+.ItemDescriptionComponentStyle-commonBlockModal,
+.ItemDescriptionComponentStyle-commonBlockModal * {
+	box-sizing: border-box;
+}
+
 /* Item description modal header container element */
 
-.ItemDescriptionComponentStyle-commonBlockModal > div .HeadlineComponentStyle-popupHeadlineContent {
-	font-size: 1.25em;
+.ItemDescriptionComponentStyle-commonBlockModal > div .HeadlineComponentStyle-popupHeadlineContent > span {
+	font-size: 1.5em;
 	color: var(--severitium-white-text-color);
 	text-transform: uppercase;
 	letter-spacing: .05em;
@@ -1299,7 +1313,9 @@
 
 /* Item description modal content outer container */
 
-.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal {
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal,
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div:has(> .TutorialModalComponentStyle-contentContainer) {
+	height: auto;
 	flex: 1 1 auto;
 	overflow-y: auto;
 	display: flex;
@@ -1312,7 +1328,9 @@
 /* Item description modal media element */
 
 .ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .ItemDescriptionComponentStyle-commonBlockModal > *,
-.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TutorialModalComponentStyle-mediaContainer > * {
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TutorialModalComponentStyle-mediaContainer > *,
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .TutorialModalComponentStyle-mediaContainer > img,
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .TutorialModalComponentStyle-mediaContainer > video {
 	border-radius: var(--severitium-border-radius);
 }
 
@@ -1323,24 +1341,37 @@
 .ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .ItemDescriptionComponentStyle-commonBlockModal > *[src*='imgmodal.'i],
 .ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TutorialModalComponentStyle-mediaContainer > *[src*='tutorial_empty'i],
 .ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TutorialModalComponentStyle-mediaContainer > *[src*='tutorial-empty'i],
-.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TutorialModalComponentStyle-mediaContainer > *[src*='imgmodal.'i] {
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TutorialModalComponentStyle-mediaContainer > *[src*='imgmodal.'i],
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .TutorialModalComponentStyle-mediaContainer > *[src*='tutorial_empty'i],
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .TutorialModalComponentStyle-mediaContainer > *[src*='tutorial-empty'i],
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .TutorialModalComponentStyle-mediaContainer > *[src*='imgmodal.'i] {
 	filter: grayscale(1);
+}
+
+/* Quest description modal objective counter */
+
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .TutorialModalComponentStyle-mediaContainer h2 {
+	color: var(--severitium-main-color);
 }
 
 /* Item description modal content inner container */
 
-.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TanksPartComponentStyle-contentContainer {
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TanksPartComponentStyle-contentContainer,
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .TutorialModalComponentStyle-contentContainer {
 	height: auto;
+	margin: 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
 	gap: 1em;
+	align-self: flex-start;
 }
 
 /* Item description modal content paragraph */
 
-.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TanksPartComponentStyle-contentContainer > p {
+.ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TanksPartComponentStyle-contentContainer > p,
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .TutorialModalComponentStyle-contentContainer > p {
 	font-size: 1em;
 	color: var(--severitium-extra-light-gray-text-color);
 	line-height: 1.4;
@@ -1350,10 +1381,104 @@
 	margin: 0;
 }
 
+/* Quest description modal rewards block */
+
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .MainQuestComponentStyle-rewardsCommonBlock {
+	position: relative;
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: .5em;
+	margin: 0;
+	margin-top: auto;
+	top: auto;
+	right: auto;
+	left: auto;
+	bottom: auto;
+}
+
+/* Quest description modal rewards block title */
+
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .MainQuestComponentStyle-rewardsCommonBlock > span {
+	font-size: 1.25em;
+	color: var(--severitium-light-gray-text-color);
+	text-transform: uppercase;
+	letter-spacing: .05em;
+	margin: 0;
+	padding: 0;
+}
+
+/* Quest description modal rewards block reward container */
+
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .MainQuestComponentStyle-rewardsCommonBlock .MainQuestComponentStyle-rewardsInDescriptionModal {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: .1em;
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+}
+
+/* Quest description modal rewards block reward item */
+
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .MainQuestComponentStyle-rewardsCommonBlock .MainQuestComponentStyle-rewardsInDescriptionModal > div {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1em;
+	margin: 0;
+	padding: .5em 1em;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Quest description modal rewards block reward item all childs inside */
+
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .MainQuestComponentStyle-rewardsCommonBlock .MainQuestComponentStyle-rewardsInDescriptionModal > div > * {
+	position: relative;
+	margin: 0;
+}
+
+/* Quest description modal rewards block reward item icon */
+
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .MainQuestComponentStyle-rewardsCommonBlock .MainQuestComponentStyle-rewardsInDescriptionModal > div > div[class*='backgroundimage'i] {
+	height: 2.5em;
+	width: 4em;
+}
+
+/* Quest description modal rewards block reward item name */
+
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .MainQuestComponentStyle-rewardsCommonBlock .MainQuestComponentStyle-rewardsInDescriptionModal > div > h3 {
+	flex: 1 1 auto;
+	font-size: 1em;
+	color: var(--severitium-white-text-color);
+	text-transform: uppercase;
+}
+
+/* Quest description modal rewards block reward item count */
+
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .MainQuestComponentStyle-rewardsCommonBlock .MainQuestComponentStyle-rewardsInDescriptionModal > div > span {
+	font-size: 1em;
+	color: var(--severitium-light-gray-text-color);
+}
+
 /* Item description modal navigation button active */
 
-.ItemDescriptionComponentStyle-commonBlockModal > div.TutorialModalComponentStyle-navigationButton:not(.ButtonComponentStyle-disabled) {
+.ItemDescriptionComponentStyle-commonBlockModal > div.TutorialModalComponentStyle-navigationButton:not(.ButtonComponentStyle-disabled),
+.ItemDescriptionComponentStyle-commonBlockModal > div.MainQuestComponentStyle-buttonContainer:not(.ButtonComponentStyle-disabled) {
 	position: relative;
+	width: 100%;
 	bottom: 0;
 	right: 0;
 	margin: 0;
@@ -1367,7 +1492,8 @@
 
 /* Button on hover */
 
-.ItemDescriptionComponentStyle-commonBlockModal > div.TutorialModalComponentStyle-navigationButton:not(.ButtonComponentStyle-disabled):hover {
+.ItemDescriptionComponentStyle-commonBlockModal > div.TutorialModalComponentStyle-navigationButton:not(.ButtonComponentStyle-disabled):hover,
+.ItemDescriptionComponentStyle-commonBlockModal > div.MainQuestComponentStyle-buttonContainer:not(.ButtonComponentStyle-disabled):hover {
 	outline: none;
 	box-shadow: none;
 	background: var(--severitium-green-button-background);
@@ -1376,13 +1502,15 @@
 
 /* Button text */
 
-.ItemDescriptionComponentStyle-commonBlockModal > div.TutorialModalComponentStyle-navigationButton:not(.ButtonComponentStyle-disabled) > span {
+.ItemDescriptionComponentStyle-commonBlockModal > div.TutorialModalComponentStyle-navigationButton:not(.ButtonComponentStyle-disabled) > span,
+.ItemDescriptionComponentStyle-commonBlockModal > div.MainQuestComponentStyle-buttonContainer:not(.ButtonComponentStyle-disabled) > span {
 	color: var(--severitium-green-button-color);
 }
 
 /* Custom button hothey */
 
-.ItemDescriptionComponentStyle-commonBlockModal > div.TutorialModalComponentStyle-navigationButton::after {
+.ItemDescriptionComponentStyle-commonBlockModal:has(.HeadlineComponentStyle-popupHeadlineContent + .HotKey-commonBlockForHotKey) > div.TutorialModalComponentStyle-navigationButton::after,
+.ItemDescriptionComponentStyle-commonBlockModal:has(.HeadlineComponentStyle-popupHeadlineContent + .HotKey-commonBlockForHotKey) > div.MainQuestComponentStyle-buttonContainer::after {
 	content: 'Z';
 	position: absolute;
 	top: 50%;
