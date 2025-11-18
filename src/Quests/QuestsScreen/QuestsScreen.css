@@ -153,6 +153,13 @@
 	border-color: var(--severitium-gray-color);
 }
 
+/* Pressed state for quest solo card */
+
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:active {
+	background-color: var(--severitium-dark-transparent-background3);
+	border-color: var(--severitium-gray-color);
+}
+
 /* Quest completed solo card */
 
 .QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted,
