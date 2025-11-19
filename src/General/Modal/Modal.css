@@ -1354,6 +1354,25 @@
 	color: var(--severitium-main-color);
 }
 
+/* Quest description modal timer block */
+
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .TutorialModalComponentStyle-mediaContainer .MainQuestComponentStyle-timer {
+	padding: 0 .25em;
+	background-color: var(--severitium-main-color);
+	border-radius: var(--severitium-border-radius);
+	border: none;
+	outline: none;
+	box-shadow: none;
+}
+
+/* Quest description modal timer text */
+
+.ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .TutorialModalComponentStyle-mediaContainer .MainQuestComponentStyle-timer > span {
+	font-size: 1.1em;
+	letter-spacing: .05em;
+	color: var(--severitium-white-text-color);
+}
+
 /* Item description modal content inner container */
 
 .ItemDescriptionComponentStyle-commonBlockModal > div.ItemDescriptionComponentStyle-contentModal .TanksPartComponentStyle-contentContainer,
