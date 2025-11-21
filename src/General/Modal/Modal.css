@@ -963,6 +963,15 @@
 	border: var(--severitium-green-button-border-color-hover) solid .1em;
 }
 
+/* Active button */
+
+.UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-buttonOk:active {
+	outline: none !important;
+	box-shadow: none !important;
+	background: var(--severitium-green-button-background) !important;
+	border: var(--severitium-green-button-border-color-hover) solid .1em !important;
+}
+
 /* Button text */
 
 .UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-buttonOk h2,
