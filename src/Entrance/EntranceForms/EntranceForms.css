@@ -1,3 +1,10 @@
+/* Header block and all elements inside it */
+
+.HeaderComponentStyle-linkBar,
+.HeaderComponentStyle-linkBar * {
+	box-sizing: border-box;
+}
+
 /* Links and copyright block on page's bottom */
 
 .HeaderComponentStyle-headerLinkBar .HeaderComponentStyle-commonBlockContentPanel
@@ -135,6 +142,13 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+/* Container form and all elements inside it */
+
+.EntranceComponentStyle-ContainerForm,
+.EntranceComponentStyle-ContainerForm * {
+	box-sizing: border-box;
 }
 
 /* Form inside the container */
@@ -880,16 +894,37 @@ div > .HeaderComponentStyle-messageBody {
 	color: var(--severitium-main-color) !important;
 }
 
+/* License container (after registration) */
+
+.EntranceComponentStyle-ContainerForm .LicenseComponentStyle-container:not(:root):not(:root) {
+	width: auto;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5em;
+}
+
+/* License text block */
+
+.EntranceComponentStyle-ContainerForm .LicenseComponentStyle-container .LicenseComponentStyle-textBlock {
+	width: auto;
+	margin: 0;
+}
+
 /* License text */
 
-.LicenseComponentStyle-textBlock > span {
-	color: var(--severitium-extra-light-gray-color);
+.EntranceComponentStyle-ContainerForm .LicenseComponentStyle-textBlock > span {
+	font-size: 1em;
+	color: var(--severitium-extra-light-gray-text-color);
 }
 
 /* License links */
 
-.LicenseComponentStyle-textBlock a {
+.EntranceComponentStyle-ContainerForm .LicenseComponentStyle-textBlock a {
 	position: relative;
+	font-size: 1em;
 	color: var(--severitium-main-color);
 	text-decoration: none;
 	transition: color .2s ease;
@@ -897,7 +932,7 @@ div > .HeaderComponentStyle-messageBody {
 
 /* License links on hover */
 
-.LicenseComponentStyle-textBlock a:hover {
+.EntranceComponentStyle-ContainerForm .LicenseComponentStyle-textBlock a:hover {
 	color: var(--severitium-white-text-color);
 	text-decoration: none;
 }

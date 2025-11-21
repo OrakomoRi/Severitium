@@ -1,3 +1,9 @@
+/* Header inner container */
+
+.HeaderComponentStyle-linkBar .HeaderComponentStyle-commonBlockContentPanel {
+	padding: 0 2.5em;
+}
+
 /* Entrance icon to links (top-right corner) */
 
 .HeaderComponentStyle-enableIconLinksComponentShowed,
@@ -9,7 +15,7 @@
 	justify-content: center;
 	align-items: center;
 	margin-left: 1.5em;
-	margin-right: 4em;
+	margin-right: 1.5em;
 }
 
 /* Custom icon */
