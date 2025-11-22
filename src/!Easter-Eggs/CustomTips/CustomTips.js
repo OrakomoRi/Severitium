@@ -32,6 +32,7 @@ const detectLanguage = () => {
 
 /**
  * Adds custom Severitium tip to tips.data in localStorage if it doesn't exist
+ * and removes custom tips in other languages
  * 
  * @returns {void}
  */
@@ -49,19 +50,30 @@ const addCustomTip = () => {
 
 		const tipsData = JSON.parse(rawData);
 
-		// Check if tip already exists
+		// Get all custom tip texts (for all languages)
+		const allCustomTips = Object.values(CUSTOM_TIPS);
+
+		// Remove all custom tips except the current language
+		tipsData.data = tipsData.data.filter(tip => {
+			// Keep original game tips
+			if (!allCustomTips.includes(tip.tip)) {
+				return true;
+			}
+			// Keep only current language custom tip
+			return tip.tip === tipText;
+		});
+
+		// Check if current language tip exists
 		const exists = tipsData.data.some(tip => tip.tip === tipText);
 
-		if (exists) {
-			return;
+		if (!exists) {
+			// Add new tip
+			tipsData.data.push({
+				minRank: 1,
+				maxRank: 31,
+				tip: tipText
+			});
 		}
-
-		// Add new tip
-		tipsData.data.push({
-			minRank: 1,
-			maxRank: 31,
-			tip: tipText
-		});
 
 		localStorage.setItem('tips.data', JSON.stringify(tipsData));
 
