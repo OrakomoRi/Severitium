@@ -88,59 +88,21 @@ const addCustomTip = () => {
  * @returns {void}
  */
 const monitorTipsData = () => {
-	let lastTipsCount = 0;
-	
 	// Monitor direct localStorage changes using proxy
 	const originalSetItem = localStorage.setItem;
 	
 	localStorage.setItem = function(key, value) {
-		const result = originalSetItem.apply(this, arguments);
-		
+		// Intercept tips.data writes
 		if (key === 'tips.data') {
 			try {
 				const tipsData = JSON.parse(value);
-				const currentCount = tipsData?.data?.length || 0;
 				
-				// Game reloaded tips if count changed significantly or is non-zero
-				if (currentCount > 0 && currentCount !== lastTipsCount) {
-					lastTipsCount = currentCount;
-					
-					// Add custom tip after game finishes loading tips
-					// Use double rAF to ensure game's code fully completes
-					requestAnimationFrame(() => {
-						requestAnimationFrame(() => {
-							addCustomTip();
-						});
-					});
-				}
-			} catch (e) {
-				// Ignore parse errors
-			}
-		}
-		
-		return result;
-	};
-	
-	// Also intercept getItem to ensure our tip is always included when game reads
-	const originalGetItem = localStorage.getItem;
-	
-	localStorage.getItem = function(key) {
-		const result = originalGetItem.apply(this, arguments);
-		
-		if (key === 'tips.data' && result) {
-			try {
-				const tipsData = JSON.parse(result);
-				const lang = detectLanguage();
-				const tipText = CUSTOM_TIPS[lang] || CUSTOM_TIPS.en;
-				
-				// Check if custom tip exists
-				const exists = tipsData.data?.some(tip => tip.tip === tipText);
-				
-				// If not, add it silently and return modified data
-				if (!exists && tipsData.data) {
+				if (tipsData?.data?.length > 0) {
+					const lang = detectLanguage();
+					const tipText = CUSTOM_TIPS[lang] || CUSTOM_TIPS.en;
 					const allCustomTips = Object.values(CUSTOM_TIPS);
 					
-					// Remove old language tips
+					// Remove all custom tips from other languages
 					tipsData.data = tipsData.data.filter(tip => !allCustomTips.includes(tip.tip));
 					
 					// Add current language tip
@@ -150,14 +112,15 @@ const monitorTipsData = () => {
 						tip: tipText
 					});
 					
-					return JSON.stringify(tipsData);
+					// Write modified data
+					value = JSON.stringify(tipsData);
 				}
 			} catch (e) {
-				// If parsing fails, return original
+				console.error('Failed to modify tips:', e);
 			}
 		}
 		
-		return result;
+		return originalSetItem.apply(this, arguments);
 	};
 };
 
