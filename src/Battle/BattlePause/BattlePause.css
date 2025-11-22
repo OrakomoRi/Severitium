@@ -193,6 +193,12 @@
 	transition: background-color .2s ease;
 }
 
+/* Pause disabled buttons */
+
+.BattlePauseMenuComponentStyle-disabledButton {
+	pointer-events: none;
+}
+
 /* Pause enabled buttons on hover (except leave red button) */
 
 .BattlePauseMenuComponentStyle-enabledButton.BattlePauseMenuComponentStyle-menuButton:hover {
@@ -231,17 +237,6 @@
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .1em;
 	border-radius: var(--severitium-border-radius);
-}
-
-/* Pause disabled buttons on hover */
-
-.BattlePauseMenuComponentStyle-disabledButton:hover {
-	pointer-events: none;
-	background: none;
-	background-color: transparent;
-	border: none;
-	outline: none;
-	box-shadow: none;
 }
 
 /* Pause buttons' texts */
