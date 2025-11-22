@@ -82,5 +82,35 @@ const addCustomTip = () => {
 	}
 };
 
-// Execute once
-addCustomTip();
+/**
+ * Monitors localStorage for changes to tips.data and re-adds custom tip if needed
+ * 
+ * @returns {void}
+ */
+const monitorTipsData = () => {
+	// Run initially
+	addCustomTip();
+
+	// Monitor storage events (changes from other tabs/windows)
+	window.addEventListener('storage', (e) => {
+		if (e.key === 'tips.data') {
+			addCustomTip();
+		}
+	});
+
+	// Monitor direct localStorage changes using proxy
+	const originalSetItem = localStorage.setItem;
+	localStorage.setItem = function(key, value) {
+		const result = originalSetItem.apply(this, arguments);
+		
+		if (key === 'tips.data') {
+			// Use setTimeout to run after game's code finishes
+			setTimeout(() => addCustomTip(), 0);
+		}
+		
+		return result;
+	};
+};
+
+// Start monitoring
+monitorTipsData();
