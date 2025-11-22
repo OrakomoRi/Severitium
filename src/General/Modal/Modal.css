@@ -1,6 +1,6 @@
-/* Fade in from right animation */
+/* Fade in from bottom animation */
 
-@keyframes fadeInUp {
+@keyframes fadeInUpModal {
 	from {
 		opacity: 0;
 		transform: translate3d(0, 100%, 0);
@@ -14,7 +14,7 @@
 
 /* Modal overlay */
 
-.ModalStyle-rootHover,
+.ModalStyle-rootHover:not(:has(.Common-spinner)),
 .ModalStyle-root {
 	position: absolute;
 	top: 0;
@@ -1134,8 +1134,8 @@
 	border-left: .1em solid var(--severitium-gray-color);
 	box-shadow: none;
 	border-radius: 0;
-	-webkit-animation: fadeInUp .3s ease;
-			animation: fadeInUp .3s ease;
+	-webkit-animation: fadeInUpModal .3s ease;
+			animation: fadeInUpModal .3s ease;
 }
 
 /* All direct childs inside the modal content container */
@@ -1281,8 +1281,8 @@
 	border-left: .1em solid var(--severitium-gray-color);
 	box-shadow: none;
 	border-radius: 0;
-	-webkit-animation: fadeInUp .3s ease;
-			animation: fadeInUp .3s ease;
+	-webkit-animation: fadeInUpModal .3s ease;
+			animation: fadeInUpModal .3s ease;
 }
 
 /* All direct childs inside the modal content container */
