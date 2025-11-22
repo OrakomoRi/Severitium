@@ -14,6 +14,7 @@ The lobby is one of the most important screens in the game. It should be elegant
 - [Chat window](/src/Lobby/ChatWindow/README.md)
 - [Footer menu](/src/Lobby/FooterMenu/README.md)
 - [Main menu](/src/Lobby/MainMenu/README.md)
+- [Newbie screens](/src/Lobby/NewbieScreens/README.md)
 - [Matchmaiking waiting block](/src/Lobby/MatchmakingWaitBlock/README.md)
 - [News window](/src/Lobby/NewsWindow/README.md)
 - [Play button](/src/Lobby/PlayButton/README.md)
