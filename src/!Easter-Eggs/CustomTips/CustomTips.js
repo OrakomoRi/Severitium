@@ -88,24 +88,73 @@ const addCustomTip = () => {
  * @returns {void}
  */
 const monitorTipsData = () => {
-	// Run initially
-	addCustomTip();
-
-	// Monitor storage events (changes from other tabs/windows)
-	window.addEventListener('storage', (e) => {
-		if (e.key === 'tips.data') {
-			addCustomTip();
-		}
-	});
-
+	let lastTipsCount = 0;
+	
 	// Monitor direct localStorage changes using proxy
 	const originalSetItem = localStorage.setItem;
+	
 	localStorage.setItem = function(key, value) {
 		const result = originalSetItem.apply(this, arguments);
 		
 		if (key === 'tips.data') {
-			// Use setTimeout to run after game's code finishes
-			setTimeout(() => addCustomTip(), 0);
+			try {
+				const tipsData = JSON.parse(value);
+				const currentCount = tipsData?.data?.length || 0;
+				
+				// Game reloaded tips if count changed significantly or is non-zero
+				if (currentCount > 0 && currentCount !== lastTipsCount) {
+					lastTipsCount = currentCount;
+					
+					// Add custom tip after game finishes loading tips
+					// Use double rAF to ensure game's code fully completes
+					requestAnimationFrame(() => {
+						requestAnimationFrame(() => {
+							addCustomTip();
+						});
+					});
+				}
+			} catch (e) {
+				// Ignore parse errors
+			}
+		}
+		
+		return result;
+	};
+	
+	// Also intercept getItem to ensure our tip is always included when game reads
+	const originalGetItem = localStorage.getItem;
+	
+	localStorage.getItem = function(key) {
+		const result = originalGetItem.apply(this, arguments);
+		
+		if (key === 'tips.data' && result) {
+			try {
+				const tipsData = JSON.parse(result);
+				const lang = detectLanguage();
+				const tipText = CUSTOM_TIPS[lang] || CUSTOM_TIPS.en;
+				
+				// Check if custom tip exists
+				const exists = tipsData.data?.some(tip => tip.tip === tipText);
+				
+				// If not, add it silently and return modified data
+				if (!exists && tipsData.data) {
+					const allCustomTips = Object.values(CUSTOM_TIPS);
+					
+					// Remove old language tips
+					tipsData.data = tipsData.data.filter(tip => !allCustomTips.includes(tip.tip));
+					
+					// Add current language tip
+					tipsData.data.push({
+						minRank: 1,
+						maxRank: 31,
+						tip: tipText
+					});
+					
+					return JSON.stringify(tipsData);
+				}
+			} catch (e) {
+				// If parsing fails, return original
+			}
 		}
 		
 		return result;
