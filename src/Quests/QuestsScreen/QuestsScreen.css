@@ -175,6 +175,14 @@
 	border-color: var(--severitium-green-button-border-color-hover);
 }
 
+/* Pressed state for quest completed solo card */
+
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted:active,
+.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven:active {
+	background-color: var(--severitium-green-button-background) !important;
+	border-color: var(--severitium-green-button-border-color) !important;
+}
+
 /* Quest completed solo card original icon */
 
 .QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven > img {
@@ -257,6 +265,13 @@
 	border-color: var(--severitium-gray-color);
 }
 
+/* Pressed state for quest solo line */
+
+.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div:active {
+	background-color: var(--severitium-dark-transparent-background3) !important;
+	border-color: var(--severitium-gray-color) !important;
+}
+
 /* Quest completed solo line */
 
 .QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable {
@@ -268,6 +283,13 @@
 
 .QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable:hover {
 	border-color: var(--severitium-green-button-border-color-hover);
+}
+
+/* Pressed state for quest completed solo line */
+
+.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable:active {
+	background-color: var(--severitium-green-button-background) !important;
+	border-color: var(--severitium-green-button-border-color) !important;
 }
 
 /* Quest completed solo line icon block */
