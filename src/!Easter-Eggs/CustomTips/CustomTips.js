@@ -1,170 +1,182 @@
-/**
- * Custom tips text for different languages
- * @type {Object.<string, string>}
- */
-const CUSTOM_TIPS = {
-	en: "Thanks for using Severitium! <3",
-	ru: "Спасибо за использование Severitium! <3",
-	uk: "Дякуємо за використання Severitium! <3",
-	nl: "Bedankt voor het gebruik van Severitium! <3",
-	pl: "Dziękujemy za korzystanie z Severitium! <3",
-	pt: "Obrigado por usar Severitium! <3",
-	de: "Danke, dass du Severitium benutzt! <3",
-	ja: "Severitiumをご利用いただきありがとうございます！<3",
-	es: "¡Gracias por usar Severitium! <3",
-	fr: "Merci d'utiliser Severitium ! <3"
-};
+(() => {
+	'use strict';
 
-/**
- * Detects the language from URL params, localStorage or browser settings
- * 
- * @returns {string} ISO-639-1 language code
- */
-const detectLanguage = () => {
-	const urlLang = new URLSearchParams(document.location.search).get('locale');
-	if (urlLang) return urlLang.toLowerCase();
+	// Constants
+	const STORAGE_KEY = 'tips.data';
+	const ACCOUNT_SELECTOR = '.MainScreenComponentStyle-containerPanel .UserInfoContainerStyle-blockForIconTankiOnline';
+	const CHECK_INTERVAL = 500; // ms
+	const RANK_RANGE = { min: 1, max: 31 };
 
-	const storedLang = localStorage.getItem('language_store_key');
-	if (storedLang) return storedLang.toLowerCase();
+	/**
+	 * Custom tips text for different languages
+	 * @type {Object.<string, string>}
+	 */
+	const CUSTOM_TIPS = {
+		en: "Thanks for using Severitium! <3",
+		ru: "Спасибо за использование Severitium! <3",
+		uk: "Дякуємо за використання Severitium! <3",
+		nl: "Bedankt voor het gebruik van Severitium! <3",
+		pl: "Dziękujemy za korzystanie z Severitium! <3",
+		pt: "Obrigado por usar Severitium! <3",
+		de: "Danke, dass du Severitium benutzt! <3",
+		ja: "Severitiumをご利用いただきありがとうございます！<3",
+		es: "¡Gracias por usar Severitium! <3",
+		fr: "Merci d'utiliser Severitium ! <3"
+	};
 
-	return navigator.language.split('-')[0].toLowerCase();
-};
+	// Cache custom tips values to avoid repeated Object.values calls
+	const ALL_CUSTOM_TIPS = Object.values(CUSTOM_TIPS);
 
-/**
- * Adds custom Severitium tip to tips.data in localStorage if it doesn't exist
- * and removes custom tips in other languages
- * 
- * @returns {void}
- */
-const addCustomTip = () => {
-	const lang = detectLanguage();
-	const tipText = CUSTOM_TIPS[lang] || CUSTOM_TIPS.en;
+	/**
+	 * Detects the current language from URL params, localStorage or browser settings
+	 * @returns {string} ISO-639-1 language code
+	 */
+	const detectLanguage = () => {
+		const urlLang = new URLSearchParams(window.location.search).get('locale');
+		if (urlLang) return urlLang.toLowerCase();
 
-	try {
-		const rawData = localStorage.getItem('tips.data');
+		const storedLang = localStorage.getItem('language_store_key');
+		if (storedLang) return storedLang.toLowerCase();
 
-		if (!rawData) {
-			console.warn('tips.data not found in localStorage');
-			return;
-		}
+		return navigator.language.split('-')[0].toLowerCase();
+	};
 
-		const tipsData = JSON.parse(rawData);
+	/**
+	 * Modifies tips data by removing old language tips and adding current language tip
+	 * @param {Object} tipsData - The tips data object
+	 * @returns {boolean} True if data was modified, false otherwise
+	 */
+	const modifyTipsData = (tipsData) => {
+		if (!tipsData?.data?.length) return false;
 
-		// Get all custom tip texts (for all languages)
-		const allCustomTips = Object.values(CUSTOM_TIPS);
-
-		// Remove all custom tips except the current language
-		tipsData.data = tipsData.data.filter(tip => {
-			// Keep original game tips
-			if (!allCustomTips.includes(tip.tip)) {
-				return true;
-			}
-			// Keep only current language custom tip
-			return tip.tip === tipText;
-		});
+		const lang = detectLanguage();
+		const tipText = CUSTOM_TIPS[lang] || CUSTOM_TIPS.en;
 
 		// Check if current language tip exists
-		const exists = tipsData.data.some(tip => tip.tip === tipText);
+		const hasCurrentTip = tipsData.data.some(tip => tip.tip === tipText);
 
-		if (!exists) {
-			// Add new tip
-			tipsData.data.push({
-				minRank: 1,
-				maxRank: 31,
-				tip: tipText
+		// Check if other language tips exist
+		const hasOtherTips = tipsData.data.some(tip =>
+			ALL_CUSTOM_TIPS.includes(tip.tip) && tip.tip !== tipText
+		);
+
+		// No changes needed
+		if (hasCurrentTip && !hasOtherTips) return false;
+
+		// Remove all custom tips from other languages
+		tipsData.data = tipsData.data.filter(tip => !ALL_CUSTOM_TIPS.includes(tip.tip));
+
+		// Add current language tip
+		tipsData.data.push({
+			minRank: RANK_RANGE.min,
+			maxRank: RANK_RANGE.max,
+			tip: tipText
+		});
+
+		return true;
+	};
+
+	/**
+	 * Reads, modifies and writes tips data to localStorage
+	 * @returns {boolean} True if successful, false otherwise
+	 */
+	const updateTipsInStorage = () => {
+		try {
+			const rawData = localStorage.getItem(STORAGE_KEY);
+			if (!rawData) return false;
+
+			const tipsData = JSON.parse(rawData);
+			const modified = modifyTipsData(tipsData);
+
+			if (modified) {
+				localStorage.setItem(STORAGE_KEY, JSON.stringify(tipsData));
+			}
+
+			return true;
+		} catch (error) {
+			return false;
+		}
+	};
+
+	/**
+	 * Initializes monitoring for tips.data changes
+	 */
+	const initializeMonitoring = () => {
+		let rafId = null;
+		let lastValue = localStorage.getItem(STORAGE_KEY);
+		let lastCheck = 0;
+
+		/**
+		 * Stops all active monitoring
+		 */
+		const stopMonitoring = () => {
+			if (rafId !== null) {
+				cancelAnimationFrame(rafId);
+				rafId = null;
+			}
+		};
+
+		/**
+		 * RAF-based external change detection
+		 * @param {DOMHighResTimeStamp} timestamp - Current timestamp
+		 */
+		const checkExternalChanges = (timestamp) => {
+			if (timestamp - lastCheck >= CHECK_INTERVAL) {
+				const current = localStorage.getItem(STORAGE_KEY);
+				if (current !== lastValue) {
+					lastValue = current;
+					updateTipsInStorage();
+				}
+				lastCheck = timestamp;
+			}
+			rafId = requestAnimationFrame(checkExternalChanges);
+		};
+
+		// Initial check on page load
+		updateTipsInStorage();
+
+		// Start RAF monitoring for external changes
+		rafId = requestAnimationFrame(checkExternalChanges);
+
+		// Monitor for account login completion
+		const accountObserver = new MutationObserver((mutations, observer) => {
+			if (document.querySelector(ACCOUNT_SELECTOR)) {
+				updateTipsInStorage();
+				stopMonitoring();
+				observer.disconnect();
+			}
+		});
+
+		// Observe only if body exists, otherwise wait for DOMContentLoaded
+		if (document.body) {
+			accountObserver.observe(document.body, {
+				childList: true,
+				subtree: true
 			});
 		}
 
-		localStorage.setItem('tips.data', JSON.stringify(tipsData));
+		// Intercept localStorage.setItem for immediate detection
+		const originalSetItem = localStorage.setItem;
 
-	} catch (error) {
-		console.error('Failed to add custom tip:', error);
-	}
-};
-
-/**
- * Monitors localStorage for changes to tips.data and re-adds custom tip if needed
- * 
- * @returns {void}
- */
-const monitorTipsData = () => {
-	// Check and add custom tip on page load
-	const checkAndAddTip = () => {
-		const rawData = localStorage.getItem('tips.data');
-		if (rawData) {
-			try {
-				const tipsData = JSON.parse(rawData);
-				if (tipsData?.data?.length > 0) {
-					const lang = detectLanguage();
-					const tipText = CUSTOM_TIPS[lang] || CUSTOM_TIPS.en;
-					const allCustomTips = Object.values(CUSTOM_TIPS);
-					
-					// Check if current language tip exists
-					const exists = tipsData.data.some(tip => tip.tip === tipText);
-					
-					// If doesn't exist or other language tips present, fix it
-					const hasOtherLanguages = tipsData.data.some(tip => 
-						allCustomTips.includes(tip.tip) && tip.tip !== tipText
-					);
-					
-					if (!exists || hasOtherLanguages) {
-						// Remove all custom tips from other languages
-						tipsData.data = tipsData.data.filter(tip => !allCustomTips.includes(tip.tip));
-						
-						// Add current language tip
-						tipsData.data.push({
-							minRank: 1,
-							maxRank: 31,
-							tip: tipText
-						});
-						
-						localStorage.setItem('tips.data', JSON.stringify(tipsData));
+		localStorage.setItem = function (key, value) {
+			if (key === STORAGE_KEY) {
+				try {
+					const tipsData = JSON.parse(value);
+					if (modifyTipsData(tipsData)) {
+						value = JSON.stringify(tipsData);
 					}
+					lastValue = value;
+				} catch (error) {
+					// Silently handle errors
 				}
-			} catch (e) {
-				console.error('Failed to check tips:', e);
-			}
-		}
+			} return originalSetItem.call(this, key, value);
+		};
 	};
-	
-	// Run on page load
-	checkAndAddTip();
-	
-	// Monitor direct localStorage changes using proxy
-	const originalSetItem = localStorage.setItem;
-	
-	localStorage.setItem = function(key, value) {
-		// Intercept tips.data writes
-		if (key === 'tips.data') {
-			try {
-				const tipsData = JSON.parse(value);
-				
-				if (tipsData?.data?.length > 0) {
-					const lang = detectLanguage();
-					const tipText = CUSTOM_TIPS[lang] || CUSTOM_TIPS.en;
-					const allCustomTips = Object.values(CUSTOM_TIPS);
-					
-					// Remove all custom tips from other languages
-					tipsData.data = tipsData.data.filter(tip => !allCustomTips.includes(tip.tip));
-					
-					// Add current language tip
-					tipsData.data.push({
-						minRank: 1,
-						maxRank: 31,
-						tip: tipText
-					});
-					
-					// Write modified data
-					value = JSON.stringify(tipsData);
-				}
-			} catch (e) {
-				console.error('Failed to modify tips:', e);
-			}
-		}
-		
-		return originalSetItem.apply(this, arguments);
-	};
-};
 
-// Start monitoring
-monitorTipsData();
+	// Initialize when DOM is ready
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initializeMonitoring, { once: true });
+	} else {
+		initializeMonitoring();
+	}
+})();
