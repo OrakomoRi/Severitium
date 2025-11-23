@@ -181,14 +181,16 @@ svg.severitium-link-rects rect {
 	-webkit-mask-repeat: no-repeat;
 			mask-repeat: no-repeat;
 	background-image: none;
-	filter: none;
+	-webkit-filter: none;
+	        filter: none;
 	transition: background-color .2s ease;
 }
 
 /* Close icon (top-right) on hover */
 
 .HeaderComponentStyle-iconCloseLinks:hover {
-	filter: none;
+	-webkit-filter: none;
+	        filter: none;
 	background-image: none;
 	background-color: var(--severitium-red-color);
 }

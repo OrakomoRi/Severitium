@@ -1,15 +1,38 @@
 /* Fade in from bottom animation */
 
-@keyframes fadeInUpModal {
+@-webkit-keyframes fadeInUpModal {
 	from {
 		opacity: 0;
-		transform: translate3d(0, 100%, 0);
+		-webkit-transform: translate3d(0, 100%, 0);
+		        transform: translate3d(0, 100%, 0);
 	}
 
 	to {
 		opacity: 1;
-		transform: translate3d(0, 0, 0);
+		-webkit-transform: translate3d(0, 0, 0);
+		        transform: translate3d(0, 0, 0);
 	}
+}
+
+@keyframes fadeInUpModal {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		        transform: translate3d(0, 100%, 0);
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		        transform: translate3d(0, 0, 0);
+	}
+}
+
+/* Modal root container and all elements inside */
+
+#modal-root,
+#modal-root * {
+	box-sizing: border-box;
 }
 
 /* Modal overlay */
@@ -1172,7 +1195,8 @@
 .TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-mediaContainer > *[src*='tutorial_empty'i],
 .TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-mediaContainer > *[src*='tutorial-empty'i],
 .TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-mediaContainer > *[src*='imgmodal.'i] {
-	filter: grayscale(1);
+	-webkit-filter: grayscale(1);
+	        filter: grayscale(1);
 }
 
 /* Tutorial modal content container */
@@ -1212,6 +1236,8 @@
 /* Tutorial modal navigation pages numbers */
 
 .TutorialModalComponentStyle-contentWrapper > div.TutorialModalComponentStyle-navigationContainer .TutorialModalComponentStyle-navigationPages {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
 	font-size: 1.25em;
 	color: var(--severitium-light-gray-text-color);
@@ -1354,7 +1380,8 @@
 .ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .TutorialModalComponentStyle-mediaContainer > *[src*='tutorial_empty'i],
 .ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .TutorialModalComponentStyle-mediaContainer > *[src*='tutorial-empty'i],
 .ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .TutorialModalComponentStyle-mediaContainer > *[src*='imgmodal.'i] {
-	filter: grayscale(1);
+	-webkit-filter: grayscale(1);
+	        filter: grayscale(1);
 }
 
 /* Quest description modal objective counter */
@@ -1556,4 +1583,171 @@
 	min-width: auto;
 	max-width: none;
 	padding: .1em .2em;
+}
+
+/* RANKUP MODAL */
+
+/* Rankup modal container */
+
+.ModalStyle-rootHover > div.RankupComponentStyle-wrapper {
+	position: relative;
+	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	min-height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+	padding: 1.5em 0;
+	margin: 0;
+	border-radius: 0;
+	border-left: none;
+	border-right: none;
+	overflow: hidden;
+}
+
+/* Container pseudo-element for animation */
+
+.ModalStyle-rootHover > div.RankupComponentStyle-wrapper::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	background: none;
+	background-color: var(--severitium-gray-color);
+	-webkit-mask-position: center center;
+	        mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+	        mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+	        mask-size: contain;
+	-webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-500 -500 1000 1000" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><radialGradient id="a" cx="0" cy="0" r="500" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="currentColor"/><stop offset=".5" stop-color="currentColor" stop-opacity=".4"/><stop offset=".8" stop-color="currentColor" stop-opacity="0"/></radialGradient></defs><g fill="url(%23a)"><path id="b" d="M-100-500 0 0l100-500z"/><use href="%23b"/><use href="%23b" transform="rotate(45)"/><use href="%23b" transform="rotate(90)"/><use href="%23b" transform="rotate(135)"/><use href="%23b" transform="rotate(180)"/><use href="%23b" transform="rotate(225)"/><use href="%23b" transform="rotate(270)"/><use href="%23b" transform="rotate(315)"/></g></svg>');
+	        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-500 -500 1000 1000" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><radialGradient id="a" cx="0" cy="0" r="500" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="currentColor"/><stop offset=".5" stop-color="currentColor" stop-opacity=".4"/><stop offset=".8" stop-color="currentColor" stop-opacity="0"/></radialGradient></defs><g fill="url(%23a)"><path id="b" d="M-100-500 0 0l100-500z"/><use href="%23b"/><use href="%23b" transform="rotate(45)"/><use href="%23b" transform="rotate(90)"/><use href="%23b" transform="rotate(135)"/><use href="%23b" transform="rotate(180)"/><use href="%23b" transform="rotate(225)"/><use href="%23b" transform="rotate(270)"/><use href="%23b" transform="rotate(315)"/></g></svg>');
+	z-index: -1;
+	opacity: .25;
+	-webkit-animation: rotateRankup 10s linear infinite;
+	        animation: rotateRankup 10s linear infinite;
+}
+
+/* Rankup modal animation */
+
+@-webkit-keyframes rotateRankup {
+	0% {
+		-webkit-transform: translate(-50%, -50%) rotate(0deg);
+				transform: translate(-50%, -50%) rotate(0deg);
+	}
+	100% {
+		-webkit-transform: translate(-50%, -50%) rotate(360deg);
+				transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
+@keyframes rotateRankup {
+	0% {
+		-webkit-transform: translate(-50%, -50%) rotate(0deg);
+				transform: translate(-50%, -50%) rotate(0deg);
+	}
+	100% {
+		-webkit-transform: translate(-50%, -50%) rotate(360deg);
+				transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
+/* Rankup modal title */
+
+.RankupComponentStyle-wrapper .RankupComponentStyle-title {
+	position: relative;
+	top: auto;
+	left: auto;
+	right: auto;
+	bottom: auto;
+	padding: 0;
+	margin: 0;
+	font-size: 2.25em;
+	color: var(--severitium-white-text-color);
+	text-transform: uppercase;
+	letter-spacing: .05em;
+}
+
+/* Rankup modal content container */
+
+.RankupComponentStyle-wrapper .RankupRewardComponentStyle-rankWrapper {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+	padding: 0;
+	margin: 0;
+}
+
+/* Rankup modal content label */
+
+.RankupComponentStyle-wrapper .RankupRewardComponentStyle-rankWrapper .RankupRewardComponentStyle-rankName {
+	font-size: 1.125em;
+	color: var(--severitium-white-text-color);
+	text-transform: uppercase;
+	padding: 0;
+	margin: 0;
+}
+
+/* Rankup modal original animation image */
+
+.RankupComponentStyle-wrapper .RankupRewardComponentStyle-rankWrapper img[src*='animationrank'i] {
+	display: none;
+}
+
+/* Rankup modal rank image */
+
+.RankupComponentStyle-wrapper .RankupRewardComponentStyle-rankWrapper .RankupRewardComponentStyle-rankPreview {
+	padding: 0;
+	margin: 0;
+}
+
+/* Rankup modal button container */
+
+.RankupComponentStyle-wrapper .RankupRewardComponentStyle-rankWrapper .RankupRewardComponentStyle-buttonNext {
+	background: none;
+	box-shadow: none;
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	margin: 0;
+}
+
+/* Rankup modal button */
+
+.RankupComponentStyle-wrapper .RankupRewardComponentStyle-rankWrapper .RankupRewardComponentStyle-buttonNext > div.RankupRewardComponentStyle-buttonNext {
+	background: none;
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background-color: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.RankupComponentStyle-wrapper .RankupRewardComponentStyle-rankWrapper .RankupRewardComponentStyle-buttonNext > div.RankupRewardComponentStyle-buttonNext:hover {
+	background-color: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.RankupComponentStyle-wrapper .RankupRewardComponentStyle-rankWrapper .RankupRewardComponentStyle-buttonNext > div.RankupRewardComponentStyle-buttonNext h2 {
+	color: var(--severitium-green-button-color);
+	text-transform: uppercase;
+	font-size: 1em;
+	margin: 0;
 }

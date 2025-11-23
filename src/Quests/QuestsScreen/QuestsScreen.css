@@ -180,7 +180,7 @@
 .QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted:active,
 .QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven:active {
 	background-color: var(--severitium-green-button-background) !important;
-	border-color: var(--severitium-green-button-border-color) !important;
+	border-color: var(--severitium-green-button-border-color-hover) !important;
 }
 
 /* Quest completed solo card original icon */
@@ -289,7 +289,7 @@
 
 .QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable:active {
 	background-color: var(--severitium-green-button-background) !important;
-	border-color: var(--severitium-green-button-border-color) !important;
+	border-color: var(--severitium-green-button-border-color-hover) !important;
 }
 
 /* Quest completed solo line icon block */

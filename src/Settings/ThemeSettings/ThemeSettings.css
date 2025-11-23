@@ -41,6 +41,8 @@
 }
 
 .SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-textHeadlineOptions {
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
 	height: fit-content;
 	font-size: 1.25em;
 	color: var(--severitium-white-color);
@@ -275,7 +277,9 @@
 
 .SettingsComponentStyle-blockContentOptions .ThemeSettingsComponentStyle-input[data-input-type='color'] {
 	cursor: pointer;
-	user-select: none;
+	-webkit-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 }
 
 /* Theme settings tab and all elements inside it */
@@ -541,7 +545,9 @@ span.ThemeModalComponentStyle-highlightedText {
 
 .ThemeSettingsComponentStyle-variableGrid {
 	width: 100%;
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 1fr 1em 1fr;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 1em;
 	margin-top: 1em;
@@ -575,7 +581,8 @@ span.ThemeModalComponentStyle-highlightedText {
 	position: absolute;
 	right: .75em;
 	top: 50%;
-	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
 	font-family: BaseFontRegular, FallbackFontRegular;
 	color: var(--severitium-light-gray-text-color);
 	pointer-events: none;

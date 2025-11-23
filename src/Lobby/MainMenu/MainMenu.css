@@ -75,7 +75,7 @@
 	background-color: var(--severitium-white-text-color);
 }
 
-/* Divs inside hovered button element */
+/* Blocks inside hovered button element */
 
 .MainScreenComponentStyle-blockMainMenu > ul > li:hover div:not([class*='itemli'i]) {
 	background: none;

@@ -460,7 +460,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	align-self: center;
+	-ms-grid-row-align: center;
+	    align-self: center;
 	position: absolute;
 	margin: auto;
 	inset: 0;
@@ -498,7 +499,11 @@
 /* Top title info icon */
 
 .BreadcrumbsComponentStyle-breadcrumbs .BreadcrumbsComponentStyle-rootTitle > div {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
 	height: fit-content;
 	aspect-ratio: 1 / 1;
 	position: relative;
