@@ -88,6 +88,48 @@ const addCustomTip = () => {
  * @returns {void}
  */
 const monitorTipsData = () => {
+	// Check and add custom tip on page load
+	const checkAndAddTip = () => {
+		const rawData = localStorage.getItem('tips.data');
+		if (rawData) {
+			try {
+				const tipsData = JSON.parse(rawData);
+				if (tipsData?.data?.length > 0) {
+					const lang = detectLanguage();
+					const tipText = CUSTOM_TIPS[lang] || CUSTOM_TIPS.en;
+					const allCustomTips = Object.values(CUSTOM_TIPS);
+					
+					// Check if current language tip exists
+					const exists = tipsData.data.some(tip => tip.tip === tipText);
+					
+					// If doesn't exist or other language tips present, fix it
+					const hasOtherLanguages = tipsData.data.some(tip => 
+						allCustomTips.includes(tip.tip) && tip.tip !== tipText
+					);
+					
+					if (!exists || hasOtherLanguages) {
+						// Remove all custom tips from other languages
+						tipsData.data = tipsData.data.filter(tip => !allCustomTips.includes(tip.tip));
+						
+						// Add current language tip
+						tipsData.data.push({
+							minRank: 1,
+							maxRank: 31,
+							tip: tipText
+						});
+						
+						localStorage.setItem('tips.data', JSON.stringify(tipsData));
+					}
+				}
+			} catch (e) {
+				console.error('Failed to check tips:', e);
+			}
+		}
+	};
+	
+	// Run on page load
+	checkAndAddTip();
+	
 	// Monitor direct localStorage changes using proxy
 	const originalSetItem = localStorage.setItem;
 	
