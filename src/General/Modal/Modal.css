@@ -1562,7 +1562,38 @@
 	color: var(--severitium-green-button-color);
 }
 
-/* Custom button hothey */
+/* Quest description modal unlock button */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div.MainQuestComponentStyle-containerButtonStore:not(.ButtonComponentStyle-disabled) {
+	position: relative;
+	width: 100%;
+	bottom: 0;
+	right: 0;
+	margin: 0;
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-gold-button-background);
+	border: var(--severitium-gold-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div.MainQuestComponentStyle-containerButtonStore:not(.ButtonComponentStyle-disabled):hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-gold-button-background);
+	border: var(--severitium-gold-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div.MainQuestComponentStyle-containerButtonStore:not(.ButtonComponentStyle-disabled) > span {
+	color: var(--severitium-gold-button-color);
+}
+
+/* Custom button hotkey */
 
 .ItemDescriptionComponentStyle-commonBlockModal:has(.HeadlineComponentStyle-popupHeadlineContent + .HotKey-commonBlockForHotKey) > div.TutorialModalComponentStyle-navigationButton::after,
 .ItemDescriptionComponentStyle-commonBlockModal:has(.HeadlineComponentStyle-popupHeadlineContent + .HotKey-commonBlockForHotKey) > div.MainQuestComponentStyle-buttonContainer::after {
