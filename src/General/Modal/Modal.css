@@ -356,12 +356,55 @@
 	color: var(--severitium-main-color);
 }
 
-/* Premium modal */
+/* PREMIUM MODAL */
+
+/* Title of premium modal */
+
+.ModalStyle-rootHover .DialogPremiumAccountStyle-title {
+	height: auto;
+}
+
+/* Header text */
+
+.ModalStyle-rootHover .DialogPremiumAccountStyle-title > .DialogPremiumAccountStyle-header {
+	font-size: 1.5em;
+	font-family: BaseFontMedium, FallbackFontMedium;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+	color: var(--severitium-white-text-color);
+}
+
+/* No-premium sub-header */
+
+.ModalStyle-rootHover .DialogPremiumAccountStyle-title > .DialogPremiumAccountStyle-noPremium {
+	font-size: 1.25em;
+	font-family: BaseFontMedium, FallbackFontMedium;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: .025em;
+	color: var(--severitium-gold-text-color);
+}
 
 /* Text under premium icon */
 
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) img[src*='iconpremium'i] + span {
 	color: var(--severitium-gold-text-color);
+}
+
+/* Single benefit container */
+
+.ModalStyle-rootHover .UserInfoContainerStyle-premiumBenefitsContainer {
+	height: auto;
+	padding: .5em 0;
+	border: none;
+	border-radius: 0;
+}
+
+/* Single benefit containers except the last one */
+
+.ModalStyle-rootHover .UserInfoContainerStyle-premiumBenefitsContainer:not(:last-of-type) {
+	border-bottom: .1em solid var(--severitium-gray-color);
 }
 
 /* Benefits percents inside the premium modal */
@@ -422,7 +465,7 @@
 	aspect-ratio: 1 / 1;
 	padding: 1em;
 	background: none;
-	background-color: var(--severitium-light-transparent-background2);
+	background-color: var(--severitium-dark-transparent-background3);
 	border-radius: var(--severitium-border-radius);
 	border: none;
 }
