@@ -14,15 +14,14 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-left: 1.5em;
-	margin-right: 1.5em;
+	margin: 0;
+	margin-left: .5em;
 }
 
 /* Custom icon */
 
 svg.severitium-link-rects {
 	fill: var(--severitium-extra-light-gray-color);
-	padding: .5em;
 	width: 2rem;
 }
 
