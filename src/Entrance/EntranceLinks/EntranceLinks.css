@@ -201,6 +201,6 @@ svg.severitium-link-rects rect {
 	background-image: none;
 	width: 2em;
 	height: 2em;
-	margin-left: 1.5em;
-	margin-right: 4em;
+	margin: 0;
+	margin-left: 1em;
 }
