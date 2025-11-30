@@ -133,6 +133,15 @@
 	color: var(--severitium-extra-light-gray-text-color);
 }
 
+/* Large card "sold" block */
+
+.LargeSingleCardComponentStyle-commonBlock .ShowcaseItemComponentStyle-disabledReason {
+	background: none;
+	border-radius: var(--severitium-border-radius);
+	background-color: var(--severitium-red-color);
+	color: var(--severitium-white-color);
+}
+
 /* Limited offers container */
 
 .ShopCategoryOfferSectionStyle-containerLimitOffers {
@@ -285,6 +294,7 @@
 
 .ShopCategoryOfferSectionStyle-containerLimitOffers > div .ShowcaseItemComponentStyle-disabledReason {
 	background: none;
+	border-radius: var(--severitium-border-radius);
 	background-color: var(--severitium-red-color);
 	color: var(--severitium-white-color);
 }
