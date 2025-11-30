@@ -2657,6 +2657,12 @@
       "date": "2025-11-28",
       "comment": "1.8.2+build.62",
       "hash": "0bd34aa5a35db67640c4b94365fec4a70a9f2d0e"
+    },
+    {
+      "version": "1.8.2+build.63",
+      "date": "2025-11-30",
+      "comment": "1.8.2+build.63",
+      "hash": "c227fe676b0bf693c7dc7fb6d48722d07ed375cf"
     }
   ]
 }
