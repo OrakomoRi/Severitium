@@ -1191,11 +1191,11 @@
 .ChallengePurchaseComponentStyle-blockPurchase .ChallengePurchaseComponentStyle-infoPurchase,
 .ChallengePurchaseComponentStyle-blockPurchase .ChallengePurchaseComponentStyle-allLevel {
 	width: auto;
-	height: -webkit-max-content;
-	height: max-content;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	-ms-grid-row-align: stretch;
+	    align-self: stretch;
 	margin: 0;
 	padding: .5em 1em;
 	background-color: var(--severitium-dark-transparent-background4);
