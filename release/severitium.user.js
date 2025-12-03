@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.8.2+build.68
+// @version			1.8.2+build.69
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -576,7 +576,9 @@
 	}
 
 	// Expose minimal API
-	unsafeWindow.reloadSeveritiumResources = reloadResources;
+	unsafeWindow.Severitium = {
+		reloadResources: reloadResources
+	};
 
 	// Custom event listeners
 
