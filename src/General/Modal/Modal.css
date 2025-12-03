@@ -31,7 +31,7 @@
 /* Modal root container and all elements inside */
 
 #modal-root,
-#modal-root:not(:has([class*='salebykitstyle'i])) * {
+#modal-root * {
 	box-sizing: border-box;
 }
 
@@ -1911,4 +1911,217 @@
 	text-transform: uppercase;
 	font-size: 1em;
 	margin: 0;
+}
+
+/* SUPPLIES PURCHASE MODAL */
+
+/* Supplies purchase modal container */
+
+.SaleByKitStyle-commonBlockModal {
+	position: absolute;
+	left: 0;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1em;
+	padding: 1em 2em;
+	background: var(--severitium-dark-transparent-background1);
+	-webkit-backdrop-filter: blur(.5em);
+			backdrop-filter: blur(.5em);
+	outline: none;
+	border: none;
+	border-right: .1em solid var(--severitium-gray-color);
+	box-shadow: none;
+	border-radius: 0;
+	-webkit-animation: fadeInUpModal .3s ease;
+			animation: fadeInUpModal .3s ease;
+}
+
+/* Header container */
+
+.SaleByKitStyle-commonBlockModal .SaleByKitStyle-paddingHeaderModal {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+/* Header text block */
+
+.SaleByKitStyle-commonBlockModal .SaleByKitStyle-paddingHeaderModal .HeadlineComponentStyle-popupHeadlineContent {
+	flex-grow: 1;
+}
+
+/* Header hotkey */
+
+.SaleByKitStyle-commonBlockModal .SaleByKitStyle-paddingHeaderModal .HotKey-commonBlockForHotKey {
+	position: relative;
+	top: auto;
+	left: auto;
+	right: auto;
+	bottom: auto;
+	background: transparent;
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: var(--severitium-border-radius);
+	color: var(--severitium-dark-white-text-color);
+	height: auto;
+	min-height: auto;
+	max-height: none;
+	width: auto;
+	min-width: auto;
+	max-width: none;
+	padding: .1em .2em;
+	margin: 0;
+	margin-right: .75em;
+}
+
+/* Close button */
+
+.SaleByKitStyle-commonBlockModal .SaleByKitStyle-paddingHeaderModal .DialogContainerComponentStyle-imgClose {
+	position: relative;
+	top: auto;
+	left: auto;
+	right: auto;
+	bottom: auto;
+	margin: 0;
+}
+
+/* Content container */
+
+.SaleByKitStyle-commonBlockModal .SaleByKitStyle-paddingHeaderModal + div {
+	width: 100% !important;
+	height: auto !important;
+	flex-grow: 1;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1em;
+	align-items: start;
+}
+
+/* Single card */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard {
+	width: 100%;
+	height: 100%;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	border: .1em solid var(--severitium-gray-color);
+	box-shadow: none;
+	margin: 0;
+	transition: border-color .2s ease, background-color .2s ease;
+}
+
+/* Card on hover */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard:hover {
+	border-color: var(--severitium-extra-light-gray-color);
+}
+
+/* Card on active */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard:active {
+	box-shadow: none;
+	background: none;
+	background-color: var(--severitium-light-transparent-background2);
+	border-color: var(--severitium-extra-light-gray-color);
+}
+
+/* Single card inner containers */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 1em;
+}
+
+/* Item description container */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card:nth-child(2) {
+	position: relative;
+	pointer-events: none;
+}
+
+/* Item amount text */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card h2 {
+	color: var(--severitium-white-text-color);
+}
+
+/* Item description image */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card:nth-child(2) div[class*='backgroundimage'i] {
+	margin: 2em 0;
+}
+
+/* Price block */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card .SaleByKitStyle-blockPrice {
+	top: auto;
+	left: auto;
+	right: auto;
+	bottom: auto;
+	width: 100%;
+	height: auto;
+}
+
+/* Price inner block */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card .SaleByKitStyle-blockPrice > div {
+	margin: 0;
+}
+
+/* Price text for crystals */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card .SaleByKitStyle-blockPrice .GarageItemComponentStyle-itemPriceInCrystals span {
+	color: var(--severitium-crystal-color);
+}
+
+/* Price text for tankoins */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card .SaleByKitStyle-blockPrice .GarageItemComponentStyle-itemPriceInTankoins span {
+	color: var(--severitium-tancoin-color);
+}
+
+/* Price text for rubies */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card .SaleByKitStyle-blockPrice .GarageItemComponentStyle-itemPriceInRubies span {
+	color: var(--severitium-ruby-color);
+}
+
+/* Original purchased icon */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card:nth-child(1) img[src*='shopicon'i] {
+	display: none;
+}
+
+/* Custom purchased icon */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card:nth-child(1)::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 1.5em;
+	height: 1.5em;
+	background-color: var(--severitium-yellow-color);
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-image: url('data:image/svg+xml,<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="m26.862 6 1.982-6H32l-6.673 20.207A5.5 5.5 0 0 1 20.098 24H4v-3h16.098a2.5 2.5 0 0 0 2.377-1.724L22.896 18H4L0 6zM7 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6m16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="m26.862 6 1.982-6H32l-6.673 20.207A5.5 5.5 0 0 1 20.098 24H4v-3h16.098a2.5 2.5 0 0 0 2.377-1.724L22.896 18H4L0 6zM7 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6m16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/></svg>');
+}
+
+/* "Purchased" text */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card h3 {
+	font-size: .8em;
+	color: var(--severitium-light-gray-color);
 }
