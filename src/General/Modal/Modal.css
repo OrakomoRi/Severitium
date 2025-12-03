@@ -2042,7 +2042,12 @@
 
 .SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card:nth-child(2) {
 	position: relative;
-	pointer-events: none;
+}
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card:nth-child(2):active {
+	background: none !important;
+	box-shadow: none !important;
+	border: none !important;
 }
 
 /* Item amount text */
@@ -2106,8 +2111,8 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 1.5em;
-	height: 1.5em;
+	width: 2.5em;
+	aspect-ratio: 1 / 1;
 	background-color: var(--severitium-yellow-color);
 	-webkit-mask-position: center center;
 			mask-position: center center;
