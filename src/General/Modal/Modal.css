@@ -31,7 +31,7 @@
 /* Modal root container and all elements inside */
 
 #modal-root,
-#modal-root * {
+#modal-root:not(:has([class*='salebykitstyle'i])) * {
 	box-sizing: border-box;
 }
 
