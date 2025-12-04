@@ -83,6 +83,12 @@
 	border-radius: var(--severitium-border-radius);
 }
 
+/* Timer text (in some cases) */
+
+.AnnouncementHomeScreenComponentStyle-headerTimer span[id*='timer'i] {
+	color: inherit;
+}
+
 /* Announcement on card's bottom container */
 
 .AnnouncementHomeScreenComponentStyle-announceContainer {
