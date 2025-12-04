@@ -1,5 +1,52 @@
 # CHANGELOG
 
+## [1.8.3] - 2025-12-04
+
+### Added
+
+- General
+  - ClientInfo
+- Lobby
+  - NewbieScreens
+- Ranks
+  - RanksScreen
+- Shop
+  - ShopWindow
+- Added some easter eggs :egg:
+- `glitchium` library for randomized glitch effects :tada:
+- Manual trigger support for auto-build workflow (single commit or date range)
+
+### Changed
+
+- Battle
+  - BattlePause
+- Challenges
+  - ChallengesScreen
+- Entrance
+  - EntranceForms
+  - EntranceLinks
+- General
+  - CheckboxInput
+  - LoadingScreen
+  - Modal
+  - TopMenu
+  - TopPanel
+  - XP
+- Lobby
+  - MainMenu
+- Quests
+  - QuestsScreen
+- Settings
+  - ThemeSettings
+- Shop
+  - MainScreen
+  - ShopWindow
+- Main userscript now uses nested directory structure for builds (`versions/MAJOR.MINOR.PATCH/VERSION/`)
+- Enhanced auto-build workflow with commit range processing
+- Improved gallery for the demo website
+- Improved resource loading with stable base version extraction
+- Renamed source svg images to match `kebab-case` instead of `snake_case`
+
 ## [1.8.2] - 2025-10-23
 
 ### Changed

@@ -38,7 +38,8 @@ class MarkdownParser {
 			':shield:': '🛡️',
 			':star:': '⭐',
 			':thumbsup:': '👍',
-			':thumbsdown:': '👎'
+			':thumbsdown:': '👎',
+			':egg:': '🥚'
 		};
 
 		this.sectionConfig = {
