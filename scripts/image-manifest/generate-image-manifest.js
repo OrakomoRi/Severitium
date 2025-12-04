@@ -42,10 +42,10 @@ const path = require('path');
 
 const CONFIG = {
 	/** Base directory containing all image categories */
-	imagesDir: path.join(__dirname, '..', 'images'),
+	imagesDir: path.join(__dirname, '..', '..', 'images'),
 
 	/** Output file path for the generated manifest */
-	outputFile: path.join(__dirname, '..', 'assets', 'config', 'image-manifest.json'),
+	outputFile: path.join(__dirname, '..', '..', 'assets', 'config', 'image-manifest.json'),
 
 	/** Supported image file extensions */
 	imageExtensions: ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg'],

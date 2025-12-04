@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated": "2025-10-05T02:54:25.827Z",
+  "generated": "2025-12-04T19:00:56.375Z",
   "categories": {
     "battle": {
       "matched": [
@@ -190,6 +190,11 @@
           "old": "checkboxinput.png"
         },
         {
+          "baseName": "clientinfo",
+          "new": "clientinfo.webp",
+          "old": "clientinfo.webp"
+        },
+        {
           "baseName": "commoncontainerbackground",
           "new": "commoncontainerbackground.png",
           "old": "commoncontainerbackground.png"
@@ -329,6 +334,11 @@
           "old": "matchmaikingwatblock.png"
         },
         {
+          "baseName": "newbiefirstscreen",
+          "new": "newbiefirstscreen.webp",
+          "old": "newbiefirstscreen.webp"
+        },
+        {
           "baseName": "news",
           "new": "news.png",
           "old": "news.png"
@@ -361,6 +371,15 @@
           "baseName": "questsscreen",
           "new": "questsscreen.png",
           "old": "questsscreen.png"
+        }
+      ]
+    },
+    "ranks": {
+      "matched": [
+        {
+          "baseName": "ranksscreen",
+          "new": "ranksscreen.webp",
+          "old": "ranksscreen.webp"
         }
       ]
     },

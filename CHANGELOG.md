@@ -10,8 +10,6 @@
   - NewbieScreens
 - Ranks
   - RanksScreen
-- Shop
-  - ShopWindow
 - Added some easter eggs :egg:
 - `glitchium` library for randomized glitch effects :tada:
 - Manual trigger support for auto-build workflow (single commit or date range)
