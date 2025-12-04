@@ -638,7 +638,7 @@
 	height: 1.5em;
 	min-width: none;
 	min-height: auto;
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-yellow-color);
 	-webkit-mask-position: center center;
 			mask-position: center center;
 	-webkit-mask-repeat: no-repeat;
