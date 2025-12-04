@@ -29,18 +29,24 @@ builds/
 ├── stable.json                      # Stable versions only
 ├── vercel.json                      # Deployment configuration
 └── versions/
-    ├── 1.7.2/                       # Stable release
-    │   ├── script.release.min.js
-    │   ├── style.release.min.css
-    │   ├── variables.css
-    │   ├── variables.min.css
-    │   └── variables.json
-    └── 1.7.2+build16/               # Development build
-        ├── script.release.min.js
-        ├── style.release.min.css
-        ├── variables.css
-        ├── variables.min.css
-        └── variables.json
+    ├── 1.6.0/                       # Version family 1.6.0
+    │   ├── 1.6.0-alpha/             # Alpha builds
+    │   ├── 1.6.0-alpha10/
+    │   └── ...
+    ├── 1.6.1/                       # Version family 1.6.1
+    │   ├── 1.6.1/                   # Stable release
+    │   │   ├── script.release.min.js
+    │   │   ├── style.release.min.css
+    │   │   ├── variables.css
+    │   │   ├── variables.min.css
+    │   │   └── variables.json
+    │   ├── 1.6.1+build10/           # Development builds
+    │   ├── 1.6.1+build11/
+    │   └── ...
+    ├── 1.7.2/                       # Version family 1.7.2
+    │   └── 1.7.2/                   # Stable release
+    └── 1.8.3/                       # Version family 1.8.3
+        └── ...
 ```
 
 ## 🔄 Automated Build Process
@@ -63,10 +69,13 @@ Builds are generated automatically via GitHub Actions when `release/severitium.u
 // Latest stable version
 https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/stable.json
 
-// Specific version artifacts
-https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/1.7.2/script.release.min.js
-https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/1.7.2/style.release.min.css
-https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/1.7.2/variables.json
+// Specific version artifacts (format: versions/{MAJOR.MINOR.PATCH}/{MAJOR.MINOR.PATCH}/file)
+https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/1.7.2/1.7.2/script.release.min.js
+https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/1.7.2/1.7.2/style.release.min.css
+https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/1.7.2/1.7.2/variables.json
+
+// Development build example
+https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/1.6.1/1.6.1+build10/script.release.min.js
 ```
 
 ### Userscript Integration
@@ -74,7 +83,7 @@ Use these links in your userscript metadata:
 ```javascript
 // @updateURL    https://raw.githubusercontent.com/OrakomoRi/Severitium/main/release/severitium.user.js
 // @downloadURL  https://raw.githubusercontent.com/OrakomoRi/Severitium/main/release/severitium.user.js
-// @require      https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/1.7.2/script.release.min.js
+// @require      https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/1.7.2/1.7.2/script.release.min.js
 ```
 
 ## 📋 Version Registry Format
