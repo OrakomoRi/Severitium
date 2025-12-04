@@ -308,6 +308,17 @@
 	position: unset;
 }
 
+/* Close button container (ban modal) */
+
+.DialogContainerComponentStyle-containerForImg {
+	position: unset;
+	top: auto;
+	left: auto;
+	right: auto;
+	bottom: auto;
+	margin: 0;
+}
+
 /* Close (cross) icon of the modal container */
 
 .DialogContainerComponentStyle-imgClose,
@@ -2129,4 +2140,256 @@
 .SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card h3 {
 	font-size: .8em;
 	color: var(--severitium-light-gray-color);
+}
+
+/* LOW GS MM MODAL */
+
+/* Modal container and all elements inside */
+
+.ModalStyle-root > div:has(img[src*='/gs.'i]),
+.ModalStyle-root > div:has(img[src*='/gs.'i]) * {
+	box-sizing: border-box !important;
+}
+
+/* Modal container */
+
+.ModalStyle-root > div:has(img[src*='/gs.'i]) {
+	width: fit-content !important;
+	height: fit-content !important;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	position: relative;
+	background: var(--severitium-dark-transparent-background1) !important;
+	-webkit-backdrop-filter: blur(.5em);
+			backdrop-filter: blur(.5em);
+	outline: none !important;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius) !important;
+	border: .1em solid var(--severitium-gray-color) !important;
+}
+
+/* GS image container */
+
+.ModalStyle-root > div div:has(> img[src*='/gs.'i]) {
+	width: auto !important;
+	height: auto !important;
+	min-height: 0;
+	align-self: stretch;
+	padding: 0 2.5em;
+	border: none !important;
+	border-right: .1em solid var(--severitium-gray-color) !important;
+}
+
+/* GS original image */
+
+.ModalStyle-root > div img[src*='/gs.'i] {
+	display: none;
+}
+
+/* GS custom image */
+
+.ModalStyle-root > div div:has(> img[src*='/gs.'i])::before {
+	content: '';
+	width: 10em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-white-color);
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-image: url('data:image/svg+xml,<svg viewBox="0 0 24 12" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.4 2.4 0H12L9.6 2.4H2.4v7.2h7.2V7.2H4.8V4.8h4.8L12 7.2v2.4L9.6 12H2.4L0 9.6zM24 0h-9.6L12 2.4v2.4l2.4 2.4h7.2v2.4h-7.2L12 12h9.6L24 9.6V7.2l-2.4-2.4h-7.2V2.4h7.2z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg viewBox="0 0 24 12" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.4 2.4 0H12L9.6 2.4H2.4v7.2h7.2V7.2H4.8V4.8h4.8L12 7.2v2.4L9.6 12H2.4L0 9.6zM24 0h-9.6L12 2.4v2.4l2.4 2.4h7.2v2.4h-7.2L12 12h9.6L24 9.6V7.2l-2.4-2.4h-7.2V2.4h7.2z"/></svg>');
+}
+
+/* Header block */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) {
+	min-height: auto !important;
+	height: fit-content !important;
+	padding: .5em 2em !important;
+	border: none !important;
+	border-bottom: .1em solid var(--severitium-gray-color) !important;
+}
+
+/* Header text */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) > h1 {
+	font-size: 1.5em !important;
+	text-transform: uppercase !important;
+	color: var(--severitium-white-text-color);
+}
+
+/* Close button */
+
+.ModalStyle-root > div div > .GSWarningComponentStyle-closeImage {
+	width: 1.5em !important;
+	height: 1.5em !important;
+	margin: 0 !important;
+}
+
+/* Content container */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div {
+	width: auto !important;
+	height: auto !important;
+	align-self: stretch;
+	padding: 2em !important;
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* All direct childs of the content container */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div > div {
+	width: 100% !important;
+	padding: 0 !important;
+	border: none !important;
+	color: inherit !important;
+	font-size: 1em;
+}
+
+/* Description text */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div > div:not(:has(*)) {
+	color: var(--severitium-extra-light-gray-text-color) !important;
+	line-height: 1.4em;
+	padding: 0 0 1.5em 0 !important;
+}
+
+/* Gearscore text containers */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div > div:has(> div) {
+	padding: .5em .25em !important;
+}
+
+/* Current gearscore container */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div > div:has(> div):nth-of-type(2) {
+	border-bottom: .1em solid var(--severitium-gray-color) !important;
+}
+
+/* Current gearscore */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div > div:has(> div):nth-of-type(2) > div {
+	color: var(--severitium-red-text-color) !important;
+}
+
+/* Needed gearscore container */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div > div:has(> div):last-of-type {
+	border-top: .1em solid var(--severitium-gray-color) !important;
+}
+
+/* Needed gearscore */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div > div:has(> div):last-of-type > div {
+	color: var(--severitium-green-text-color) !important;
+}
+
+/* Buttons container */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div + div {
+	width: 100% !important;
+	padding: 1em 2em !important;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+}
+
+/* Each button */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div + div > div {
+	width: auto !important;
+	padding: .25em 1em !important;
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	flex-grow: 1;
+	align-self: stretch;
+	transition: border-color .2s ease;
+}
+
+/* Hotkey containers for buttons */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div + div > div div:has(> h3[class*='hotkey'i]) {
+	position: relative !important;
+	width: auto;
+	height: auto;
+}
+
+/* Hotkeys for buttons */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div + div > div h3[class*='hotkey'i] {
+	position: relative;
+	top: auto;
+	left: auto;
+	right: auto;
+	bottom: auto;
+	background: transparent;
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: var(--severitium-border-radius);
+	color: var(--severitium-dark-white-text-color);
+	height: auto;
+	min-height: auto;
+	max-height: none;
+	width: auto;
+	min-width: auto;
+	max-width: none;
+	padding: .1em .2em;
+	margin: 0;
+}
+
+/* Space between buttons */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div + div > div:not(:has(*)) {
+	display: none;
+}
+
+/* Gray button */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div + div > div:first-of-type {
+	background: var(--severitium-gray-button-background);
+	border: var(--severitium-gray-button-border-color) solid .1em;
+}
+
+/* Button on hover */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div + div > div:first-of-type:hover {
+	border-color: var(--severitium-gray-button-border-color-hover);
+}
+
+/* Button text */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div + div > div:first-of-type > span {
+	color: var(--severitium-gray-button-color);
+}
+
+/* Green button */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div + div > div:last-of-type {
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+}
+
+/* Button on hover */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div + div > div:last-of-type:hover {
+	border-color: var(--severitium-green-button-border-color-hover);
+}
+
+/* Button text */
+
+.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) + div + div > div:last-of-type > span {
+	color: var(--severitium-green-button-color);
 }
