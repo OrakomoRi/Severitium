@@ -54,7 +54,7 @@
 
 /* Inner element (modal window) */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i]):not(:has(.Common-spinner)),
+.ModalStyle-rootHover > div:not([class*='battlepick'i]):not(:has(.Common-spinner)):not(:has(> .ReCaptchaComponentStyle-captchaBlock)),
 .DialogContainerComponentStyle-container {
 	position: relative;
 	background: var(--severitium-dark-transparent-background1);
