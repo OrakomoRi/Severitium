@@ -1661,6 +1661,32 @@
 	color: var(--severitium-green-button-color);
 }
 
+/* Disabled button container */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div:has(> div.MainQuestComponentStyle-buttonContainer) {
+	width: 100%;
+	height: fit-content;
+}
+
+/* Disabled button */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div > div.MainQuestComponentStyle-buttonContainer {
+	width: 100%;
+	margin: 0;
+	pointer-events: none;
+	background: none;
+	border-radius: var(--severitium-border-radius);
+	border: var(--severitium-red-color) solid .1em;
+	outline: none;
+	box-shadow: none;
+}
+
+/* Disabled button text */
+
+.ItemDescriptionComponentStyle-commonBlockModal > div > div.MainQuestComponentStyle-buttonContainer > span {
+	color: var(--severitium-red-text-color);
+}
+
 /* Quest description modal unlock button */
 
 .ItemDescriptionComponentStyle-commonBlockModal > div.MainQuestComponentStyle-containerButtonStore:not(.ButtonComponentStyle-disabled) {
