@@ -119,9 +119,11 @@ class LoadingScreen {
 				}
 
 				body {
-					position: relative;
-					min-height: 100wh !important;
-					height: 100wh !important;
+					position: absolute !important;
+					top: 0 !important;
+					left: 0 !important;
+					min-height: 100vh !important;
+					height: 100vh !important;
 					width: 100vw !important;
 					margin: 0;
 					overflow: hidden;
