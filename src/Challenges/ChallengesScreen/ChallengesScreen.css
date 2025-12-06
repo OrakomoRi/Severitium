@@ -968,6 +968,14 @@
 	border: none;
 	border-radius: 0;
 	border: none;
+	transition: background-color .2s ease;
+}
+
+/* Block on hover */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div:hover {
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
 }
 
 /* Custom left border */
