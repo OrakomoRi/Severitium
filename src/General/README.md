@@ -10,6 +10,7 @@ All modules related to items or events used in different parts of the game are s
 - [Dropdown](/src/General/Dropdown/README.md)
 - [Loading Screen](/src/General/LoadingScreen/README.md)
 - [Modal](/src/General/Modal/README.md)
+- [Notificator](/src/General/Notificator/README.md)
 - [Notificator icon](/src/General/NotificatorIcon/README.md)
 - [Player context menu](/src/General/PlayerContextMenu/README.md)
 - [Range input](/src/General/RangeInput/README.md)

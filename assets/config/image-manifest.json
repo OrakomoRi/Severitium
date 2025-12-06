@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated": "2025-12-04T19:00:56.375Z",
+  "generated": "2025-12-06T23:49:33.695Z",
   "categories": {
     "battle": {
       "matched": [
@@ -185,6 +185,11 @@
           "old": "XPprobattles.png"
         },
         {
+          "baseName": "bannedwarningnotificator",
+          "new": "bannedwarningnotificator.webp",
+          "old": "bannedwarningnotificator.webp"
+        },
+        {
           "baseName": "checkboxinput",
           "new": "checkboxinput.png",
           "old": "checkboxinput.png"
@@ -218,6 +223,11 @@
           "baseName": "dropdown",
           "new": "dropdown.png",
           "old": "dropdown.png"
+        },
+        {
+          "baseName": "groupinvitationnotificator",
+          "new": "groupinvitationnotificator.webp",
+          "old": "groupinvitationnotificator.webp"
         },
         {
           "baseName": "loadingscreen",

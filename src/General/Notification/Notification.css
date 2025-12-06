@@ -1,0 +1,341 @@
+/* Notification container and all elements inside */
+
+.NotificationViewStyle-commonBlockNotification,
+.NotificationViewStyle-commonBlockNotification * {
+	box-sizing: border-box;
+}
+
+/* All elements inside the notification container */
+
+.NotificationViewStyle-commonBlockNotification * {
+	margin: 0;
+	padding: 0;
+}
+
+/* Notification container */
+
+.NotificationViewStyle-commonBlockNotification {
+	position: absolute;
+	right: 0;
+	width: fit-content;
+	height: fit-content;
+	max-width: 32em;
+	background: none;
+	background-color: var(--severitium-dark-transparent-background1);
+	border-radius: 0;
+	border: none;
+	border-bottom-left-radius: var(--severitium-border-radius);
+	border-top: .1em solid var(--severitium-gray-color);
+	border-left: .1em solid var(--severitium-gray-color);
+	border-bottom: .1em solid var(--severitium-gray-color);
+	outline: none;
+	box-shadow: none;
+	backdrop-filter: blur(.5em);
+	padding: 0;
+}
+
+/* Notification inner container */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-positionBlock {
+	position: relative;
+	top: auto;
+	left: auto;
+	right: auto;
+	bottom: auto;
+	width: fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	background: none;
+	border-radius: 0;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	padding: 2em 2.5em;
+}
+
+/* Notification header block */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-headlineNotification {
+	width: 100%;
+	height: fit-content;
+}
+
+/* Notification header text */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-headlineNotification >h1 {
+	font-family: BaseFontBold, FallbackFontBold;
+	font-size: 1.5em;
+	font-weight: 600;
+	color: var(--severitium-white-text-color);
+	letter-spacing: .05em;
+}
+
+/* Notification description block */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-descriptionNotification {
+	width: 100%;
+	height: fit-content;
+}
+
+/* Notification description text */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-descriptionNotification > span > span {
+	font-family: BaseFontRegular, FallbackFontRegular;
+	font-size: 1em;
+	font-weight: 400;
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Notification description nickname */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-descriptionNotification > div > span[class*='ksc'i] {
+	font-family: BaseFontRegular, FallbackFontRegular;
+	font-size: 1em;
+	font-weight: 400;
+	color: var(--severitium-main-color);
+}
+
+/* Notification description text (again) */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-descriptionNotification > div > span:not([class*='ksc'i]) {
+	font-family: BaseFontRegular, FallbackFontRegular;
+	font-size: 1em;
+	font-weight: 400;
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Notification progressbar block */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-progressBarNotification {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	min-width: none;
+	min-height: none;
+	background: none;
+	border-bottom-left-radius: var(--severitium-border-radius);
+	appearance: unset;
+	overflow: hidden;
+}
+
+/* Notification progressbar */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-progressBarNotification progress.NotificationViewStyle-progressNotification {
+	background: none;
+}
+
+/* Notification progressbar full */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-progressBarNotification progress.NotificationViewStyle-progressNotification::-webkit-progress-bar {
+	background: none;
+}
+
+/* Notification progressbar value */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-progressBarNotification progress.NotificationViewStyle-progressNotification::-webkit-progress-value {
+	opacity: .25;
+}
+
+/* Notification progressbar value info (green) */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-progressBarNotification progress.NotificationViewStyle-backgroundNotificationInfo::-webkit-progress-value {
+	background: var(--severitium-green-color);
+}
+
+/* Notification progressbar value alert (red) */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-progressBarNotification progress.NotificationViewStyle-backgroundNotificationAlert::-webkit-progress-value {
+	background: var(--severitium-red-color);
+}
+
+/* Notification progressbar value warning (yellow) */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-progressBarNotification progress.NotificationViewStyle-backgroundNotificationWarning::-webkit-progress-value {
+	background: var(--severitium-yellow-color);
+}
+
+/* Notification buttons outer container */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-blockButtonAndTimer {
+	width: 100%;
+	height: fit-content;
+}
+
+/* Notification buttons inner container */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-blockButtonAndTimer .NotificationViewStyle-commonBlockButtonYesNo {
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+}
+
+/* Notification button */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-commonBlockButtonYesNo > div {
+	width: fit-content;
+	height: 100%;
+	min-width: none;
+	min-height: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
+	border-radius: var(--severitium-border-radius);
+	outline: none;
+	box-shadow: none;
+	cursor: pointer;
+	margin: 0;
+	padding: .75em 1em;
+	flex-grow: 1;
+	align-self: stretch;
+	transition: border-color .2s;
+}
+
+/* Button text */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-commonBlockButtonYesNo > div > span {
+	font-family: BaseFontBold, FallbackFontBold;
+	font-size: 1em;
+	font-weight: 600;
+	letter-spacing: .05em;
+}
+
+/* Button hotkey block */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-commonBlockButtonYesNo > div > p {
+	position: relative;
+	top: auto;
+	left: auto;
+	right: auto;
+	bottom: auto;
+	background: transparent;
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: var(--severitium-border-radius);
+	color: var(--severitium-dark-white-text-color);
+	height: auto;
+	min-height: auto;
+	max-height: none;
+	width: auto;
+	min-width: auto;
+	max-width: none;
+	padding: .1em .2em;
+	margin: 0;
+}
+
+/* Notification green button */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-commonBlockButtonYesNo > div:nth-child(1):not(:only-child) {
+	background-color: var(--severitium-green-button-background);
+	border: .1em solid var(--severitium-green-button-border-color);
+}
+
+/* Button on hover */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-commonBlockButtonYesNo > div:nth-child(1):not(:only-child):hover {
+	border-color: var(--severitium-green-button-border-color-hover);
+}
+
+/* Button on active */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-commonBlockButtonYesNo > div:nth-child(1):not(:only-child):active {
+	background: none !important;
+	background-color: var(--severitium-green-button-background) !important;
+	border-color: var(--severitium-green-button-border-color-hover) !important;
+}
+
+/* Button text */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-commonBlockButtonYesNo > div:nth-child(1):not(:only-child) > span {
+	color: var(--severitium-green-button-color);
+}
+
+/* Notification red button */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-commonBlockButtonYesNo > div:nth-child(2):not(:only-child) {
+	background-color: var(--severitium-red-button-background);
+	border: .1em solid var(--severitium-red-button-border-color);
+}
+
+/* Button on hover */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-commonBlockButtonYesNo > div:nth-child(2):not(:only-child):hover {
+	border-color: var(--severitium-red-button-border-color-hover);
+}
+
+/* Button on active */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-commonBlockButtonYesNo > div:nth-child(2):not(:only-child):active {
+	background: none !important;
+	background-color: var(--severitium-red-button-background) !important;
+	border-color: var(--severitium-red-button-border-color-hover) !important;
+}
+
+/* Button text */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-commonBlockButtonYesNo > div:nth-child(2):not(:only-child) > span {
+	color: var(--severitium-red-button-color);
+}
+
+/* Notification button if there in only one button */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-commonBlockButtonYesNo > div:only-child {
+	background-color: var(--severitium-green-button-background);
+	border: .1em solid var(--severitium-green-button-border-color);
+}
+
+/* Button on hover */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-commonBlockButtonYesNo > div:only-child:hover {
+	border-color: var(--severitium-green-button-border-color-hover);
+}
+
+/* Button on active */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-commonBlockButtonYesNo > div:only-child:active {
+	background: none !important;
+	background-color: var(--severitium-green-button-background) !important;
+	border-color: var(--severitium-green-button-border-color-hover) !important;
+}
+
+/* Button text */
+
+.NotificationViewStyle-commonBlockNotification .NotificationViewStyle-commonBlockButtonYesNo > div:only-child > span {
+	color: var(--severitium-green-button-color);
+}
+
+/* Notification button for alert container if there is only one button */
+
+.NotificationViewStyle-commonBlockNotification:has(progress.NotificationViewStyle-backgroundNotificationAlert) .NotificationViewStyle-commonBlockButtonYesNo > div:only-child {
+	background-color: var(--severitium-red-button-background);
+	border: .1em solid var(--severitium-red-button-border-color);
+}
+
+/* Button on hover */
+
+.NotificationViewStyle-commonBlockNotification:has(progress.NotificationViewStyle-backgroundNotificationAlert) .NotificationViewStyle-commonBlockButtonYesNo > div:only-child:hover {
+	border-color: var(--severitium-red-button-border-color-hover);
+}
+
+/* Button on active */
+
+.NotificationViewStyle-commonBlockNotification:has(progress.NotificationViewStyle-backgroundNotificationAlert) .NotificationViewStyle-commonBlockButtonYesNo > div:only-child:active {
+	background: none !important;
+	background-color: var(--severitium-red-button-background) !important;
+	border-color: var(--severitium-red-button-border-color-hover) !important;
+}
+
+/* Button text */
+
+.NotificationViewStyle-commonBlockNotification:has(progress.NotificationViewStyle-backgroundNotificationAlert) .NotificationViewStyle-commonBlockButtonYesNo > div:only-child > span {
+	color: var(--severitium-red-button-color);
+}
