@@ -1038,6 +1038,39 @@
 			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
 }
 
+/* Image when a reward is claimed */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > img[src*='checker'i] + .Common-backgroundImageContain {
+	opacity: .5;
+}
+
+/* Max tiers both block original checker icon */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > img {
+	display: none;
+}
+
+/* Max tiers free block custom checker icon */
+
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier:has(> img[src*='checker'i])::before {
+	position: absolute;
+	top: .5em;
+	right: .5em;
+	content: '';
+	display: block;
+	width: 4em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-yellow-color);
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M464 128 240 384l-96-96m0 96-96-96m320-160L232 284"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M464 128 240 384l-96-96m0 96-96-96m320-160L232 284"/></svg>');
+}
+
 /* Progress block */
 
 .QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockProgressBarEvent {
