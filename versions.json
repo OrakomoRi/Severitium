@@ -2765,6 +2765,12 @@
       "date": "2025-12-06",
       "comment": "1.8.3+build.6",
       "hash": "407ee0e3fe44836317a7471e3e2399fa17b7b237"
+    },
+    {
+      "version": "1.8.3+build.8",
+      "date": "2025-12-07",
+      "comment": "1.8.3+build.8",
+      "hash": "c3c8a330c53bc8cc33a56118e0147d1a1b016c1c"
     }
   ]
 }
