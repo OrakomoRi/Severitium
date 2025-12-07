@@ -1,3 +1,11 @@
+/* Elite challenges container and all elements inside it */
+
+.EventBattlePassLobbyComponentStyle-buttonEventBattlePass,
+.EventBattlePassLobbyComponentStyle-buttonEventBattlePass * {
+	-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
 /* Elite challenges container */
 
 .EventBattlePassLobbyComponentStyle-buttonEventBattlePass {
@@ -91,15 +99,30 @@
 	background-color: transparent;
 }
 
+/* Progressbar inner container */
+
+.EventBattlePassLobbyComponentStyle-commonBlockProgressBar > div {
+	background-color: transparent;
+	border-radius: 0;
+}
+
+/* Progressbar circle containers */
+
+.EventBattlePassLobbyComponentStyle-commonBlockProgressBar > div > div,
+.EventBattlePassLobbyComponentStyle-commonBlockProgressBar > div > div > div {
+	width: 100%;
+	height: 100%;
+}
+
 /* Progressbar circle's unfilled part color */
 
-.EventBattlePassLobbyComponentStyle-commonBlockProgressBar > div > div {
-	border-color: var(--severitium-light-transparent-background2);
+.EventBattlePassLobbyComponentStyle-commonBlockProgressBar > div > div:first-of-type {
+	border-color: var(--severitium-gray-color);
 }
 
 /* Progressbar circle's filled part color */
 
-.EventBattlePassLobbyComponentStyle-commonBlockProgressBar > div > div > div {
+.EventBattlePassLobbyComponentStyle-commonBlockProgressBar > div > div:last-of-type > div {
 	border-color: var(--severitium-main-color);
 }
 

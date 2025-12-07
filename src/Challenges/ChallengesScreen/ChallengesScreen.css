@@ -1162,6 +1162,7 @@
 	background: var(--severitium-gray-button-background);
 	border: none; 
 	border-radius: var(--severitium-border-radius);
+	opacity: .5;
 	pointer-events: none;
 }
 

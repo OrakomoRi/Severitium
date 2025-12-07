@@ -1,3 +1,27 @@
+/* Left overlay block inside lobby */
+
+.MainScreenComponentStyle-gradientBlock {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 40%;
+	height: 100%;
+	background: linear-gradient(90deg, var(--severitium-black-color) 0%, transparent 100%);
+	opacity: .75;
+}
+
+/* Right overlay block inside lobby */
+
+.MainScreenComponentStyle-gradientBlockRight {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 25%;
+	height: 100%;
+	background: linear-gradient(90deg, var(--severitium-black-color) 0%, transparent 100%);
+	opacity: .75;
+}
+
 /* Block with buttons */
 
 .MainScreenComponentStyle-blockMainMenu {
