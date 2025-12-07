@@ -462,7 +462,7 @@
 
 /* Custom icon of close garage button (in battle) */
 
-.BreadcrumbsComponentStyle-rightButtonsContainer .BreadcrumbsComponentStyle-exitGameButton::before {
+.BreadcrumbsComponentStyle-rightButtonsContainer .BreadcrumbsComponentStyle-exitGameButton:has(> img[src*='cross'i])::before {
 	content: '';
 	width: 1.5em;
 	height: 1.5em;
