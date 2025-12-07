@@ -144,7 +144,7 @@
 /* Pause timer text */
 
 .BattlePauseMenuDialogComponentStyle-timer span[id*='timer'i] {
-	color: var(--severitium-main-color);
+	color: var(--severitium-timer-color);
 }
 
 /* Pause subcontent container */

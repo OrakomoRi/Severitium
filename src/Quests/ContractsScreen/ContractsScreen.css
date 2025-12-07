@@ -52,7 +52,7 @@
 
 .ContractCardComponentStyle-card div:has(> span[id*='timer'i]) {
 	background: none;
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-timer-color);
 	border-radius: var(--severitium-border-radius);
 }
 

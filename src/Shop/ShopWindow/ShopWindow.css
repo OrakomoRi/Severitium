@@ -64,7 +64,7 @@
 /* Large card timer */
 
 .LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover > div[class*='time'i] {
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-timer-color);
 	color: var(--severitium-black-text-color);
 	border-radius: var(--severitium-border-radius);
 }
@@ -180,7 +180,7 @@
 /* Single limited offer timer */
 
 .ShopCategoryOfferSectionStyle-containerLimitOffers > div > div[class*='time'i] {
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-timer-color);
 	color: var(--severitium-black-text-color);
 	border-radius: var(--severitium-border-radius);
 }

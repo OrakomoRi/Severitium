@@ -205,7 +205,7 @@
 .ChallengeInfoComponentStyle-parametrsChallenges .ChallengeTimerComponentStyle-textTime {
 	width: 100%;
 	padding: 0 .25em;
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-timer-color);
 	font-size: 1.1em;
 	letter-spacing: .05em;
 	color: var(--severitium-white-text-color);

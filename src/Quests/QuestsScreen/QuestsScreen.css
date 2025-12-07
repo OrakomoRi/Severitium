@@ -729,7 +729,7 @@
 	width: auto;
 	height: auto;
 	margin-top: auto;
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-timer-color);
 	margin: 0;
 	padding: .1em .25em;
 	border-radius: var(--severitium-border-radius);
@@ -829,7 +829,7 @@
 	height: -moz-fit-content;
 	height: fit-content;
 	margin-top: auto;
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-timer-color);
 	margin: 0;
 	padding: .1em .25em;
 	border-radius: var(--severitium-border-radius);
@@ -1112,7 +1112,7 @@
 
 .SuperMissionComponentStyle-descriptionSuperMission div.SuperMissionComponentStyle-commonBlockTimerCount > div:has(> span[id*='timer'i]) {
 	padding: .1em .25em;
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-timer-color);
 	border-radius: var(--severitium-border-radius);
 }
 

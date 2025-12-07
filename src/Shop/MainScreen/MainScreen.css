@@ -83,7 +83,7 @@
 /* Limited section card timer */
 
 .ShopSelectedSectionComponentStyle-limitedOffersCommon .TimeLeftComponentStyle-timeLeftContainer {
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-timer-color);
 	border-radius: var(--severitium-border-radius);
 }
 

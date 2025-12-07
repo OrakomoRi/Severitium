@@ -293,13 +293,13 @@
 /* Server restart timer */
 
 .ServerHaltAlertComponentStyle-timer span[id*='timer'i] {
-	color: var(--severitium-main-color);
+	color: var(--severitium-timer-color);
 }
 
 /* All timers inside modal window */
 
 .ModalStyle-rootHover span[id*='timer'i] {
-	color: var(--severitium-main-color);
+	color: var(--severitium-timer-color);
 }
 
 /* Close icon container */
@@ -1455,7 +1455,7 @@
 	gap: .5em;
 	padding: .25em .5em;
 	background: none;
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-timer-color);
 	border-radius: var(--severitium-border-radius);
 }
 
@@ -1471,7 +1471,7 @@
 	content: '';
 	height: 100%;
 	aspect-ratio: 1 / 1;
-	background-color: var(--severitium-white-color);
+	background-color: var(--severitium-black-text-color);
 	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
 			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
 	-webkit-mask-size: contain;
@@ -1486,14 +1486,14 @@
 
 .ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .TutorialModalComponentStyle-mediaContainer div:has(> .MainQuestComponentStyle-imgLockTimer) span[id*='timer'i] {
 	margin: 0;
-	color: var(--severitium-white-text-color);
+	color: var(--severitium-black-text-color);
 }
 
 /* Quest description modal timer block */
 
 .ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .TutorialModalComponentStyle-mediaContainer .MainQuestComponentStyle-timer {
 	padding: 0 .25em;
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-timer-color);
 	border-radius: var(--severitium-border-radius);
 	border: none;
 	outline: none;
@@ -1505,7 +1505,7 @@
 .ItemDescriptionComponentStyle-commonBlockModal div.ItemDescriptionComponentStyle-paddingHeaderModal + div .TutorialModalComponentStyle-mediaContainer .MainQuestComponentStyle-timer > span {
 	font-size: 1.1em;
 	letter-spacing: .05em;
-	color: var(--severitium-white-text-color);
+	color: var(--severitium-black-text-color);
 }
 
 /* Item description modal content inner container */

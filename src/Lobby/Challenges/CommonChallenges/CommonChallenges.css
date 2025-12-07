@@ -107,7 +107,7 @@
 			mask-repeat: no-repeat;
 	-webkit-mask-size: contain;
 			mask-size: contain;
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-timer-color);
 	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path d="M9 9h5.27c0 2.89-2.38 5.27-5.27 5.27S3.73 11.89 3.73 9 6.11 3.73 9 3.73z"/><path d="M9 0a9 9 0 1 0 .001 18.001A9 9 0 0 0 9 0m0 15.55c-3.62 0-6.55-2.93-6.55-6.55S5.38 2.45 9 2.45 15.55 5.38 15.55 9 12.62 15.55 9 15.55"/></svg>');
 			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path d="M9 9h5.27c0 2.89-2.38 5.27-5.27 5.27S3.73 11.89 3.73 9 6.11 3.73 9 3.73z"/><path d="M9 0a9 9 0 1 0 .001 18.001A9 9 0 0 0 9 0m0 15.55c-3.62 0-6.55-2.93-6.55-6.55S5.38 2.45 9 2.45 15.55 5.38 15.55 9 12.62 15.55 9 15.55"/></svg>');
 }
@@ -115,7 +115,7 @@
 /* Timer text */
 
 .BattlePassLobbyComponentStyle-timers span {
-	color: var(--severitium-main-color);
+	color: var(--severitium-timer-color);
 }
 
 /* Block of revards inside the container */

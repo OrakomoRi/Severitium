@@ -78,7 +78,7 @@
 /* Timer of an announcement */
 
 .AnnouncementHomeScreenComponentStyle-headerTimer {
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-timer-color);
 	color: var(--severitium-black-text-color);
 	border-radius: var(--severitium-border-radius);
 }

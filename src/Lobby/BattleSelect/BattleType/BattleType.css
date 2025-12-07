@@ -117,7 +117,7 @@
 	display: none;
 }
 
-/* Timers inside the cards */
+/* Timer inside the card */
 
 .BattlePickComponentStyle-commonStyleBlock div[class*='timer'i] {
 	position: absolute;
@@ -131,7 +131,7 @@
 	font-size: 1em;
 	margin: 0;
 	padding: .25em .5em;
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-timer-colorr);
 	border-radius: var(--severitium-border-radius);
 }
 
