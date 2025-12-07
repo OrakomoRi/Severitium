@@ -454,6 +454,37 @@
 	background-color: var(--severitium-white-color);
 }
 
+/* Original icon of close garage button (in battle) */
+
+.BreadcrumbsComponentStyle-rightButtonsContainer .BreadcrumbsComponentStyle-exitGameButton > img[src*='cross'i] {
+	display: none;
+}
+
+/* Custom icon of close garage button (in battle) */
+
+.BreadcrumbsComponentStyle-rightButtonsContainer .BreadcrumbsComponentStyle-exitGameButton::before {
+	content: '';
+	width: 1.5em;
+	height: 1.5em;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><path d="m84 0 12 12-48 48-36 36L0 84l36-36L0 12 12 0l36 36z"/><path d="M48 60h24l24 24-12 12z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><path d="m84 0 12 12-48 48-36 36L0 84l36-36L0 12 12 0l36 36z"/><path d="M48 60h24l24 24-12 12z"/></svg>');
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	background-image: none;
+	background-color: var(--severitium-light-gray-color);
+	transition: background-color .2s ease;
+}
+
+/* Icon on button hover */
+
+.BreadcrumbsComponentStyle-rightButtonsContainer .BreadcrumbsComponentStyle-exitGameButton:hover::before {
+	background-color: var(--severitium-white-color);
+}
+
 /* Tanki Online icon container */
 
 .UserInfoContainerStyle-blockForIconTankiOnline {
