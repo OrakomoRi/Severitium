@@ -131,7 +131,7 @@
 	font-size: 1em;
 	margin: 0;
 	padding: .25em .5em;
-	background-color: var(--severitium-timer-colorr);
+	background-color: var(--severitium-timer-color);
 	border-radius: var(--severitium-border-radius);
 }
 
