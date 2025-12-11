@@ -252,7 +252,7 @@
 	--z-sticky: 20;
 	--z-fixed: 30;
 	--z-modal-backdrop: 40;
-	--z-modal: 50;
+	--z-modal: 9999;
 	--z-popover: 60;
 	--z-tooltip: 70;
 	
