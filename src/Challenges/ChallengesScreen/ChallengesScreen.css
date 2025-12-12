@@ -208,7 +208,7 @@
 	background-color: var(--severitium-timer-color);
 	font-size: 1.1em;
 	letter-spacing: .05em;
-	color: var(--severitium-white-text-color);
+	color: var(--severitium-black-text-color);
 	border-radius: var(--severitium-border-radius);
 	border: none;
 	outline: none;
