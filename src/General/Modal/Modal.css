@@ -1092,6 +1092,7 @@
 	color: var(--severitium-dark-white-text-color) !important;
 	border: var(--severitium-gray-color) dashed .1em !important;
 	border-radius: var(--severitium-border-radius) !important;
+	margin-right: .5em !important;
 }
 
 /* Button */
@@ -2234,7 +2235,7 @@
 
 /* Header block */
 
-.ModalStyle-root > div div:has(> .GSWarningComponentStyle-closeImage) {
+.ModalStyle-root > div div:has(> div > .GSWarningComponentStyle-closeImage) {
 	min-height: auto !important;
 	height: fit-content !important;
 	padding: .5em 2em !important;
