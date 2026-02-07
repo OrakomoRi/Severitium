@@ -1058,7 +1058,7 @@
 
 /* Inner element for secondary modals */
 
-.ModalStyle-root > div:has(img[src*='happytanker'i]) {
+.ModalStyle-transparent > div:has(img[src*='happytanker'i]) {
 	position: relative;
 	border: none !important;
 	border-radius: var(--severitium-border-radius) !important;
@@ -1068,7 +1068,7 @@
 
 /* Another level of modal inner element */
 
-.ModalStyle-root > div:has(img[src*='happytanker'i]) > div[style*='background'i] {
+.ModalStyle-transparent > div:has(img[src*='happytanker'i]) > div[style*='background'i] {
 	border-radius: var(--severitium-border-radius) !important;
 	outline: none !important;
 	background: none !important;
@@ -1079,7 +1079,7 @@
 
 /* Image element */
 
-.ModalStyle-root > div:has(img[src*='happytanker'i]) > div > div[style*='background-image'i] {
+.ModalStyle-transparent > div:has(img[src*='happytanker'i]) > div > div[style*='background-image'i] {
 	border-top-left-radius: var(--severitium-border-radius) !important;
 	border-bottom-left-radius: var(--severitium-border-radius) !important;
 	border-right: var(--severitium-gray-color) solid .1em !important;
@@ -1087,7 +1087,7 @@
 
 /* Hotkey */
 
-.ModalStyle-root > div:has(img[src*='happytanker'i]) > div > div h3[class*='hotkey'i] {
+.ModalStyle-transparent > div:has(img[src*='happytanker'i]) > div > div h3[class*='hotkey'i] {
 	background: none !important;
 	color: var(--severitium-dark-white-text-color) !important;
 	border: var(--severitium-gray-color) dashed .1em !important;
@@ -1097,7 +1097,7 @@
 
 /* Button */
 
-.ModalStyle-root > div:has(img[src*='happytanker'i]) > div > div > div:last-of-type > div:not(.ButtonComponentStyle-disabled) {
+.ModalStyle-transparent > div:has(img[src*='happytanker'i]) > div > div > div:last-of-type > div:not(.ButtonComponentStyle-disabled) {
 	outline: none !important;
 	box-shadow: none !important;
 	border-radius: var(--severitium-border-radius) !important;
@@ -1108,19 +1108,19 @@
 
 /* Button on hover */
 
-.ModalStyle-root > div:has(img[src*='happytanker'i]) > div > div > div:last-of-type > div:not(.ButtonComponentStyle-disabled):hover {
+.ModalStyle-transparent > div:has(img[src*='happytanker'i]) > div > div > div:last-of-type > div:not(.ButtonComponentStyle-disabled):hover {
 	border: var(--severitium-green-button-border-color-hover) solid .1em !important;
 }
 
 /* Button text */
 
-.ModalStyle-root > div:has(img[src*='happytanker'i]) > div > div > div:last-of-type > div:not(.ButtonComponentStyle-disabled) > span {
+.ModalStyle-transparent > div:has(img[src*='happytanker'i]) > div > div > div:last-of-type > div:not(.ButtonComponentStyle-disabled) > span {
 	color: var(--severitium-green-button-color) !important;
 }
 
 /* Disabled button */
 
-.ModalStyle-root > div:has(img[src*='happytanker'i]) > div > div > div:last-of-type > div.ButtonComponentStyle-disabled {
+.ModalStyle-transparent > div:has(img[src*='happytanker'i]) > div > div > div:last-of-type > div.ButtonComponentStyle-disabled {
 	pointer-events: none !important;
 	background-color: var(--severitium-light-transparent-background3) !important;
 	border-radius: var(--severitium-border-radius) !important;
@@ -1131,7 +1131,7 @@
 
 /* Disabled button text */
 
-.ModalStyle-root > div:has(img[src*='happytanker'i]) > div > div > div:last-of-type > div.ButtonComponentStyle-disabled > span {
+.ModalStyle-transparent > div:has(img[src*='happytanker'i]) > div > div > div:last-of-type > div.ButtonComponentStyle-disabled > span {
 	color: var(--severitium-white-text-color) !important;
 	text-shadow: none !important;
 	opacity: .25 !important;
@@ -1145,7 +1145,7 @@
 
 /* Happy tanker dialog text */
 
-.ModalStyle-root > div:has(img[src*='happytanker'i]) > div > div > div div[style*='happytankerballoon'i] > div {
+.ModalStyle-transparent > div:has(img[src*='happytanker'i]) > div > div > div div[style*='happytankerballoon'i] > div {
 	color: var(--severitium-white-text-color) !important;
 }
 
@@ -1157,7 +1157,8 @@
 
 /* Close (cross) icon of the secondary modal container */
 
-.ModalStyle-root .GSWarningComponentStyle-closeImage {
+.ModalStyle-root .GSWarningComponentStyle-closeImage,
+.ModalStyle-transparent .GSWarningComponentStyle-closeImage {
 	width: 1.5em;
 	height: 1.5em;
 	margin-left: .5em;
@@ -1178,7 +1179,8 @@
 
 /* Close (cross) icon of the secondary modal container on hover */
 
-.ModalStyle-root .GSWarningComponentStyle-closeImage:hover {
+.ModalStyle-root .GSWarningComponentStyle-closeImage:hover,
+.ModalStyle-transparent .GSWarningComponentStyle-closeImage:hover {
 	width: 1.5em;
 	height: 1.5em;
 	background-image: none;
