@@ -2837,6 +2837,12 @@
       "date": "2026-02-07",
       "comment": "1.8.3+build.19",
       "hash": "d90e31a84b805f1f2952a118e4fb12fa975f3c93"
+    },
+    {
+      "version": "1.8.3+build.20",
+      "date": "2026-02-08",
+      "comment": "1.8.3+build.20",
+      "hash": "204075d4dfe5e84fdb93731e0c71ca5e084949e9"
     }
   ]
 }
