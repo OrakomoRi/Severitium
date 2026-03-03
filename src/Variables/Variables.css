@@ -59,8 +59,6 @@
 	--severitium-blue-color: rgb(110, 100, 255);
 	--severitium-dark-violet-color: rgb(100, 50, 200);
 
-
-
 	/* Theme button colors */
 
 	--severitium-gray-button-background: rgba(225, 225, 225, .2);
@@ -89,7 +87,6 @@
 	--severitium-blue-button-border-color: rgba(27, 120, 242, .25);
 	--severitium-blue-button-border-color-hover: rgba(27, 120, 242, .75);
 
-
 	/* Theme colors for battle tab */
 
 	--severitium-tab-background: rgba(0, 0, 0, .5);
@@ -101,8 +98,6 @@
 	--severitium-tab-self-string-background: rgba(255, 255, 255, .25);
 	--severitium-tab-nickname-color: rgb(200, 200, 200);
 	--severitium-tab-nickname-hover-color: rgb(255, 255, 255);
-
-
 
 	/* Theme metrics */
 

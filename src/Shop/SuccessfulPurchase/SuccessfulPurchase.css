@@ -1,3 +1,15 @@
+/* Successful purchase container */
+
+.SuccessfulPurchaseComponentStyle-container {
+	position: relative;
+	background: var(--severitium-dark-transparent-background1);
+	-webkit-backdrop-filter: blur(.5em);
+			backdrop-filter: blur(.5em);
+	outline: var(--severitium-gray-color) solid .1em;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+}
+
 /* Successful purchase image container */
 
 .SuccessfulPurchaseComponentStyle-blockImage {
@@ -35,7 +47,41 @@
 /* Successful purchase details container */
 
 .SuccessfulPurchaseComponentStyle-containerHeadline {
+	position: relative;
+	margin: 0;
+	padding: 0;
 	border-left: .1em solid var(--severitium-gray-color);
+}
+
+/* Successful purchase header container */
+
+.SuccessfulPurchaseComponentStyle-containerHeadline .HeadlineComponentStyle-popupHeadlineContent {
+	padding: 1em;
+}
+
+/* Successful purchase "you have purchased" text */
+
+.SuccessfulPurchaseComponentStyle-containerHeadline > h4 {
+	width: 100%;
+	height: auto;
+	color: var(--severitium-dark-white-text-color);
+	margin: 0;
+	margin-top: 2.5em;
+	padding: .5em 1em;
+	border-bottom: .1rem solid var(--severitium-gray-color);
+	overflow: hidden auto;
+}
+
+/* Successful "you have purchased" bottom line */
+
+.SuccessfulPurchaseComponentStyle-containerHeadline > .SuccessfulPurchaseComponentStyle-borderLineItem {
+	display: none;
+}
+
+/* Successful purchase reward outer container */
+
+.SuccessfulPurchaseComponentStyle-containerHeadline div:has(> .SuccessfulPurchaseComponentStyle-rewardContainer) {
+	width: 100%;
 }
 
 /* Successful purchase reward text container */
@@ -44,6 +90,32 @@
 
 .SuccessfulPurchaseComponentStyle-containerHeadline .SuccessfulPurchaseComponentStyle-rewardContainer {
 	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/* Successful purchase reward item */
+
+.SuccessfulPurchaseComponentStyle-containerHeadline .SuccessfulPurchaseComponentStyle-rewardContainer .SuccessfulPurchaseComponentStyle-rewardColor {
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: .5em;
+	padding: .5em 1em;
+}
+
+/* Successful purchase reward items except the last one */
+
+.SuccessfulPurchaseComponentStyle-containerHeadline .SuccessfulPurchaseComponentStyle-rewardContainer .SuccessfulPurchaseComponentStyle-rewardColor:not(:last-child) {
+	border-bottom: .1rem solid var(--severitium-gray-color);
+}
+
+/* Successful purchase item bottom line */
+
+.SuccessfulPurchaseComponentStyle-containerHeadline .SuccessfulPurchaseComponentStyle-rewardContainer .SuccessfulPurchaseComponentStyle-borderLineItemSuccessfulPurchase {
+	display: none;
 }
 
 /* Successful purchase reward text */
@@ -55,6 +127,8 @@
 /* Successful purchase button */
 
 .SuccessfulPurchaseComponentStyle-containerHeadline .SuccessfulPurchaseComponentStyle-rewardContainer + div {
+	margin: 1em;
+	margin-top: 2.5em;
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -75,4 +149,13 @@
 
 .SuccessfulPurchaseComponentStyle-containerHeadline .SuccessfulPurchaseComponentStyle-rewardContainer + div > span {
 	color: var(--severitium-green-button-color);
+}
+
+/* Button hotkey */
+
+.SuccessfulPurchaseComponentStyle-containerHeadline .SuccessfulPurchaseComponentStyle-rewardContainer + div [class*='hotkey'i] {
+	background: transparent;
+	color: var(--severitium-dark-white-text-color);
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: var(--severitium-border-radius);
 }
