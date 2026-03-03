@@ -2849,6 +2849,12 @@
       "date": "2026-03-03",
       "comment": "1.8.3+build.22",
       "hash": "3a99996b0c87c54782578db9c2c6be6f52d8acc2"
+    },
+    {
+      "version": "1.8.3+build.23",
+      "date": "2026-03-03",
+      "comment": "1.8.3+build.23",
+      "hash": "7558fa1c7d3a46418636fec0ed002329cc87709d"
     }
   ]
 }
