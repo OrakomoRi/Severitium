@@ -1067,6 +1067,7 @@
 /* User progress modal OK button */
 
 .UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-buttonOk {
+	width: fit-content;
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
