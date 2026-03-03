@@ -971,9 +971,9 @@
 	transition: background-color .2s ease;
 }
 
-/* Block on hover */
+/* Block on hover (excluding locked) */
 
-.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div:hover {
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div:not(:has(> img[src*='iconlock'i])):hover {
 	background: none;
 	background-color: var(--severitium-light-transparent-background3);
 }
