@@ -177,6 +177,7 @@
 	align-items: center;
 	justify-content: center;
 	gap: .5em;
+	margin: 0;
 }
 
 /* Title text of the container */
