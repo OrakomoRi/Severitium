@@ -17,15 +17,52 @@
 /* Completed ranks container */
 
 .UserProgressComponentStyle-progressItemCompleted {
+	position: relative;
 	background: linear-gradient(transparent 0%, var(--severitium-dark-green-color) 100%);
 	box-shadow: var(--severitium-dark-gray-color) 0 0 0 .1em;
 	transition: box-shadow .2s ease;
+}
+
+/* Pseudo-element for gradient transition */
+
+.UserProgressComponentStyle-progressItemCompleted::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: var(--severitium-border-radius);
+	background: linear-gradient(transparent 0%, var(--severitium-green-color) 100%);
+	opacity: 0;
+	pointer-events: none;
+	z-index: -1;
+	transition: opacity .2s ease;
 }
 
 /* Completed ranks container on hover */
 
 .UserProgressComponentStyle-progressItemCompleted:hover {
 	box-shadow: var(--severitium-green-color) 0 0 0 .2em;
+}
+
+/* Completed ranks container pseudo-element on hover */
+
+.UserProgressComponentStyle-progressItemCompleted:hover::before {
+	opacity: .25;
+}
+
+/* Completed ranks container on active */
+
+.UserProgressComponentStyle-progressItemCompleted:active {
+	box-shadow: var(--severitium-green-color) 0 0 .2em;
+	animation: none !important;
+}
+
+/* Completed ranks container pseudo-element on active */
+
+.UserProgressComponentStyle-progressItemCompleted:active::before {
+	opacity: 1;
 }
 
 /* Uncompleted ranks container */
@@ -36,10 +73,46 @@
 	transition: box-shadow .2s ease;
 }
 
+/* Pseudo-element for gradient transition */
+
+.UserProgressComponentStyle-progressItemUncompleted::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: var(--severitium-border-radius);
+	background: linear-gradient(transparent 0%, var(--severitium-gray-color) 100%);
+	opacity: 0;
+	pointer-events: none;
+	z-index: -1;
+	transition: opacity .2s ease;
+}
+
 /* Uncompleted ranks container on hover */
 
 .UserProgressComponentStyle-progressItemUncompleted:hover {
 	box-shadow: var(--severitium-light-gray-color) 0 0 0 .2em;
+}
+
+/* Uncompleted ranks container pseudo-element on hover */
+
+.UserProgressComponentStyle-progressItemUncompleted:hover::before {
+	opacity: .25;
+}
+
+/* Uncompleted ranks container on active */
+
+.UserProgressComponentStyle-progressItemUncompleted:active {
+	box-shadow: var(--severitium-light-gray-color) 0 0 0 .2em;
+	animation: none !important;
+}
+
+/* Uncompleted ranks container pseudo-element on active */
+
+.UserProgressComponentStyle-progressItemUncompleted:active::before {
+	opacity: 1;
 }
 
 /* Rank title container */
