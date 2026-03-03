@@ -2843,6 +2843,12 @@
       "date": "2026-02-08",
       "comment": "1.8.3+build.20",
       "hash": "204075d4dfe5e84fdb93731e0c71ca5e084949e9"
+    },
+    {
+      "version": "1.8.3+build.22",
+      "date": "2026-03-03",
+      "comment": "1.8.3+build.22",
+      "hash": "3a99996b0c87c54782578db9c2c6be6f52d8acc2"
     }
   ]
 }
