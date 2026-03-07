@@ -2921,6 +2921,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.35 feat: enhance logging in ResourceLoader and loader",
       "hash": "82a6f0629cdbf590537773df83d82ea9b0b30c55"
+    },
+    {
+      "version": "1.8.3+build.36",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.36 fix: correct image URLs in ImageModules.json",
+      "hash": "4af15bb785ddf6af01efc4faf5a02446dc151f83"
     }
   ]
 }
