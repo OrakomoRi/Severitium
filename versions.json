@@ -2885,6 +2885,12 @@
       "date": "2026-03-07",
       "comment": "1.8.3+build.29",
       "hash": "5363870dee1a8437ff21ac518407fae6a4c9760e"
+    },
+    {
+      "version": "1.8.3+build.30",
+      "date": "2026-03-07",
+      "comment": "1.8.3+build.30 fix: improve commit message extraction",
+      "hash": "7be27ff0a11a038822cab8802a8568227d9fb38a"
     }
   ]
 }
