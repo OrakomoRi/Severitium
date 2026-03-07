@@ -2915,6 +2915,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.34 feat: enhance image caching logic",
       "hash": "4b2718c4caacc51c529e7611468e1f729de7f875"
+    },
+    {
+      "version": "1.8.3+build.35",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.35 feat: enhance logging in ResourceLoader and loader",
+      "hash": "82a6f0629cdbf590537773df83d82ea9b0b30c55"
     }
   ]
 }
