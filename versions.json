@@ -2975,6 +2975,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.44 feat: enhance logging for image handling",
       "hash": "36bd482b56ab7199dc670254463cd05ae0e79f25"
+    },
+    {
+      "version": "1.8.3+build.45",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.45 refactor: improve image logging",
+      "hash": "d912c50d4197bbd9a6bac1496812719a0eaa4504"
     }
   ]
 }
