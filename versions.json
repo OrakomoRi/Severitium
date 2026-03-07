@@ -2945,6 +2945,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.39 feat: enhance ResourceLoader initialization",
       "hash": "d819e6d1356f2aca1e94247dd32d72085d583103"
+    },
+    {
+      "version": "1.8.3+build.40",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.40 refactor: update logger usage in UpdateChecker and loader",
+      "hash": "f7b514232a416f834da879958210f6a56c35d078"
     }
   ]
 }
