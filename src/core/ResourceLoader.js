@@ -215,12 +215,15 @@ export class ResourceLoader {
 	}
 
 	_createImagePromises(severitium) {
-		return this.imageLinks.map(async ({ url }) => {
+		this.logger.log(`DEBUG: _createImagePromises called with ${this.imageLinks.length} links`, 'info');
+		return this.imageLinks.map(async ({ url }, index) => {
 			const formatted = url.replace('SEASON_PLACEHOLDER', this.season) + `?v=${this.version}`;
+			this.logger.log(`DEBUG: [${index}] Formatted URL: ${formatted}`, 'info');
 
 			try {
 				const img = await Bridge.fetch(formatted, 'base64');
 				severitium.images[formatted] = img;
+				this.logger.log(`DEBUG: [${index}] Successfully loaded and saved with key: ${formatted}`, 'info');
 				this.loadingScreen?.updateProgress();
 			} catch (error) {
 				this.logger.log(`Failed to load image ${url}: ${error}`, 'warn');
