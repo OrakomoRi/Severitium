@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.8.3+build.46
+// @version			1.8.3+build.47
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -53,6 +53,7 @@
 							}));
 						};
 						reader.readAsDataURL(response.response);
+						return;
 					} else {
 						data = response.responseText;
 					}

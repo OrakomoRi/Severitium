@@ -93,22 +93,12 @@ export class ResourceLoader {
 		severitium.JS = await Bridge.getValue('SeveritiumJS', {});
 		severitium.images = await Bridge.getValue('SeveritiumImages', {});
 		
-		this.logger.log(`DEBUG: Loaded ${Object.keys(severitium.images).length} cached images`, 'info');
-		
 		const expectedKeys = this.getImageLinks().map(el => el.url);
 		const cachedKeys = Object.keys(severitium.images);
 		const keysMatch = expectedKeys.every(key => cachedKeys.includes(key));
 		
-		this.logger.log(`DEBUG: Expected ${expectedKeys.length} keys, cached ${cachedKeys.length} keys, match = ${keysMatch}`, 'info');
-		this.logger.log(`DEBUG: First expected key: ${expectedKeys[0]}`, 'info');
-		this.logger.log(`DEBUG: First cached key: ${cachedKeys[0]}`, 'info');
-		
 		if (!keysMatch && this.imageLinks.length > 0) {
 			this.logger.log('Cached image keys mismatch, reloading images...', 'warn');
-			expectedKeys.forEach((key, i) => {
-				const found = cachedKeys.includes(key);
-				this.logger.log(`  Expected[${i}]: ${found ? 'FOUND' : 'MISSING'} - ${key}`, 'info');
-			});
 			severitium.images = {};
 			
 			const imagePromises = this._createImagePromises(severitium);
@@ -116,7 +106,6 @@ export class ResourceLoader {
 			this._logFailedPromises(results);
 			
 			await Bridge.setValue('SeveritiumImages', severitium.images);
-			this.logger.log(`DEBUG: Reloaded ${Object.keys(severitium.images).length} images`, 'info');
 		}
 	}
 
@@ -214,16 +203,12 @@ export class ResourceLoader {
 	}
 
 	_createImagePromises(severitium) {
-		this.logger.log(`DEBUG: _createImagePromises called with ${this.imageLinks.length} links`, 'info');
-		return this.imageLinks.map(async ({ url }, index) => {
+		return this.imageLinks.map(async ({ url }) => {
 			const formatted = url.replace('SEASON_PLACEHOLDER', this.season) + `?v=${this.version}`;
-			this.logger.log(`DEBUG: [${index}] Formatted URL: ${formatted}`, 'info');
 
 			try {
 				const img = await Bridge.fetch(formatted, 'base64');
-				this.logger.log(`DEBUG: [${index}] Fetched image, length: ${img?.length || 0}`, 'info');
 				severitium.images[formatted] = img;
-				this.logger.log(`DEBUG: [${index}] Successfully loaded and saved with key: ${formatted}`, 'info');
 				this.loadingScreen?.updateProgress();
 			} catch (error) {
 				this.logger.log(`Failed to load image ${url}: ${error}`, 'warn');
