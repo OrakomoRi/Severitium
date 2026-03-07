@@ -18,6 +18,11 @@ import { CONFIG } from './config/config.js';
 	Bridge.init();
 
 	const logger = new Logger(CONFIG.SCRIPT_NAME);
+
+	document.addEventListener('severitium:log', () => {
+		logger.enableLogging();
+	});
+
 	const currentSeason = _getPeriod();
 
 	if (CONFIG.UPDATE_CHECK_ENABLED) {

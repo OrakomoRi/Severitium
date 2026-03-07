@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.8.3+build.31
+// @version			1.8.3+build.32
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -28,6 +28,8 @@
 
 (function () {
 	'use strict';
+
+	const LOG = false;
 
 	window.addEventListener('severitium:fetch', (event) => {
 		const { id, url, format } = event.detail;
@@ -114,6 +116,11 @@
 						document.body.appendChild(script);
 					});
 				}
+
+				if (LOG) {
+					document.dispatchEvent(new Event('severitium:log'));
+				}
+
 				console.log('[Severitium] Loader script loaded successfully from:', LOADER_URL);
 			} else {
 				console.error('[Severitium] Loader script not found at:', LOADER_URL);
