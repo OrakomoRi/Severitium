@@ -1,6 +1,6 @@
 import { Bridge } from './Bridge.js';
 import { CONFIG } from '../config/config.js';
-import '../libs/loader/CompareVersions/compareversions.min.js';
+import { compareVersions } from '../libs/loader/CompareVersions/compareversions.min.js';
 
 export class UpdateChecker {
 	constructor(logger) {
