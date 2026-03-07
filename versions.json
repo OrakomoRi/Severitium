@@ -2957,6 +2957,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.41 refactor: improve logging details",
       "hash": "7dd63c93d9a25bc457f0b0d032df1e0ed59603fe"
+    },
+    {
+      "version": "1.8.3+build.42",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.42 feat: enhance logging for image promises",
+      "hash": "23d43993a819627aed956da54017c9eb65791fbe"
     }
   ]
 }
