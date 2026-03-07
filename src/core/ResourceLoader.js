@@ -152,9 +152,6 @@ export class ResourceLoader {
 		);
 
 		const imagePromises = this._createImagePromises(severitium);
-		imagePromises.forEach(element => {
-			this.logger.log(`DEBUG: Created image promise for URL: ${element.url}`, 'info');
-		});
 		promises.push(...imagePromises);
 
 		this.loadingScreen.setTotalModules(promises.length);
