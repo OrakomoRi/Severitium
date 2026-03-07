@@ -124,7 +124,7 @@ jobs:
           STABLE_BASE=$(echo "$VERSION" | grep -oP '^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)')
           echo "STABLE_BASE=$STABLE_BASE" >> $GITHUB_ENV
           COMMIT_DATE=$(git log -1 --format=%ad --date=short)
-          COMMIT_MESSAGE=$(git log -1 --format=%s)
+          COMMIT_MESSAGE=$(git log -1 --format=%B | sed '/^[[:space:]]*-/,$d' | tr '\n' ' ' | sed 's/  */ /g' | sed 's/^ *//;s/ *$//')
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

@@ -1,9 +1,7 @@
 # Copilot settings
-
 .github/copilot
 
 # IDE
-
 .vscode
 
 # Build outputs
