@@ -2897,6 +2897,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.31 fix: correct regex match in getStableBase function",
       "hash": "b1e5b39f9b3d49a13eccd92d43ee63e2b60d4879"
+    },
+    {
+      "version": "1.8.3+build.32",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.32 feat: add logging functionality",
+      "hash": "242ca20d06d6ddbe08083d6419436165c8b68387"
     }
   ]
 }
