@@ -221,6 +221,7 @@ export class ResourceLoader {
 
 			try {
 				const img = await Bridge.fetch(formatted, 'base64');
+				this.logger.log(`DEBUG: [${index}] Fetched image, length: ${img?.length || 0}`, 'info');
 				severitium.images[formatted] = img;
 				this.logger.log(`DEBUG: [${index}] Successfully loaded and saved with key: ${formatted}`, 'info');
 				this.loadingScreen?.updateProgress();
