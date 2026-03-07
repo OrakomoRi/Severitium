@@ -5,3 +5,26 @@
 # IDE
 
 .vscode
+
+# Build outputs
+dist/
+build/
+
+# Logs
+logs/
+*.log
+
+# Node modules
+node_modules/
+
+# Dependency lock files
+package-lock.json
+*/package-lock.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
