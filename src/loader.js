@@ -53,7 +53,11 @@ import { CONFIG } from './config/config.js';
 		logger.log(`DEBUG: severitium.images keys:`, 'debug');
 		Object.keys(severitium.images).forEach((key, i) => logger.log(`  [${i}] ${key}`, 'debug'));
 		
-		const validImages = imageLinks.filter(el => severitium.images[el.url]);
+		const validImages = imageLinks.filter(el => {
+			const found = severitium.images[el.url];
+			logger.log(`DEBUG: Checking ${el.url} -> ${found ? 'FOUND' : 'NOT FOUND'}`, 'info');
+			return found;
+		});
 		logger.log(`DEBUG: validImages.length = ${validImages.length}`, 'debug');
 
 		if (validImages.length > 0) {
