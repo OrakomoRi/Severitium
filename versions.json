@@ -2969,6 +2969,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.43 style: refine debug logging",
       "hash": "f600ae6006ea59bb4e5162d2a25c987893d85fdd"
+    },
+    {
+      "version": "1.8.3+build.44",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.44 feat: enhance logging for image handling",
+      "hash": "36bd482b56ab7199dc670254463cd05ae0e79f25"
     }
   ]
 }
