@@ -2909,6 +2909,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.33 fix: correct URL formatting in image promise creation",
       "hash": "159a17d8339890dd7249646f4d225266a2f82bdd"
+    },
+    {
+      "version": "1.8.3+build.34",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.34 feat: enhance image caching logic",
+      "hash": "4b2718c4caacc51c529e7611468e1f729de7f875"
     }
   ]
 }
