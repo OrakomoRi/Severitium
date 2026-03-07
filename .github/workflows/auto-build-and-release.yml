@@ -1,377 +1,239 @@
 name: Auto Build and Release
 
 on:
-    push:
-        branches:
-            - main
-        paths:
-            - "release/severitium.user.js"
-    workflow_dispatch:
-        inputs:
-            mode:
-                description: 'Build mode'
-                required: true
-                type: choice
-                options:
-                    - 'single'
-                    - 'range'
-                default: 'single'
-            commit_hash:
-                description: 'Commit hash (for single mode)'
-                required: false
-                type: string
-            date_from:
-                description: 'Start date (for range mode, YYYY-MM-DD)'
-                required: false
-                type: string
-            date_to:
-                description: 'End date (for range mode, YYYY-MM-DD)'
-                required: false
-                type: string
+  push:
+    branches:
+      - main
+    paths:
+      - "release/severitium.user.js"
+  workflow_dispatch:
 
 permissions:
-    contents: write
+  contents: write
 
 jobs:
-    build-and-release:
-        runs-on: ubuntu-latest
+  build-and-release:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v4
-              with:
-                  fetch-depth: 0  # Full history for range mode
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-            - name: Extract version (for auto push only)
-              if: github.event_name == 'push'
-              run: |
-                  VERSION=$(grep -oP '@version\s+\K[\w.+-]+' release/severitium.user.js)
-                  echo "VERSION=$VERSION" >> $GITHUB_ENV
-                  
-                  semver_regex='^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$'
-                  if [[ "$VERSION" =~ $semver_regex ]]; then
-                    echo "IS_STABLE=true" >> $GITHUB_ENV
-                  else
-                    echo "IS_STABLE=false" >> $GITHUB_ENV
-                  fi
+      - name: Extract version
+        run: |
+          VERSION=$(grep -oP '@version\s+\K[\w.+-]+' release/severitium.user.js)
+          if [ -z "$VERSION" ]; then
+            echo "Version not found in severitium.user.js"
+            exit 1
+          fi
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
 
-            - name: Determine commits to process
-              id: determine_commits
-              run: |
-                  MANUAL_RUN="${{ github.event_name == 'workflow_dispatch' }}"
-                  echo "MANUAL_RUN=$MANUAL_RUN" >> $GITHUB_ENV
-                  
-                  if [ "$MANUAL_RUN" == "true" ]; then
-                      MODE="${{ inputs.mode }}"
-                      
-                      if [ "$MODE" == "single" ]; then
-                          HASH="${{ inputs.commit_hash }}"
-                          if [ -z "$HASH" ]; then
-                              echo "❌ Commit hash required for single mode"
-                              exit 1
-                          fi
-                          echo "$HASH" > /tmp/commits.txt
-                          echo "📌 Single commit mode: $HASH"
-                      else
-                          # Range mode
-                          DATE_FROM="${{ inputs.date_from }}"
-                          DATE_TO="${{ inputs.date_to }}"
-                          
-                          if [ -z "$DATE_FROM" ] || [ -z "$DATE_TO" ]; then
-                              echo "❌ Both dates required for range mode"
-                              exit 1
-                          fi
-                          
-                          # Get commits that modified severitium.user.js in date range
-                          git log --since="$DATE_FROM" --until="$DATE_TO" \
-                              --format="%H" --reverse \
-                              -- release/severitium.user.js > /tmp/commits.txt
-                          
-                          COUNT=$(wc -l < /tmp/commits.txt)
-                          echo "📅 Range mode: found $COUNT commits between $DATE_FROM and $DATE_TO"
-                      fi
-                      
-                      COMMIT_COUNT=$(wc -l < /tmp/commits.txt)
-                      if [ "$COMMIT_COUNT" -eq 0 ]; then
-                          echo "⚠️ No commits found"
-                          exit 1
-                      fi
-                  else
-                      # Auto mode - current commit
-                      git rev-parse HEAD > /tmp/commits.txt
-                      echo "🤖 Auto mode: current commit"
-                  fi
+          semver_regex='^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$'
+          if [[ "$VERSION" =~ $semver_regex ]]; then
+            echo "IS_STABLE=true" >> $GITHUB_ENV
+          else
+            echo "IS_STABLE=false" >> $GITHUB_ENV
+          fi
 
-            - name: Set up Node.js
-              uses: actions/setup-node@v4
-              with:
-                  node-version: "20"
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
-            - name: Install minifiers
-              run: npm i -g terser csso-cli
+      - name: Install dependencies
+        run: npm install
 
-            - name: Process commits
-              run: |
-                  git config user.name "github-actions[bot]"
-                  git config user.email "github-actions[bot]@users.noreply.github.com"
-                  
-                  # Prepare builds branch
-                  git fetch origin builds 2>/dev/null || true
-                  if git ls-remote --heads origin builds | grep -q builds; then
-                    git checkout builds
-                    git pull --rebase origin builds
-                  else
-                    git checkout --orphan builds
-                    git rm -rf . 2>/dev/null || true
-                  fi
-                  
-                  # Initialize versions.json and stable.json if needed
-                  if [ ! -f versions.json ]; then
-                    echo '{"versions":[]}' > versions.json
-                  fi
-                  if [ ! -f stable.json ]; then
-                    echo '{"versions":[]}' > stable.json
-                  fi
-                  
-                  # Process each commit
-                  while IFS= read -r COMMIT_HASH; do
-                      echo ""
-                      echo "============================================"
-                      echo "Processing commit: $COMMIT_HASH"
-                      echo "============================================"
-                      
-                      # Checkout specific commit in detached state
-                      git checkout "$COMMIT_HASH" 2>/dev/null || {
-                          echo "❌ Failed to checkout $COMMIT_HASH"
-                          continue
-                      }
-                      
-                      # Extract version
-                      if [ ! -f "release/severitium.user.js" ]; then
-                          echo "⚠️ severitium.user.js not found in this commit"
-                          continue
-                      fi
-                      
-                      VERSION=$(grep -oP '@version\s+\K[\w.+-]+' release/severitium.user.js)
-                      if [ -z "$VERSION" ]; then
-                          echo "⚠️ Version not found in severitium.user.js"
-                          continue
-                      fi
-                      
-                      # Extract MAJOR.MINOR.PATCH using SemVer regex
-                      STABLE_BASE=$(echo "$VERSION" | grep -oP '^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)')
-                      if [ -z "$STABLE_BASE" ]; then
-                        echo "❌ Invalid SemVer format: $VERSION"
-                        continue
-                      fi
+      - name: Build JS
+        run: |
+          VERSION=$VERSION npx rollup -c
+          mkdir -p /tmp/build-artifacts
 
-                      echo "📦 Version: $VERSION (base: $STABLE_BASE)"
-                      
-                      # Check if stable
-                      semver_regex='^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$'
-                      if [[ "$VERSION" =~ $semver_regex ]]; then
-                        IS_STABLE=true
-                        echo "✅ Stable version"
-                      else
-                        IS_STABLE=false
-                        echo "ℹ️ Dev version"
-                      fi
-                      
-                      # Get commit info
-                      COMMIT_DATE=$(git log -1 --format=%ad --date=short "$COMMIT_HASH")
-                      COMMIT_MESSAGE=$(git log -1 --format=%s "$COMMIT_HASH")
-                      
-                      # Build artifacts
-                      mkdir -p /tmp/build-artifacts
-                      
-                      # JavaScript
-                      find src/_libs -name "*.js" ! -name "*.user.js" ! -name "*.min.js" 2>/dev/null \
-                        | sort | xargs -r cat > /tmp/build-artifacts/script.release.js || touch /tmp/build-artifacts/script.release.js
-                      
-                      find src -path "src/_Additional" -prune -o -path "src/_libs" -prune -o -name "*.js" ! -name "*.user.js" ! -name "*.min.js" -print \
-                        | sort | xargs -r cat >> /tmp/build-artifacts/script.release.js
-                      
-                      terser /tmp/build-artifacts/script.release.js -c -m -o /tmp/build-artifacts/script.release.min.js
-                      
-                      # CSS
-                      find src/_libs -name "*.css" ! -name "*.user.css" ! -name "*.min.css" 2>/dev/null \
-                        | sort | xargs -r cat > /tmp/build-artifacts/style.release.css || touch /tmp/build-artifacts/style.release.css
-                      
-                      find src -path "src/_Additional" -prune -o -path "src/_libs" -prune -o -path "src/Variables" -prune -o -name "*.css" ! -name "*.user.css" ! -name "*.min.css" -print \
-                        | sort | xargs -r cat >> /tmp/build-artifacts/style.release.css
-                      
-                      csso /tmp/build-artifacts/style.release.css -o /tmp/build-artifacts/style.release.min.css
-                      
-                      # Variables
-                      if [ -f "src/Variables/Variables.css" ]; then
-                        cp src/Variables/Variables.css /tmp/build-artifacts/variables.css
-                        csso /tmp/build-artifacts/variables.css -o /tmp/build-artifacts/variables.min.css
-                        
-                        # Create variables.json
-                        node -e "
-                          const fs = require('fs');
-                          const css = fs.readFileSync('/tmp/build-artifacts/variables.css', 'utf8');
-                          const variables = {};
-                          
-                          const rootMatch = css.match(/:root\s*{([^}]*)}/);
-                          if (rootMatch) {
-                            const rootContent = rootMatch[1];
-                            const varMatches = rootContent.match(/--[^:;]+:[^;]+;/g);
-                            
-                            if (varMatches) {
-                              varMatches.forEach(match => {
-                                const [property, value] = match.split(':').map(s => s.trim());
-                                if (property && value) {
-                                  variables[property] = value.replace(';', '').trim();
-                                }
-                              });
-                            }
-                          }
-                          
-                          const output = {
-                            version: '$VERSION',
-                            timestamp: new Date().toISOString(),
-                            variables: variables
-                          };
-                          
-                          fs.writeFileSync('/tmp/build-artifacts/variables.json', JSON.stringify(output, null, 2));
-                        " 2>/dev/null || echo "⚠️ Failed to create variables.json"
-                      fi
-                      
-                      echo "✅ Built artifacts"
-                      
-                      # Switch back to builds branch
-                      git checkout builds
-                      
-                      # Create nested directory structure
-                      mkdir -p "versions/$STABLE_BASE/$VERSION"
-                      
-                      # Copy artifacts
-                      cp /tmp/build-artifacts/script.release.min.js "versions/$STABLE_BASE/$VERSION/"
-                      cp /tmp/build-artifacts/style.release.min.css "versions/$STABLE_BASE/$VERSION/"
-                      
-                      if [ -f /tmp/build-artifacts/variables.css ]; then
-                        cp /tmp/build-artifacts/variables.css "versions/$STABLE_BASE/$VERSION/"
-                      fi
-                      
-                      if [ -f /tmp/build-artifacts/variables.min.css ]; then
-                        cp /tmp/build-artifacts/variables.min.css "versions/$STABLE_BASE/$VERSION/"
-                      fi
-                      
-                      if [ -f /tmp/build-artifacts/variables.json ]; then
-                        cp /tmp/build-artifacts/variables.json "versions/$STABLE_BASE/$VERSION/"
-                      fi
-                      
-                      echo "✅ Copied artifacts to versions/$STABLE_BASE/$VERSION"
-                      
-                      # Update versions.json
-                      if ! grep -q "\"version\": \"$VERSION\"" versions.json 2>/dev/null; then
-                        /usr/bin/jq --arg version "$VERSION" \
-                           --arg date "$COMMIT_DATE" \
-                           --arg comment "$COMMIT_MESSAGE" \
-                           --arg hash "$COMMIT_HASH" \
-                           '.versions += [{"version": $version, "date": $date, "comment": $comment, "hash": $hash}]' \
-                           versions.json > versions_tmp.json
-                        mv versions_tmp.json versions.json
-                        echo "✅ Added to versions.json"
-                      else
-                        echo "ℹ️ Already in versions.json"
-                      fi
-                      
-                      # Update stable.json (only if stable AND not manual run)
-                      if [ "$IS_STABLE" == "true" ] && [ "$MANUAL_RUN" != "true" ]; then
-                        if ! grep -q "\"version\": \"$VERSION\"" stable.json 2>/dev/null; then
-                          /usr/bin/jq --arg version "$VERSION" \
-                             --arg date "$COMMIT_DATE" \
-                             --arg hash "$COMMIT_HASH" \
-                             --arg link "https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@$COMMIT_HASH/release/severitium.user.js" \
-                             '.versions += [{"version": $version, "date": $date, "hash": $hash, "link": $link}]' \
-                             stable.json > stable_tmp.json
-                          mv stable_tmp.json stable.json
-                          echo "✅ Added to stable.json"
-                        fi
-                      fi
-                      
-                      # Clean up temp artifacts
-                      rm -rf /tmp/build-artifacts/*
-                      
-                      echo "✅ Completed $VERSION"
-                      
-                      # Commit changes for this version
-                      git add -A
-                      git commit -m "$VERSION" || echo "No changes for $VERSION"
-                      
-                  done < /tmp/commits.txt
-                  
-                  # Create vercel.json
-                  cat > vercel.json << 'EOF'
-                  {
-                    "version": 2,
-                    "public": true,
-                    "headers": [
-                      {
-                        "source": "stable.json",
-                        "headers": [
-                          {
-                            "key": "Cache-Control",
-                            "value": "public, max-age=0, must-revalidate"
-                          },
-                          {
-                            "key": "Access-Control-Allow-Origin",
-                            "value": "*"
-                          }
-                        ]
-                      },
-                      {
-                        "source": "versions.json",
-                        "headers": [
-                          {
-                            "key": "Cache-Control",
-                            "value": "public, max-age=0, must-revalidate"
-                          },
-                          {
-                            "key": "Access-Control-Allow-Origin",
-                            "value": "*"
-                          }
-                        ]
-                      },
-                      {
-                        "source": "versions/(.*)",
-                        "headers": [
-                          {
-                            "key": "Cache-Control",
-                            "value": "public, max-age=300, must-revalidate"
-                          },
-                          {
-                            "key": "Access-Control-Allow-Origin",
-                            "value": "*"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                  EOF
-                  
-                  # Commit vercel.json and push everything
-                  git add vercel.json
-                  git commit -m "chore: update vercel.json" || true
-                  
-                  git push origin builds
+          # Copy both bundles
+          cp dist/loader.min.js /tmp/build-artifacts/loader.min.js
+          cp dist/script.release.min.js /tmp/build-artifacts/script.release.min.js
 
-            - name: Create GitHub release tag
-              if: github.event_name == 'push' && env.IS_STABLE == 'true'
-              uses: softprops/action-gh-release@v2
-              with:
-                  tag_name: ${{ env.VERSION }}
-                  name: ${{ env.VERSION }}
-                  body: |
-                      ## Severitium ${{ env.VERSION }}
-                      
-                      Stable release built automatically.
-                      
-                      **Download:**
-                      - [severitium.user.js](https://raw.githubusercontent.com/OrakomoRi/Severitium/main/release/severitium.user.js)
-                      - [script.release.min.js](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${{ env.VERSION }}/script.release.min.js)
-                      - [style.release.min.css](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${{ env.VERSION }}/style.release.min.css)
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Verify version replacement in loader
+          if grep -q '__VERSION__' /tmp/build-artifacts/loader.min.js; then
+            echo "ERROR: __VERSION__ placeholder was not replaced in loader!"
+            exit 1
+          fi
+
+          # Verify version replacement in modules (script.release.min.js might be empty if no modules yet)
+          if [ -s /tmp/build-artifacts/script.release.min.js ]; then
+            if grep -q '__VERSION__' /tmp/build-artifacts/script.release.min.js; then
+              echo "ERROR: __VERSION__ placeholder was not replaced in modules!"
+              exit 1
+            fi
+          fi
+
+          echo "Version $VERSION successfully replaced in bundles"
+
+      - name: Build CSS
+        run: |
+          # Libs, core, utils, modules (excluding _variables)
+          find src/libs src/core src/utils -name "*.css" ! -name "*.min.css" 2>/dev/null \
+            | sort | xargs -r cat > /tmp/build-artifacts/style.release.css \
+            || touch /tmp/build-artifacts/style.release.css
+
+          find src/modules -path "src/modules/_variables" -prune \
+            -o -name "*.css" ! -name "*.min.css" -print \
+            | sort | xargs -r cat >> /tmp/build-artifacts/style.release.css
+
+          npx csso /tmp/build-artifacts/style.release.css \
+            -o /tmp/build-artifacts/style.release.min.css
+
+      - name: Build variables
+        run: |
+          VARIABLES_CSS="src/modules/_variables/variables.css"
+          if [ ! -f "$VARIABLES_CSS" ]; then
+            echo "No variables.css found, skipping"
+            exit 0
+          fi
+
+          cp "$VARIABLES_CSS" /tmp/build-artifacts/variables.css
+          npx csso /tmp/build-artifacts/variables.css \
+            -o /tmp/build-artifacts/variables.min.css
+
+          node -e "
+            const fs = require('fs');
+            const version = process.env.VERSION;
+            const css = fs.readFileSync('/tmp/build-artifacts/variables.css', 'utf8');
+            const variables = {};
+            const rootMatch = css.match(/:root\s*{([^}]*)}/);
+            if (rootMatch) {
+              const varMatches = rootMatch[1].match(/--[^:;]+:[^;]+;/g);
+              if (varMatches) {
+                varMatches.forEach(match => {
+                  const [prop, val] = match.split(':').map(s => s.trim());
+                  if (prop && val) variables[prop] = val.replace(';', '').trim();
+                });
+              }
+            }
+            fs.writeFileSync('/tmp/build-artifacts/variables.json', JSON.stringify({
+              version: version,
+              timestamp: new Date().toISOString(),
+              variables
+            }, null, 2));
+          " VERSION="$VERSION"
+
+      - name: Publish to builds branch
+        run: |
+          COMMIT_HASH=$(git rev-parse HEAD)
+          STABLE_BASE=$(echo "$VERSION" | grep -oP '^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)')
+          echo "STABLE_BASE=$STABLE_BASE" >> $GITHUB_ENV
+          COMMIT_DATE=$(git log -1 --format=%ad --date=short)
+          COMMIT_MESSAGE=$(git log -1 --format=%s)
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin builds 2>/dev/null || true
+          if git ls-remote --heads origin builds | grep -q builds; then
+            git checkout builds
+            git pull --rebase origin builds
+          else
+            git checkout --orphan builds
+            git rm -rf . 2>/dev/null || true
+          fi
+
+          [ ! -f versions.json ] && echo '{"versions":[]}' > versions.json
+          [ ! -f stable.json ]   && echo '{"versions":[]}' > stable.json
+
+          if [ -z "$STABLE_BASE" ]; then
+            echo "STABLE_BASE is empty, VERSION=$VERSION is not a valid semver"
+            exit 1
+          fi
+
+          mkdir -p "versions/$STABLE_BASE/$VERSION"
+
+          # Copy loader to builds root (always fresh, no version folder)
+          cp /tmp/build-artifacts/loader.min.js "loader.min.js"
+
+          # Copy modules bundle to versioned folder
+          cp /tmp/build-artifacts/script.release.min.js "versions/$STABLE_BASE/$VERSION/"
+          cp /tmp/build-artifacts/style.release.min.css "versions/$STABLE_BASE/$VERSION/"
+          [ -f /tmp/build-artifacts/variables.css ]  && cp /tmp/build-artifacts/variables.css  "versions/$STABLE_BASE/$VERSION/"
+          [ -f /tmp/build-artifacts/variables.min.css ] && cp /tmp/build-artifacts/variables.min.css "versions/$STABLE_BASE/$VERSION/"
+          [ -f /tmp/build-artifacts/variables.json ] && cp /tmp/build-artifacts/variables.json "versions/$STABLE_BASE/$VERSION/"
+
+          if ! grep -q "\"version\": \"$VERSION\"" versions.json; then
+            /usr/bin/jq \
+              --arg version "$VERSION" \
+              --arg date    "$COMMIT_DATE" \
+              --arg comment "$COMMIT_MESSAGE" \
+              --arg hash    "$COMMIT_HASH" \
+              '.versions += [{"version":$version,"date":$date,"comment":$comment,"hash":$hash}]' \
+              versions.json > versions_tmp.json && mv versions_tmp.json versions.json
+          fi
+
+          if [ "$IS_STABLE" == "true" ] && ! grep -q "\"version\": \"$VERSION\"" stable.json; then
+            /usr/bin/jq \
+              --arg version "$VERSION" \
+              --arg date    "$COMMIT_DATE" \
+              --arg hash    "$COMMIT_HASH" \
+              --arg link    "https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@$COMMIT_HASH/release/severitium.user.js" \
+              '.versions += [{"version":$version,"date":$date,"hash":$hash,"link":$link}]' \
+              stable.json > stable_tmp.json && mv stable_tmp.json stable.json
+          fi
+
+          if [ ! -f vercel.json ]; then
+            jq -n '{
+              version: 2,
+              public: true,
+              headers: [
+                {
+                  source: "loader.min.js",
+                  headers: [
+                    { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
+                    { key: "Access-Control-Allow-Origin", value: "*" }
+                  ]
+                },
+                {
+                  source: "stable.json",
+                  headers: [
+                    { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
+                    { key: "Access-Control-Allow-Origin", value: "*" }
+                  ]
+                },
+                {
+                  source: "versions.json",
+                  headers: [
+                    { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
+                    { key: "Access-Control-Allow-Origin", value: "*" }
+                  ]
+                },
+                {
+                  source: "versions/(.*)",
+                  headers: [
+                    { key: "Cache-Control", value: "public, max-age=300, must-revalidate" },
+                    { key: "Access-Control-Allow-Origin", value: "*" }
+                  ]
+                }
+              ]
+            }' > vercel.json
+          fi
+
+          git add -A
+          git commit -m "$VERSION" || echo "No changes for $VERSION"
+          git push origin builds
+
+      - name: Create GitHub release
+        if: env.IS_STABLE == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.VERSION }}
+          name: ${{ env.VERSION }}
+          body: |
+            ## Severitium ${{ env.VERSION }}
+
+            Stable release built automatically.
+
+            **Download:**
+            - [severitium.user.js](https://raw.githubusercontent.com/OrakomoRi/Severitium/main/release/severitium.user.js)
+            - [loader.min.js](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/loader.min.js)
+            - [script.release.min.js](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${{ env.STABLE_BASE }}/${{ env.VERSION }}/script.release.min.js)
+            - [style.release.min.css](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${{ env.STABLE_BASE }}/${{ env.VERSION }}/style.release.min.css)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
