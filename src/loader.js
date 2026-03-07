@@ -46,7 +46,7 @@ import { CONFIG } from './config/config.js';
 		const imageLinks = resourceLoader.getImageLinks();
 
 		imageLinks.forEach(el => {
-			console.log(`DEBUG: Image link - URL: ${el.url}, Season: ${el.season}`, 'info');
+			console.log(`DEBUG: Image link - URL: ${el.url}`, 'info');
 		});
 		
 		const validImages = imageLinks.filter(el => {
