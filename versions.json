@@ -2981,6 +2981,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.45 refactor: improve image logging",
       "hash": "d912c50d4197bbd9a6bac1496812719a0eaa4504"
+    },
+    {
+      "version": "1.8.3+build.46",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.46 feat: enhance image loading logging",
+      "hash": "a1fb1ef737055d4dac7f980ffe253c7a18b16d98"
     }
   ]
 }
