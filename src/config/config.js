@@ -3,7 +3,7 @@ export const CONFIG = {
 	SCRIPT_VERSION: '__VERSION__',
 
 	getStableBase(version) {
-		return version.match(/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)/)?.[1] ?? version;
+		return version.match(/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)/)?.[0] ?? version;
 	},
 
 	getBaseCDN(version) {
