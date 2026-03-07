@@ -44,27 +44,13 @@ import { CONFIG } from './config/config.js';
 		if (severitium.JS['main']) injector.applyJS('main');
 
 		const imageLinks = resourceLoader.getImageLinks();
-		
-		logger.log(`DEBUG: imageLinks.length = ${imageLinks.length}`, 'info');
-		logger.log(`DEBUG: imageLinks URLs:`, 'info');
-		imageLinks.forEach((el, i) => {
-			logger.log(`  [${i}] Length: ${el.url.length}`, 'info');
-			logger.log(`  [${i}] URL: ${el.url}`, 'info');
-		});
-		
-		logger.log(`DEBUG: severitium.images keys count = ${Object.keys(severitium.images).length}`, 'info');
-		logger.log(`DEBUG: severitium.images keys:`, 'info');
-		Object.keys(severitium.images).forEach((key, i) => {
-			logger.log(`  [${i}] Length: ${key.length}`, 'info');
-			logger.log(`  [${i}] Key: ${key}`, 'info');
+
+		imageLinks.forEach(el => {
+			console.log(`DEBUG: Image link - URL: ${el.url}, Season: ${el.season}`, 'info');
 		});
 		
 		const validImages = imageLinks.filter(el => {
 			const found = severitium.images[el.url];
-			logger.log(`DEBUG: Checking -> ${found ? 'FOUND' : 'NOT FOUND'}`, 'info');
-			logger.log(`  Looking for: "${el.url}"`, 'info');
-			logger.log(`  First key in images: "${Object.keys(severitium.images)[0]}"`, 'info');
-			logger.log(`  Match: ${el.url === Object.keys(severitium.images)[0]}`, 'info');
 			return found;
 		});
 		logger.log(`DEBUG: validImages.length = ${validImages.length}`, 'info');
