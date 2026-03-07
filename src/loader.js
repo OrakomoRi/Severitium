@@ -48,6 +48,10 @@ import { CONFIG } from './config/config.js';
 		imageLinks.forEach(el => {
 			console.log(`DEBUG: Image link - URL: ${el.url}`, 'info');
 		});
+
+		severitium.images.forEach((value, key) => {
+			console.log(`DEBUG: Severitium image - Key: ${key}, Value: ${value}`, 'info');
+		});
 		
 		const validImages = imageLinks.filter(el => {
 			const found = severitium.images[el.url];
