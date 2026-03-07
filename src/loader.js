@@ -33,7 +33,7 @@ import { CONFIG } from './config/config.js';
 	}
 
 	try {
-		const resourceLoader = new ResourceLoader(CONFIG.SCRIPT_VERSION, currentSeason);
+		const resourceLoader = new ResourceLoader(CONFIG.SCRIPT_VERSION, currentSeason, logger);
 		const severitium = await resourceLoader.load();
 
 		const injector = new SeveritiumInjector(severitium, currentSeason);

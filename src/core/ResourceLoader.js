@@ -4,10 +4,10 @@ import { LoadingScreen } from './LoadingScreen.js';
 import { CONFIG } from '../config/config.js';
 
 export class ResourceLoader {
-	constructor(version, season) {
+	constructor(version, season, logger) {
 		this.version = version;
 		this.season = season;
-		this.logger = new Logger('ResourceLoader');
+		this.logger = logger;
 		this.loadingScreen = null;
 		this.imageLinks = [];
 	}
