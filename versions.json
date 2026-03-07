@@ -2933,6 +2933,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.37 refactor: improve logging in ResourceLoader and loader",
       "hash": "60fb4ccf87a57b111dc6c0a733d4e72bfb2a89e6"
+    },
+    {
+      "version": "1.8.3+build.38",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.38 feat: enhance image loading with logging",
+      "hash": "b1c79ddabf9ac066c917efd080004a3fb446fd55"
     }
   ]
 }
