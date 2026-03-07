@@ -1,5 +1,4 @@
 import { Bridge } from './Bridge.js';
-import { Logger } from './Logger.js';
 import { LoadingScreen } from './LoadingScreen.js';
 import { CONFIG } from '../config/config.js';
 

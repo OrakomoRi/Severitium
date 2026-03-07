@@ -26,7 +26,7 @@ import { CONFIG } from './config/config.js';
 	const currentSeason = _getPeriod();
 
 	if (CONFIG.UPDATE_CHECK_ENABLED) {
-		const updateChecker = new UpdateChecker();
+		const updateChecker = new UpdateChecker(logger);
 		updateChecker.check().catch(err =>
 			logger.log(`Update check failed: ${err}`, 'warn')
 		);

@@ -1,12 +1,11 @@
 import { Bridge } from './Bridge.js';
-import { Logger } from './Logger.js';
 import { CONFIG } from '../config/config.js';
 import '../libs/loader/CompareVersions/compareversions.min.js';
 
 export class UpdateChecker {
-	constructor() {
+	constructor(logger) {
 		this.version = CONFIG.SCRIPT_VERSION;
-		this.logger = new Logger(CONFIG.SCRIPT_NAME);
+		this.logger = logger;
 	}
 
 	async check() {
