@@ -2993,6 +2993,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.47 refactor: streamline image loading logic",
       "hash": "e3411f02d805c303198fc123ee89e821a340ae93"
+    },
+    {
+      "version": "1.8.3+build.49",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.49 feat: update styles for entrance and loading screens",
+      "hash": "238aeef46e72befb0e3286169ec5328fd61ed3a1"
     }
   ]
 }
