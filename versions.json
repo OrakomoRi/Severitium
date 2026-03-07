@@ -2951,6 +2951,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.40 refactor: update logger usage in UpdateChecker and loader",
       "hash": "f7b514232a416f834da879958210f6a56c35d078"
+    },
+    {
+      "version": "1.8.3+build.41",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.41 refactor: improve logging details",
+      "hash": "7dd63c93d9a25bc457f0b0d032df1e0ed59603fe"
     }
   ]
 }
