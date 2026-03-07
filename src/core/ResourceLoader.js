@@ -190,7 +190,7 @@ export class ResourceLoader {
 
 	_createImagePromises(severitium) {
 		return this.imageLinks.map(async ({ url }) => {
-			const formatted = url.replace('', this.season) + `?v=${this.version}`;
+			const formatted = url.replace('SEASON_PLACEHOLDER', this.season) + `?v=${this.version}`;
 
 			try {
 				const img = await Bridge.fetch(formatted, 'base64');
