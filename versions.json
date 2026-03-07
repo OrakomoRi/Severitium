@@ -2903,6 +2903,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.32 feat: add logging functionality",
       "hash": "242ca20d06d6ddbe08083d6419436165c8b68387"
+    },
+    {
+      "version": "1.8.3+build.33",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.33 fix: correct URL formatting in image promise creation",
+      "hash": "159a17d8339890dd7249646f4d225266a2f82bdd"
     }
   ]
 }
