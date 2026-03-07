@@ -94,12 +94,18 @@ export class ResourceLoader {
 		severitium.JS = await Bridge.getValue('SeveritiumJS', {});
 		severitium.images = await Bridge.getValue('SeveritiumImages', {});
 		
+		this.logger.log(`DEBUG: Loaded ${Object.keys(severitium.images).length} cached images`, 'debug');
+		
 		const expectedKeys = this.getImageLinks().map(el => el.url);
 		const cachedKeys = Object.keys(severitium.images);
 		const keysMatch = expectedKeys.every(key => cachedKeys.includes(key));
 		
+		this.logger.log(`DEBUG: Expected ${expectedKeys.length} keys, cached ${cachedKeys.length} keys, match = ${keysMatch}`, 'info');
+		
 		if (!keysMatch && this.imageLinks.length > 0) {
 			this.logger.log('Cached image keys mismatch, reloading images...', 'warn');
+			this.logger.log(`DEBUG: Expected keys: ${expectedKeys.slice(0, 2).join(', ')}...`, 'debug');
+			this.logger.log(`DEBUG: Cached keys: ${cachedKeys.slice(0, 2).join(', ')}...`, 'debug');
 			severitium.images = {};
 			
 			const imagePromises = this._createImagePromises(severitium);
@@ -107,6 +113,7 @@ export class ResourceLoader {
 			this._logFailedPromises(results);
 			
 			await Bridge.setValue('SeveritiumImages', severitium.images);
+			this.logger.log(`DEBUG: Reloaded ${Object.keys(severitium.images).length} images`, 'debug');
 		}
 	}
 

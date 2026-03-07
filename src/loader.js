@@ -44,7 +44,17 @@ import { CONFIG } from './config/config.js';
 		if (severitium.JS['main']) injector.applyJS('main');
 
 		const imageLinks = resourceLoader.getImageLinks();
+		
+		logger.log(`DEBUG: imageLinks.length = ${imageLinks.length}`, 'debug');
+		logger.log(`DEBUG: imageLinks URLs:`, 'debug');
+		imageLinks.forEach((el, i) => logger.log(`  [${i}] ${el.url}`, 'debug'));
+		
+		logger.log(`DEBUG: severitium.images keys count = ${Object.keys(severitium.images).length}`, 'debug');
+		logger.log(`DEBUG: severitium.images keys:`, 'debug');
+		Object.keys(severitium.images).forEach((key, i) => logger.log(`  [${i}] ${key}`, 'debug'));
+		
 		const validImages = imageLinks.filter(el => severitium.images[el.url]);
+		logger.log(`DEBUG: validImages.length = ${validImages.length}`, 'debug');
 
 		if (validImages.length > 0) {
 			injector.applyImages(validImages, currentSeason);
