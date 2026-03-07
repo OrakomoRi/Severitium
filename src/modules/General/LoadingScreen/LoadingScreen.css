@@ -27,6 +27,12 @@ body {
 	z-index: -1;
 }
 
+/* Loading screen overlay */
+
+.ApplicationLoaderComponentStyle-container > div:first-of-type[style] {
+	display: none;
+}
+
 /* Loading background after login/register overlaying container */
 
 .Common-background + div > div[style*='background'i] {
