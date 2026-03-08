@@ -3017,6 +3017,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.52 style: update class names for consistency",
       "hash": "3a3032ee473a4623babe49eb949e2a20198f38d9"
+    },
+    {
+      "version": "1.8.3+build.53",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.53 feat: add hotkey styles for challenge buttons",
+      "hash": "59026c00c6a55ece6b471c5eac10f74e6260f61b"
     }
   ]
 }
