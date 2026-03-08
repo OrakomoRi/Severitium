@@ -3065,6 +3065,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.60 chore: minor patch",
       "hash": "47e7451b44c75849d60164a56aea74f08da593a5"
+    },
+    {
+      "version": "1.8.3+build.62",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.62 style: update modal styles",
+      "hash": "bf71a1407255f10da67ef35e5cfb5e5edcf22662"
     }
   ]
 }
