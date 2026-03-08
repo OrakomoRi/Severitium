@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.8.3+build.59
+// @version			1.8.3+build.60
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -31,7 +31,7 @@
 
 	const LOG = false;
 
-	function addBlackScreen(){const e=document.createElement("div");e.style.position="absolute",e.style.top="0",e.style.left="0",e.style.width="100vh",e.style.height="100vw",e.style.backgroundColor="black",e.style.zIndex="999999",e.style.pointerEvents="none",e.style.overflow="hidden",e.className="severitium-black-screen",e.setAttribute("data-severitium","black-screen"),document.body.appendChild(e)}function removeBlackScreen(){const e=document.querySelector('.severitium-black-screen[data-severitium="black-screen"]');e&&e.remove()}document.body?addBlackScreen():document.addEventListener("DOMContentLoaded",(()=>{addBlackScreen()}));
+	function addBlackScreen(){const e=document.createElement("div");e.style.position="absolute",e.style.top="0",e.style.left="0",e.style.width="100vw",e.style.height="100vh",e.style.backgroundColor="black",e.style.zIndex="999999",e.style.pointerEvents="none",e.style.overflow="hidden",e.className="severitium-black-screen",e.setAttribute("data-severitium","black-screen"),document.body.appendChild(e)}function removeBlackScreen(){const e=document.querySelector('.severitium-black-screen[data-severitium="black-screen"]');e&&e.remove()}document.body?addBlackScreen():document.addEventListener("DOMContentLoaded",(()=>{addBlackScreen()}));
 
 	window.addEventListener('severitium:fetch', (event) => {
 		const { id, url, format } = event.detail;
