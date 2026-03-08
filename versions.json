@@ -3005,6 +3005,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.50 style: update active menu styles",
       "hash": "09ee74328f76d1ccb8357d68a694cfaf511dc048"
+    },
+    {
+      "version": "1.8.3+build.51",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.51 style: update quest screen styles",
+      "hash": "e07f4bee9e8ec005fb2f77fcd622408b578d0120"
     }
   ]
 }
