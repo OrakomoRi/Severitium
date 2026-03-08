@@ -3041,6 +3041,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.56 style: update button styles",
       "hash": "4ab3f6012e3757efd1c9105ecd866c074385b334"
+    },
+    {
+      "version": "1.8.3+build.57",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.57 style: update EULA button styles",
+      "hash": "f3a48c2fa4d39e7fcefbeffdbf61e72e0d232f4b"
     }
   ]
 }
