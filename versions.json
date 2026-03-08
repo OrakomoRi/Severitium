@@ -3077,6 +3077,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.63 style: adjust CSS properties for better layout",
       "hash": "82b25dad91af267d70d832b54ce58750033b5036"
+    },
+    {
+      "version": "1.8.3+build.64",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.64 feat: enhance payment info styling",
+      "hash": "bda00de2d4b3a6c3ba4a773b9d6b728cc77b8b93"
     }
   ]
 }
