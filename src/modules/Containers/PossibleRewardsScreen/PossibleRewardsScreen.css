@@ -73,7 +73,7 @@
 /* Possible rewards description name text */
 
 .ContainerInfoComponentStyle-lootBoxDescriptionContainer .ContainerInfoComponentStyle-rewardNameContainer > span {
-	max-width: 80%;
+	max-width: 100%;
 	margin: 0;
 	font-size: 1.5em;
 	font-weight: bold;

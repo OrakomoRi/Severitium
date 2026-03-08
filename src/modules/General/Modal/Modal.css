@@ -1480,7 +1480,7 @@
 
 /* Item description modal header hotkey block */
 
-.ItemDescriptionComponentStyle-commonBlockModal > div .HotKey-commonBlockForHotKey {
+.ItemDescriptionComponentStyle-commonBlockModal > div .-commonBlockForHotKey {
 	display: none;
 }
 
@@ -1810,8 +1810,8 @@
 
 /* Custom button hotkey */
 
-.ItemDescriptionComponentStyle-commonBlockModal:has(.HeadlineComponentStyle-popupHeadlineContent + .HotKey-commonBlockForHotKey) > div.TutorialModalComponentStyle-navigationButton::after,
-.ItemDescriptionComponentStyle-commonBlockModal:has(.HeadlineComponentStyle-popupHeadlineContent + .HotKey-commonBlockForHotKey) > div.MainQuestComponentStyle-buttonContainer::after {
+.ItemDescriptionComponentStyle-commonBlockModal:has(.HeadlineComponentStyle-popupHeadlineContent + .-commonBlockForHotKey) > div.TutorialModalComponentStyle-navigationButton::after,
+.ItemDescriptionComponentStyle-commonBlockModal:has(.HeadlineComponentStyle-popupHeadlineContent + .-commonBlockForHotKey) > div.MainQuestComponentStyle-buttonContainer::after {
 	content: 'Z';
 	position: absolute;
 	top: 50%;
@@ -2082,7 +2082,7 @@
 
 /* Header hotkey */
 
-.SaleByKitStyle-commonBlockModal .SaleByKitStyle-paddingHeaderModal .HotKey-commonBlockForHotKey {
+.SaleByKitStyle-commonBlockModal .SaleByKitStyle-paddingHeaderModal .-commonBlockForHotKey {
 	position: relative;
 	top: auto;
 	left: auto;
