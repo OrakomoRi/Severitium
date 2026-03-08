@@ -39,7 +39,7 @@ svg.severitium-link-rects rect {
 
 /* Common container background on entrance */
 
-.Common-entranceGradient > .Common-container {
+.-entranceGradient > .-container {
 	background: transparent;
 }
 

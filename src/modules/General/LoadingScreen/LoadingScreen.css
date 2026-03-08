@@ -35,7 +35,7 @@ body {
 
 /* Loading background after login/register overlaying container */
 
-.Common-background + div > div[style*='background'i] {
+.-background + div > div[style*='background'i] {
 	display: none;
 }
 

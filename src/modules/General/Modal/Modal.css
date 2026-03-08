@@ -37,7 +37,7 @@
 
 /* Modal overlay */
 
-.ModalStyle-rootHover:not(:has(.Common-spinner)),
+.ModalStyle-rootHover:not(:has(.-spinner)),
 .ModalStyle-root,
 .ModalStyle-shaded {
 	position: absolute;
@@ -55,8 +55,8 @@
 
 /* Inner element (modal window) */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i]):not(:has(.Common-spinner)):not(:has(> .ReCaptchaComponentStyle-captchaBlock)),
-.ModalStyle-shaded > div:not([class*='battlepick'i]):not(:has(.Common-spinner)):not(:has(> .ReCaptchaComponentStyle-captchaBlock)),
+.ModalStyle-rootHover > div:not([class*='battlepick'i]):not(:has(.-spinner)):not(:has(> .ReCaptchaComponentStyle-captchaBlock)),
+.ModalStyle-shaded > div:not([class*='battlepick'i]):not(:has(.-spinner)):not(:has(> .ReCaptchaComponentStyle-captchaBlock)),
 .DialogContainerComponentStyle-container {
 	position: relative;
 	background: var(--severitium-dark-transparent-background1);
@@ -493,7 +493,7 @@
 
 /* Button icon */
 
-.DialogPremiumAccountStyle-content .SquarePriceButtonComponentStyle-commonBlockButton:not(:root) .Common-backgroundImage {
+.DialogPremiumAccountStyle-content .SquarePriceButtonComponentStyle-commonBlockButton:not(:root) .-backgroundImage {
 	width: 4em;
 	aspect-ratio: 1 / 1;
 	background: none;
@@ -1184,7 +1184,7 @@
 
 /* Happy tanker dialog image */
 
-.ModalStyle-root > div > div > div > div div[style*='happytankerballoon'i] {
+.ModalStyle-transparent > div > div > div > div div[style*='happytankerballoon'i] {
 	background: none !important;
 }
 
@@ -1196,7 +1196,8 @@
 
 /* Close icon container */
 
-.ModalStyle-root *:has(> .GSWarningComponentStyle-closeImage) {
+.ModalStyle-root *:has(> .GSWarningComponentStyle-closeImage),
+.ModalStyle-transparent *:has(> .GSWarningComponentStyle-closeImage) {
 	position: unset;
 }
 

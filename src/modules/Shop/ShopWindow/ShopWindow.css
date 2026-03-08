@@ -52,7 +52,7 @@
 
 /* Large card background */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover {
+.LargeSingleCardComponentStyle-commonBlock > .-backgroundImageCover {
 	box-sizing: border-box;
 	background-size: cover;
 	box-shadow: none;
@@ -63,7 +63,7 @@
 
 /* Large card timer */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover > div[class*='time'i] {
+.LargeSingleCardComponentStyle-commonBlock > .-backgroundImageCover > div[class*='time'i] {
 	background-color: var(--severitium-timer-color);
 	color: var(--severitium-black-text-color);
 	border-radius: var(--severitium-border-radius);
@@ -71,7 +71,7 @@
 
 /* Purchase button */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*='center'i] {
+.LargeSingleCardComponentStyle-commonBlock > .-backgroundImageCover + div[class*='center'i] {
 	position: relative;
 	box-sizing: border-box;
 	outline: none;
@@ -86,7 +86,7 @@
 
 /* Button on hover */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*='center'i]:hover {
+.LargeSingleCardComponentStyle-commonBlock > .-backgroundImageCover + div[class*='center'i]:hover {
 	background-color: var(--severitium-gold-button-background);
 	outline: none;
 	box-shadow: none;
@@ -95,13 +95,13 @@
 
 /* Button text */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*='center'i] > span {
+.LargeSingleCardComponentStyle-commonBlock > .-backgroundImageCover + div[class*='center'i] > span {
 	color: var(--severitium-gold-button-color);
 }
 
 /* Button hotkey container */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*='center'i] h3[class*='hotkey'i] {
+.LargeSingleCardComponentStyle-commonBlock > .-backgroundImageCover + div[class*='center'i] h3[class*='hotkey'i] {
 	background: transparent;
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-light-gray-color) dashed .1em;
@@ -110,20 +110,20 @@
 
 /* Price text */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*='center'i] span[class*='price'i] {
+.LargeSingleCardComponentStyle-commonBlock > .-backgroundImageCover + div[class*='center'i] span[class*='price'i] {
 	color: var(--severitium-extra-light-gray-text-color);
 }
 
 /* Discount container */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*='center'i] .ShopItemComponentStyle-discountContainer {
+.LargeSingleCardComponentStyle-commonBlock > .-backgroundImageCover + div[class*='center'i] .ShopItemComponentStyle-discountContainer {
 	background-color: var(--severitium-red-color);
 	border-radius: var(--severitium-border-radius);
 }
 
 /* Discount text */
 
-.LargeSingleCardComponentStyle-commonBlock > .Common-backgroundImageCover + div[class*='center'i] .ShopItemComponentStyle-discountContainer > h3 {
+.LargeSingleCardComponentStyle-commonBlock > .-backgroundImageCover + div[class*='center'i] .ShopItemComponentStyle-discountContainer > h3 {
 	color: var(--severitium-white-text-color);
 }
 

@@ -29,7 +29,7 @@
 
 /* Card background */
 
-.ScrollingCardsComponentStyle-scrollCard .Common-backgroundImageCover {
+.ScrollingCardsComponentStyle-scrollCard .-backgroundImageCover {
 	-webkit-filter: saturate(1.5);
 	filter: saturate(1.5);
 	border-radius: 0;
@@ -47,7 +47,7 @@
 
 /* Card background on card hover */
 
-.ScrollingCardsComponentStyle-scrollCard:hover .Common-backgroundImageCover {
+.ScrollingCardsComponentStyle-scrollCard:hover .-backgroundImageCover {
 	-webkit-transform: scale(1.1, 1.1) !important;
 	transform: scale(1.1, 1.1) !important;
 }

@@ -391,7 +391,7 @@
 
 /* Free unavailable item image */
 
-.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-tierCommon > .Common-backgroundImageContain {
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-tierCommon > .-backgroundImageContain {
 	opacity: 1;
 }
 
@@ -422,7 +422,7 @@
 
 /* Free unclaimed item image */
 
-.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNow > .Common-backgroundImageContain {
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNow > .-backgroundImageContain {
 	opacity: 1;
 }
 
@@ -472,7 +472,7 @@
 
 /* Free claimed item image */
 
-.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-availableItem > .Common-backgroundImageContain {
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-availableItem > .-backgroundImageContain {
 	opacity: .5;
 }
 
@@ -522,7 +522,7 @@
 
 /* Premium unavailable item image */
 
-.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-tierPremium > .Common-backgroundImageContain {
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-tierPremium > .-backgroundImageContain {
 	opacity: 1;
 }
 
@@ -553,7 +553,7 @@
 
 /* Premium unclaimed item image */
 
-.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNowPremium > .Common-backgroundImageContain {
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNowPremium > .-backgroundImageContain {
 	opacity: 1;
 }
 
@@ -603,7 +603,7 @@
 
 /* Premium claimed item image */
 
-.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-availableItemPremium:not(.TierItemComponentStyle-getItemNowPremium) > .Common-backgroundImageContain {
+.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-availableItemPremium:not(.TierItemComponentStyle-getItemNowPremium) > .-backgroundImageContain {
 	opacity: .5;
 }
 
@@ -617,7 +617,7 @@
 
 /* Elite challenges unavailable items */
 
-.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) .ChallengeTierComponentStyle-blockTier .Common-flexCenterAlignCenterColumn {
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) .ChallengeTierComponentStyle-blockTier .-flexCenterAlignCenterColumn {
 	background: none;
 	background: linear-gradient(transparent 0%, var(--severitium-gold-button-background) 100%);
 	border-radius: var(--severitium-border-radius);
@@ -628,13 +628,13 @@
 
 /* Unavailable item original icon */
 
-.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) .ChallengeTierComponentStyle-blockTier .Common-flexCenterAlignCenterColumn > img {
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) .ChallengeTierComponentStyle-blockTier .-flexCenterAlignCenterColumn > img {
 	display: none;
 }
 
 /* Unavailable item custom icon */
 
-.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) .ChallengeTierComponentStyle-blockTier .Common-flexCenterAlignCenterColumn::before {
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) .ChallengeTierComponentStyle-blockTier .-flexCenterAlignCenterColumn::before {
 	content: '';
 	position: absolute;
 	top: .5em;
@@ -655,13 +655,13 @@
 
 /* Unavailable item image */
 
-.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) .ChallengeTierComponentStyle-blockTier .Common-flexCenterAlignCenterColumn > .Common-backgroundImageContain {
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) .ChallengeTierComponentStyle-blockTier .-flexCenterAlignCenterColumn > .-backgroundImageContain {
 	opacity: 1;
 }
 
 /* Unavailable item text */
 
-.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) .ChallengeTierComponentStyle-blockTier .Common-flexCenterAlignCenterColumn h3 {
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) .ChallengeTierComponentStyle-blockTier .-flexCenterAlignCenterColumn h3 {
 	color: var(--severitium-gold-button-color);
 }
 
@@ -764,14 +764,14 @@
 
 /* Max tiers free block */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:first-of-type {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn:first-of-type {
 	height: 50%;
 	background: none;
 }
 
 /* Max tiers free block custom background gradients */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:first-of-type::before {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn:first-of-type::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -785,7 +785,7 @@
 
 /* Max tiers free block label */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:first-of-type > h3 {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn:first-of-type > h3 {
 	font-size: 1.25em;
 	font-weight: 600;
 	color: var(--severitium-green-text-color);
@@ -793,20 +793,20 @@
 
 /* Max tiers free block text */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:first-of-type > span {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn:first-of-type > span {
 	color: var(--severitium-extra-light-gray-text-color);
 }
 
 /* Max tiers premium block */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:last-of-type {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn:last-of-type {
 	height: 50%;
 	background: none;
 }
 
 /* Max tiers premium block custom background gradients */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:last-of-type::before {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn:last-of-type::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -820,7 +820,7 @@
 
 /* Max tiers premium block label */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:last-of-type > h3 {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn:last-of-type > h3 {
 	font-size: 1.25em;
 	font-weight: 600;
 	color: var(--severitium-gold-text-color);
@@ -828,43 +828,43 @@
 
 /* Max tiers premium block text */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:last-of-type > span {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn:last-of-type > span {
 	color: var(--severitium-extra-light-gray-text-color);
 }
 
 /* Max tiers blocks original background gradients */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn .QuestsChallengesComponentStyle-blockGradient {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn .QuestsChallengesComponentStyle-blockGradient {
 	display: none;
 }
 
 /* Max tier block image container */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier {
 	position: relative;
 }
 
 /* Max tiers block images */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > .Common-backgroundImageContain {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > .-backgroundImageContain {
 	opacity: 1;
 }
 
 /* Image when a reward is claimed */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > img[src*='checker'i] + .Common-backgroundImageContain {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > img[src*='checker'i] + .-backgroundImageContain {
 	opacity: .5;
 }
 
 /* Max tiers both block original checker icon */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > img {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > img {
 	display: none;
 }
 
 /* Max tiers free block custom checker icon */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:first-of-type .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier:has(> img[src*='checker'i])::before {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn:first-of-type .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier:has(> img[src*='checker'i])::before {
 	position: absolute;
 	bottom: .5em;
 	left: .5em;
@@ -885,7 +885,7 @@
 
 /* Max tiers premium block custom checker icon */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .Common-flexCenterAlignCenterColumn:last-of-type .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier:has(> img[src*='checker'i])::before {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn:last-of-type .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier:has(> img[src*='checker'i])::before {
 	position: absolute;
 	top: .5em;
 	left: .5em;
@@ -1040,7 +1040,7 @@
 
 /* Image when a reward is claimed */
 
-.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > img[src*='checker'i] + .Common-backgroundImageContain {
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > img[src*='checker'i] + .-backgroundImageContain {
 	opacity: .5;
 }
 

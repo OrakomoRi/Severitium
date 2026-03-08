@@ -1,6 +1,6 @@
 /* The main container everywhere */
 
-.Common-container {
+.-container {
 	background: none;
 	background-color: black;
 	background-position: center;
@@ -11,7 +11,7 @@
 
 /* The main container everywhere except the lobby */
 
-.Common-container:not(:has(> [class*="mainscreen" i])):not(:has(> [class*="garagecontainer" i])) {
+.-container:not(:has(> [class*="mainscreen" i])):not(:has(> [class*="garagecontainer" i])) {
 	z-index: 0;
 }
 

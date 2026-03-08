@@ -260,7 +260,7 @@
 
 /* Original icon */
 
-.EulaComponentStyle-buttonAndTextContainer > div .Common-backgroundImage {
+.EulaComponentStyle-buttonAndTextContainer > div .-backgroundImage {
 	display: none;
 }
 
@@ -344,7 +344,7 @@
 
 /* License item icon */
 
-.EulaComponentStyle-eulaItem .Common-maskImageContain {
+.EulaComponentStyle-eulaItem .-maskImageContain {
 	background-color: var(--severitium-light-gray-color);
 }
 

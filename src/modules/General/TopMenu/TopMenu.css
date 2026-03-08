@@ -36,7 +36,7 @@
 .ContainersComponentStyle-navigationBlock [class*='hotkey'i]:not([class*='component'i]),
 .GarageMenuComponentStyle-garageMenuContainer [class*='hotkey'i]:not([class*='component'i]),
 .ProBattlesComponentStyle-navigationBlock [class*='hotkey'i]:not([class*='component'i]),
-.Common-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div [class*='hotkey'i]:not([class*='component'i]),
+.-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div [class*='hotkey'i]:not([class*='component'i]),
 .ContainersComponentStyle-navigationBlockForCategories [class*='hotkey'i]:not([class*='component'i]) {
 	background: transparent;
 	border: var(--severitium-gray-color) dashed .1em;
@@ -46,7 +46,7 @@
 
 /* Quest & Battle display type hotkey inside the main container */
 
-.Common-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) [class*='hotkey'i]:not([class*='component'i]),
+.-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) [class*='hotkey'i]:not([class*='component'i]),
 .ProBattlesComponentStyle-navigationBlock > div [class*='hotkey'i]:not([class*='component'i]) {
 	position: relative;
 	top: auto;
@@ -99,13 +99,13 @@
 
 /* Quests top menu outer container of a main container */
 
-.Common-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) {
+.-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) {
 	position: relative;
 }
 
 /* Quest & Battle display type button inside the main container */
 
-.Common-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) div:has(> [class*='hotkey'i]:not([class*='component'i])),
+.-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) div:has(> [class*='hotkey'i]:not([class*='component'i])),
 .ProBattlesComponentStyle-navigationBlock > div {
 	display: flex;
 	justify-content: center;
@@ -119,15 +119,15 @@
 
 /* Quest & Battle display type button inside the main container on hover */
 
-.Common-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) div:has(> [class*='hotkey'i]:not([class*='component'i])):hover,
+.-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) div:has(> [class*='hotkey'i]:not([class*='component'i])):hover,
 .ProBattlesComponentStyle-navigationBlock > div:hover {
 	background: none;
 }
 
 /* Battle & Quest display type icon's container inside the main container */
 
-.Common-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) div:has(> div.Common-maskImageContain),
-.ProBattlesComponentStyle-navigationBlock > div div:has(> div.Common-maskImageContain) {
+.-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) div:has(> div.-maskImageContain),
+.ProBattlesComponentStyle-navigationBlock > div div:has(> div.-maskImageContain) {
 	position: relative;
 	width: auto;
 	height: auto;
@@ -136,8 +136,8 @@
 
 /* Battle & Quest display type icon inside the main container */
 
-.Common-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) div.Common-maskImageContain,
-.ProBattlesComponentStyle-navigationBlock > div div.Common-maskImageContain {
+.-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) div.-maskImageContain,
+.ProBattlesComponentStyle-navigationBlock > div div.-maskImageContain {
 	height: 1.5em;
 	width: 1.5em;
 	margin: 0;
@@ -154,8 +154,8 @@
 
 /* Battle & Quest display type icon inside the main container on hover */
 
-.Common-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) > div div:hover > div.Common-maskImageContain,
-.ProBattlesComponentStyle-navigationBlock > div > div div:hover > div.Common-maskImageContain {
+.-container:has(.QuestsComponentStyle-content) .BreadcrumbsComponentStyle-headerContainer + div:not(.QuestsComponentStyle-content) > div div:hover > div.-maskImageContain,
+.ProBattlesComponentStyle-navigationBlock > div > div div:hover > div.-maskImageContain {
 	background-color: var(--severitium-white-color);
 }
 

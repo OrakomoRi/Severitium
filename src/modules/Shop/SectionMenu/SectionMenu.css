@@ -20,7 +20,7 @@
 
 /* Main menu container scrollbar options */
 
-.NewShopCommonComponentStyle-commonBlockMenuShop.Common-scrollBarMenu {
+.NewShopCommonComponentStyle-commonBlockMenuShop.-scrollBarMenu {
 	scrollbar-color: var(--severitium-light-transparent-background2) transparent;
 	scrollbar-width: thin;
 }
