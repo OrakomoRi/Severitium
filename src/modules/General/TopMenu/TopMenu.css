@@ -205,21 +205,21 @@ div:has(> .MenuComponentStyle-mainMenuItem) {
 
 /* Active item of a menu */
 
-.Common-activeMenu {
+.-activeMenu {
 	color: var(--severitium-main-color);
 	pointer-events: none;
 }
 
 /* Span on active item */
 
-.Common-activeMenu > span {
+.-activeMenu > span {
 	color: var(--severitium-main-color);
 	text-shadow: var(--severitium-main-color) 0px 0px 0.5em;
 }
 
 /* Active item bottom border */
 
-.Common-activeMenu > div {
+.-activeMenu > div {
 	height: .1em;
 	background: var(--severitium-main-color);
 	box-shadow: var(--severitium-main-color) 0 0 0 .1em;
@@ -237,7 +237,7 @@ div:has(> .MenuComponentStyle-mainMenuItem) {
 
 /* Hotkey blocks inside the menu for Q and E */
 
-div[class*='menucomponent'i] .Common-buttonQE {
+div[class*='menucomponent'i] .-buttonQE {
 	background: transparent;
 	border: var(--severitium-gray-color) dashed .1em;
 	border-radius: var(--severitium-border-radius);
@@ -245,7 +245,7 @@ div[class*='menucomponent'i] .Common-buttonQE {
 
 /* Hotkey blocks' text inside the menu */
 
-div[class*='menucomponent'i] .Common-buttonQE > span {
+div[class*='menucomponent'i] .-buttonQE > span {
 	color: var(--severitium-dark-white-text-color);
 }
 
