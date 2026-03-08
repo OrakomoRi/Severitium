@@ -3011,6 +3011,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.51 style: update quest screen styles",
       "hash": "e07f4bee9e8ec005fb2f77fcd622408b578d0120"
+    },
+    {
+      "version": "1.8.3+build.52",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.52 style: update class names for consistency",
+      "hash": "3a3032ee473a4623babe49eb949e2a20198f38d9"
     }
   ]
 }
