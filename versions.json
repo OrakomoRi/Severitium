@@ -3071,6 +3071,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.62 style: update modal styles",
       "hash": "bf71a1407255f10da67ef35e5cfb5e5edcf22662"
+    },
+    {
+      "version": "1.8.3+build.63",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.63 style: adjust CSS properties for better layout",
+      "hash": "82b25dad91af267d70d832b54ce58750033b5036"
     }
   ]
 }
