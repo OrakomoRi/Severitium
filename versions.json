@@ -3023,6 +3023,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.53 feat: add hotkey styles for challenge buttons",
       "hash": "59026c00c6a55ece6b471c5eac10f74e6260f61b"
+    },
+    {
+      "version": "1.8.3+build.54",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.54 style: update modal styles for premium account",
+      "hash": "535f3c44a19182da79ddc5da3e68a203ae6b4fd2"
     }
   ]
 }
