@@ -177,7 +177,7 @@ function processCategory(category) {
 
 	// Skip empty categories
 	if (newFiles.length === 0 && oldFiles.length === 0) {
-		console.log(`⚠️  ${category}: No images found (skipped)`);
+		console.log(`${category}: No images found (skipped)`);
 		return null;
 	}
 
@@ -185,14 +185,14 @@ function processCategory(category) {
 	const { matched, unmatchedNew, unmatchedOld } = matchFiles(newFiles, oldFiles);
 
 	// Log category results
-	console.log(`✅ ${category}:`);
-	console.log(`   📦 Matched pairs: ${matched.length}`);
+	console.log(`${category}:`);
+	console.log(`Matched pairs: ${matched.length}`);
 
 	if (unmatchedNew.length > 0) {
-		console.log(`   ⚠️  Only in new/: ${unmatchedNew.join(', ')}`);
+		console.log(`Only in new/: ${unmatchedNew.join(', ')}`);
 	}
 	if (unmatchedOld.length > 0) {
-		console.log(`   ⚠️  Only in old/: ${unmatchedOld.join(', ')}`);
+		console.log(`Only in old/: ${unmatchedOld.join(', ')}`);
 	}
 
 	// Return category data
@@ -217,7 +217,7 @@ function processCategory(category) {
  * @returns {Object} The generated manifest object
  */
 function generateManifest() {
-	console.log('🔍 Scanning image directories...\n');
+	console.log('Scanning image directories...\n');
 
 	// Initialize manifest structure
 	const manifest = {
@@ -230,11 +230,11 @@ function generateManifest() {
 	const categories = discoverCategories();
 
 	if (categories.length === 0) {
-		console.warn('⚠️  No categories found!');
+		console.warn('No categories found!');
 		return manifest;
 	}
 
-	console.log(`📁 Found ${categories.length} categories: ${categories.join(', ')}\n`);
+	console.log(`Found ${categories.length} categories: ${categories.join(', ')}\n`);
 
 	// Process each category
 	for (const category of categories) {
@@ -271,13 +271,13 @@ function writeManifest(manifest) {
 			.filter(cat => cat.warnings).length;
 
 		// Log success
-		console.log('\n✨ Manifest generated successfully!');
-		console.log(`📄 Saved to: ${path.relative(process.cwd(), CONFIG.outputFile)}`);
-		console.log(`📊 Total categories: ${totalCategories}`);
-		console.log(`🖼️  Total matched pairs: ${totalMatched}`);
+		console.log('\nManifest generated successfully!');
+		console.log(`Saved to: ${path.relative(process.cwd(), CONFIG.outputFile)}`);
+		console.log(`Total categories: ${totalCategories}`);
+		console.log(`Total matched pairs: ${totalMatched}`);
 
 		if (categoriesWithWarnings > 0) {
-			console.log(`⚠️  Categories with warnings: ${categoriesWithWarnings}`);
+			console.log(`Categories with warnings: ${categoriesWithWarnings}`);
 			console.log('    (See manifest for details on unmatched files)');
 		}
 	} catch (error) {
@@ -294,18 +294,18 @@ function writeManifest(manifest) {
  */
 function main() {
 	try {
-		console.log('🎨 Image Manifest Generator v' + CONFIG.manifestVersion);
+		console.log('Image Manifest Generator v' + CONFIG.manifestVersion);
 		console.log('━'.repeat(60) + '\n');
 
 		const manifest = generateManifest();
 		writeManifest(manifest);
 
 		console.log('\n' + '━'.repeat(60));
-		console.log('✅ Done! Run this script again when you add/remove images.\n');
+		console.log('Done! Run this script again when you add/remove images.\n');
 
 		process.exit(0);
 	} catch (error) {
-		console.error('\n❌ Error generating manifest:', error.message);
+		console.error('\nError generating manifest:', error.message);
 		console.error(error.stack);
 		process.exit(1);
 	}
