@@ -2999,6 +2999,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.49 feat: update styles for entrance and loading screens",
       "hash": "238aeef46e72befb0e3286169ec5328fd61ed3a1"
+    },
+    {
+      "version": "1.8.3+build.50",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.50 style: update active menu styles",
+      "hash": "09ee74328f76d1ccb8357d68a694cfaf511dc048"
     }
   ]
 }
