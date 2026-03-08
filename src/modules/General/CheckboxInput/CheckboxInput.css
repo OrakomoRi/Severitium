@@ -1,3 +1,13 @@
+/* Label inside checkbox block */
+
+.CheckBoxStyle-checkbox > label {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Original checkbox input */
+
 .CheckBoxStyle-checkbox input[type="checkbox"] {
 	position: absolute;
 	height: 1px;
@@ -5,6 +15,8 @@
 	overflow: hidden;
 	clip: rect(0 0 0 0);
 }
+
+/* Custom checkbox */
 
 .CheckBoxStyle-checkbox input[type="checkbox"] + span {
 	position: relative;
@@ -16,6 +28,8 @@
 	display: inline-block;
 	transition: background-color .2s;
 }
+
+/* Custom checkbox indicator */
 
 .CheckBoxStyle-checkbox input[type="checkbox"] + span::before {
 	content: '';
@@ -30,28 +44,40 @@
 	transition: transform .2s, -webkit-transform .2s;
 }
 
+/* Custom checkbox indicator for different states */
+
 .CheckBoxStyle-checkbox input[type="checkbox"][data-state] + span::before {
 	background: none;
 	background-color: var(--severitium-white-color);
 }
 
+/* Custom checkbox for "off" state */
+
 .CheckBoxStyle-checkbox input[type="checkbox"][data-state="off"] + span {
 	background-color: var(--severitium-light-gray-color);
 }
+
+/* Custom checkbox indicator for "off" state */
 
 .CheckBoxStyle-checkbox input[type="checkbox"][data-state="off"] + span::before {
 	-webkit-transform: translateX(0);
 	        transform: translateX(0);
 }
 
+/* Custom checkbox for "on" state */
+
 .CheckBoxStyle-checkbox input[type="checkbox"][data-state="on"] + span {
 	background-color: var(--severitium-main-color);
 }
+
+/* Custom checkbox indicator for "on" state */
 
 .CheckBoxStyle-checkbox input[type="checkbox"][data-state="on"] + span::before {
 	-webkit-transform: translateX(1.5em);
 	        transform: translateX(1.5em);
 }
+
+/* Custom checkbox class when it is just initialized */
 
 input[type="checkbox"].no-transition + span::before {
 	transition: none;

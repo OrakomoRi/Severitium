@@ -356,3 +356,54 @@
 	font-size: 1em;
 	color: var(--severitium-light-gray-text-color);
 }
+
+/* Payment agreement container */
+
+.BasePaymentComponentStyle-agreementContainer {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Payment agreement container and all elements inside */
+
+.BasePaymentComponentStyle-agreementContainer,
+.BasePaymentComponentStyle-agreementContainer * {
+	box-sizing: border-box;
+}
+
+/* Payment agreement text block */
+
+.BasePaymentComponentStyle-agreementText {
+	width: 40%;
+	margin-left: .5em;
+	font-size: .9em;
+}
+
+/* All elements inside agreement text block */
+
+.BasePaymentComponentStyle-agreementText * {
+	font-size: .9em;
+}
+
+/* Payment agreement text item */
+
+.BasePaymentComponentStyle-agreementText > span {
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* Payment agreement link item */
+
+.BasePaymentComponentStyle-agreementText > a {
+	color: var(--severitium-main-color);
+	-webkit-text-decoration: dashed;
+	text-decoration: dashed;
+	transition: color .2s ease;
+}
+
+/* Link on hover */
+
+.BasePaymentComponentStyle-agreementText > a:hover {
+	color: var(--severitium-white-text-color);
+}
