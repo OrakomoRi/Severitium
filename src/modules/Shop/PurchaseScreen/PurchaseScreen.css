@@ -397,8 +397,8 @@
 
 .BasePaymentComponentStyle-agreementText > a {
 	color: var(--severitium-main-color);
-	-webkit-text-decoration: dashed;
-	text-decoration: dashed;
+	-webkit-text-decoration: none;
+			text-decoration: none;
 	transition: color .2s ease;
 }
 
