@@ -1,3 +1,15 @@
+/* Payment info container */
+
+.PaymentInfoComponentStyle-paymentInfo {
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+}
+
 /* Payment screen header block */
 
 .PaymentInfoComponentStyle-commonBlock {
@@ -14,6 +26,64 @@
 
 .PaymentInfoComponentStyle-commonBlock .PaymentInfoComponentStyle-currency {
 	color: var(--severitium-main-color);
+}
+
+/* Header info */
+
+.PaymentInfoComponentStyle-paymentInfo .PaymentInfoComponentStyle-commonBlock + div:has(> p) {
+	width: fit-content;
+	height: fit-content;
+	max-width: 40%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
+	text-align: center;
+	cursor: pointer;
+}
+
+/* Header info pseudo-element custom icon */
+
+.PaymentInfoComponentStyle-paymentInfo .PaymentInfoComponentStyle-commonBlock+ div:has(> p)::before {
+	content: '';
+	width: 1em;
+	height: 1em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-extra-light-gray-color);
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14"><path d="M2 0h4v2H2zM0 6h2v6a2 2 0 0 0 2 2h4v-2H6V4H0z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14"><path d="M2 0h4v2H2zM0 6h2v6a2 2 0 0 0 2 2h4v-2H6V4H0z"/></svg>');
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	transition: background-color .2s ease;
+}
+
+/* Icon on hover */
+
+.PaymentInfoComponentStyle-paymentInfo .PaymentInfoComponentStyle-commonBlock+ div:has(> p):hover::before {
+	background-color: var(--severitium-white-color);
+}
+
+/* Header info text */
+
+.PaymentInfoComponentStyle-paymentInfo .PaymentInfoComponentStyle-commonBlock + div > p {
+	width: fit-content;
+	height: fit-content;
+	cursor: pointer;
+	pointer-events: none;
+	font-size: 1em;
+	color: var(--severitium-extra-light-gray-text-color);
+	text-decoration: none;
+	transition: color .2s ease;
+}
+
+/* Header info text on hover */
+
+.PaymentInfoComponentStyle-paymentInfo .PaymentInfoComponentStyle-commonBlock + div:hover > p {
+	color: var(--severitium-white-text-color);
 }
 
 /* Sold amount container */
