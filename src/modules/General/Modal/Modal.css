@@ -415,13 +415,13 @@
 
 /* Title of premium modal */
 
-.ModalStyle-rootHover .DialogPremiumAccountStyle-title {
+.ModalStyle-shaded .DialogPremiumAccountStyle-title {
 	height: auto;
 }
 
 /* Header text */
 
-.ModalStyle-rootHover .DialogPremiumAccountStyle-title > .DialogPremiumAccountStyle-header {
+.ModalStyle-shaded .DialogPremiumAccountStyle-title > .DialogPremiumAccountStyle-header {
 	font-size: 1.5em;
 	font-family: BaseFontMedium, FallbackFontMedium;
 	font-weight: normal;
@@ -432,7 +432,7 @@
 
 /* No-premium sub-header */
 
-.ModalStyle-rootHover .DialogPremiumAccountStyle-title > .DialogPremiumAccountStyle-noPremium {
+.ModalStyle-shaded .DialogPremiumAccountStyle-title > .DialogPremiumAccountStyle-noPremium {
 	font-size: 1.25em;
 	font-family: BaseFontMedium, FallbackFontMedium;
 	font-weight: normal;
@@ -443,13 +443,13 @@
 
 /* Text under premium icon */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i]) img[src*='iconpremium'i] + span {
+.ModalStyle-shaded > div:not([class*='battlepick'i]) img[src*='iconpremium'i] + span {
 	color: var(--severitium-gold-text-color);
 }
 
 /* Single benefit container */
 
-.ModalStyle-rootHover .UserInfoContainerStyle-premiumBenefitsContainer {
+.ModalStyle-shaded .UserInfoContainerStyle-premiumBenefitsContainer {
 	height: auto;
 	padding: .5em 0;
 	border: none;
@@ -458,13 +458,13 @@
 
 /* Single benefit containers except the last one */
 
-.ModalStyle-rootHover .UserInfoContainerStyle-premiumBenefitsContainer:not(:last-of-type) {
+.ModalStyle-shaded .UserInfoContainerStyle-premiumBenefitsContainer:not(:last-of-type) {
 	border-bottom: .1em solid var(--severitium-gray-color);
 }
 
 /* Benefits percents inside the premium modal */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i]) .UserInfoContainerStyle-premiumBenefitsContainer > span:last-child {
+.ModalStyle-shaded > div:not([class*='battlepick'i]) .UserInfoContainerStyle-premiumBenefitsContainer > span:last-child {
 	color: var(--severitium-gold-text-color);
 }
 
