@@ -1200,6 +1200,15 @@
 	color: var(--severitium-green-button-color);
 }
 
+/* Button hotkey */
+
+.QuestsChallengesComponentStyle-containerTiers:has(.ChallengeTierComponentStyle-blockTier .TierItemComponentStyle-getItemNow) + .ChallengePurchaseComponentStyle-blockPurchase > div:first-of-type h3[class*='hotkey'i] {
+	background: transparent;
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: var(--severitium-border-radius);
+	color: var(--severitium-dark-white-text-color);
+}
+
 /* Purchase button */
 
 .ChallengePurchaseComponentStyle-blockPurchase .ChallengePurchaseComponentStyle-buttonBattlePass {
@@ -1226,6 +1235,15 @@
 
 .ChallengePurchaseComponentStyle-blockPurchase .ChallengePurchaseComponentStyle-buttonBattlePass > span {
 	color: var(--severitium-gold-button-color);
+}
+
+/* Button hotkey */
+
+.ChallengePurchaseComponentStyle-blockPurchase .ChallengePurchaseComponentStyle-buttonBattlePass h3[class*='hotkey'i] {
+	background: transparent;
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: var(--severitium-border-radius);
+	color: var(--severitium-dark-white-text-color);
 }
 
 /* Helper text block */
