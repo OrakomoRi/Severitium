@@ -3047,6 +3047,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.57 style: update EULA button styles",
       "hash": "f3a48c2fa4d39e7fcefbeffdbf61e72e0d232f4b"
+    },
+    {
+      "version": "1.8.3+build.58",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.58 feat: enhance checkbox styles and add payment agreement layout",
+      "hash": "824a14cb210bf2d927d3de36f72c461fe4b0fa44"
     }
   ]
 }
