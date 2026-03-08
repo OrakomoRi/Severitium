@@ -103,6 +103,7 @@
 /* Text of the modal window */
 
 .DialogContainerComponentStyle-contentContainer span,
+.ModalStyle-shaded .-contentContainer span,
 .ModalStyle-rootHover > div > div:has(> [class*='head'i]) + div > div > div {
 	color: var(--severitium-light-gray-text-color) !important;
 }
@@ -140,7 +141,8 @@
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .PaidRenameDialogComponentStyle-messageBlock > span[class]:not([class*='common'i]),
 .ModalStyle-shaded > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-contentContainer span[class]:not([class*='common'i]),
 .ModalStyle-shaded > div:not([class*='battlepick'i]) .FriendListComponentStyle-commonBlockText span[class]:not([class*='common'i]),
-.ModalStyle-shaded > div:not([class*='battlepick'i]) .PaidRenameDialogComponentStyle-messageBlock > span[class]:not([class*='common'i]) {
+.ModalStyle-shaded > div:not([class*='battlepick'i]) .PaidRenameDialogComponentStyle-messageBlock > span[class]:not([class*='common'i]),
+	.ModalStyle-shaded > div:not([class*='battlepick'i]) .-contentContainer span[class]:not([class*='common'i]) {
 	color: var(--severitium-main-color);
 }
 
@@ -170,7 +172,7 @@
 /* Cancel button of the modal window */
 
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-keyButton,
-.ModalStyle-rootHover > div:not([class*='battlepick'i]) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(1),
+.ModalStyle-shaded > div:not([class*='battlepick'i]) .-buttonsContainer > div:nth-child(1),
 .ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:first-of-type,
 .ModalStyle-shaded > div div.DialogContainerComponentStyle-keyButton {
 	margin: 0;
@@ -185,7 +187,7 @@
 /* Cancel button on hover */
 
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-keyButton:hover,
-.ModalStyle-rootHover > div:not([class*='battlepick'i]) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(1):hover,
+.ModalStyle-shaded > div:not([class*='battlepick'i]) .-buttonsContainer > div:nth-child(1):hover,
 .ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:first-of-type:hover,
 .ModalStyle-shaded > div div.DialogContainerComponentStyle-keyButton:hover {
 	border: var(--severitium-gray-button-border-color-hover) solid .1em;
@@ -194,7 +196,7 @@
 /* Cancel button text */
 
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-keyButton span,
-.ModalStyle-rootHover > div:not([class*='battlepick'i]) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(1) span,
+.ModalStyle-shaded > div:not([class*='battlepick'i]) .-buttonsContainer > div:nth-child(1) span,
 .ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:first-of-type span,
 .ModalStyle-shaded > div div.DialogContainerComponentStyle-keyButton span {
 	color: var(--severitium-gray-button-color);
@@ -204,9 +206,9 @@
 
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-enterButton,
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .SuccessfulPurchaseComponentStyle-content > div:last-child,
-.ModalStyle-rootHover > .Need2FaDialogComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2),
-.ModalStyle-rootHover > .ChangeOwnerDialogComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2),
-.ModalStyle-rootHover > .RulesUpdatedComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(1):not(:root),
+.ModalStyle-shaded > .Need2FaDialogComponentStyle-container .-buttonsContainer > div:nth-child(2),
+.ModalStyle-shaded > .ChangeOwnerDialogComponentStyle-container .-buttonsContainer > div:nth-child(2),
+.ModalStyle-shaded > .RulesUpdatedComponentStyle-container .-buttonsContainer > div:nth-child(1):not(:root),
 .ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:last-of-type,
 .ModalStyle-shaded > div div.DialogContainerComponentStyle-enterButton {
 	margin: 0;
@@ -222,9 +224,9 @@
 
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-enterButton:hover,
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .SuccessfulPurchaseComponentStyle-content > div:last-child:hover,
-.ModalStyle-rootHover > .Need2FaDialogComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):hover,
-.ModalStyle-rootHover > .ChangeOwnerDialogComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):hover,
-.ModalStyle-rootHover > .RulesUpdatedComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(1):not(:root):hover,
+.ModalStyle-shaded > .Need2FaDialogComponentStyle-container .-buttonsContainer > div:nth-child(2):hover,
+.ModalStyle-shaded > .ChangeOwnerDialogComponentStyle-container .-buttonsContainer > div:nth-child(2):hover,
+.ModalStyle-shaded > .RulesUpdatedComponentStyle-container .-buttonsContainer > div:nth-child(1):not(:root):hover,
 .ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:last-of-type:hover,
 .ModalStyle-shaded > div div.DialogContainerComponentStyle-enterButton:hover {
 	border: var(--severitium-green-button-border-color-hover) solid .1em;
@@ -234,9 +236,9 @@
 
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-enterButton span,
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .SuccessfulPurchaseComponentStyle-content > div:last-child span,
-.ModalStyle-rootHover > .Need2FaDialogComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) span,
-.ModalStyle-rootHover > .ChangeOwnerDialogComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) span,
-.ModalStyle-rootHover > .RulesUpdatedComponentStyle-container .PopupMessageComponentStyle-buttonsContainer > div:nth-child(1):not(:root) span,
+.ModalStyle-shaded > .Need2FaDialogComponentStyle-container .-buttonsContainer > div:nth-child(2) span,
+.ModalStyle-shaded > .ChangeOwnerDialogComponentStyle-container .-buttonsContainer > div:nth-child(2) span,
+.ModalStyle-shaded > .RulesUpdatedComponentStyle-container .-buttonsContainer > div:nth-child(1):not(:root) span,
 .ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:last-of-type span,
 .ModalStyle-shaded > div div.DialogContainerComponentStyle-enterButton span {
 	color: var(--severitium-green-button-color);
@@ -244,7 +246,7 @@
 
 /* Apply red (warning) button of the modal window */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i], [class*='need2fa'i], [class*='changeowner'i]) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) {
+.ModalStyle-shaded > div:not([class*='battlepick'i], [class*='need2fa'i], [class*='changeowner'i]) .-buttonsContainer > div:nth-child(2) {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -255,19 +257,19 @@
 
 /* Button on hover */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i], [class*='need2fa'i], [class*='changeowner'i]) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):hover {
+.ModalStyle-shaded > div:not([class*='battlepick'i], [class*='need2fa'i], [class*='changeowner'i]) .-buttonsContainer > div:nth-child(2):hover {
 	border: var(--severitium-red-button-border-color-hover) solid .1em;
 }
 
 /* Button text */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i], [class*='need2fa'i], [class*='changeowner'i]) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2) > span {
+.ModalStyle-shaded > div:not([class*='battlepick'i], [class*='need2fa'i], [class*='changeowner'i]) .-buttonsContainer > div:nth-child(2) > span {
 	color: var(--severitium-red-button-color);
 }
 
 /* Green (apply) button of the modal window */
 
-.ModalStyle-rootHover > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):not(:root):nth-last-child(n) {
+.ModalStyle-shaded > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .-buttonsContainer > div:nth-child(2):not(:root):nth-last-child(n) {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -278,19 +280,19 @@
 
 /* Button on hover */
 
-.ModalStyle-rootHover > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):not(:root):nth-last-child(n):hover {
+.ModalStyle-shaded > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .-buttonsContainer > div:nth-child(2):not(:root):nth-last-child(n):hover {
 	border: var(--severitium-green-button-border-color-hover) solid .1em;
 }
 
 /* Button text */
 
-.ModalStyle-rootHover > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .PopupMessageComponentStyle-buttonsContainer > div:nth-child(2):not(:root):nth-last-child(n) > span {
+.ModalStyle-shaded > div:has(.SelectTagDialogComponentStyle-selectTagDiv) .-buttonsContainer > div:nth-child(2):not(:root):nth-last-child(n) > span {
 	color: var(--severitium-green-button-color);
 }
 
 /* Gold (purchase) button of the modal window */ 
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i]) div[class*='premiumbutton'i] {
+.ModalStyle-shaded > div:not([class*='battlepick'i]) div[class*='premiumbutton'i] {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -301,20 +303,20 @@
 
 /* Button on hover */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i]) div[class*='premiumbutton'i]:hover {
+.ModalStyle-shaded > div:not([class*='battlepick'i]) div[class*='premiumbutton'i]:hover {
 	border: var(--severitium-gold-button-border-color-hover) solid .1em;
 }
 
 /* Button text */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i]) div[class*='premiumbutton'i] > span {
+.ModalStyle-shaded > div:not([class*='battlepick'i]) div[class*='premiumbutton'i] > span {
 	color: var(--severitium-gold-button-color);
 }
 
 /* Hotkey block */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i]) .PopupMessageComponentStyle-buttonsContainer > div h3,
-.ModalStyle-rootHover > div:not([class*='battlepick'i]) h3[class*='hotkey'i] {
+.ModalStyle-shaded > div:not([class*='battlepick'i]) .PopupMessageComponentStyle-buttonsContainer > div h3,
+.ModalStyle-shaded > div:not([class*='battlepick'i]) h3[class*='hotkey'i] {
 	background: transparent;
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .1em;
@@ -406,9 +408,33 @@
 
 /* Links inside the modal window */
 
+.ModalStyle-rootHover > div:not([class*='battlepick'i]) a,
+.ModalStyle-shaded > div:not([class*='battlepick'i]) a,
+.ModalStyle-transparent > div:not([class*='battlepick'i]) a,
+.DialogContainerComponentStyle-container a {
+	-webkit-text-decoration: none;
+			text-decoration: none;
+}
+
+/* Link text */
+
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) a u,
+.ModalStyle-shaded > div:not([class*='battlepick'i]) a u,
+.ModalStyle-transparent > div:not([class*='battlepick'i]) a u,
 .DialogContainerComponentStyle-container a u {
 	color: var(--severitium-main-color);
+	-webkit-text-decoration: none;
+			text-decoration: none;
+	transition: color .2s ease;
+}
+
+/* Link on hover */
+
+.ModalStyle-rootHover > div:not([class*='battlepick'i]) a:hover u,
+.ModalStyle-shaded > div:not([class*='battlepick'i]) a:hover u,
+.ModalStyle-transparent > div:not([class*='battlepick'i]) a:hover u,
+.DialogContainerComponentStyle-container a:hover u {
+	color: var(--severitium-white-text-color);
 }
 
 /* PREMIUM MODAL */
