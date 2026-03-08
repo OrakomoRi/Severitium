@@ -3029,6 +3029,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.54 style: update modal styles for premium account",
       "hash": "535f3c44a19182da79ddc5da3e68a203ae6b4fd2"
+    },
+    {
+      "version": "1.8.3+build.55",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.55 style: improve console log formatting",
+      "hash": "a74a440a7a523a87ba6ef8824db1e9663fba20ef"
     }
   ]
 }
