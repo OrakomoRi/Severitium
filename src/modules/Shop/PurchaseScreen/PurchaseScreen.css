@@ -223,6 +223,13 @@
 	gap: 1em;
 }
 
+/* License container and all elements inside */
+
+.EulaComponentStyle-buttonAndTextContainer,
+.EulaComponentStyle-buttonAndTextContainer * {
+	box-sizing: border-box;
+}
+
 /* Icon container */
 
 .EulaComponentStyle-buttonAndTextContainer > div {
@@ -238,7 +245,7 @@
 	border: .1em solid var(--severitium-gray-button-border-color);
 	border-radius: var(--severitium-border-radius);
 	padding: 1em;
-	transition: border .2s ease;
+	transition: border-color .2s ease;
 }
 
 /* Icon container on hover */
@@ -246,7 +253,7 @@
 .EulaComponentStyle-buttonAndTextContainer > div:hover {
 	box-shadow: none;
 	outline: none;
-	border: var(--severitium-gray-button-border-color-hover) solid .1em;
+	border-color: var(--severitium-gray-button-border-color-hover);
 }
 
 /* Icon container when license list is opened */
@@ -254,8 +261,7 @@
 .EulaComponentStyle-eulaList + .EulaComponentStyle-buttonAndTextContainer > div {
 	box-shadow: none;
 	outline: none;
-
-	border: var(--severitium-gray-button-border-color-hover) solid .1em;
+	border-color: var(--severitium-gray-button-border-color-hover);
 }
 
 /* Original icon */
