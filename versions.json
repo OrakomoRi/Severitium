@@ -3053,6 +3053,12 @@
       "date": "2026-03-08",
       "comment": "1.8.3+build.58 feat: enhance checkbox styles and add payment agreement layout",
       "hash": "824a14cb210bf2d927d3de36f72c461fe4b0fa44"
+    },
+    {
+      "version": "1.8.3+build.59",
+      "date": "2026-03-08",
+      "comment": "1.8.3+build.59 feat: enhance black screen functionality",
+      "hash": "746bf8ed243a52affd404b9c00c15c811ef19c20"
     }
   ]
 }
