@@ -19,7 +19,7 @@
 
 /* Inner quests container */
 
-.QuestsComponentStyle-commonBlock {
+.QuestsComponentStyle-content > .-commonBlock {
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -28,7 +28,7 @@
 
 /* Empty quest container header */
 
-.QuestsComponentStyle-commonBlock > [class*="QuestsComponentStyle-emptyList" i] h2 {
+.QuestsComponentStyle-content [class*="-emptyList" i] h2 {
 	width: auto;
 	height: auto;
 	background-color: var(--severitium-main-color);
@@ -41,15 +41,15 @@
 
 /* Empty quest container text */
 
-.QuestsComponentStyle-commonBlock > [class*="QuestsComponentStyle-emptyList" i] p {
+.QuestsComponentStyle-content [class*="-emptyList" i] p {
 	color: var(--severitium-white-text-color);
 	font-size: 1em;
 }
 
 /* Quest main container for items */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer,
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer,
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock {
 	position: relative;
 	display: flex;
 	gap: 1em;
@@ -61,7 +61,7 @@
 
 /* Quest main container for cards */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer {
 	height: 100%;
 	flex-direction: row;
 	align-items: center;
@@ -70,7 +70,7 @@
 
 /* Quest main container for lines */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock {
 	height: 100%;
 	flex-direction: column;
 	align-items: flex-start;
@@ -79,14 +79,14 @@
 
 /* Quest main container for items when there is a supermission */
 
-.QuestsComponentStyle-commonBlock .SuperMissionComponentStyle-descriptionSuperMission + .MainQuestComponentStyle-scrollContainer,
-.QuestsComponentStyle-commonBlock .SuperMissionComponentStyle-descriptionSuperMission + .QuestsComponentStyle-mainQuestBlock {
+.QuestsComponentStyle-content > .-commonBlock .SuperMissionComponentStyle-descriptionSuperMission + .MainQuestComponentStyle-scrollContainer,
+.QuestsComponentStyle-content > .-commonBlock .SuperMissionComponentStyle-descriptionSuperMission + .QuestsComponentStyle-mainQuestBlock {
 	padding-left: calc(var(--supermisson-width-var) + 2em);
 }
 
 /* Quest main container for items in quests are displayed as cards */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer {
 	width: -webkit-fit-content;
 	width: -moz-fit-content;
 	width: fit-content;
@@ -94,7 +94,7 @@
 
 /* Inner container for misson lines */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div {
 	position: relative;
 	top: 0;
 	left: 0;
@@ -114,7 +114,7 @@
 
 /* Quest rows with quest cards */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -125,7 +125,7 @@
 
 /* Quest solo card */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -148,50 +148,50 @@
 
 /* Quest solo card on hover */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:hover {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:hover {
 	background-color: var(--severitium-dark-transparent-background3);
 	border-color: var(--severitium-gray-color);
 }
 
 /* Pressed state for quest solo card */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:active {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:active {
 	background-color: var(--severitium-dark-transparent-background3) !important;
 	border-color: var(--severitium-gray-color) !important;
 }
 
 /* Quest completed solo card */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted,
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted,
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven {
 	background-color: var(--severitium-green-button-background);
 	border-color: var(--severitium-green-button-border-color);
 }
 
 /* Quest completed solo card on hover */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted:hover,
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven:hover {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted:hover,
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven:hover {
 	border-color: var(--severitium-green-button-border-color-hover);
 }
 
 /* Pressed state for quest completed solo card */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted:active,
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven:active {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted:active,
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven:active {
 	background-color: var(--severitium-green-button-background) !important;
 	border-color: var(--severitium-green-button-border-color-hover) !important;
 }
 
 /* Quest completed solo card original icon */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven > img {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven > img {
 	display: none;
 }
 
 /* Quest completed solo card custom icon */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven::after {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven::after {
 	content: '';
 	width: 5em;
 	height: auto;
@@ -209,20 +209,20 @@
 
 /* Quest locked solo card */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.TableMainQuestComponentStyle-cardLockedTable {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.TableMainQuestComponentStyle-cardLockedTable {
 	background-color: var(--severitium-gold-button-background);
 	border-color: var(--severitium-gold-button-border-color);
 }
 
 /* Quest locked solo card on hover */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.TableMainQuestComponentStyle-cardLockedTable:hover {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.TableMainQuestComponentStyle-cardLockedTable:hover {
 	border-color: var(--severitium-gold-button-border-color-hover);
 }
 
 /* Quest locked quest icon container */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-commonCard .MainQuestComponentStyle-backgroundIcon:has(> img[src*='lock'i]) {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-commonCard .MainQuestComponentStyle-backgroundIcon:has(> img[src*='lock'i]) {
 	width: fit-content;
 	height: fit-content;
 	margin: 0;
@@ -232,14 +232,14 @@
 
 /* Quest locked quest original lock icon */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-commonCard .MainQuestComponentStyle-backgroundIcon img[src*='lock'i] {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-commonCard .MainQuestComponentStyle-backgroundIcon img[src*='lock'i] {
 	display: none;
 	margin: 0;
 }
 
 /* Quest locked quest custom lock icon */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-commonCard .MainQuestComponentStyle-backgroundIcon:has(> img[src*='lock'i])::before {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-commonCard .MainQuestComponentStyle-backgroundIcon:has(> img[src*='lock'i])::before {
 	content: '';
 	width: 1.5em;
 	height: 1.5em;
@@ -256,8 +256,8 @@
 
 /* All direct childs of the quest card on card's normal state and card's hover state */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > *,
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:hover > * {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > *,
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:hover > * {
 	position: relative;
 	top: auto;
 	left: auto;
@@ -269,7 +269,7 @@
 
 /* Quest solo line */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div {
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -294,41 +294,41 @@
 
 /* Quest solo line on hover */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div:hover {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div:hover {
 	background-color: var(--severitium-dark-transparent-background3);
 	border-color: var(--severitium-gray-color);
 }
 
 /* Pressed state for quest solo line */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div:active {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div:active {
 	background-color: var(--severitium-dark-transparent-background3) !important;
 	border-color: var(--severitium-gray-color) !important;
 }
 
 /* Quest completed solo line */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable {
 	background-color: var(--severitium-green-button-background);
 	border-color: var(--severitium-green-button-border-color);
 }
 
 /* Quest completed solo line on hover */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable:hover {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable:hover {
 	border-color: var(--severitium-green-button-border-color-hover);
 }
 
 /* Pressed state for quest completed solo line */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable:active {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable:active {
 	background-color: var(--severitium-green-button-background) !important;
 	border-color: var(--severitium-green-button-border-color-hover) !important;
 }
 
 /* Quest completed solo line icon block */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable .MainQuestComponentStyle-iconCommon {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable .MainQuestComponentStyle-iconCommon {
 	width: 2em;
 	height: 2em;
 	aspect-ratio: 1 / 1;
@@ -338,13 +338,13 @@
 
 /* Quest completed solo line original icon image */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable .MainQuestComponentStyle-iconCommon > img {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable .MainQuestComponentStyle-iconCommon > img {
 	display: none;
 }
 
 /* Quest completed solo line custom icon image */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable .MainQuestComponentStyle-iconCommon::before {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable .MainQuestComponentStyle-iconCommon::before {
 	content: '';
 	width: 100%;
 	height: 100%;
@@ -361,7 +361,7 @@
 
 /* Quest completed solo line text block */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable .MainQuestComponentStyle-iconCommon + div {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable .MainQuestComponentStyle-iconCommon + div {
 	width: 100%;
 	height: auto;
 	margin: 0;
@@ -370,7 +370,7 @@
 
 /* Quest completed solo line objective */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable span {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable span {
 	width: 100%;
 	height: auto;
 	margin: 0;
@@ -385,21 +385,21 @@
 
 /* Quest locked solo line */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardLockedTable {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardLockedTable {
 	background-color: var(--severitium-gold-button-background);
 	border-color: var(--severitium-gold-button-border-color);
 }
 
 /* Quest locked solo line on hover */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardLockedTable:hover {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardLockedTable:hover {
 	border-color: var(--severitium-gold-button-border-color-hover);
 }
 
 /* All direct childs of the quest line on line's normal state and line's hover state */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > *,
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div:hover > * {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > *,
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div:hover > * {
 	position: relative;
 	top: auto;
 	left: auto;
@@ -411,7 +411,7 @@
 
 /* Quest line's middle container (progress, name, description) */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > .MainQuestComponentStyle-iconMission + div:not(.TableMainQuestComponentStyle-rewardsContainerTable):not(:has(> span + h3)) {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > .MainQuestComponentStyle-iconMission + div:not(.TableMainQuestComponentStyle-rewardsContainerTable):not(:has(> span + h3)) {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -424,7 +424,7 @@
 
 /* Quest line's last container for completed taken quest */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > .MainQuestComponentStyle-iconMission + div:not(.TableMainQuestComponentStyle-rewardsContainerTable):has(> span + h3) {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > .MainQuestComponentStyle-iconMission + div:not(.TableMainQuestComponentStyle-rewardsContainerTable):has(> span + h3) {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -436,7 +436,7 @@
 
 /* Quest line's name for completed taken quest */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > .MainQuestComponentStyle-iconMission + div:not(.TableMainQuestComponentStyle-rewardsContainerTable):has(> span + h3) > span {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > .MainQuestComponentStyle-iconMission + div:not(.TableMainQuestComponentStyle-rewardsContainerTable):has(> span + h3) > span {
 	font-size: 1.2em;
 	font-weight: normal;
 	text-transform: uppercase;
@@ -447,7 +447,7 @@
 
 /* Quest line's text "completed" for completed taken quest */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > div:nth-child(2):not(.TableMainQuestComponentStyle-rewardsContainerTable):has(> span + h3) > h3 {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > div:nth-child(2):not(.TableMainQuestComponentStyle-rewardsContainerTable):has(> span + h3) > h3 {
 	font-size: 1em;
 	font-weight: normal;
 	text-transform: uppercase;
@@ -458,7 +458,7 @@
 
 /* Quest card's progress */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > progress {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > progress {
 	position: relative;
 	top: auto;
 	width: 80%;
@@ -472,7 +472,7 @@
 
 /* Quest card's progress's unfilled value */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > progress::-webkit-progress-bar {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > progress::-webkit-progress-bar {
 	border-radius: var(--severitium-border-radius);
 	background: none;
 	background-color: var(--severitium-gray-color);
@@ -480,7 +480,7 @@
 
 /* Quest card's progress's filled value */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > progress::-webkit-progress-value {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > progress::-webkit-progress-value {
 	border-radius: var(--severitium-border-radius);
 	background: none;
 	background-color: var(--severitium-main-color);
@@ -488,7 +488,7 @@
 
 /* Quest line's progress */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress > progress {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress > progress {
 	position: relative;
 	top: auto;
 	width: 100%;
@@ -502,7 +502,7 @@
 
 /* Quest line's progress's unfilled value */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress > progress::-webkit-progress-bar {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress > progress::-webkit-progress-bar {
 	border-radius: var(--severitium-border-radius);
 	background: none;
 	background-color: var(--severitium-gray-color);
@@ -510,7 +510,7 @@
 
 /* Quest line's progress's filled value */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress > progress::-webkit-progress-value {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress > progress::-webkit-progress-value {
 	border-radius: var(--severitium-border-radius);
 	background: none;
 	background-color: var(--severitium-main-color);
@@ -518,7 +518,7 @@
 
 /* Quest card's header */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > div > h4 {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > div > h4 {
 	font-size: 1.25em;
 	font-weight: normal;
 	margin: 0;
@@ -527,14 +527,14 @@
 
 /* Completed quest card's header */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted > div > h4,
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven > div > h4 {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted > div > h4,
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardGiven > div > h4 {
 	color: var(--severitium-green-text-color);
 }
 
 /* Quest line's progress numbers */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress h4 {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress h4 {
 	font-size: 1em;
 	font-weight: normal;
 	margin: 0;
@@ -544,13 +544,13 @@
 
 /* Quest line's progress text of a completed quest */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress:has(> progress[value="100"]) h4 {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress:has(> progress[value="100"]) h4 {
 	color: var(--severitium-green-text-color);
 }
 
 /* Quest card's name */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > div > span {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > div > span {
 	font-size: 1.2em;
 	font-weight: normal;
 	text-transform: uppercase;
@@ -560,7 +560,7 @@
 
 /* Quest line's name & description & progress container */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div div:has(.MainQuestComponentStyle-nameMission) {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div div:has(.MainQuestComponentStyle-nameMission) {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
@@ -573,13 +573,13 @@
 
 /* Quest line's name & description & progress container */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div div:has(.MainQuestComponentStyle-nameMission):not(:has(> .TableMainQuestComponentStyle-backgroundIconTable)) {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div div:has(.MainQuestComponentStyle-nameMission):not(:has(> .TableMainQuestComponentStyle-backgroundIconTable)) {
 	flex-direction: column;
 }
 
 /* Quest line's name */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-nameMission {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-nameMission {
 	font-size: 1.2em;
 	font-weight: normal;
 	text-transform: uppercase;
@@ -589,21 +589,21 @@
 
 /* Quest card's image */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > img {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > img {
 	height: auto;
 	width: 5em;
 }
 
 /* All svg card images */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > img {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > img {
 	-webkit-filter: saturate(0);
 			filter: saturate(0);
 }
 
 /* Quest line's image container */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission {
 	width: auto;
 	height: auto;
 	padding: .5em;
@@ -611,7 +611,7 @@
 
 /* Quest line's image */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission > img {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission > img {
 	height: auto;
 	width: -webkit-max-content;
 	width: max-content;
@@ -622,15 +622,15 @@
 
 /* Shop original icon if user should buy something to open the misson */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div .MainQuestComponentStyle-backgroundIcon img[src*='shop'i],
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission + div .TableMainQuestComponentStyle-backgroundIconTable img[src*='shop'i] {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div .MainQuestComponentStyle-backgroundIcon img[src*='shop'i],
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission + div .TableMainQuestComponentStyle-backgroundIconTable img[src*='shop'i] {
 	display: none;
 }
 
 /* Shop custom icon if user should buy something to open the misson */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div .MainQuestComponentStyle-backgroundIcon:has(img[src*='shop'i]),
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission + div .TableMainQuestComponentStyle-backgroundIconTable:has(img[src*='shop'i]) {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div .MainQuestComponentStyle-backgroundIcon:has(img[src*='shop'i]),
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission + div .TableMainQuestComponentStyle-backgroundIconTable:has(img[src*='shop'i]) {
 	content: '';
 	width: 1.5em;
 	height: 1.5em;
@@ -654,21 +654,21 @@
 
 /* Shop custom icon if user should buy something to open the misson on card's hover */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:hover .MainQuestComponentStyle-backgroundIcon:has(img[src*='shop'i]) {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:hover .MainQuestComponentStyle-backgroundIcon:has(img[src*='shop'i]) {
 	-webkit-transform: scale(0);
 			transform: scale(0);
 }
 
 /* Shop custom icon if user should buy something to open the misson for quest line */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission + div .TableMainQuestComponentStyle-backgroundIconTable:has(img[src*='shop'i]) {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission + div .TableMainQuestComponentStyle-backgroundIconTable:has(img[src*='shop'i]) {
 	margin: 0;
 	padding: 0;
 }
 
 /* Quest card's description */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-questDescriptionText {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-questDescriptionText {
 	width: 80%;
 	height: auto;
 	opacity: 0;
@@ -678,19 +678,19 @@
 
 /* Quest card's description on card hover */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:hover > .MainQuestComponentStyle-questDescriptionText {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:hover > .MainQuestComponentStyle-questDescriptionText {
 	opacity: 1;
 }
 
 /* Quest card's description text */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-questDescriptionText > h3 {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-questDescriptionText > h3 {
 	color: var(--severitium-light-gray-text-color);
 }
 
 /* Quest line's description and progress numers/text outer container */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress {
 	width: 100%;
 	height: auto;
 	margin: 0;
@@ -699,7 +699,7 @@
 
 /* Quest line's description and progress numers/text inner container */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress > div {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress > div {
 	width: 100%;
 	height: auto;
 	display: flex;
@@ -713,7 +713,7 @@
 
 /* Quest line's description text */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress span {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress span {
 	width: 100%;
 	height: auto;
 	margin: 0;
@@ -724,8 +724,8 @@
 
 /* Quest card's timer */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-timerData,
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-commonBlockTimerButton {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-timerData,
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-commonBlockTimerButton {
 	width: auto;
 	height: auto;
 	margin-top: auto;
@@ -743,7 +743,7 @@
 
 /* Quest card's timer container */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-commonBlockTimerButton {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-commonBlockTimerButton {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -753,14 +753,14 @@
 
 /* Timer original lock icon */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-commonBlockTimerButton > img[src*='lock'i] {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-commonBlockTimerButton > img[src*='lock'i] {
 	margin: 0;
 	display: none;
 }
 
 /* Timer custom lock icon */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-commonBlockTimerButton:has(> img[src*='lock'i])::before {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-commonBlockTimerButton:has(> img[src*='lock'i])::before {
 	content: '';
 	width: 1em;
 	aspect-ratio: 1 / 1;
@@ -777,7 +777,7 @@
 
 /* Timer text */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-commonBlockTimerButton span[id*='timer'i] {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-commonBlockTimerButton span[id*='timer'i] {
 	width: auto;
 	height: auto;
 	margin: 0;
@@ -789,8 +789,8 @@
 
 /* Completed quest card's timer */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted > .MainQuestComponentStyle-timerData,
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted > .MainQuestComponentStyle-commonBlockTimerButton {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted > .MainQuestComponentStyle-timerData,
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted > .MainQuestComponentStyle-commonBlockTimerButton {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -801,8 +801,8 @@
 
 /* Quest card's timer on card hover */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:not(.MainQuestComponentStyle-cardRewardCompleted):hover > .MainQuestComponentStyle-timerData,
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:not(.MainQuestComponentStyle-cardRewardCompleted):hover > .MainQuestComponentStyle-commonBlockTimerButton {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:not(.MainQuestComponentStyle-cardRewardCompleted):hover > .MainQuestComponentStyle-timerData,
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:not(.MainQuestComponentStyle-cardRewardCompleted):hover > .MainQuestComponentStyle-commonBlockTimerButton {
 	width: auto;
 	height: auto;
 	-webkit-transform: scale(0);
@@ -811,14 +811,14 @@
 
 /* Completed quest card's timer on card hover */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted:hover > .MainQuestComponentStyle-timerData,
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted:hover > .MainQuestComponentStyle-commonBlockTimerButton {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted:hover > .MainQuestComponentStyle-timerData,
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted:hover > .MainQuestComponentStyle-commonBlockTimerButton {
 	opacity: 0;
 }
 
 /* Quest line's timer container */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div div:has(> span[id*='timer'i]) {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div div:has(> span[id*='timer'i]) {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -838,7 +838,7 @@
 
 /* Quest line's timer on card hover */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div:hover div:has(> span[id*='timer'i]) {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div:hover div:has(> span[id*='timer'i]) {
 	width: -webkit-fit-content;
 	width: -moz-fit-content;
 	width: fit-content;
@@ -850,8 +850,8 @@
 
 /* Quest card's timer text */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-timerData span[id*='timer'i],
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted > .MainQuestComponentStyle-timerData span[id*='timer'i] {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-timerData span[id*='timer'i],
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-cardRewardCompleted > .MainQuestComponentStyle-timerData span[id*='timer'i] {
 	width: auto;
 	height: auto;
 	margin: 0;
@@ -863,7 +863,7 @@
 
 /* Quest line's timer text */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div span[id*='timer'i] {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div span[id*='timer'i] {
 	width: auto;
 	height: auto;
 	margin: 0;
@@ -873,7 +873,7 @@
 
 /* Quest card's rewards container */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-rewardsContainer {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-rewardsContainer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -887,7 +887,7 @@
 
 /* Quest line's rewards container */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > .TableMainQuestComponentStyle-rewardsContainerTable {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > .TableMainQuestComponentStyle-rewardsContainerTable {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -904,7 +904,7 @@
 
 /* Quest card's rewards item's container */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-rewardsContainer > div {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-rewardsContainer > div {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -917,7 +917,7 @@
 
 /* Quest line's rewards item's container */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > .TableMainQuestComponentStyle-rewardsContainerTable > div {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > .TableMainQuestComponentStyle-rewardsContainerTable > div {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -931,7 +931,7 @@
 
 /* Quest card's rewards item's image */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-rewardsContainer > div > div[class*='image'i] {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-rewardsContainer > div > div[class*='image'i] {
 	min-width: 4em;
 	width: -webkit-max-content;
 	width: max-content;
@@ -942,7 +942,7 @@
 
 /* Quest link's rewards item's image */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > .TableMainQuestComponentStyle-rewardsContainerTable > div > div[class*='image'i] {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > .TableMainQuestComponentStyle-rewardsContainerTable > div > div[class*='image'i] {
 	min-width: 4em;
 	width: -webkit-max-content;
 	width: max-content;
@@ -953,19 +953,19 @@
 
 /* Quest card's rewards item's count */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-rewardsContainer > div > span {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > .MainQuestComponentStyle-rewardsContainer > div > span {
 	color: var(--severitium-white-text-color);
 }
 
 /* Quest line's rewards item's count */
 
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > .TableMainQuestComponentStyle-rewardsContainerTable > div > span {
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div > .TableMainQuestComponentStyle-rewardsContainerTable > div > span {
 	color: var(--severitium-white-text-color);
 }
 
 /* Quest card's incompleted quest bottom text */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > span.MainQuestComponentStyle-messageReward {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > span.MainQuestComponentStyle-messageReward {
 	font-size: 1em;
 	font-weight: normal;
 	text-transform: uppercase;
@@ -974,7 +974,7 @@
 
 /* Quest card's completed quest bottom text */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div .MainQuestComponentStyle-rewardsContainer + .MainQuestComponentStyle-messageReward {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div .MainQuestComponentStyle-rewardsContainer + .MainQuestComponentStyle-messageReward {
 	width: inherit;
 	font-size: 1em;
 	font-weight: normal;
@@ -994,14 +994,14 @@
 
 /* Quest card's completed quest bottom text on button hover */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:hover .MainQuestComponentStyle-rewardsContainer + .MainQuestComponentStyle-messageReward {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div:hover .MainQuestComponentStyle-rewardsContainer + .MainQuestComponentStyle-messageReward {
 	border-color: var(--severitium-green-button-border-color-hover);
 }
 
 /* Quest card gradient */
 
-.QuestsComponentStyle-commonBlock .MainQuestComponentStyle-scrollContainer > div > div .MainQuestComponentStyle-colorLockedGradient,
-.QuestsComponentStyle-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .TableMainQuestComponentStyle-colorLockedGradientTable {
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div .MainQuestComponentStyle-colorLockedGradient,
+.QuestsComponentStyle-content > .-commonBlock .QuestsComponentStyle-mainQuestBlock > div > div .TableMainQuestComponentStyle-colorLockedGradientTable {
 	display: none;
 }
 
