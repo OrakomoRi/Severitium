@@ -19,6 +19,12 @@ import { CONFIG } from './config/config.js';
 
 	const logger = new Logger(CONFIG.SCRIPT_NAME);
 
+	window.addEventListener('severitium:version', (event) => {
+		if (event.detail?.version) {
+			CONFIG.fillVersion(event.detail.version);
+		}
+	}, { once: true });
+
 	document.addEventListener('severitium:log', () => {
 		logger.enableLogging();
 	});

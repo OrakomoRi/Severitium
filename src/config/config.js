@@ -1,16 +1,6 @@
-let _scriptVersion = null;
-
-window.addEventListener('severitium:version', (event) => {
-	if (event.detail?.version) {
-		_scriptVersion = event.detail.version;
-	}
-}, { once: true });
-
 export const CONFIG = {
 	SCRIPT_NAME: 'Severitium',
-	get SCRIPT_VERSION() {
-		return _scriptVersion;
-	},
+	SCRIPT_VERSION: null,
 
 	getStableBase(version) {
 		return version.match(/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)/)?.[0] ?? version;
@@ -26,4 +16,8 @@ export const CONFIG = {
 	GITHUB_SCRIPT_URL: (v) => `https://orakomori.github.io/Severitium/release/severitium.user.js?v=${v}`,
 	STABLE_JSON_URL: (v) => `https://severitium-builds.vercel.app/stable.json?v=${v}`,
 	IMAGES_URL: (v) => `https://orakomori.github.io/Severitium/src/assets/preload/ImageModules.json?v=${v}`,
+
+	fillVersion(version) {
+		this.SCRIPT_VERSION = version;
+	}
 };
