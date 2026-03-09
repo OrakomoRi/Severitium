@@ -1,6 +1,9 @@
 export const CONFIG = {
 	SCRIPT_NAME: 'Severitium',
-	SCRIPT_VERSION: window.__SEVERITIUM__?.version || null,
+	
+	get SCRIPT_VERSION() {
+		return window.__SEVERITIUM__?.version || null;
+	},
 
 	getStableBase(version) {
 		return version.match(/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)/)?.[0] ?? version;

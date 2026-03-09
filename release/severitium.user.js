@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.8.3+build.67
+// @version			1.8.3+build.68
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -29,7 +29,7 @@
 (function () {
 	'use strict';
 
-	const LOG = false;
+	const isLogging = false;
 
 	function addBlackScreen() { const e = document.createElement("div"); e.style.position = "absolute", e.style.top = "0", e.style.left = "0", e.style.width = "100vw", e.style.height = "100vh", e.style.backgroundColor = "black", e.style.zIndex = "999999", e.style.pointerEvents = "none", e.style.overflow = "hidden", e.className = "severitium-black-screen", e.setAttribute("data-severitium", "black-screen"), document.body.appendChild(e) } function removeBlackScreen() { const e = document.querySelector('.severitium-black-screen[data-severitium="black-screen"]'); e && e.remove() } document.body ? addBlackScreen() : document.addEventListener("DOMContentLoaded", (() => { addBlackScreen() }));
 
@@ -104,7 +104,7 @@
 
 	const LOADER_URL = 'https://severitium-builds.vercel.app/loader.min.js';
 
-	Object.defineProperty(window, '__SEVERITIUM__', {
+	Object.defineProperty(unsafeWindow, '__SEVERITIUM__', {
 		value: Object.freeze({
 			version: GM_info?.script?.version || null
 		}),
@@ -130,7 +130,7 @@
 					});
 				}
 
-				if (LOG) {
+				if (isLogging) {
 					document.dispatchEvent(new Event('severitium:log'));
 				}
 
