@@ -3119,6 +3119,12 @@
       "date": "2026-03-09",
       "comment": "1.8.3+build.70 fix: revert deletion of files for backwards compatibility",
       "hash": "5f8a270f522f61d1eefcc981a7cfd15cf55a1215"
+    },
+    {
+      "version": "1.8.3+build.71",
+      "date": "2026-03-09",
+      "comment": "1.8.3+build.71 feat: add image manifest generation functionality",
+      "hash": "018ab70072826bc6fea9b1c587693564c930d22c"
     }
   ]
 }
