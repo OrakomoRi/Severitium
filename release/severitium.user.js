@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.8.3+build.66
+// @version			1.8.3+build.67
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -104,6 +104,14 @@
 
 	const LOADER_URL = 'https://severitium-builds.vercel.app/loader.min.js';
 
+	Object.defineProperty(window, '__SEVERITIUM__', {
+		value: Object.freeze({
+			version: GM_info?.script?.version || null
+		}),
+		writable: false,
+		configurable: false
+	});
+
 	GM_xmlhttpRequest({
 		method: 'GET',
 		url: LOADER_URL,
@@ -121,11 +129,6 @@
 						removeBlackScreen();
 					});
 				}
-
-				const USERSCRIPT_VERSION = GM_info?.script?.version || null;
-				window.dispatchEvent(new CustomEvent('severitium:version', {
-					detail: { version: USERSCRIPT_VERSION }
-				}));
 
 				if (LOG) {
 					document.dispatchEvent(new Event('severitium:log'));
