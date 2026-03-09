@@ -3113,6 +3113,12 @@
       "date": "2026-03-09",
       "comment": "1.8.3+build.69 refactor: reorganize update check logic",
       "hash": "15ae9373da2d36f3b2f0184313bbfd20fa432840"
+    },
+    {
+      "version": "1.8.3+build.70",
+      "date": "2026-03-09",
+      "comment": "1.8.3+build.70 fix: revert deletion of files for backwards compatibility",
+      "hash": "5f8a270f522f61d1eefcc981a7cfd15cf55a1215"
     }
   ]
 }
