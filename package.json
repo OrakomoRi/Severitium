@@ -4,7 +4,8 @@
 	"type": "module",
 	"scripts": {
 		"build": "NODE_ENV=production rollup -c",
-		"dev": "rollup -c --watch"
+		"dev": "rollup -c --watch",
+		"manifest": "node scripts/image-manifest/generate-image-manifest.cjs"
 	},
 	"devDependencies": {
 		"@rollup/plugin-replace": "^6.0.3",
