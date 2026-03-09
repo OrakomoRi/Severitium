@@ -3107,6 +3107,12 @@
       "date": "2026-03-09",
       "comment": "1.8.3+build.68 refactor: improve logging mechanism",
       "hash": "389ac3cf5912eac5fad90c9b1819ee4a1d104145"
+    },
+    {
+      "version": "1.8.3+build.69",
+      "date": "2026-03-09",
+      "comment": "1.8.3+build.69 refactor: reorganize update check logic",
+      "hash": "15ae9373da2d36f3b2f0184313bbfd20fa432840"
     }
   ]
 }
