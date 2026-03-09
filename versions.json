@@ -3125,6 +3125,12 @@
       "date": "2026-03-09",
       "comment": "1.8.3+build.71 feat: add image manifest generation functionality",
       "hash": "018ab70072826bc6fea9b1c587693564c930d22c"
+    },
+    {
+      "version": "1.8.3+build.72",
+      "date": "2026-03-09",
+      "comment": "1.8.3+build.72 feat: enhance build process",
+      "hash": "b163ec4cfb77adb04d3e8b998bee3cee22d95ccd"
     }
   ]
 }
