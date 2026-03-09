@@ -280,7 +280,7 @@
 
 			try {
 				const parsed = JSON.parse(data);
-				// Check if default theme existsН
+				// Check if default theme exists
 				return !parsed.themes?.default ? null : parsed;
 			} catch (error) {
 				return null;

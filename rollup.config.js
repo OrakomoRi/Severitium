@@ -5,7 +5,6 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const VERSION = process.env.VERSION || '0.0.0-dev';
 
 function globImport() {
 	return {
@@ -35,13 +34,6 @@ function globImport() {
 }
 
 const sharedPlugins = [
-	replace({
-		preventAssignment: true,
-		delimiters: ['', ''],
-		values: {
-			'__VERSION__': VERSION,
-		},
-	}),
 	globImport(),
 	terser({ format: { comments: false } }),
 ];

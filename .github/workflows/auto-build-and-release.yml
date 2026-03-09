@@ -47,28 +47,12 @@ jobs:
 
       - name: Build JS
         run: |
-          VERSION=$VERSION npx rollup -c
+          npx rollup -c
           mkdir -p /tmp/build-artifacts
 
           # Copy both bundles
           cp dist/loader.min.js /tmp/build-artifacts/loader.min.js
           cp dist/script.release.min.js /tmp/build-artifacts/script.release.min.js
-
-          # Verify version replacement in loader
-          if grep -q '__VERSION__' /tmp/build-artifacts/loader.min.js; then
-            echo "ERROR: __VERSION__ placeholder was not replaced in loader!"
-            exit 1
-          fi
-
-          # Verify version replacement in modules (script.release.min.js might be empty if no modules yet)
-          if [ -s /tmp/build-artifacts/script.release.min.js ]; then
-            if grep -q '__VERSION__' /tmp/build-artifacts/script.release.min.js; then
-              echo "ERROR: __VERSION__ placeholder was not replaced in modules!"
-              exit 1
-            fi
-          fi
-
-          echo "Version $VERSION successfully replaced in bundles"
 
       - name: Build CSS
         run: |

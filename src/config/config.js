@@ -1,6 +1,16 @@
+let _scriptVersion = null;
+
+window.addEventListener('severitium:version', (event) => {
+	if (event.detail?.version) {
+		_scriptVersion = event.detail.version;
+	}
+}, { once: true });
+
 export const CONFIG = {
 	SCRIPT_NAME: 'Severitium',
-	SCRIPT_VERSION: '__VERSION__',
+	get SCRIPT_VERSION() {
+		return _scriptVersion;
+	},
 
 	getStableBase(version) {
 		return version.match(/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)/)?.[0] ?? version;
