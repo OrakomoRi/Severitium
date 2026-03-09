@@ -3095,6 +3095,12 @@
       "date": "2026-03-09",
       "comment": "1.8.3+build.66 feat: enhance version handling",
       "hash": "1e326babb864a040d066808c2ecc11bafe24a6a4"
+    },
+    {
+      "version": "1.8.3+build.67",
+      "date": "2026-03-09",
+      "comment": "1.8.3+build.67 feat: enhance configuration handling",
+      "hash": "84ab75cc22b2ba3ab0be96856ba529973ff3ab7a"
     }
   ]
 }
