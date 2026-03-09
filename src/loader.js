@@ -25,13 +25,6 @@ import { CONFIG } from './config/config.js';
 
 	const currentSeason = _getPeriod();
 
-	if (CONFIG.UPDATE_CHECK_ENABLED) {
-		const updateChecker = new UpdateChecker(logger);
-		updateChecker.check().catch(err =>
-			logger.log(`Update check failed: ${err}`, 'warn')
-		);
-	}
-
 	try {
 		const resourceLoader = new ResourceLoader(CONFIG.SCRIPT_VERSION, currentSeason, logger);
 		const severitium = await resourceLoader.load();
@@ -55,6 +48,13 @@ import { CONFIG } from './config/config.js';
 		logger.log('Severitium initialized successfully', 'success');
 	} catch (error) {
 		logger.log(`Fatal error: ${error}`, 'error');
+	}
+
+	if (CONFIG.UPDATE_CHECK_ENABLED) {
+		const updateChecker = new UpdateChecker(logger);
+		updateChecker.check().catch(err =>
+			logger.log(`Update check failed: ${err}`, 'warn')
+		);
 	}
 
 	window.Severitium = {
