@@ -54,5 +54,11 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/versions/(.*)",
+      "destination": "/versions/$1"
+    }
   ]
 }
