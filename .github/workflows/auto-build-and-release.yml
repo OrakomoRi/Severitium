@@ -105,6 +105,7 @@ jobs:
       - name: Publish to builds branch
         run: |
           COMMIT_HASH=$(git rev-parse HEAD)
+          echo "COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_ENV
           STABLE_BASE=$(echo "$VERSION" | grep -oP '^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)')
           echo "STABLE_BASE=$STABLE_BASE" >> $GITHUB_ENV
           COMMIT_DATE=$(git log -1 --format=%ad --date=short)
@@ -215,7 +216,9 @@ jobs:
             Stable release built automatically.
 
             **Download:**
-            - [severitium.user.js](https://raw.githubusercontent.com/OrakomoRi/Severitium/main/release/severitium.user.js)
+            - [severitium.user.js](https://raw.githubusercontent.com/OrakomoRi/Severitium/${{ env.COMMIT_HASH }}/release/severitium.user.js)
+            - [severitium.client.js](https://raw.githubusercontent.com/OrakomoRi/Severitium/${{ env.COMMIT_HASH }}/release/severitium.client.js)
+            - [app.asar](https://raw.githubusercontent.com/OrakomoRi/Severitium/${{ env.COMMIT_HASH }}/release/app.asar)
             - [loader.min.js](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/loader.min.js)
             - [script.release.min.js](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${{ env.STABLE_BASE }}/${{ env.VERSION }}/script.release.min.js)
             - [style.release.min.css](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${{ env.STABLE_BASE }}/${{ env.VERSION }}/style.release.min.css)
