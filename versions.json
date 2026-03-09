@@ -3089,6 +3089,12 @@
       "date": "2026-03-09",
       "comment": "1.8.3+build.65 feat: enhance build process and improve code quality",
       "hash": "919fba1d58972e359b15a412ff02872cf5c390c4"
+    },
+    {
+      "version": "1.8.3+build.66",
+      "date": "2026-03-09",
+      "comment": "1.8.3+build.66 feat: enhance version handling",
+      "hash": "1e326babb864a040d066808c2ecc11bafe24a6a4"
     }
   ]
 }
