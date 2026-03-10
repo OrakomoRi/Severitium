@@ -30,6 +30,11 @@ app.get('/versions/*', (req, res) => {
 	const relativePath = req.params[0];
 	const filePath = path.join(__dirname, 'versions', relativePath);
 
+	console.log('[Server] Request:', req.path);
+    console.log('[Server] relativePath:', relativePath);
+    console.log('[Server] filePath:', filePath);
+    console.log('[Server] exists:', fs.existsSync(filePath));
+
 	// Prevent path traversal
 	if (!filePath.startsWith(path.join(__dirname, 'versions'))) {
 		return res.status(403).end();
