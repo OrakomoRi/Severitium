@@ -217,10 +217,10 @@ jobs:
 
             **Download:**
             - [severitium.user.js](https://raw.githubusercontent.com/OrakomoRi/Severitium/${{ env.COMMIT_HASH }}/release/severitium.user.js)
-            - [severitium.client.js](https://raw.githubusercontent.com/OrakomoRi/Severitium/${{ env.COMMIT_HASH }}/release/severitium.client.js)
+            - [severitium.client.js](https://github.com/OrakomoRi/Severitium/blob/${{ env.COMMIT_HASH }}/release/severitium.client.js)
             - [app.asar](https://raw.githubusercontent.com/OrakomoRi/Severitium/${{ env.COMMIT_HASH }}/release/app.asar)
-            - [loader.min.js](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/loader.min.js)
-            - [script.release.min.js](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${{ env.STABLE_BASE }}/${{ env.VERSION }}/script.release.min.js)
-            - [style.release.min.css](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@builds/versions/${{ env.STABLE_BASE }}/${{ env.VERSION }}/style.release.min.css)
+            - [loader.min.js](https://severitium-builds-server.onrender.com/loader.min.js)
+            - [script.release.min.js](https://severitium-builds-server.onrender.com/versions/${{ env.STABLE_BASE }}/${{ env.VERSION }}/script.release.min.js)
+            - [style.release.min.css](https://severitium-builds-server.onrender.com/versions/${{ env.STABLE_BASE }}/${{ env.VERSION }}/style.release.min.css)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
