@@ -9,10 +9,12 @@ export class ResourceLoader {
 		this.logger = logger;
 		this.loadingScreen = null;
 		this.imageLinks = [];
+		this.criticalError = false;
 	}
 
 	async load() {
 		this.loadingScreen = LoadingScreen.add(CONFIG.SCRIPT_NAME);
+		let severitium;
 
 		try {
 			const cachedVersion = await Bridge.getValue('SeveritiumVersion', '');
@@ -29,7 +31,7 @@ export class ResourceLoader {
 
 			this.imageLinks = await this._fetchImageLinks();
 
-			const severitium = {
+			severitium = {
 				theme: {},
 				CSS: {},
 				JS: {},
@@ -49,16 +51,29 @@ export class ResourceLoader {
 					await this._loadEverything(severitium);
 					break;
 			}
-
-			return severitium;
 		} catch (error) {
 			this.logger.log(`Resource loading failed: ${error}`, 'error');
 			throw error;
 		} finally {
 			if (this.loadingScreen) {
 				LoadingScreen.remove(this.loadingScreen);
+				this.loadingScreen = null;
 			}
 		}
+
+		if (this.criticalError) {
+			await window.Nuntaria.error(
+				'Critical resources failed to load',
+				'Unable to load essential resources. Please reload the page and try again later.',
+				{
+					theme: 'glass',
+					position: 'top-right',
+					timer: 5e3
+				}
+			);
+		}
+
+		return severitium;
 	}
 
 	getImageLinks() {
@@ -152,22 +167,7 @@ export class ResourceLoader {
 
 		if (hasCriticalFailure) {
 			this.logger.log('Critical resources failed to load, aborting cache update', 'error');
-
-			if (this.loadingScreen) {
-				LoadingScreen.remove(this.loadingScreen);
-				this.loadingScreen = null;
-			}
-
-			await window.Nuntaria.error(
-				'Critical resources failed to load',
-				'Unable to load essential resources. Please reload the page and try again later.',
-				{
-					theme: 'glass',
-					position: 'top-right',
-					timer: 5e3
-				}
-			);
-
+			this.criticalError = true;
 			return;
 		}
 
