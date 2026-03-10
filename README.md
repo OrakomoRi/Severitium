@@ -32,9 +32,28 @@ See the [changelog](CHANGELOG.md)
 
 Keep in mind that when you first load or update the script, it takes some time for the interface to load.
 
+### Browser
+
 1. Download [Tampermonkey](https://www.tampermonkey.net/)
 
-2. Add or update [script](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@78b5ffb231a1059e18f9a4570101adf93ac2535d/release/severitium.user.js) in Tampermonkey
+2. Add or update [script](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@b11314fb8222ca3e54ca8f7b3e91a85f5f52db83/release/severitium.user.js) in Tampermonkey
+
+### Client
+
+1. Download [Tanki Online Client](https://tankionline.com/)
+
+2. Navigate to the game directory (usually `%LOCALAPPDATA%\Programs\Tanki Online`)
+
+3. Find there `resources` folder (you may create a backup of it)
+
+4. Download modded `app.asar` file from [here](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@b11314fb8222ca3e54ca8f7b3e91a85f5f52db83/release/severitium.app.asar) and replace the original one with it
+
+5. Return to the main directory
+
+6. Add `mods` folder
+
+7. Download `severitium.client.js` file from [here](https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@b11314fb8222ca3e54ca8f7b3e91a85f5f52db83/release/severitium.client.js) and place it in `mods` folder
+
 
 ## :rocket: Browser Compatibility
 
