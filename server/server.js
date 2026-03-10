@@ -4,9 +4,12 @@ import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { KeepAlive } from './keepAlive.js';
 
-const __dirname = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT_DIR = path.join(__dirname, '..');
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+console.log('[Server] ROOT_DIR contents:', fs.readdirSync(ROOT_DIR));
 
 const CACHE_MAX_AGE = 60 * 60 * 24; // 24 hours
 
@@ -28,7 +31,7 @@ app.get('/api/health', (req, res) => {
  */
 app.get('/versions/*', (req, res) => {
 	const relativePath = req.params[0];
-	const filePath = path.join(__dirname, 'versions', relativePath);
+	const filePath = path.join(ROOT_DIR, 'versions', relativePath);
 
 	console.log('[Server] Request:', req.path);
     console.log('[Server] relativePath:', relativePath);
@@ -36,7 +39,7 @@ app.get('/versions/*', (req, res) => {
     console.log('[Server] exists:', fs.existsSync(filePath));
 
 	// Prevent path traversal
-	if (!filePath.startsWith(path.join(__dirname, 'versions'))) {
+	if (!filePath.startsWith(path.join(ROOT_DIR, 'versions'))) {
 		return res.status(403).end();
 	}
 
@@ -60,7 +63,7 @@ app.get('/:file', (req, res) => {
 		return res.status(404).end();
 	}
 
-	const filePath = path.join(__dirname, file);
+	const filePath = path.join(ROOT_DIR, file);
 
 	if (!fs.existsSync(filePath)) {
 		return res.status(404).end();
