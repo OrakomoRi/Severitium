@@ -3149,6 +3149,12 @@
       "date": "2026-03-10",
       "comment": "1.8.3+build.75 fix: improve resource loading logic",
       "hash": "f0669277ce290bad537b313df52406afb544912a"
+    },
+    {
+      "version": "1.8.3+build.76",
+      "date": "2026-03-10",
+      "comment": "1.8.3+build.76 fix: handle critical resource loading failures",
+      "hash": "212b13223b1bd640eff0b29efd21e3e75c83a794"
     }
   ]
 }
