@@ -3167,6 +3167,12 @@
       "date": "2026-03-10",
       "comment": "1.8.3+build.78 fix: handle critical resource loading errors",
       "hash": "6c53d58b79149b15b201c32819473fd09fabb59f"
+    },
+    {
+      "version": "1.9.0",
+      "date": "2026-03-10",
+      "comment": "1.9.0",
+      "hash": "12774d34a8b27aad75ddc5b44fea903c00924d23"
     }
   ]
 }
