@@ -9,8 +9,6 @@ const ROOT_DIR = path.join(__dirname, '..');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-console.log('[Server] ROOT_DIR contents:', fs.readdirSync(ROOT_DIR));
-
 const CACHE_MAX_AGE = 60 * 60 * 24; // 24 hours
 
 /**
@@ -32,11 +30,6 @@ app.get('/api/health', (req, res) => {
 app.get('/versions/*', (req, res) => {
 	const relativePath = req.params[0];
 	const filePath = path.join(ROOT_DIR, 'versions', relativePath);
-
-	console.log('[Server] Request:', req.path);
-    console.log('[Server] relativePath:', relativePath);
-    console.log('[Server] filePath:', filePath);
-    console.log('[Server] exists:', fs.existsSync(filePath));
 
 	// Prevent path traversal
 	if (!filePath.startsWith(path.join(ROOT_DIR, 'versions'))) {
