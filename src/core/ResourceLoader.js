@@ -92,19 +92,19 @@ export class ResourceLoader {
 		severitium.CSS = await Bridge.getValue('SeveritiumCSS', {});
 		severitium.JS = await Bridge.getValue('SeveritiumJS', {});
 		severitium.images = await Bridge.getValue('SeveritiumImages', {});
-		
+
 		const expectedKeys = this.getImageLinks().map(el => el.url);
 		const cachedKeys = Object.keys(severitium.images);
 		const keysMatch = expectedKeys.every(key => cachedKeys.includes(key));
-		
+
 		if (!keysMatch && this.imageLinks.length > 0) {
 			this.logger.log('Cached image keys mismatch, reloading images...', 'warn');
 			severitium.images = {};
-			
+
 			const imagePromises = this._createImagePromises(severitium);
 			const results = await Promise.allSettled(imagePromises);
 			this._logFailedPromises(results);
-			
+
 			await Bridge.setValue('SeveritiumImages', severitium.images);
 		}
 	}
@@ -148,6 +148,13 @@ export class ResourceLoader {
 		const results = await Promise.allSettled(promises);
 		this._logFailedPromises(results);
 
+		const hasCriticalFailure = results.slice(0, 3).some(r => r.status === 'rejected');
+
+		if (hasCriticalFailure) {
+			this.logger.log('Critical resources failed to load, aborting cache update', 'error');
+			return;
+		}
+		
 		await Bridge.setValue('SeveritiumThemes', severitium.theme);
 		await Bridge.setValue('SeveritiumCSS', severitium.CSS);
 		await Bridge.setValue('SeveritiumJS', severitium.JS);
