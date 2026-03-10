@@ -152,9 +152,20 @@ export class ResourceLoader {
 
 		if (hasCriticalFailure) {
 			this.logger.log('Critical resources failed to load, aborting cache update', 'error');
+
+			await window.Nuntaria.error(
+				'Critical resources failed to load',
+				'Unable to load essential resources. Please reload the page and try again later.',
+				{
+					theme: 'glass',
+					position: 'top-right',
+					timer: 5e3
+				}
+			);
+
 			return;
 		}
-		
+
 		await Bridge.setValue('SeveritiumThemes', severitium.theme);
 		await Bridge.setValue('SeveritiumCSS', severitium.CSS);
 		await Bridge.setValue('SeveritiumJS', severitium.JS);
