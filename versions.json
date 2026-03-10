@@ -3179,6 +3179,12 @@
       "date": "2026-03-10",
       "comment": "1.9.0+build.1 chore: update download links",
       "hash": "58c5baa2598b6c650f70da8d1cfbc9bd5e0f2a06"
+    },
+    {
+      "version": "1.9.0+build.2",
+      "date": "2026-03-10",
+      "comment": "1.9.0+build.2 chore: update links in README",
+      "hash": "7207f3833823af9c7bbffed5e385c9236d7d3dda"
     }
   ]
 }
