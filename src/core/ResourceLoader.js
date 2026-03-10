@@ -153,6 +153,11 @@ export class ResourceLoader {
 		if (hasCriticalFailure) {
 			this.logger.log('Critical resources failed to load, aborting cache update', 'error');
 
+			if (this.loadingScreen) {
+				LoadingScreen.remove(this.loadingScreen);
+				this.loadingScreen = null;
+			}
+
 			await window.Nuntaria.error(
 				'Critical resources failed to load',
 				'Unable to load essential resources. Please reload the page and try again later.',
