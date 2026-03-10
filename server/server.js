@@ -5,7 +5,6 @@ import { fileURLToPath } from 'url';
 import { KeepAlive } from './keepAlive.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT_DIR = path.join(__dirname, '..');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -29,10 +28,10 @@ app.get('/api/health', (req, res) => {
  */
 app.get('/versions/*', (req, res) => {
 	const relativePath = req.params[0];
-	const filePath = path.join(ROOT_DIR, 'versions', relativePath);
+	const filePath = path.join(__dirname, 'versions', relativePath);
 
 	// Prevent path traversal
-	if (!filePath.startsWith(path.join(ROOT_DIR, 'versions'))) {
+	if (!filePath.startsWith(path.join(__dirname, 'versions'))) {
 		return res.status(403).end();
 	}
 
@@ -56,7 +55,7 @@ app.get('/:file', (req, res) => {
 		return res.status(404).end();
 	}
 
-	const filePath = path.join(ROOT_DIR, file);
+	const filePath = path.join(__dirname, file);
 
 	if (!fs.existsSync(filePath)) {
 		return res.status(404).end();
