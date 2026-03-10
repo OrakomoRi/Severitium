@@ -1,0 +1,187 @@
+@font-face {
+    font-family: Open-Sans-Normal;
+    font-style: normal;
+    font-weight: normal;
+    src: url(fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+    font-family: Open-Sans-Bold;
+    font-style: normal;
+    font-weight: bold;
+    src: url(fonts/OpenSans-Bold.ttf);
+}
+
+html, body span, h1 {
+    color: white;
+    font-family: 'Open-Sans-Normal', Open-Sans
+}
+
+.GlobalStyle-html{
+    background: radial-gradient(#565769 0%, #32363E 100%);
+    width: 100%;
+    height: 100%;
+    user-select: none;
+	overflow: hidden;
+}
+
+.GlobalStyle-body {
+    background: linear-gradient(rgb(0, 25, 38) 0%, rgba(0, 25, 38, 0) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.commonBackground {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.dialogContainer {
+    background: radial-gradient(45.309em at 50% 43.45%, rgba(86, 87, 105, 0.9) 0%, #32363E 100%);
+    box-shadow: 0 0.313em 1.250em rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 30.000em;
+    min-height: 25.750em;
+    pointer-events: auto;
+}
+
+.descriptionContainer {
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.250em;
+    width: 100%;
+    height: 2.625em;
+}
+
+.descriptionContainer h1 {
+    text-transform: uppercase;
+    font-size: 1.375em;
+    margin-left: -3em;
+    !*font-family: 'Open-Sans-Bold';*!
+}
+
+.borderContainer {
+    background: rgba(235, 87, 87, 1);
+    width: 0.313em;
+    height: 2.625em;
+    filter: drop-shadow(0 0 0.625em rgba(255, 76, 76, 0.5));
+}
+
+.descriptionContainer img{
+    width: 13.125em;
+    height: 2.625em;
+}
+
+.commonCenterBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.875em;
+    width: inherit;
+    min-height: 7.875em;
+    height: auto;
+    color: white;
+}
+
+.commonCenterBlock img {
+    align-self: center;
+    width: 5.938em;
+    height: 5.938em;
+}
+
+.commonCenterBlock span {
+    font-family: 'Open-Sans-Normal';
+    font-size: 0.938em;
+    margin-top: 0.688em;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.250em;
+}
+
+.buttonReLogin {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.188em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 1.875em 0 1.875em;
+    min-width: 26.250em;
+    height: 3.125em;
+    cursor: pointer;
+}
+
+.buttonReLogin:hover{
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.15s ease-in-out;
+}
+
+.activeButton {
+    background: rgba(116, 186, 61, 1);
+}
+
+.activeButton:hover{
+    background: rgba(149, 198, 121, 1);
+    transition: all 0.15s ease-in-out;
+}
+
+.buttonReLogin span {
+    font-family: 'Open-Sans-Bold';
+    font-size: 1.125em;
+    line-height: 1.250em;
+    text-shadow: 0 0 0.188em #000000;
+    text-transform: uppercase;
+}
+
+.footerContainer {
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -0.01em;
+    width: 100%;
+    height: 4.000em;
+}
+
+.footerContainer a {
+    color: rgba(162, 255, 106, 1);
+    font-family: 'Open-Sans-Bold';
+    font-size: 0.938em;
+    line-height: 1.250em;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

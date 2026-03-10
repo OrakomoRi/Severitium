@@ -1,5 +1,61 @@
 # CHANGELOG
 
+## [1.9.0] - 2026-03-09
+
+### Added
+
+- General
+  - Notification
+- Theme support for game client :tada:
+
+### Changed
+
+- Battle
+  - BattlePause
+- Challenges
+  - ChallengesScreen
+- Containers
+  - PossibleRewardsScreen
+- Entrance
+  - EntranceBackground
+  - EntranceForms
+  - EntranceLinks
+- General
+  - CheckboxInput
+  - CommonContainer
+  - LoadingScreen
+  - Modal
+  - NotificatorIcon
+  - ScrollingCards
+  - TopMenu
+  - TopPanel
+- Lobby
+  - Announcements
+  - BattleSelect
+    - BattleType
+  - Challenges
+    - CommonChallenges
+    - EliteChallenges
+  - GroupBlock
+  - NewsWindow
+  - MainMenu
+- Quests
+  - ContractsScreen
+  - QuestsScreen
+- Ranks
+  - RanksScreen
+- Settings
+  - ThemeSettings
+- Shop
+  - MainScreen
+  - PaymentScreen
+  - PurchaseScreen
+  - SectionMenu
+  - ShopWindow
+  - SuccessfulPurchase
+- Unified all themed timers' colors to a single variable for easier theme customization
+- Reworked build system and project structure
+
 ## [1.8.3] - 2025-12-04
 
 ### Added

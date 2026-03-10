@@ -26,7 +26,3 @@ Thumbs.db
 # Environment files
 .env
 .env.*
-
-# Currently hidder
-app/
-release/severitium.client.js

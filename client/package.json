@@ -1,0 +1,23 @@
+{
+  "name": "tankionline",
+  "description": "Massively Multiplayer Online Action Game",
+  "license": "https://tankionline.com/en/eula/",
+  "private": true,
+  "version": "2.5.1",
+  "main": "main.js",
+  "dependencies": {
+    "@sentry/electron": "5.4.0",
+    "electron-log": "4.4.8",
+    "electron-updater": "6.3.4",
+    "is-online": "^9.0.1",
+    "minimist": "1.2.6"
+  },
+  "optionalDependencies": {
+    "steamworks.js": "^0.4.0"
+  },
+  "homepage": "https://tankionline.com/",
+  "author": {
+    "name": "APL Publishing Ltd.",
+    "email": "help@tankionline.com"
+  }
+}
