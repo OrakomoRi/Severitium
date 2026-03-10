@@ -3131,6 +3131,12 @@
       "date": "2026-03-09",
       "comment": "1.8.3+build.72 feat: enhance build process",
       "hash": "b163ec4cfb77adb04d3e8b998bee3cee22d95ccd"
+    },
+    {
+      "version": "1.8.3+build.73",
+      "date": "2026-03-10",
+      "comment": "1.8.3+build.73 fix: update CDN URL for asset retrieval",
+      "hash": "fffcf0e9765c217883c7a4f4ac3fd060eb889596"
     }
   ]
 }
