@@ -3137,6 +3137,12 @@
       "date": "2026-03-10",
       "comment": "1.8.3+build.73 fix: update CDN URL for asset retrieval",
       "hash": "fffcf0e9765c217883c7a4f4ac3fd060eb889596"
+    },
+    {
+      "version": "1.8.3+build.74",
+      "date": "2026-03-10",
+      "comment": "1.8.3+build.74 chore: minor patch",
+      "hash": "a2780d214fa1a6ba618be8f93529f146406375c2"
     }
   ]
 }
