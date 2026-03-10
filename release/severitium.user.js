@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.8.3+build.73
+// @version			1.8.3+build.74
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -16,6 +16,7 @@
 // @connect			github.com
 // @connect			cdn.jsdelivr.net
 // @connect			severitium-builds.vercel.app
+// @connect			severitium-builds-server.onrender.com
 
 // @run-at			document-start
 // @grant			unsafeWindow
