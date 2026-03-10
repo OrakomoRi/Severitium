@@ -3173,6 +3173,12 @@
       "date": "2026-03-10",
       "comment": "1.9.0",
       "hash": "12774d34a8b27aad75ddc5b44fea903c00924d23"
+    },
+    {
+      "version": "1.9.0+build.1",
+      "date": "2026-03-10",
+      "comment": "1.9.0+build.1 chore: update download links",
+      "hash": "58c5baa2598b6c650f70da8d1cfbc9bd5e0f2a06"
     }
   ]
 }
