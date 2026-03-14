@@ -3185,6 +3185,12 @@
       "date": "2026-03-10",
       "comment": "1.9.0+build.2 chore: update links in README",
       "hash": "7207f3833823af9c7bbffed5e385c9236d7d3dda"
+    },
+    {
+      "version": "1.9.0+build.3",
+      "date": "2026-03-14",
+      "comment": "1.9.0+build.3 style: update class names for quest components",
+      "hash": "df74f4c454d1ec877503a44a0d7a03178071b5ec"
     }
   ]
 }
