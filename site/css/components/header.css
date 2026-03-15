@@ -1,0 +1,116 @@
+/* ===== HEADER ===== */
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 200;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 2rem;
+	background: rgba(9, 9, 9, .9);
+	backdrop-filter: blur(.5rem);
+	border-bottom: 1px solid var(--border);
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: .5rem;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.logo img,
+.logo svg {
+	width: 1.75rem;
+	height: 1.75rem;
+}
+
+.logo-text {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--logo), var(--cond);
+	font-weight: normal;
+	font-size: 1.1rem;
+	line-height: normal;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	color: var(--text);
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	gap: .125rem;
+}
+
+nav a {
+	color: var(--muted);
+	text-decoration: none;
+	font-size: .9rem;
+	font-weight: 500;
+	letter-spacing: .05em;
+	text-transform: uppercase;
+	padding: .25rem .5rem;
+	transition: color .15s;
+}
+
+nav a:hover {
+	color: var(--text);
+}
+
+.header-right {
+	display: flex;
+	align-items: center;
+	gap: .75rem;
+}
+
+/* lang selector */
+[data-component="lang-selector"] .breezium-select {
+	--breezium-bg-color: var(--bg2);
+	--breezium-hover-bg-color: var(--surface);
+	--breezium-border-color: var(--border);
+	--breezium-border-width: 1px;
+	--breezium-border-radius: 0;
+	--breezium-text-color: var(--muted);
+	--breezium-font-size: .9rem;
+	--breezium-option-bg-color: var(--bg2);
+	--breezium-option-hover-bg-color: var(--surface);
+	--breezium-option-selected-bg-color: rgba(233, 67, 67, .1);
+	--breezium-select-selected-width: 7rem;
+	--breezium-min-width: 7rem;
+	--breezium-select-option-height: 2rem;
+	--breezium-select-options-max-height: 10rem;
+	--breezium-padding: .3rem .75rem;
+	--breezium-backdrop-filter: none;
+	--breezium-box-shadow: 0 4px 20px rgba(0, 0, 0, .5);
+	--breezium-z-index: 300;
+}
+
+[data-component="lang-selector"] .breezium-select .breezium-selected,
+[data-component="lang-selector"] .breezium-select .breezium-option {
+	font-family: var(--mono);
+	letter-spacing: .05em;
+	text-transform: uppercase;
+}
+
+[data-component="lang-selector"] .breezium-select .breezium-option.is-selected {
+	color: var(--accent);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+	nav {
+		display: none;
+	}
+}
+
+@media (max-width: 600px) {
+	[data-component="lang-selector"] .breezium-select {
+		--breezium-font-size: .75rem;
+	}
+}

@@ -1,0 +1,66 @@
+/* ===== BUTTONS ===== */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	gap: .5rem;
+	padding: .5rem 1.5rem;
+	font-family: var(--mono);
+	font-size: 1rem;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	text-decoration: none;
+	cursor: pointer;
+	border: none;
+	transition: all .15s;
+	position: relative;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.btn-primary {
+	background: var(--accent);
+	color: #fff;
+	clip-path: polygon(0 0, calc(100% - .5rem) 0, 100% .5rem, 100% 100%, 0 100%);
+}
+
+.btn-primary:hover {
+	background: #f05555;
+	transform: translateY(-1px);
+}
+
+.btn-primary:active {
+	transform: translateY(0);
+}
+
+.btn-ghost {
+	background: transparent;
+	color: var(--muted);
+	border: 1px solid var(--border-hi);
+}
+
+.btn-ghost:hover {
+	color: var(--text);
+	border-color: rgba(255, 255, 255, .28);
+	background: rgba(255, 255, 255, .03);
+}
+
+.btn ion-icon {
+	font-size: 1rem;
+}
+
+.btn span,
+.btn-primary span {
+	line-height: 1;
+}
+
+.btn--sm {
+	padding: .5rem .75rem;
+	font-size: .75rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+	.btn {
+		justify-content: center;
+	}
+}

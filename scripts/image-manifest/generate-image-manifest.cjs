@@ -3,7 +3,7 @@ const path = require('path');
 
 const CONFIG = {
 	imagesDir: path.join(__dirname, '..', '..', 'images'),
-	outputFile: path.join(__dirname, '..', '..', 'assets', 'config', 'image-manifest.json'),
+	outputFile: path.join(__dirname, '..', '..', 'site', 'config', 'image-manifest.json'),
 	imageExtensions: ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg'],
 	themeDirectories: { new: 'new', old: 'old' },
 	manifestVersion: '1.0.0'

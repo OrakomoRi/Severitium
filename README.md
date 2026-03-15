@@ -90,7 +90,6 @@ Samsung Internet|20+
 - [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JavaScript](https://www.javascript.com/)
-- [SweetAlert2](https://sweetalert2.github.io/)
 
 ## :wave: Special Thanks
 
@@ -103,6 +102,8 @@ Samsung Internet|20+
 ### :sunny: Inspiration
 
 The idea for the background for the loading screen (canvas with stars) was ispired by [xeon](https://github.com/xeon-git).
+
+The idea of popups and alerts was inspired by [SweetAlert2](https://sweetalert2.github.io/).
 
 ## :coin: Support me
 

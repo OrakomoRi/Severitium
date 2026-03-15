@@ -1,0 +1,19 @@
+:root {
+	--bg: #090909;
+	--bg2: #0f0f10;
+	--bg3: #161618;
+	--surface: #1e1e21;
+	--border: rgba(255, 255, 255, 0.06);
+	--border-hi: rgba(255, 255, 255, 0.12);
+	--accent: #e94343;
+	--accent-lo: #7a1f1f;
+	--amber: #e8a030;
+	--cyan: #43b8e9;
+	--text: #ebebef;
+	--muted: #747480;
+	--dim: #3f3f4d;
+	--mono: 'IBM Plex Mono', monospace;
+	--sans: 'PT Sans Narrow', sans-serif;
+	--cond: 'Exo 2', sans-serif;
+	--logo: 'Cyber Display', sans-serif;
+}

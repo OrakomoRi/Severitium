@@ -1,0 +1,21 @@
+/* ===== BASE ===== */
+@import url('./base/variables.css');
+@import url('./base/reset.css');
+@import url('./base/fonts.css');
+
+/* ===== COMPONENTS ===== */
+@import url('./components/header.css');
+@import url('./components/buttons.css');
+@import url('./components/modal.css');
+@import url('./components/footer.css');
+@import url('./components/gallery-modal.css');
+
+/* ===== SECTIONS ===== */
+@import url('./sections/hero.css');
+@import url('./sections/about.css');
+@import url('./sections/gallery.css');
+@import url('./sections/install.css');
+@import url('./sections/support.css');
+
+/* ===== UTILITIES ===== */
+@import url('./utilities.css');

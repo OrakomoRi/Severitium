@@ -1,0 +1,141 @@
+{
+	"nav": {
+		"home": "Home",
+		"about": "About",
+		"gallery": "Gallery",
+		"install": "Install",
+		"support": "Support"
+	},
+	"hero": {
+		"eyebrow": {
+			"openSource": "Open Source",
+			"modernUI": "Modern UI",
+			"improvedUX": "Improved UX"
+		},
+		"sub": {
+			"vibrant": "Vibrant",
+			"interactive": "Interactive",
+			"memorable": "Memorable"
+		},
+		"desc": "Free open-source visual theme for Tanki Online. Modern animations, customization possibilities, community-driven — works on both browser and client.",
+		"btn": {
+			"install": "Install Script",
+			"github": "GitHub",
+			"preview": "Preview"
+		}
+	},
+	"features": {
+		"label": "Features",
+		"title": "What Severitium<br>Actually Does",
+		"item1": {
+			"title": "Modern Design",
+			"desc": "Replaces dated game UI with sharp, animated components. Custom color system, smooth transitions, consistent visual language throughout every screen."
+		},
+		"item2": {
+			"title": "Bug Fixes",
+			"desc": "Ships with patches for known game interface issues. Better stability and fewer visual glitches than the vanilla experience."
+		},
+		"item3": {
+			"title": "Open Source",
+			"desc": "Full source on GitHub under MIT license. No tracking, no ads, no telemetry. Community contributions welcome."
+		}
+	},
+	"about": {
+		"label": "About",
+		"title": "What is<br>Severitium?",
+		"intro": "A comprehensive visual overhaul that transforms the Tanki Online interface — without touching gameplay mechanics.",
+		"q1": "What exactly is Severitium?",
+		"a1": "Severitium is a visual customization project that transforms the appearance of Tanki Online — a browser-based multiplayer tank game. Think of it as a \"skin\" that changes how the game looks without affecting gameplay mechanics.",
+		"q2": "What does it actually do?",
+		"a2": "The original game interface can feel outdated. Severitium replaces its visual elements with modern, animated designs featuring vibrant colors, smooth transitions, and improved UI components. A complete visual makeover.",
+		"q3": "How does it work technically?",
+		"a3": "The project uses CSS and JavaScript to override the game's default appearance. When installed via Tampermonkey, it automatically applies these visual changes whenever you open Tanki Online in your browser.",
+		"q4": "Who can use it and how difficult is installation?",
+		"a4": "Any Tanki Online player. No programming knowledge required — just install Tampermonkey and click the script installation link. Two steps total.",
+		"q5": "Why is this valuable from a dev perspective?",
+		"a5": "Demonstrates advanced front-end skills: CSS animations, JavaScript architecture, cross-browser compatibility, UX design, and the ability to reverse-engineer and enhance existing complex interfaces."
+	},
+	"gallery": {
+		"label": "Gallery",
+		"title": "See the Difference",
+		"categoryLabel": "Category:",
+		"all": "All",
+		"battle": "Battle",
+		"challenges": "Challenges",
+		"clan": "Clan",
+		"containers": "Containers",
+		"entrance": "Entrance",
+		"friends": "Friends",
+		"general": "General",
+		"lobby": "Lobby",
+		"quests": "Quests",
+		"ranks": "Ranks",
+		"settings": "Settings",
+		"shop": "Shop",
+		"severitium": "Severitium",
+		"original": "Original"
+	},
+	"install": {
+		"label": "Getting Started",
+		"title": "Install in<br>Minutes",
+		"tab.browser": "Browser",
+		"tab.client": "Game Client",
+		"browser.step1.title": "Download Tampermonkey",
+		"browser.step1.desc": "Free browser extension. Available for Chrome, Firefox, Edge, Safari, Opera. No account required.",
+		"browser.step1.btn": "Get it",
+		"browser.step2.title": "Install the Script",
+		"browser.step2.desc": "Click install below, confirm in the Tampermonkey popup. Launch Tanki Online — done. No restart required.",
+		"browser.step2.btn": "Install",
+		"browser.note.title": "First Load Note",
+		"browser.note.desc": "When first loading or updating the script, it may take a moment for the interface to fully initialize.",
+		"client.step1.title": "Download Tanki Online Client",
+		"client.step1.desc": "Get the desktop game client from the official Tanki Online website.",
+		"client.step2.title": "Navigate to Game Directory",
+		"client.step2.desc": "Usually located at",
+		"client.step3.title": "Backup the Resources Folder",
+		"client.step3.desc.part1": "Find the",
+		"client.step3.desc.part2": "folder. Create a backup before proceeding.",
+		"client.step4.title": "Replace app.asar",
+		"client.step4.desc.part1": "Download the modded",
+		"client.step4.desc.part2": "file and replace the original in the",
+		"client.step4.desc.part3": "folder.",
+		"client.step4.btn": "Download",
+		"client.step5.title": "Add the mods Folder",
+		"client.step5.desc": "In the main game directory, create a folder named",
+		"client.step6.title": "Install severitium.client.js",
+		"client.step6.desc.part1": "Download",
+		"client.step6.desc.part2": "and place it inside the",
+		"client.step6.desc.part3": "folder.",
+		"client.step6.btn": "Download"
+	},
+	"support": {
+		"label": "Support",
+		"title": "Keep the Project<br>Alive",
+		"desc": "Severitium is free and open source. If it improved your game experience, consider supporting continued development.",
+		"boosty": "Support on Boosty",
+		"patreon": "Support on Patreon",
+		"devLabel": "Developer Resources",
+		"devDesc": "Access the source code and development builds:",
+		"github": "GitHub Repository",
+		"devBuild": "Latest Dev Build"
+	},
+	"footer": {
+		"desc": "A free, open-source visual customization theme for Tanki Online. Modern design, improved stability, community-driven development.",
+		"disclaimer": "This is an independent fan project and is not affiliated with, endorsed by, or officially connected to Tanki Online or Alternativa Games Ltd.",
+		"colProject": "Project",
+		"colLegal": "Legal",
+		"colSupport": "Support",
+		"about": "About",
+		"gallery": "Gallery",
+		"installation": "Installation",
+		"changelog": "Changelog",
+		"mitLicense": "MIT License",
+		"madeWith": "Made with",
+		"madeBy": "by OrakomoRi"
+	},
+	"modal": {
+		"changelog": "Changelog",
+		"loading": "Loading changelog...",
+		"error": "Failed to load changelog. Check the GitHub repository."
+	}
+}
