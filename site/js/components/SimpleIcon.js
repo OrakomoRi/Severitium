@@ -27,7 +27,7 @@ export default class SimpleIcon extends HTMLElement {
 		if (cache.has(name)) {
 			svg = cache.get(name);
 		} else {
-			const r = await fetch(`/site/images/icons/${name}.svg`);
+			const r = await fetch(`site/images/icons/${name}.svg`);
 			svg = await r.text();
 			cache.set(name, svg);
 		}
