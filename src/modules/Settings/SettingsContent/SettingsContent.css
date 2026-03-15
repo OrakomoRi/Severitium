@@ -464,6 +464,12 @@
 	display: none;
 }
 
+/* Reset all button container */
+
+div:has(> .KeyboardSettingsComponentStyle-buttonResetAllKeys) {
+	width: 100%;
+}
+
 /* Reset all button */
 
 .KeyboardSettingsComponentStyle-buttonResetAllKeys:not(:root) {
