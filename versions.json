@@ -3227,6 +3227,12 @@
       "date": "2026-03-18",
       "comment": "1.9.0+build.9 style: refine modal link styles",
       "hash": "80c0cb92ea75c3a6ee54c9ec5d54c5389dc54c2c"
+    },
+    {
+      "version": "1.9.0+build.10",
+      "date": "2026-03-18",
+      "comment": "1.9.0+build.10 style: adjust modal close icon margin",
+      "hash": "0a0b2dc93e0bb841525a0f8bf21abc86422c9aa4"
     }
   ]
 }
