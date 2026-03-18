@@ -3203,6 +3203,12 @@
       "date": "2026-03-18",
       "comment": "1.9.0+build.5 style: update timer styles in modal and battle pause",
       "hash": "cbdbe2f3195c7eaf4a6d1c1a78f84115e2a96ea5"
+    },
+    {
+      "version": "1.9.0+build.6",
+      "date": "2026-03-18",
+      "comment": "1.9.0+build.6 feat: enhance modal text styling",
+      "hash": "b154d6bd332433e2f2dba83a101551efb662a65f"
     }
   ]
 }
