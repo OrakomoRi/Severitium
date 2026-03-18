@@ -3209,6 +3209,12 @@
       "date": "2026-03-18",
       "comment": "1.9.0+build.6 feat: enhance modal text styling",
       "hash": "b154d6bd332433e2f2dba83a101551efb662a65f"
+    },
+    {
+      "version": "1.9.0+build.7",
+      "date": "2026-03-18",
+      "comment": "1.9.0+build.7 fix: update modal styles",
+      "hash": "5cb9918ef8596d94d5ac50b4e0d7c57ec0e14f4c"
     }
   ]
 }
