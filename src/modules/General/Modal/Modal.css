@@ -422,6 +422,7 @@
 
 .ConverterDialogComponentStyle-closeIcon {
 	position: relative;
+	margin: 0;
 }
 
 /* Links inside the modal window */
