@@ -367,7 +367,8 @@
 
 /* Close icon container */
 
-.ModalStyle-rootHover *:has(> .DialogContainerComponentStyle-imgClose) {
+.ModalStyle-shaded *:has(> .DialogContainerComponentStyle-imgClose),
+.SystemMessageStyle-container *:has(> .DialogContainerComponentStyle-imgClose) {
 	position: unset;
 }
 
@@ -391,7 +392,7 @@
 	right: 0;
 	width: 1.5em;
 	height: 1.5em;
-	margin: 0;
+	margin: 1em;
 	padding: 0;
 	background: none;
 	background-image: none;

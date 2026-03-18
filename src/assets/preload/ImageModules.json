@@ -1,7 +1,7 @@
 [
 	{
 		"url": "https://orakomori.github.io/Severitium/src/assets/images/webp/Entrance/SEASON_PLACEHOLDER.webp",
-		"style": ".-container.-container.-entranceBackground, .-background.-container.SystemMessageStyle-container, .-container.-container:has(.-changingBackground){background-image:url(data:image/webp;base64,SEVERITIUM_PLACEHOLDER)}"
+		"style": ".-container.-container.-entranceBackground, .-background.SystemMessageStyle-container, .-container.-container:has(.-changingBackground){background-image:url(data:image/webp;base64,SEVERITIUM_PLACEHOLDER)}"
 	},
 	{
 		"url": "https://orakomori.github.io/Severitium/src/assets/images/webp/General/CommonContainer.webp",
