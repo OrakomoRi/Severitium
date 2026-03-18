@@ -173,7 +173,7 @@
 
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-keyButton,
 .ModalStyle-shaded > div:not([class*='battlepick'i]) .-buttonsContainer > div:nth-child(1),
-.ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:first-of-type,
+.ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:first-of-type:not([class*='timer'i]),
 .ModalStyle-shaded > div div.DialogContainerComponentStyle-keyButton {
 	margin: 0;
 	outline: none;
@@ -188,7 +188,7 @@
 
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-keyButton:hover,
 .ModalStyle-shaded > div:not([class*='battlepick'i]) .-buttonsContainer > div:nth-child(1):hover,
-.ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:first-of-type:hover,
+.ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:first-of-type:not([class*='timer'i]):hover,
 .ModalStyle-shaded > div div.DialogContainerComponentStyle-keyButton:hover {
 	border: var(--severitium-gray-button-border-color-hover) solid .1em;
 }
@@ -197,7 +197,7 @@
 
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-keyButton span,
 .ModalStyle-shaded > div:not([class*='battlepick'i]) .-buttonsContainer > div:nth-child(1) span,
-.ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:first-of-type span,
+.ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:first-of-type:not([class*='timer'i]) span,
 .ModalStyle-shaded > div div.DialogContainerComponentStyle-keyButton span {
 	color: var(--severitium-gray-button-color);
 }
@@ -209,7 +209,7 @@
 .ModalStyle-shaded > .Need2FaDialogComponentStyle-container .-buttonsContainer > div:nth-child(2),
 .ModalStyle-shaded > .ChangeOwnerDialogComponentStyle-container .-buttonsContainer > div:nth-child(2),
 .ModalStyle-shaded > .RulesUpdatedComponentStyle-container .-buttonsContainer > div:nth-child(1):not(:root),
-.ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:last-of-type,
+.ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:last-of-type:not([class*='timer'i]),
 .ModalStyle-shaded > div div.DialogContainerComponentStyle-enterButton {
 	margin: 0;
 	outline: none;
@@ -227,7 +227,7 @@
 .ModalStyle-shaded > .Need2FaDialogComponentStyle-container .-buttonsContainer > div:nth-child(2):hover,
 .ModalStyle-shaded > .ChangeOwnerDialogComponentStyle-container .-buttonsContainer > div:nth-child(2):hover,
 .ModalStyle-shaded > .RulesUpdatedComponentStyle-container .-buttonsContainer > div:nth-child(1):not(:root):hover,
-.ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:last-of-type:hover,
+.ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:last-of-type:not([class*='timer'i]):hover,
 .ModalStyle-shaded > div div.DialogContainerComponentStyle-enterButton:hover {
 	border: var(--severitium-green-button-border-color-hover) solid .1em;
 }
@@ -239,7 +239,7 @@
 .ModalStyle-shaded > .Need2FaDialogComponentStyle-container .-buttonsContainer > div:nth-child(2) span,
 .ModalStyle-shaded > .ChangeOwnerDialogComponentStyle-container .-buttonsContainer > div:nth-child(2) span,
 .ModalStyle-shaded > .RulesUpdatedComponentStyle-container .-buttonsContainer > div:nth-child(1):not(:root) span,
-.ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:last-of-type span,
+.ModalStyle-shaded > .DialogContainerComponentStyle-container .DialogContainerComponentStyle-footerContainer > div:last-of-type:not([class*='timer'i]) span,
 .ModalStyle-shaded > div div.DialogContainerComponentStyle-enterButton span {
 	color: var(--severitium-green-button-color);
 }
