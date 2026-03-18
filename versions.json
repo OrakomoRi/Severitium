@@ -3197,6 +3197,12 @@
       "date": "2026-03-15",
       "comment": "1.9.0+build.4 feat: add reset all button styling",
       "hash": "4ccc58259b74c183fe1efe41787eeb5b88a39b19"
+    },
+    {
+      "version": "1.9.0+build.5",
+      "date": "2026-03-18",
+      "comment": "1.9.0+build.5 style: update timer styles in modal and battle pause",
+      "hash": "cbdbe2f3195c7eaf4a6d1c1a78f84115e2a96ea5"
     }
   ]
 }
