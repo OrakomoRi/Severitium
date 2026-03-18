@@ -429,7 +429,8 @@
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) a,
 .ModalStyle-shaded > div:not([class*='battlepick'i]) a,
 .ModalStyle-transparent > div:not([class*='battlepick'i]) a,
-.DialogContainerComponentStyle-container a {
+.DialogContainerComponentStyle-container a,
+.DialogContainerComponentStyle-contentContainer span a {
 	-webkit-text-decoration: none;
 			text-decoration: none;
 }
@@ -439,7 +440,8 @@
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) a u,
 .ModalStyle-shaded > div:not([class*='battlepick'i]) a u,
 .ModalStyle-transparent > div:not([class*='battlepick'i]) a u,
-.DialogContainerComponentStyle-container a u {
+.DialogContainerComponentStyle-container a u,
+.DialogContainerComponentStyle-contentContainer span a {
 	color: var(--severitium-main-color);
 	-webkit-text-decoration: none;
 			text-decoration: none;
@@ -451,7 +453,8 @@
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) a:hover u,
 .ModalStyle-shaded > div:not([class*='battlepick'i]) a:hover u,
 .ModalStyle-transparent > div:not([class*='battlepick'i]) a:hover u,
-.DialogContainerComponentStyle-container a:hover u {
+.DialogContainerComponentStyle-container a:hover u,
+.DialogContainerComponentStyle-contentContainer span a:hover {
 	color: var(--severitium-white-text-color);
 }
 
