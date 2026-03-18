@@ -3215,6 +3215,12 @@
       "date": "2026-03-18",
       "comment": "1.9.0+build.7 fix: update modal styles",
       "hash": "5cb9918ef8596d94d5ac50b4e0d7c57ec0e14f4c"
+    },
+    {
+      "version": "1.9.0+build.8",
+      "date": "2026-03-18",
+      "comment": "1.9.0+build.8 style: update modal link styles",
+      "hash": "bc7bd85617bc5165c4450aa23cb6077cf18b4d44"
     }
   ]
 }
