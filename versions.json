@@ -3239,6 +3239,12 @@
       "date": "2026-03-24",
       "comment": "1.9.0+build.11 style: update quest completed styles",
       "hash": "9a66a023f9ca4419a5f293a497a5feddf1fa2d54"
+    },
+    {
+      "version": "1.9.0+build.12",
+      "date": "2026-03-24",
+      "comment": "1.9.0+build.12 style: enhance notification and quests styles",
+      "hash": "bb47c618379fc782d9ab01b75936f4f9d7ecf18e"
     }
   ]
 }
