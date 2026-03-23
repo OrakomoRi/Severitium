@@ -17,7 +17,11 @@
 .NotificationViewStyle-commonBlockNotification {
 	position: absolute;
 	right: 0;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
 	height: fit-content;
 	max-width: 32em;
 	background: none;
@@ -30,7 +34,8 @@
 	border-bottom: .1em solid var(--severitium-gray-color);
 	outline: none;
 	box-shadow: none;
-	backdrop-filter: blur(.5em);
+	-webkit-backdrop-filter: blur(.5em);
+	        backdrop-filter: blur(.5em);
 	padding: 0;
 }
 
@@ -42,7 +47,11 @@
 	left: auto;
 	right: auto;
 	bottom: auto;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
 	height: fit-content;
 	max-width: none;
 	max-height: none;
@@ -58,6 +67,8 @@
 
 .NotificationViewStyle-commonBlockNotification .NotificationViewStyle-headlineNotification {
 	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
 	height: fit-content;
 }
 
@@ -75,6 +86,8 @@
 
 .NotificationViewStyle-commonBlockNotification .NotificationViewStyle-descriptionNotification {
 	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
 	height: fit-content;
 	margin: 1em 0;
 }
@@ -122,7 +135,8 @@
 	min-height: none;
 	background: none;
 	border-bottom-left-radius: var(--severitium-border-radius);
-	appearance: unset;
+	-webkit-appearance: unset;
+	        appearance: unset;
 	overflow: hidden;
 }
 
@@ -133,7 +147,8 @@
 	height: 100%;
 	min-width: none;
 	min-height: none;
-	appearance: unset;
+	-webkit-appearance: unset;
+	        appearance: unset;
 	background: none;
 }
 
@@ -171,6 +186,8 @@
 
 .NotificationViewStyle-commonBlockNotification .NotificationViewStyle-blockButtonAndTimer {
 	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
 	height: fit-content;
 }
 
@@ -178,6 +195,8 @@
 
 .NotificationViewStyle-commonBlockNotification .NotificationViewStyle-blockButtonAndTimer .NotificationViewStyle-commonBlockButtonYesNo {
 	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
 	height: fit-content;
 	display: flex;
 	flex-direction: row;
@@ -189,6 +208,8 @@
 /* Notification button */
 
 .NotificationViewStyle-commonBlockNotification .NotificationViewStyle-commonBlockButtonYesNo > div {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
 	height: 100%;
 	min-width: none;
@@ -205,7 +226,8 @@
 	margin: 0;
 	padding: .75em 1em;
 	flex-grow: 1;
-	align-self: stretch;
+	-ms-grid-row-align: stretch;
+	    align-self: stretch;
 	transition: border-color .2s;
 }
 

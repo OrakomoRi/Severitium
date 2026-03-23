@@ -223,7 +223,11 @@
 /* Quest locked quest icon container */
 
 .QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-commonCard .MainQuestComponentStyle-backgroundIcon:has(> img[src*='lock'i]) {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
 	height: fit-content;
 	margin: 0;
 	padding: 0;
@@ -378,7 +382,7 @@
 	font-size: 1.125em;
 	font-weight: normal;
 	text-transform: uppercase;
-	color: var(--severitium-black-text-color);
+	color: var(--severitium-white-text-color);
 	opacity: 1;
 	flex-grow: 1;
 }
@@ -615,6 +619,7 @@
 	height: auto;
 	width: -webkit-max-content;
 	width: max-content;
+	min-height: 2.5em;
 	max-width: 2.5em;
 	-webkit-filter: saturate(0);
 			filter: saturate(0);
