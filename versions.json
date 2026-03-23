@@ -3233,6 +3233,12 @@
       "date": "2026-03-18",
       "comment": "1.9.0+build.10 style: adjust modal close icon margin",
       "hash": "0a0b2dc93e0bb841525a0f8bf21abc86422c9aa4"
+    },
+    {
+      "version": "1.9.0+build.11",
+      "date": "2026-03-24",
+      "comment": "1.9.0+build.11 style: update quest completed styles",
+      "hash": "9a66a023f9ca4419a5f293a497a5feddf1fa2d54"
     }
   ]
 }
