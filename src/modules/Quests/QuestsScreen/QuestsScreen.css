@@ -308,27 +308,27 @@
 
 /* Quest completed solo line */
 
-.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable {
+.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardCompletedTable {
 	background-color: var(--severitium-green-button-background);
 	border-color: var(--severitium-green-button-border-color);
 }
 
 /* Quest completed solo line on hover */
 
-.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable:hover {
+.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardCompletedTable:hover {
 	border-color: var(--severitium-green-button-border-color-hover);
 }
 
 /* Pressed state for quest completed solo line */
 
-.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable:active {
+.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardCompletedTable:active {
 	background-color: var(--severitium-green-button-background) !important;
 	border-color: var(--severitium-green-button-border-color-hover) !important;
 }
 
 /* Quest completed solo line icon block */
 
-.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable .MainQuestComponentStyle-iconCommon {
+.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardCompletedTable .MainQuestComponentStyle-iconCommon {
 	width: 2em;
 	height: 2em;
 	aspect-ratio: 1 / 1;
@@ -338,13 +338,13 @@
 
 /* Quest completed solo line original icon image */
 
-.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable .MainQuestComponentStyle-iconCommon > img {
+.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardCompletedTable .MainQuestComponentStyle-iconCommon > img {
 	display: none;
 }
 
 /* Quest completed solo line custom icon image */
 
-.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable .MainQuestComponentStyle-iconCommon::before {
+.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardCompletedTable .MainQuestComponentStyle-iconCommon::before {
 	content: '';
 	width: 100%;
 	height: 100%;
@@ -361,7 +361,7 @@
 
 /* Quest completed solo line text block */
 
-.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable .MainQuestComponentStyle-iconCommon + div {
+.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardCompletedTable .MainQuestComponentStyle-iconCommon + div {
 	width: 100%;
 	height: auto;
 	margin: 0;
@@ -370,7 +370,7 @@
 
 /* Quest completed solo line objective */
 
-.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardGivenTable span {
+.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardRewardCompletedTable span {
 	width: 100%;
 	height: auto;
 	margin: 0;
@@ -378,7 +378,7 @@
 	font-size: 1.125em;
 	font-weight: normal;
 	text-transform: uppercase;
-	color: var(--severitium-light-gray-text-color);
+	color: var(--severitium-black-text-color);
 	opacity: 1;
 	flex-grow: 1;
 }
@@ -960,6 +960,7 @@
 /* Quest line's rewards item's count */
 
 .QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div > .TableMainQuestComponentStyle-rewardsContainerTable > div > span {
+	text-align: center;
 	color: var(--severitium-white-text-color);
 }
 
