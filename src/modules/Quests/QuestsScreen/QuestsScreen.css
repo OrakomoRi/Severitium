@@ -400,6 +400,13 @@
 	border-color: var(--severitium-gold-button-border-color-hover);
 }
 
+/* Quest locked solo line on active */
+
+.QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div.TableMainQuestComponentStyle-cardLockedTable:active {
+	background-color: var(--severitium-gold-button-background) !important;
+	border-color: var(--severitium-gold-button-border-color-hover) !important;
+}
+
 /* All direct childs of the quest line on line's normal state and line's hover state */
 
 .QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div > *,
