@@ -1,4 +1,3 @@
-/* ===== SECTION BASE ===== */
 .section {
 	padding: 6rem 3rem;
 	max-width: 88rem;
@@ -60,7 +59,6 @@ hr.divider {
 	margin: 0;
 }
 
-/* ===== SCROLL REVEAL ===== */
 .reveal {
 	opacity: 0;
 	transform: translateY(2rem);
@@ -84,7 +82,6 @@ hr.divider {
 	transition-delay: .3s;
 }
 
-/* ===== HOVER LINE ACCENT ===== */
 .accent-line {
 	display: inline-block;
 	position: relative;

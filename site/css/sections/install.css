@@ -1,4 +1,3 @@
-/* ===== INSTALL SECTION ===== */
 .install-tabs {
 	display: flex;
 	gap: 0;
@@ -100,10 +99,15 @@
 }
 
 .step-action {
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
 	padding-top: .1rem;
+}
+
+.step-action .btn {
+	width: 100%;
 }
 
 .compat {
@@ -135,7 +139,6 @@
 	font-weight: 700;
 }
 
-/* Warning step variant */
 .step--warning {
 	background-color: rgba(232, 160, 48, .05);
 	border-left: 2px solid var(--amber);
@@ -149,7 +152,6 @@
 	color: var(--amber);
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
 	.steps {
 		max-width: 100%;

@@ -1,4 +1,3 @@
-/* ===== GALLERY IMAGE MODAL ===== */
 .img-modal {
 	display: none;
 	position: fixed;
@@ -23,7 +22,6 @@
 	justify-content: center;
 }
 
-/* Card container */
 .img-modal-card {
 	background: var(--bg2);
 	border: 1px solid var(--border);
@@ -34,7 +32,6 @@
 	box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
 }
 
-/* Card header */
 .img-modal-card-head {
 	display: flex;
 	align-items: center;
@@ -70,7 +67,6 @@
 	margin-top: .2rem;
 }
 
-/* Close button */
 .img-modal-close {
 	width: 2.25rem;
 	height: 2.25rem;
@@ -94,7 +90,6 @@
 	font-size: 1.1rem;
 }
 
-/* Card body */
 .img-modal-content {
 	display: flex;
 	align-items: center;
@@ -105,7 +100,6 @@
 	min-height: 200px;
 }
 
-/* Nav arrows */
 .img-modal-nav {
 	width: 2.5rem;
 	height: 2.5rem;
@@ -129,7 +123,6 @@
 	font-size: 1.1rem;
 }
 
-/* ===== IMAGE COMPARISON (gallery modal) ===== */
 .image-comparison {
 	position: relative;
 	overflow: hidden;
@@ -165,7 +158,6 @@
 	display: block;
 }
 
-/* slider mode */
 .image-comparison--slider .image-comparison__slider {
 	position: absolute;
 	top: 0;
@@ -220,7 +212,6 @@
 	opacity: 1;
 }
 
-/* toggle mode */
 .image-comparison--toggle .image-comparison__image-wrapper {
 	position: absolute;
 	inset: 0;
@@ -269,7 +260,6 @@
 	background-color: var(--accent);
 }
 
-/* loading/error states */
 .image-comparison__loading,
 .image-comparison__error {
 	display: flex;

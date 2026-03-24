@@ -1,4 +1,3 @@
-/* ===== HERO ===== */
 .hero {
 	min-height: 100vh;
 	display: flex;
@@ -11,7 +10,6 @@
 	text-align: center;
 }
 
-/* grid bg */
 .hero::before {
 	content: '';
 	position: absolute;
@@ -87,7 +85,6 @@
 	padding: 1rem 1.5rem;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
 	.hero-eyebrow {
 		font-size: .5rem;

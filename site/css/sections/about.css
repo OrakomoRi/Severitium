@@ -1,4 +1,3 @@
-/* ===== ABOUT / Q&A ===== */
 .about-wrap {
 	display: grid;
 	grid-template-columns: 1fr 1.6fr;
@@ -78,7 +77,6 @@
 	line-height: 1.75;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
 	.about-wrap {
 		grid-template-columns: 1fr;
