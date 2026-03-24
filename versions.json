@@ -3245,6 +3245,12 @@
       "date": "2026-03-24",
       "comment": "1.9.0+build.12 style: enhance notification and quests styles",
       "hash": "bb47c618379fc782d9ab01b75936f4f9d7ecf18e"
+    },
+    {
+      "version": "1.9.0+build.13",
+      "date": "2026-03-24",
+      "comment": "1.9.0+build.13 feat: add styling for locked quests",
+      "hash": "ea8798a52650327f52fdad25d939f151b94f356c"
     }
   ]
 }
