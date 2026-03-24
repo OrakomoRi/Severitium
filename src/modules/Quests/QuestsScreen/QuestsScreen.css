@@ -220,6 +220,13 @@
 	border-color: var(--severitium-gold-button-border-color-hover);
 }
 
+/* Quest locked solo card on active */
+
+.QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.TableMainQuestComponentStyle-cardLockedTable:active {
+	background-color: var(--severitium-gold-button-background) !important;
+	border-color: var(--severitium-gold-button-border-color-hover) !important;
+}
+
 /* Quest locked quest icon container */
 
 .QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div.MainQuestComponentStyle-commonCard .MainQuestComponentStyle-backgroundIcon:has(> img[src*='lock'i]) {
