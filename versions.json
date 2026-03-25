@@ -3257,6 +3257,12 @@
       "date": "2026-03-24",
       "comment": "1.9.0+build.14 feat: enhance quest card styles",
       "hash": "62fb5d6f3e5be9c0d34ef485eb001dcd2ebc562c"
+    },
+    {
+      "version": "1.9.0+build.15",
+      "date": "2026-03-25",
+      "comment": "1.9.0+build.15 style: update modal styles",
+      "hash": "60bd13e33cf0adb80960e9adbb35a0703e54f5d3"
     }
   ]
 }
