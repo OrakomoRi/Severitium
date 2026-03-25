@@ -149,9 +149,26 @@
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .PaidRenameDialogComponentStyle-messageBlock > span[class]:not([class*='common'i]),
 .ModalStyle-shaded > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-contentContainer span[class]:not([class*='common'i]),
 .ModalStyle-shaded > div:not([class*='battlepick'i]) .FriendListComponentStyle-commonBlockText span[class]:not([class*='common'i]),
-.ModalStyle-shaded > div:not([class*='battlepick'i]) .PaidRenameDialogComponentStyle-messageBlock > span[class]:not([class*='common'i])
-/* .ModalStyle-shaded > div:not([class*='battlepick'i]) .-contentContainer span[class]:not([class*='common'i]), */ {
+.ModalStyle-shaded > div:not([class*='battlepick'i]) .PaidRenameDialogComponentStyle-messageBlock > span[class]:not([class*='common'i]) {
 	color: var(--severitium-main-color);
+}
+
+/* Highlighted text for rubies */
+
+.ModalStyle-shaded > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-contentContainer img[src*='ruby'i] + span[class]:not([class*='common'i]) {
+	color: var(--severitium-ruby-color);
+}
+
+/* Highlighted text for tancoins */
+
+.ModalStyle-shaded > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-contentContainer img[src*='coin'i] + span[class]:not([class*='common'i]) {
+	color: var(--severitium-tancoin-color);
+}
+
+/* Highlighted text for crystals */
+
+.ModalStyle-shaded > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-contentContainer img[src*='crystal'i] + span[class]:not([class*='common'i]) {
+	color: var(--severitium-crystal-color);
 }
 
 /* 
