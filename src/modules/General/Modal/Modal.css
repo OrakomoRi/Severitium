@@ -149,8 +149,8 @@
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .PaidRenameDialogComponentStyle-messageBlock > span[class]:not([class*='common'i]),
 .ModalStyle-shaded > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-contentContainer span[class]:not([class*='common'i]),
 .ModalStyle-shaded > div:not([class*='battlepick'i]) .FriendListComponentStyle-commonBlockText span[class]:not([class*='common'i]),
-.ModalStyle-shaded > div:not([class*='battlepick'i]) .PaidRenameDialogComponentStyle-messageBlock > span[class]:not([class*='common'i]),
-	.ModalStyle-shaded > div:not([class*='battlepick'i]) .-contentContainer span[class]:not([class*='common'i]) {
+.ModalStyle-shaded > div:not([class*='battlepick'i]) .PaidRenameDialogComponentStyle-messageBlock > span[class]:not([class*='common'i])
+/* .ModalStyle-shaded > div:not([class*='battlepick'i]) .-contentContainer span[class]:not([class*='common'i]), */ {
 	color: var(--severitium-main-color);
 }
 
@@ -430,7 +430,7 @@
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) a,
 .ModalStyle-shaded > div:not([class*='battlepick'i]) a,
 .ModalStyle-transparent > div:not([class*='battlepick'i]) a,
-.DialogContainerComponentStyle-container a{
+.DialogContainerComponentStyle-container a {
 	-webkit-text-decoration: none;
 			text-decoration: none;
 }
