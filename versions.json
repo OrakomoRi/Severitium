@@ -3275,6 +3275,12 @@
       "date": "2026-03-27",
       "comment": "1.9.0+build.17 feat: enhance header styles",
       "hash": "40e3a1b9b9f2899e82a7f1f8375f907a97f6897e"
+    },
+    {
+      "version": "1.9.0+build.18",
+      "date": "2026-03-27",
+      "comment": "1.9.0+build.18 style: adjust icon close links dimensions",
+      "hash": "335946558d4144c523425b89af4e87eded61446a"
     }
   ]
 }
