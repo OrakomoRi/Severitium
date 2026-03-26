@@ -3287,6 +3287,12 @@
       "date": "2026-03-27",
       "comment": "1.9.0+build.19 style: update icon dimensions",
       "hash": "d27d530e8a0eece2f162a9073a0c8f9cff2bbb49"
+    },
+    {
+      "version": "1.9.1",
+      "date": "2026-03-27",
+      "comment": "1.9.1",
+      "hash": "20ffb8bd50888e13796725689702d2e75fbedd27"
     }
   ]
 }
