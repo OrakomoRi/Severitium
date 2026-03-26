@@ -128,10 +128,18 @@
 /* Button 'back' with arrow (top-left corner) the container */
 
 .HeaderComponentStyle-commonBlockContentPanel .HeaderComponentStyle-backArrowBlock {
+	position: relative;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	gap: 2em;
+	flex-grow: 1;
+	top: unset;
+	left: unset;
+	right: unset;
+	bottom: unset;
+	margin: 0;
+	padding: 0;
 	transition: gap .2s ease;
 }
 
