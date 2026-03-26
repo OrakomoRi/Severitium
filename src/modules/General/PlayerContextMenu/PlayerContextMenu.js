@@ -6,30 +6,15 @@
 	 */
 	function configureElementHover(modal) {
 		const spans = modal.querySelectorAll('.ContextMenuStyle-menu > div > span');
-		const usedIds = new Set();
 
 		spans.forEach(span => {
 			const spanColor = window.getComputedStyle(span).color;
 			const parentDiv = span.closest('div');
 
-			// Generate unique id
-			let uniqueId;
-			do {
-				uniqueId = 'severitiumID-PCM-' + Math.random().toString(36).substring(7);
-			} while (usedIds.has(uniqueId));
-
-			usedIds.add(uniqueId);
-			parentDiv.className = uniqueId;
-
-			// Check if the span color is red
 			if (spanColor === 'rgb(255, 124, 124)') {
-				const style = document.createElement('style');
-				style.innerHTML = `
-					.ContextMenuStyle-menu > div.${uniqueId} > span { color: var(--severitium-red-text-color); }
-					.ContextMenuStyle-menu > div.${uniqueId}:hover { background-color: rgba(225, 75, 75, 0.1) !important; }
-					.ContextMenuStyle-menu > div.${uniqueId}:hover::before { background-color: rgba(225, 75, 75, 0.75) !important; }
-				`;
-				modal.appendChild(style);
+				parentDiv.classList.add('red');
+			} else {
+				parentDiv.classList.add('normal');
 			}
 		});
 	}
@@ -116,7 +101,7 @@
 				if (node.nodeType !== Node.ELEMENT_NODE) return;
 				if (!node.classList.contains('modal') || node.classList.contains('cloned')) return;
 
-				const contextMenu = node.querySelector('.ContextMenuStyle-menu');
+				const contextMenu = node.querySelector('.ContextMenuStyle-menu') || (node.classList.contains('ContextMenuStyle-menu') ? node : null);
 				if (contextMenu) {
 					cloneModal(node);
 					configureElementHover(node);
@@ -146,5 +131,4 @@
 
 	// Start observing mutations in the document body
 	observer.observe(document.body, { childList: true, subtree: true });
-
 })();

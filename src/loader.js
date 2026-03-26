@@ -32,6 +32,8 @@ import { CONFIG } from './config/config.js';
 		const injector = new SeveritiumInjector(severitium, currentSeason);
 		injector.updateSeveritium(severitium);
 
+		if (severitium.theme) localStorage.setItem('SeveritiumThemes', JSON.stringify(severitium.theme));
+
 		if (severitium.CSS['main']) injector.applyCSS('main');
 		if (severitium.theme) injector.applyTheme();
 		if (severitium.JS['main']) injector.applyJS('main');
