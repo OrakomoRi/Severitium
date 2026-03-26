@@ -3305,6 +3305,12 @@
       "date": "2026-03-27",
       "comment": "1.9.1+build2 style: modify button alignment",
       "hash": "a46ca4d85ab1691622a0950c4231ff3c8b695892"
+    },
+    {
+      "version": "1.9.1+build3",
+      "date": "2026-03-27",
+      "comment": "1.9.1+build3 fix: update class assignment in PlayerContextMenu",
+      "hash": "93d6cd80054d23ff5048be76ab624b27ffcdd672"
     }
   ]
 }
