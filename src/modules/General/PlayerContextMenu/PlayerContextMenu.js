@@ -1,11 +1,11 @@
 (function () {
 	/**
-	 * Sets the background-color on hover to elements inside modal based on their text color
-	 * 
-	 * @param {HTMLElement} modal - The modal element to configure
+	 * Sets the background-color on hover to elements inside the context menu based on their text color
+	 *
+	 * @param {HTMLElement} contextMenu - The .ContextMenuStyle-menu element to configure
 	 */
-	function configureElementHover(modal) {
-		const spans = modal.querySelectorAll('.ContextMenuStyle-menu > div > span');
+	function configureElementHover(contextMenu) {
+		const spans = contextMenu.querySelectorAll('> div > span');
 
 		spans.forEach(span => {
 			const spanColor = window.getComputedStyle(span).color;
@@ -65,28 +65,24 @@
 
 	/**
 	 * Applies fadeOut animation and removes the cloned modal
-	 * 
+	 *
 	 * @param {string} ModalID - The ID of the modal to remove
 	 */
 	function applyFadeOutAnimation(ModalID) {
 		const modalRoot = document.getElementById('modal-root');
 		const clonedModal = clonedModals.get(ModalID);
 
-		if (clonedModal) {
-			modalRoot.appendChild(clonedModal);
-		}
+		if (!clonedModal) return;
 
-		const clone = modalRoot.querySelector('.modal.cloned');
-		if (clone) {
-			const contextMenu = clone.querySelector(`.ContextMenuStyle-menu[data-clone='true'][data-mid='${ModalID}']`);
+		modalRoot.appendChild(clonedModal);
 
-			if (contextMenu) {
-				contextMenu.classList.add('fadeOutDown');
-				contextMenu.addEventListener('animationend', () => {
-					modalRoot.removeChild(clone);
-					clonedModals.delete(ModalID);
-				});
-			}
+		const contextMenu = clonedModal.querySelector(`.ContextMenuStyle-menu[data-clone='true'][data-mid='${ModalID}']`);
+		if (contextMenu) {
+			contextMenu.classList.add('fadeOutDown');
+			contextMenu.addEventListener('animationend', () => {
+				modalRoot.removeChild(clonedModal);
+				clonedModals.delete(ModalID);
+			});
 		}
 	}
 
@@ -99,22 +95,23 @@
 		mutations.forEach(({ addedNodes, removedNodes }) => {
 			addedNodes.forEach(node => {
 				if (node.nodeType !== Node.ELEMENT_NODE) return;
-				if (!node.classList.contains('modal') || node.classList.contains('cloned')) return;
+				if (node.classList.contains('cloned')) return;
 
 				const contextMenu = node.querySelector('.ContextMenuStyle-menu') || (node.classList.contains('ContextMenuStyle-menu') ? node : null);
 				if (contextMenu) {
 					cloneModal(node);
-					configureElementHover(node);
+					configureElementHover(contextMenu);
 				}
 			});
 
 			removedNodes.forEach(node => {
 				if (node.nodeType !== Node.ELEMENT_NODE) return;
-				if (!node.classList.contains('ContextMenuStyle-menu') || node.dataset.clone) return;
+				if (node.classList.contains('cloned')) return;
 
-				const ModalID = node.getAttribute('data-mid');
-				if (ModalID) {
-					applyFadeOutAnimation(ModalID);
+				const contextMenu = node.querySelector('.ContextMenuStyle-menu') || (node.classList.contains('ContextMenuStyle-menu') ? node : null);
+				if (contextMenu) {
+					const ModalID = contextMenu.getAttribute('data-mid');
+					if (ModalID) applyFadeOutAnimation(ModalID);
 				}
 			});
 		});
