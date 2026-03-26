@@ -1,5 +1,22 @@
 # CHANGELOG
 
+## [1.9.1] - 2026-03-27
+
+### Changed
+
+- Battle
+  - BattlePause
+- Entrance
+  - EntranceForms
+  - EntranceLinks
+- General
+  - Modal
+  - Notification
+- Quests
+  - QuestsScreen
+- Settings
+  - SettingsContent
+
 ## [1.9.0] - 2026-03-10
 
 ### Added
@@ -7,6 +24,7 @@
 - General
   - Notification
 - Theme support for game client :tada:
+- `Nuntaria` custom notification library integration for theme alerts :tada:
 
 ### Changed
 
