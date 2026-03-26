@@ -3317,6 +3317,12 @@
       "date": "2026-03-27",
       "comment": "1.9.1+build4 feat: enhance context menu styling and functionality",
       "hash": "4543a790e3430d392ed8c3b6993fa236e62d51b0"
+    },
+    {
+      "version": "1.9.1+build5",
+      "date": "2026-03-27",
+      "comment": "1.9.1+build5 fix: improve context menu hover behavior",
+      "hash": "63eadbb4e7ec4a4cefa33284ecf36f3b1648c632"
     }
   ]
 }
