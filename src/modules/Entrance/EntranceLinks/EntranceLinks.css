@@ -194,7 +194,8 @@ svg.severitium-link-rects rect {
 .HeaderComponentStyle-iconCloseLinks,
 .HeaderComponentStyle-iconCloseLinks:hover {
 	background-image: none;
-	height: 2em;
+	width: auto;
+	height: 2.5em;
 	aspect-ratio: 1 / 1;
 	margin: 0;
 }
