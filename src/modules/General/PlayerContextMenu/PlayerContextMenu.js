@@ -19,15 +19,15 @@
 			} while (usedIds.has(uniqueId));
 
 			usedIds.add(uniqueId);
-			parentDiv.id = uniqueId;
+			parentDiv.className = uniqueId;
 
 			// Check if the span color is red
 			if (spanColor === 'rgb(255, 124, 124)') {
 				const style = document.createElement('style');
 				style.innerHTML = `
-					.ContextMenuStyle-menu > div#${uniqueId} > span { color: var(--severitium-red-text-color); }
-					.ContextMenuStyle-menu > div#${uniqueId}:hover { background-color: rgba(225, 75, 75, 0.1) !important; }
-					.ContextMenuStyle-menu > div#${uniqueId}:hover::before { background-color: rgba(225, 75, 75, 0.75) !important; }
+					.ContextMenuStyle-menu > div.${uniqueId} > span { color: var(--severitium-red-text-color); }
+					.ContextMenuStyle-menu > div.${uniqueId}:hover { background-color: rgba(225, 75, 75, 0.1) !important; }
+					.ContextMenuStyle-menu > div.${uniqueId}:hover::before { background-color: rgba(225, 75, 75, 0.75) !important; }
 				`;
 				modal.appendChild(style);
 			}
