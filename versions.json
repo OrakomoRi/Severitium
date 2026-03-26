@@ -3311,6 +3311,12 @@
       "date": "2026-03-27",
       "comment": "1.9.1+build3 fix: update class assignment in PlayerContextMenu",
       "hash": "93d6cd80054d23ff5048be76ab624b27ffcdd672"
+    },
+    {
+      "version": "1.9.1+build4",
+      "date": "2026-03-27",
+      "comment": "1.9.1+build4 feat: enhance context menu styling and functionality",
+      "hash": "4543a790e3430d392ed8c3b6993fa236e62d51b0"
     }
   ]
 }
