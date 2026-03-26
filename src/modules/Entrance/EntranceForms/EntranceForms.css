@@ -5,6 +5,29 @@
 	box-sizing: border-box;
 }
 
+/* Header outer container */
+
+.HeaderComponentStyle-linkBar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: fit-content;
+}
+
+/* Header inner container */
+
+.HeaderComponentStyle-linkBar .HeaderComponentStyle-commonBlockContentPanel {
+	position: relative;
+	width: auto;
+	height: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 1em;
+	padding: .5em 2.5em;
+}
+
 /* Links and copyright block on page's bottom */
 
 .HeaderComponentStyle-headerLinkBar .HeaderComponentStyle-commonBlockContentPanel
@@ -12,20 +35,42 @@
 	display: none;
 }
 
+/* Header tanki online icon */
+
+.HeaderComponentStyle-iconTankOnline {
+	position: relative;
+	top: unset;
+	left: unset;
+	display: none;
+}
+
+/* Original tanki online logo */
+
+.HeaderComponentStyle-logoTankOnline {
+    display: none;
+}
+
+/* Language select */
+
+.HeaderComponentStyle-commonBlockContentPanel div:has(+ .HeaderComponentStyle-blockForIconToggleSound) {
+	width: auto;
+	height: 100%;
+}
+
 /* Sound button (top-right corner) */
 
 .HeaderComponentStyle-commonBlockContentPanel .HeaderComponentStyle-blockForIconToggleSound {
 	width: auto;
-	height: 2.5em;
+	height: auto;
 	min-width: auto;
 	min-height: auto;
+	align-self: stretch;
 	box-sizing: border-box;
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
 	margin: 0;
-	padding: .5em .75em;
-	margin-left: .5em;
+	padding: 0 .5em;
 	background-color: transparent;
 	border-radius: var(--severitium-border-radius);
 	border: .1em solid var(--severitium-gray-color);

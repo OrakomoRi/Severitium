@@ -1,28 +1,23 @@
-/* Header inner container */
-
-.HeaderComponentStyle-linkBar .HeaderComponentStyle-commonBlockContentPanel {
-	padding: 0 2.5em;
-}
-
 /* Entrance icon to links (top-right corner) */
 
 .HeaderComponentStyle-enableIconLinksComponentShowed,
 .HeaderComponentStyle-enableIconLinksComponentShowed:hover {
 	width: auto;
-	height: auto;
+	height: fit-content;
 	background: none;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 0;
-	margin-left: 1em;
+	cursor: pointer;
 }
 
 /* Custom icon */
 
 svg.severitium-link-rects {
 	fill: var(--severitium-extra-light-gray-color);
-	width: 2rem;
+	height: 2.5em;
+	aspect-ratio: 1 / 1;
 }
 
 /* Custom icon on hover */
