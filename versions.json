@@ -3269,6 +3269,12 @@
       "date": "2026-03-25",
       "comment": "1.9.0+build.16 feat: enhance modal styling",
       "hash": "b11d38bf4a9e20a9d392f9fc8424c36686c5b618"
+    },
+    {
+      "version": "1.9.0+build.17",
+      "date": "2026-03-27",
+      "comment": "1.9.0+build.17 feat: enhance header styles",
+      "hash": "40e3a1b9b9f2899e82a7f1f8375f907a97f6897e"
     }
   ]
 }
