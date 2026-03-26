@@ -3293,6 +3293,12 @@
       "date": "2026-03-27",
       "comment": "1.9.1",
       "hash": "20ffb8bd50888e13796725689702d2e75fbedd27"
+    },
+    {
+      "version": "1.9.1+build1",
+      "date": "2026-03-27",
+      "comment": "1.9.1+build1 chore: minor patch",
+      "hash": "680541e52c4af0b17a43ad1fe8885b4a42ab35a3"
     }
   ]
 }
