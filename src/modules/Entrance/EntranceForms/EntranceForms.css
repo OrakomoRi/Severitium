@@ -71,6 +71,12 @@
 	padding: .25em .5em;
 }
 
+/* Language select options container */
+
+.HeaderComponentStyle-commonBlockContentPanel div:has(+ .HeaderComponentStyle-blockForIconToggleSound) .DropDownStyle-dropdownRoot .VerticalScrollStyle-outerContainerStyle {
+	min-width: 100%;
+}
+
 /* Sound button (top-right corner) */
 
 .HeaderComponentStyle-commonBlockContentPanel .HeaderComponentStyle-blockForIconToggleSound {
