@@ -186,6 +186,45 @@
 			'Are you sure you want to delete this theme?': 'Ви впевнені, що хочете видалити цю тему?',
 			'This action cannot be undone.': 'Цю дію неможливо скасувати.',
 			'Theme': 'Тема'
+		},
+		tr: {
+			'Main theme color': 'Ana tema rengi',
+			'Border radius': 'Kenar yarıçapı',
+			'In-battle tab background': 'Savaş içi sekme arka planı',
+			'Theme Settings': 'Tema Ayarları',
+			'Create New Theme': 'Yeni Tema Oluştur',
+			'Delete Theme': 'Temayı Sil',
+			'Cancel': 'İptal',
+			'Delete': 'Sil',
+			'Are you sure you want to delete this theme?': 'Bu temayı silmek istediğinizden emin misiniz?',
+			'This action cannot be undone.': 'Bu işlem geri alınamaz.',
+			'Theme': 'Tema'
+		},
+		cs: {
+			'Main theme color': 'Hlavní barva motivu',
+			'Border radius': 'Poloměr okraje',
+			'In-battle tab background': 'Pozadí záložky v bitvě',
+			'Theme Settings': 'Nastavení motivu',
+			'Create New Theme': 'Vytvořit nový motiv',
+			'Delete Theme': 'Smazat motiv',
+			'Cancel': 'Zrušit',
+			'Delete': 'Smazat',
+			'Are you sure you want to delete this theme?': 'Opravdu chcete tento motiv smazat?',
+			'This action cannot be undone.': 'Tuto akci nelze vrátit zpět.',
+			'Theme': 'Motiv'
+		},
+		hi: {
+			'Main theme color': 'मुख्य थीम रंग',
+			'Border radius': 'बॉर्डर त्रिज्या',
+			'In-battle tab background': 'युद्ध टैब पृष्ठभूमि',
+			'Theme Settings': 'थीम सेटिंग्स',
+			'Create New Theme': 'नई थीम बनाएं',
+			'Delete Theme': 'थीम हटाएं',
+			'Cancel': 'रद्द करें',
+			'Delete': 'हटाएं',
+			'Are you sure you want to delete this theme?': 'क्या आप वाकई इस थीम को हटाना चाहते हैं?',
+			'This action cannot be undone.': 'यह क्रिया पूर्ववत नहीं की जा सकती।',
+			'Theme': 'थीम'
 		}
 	};
 

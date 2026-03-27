@@ -22,6 +22,9 @@ export class UpdateChecker {
 			ja: { title: '新しいバージョンが利用可能です！', text: (v, d) => `バージョン ${v} が利用可能です${d ? ` (${d})` : ''}。今すぐ更新しますか？`, skip: 'スキップ', later: '後で', update: '更新' },
 			es: { title: '¡Nueva versión disponible!', text: (v, d) => `La versión ${v} está disponible${d ? ` (${d})` : ''}. ¿Actualizar ahora?`, skip: 'Omitir', later: 'Después', update: 'Actualizar' },
 			fr: { title: 'Nouvelle version disponible !', text: (v, d) => `La version ${v} est disponible${d ? ` (${d})` : ''}. Mettre à jour maintenant ?`, skip: 'Ignorer', later: 'Plus tard', update: 'Mettre à jour' },
+			tr: { title: 'Yeni sürüm mevcut!', text: (v, d) => `${v} sürümü mevcut${d ? ` (${d})` : ''}. Şimdi güncellensin mi?`, skip: 'Atla', later: 'Sonra', update: 'Güncelle' },
+			cs: { title: 'Nová verze je k dispozici!', text: (v, d) => `Verze ${v} je k dispozici${d ? ` (${d})` : ''}. Aktualizovat nyní?`, skip: 'Přeskočit', later: 'Později', update: 'Aktualizovat' },
+			hi: { title: 'नया संस्करण उपलब्ध है!', text: (v, d) => `संस्करण ${v} उपलब्ध है${d ? ` (${d})` : ''}। अभी अपडेट करें?`, skip: 'छोड़ें', later: 'बाद में', update: 'अपडेट करें' },
 		};
 		return translations[_detectLanguage()] || translations.en;
 	}

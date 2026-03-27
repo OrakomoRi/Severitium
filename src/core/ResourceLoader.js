@@ -26,6 +26,9 @@ export class ResourceLoader {
 			ja: { errorTitle: 'リソースの読み込みに失敗しました', errorMessage: '必須リソースを読み込めませんでした。ページをリロードして、後でもう一度お試しください。' },
 			es: { errorTitle: 'Error al cargar recursos críticos', errorMessage: 'No se pudieron cargar los recursos esenciales. Recargue la página e inténtelo de nuevo más tarde.' },
 			fr: { errorTitle: 'Échec du chargement des ressources critiques', errorMessage: 'Impossible de charger les ressources essentielles. Rechargez la page et réessayez plus tard.' },
+			tr: { errorTitle: 'Kritik kaynaklar yüklenemedi', errorMessage: 'Temel kaynaklar yüklenemedi. Lütfen sayfayı yenileyin ve daha sonra tekrar deneyin.' },
+			cs: { errorTitle: 'Kritické zdroje se nepodařilo načíst', errorMessage: 'Nepodařilo se načíst základní zdroje. Obnovte stránku a zkuste to znovu.' },
+			hi: { errorTitle: 'महत्वपूर्ण संसाधन लोड नहीं हो सके', errorMessage: 'आवश्यक संसाधन लोड नहीं हो सके। कृपया पृष्ठ को पुनः लोड करें और बाद में पुनः प्रयास करें।' },
 		};
 		return translations[_detectLanguage()] || translations.en;
 	}

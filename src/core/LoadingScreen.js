@@ -37,6 +37,9 @@ export class LoadingScreen {
 			ja: { loading: "リソースを読み込んでいます。お待ちください...", wait: "読み込みには数分かかる場合があります。" },
 			es: { loading: "Cargando recursos, por favor espere...", wait: "Puede tardar hasta unos minutos en cargar." },
 			fr: { loading: "Chargement des ressources, veuillez patienter...", wait: "Cela peut prendre quelques minutes." },
+			tr: { loading: "Kaynaklar yükleniyor, lütfen bekleyin...", wait: "Yükleme birkaç dakika sürebilir." },
+			cs: { loading: "Načítání zdrojů, prosím čekejte...", wait: "Načítání může trvat několik minut." },
+			hi: { loading: "संसाधन लोड हो रहे हैं, कृपया प्रतीक्षा करें...", wait: "लोड होने में कुछ मिनट लग सकते हैं।" },
 		};
 		return translations[this.language] || translations.en;
 	}
