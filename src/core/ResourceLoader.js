@@ -33,9 +33,34 @@ export class ResourceLoader {
 		return translations[_detectLanguage()] || translations.en;
 	}
 
+	async getClientId() {
+		let clientId = await Bridge.getValue('SeveritiumClientId', '');
+		if (!clientId) {
+			clientId = crypto.randomUUID();
+			Bridge.setValue('SeveritiumClientId', clientId);
+		}
+		return clientId;
+	}
+
+	async _track(clientId) {
+		try {
+			const params = new URLSearchParams({
+				cid: clientId,
+				v: this.version,
+				l: _detectLanguage(),
+			});
+			await Bridge.fetch(`${CONFIG.TRACK_URL}?${params}`, 'text');
+		} catch (e) {
+			this.logger.log(`Tracking failed: ${e}`, 'warn');
+		}
+	}
+
 	async load() {
 		this.loadingScreen = LoadingScreen.add(CONFIG.SCRIPT_NAME);
 		let severitium;
+
+		const clientId = await this.getClientId();
+		this._track(clientId);
 
 		try {
 			const cachedVersion = await Bridge.getValue('SeveritiumVersion', '');

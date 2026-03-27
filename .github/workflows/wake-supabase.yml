@@ -1,0 +1,18 @@
+name: Wake up Supabase
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run every day at 00:00 UTC
+
+  workflow_dispatch:  # Ability to run manually
+
+jobs:
+  ping_supabase:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Wake up Supabase
+        run: |
+          curl 'https://${{ secrets.SUPABASE_PROJECT_ID }}.supabase.co/rest/v1/users?limit=1' \
+          -H "apikey: ${{ secrets.SUPABASE_PUBLIC_KEY }}" \
+          -H "Authorization: Bearer ${{ secrets.SUPABASE_PUBLIC_KEY }}"
