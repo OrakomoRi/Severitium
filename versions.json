@@ -3371,6 +3371,12 @@
       "date": "2026-03-27",
       "comment": "1.9.1+build13 feat: add styles for language select options",
       "hash": "3fb091fb0f10f44ef873b2e004e762018f40416f"
+    },
+    {
+      "version": "1.9.1+build15",
+      "date": "2026-03-28",
+      "comment": "1.9.1+build15 feat: implement client ID tracking",
+      "hash": "07e2f7429a22f50564aea853e1082b8aebed17ca"
     }
   ]
 }
