@@ -3383,6 +3383,12 @@
       "date": "2026-03-28",
       "comment": "1.9.1+build16 feat: enhance tracking logging",
       "hash": "f9526ecafbd61e79eb7970da975d177843d0fc9d"
+    },
+    {
+      "version": "1.9.1+build17",
+      "date": "2026-03-28",
+      "comment": "1.9.1+build17 chore: minor patch",
+      "hash": "8fd3bc54431f3b842cd4918470aa76a0b4f63227"
     }
   ]
 }
