@@ -3365,6 +3365,12 @@
       "date": "2026-03-27",
       "comment": "1.9.1+build12 feat: enhance language select dropdown styles",
       "hash": "f18ac9d015c124774a3a8d56eea21449a37f38b2"
+    },
+    {
+      "version": "1.9.1+build13",
+      "date": "2026-03-27",
+      "comment": "1.9.1+build13 feat: add styles for language select options",
+      "hash": "3fb091fb0f10f44ef873b2e004e762018f40416f"
     }
   ]
 }
