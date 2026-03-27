@@ -46,13 +46,13 @@ Keep in mind that when you first load or update the script, it takes some time f
 
 3. Find there `resources` folder (you may create a backup of it)
 
-4. Download modded `app.asar` file from [here](https://github.com/OrakomoRi/Severitium/blob/55dbe4bb4774819dfe49e86e54c5995af25d9058/release/app.asar) and replace the original one with it
+4. Download modded `app.asar` file from [here](https://github.com/OrakomoRi/Severitium/blob/0c3f56fd81114b0d415f568702c8b27768bb2fdd/release/app.asar) and replace the original one with it
 
 5. Return to the main directory
 
 6. Add `mods` folder
 
-7. Download `severitium.client.js` file from [here](https://github.com/OrakomoRi/Severitium/blob/55dbe4bb4774819dfe49e86e54c5995af25d9058/release/severitium.client.js) and place it in `mods` folder
+7. Download `severitium.client.js` file from [here](https://github.com/OrakomoRi/Severitium/blob/0c3f56fd81114b0d415f568702c8b27768bb2fdd/release/severitium.client.js) and place it in `mods` folder
 
 
 ## :rocket: Browser Compatibility
