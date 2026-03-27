@@ -2,11 +2,40 @@ import express from 'express';
 import { supabase } from './db.js';
 import { getCountry } from './geo.js';
 
+/**
+ * Express router handling the /api/track endpoint.
+ * Responds immediately and processes tracking asynchronously via an in-memory queue.
+ *
+ * @type {import('express').Router}
+ */
 export const trackRouter = express.Router();
 
+/**
+ * In-memory queue of pending tracking events.
+ * Populated on each incoming request and drained by {@link processQueue}.
+ *
+ * @type {Array<{cid: string, ip: string, userAgent: string|null, version: string|null, language: string|null}>}
+ */
 const queue = [];
+
+/**
+ * Whether the queue processor is currently running.
+ * Prevents concurrent processing of the same queue.
+ *
+ * @type {boolean}
+ */
 let processing = false;
 
+/**
+ * Drains the event queue one item at a time.
+ * For each event: resolves the country via IP geolocation,
+ * upserts the user by fingerprint, then inserts an event record.
+ *
+ * Safe to call multiple times — only one instance runs at a time.
+ *
+ * @async
+ * @returns {Promise<void>}
+ */
 async function processQueue() {
 	if (processing) return;
 	processing = true;
@@ -38,6 +67,18 @@ async function processQueue() {
 	processing = false;
 }
 
+/**
+ * GET /api/track
+ *
+ * Accepts a tracking ping from the client extension.
+ * Responds with 200 immediately, then enqueues the event for async processing.
+ *
+ * @query {string} cid - Client fingerprint (required)
+ * @query {string} [v]  - Theme version currently in use
+ * @query {string} [l]  - User language (BCP 47 tag, e.g. "en", "ru")
+ *
+ * @returns {void} Empty 200 response
+ */
 trackRouter.get('/', (req, res) => {
 	res.status(200).end();
 
