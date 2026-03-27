@@ -193,10 +193,6 @@
 
 	const saveThemes = new CustomEvent('theme:savethemes');
 
-	window.addEventListener('beforeunload', () => {
-		window.dispatchEvent(saveThemes);
-	});
-
 	// ===== UTILITIES =====
 
 	const Utils = {

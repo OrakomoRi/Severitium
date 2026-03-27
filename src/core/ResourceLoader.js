@@ -199,6 +199,20 @@ export class ResourceLoader {
 			return;
 		}
 
+		const defaultVars = severitium.theme.themes?.default?.variables;
+		if (defaultVars) {
+			for (const id of Object.keys(severitium.theme.themes)) {
+				if (id === 'default') continue;
+				const theme = severitium.theme.themes[id];
+				if (!theme?.variables) continue;
+				for (const key of Object.keys(defaultVars)) {
+					if (!(key in theme.variables)) {
+						theme.variables[key] = defaultVars[key];
+					}
+				}
+			}
+		}
+
 		await Bridge.setValue('SeveritiumThemes', severitium.theme);
 		await Bridge.setValue('SeveritiumCSS', severitium.CSS);
 		await Bridge.setValue('SeveritiumJS', severitium.JS);

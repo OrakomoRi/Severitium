@@ -3,12 +3,12 @@
 .HeaderComponentStyle-enableIconLinksComponentShowed,
 .HeaderComponentStyle-enableIconLinksComponentShowed:hover {
 	width: auto;
-	height: fit-content;
+	height: 2em;
 	background: none;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0;
+	margin: .25em 0;
 	cursor: pointer;
 }
 
@@ -16,7 +16,7 @@
 
 svg.severitium-link-rects {
 	fill: var(--severitium-extra-light-gray-color);
-	height: 2.5em;
+	height: 100%;
 	aspect-ratio: 1 / 1;
 }
 
@@ -195,7 +195,7 @@ svg.severitium-link-rects rect {
 .HeaderComponentStyle-iconCloseLinks:hover {
 	background-image: none;
 	width: auto;
-	height: 2.5em;
+	height: 2em;
 	aspect-ratio: 1 / 1;
-	margin: 0;
+	margin: .25em 0;
 }
