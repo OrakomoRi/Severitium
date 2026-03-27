@@ -1,11 +1,29 @@
 import { Bridge } from './Bridge.js';
 import { CONFIG } from '../config/config.js';
 import { compareVersions } from '../libs/loader/CompareVersions/compareversions.min.js';
+import { _detectLanguage } from '../utils/_detectLanguage.js';
 
 export class UpdateChecker {
 	constructor(logger) {
 		this.version = CONFIG.SCRIPT_VERSION;
 		this.logger = logger;
+		this.translations = this.getTranslations();
+	}
+
+	getTranslations() {
+		const translations = {
+			en: { title: 'New version available!', text: (v, d) => `Version ${v} is available${d ? ` (${d})` : ''}. Update now?`, skip: 'Skip', later: 'Later', update: 'Update' },
+			ru: { title: 'Доступна новая версия!', text: (v, d) => `Версия ${v} доступна${d ? ` (${d})` : ''}. Обновить сейчас?`, skip: 'Пропустить', later: 'Позже', update: 'Обновить' },
+			uk: { title: 'Доступна нова версія!', text: (v, d) => `Версія ${v} доступна${d ? ` (${d})` : ''}. Оновити зараз?`, skip: 'Пропустити', later: 'Пізніше', update: 'Оновити' },
+			nl: { title: 'Nieuwe versie beschikbaar!', text: (v, d) => `Versie ${v} is beschikbaar${d ? ` (${d})` : ''}. Nu updaten?`, skip: 'Overslaan', later: 'Later', update: 'Updaten' },
+			pl: { title: 'Dostępna nowa wersja!', text: (v, d) => `Wersja ${v} jest dostępna${d ? ` (${d})` : ''}. Zaktualizować teraz?`, skip: 'Pomiń', later: 'Później', update: 'Aktualizuj' },
+			pt: { title: 'Nova versão disponível!', text: (v, d) => `A versão ${v} está disponível${d ? ` (${d})` : ''}. Atualizar agora?`, skip: 'Pular', later: 'Depois', update: 'Atualizar' },
+			de: { title: 'Neue Version verfügbar!', text: (v, d) => `Version ${v} ist verfügbar${d ? ` (${d})` : ''}. Jetzt aktualisieren?`, skip: 'Überspringen', later: 'Später', update: 'Aktualisieren' },
+			ja: { title: '新しいバージョンが利用可能です！', text: (v, d) => `バージョン ${v} が利用可能です${d ? ` (${d})` : ''}。今すぐ更新しますか？`, skip: 'スキップ', later: '後で', update: '更新' },
+			es: { title: '¡Nueva versión disponible!', text: (v, d) => `La versión ${v} está disponible${d ? ` (${d})` : ''}. ¿Actualizar ahora?`, skip: 'Omitir', later: 'Después', update: 'Actualizar' },
+			fr: { title: 'Nouvelle version disponible !', text: (v, d) => `La version ${v} est disponible${d ? ` (${d})` : ''}. Mettre à jour maintenant ?`, skip: 'Ignorer', later: 'Plus tard', update: 'Mettre à jour' },
+		};
+		return translations[_detectLanguage()] || translations.en;
 	}
 
 	async check() {
@@ -81,18 +99,19 @@ export class UpdateChecker {
 		}
 
 		try {
+			const t = this.translations;
 			const result = await window.Nuntaria.fire({
 				type: 'info',
-				title: `${CONFIG.SCRIPT_NAME}: New version available!`,
-				text: `Version ${version} is available${date ? ` (${date})` : ''}. Update now?`,
+				title: `${CONFIG.SCRIPT_NAME}: ${t.title}`,
+				text: t.text(version, date),
 				timer: CONFIG.UPDATE_MODAL_TIMER,
 				timerPause: true,
 				position: 'top-right',
 				theme: 'glass',
 				buttons: [
-					{ label: 'Skip', value: 'skip', variant: 'cancel' },
-					{ label: 'Later', value: false, variant: 'cancel' },
-					{ label: 'Update', value: true, variant: 'primary' }
+					{ label: t.skip, value: 'skip', variant: 'cancel' },
+					{ label: t.later, value: false, variant: 'cancel' },
+					{ label: t.update, value: true, variant: 'primary' }
 				]
 			});
 

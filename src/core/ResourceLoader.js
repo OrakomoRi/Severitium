@@ -1,6 +1,7 @@
 import { Bridge } from './Bridge.js';
 import { LoadingScreen } from './LoadingScreen.js';
 import { CONFIG } from '../config/config.js';
+import { _detectLanguage } from '../utils/_detectLanguage.js';
 
 export class ResourceLoader {
 	constructor(version, season, logger) {
@@ -10,18 +11,7 @@ export class ResourceLoader {
 		this.loadingScreen = null;
 		this.imageLinks = [];
 		this.criticalError = false;
-		this.language = this.detectLanguage();
 		this.translations = this.getTranslations();
-	}
-
-	detectLanguage() {
-		const urlLang = new URLSearchParams(document.location.search).get('locale');
-		if (urlLang) return urlLang.toLowerCase();
-
-		const storedLang = localStorage.getItem('language_store_key');
-		if (storedLang) return storedLang.toLowerCase();
-
-		return navigator.language.split('-')[0].toLowerCase();
 	}
 
 	getTranslations() {
@@ -37,7 +27,7 @@ export class ResourceLoader {
 			es: { errorTitle: 'Error al cargar recursos críticos', errorMessage: 'No se pudieron cargar los recursos esenciales. Recargue la página e inténtelo de nuevo más tarde.' },
 			fr: { errorTitle: 'Échec du chargement des ressources critiques', errorMessage: 'Impossible de charger les ressources essentielles. Rechargez la page et réessayez plus tard.' },
 		};
-		return translations[this.language] || translations.en;
+		return translations[_detectLanguage()] || translations.en;
 	}
 
 	async load() {
