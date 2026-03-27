@@ -3329,6 +3329,12 @@
       "date": "2026-03-27",
       "comment": "1.9.1+build6 feat: enhance language detection and translations",
       "hash": "ae351c1fbf46cc66e4a1febc73110f33bd62aed1"
+    },
+    {
+      "version": "1.9.1+build7",
+      "date": "2026-03-27",
+      "comment": "1.9.1+build7 fix: improve context menu element selection",
+      "hash": "6e36646b3ae7e0171a55ea76a8865efeb57c6e15"
     }
   ]
 }
