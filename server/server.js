@@ -33,10 +33,8 @@ app.get('/api/health', (req, res) => {
  * Static file serving for /versions/* with 24h cache.
  * Handles semver paths with '+' in directory names.
  */
-app.get('/versions/*path', (req, res) => {
-	const relativePath = Array.isArray(req.params.path)
-		? req.params.path.join('/')
-		: req.params.path;
+app.get('/versions/*splat', (req, res) => {
+	const relativePath = req.params.splat;
 	const filePath = path.join(ROOT_DIR, 'versions', relativePath);
 
 	// Prevent path traversal
