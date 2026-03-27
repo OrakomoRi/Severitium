@@ -3347,6 +3347,12 @@
       "date": "2026-03-27",
       "comment": "1.9.1+build9 feat: enhance theme variable management",
       "hash": "8768fedabdc63c70cee8d08bc327c5d11702c5a0"
+    },
+    {
+      "version": "1.9.1+build10",
+      "date": "2026-03-27",
+      "comment": "1.9.1+build10 feat: enhance language detection and update translations",
+      "hash": "1c83aea179ef100d30acc4c20ace9a026e213c7f"
     }
   ]
 }
