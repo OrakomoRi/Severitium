@@ -126,6 +126,10 @@ export class ResourceLoader {
 		severitium.JS = await Bridge.getValue('SeveritiumJS', {});
 		severitium.images = await Bridge.getValue('SeveritiumImages', {});
 
+		if (this._mergeDefaultVars(severitium)) {
+			Bridge.setValue('SeveritiumThemes', severitium.theme);
+		}
+
 		const expectedKeys = this.getImageLinks().map(el => el.url);
 		const cachedKeys = Object.keys(severitium.images);
 		const keysMatch = expectedKeys.every(key => cachedKeys.includes(key));
@@ -189,19 +193,7 @@ export class ResourceLoader {
 			return;
 		}
 
-		const defaultVars = severitium.theme.themes?.default?.variables;
-		if (defaultVars) {
-			for (const id of Object.keys(severitium.theme.themes)) {
-				if (id === 'default') continue;
-				const theme = severitium.theme.themes[id];
-				if (!theme?.variables) continue;
-				for (const key of Object.keys(defaultVars)) {
-					if (!(key in theme.variables)) {
-						theme.variables[key] = defaultVars[key];
-					}
-				}
-			}
-		}
+		this._mergeDefaultVars(severitium);
 
 		await Bridge.setValue('SeveritiumThemes', severitium.theme);
 		await Bridge.setValue('SeveritiumCSS', severitium.CSS);
@@ -270,6 +262,25 @@ export class ResourceLoader {
 				throw error;
 			}
 		});
+	}
+
+	_mergeDefaultVars(severitium) {
+		const defaultVars = severitium.theme?.themes?.default?.variables;
+		if (!defaultVars) return false;
+
+		let changed = false;
+		for (const id of Object.keys(severitium.theme.themes)) {
+			if (id === 'default') continue;
+			const theme = severitium.theme.themes[id];
+			if (!theme?.variables) continue;
+			for (const key of Object.keys(defaultVars)) {
+				if (!(key in theme.variables)) {
+					theme.variables[key] = defaultVars[key];
+					changed = true;
+				}
+			}
+		}
+		return changed;
 	}
 
 	_logFailedPromises(results) {
