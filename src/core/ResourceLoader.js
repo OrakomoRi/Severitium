@@ -52,6 +52,8 @@ export class ResourceLoader {
 			await Bridge.fetch(`${CONFIG.TRACK_URL}?${params}`, 'text');
 		} catch (e) {
 			this.logger.log(`Tracking failed: ${e}`, 'warn');
+		} finally {
+			this.logger.log('Tracking request sent', 'info');
 		}
 	}
 
