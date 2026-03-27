@@ -3335,6 +3335,12 @@
       "date": "2026-03-27",
       "comment": "1.9.1+build7 fix: improve context menu element selection",
       "hash": "6e36646b3ae7e0171a55ea76a8865efeb57c6e15"
+    },
+    {
+      "version": "1.9.1+build8",
+      "date": "2026-03-27",
+      "comment": "1.9.1+build8 style: update context menu hover styles",
+      "hash": "08db4b5ac2cef175a1c55f73dc7ded617a002c42"
     }
   ]
 }
