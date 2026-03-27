@@ -93,25 +93,25 @@
 
 /* Context menu default option on hover */
 
-.ContextMenuStyle-menu.normal > div:not(.ContextMenuStyle-menuItemRank):hover {
+.ContextMenuStyle-menu > div:not(.ContextMenuStyle-menuItemRank).normal:hover {
 	background-color: var(--severitium-light-transparent-background3);
 }
 
 /* Context menu red option on hover */
 
-.ContextMenuStyle-menu.red > div:not(.ContextMenuStyle-menuItemRank):hover {
+.ContextMenuStyle-menu > div:not(.ContextMenuStyle-menuItemRank).red:hover {
 	background-color: var(--severitium-red-transparent-background1);
 }
 
 /* Context menu default option's text */
 
-.ContextMenuStyle-menu.normal > div:not(.ContextMenuStyle-menuItemRank) span {
+.ContextMenuStyle-menu > div:not(.ContextMenuStyle-menuItemRank).normal span {
 	color: var(--severitium-white-text-color);
 }
 
 /* Context menu red option's text */
 
-.ContextMenuStyle-menu.red > div:not(.ContextMenuStyle-menuItemRank) span {
+.ContextMenuStyle-menu > div:not(.ContextMenuStyle-menuItemRank).red span {
 	color: var(--severitium-red-text-color);
 }
 
@@ -138,12 +138,12 @@
 
 /* Context menu default option's pseudo element */
 
-.ContextMenuStyle-menu.normal > div:not(.ContextMenuStyle-menuItemRank):hover::before {
+.ContextMenuStyle-menu > div:not(.ContextMenuStyle-menuItemRank).normal:hover::before {
 	background-color: var(--severitium-light-gray-color);
 }
 
 /* Context menu red option's pseudo element */
 
-.ContextMenuStyle-menu.red > div:not(.ContextMenuStyle-menuItemRank):hover::before {
+.ContextMenuStyle-menu > div:not(.ContextMenuStyle-menuItemRank).red:hover::before {
 	background-color: var(--severitium-red-color);
 }
