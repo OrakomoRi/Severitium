@@ -10,6 +10,34 @@ export class ResourceLoader {
 		this.loadingScreen = null;
 		this.imageLinks = [];
 		this.criticalError = false;
+		this.language = this.detectLanguage();
+		this.translations = this.getTranslations();
+	}
+
+	detectLanguage() {
+		const urlLang = new URLSearchParams(document.location.search).get('locale');
+		if (urlLang) return urlLang.toLowerCase();
+
+		const storedLang = localStorage.getItem('language_store_key');
+		if (storedLang) return storedLang.toLowerCase();
+
+		return navigator.language.split('-')[0].toLowerCase();
+	}
+
+	getTranslations() {
+		const translations = {
+			en: { errorTitle: 'Critical resources failed to load', errorMessage: 'Unable to load essential resources. Please reload the page and try again later.' },
+			ru: { errorTitle: 'Критическая ошибка загрузки', errorMessage: 'Не удалось загрузить основные ресурсы. Пожалуйста, перезагрузите страницу и попробуйте позже.' },
+			uk: { errorTitle: 'Критична помилка завантаження', errorMessage: 'Не вдалося завантажити основні ресурси. Будь ласка, перезавантажте сторінку і спробуйте пізніше.' },
+			nl: { errorTitle: 'Kritieke bronnen konden niet laden', errorMessage: 'Kan essentiële bronnen niet laden. Laad de pagina opnieuw en probeer het later.' },
+			pl: { errorTitle: 'Błąd ładowania krytycznych zasobów', errorMessage: 'Nie można załadować niezbędnych zasobów. Odśwież stronę i spróbuj ponownie.' },
+			pt: { errorTitle: 'Falha ao carregar recursos críticos', errorMessage: 'Não foi possível carregar recursos essenciais. Recarregue a página e tente novamente.' },
+			de: { errorTitle: 'Kritische Ressourcen konnten nicht geladen werden', errorMessage: 'Wesentliche Ressourcen konnten nicht geladen werden. Bitte laden Sie die Seite neu und versuchen Sie es später.' },
+			ja: { errorTitle: 'リソースの読み込みに失敗しました', errorMessage: '必須リソースを読み込めませんでした。ページをリロードして、後でもう一度お試しください。' },
+			es: { errorTitle: 'Error al cargar recursos críticos', errorMessage: 'No se pudieron cargar los recursos esenciales. Recargue la página e inténtelo de nuevo más tarde.' },
+			fr: { errorTitle: 'Échec du chargement des ressources critiques', errorMessage: 'Impossible de charger les ressources essentielles. Rechargez la page et réessayez plus tard.' },
+		};
+		return translations[this.language] || translations.en;
 	}
 
 	async load() {
@@ -63,8 +91,8 @@ export class ResourceLoader {
 
 		if (this.criticalError) {
 			await window.Nuntaria.error(
-				'Critical resources failed to load',
-				'Unable to load essential resources. Please reload the page and try again later.',
+				this.translations.errorTitle,
+				this.translations.errorMessage,
 				{
 					theme: 'glass',
 					position: 'top-right',
