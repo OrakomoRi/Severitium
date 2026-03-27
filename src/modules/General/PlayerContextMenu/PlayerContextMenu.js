@@ -5,7 +5,7 @@
 	 * @param {HTMLElement} contextMenu - The .ContextMenuStyle-menu element to configure
 	 */
 	function configureElementHover(contextMenu) {
-		const spans = contextMenu.querySelectorAll('> div > span');
+		const spans = contextMenu.querySelectorAll(':scope > div > span');
 
 		spans.forEach(span => {
 			const spanColor = window.getComputedStyle(span).color;
