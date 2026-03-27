@@ -3,6 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { KeepAlive } from './keepAlive.js';
+import { trackRouter } from './track.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.join(__dirname, '..');
@@ -10,6 +11,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const CACHE_MAX_AGE = 60 * 60 * 24; // 24 hours
+
+/**
+ * Track user endpoint
+ */
+app.use('/api/track', trackRouter);
 
 /**
  * Health check endpoint.
