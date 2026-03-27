@@ -3323,6 +3323,12 @@
       "date": "2026-03-27",
       "comment": "1.9.1+build5 fix: improve context menu hover behavior",
       "hash": "63eadbb4e7ec4a4cefa33284ecf36f3b1648c632"
+    },
+    {
+      "version": "1.9.1+build6",
+      "date": "2026-03-27",
+      "comment": "1.9.1+build6 feat: enhance language detection and translations",
+      "hash": "ae351c1fbf46cc66e4a1febc73110f33bd62aed1"
     }
   ]
 }
