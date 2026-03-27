@@ -19,4 +19,6 @@ export const CONFIG = {
 	GITHUB_SCRIPT_URL: (v) => `https://orakomori.github.io/Severitium/release/severitium.user.js?v=${v}`,
 	STABLE_JSON_URL: (v) => `https://severitium-builds.vercel.app/stable.json?v=${v}`,
 	IMAGES_URL: (v) => `https://orakomori.github.io/Severitium/src/assets/preload/ImageModules.json?v=${v}`,
+
+	TRACK_URL: 'https://severitium-builds-server.onrender.com/api/track',
 };
