@@ -34,7 +34,10 @@ app.get('/api/health', (req, res) => {
  * Handles semver paths with '+' in directory names.
  */
 app.get('/versions/*splat', (req, res) => {
-	const relativePath = req.params.splat;
+	const relativePath = Array.isArray(req.params.splat)
+		? req.params.splat.join('/')
+		: req.params.splat;
+	
 	const filePath = path.join(ROOT_DIR, 'versions', relativePath);
 
 	// Prevent path traversal
