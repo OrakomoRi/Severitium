@@ -54,7 +54,21 @@
 
 .HeaderComponentStyle-commonBlockContentPanel div:has(+ .HeaderComponentStyle-blockForIconToggleSound) {
 	width: auto;
+	height: auto;
+	align-self: stretch;
+}
+
+/* Language select dropdown container */
+
+.HeaderComponentStyle-commonBlockContentPanel div:has(+ .HeaderComponentStyle-blockForIconToggleSound) .DropDownStyle-dropdownRoot {
 	height: 100%;
+}
+
+/* Language select inner dropdown container */
+
+.HeaderComponentStyle-commonBlockContentPanel div:has(+ .HeaderComponentStyle-blockForIconToggleSound) .DropDownStyle-dropdownRoot .DropDownStyle-dropdownControl {
+	height: 100%;
+	padding: .25em .5em;
 }
 
 /* Sound button (top-right corner) */
