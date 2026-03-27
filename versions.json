@@ -3377,6 +3377,12 @@
       "date": "2026-03-28",
       "comment": "1.9.1+build15 feat: implement client ID tracking",
       "hash": "07e2f7429a22f50564aea853e1082b8aebed17ca"
+    },
+    {
+      "version": "1.9.1+build16",
+      "date": "2026-03-28",
+      "comment": "1.9.1+build16 feat: enhance tracking logging",
+      "hash": "f9526ecafbd61e79eb7970da975d177843d0fc9d"
     }
   ]
 }
