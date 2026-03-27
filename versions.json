@@ -3353,6 +3353,12 @@
       "date": "2026-03-27",
       "comment": "1.9.1+build10 feat: enhance language detection and update translations",
       "hash": "1c83aea179ef100d30acc4c20ace9a026e213c7f"
+    },
+    {
+      "version": "1.9.1+build11",
+      "date": "2026-03-27",
+      "comment": "1.9.1+build11 feat: enhance theme variable merging",
+      "hash": "6221d7f823b706fcc84321a4e570251070c569db"
     }
   ]
 }
