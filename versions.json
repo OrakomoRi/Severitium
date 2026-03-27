@@ -3359,6 +3359,12 @@
       "date": "2026-03-27",
       "comment": "1.9.1+build11 feat: enhance theme variable merging",
       "hash": "6221d7f823b706fcc84321a4e570251070c569db"
+    },
+    {
+      "version": "1.9.1+build12",
+      "date": "2026-03-27",
+      "comment": "1.9.1+build12 feat: enhance language select dropdown styles",
+      "hash": "f18ac9d015c124774a3a8d56eea21449a37f38b2"
     }
   ]
 }
