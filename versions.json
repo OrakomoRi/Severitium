@@ -3389,6 +3389,12 @@
       "date": "2026-03-28",
       "comment": "1.9.1+build17 chore: minor patch",
       "hash": "8fd3bc54431f3b842cd4918470aa76a0b4f63227"
+    },
+    {
+      "version": "1.9.1+build18",
+      "date": "2026-03-28",
+      "comment": "1.9.1+build18 fix: adjust layout for battle tab statistics",
+      "hash": "9ce4f5683029594f7bd1b87d14a76cfdf72cdaa1"
     }
   ]
 }
