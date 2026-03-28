@@ -61,9 +61,6 @@ export class ResourceLoader {
 		this.loadingScreen = LoadingScreen.add(CONFIG.SCRIPT_NAME);
 		let severitium;
 
-		const clientId = await this.getClientId();
-		this._track(clientId);
-
 		try {
 			const cachedVersion = await Bridge.getValue('SeveritiumVersion', '');
 			const lastSeason = await Bridge.getValue('SeveritiumSeason', '');
@@ -193,7 +190,7 @@ export class ResourceLoader {
 		await Bridge.setValue('SeveritiumSeason', this.season);
 	}
 
-	async _loadEverything(severitium) {
+	async _loadEverything(severitium) {		
 		this.logger.log('Loading all resources (new version)', 'info');
 
 		severitium.theme = await Bridge.getValue('SeveritiumThemes', { active: 'default', themes: {} });
@@ -222,6 +219,9 @@ export class ResourceLoader {
 			this.criticalError = true;
 			return;
 		}
+		
+		const clientId = await this.getClientId();
+		this._track(clientId);
 
 		this._mergeDefaultVars(severitium);
 

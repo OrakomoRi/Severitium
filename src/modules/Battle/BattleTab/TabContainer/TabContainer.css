@@ -332,7 +332,7 @@
 .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(3) {
 	position: absolute;
 	top: 0;
-	left: 14em;
+	left: 14.5em;
 	width: 3em;
 	margin: 0 .5em;
 }
@@ -428,7 +428,7 @@
 .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:nth-child(4) {
 	position: absolute;
 	top: 0;
-	left: 14em;
+	left: 14.5em;
 	visibility: visible;
 	width: 3em;
 	margin: 0 .5em;
