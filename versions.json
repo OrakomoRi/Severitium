@@ -3395,6 +3395,12 @@
       "date": "2026-03-28",
       "comment": "1.9.1+build18 fix: adjust layout for battle tab statistics",
       "hash": "9ce4f5683029594f7bd1b87d14a76cfdf72cdaa1"
+    },
+    {
+      "version": "1.9.1+build19",
+      "date": "2026-03-28",
+      "comment": "1.9.1+build19 fix: update border radius translations",
+      "hash": "f295c855640085ba59a49807906b42d3d7a2dc2d"
     }
   ]
 }
