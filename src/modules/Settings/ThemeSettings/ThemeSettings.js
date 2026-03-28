@@ -72,7 +72,7 @@
 		},
 		ru: {
 			'Main theme color': 'Основной цвет темы',
-			'Border radius': 'Радиус границ',
+			'Border radius': 'Скругление углов',
 			'In-battle tab background': 'Фон таба в бою',
 			'Theme Settings': 'Настройки темы',
 			'Create New Theme': 'Создать новую тему',
@@ -85,7 +85,7 @@
 		},
 		hy: {
 			'Main theme color': 'Հիմնական գույնի թեմա',
-			'Border radius': 'Եզրի շառավիղ',
+			'Border radius': 'Անկյունների կլորացում',
 			'In-battle tab background': 'Պատերազմի ընթացքում Tab-ի ֆոն',
 			'Theme Settings': 'Թեմայի կարգավորումներ',
 			'Create New Theme': 'Ստեղծել նոր թեմա',
@@ -98,7 +98,7 @@
 		},
 		es: {
 			'Main theme color': 'Color principal del tema',
-			'Border radius': 'Radio del borde',
+			'Border radius': 'Redondeo de esquinas',
 			'In-battle tab background': 'Fondo del tab en batalla',
 			'Theme Settings': 'Configuración del tema',
 			'Create New Theme': 'Crear nuevo tema',
@@ -111,7 +111,7 @@
 		},
 		pl: {
 			'Main theme color': 'Główny kolor motywu',
-			'Border radius': 'Promień obramowania',
+			'Border radius': 'Zaokrąglenie rogów',
 			'In-battle tab background': 'Tło taba w bitwie',
 			'Theme Settings': 'Ustawienia motywu',
 			'Create New Theme': 'Utwórz nowy motyw',
@@ -124,7 +124,7 @@
 		},
 		pt: {
 			'Main theme color': 'Cor principal do tema',
-			'Border radius': 'Raio da borda',
+			'Border radius': 'Arredondamento dos cantos',
 			'In-battle tab background': 'Fundo do tab em batalha',
 			'Theme Settings': 'Configurações do tema',
 			'Create New Theme': 'Criar novo tema',
@@ -137,7 +137,7 @@
 		},
 		de: {
 			'Main theme color': 'Hauptfarbe des Themas',
-			'Border radius': 'Rahmenradius',
+			'Border radius': 'Eckenrundung',
 			'In-battle tab background': 'Tab-Hintergrund im Gefecht',
 			'Theme Settings': 'Theme-Einstellungen',
 			'Create New Theme': 'Neues Theme erstellen',
@@ -150,7 +150,7 @@
 		},
 		fr: {
 			'Main theme color': 'Couleur principale du thème',
-			'Border radius': 'Rayon de la bordure',
+			'Border radius': 'Arrondi des coins',
 			'In-battle tab background': 'Fond de l’onglet en combat',
 			'Theme Settings': 'Paramètres du thème',
 			'Create New Theme': 'Créer un nouveau thème',
@@ -163,7 +163,7 @@
 		},
 		ja: {
 			'Main theme color': 'メインテーマカラー',
-			'Border radius': 'ボーダー半径',
+			'Border radius': '角の丸み',
 			'In-battle tab background': '戦闘中のタブ背景',
 			'Theme Settings': 'テーマ設定',
 			'Create New Theme': '新しいテーマを作成',
@@ -176,7 +176,7 @@
 		},
 		uk: {
 			'Main theme color': 'Основний колір теми',
-			'Border radius': 'Радіус меж',
+			'Border radius': 'Заокруглення кутів',
 			'In-battle tab background': 'Фон таба в бою',
 			'Theme Settings': 'Налаштування теми',
 			'Create New Theme': 'Створити нову тему',
@@ -189,7 +189,7 @@
 		},
 		tr: {
 			'Main theme color': 'Ana tema rengi',
-			'Border radius': 'Kenar yarıçapı',
+			'Border radius': 'Köşe yuvarlama',
 			'In-battle tab background': 'Savaş içi sekme arka planı',
 			'Theme Settings': 'Tema Ayarları',
 			'Create New Theme': 'Yeni Tema Oluştur',
@@ -202,7 +202,7 @@
 		},
 		cs: {
 			'Main theme color': 'Hlavní barva motivu',
-			'Border radius': 'Poloměr okraje',
+			'Border radius': 'Zaoblení rohů',
 			'In-battle tab background': 'Pozadí záložky v bitvě',
 			'Theme Settings': 'Nastavení motivu',
 			'Create New Theme': 'Vytvořit nový motiv',
@@ -215,7 +215,7 @@
 		},
 		hi: {
 			'Main theme color': 'मुख्य थीम रंग',
-			'Border radius': 'बॉर्डर त्रिज्या',
+			'Border radius': 'कोनों की गोलाई',
 			'In-battle tab background': 'युद्ध टैब पृष्ठभूमि',
 			'Theme Settings': 'थीम सेटिंग्स',
 			'Create New Theme': 'नई थीम बनाएं',
