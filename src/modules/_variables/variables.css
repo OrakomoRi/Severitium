@@ -3,6 +3,14 @@
 
 	--severitium-main-color: rgb(233, 67, 67);
 
+	/* Some highlighting colors */
+
+	--severitium-friend-color: rgb(202, 104, 219);
+	--severitium-crystal-color: rgb(100, 185, 225);
+	--severitium-tancoin-color: rgb(225, 190, 85);
+	--severitium-ruby-color: rgb(255, 125, 125);
+	--severitium-timer-color: rgb(215, 215, 215);
+
 	/* Theme text colors */
 
 	--severitium-white-text-color: rgb(255, 255, 255);
@@ -18,27 +26,6 @@
 	--severitium-orange-text-color: rgb(255, 150, 100);
 	--severitium-purple-text-color: rgb(200, 115, 225);
 	--severitium-light-blue-text-color: rgb(120, 190, 225);
-
-	/* Some highlighting colors */
-
-	--severitium-friend-color: rgb(202, 104, 219);
-	--severitium-crystal-color: rgb(100, 185, 225);
-	--severitium-tancoin-color: rgb(225, 190, 85);
-	--severitium-ruby-color: rgb(255, 125, 125);
-	--severitium-timer-color: rgb(215, 215, 215);
-
-	/* Theme backgrounds */
-
-	--severitium-dark-transparent-background1: rgba(0, 0, 0, .5);
-	--severitium-dark-transparent-background2: rgba(0, 0, 0, .25);
-	--severitium-dark-transparent-background3: rgba(0, 0, 0, .1);
-	--severitium-dark-transparent-background4: rgba(0, 0, 0, .75);
-
-	--severitium-light-transparent-background1: rgba(255, 255, 255, .5);
-	--severitium-light-transparent-background2: rgba(255, 255, 255, .25);
-	--severitium-light-transparent-background3: rgba(255, 255, 255, .1);
-
-	--severitium-red-transparent-background1: rgba(255, 0, 0, .1);
 
 	/* Theme additional colors */
 
@@ -58,6 +45,19 @@
 	--severitium-purple-color: rgb(165, 30, 200);
 	--severitium-blue-color: rgb(110, 100, 255);
 	--severitium-dark-violet-color: rgb(100, 50, 200);
+
+	/* Theme backgrounds */
+
+	--severitium-dark-transparent-background1: rgba(0, 0, 0, .5);
+	--severitium-dark-transparent-background2: rgba(0, 0, 0, .25);
+	--severitium-dark-transparent-background3: rgba(0, 0, 0, .1);
+	--severitium-dark-transparent-background4: rgba(0, 0, 0, .75);
+
+	--severitium-light-transparent-background1: rgba(255, 255, 255, .5);
+	--severitium-light-transparent-background2: rgba(255, 255, 255, .25);
+	--severitium-light-transparent-background3: rgba(255, 255, 255, .1);
+
+	--severitium-red-transparent-background1: rgba(255, 0, 0, .1);
 
 	/* Theme button colors */
 
