@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.9.1+build19
+// @version			1.9.1+build20
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -10,6 +10,9 @@
 
 // @match			https://*.tankionline.com/play/*
 // @include			https://*test*.tankionline.com/*
+
+// @downloadURL		none
+// @updateURL		none
 
 // @connect			orakomori.github.io
 // @connect			raw.githubusercontent.com
