@@ -3437,6 +3437,12 @@
       "date": "2026-03-30",
       "comment": "1.9.2+build5 feat: update download links and improve download handling",
       "hash": "dde9b777e8dadad7bb52f0dac49271afb54d90d2"
+    },
+    {
+      "version": "1.9.2+build6",
+      "date": "2026-03-30",
+      "comment": "1.9.2+build6 fix: remove link from stable.json update",
+      "hash": "2871c2e4524f9b561dc9a06529fd22fd62123029"
     }
   ]
 }
