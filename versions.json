@@ -3449,6 +3449,12 @@
       "date": "2026-03-30",
       "comment": "1.9.2+build7 fix: update client and user file injection",
       "hash": "2d796f818fcee549eaf9f286b34f509e39106b5b"
+    },
+    {
+      "version": "1.9.3",
+      "date": "2026-03-31",
+      "comment": "1.9.3",
+      "hash": "6fdb29dd9c0294bbeaafb2cd739cc50399a9ea13"
     }
   ]
 }

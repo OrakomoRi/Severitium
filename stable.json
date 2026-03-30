@@ -149,6 +149,11 @@
       "version": "1.9.2",
       "date": "2026-03-30",
       "hash": "6f952c55c1432991a35934446e71cb736dab08ea"
+    },
+    {
+      "version": "1.9.3",
+      "date": "2026-03-31",
+      "hash": "6fdb29dd9c0294bbeaafb2cd739cc50399a9ea13"
     }
   ]
 }
