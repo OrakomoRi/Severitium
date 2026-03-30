@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "release/severitium.user.js"
+      - "package.json"
   workflow_dispatch:
 
 permissions:
@@ -23,9 +23,9 @@ jobs:
 
       - name: Extract version
         run: |
-          VERSION=$(grep -oP '@version\s+\K[\w.+-]+' release/severitium.user.js)
-          if [ -z "$VERSION" ]; then
-            echo "Version not found in severitium.user.js"
+          VERSION=$(jq -r .version package.json)
+          if [ -z "$VERSION" ] || [ "$VERSION" == "null" ]; then
+            echo "Version not found in package.json"
             exit 1
           fi
           echo "VERSION=$VERSION" >> $GITHUB_ENV
