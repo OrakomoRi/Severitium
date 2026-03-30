@@ -20,6 +20,6 @@ function inject(file, pattern, replacement) {
 }
 
 inject(clientFile, /const CLIENT_VERSION = '[^']+';/, `const CLIENT_VERSION = '${version}';`);
-inject(userFile,   /\/\/ @version\s+\S+/,             `// @version\t\t\t${version}`);
+inject(userFile, /\/\/ @version\s+\S+/, `// @version\t\t\t${version}`);
 
 execSync(`git add "${clientFile}" "${userFile}"`, { stdio: 'inherit' });
