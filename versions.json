@@ -3431,6 +3431,12 @@
       "date": "2026-03-30",
       "comment": "1.9.2+build4 fix: update build process for package.json",
       "hash": "df695b1e3ff7bbd77b588d9f749d2df872db4c4f"
+    },
+    {
+      "version": "1.9.2+build5",
+      "date": "2026-03-30",
+      "comment": "1.9.2+build5 feat: update download links and improve download handling",
+      "hash": "dde9b777e8dadad7bb52f0dac49271afb54d90d2"
     }
   ]
 }
