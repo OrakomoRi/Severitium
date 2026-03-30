@@ -36,7 +36,7 @@ Keep in mind that when you first load or update the script, it takes some time f
 
 1. Download [Tampermonkey](https://www.tampermonkey.net/)
 
-2. Add or update [script](https://github.com/OrakomoRi/Severitium/blob/5a8e8856f27e36295f8e3adf448882e544f434dd/release/severitium.user.js) in Tampermonkey
+2. Add or update [script](https://github.com/OrakomoRi/Severitium/blob/a424bedd85050c111956c655c37be8bacea460d0/release/severitium.user.js) in Tampermonkey
 
 ### Client
 
@@ -46,13 +46,13 @@ Keep in mind that when you first load or update the script, it takes some time f
 
 3. Find there `resources` folder (you may create a backup of it)
 
-4. Download modded `app.asar` file from [here](https://github.com/OrakomoRi/Severitium/blob/5a8e8856f27e36295f8e3adf448882e544f434dd/release/app.asar) and replace the original one with it
+4. Download modded `app.asar` file from [here](https://github.com/OrakomoRi/Severitium/blob/a424bedd85050c111956c655c37be8bacea460d0/release/app.asar) and replace the original one with it
 
 5. Return to the main directory
 
 6. Add `mods` folder
 
-7. Download `severitium.client.js` file from [here](https://github.com/OrakomoRi/Severitium/blob/5a8e8856f27e36295f8e3adf448882e544f434dd/release/severitium.client.js) and place it in `mods` folder
+7. Download `severitium.client.js` file from [here](https://github.com/OrakomoRi/Severitium/blob/a424bedd85050c111956c655c37be8bacea460d0/release/severitium.client.js) and place it in `mods` folder
 
 
 ## :rocket: Browser Compatibility
