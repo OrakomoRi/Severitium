@@ -3443,6 +3443,12 @@
       "date": "2026-03-30",
       "comment": "1.9.2+build6 fix: remove link from stable.json update",
       "hash": "2871c2e4524f9b561dc9a06529fd22fd62123029"
+    },
+    {
+      "version": "1.9.2+build7",
+      "date": "2026-03-30",
+      "comment": "1.9.2+build7 fix: update client and user file injection",
+      "hash": "2d796f818fcee549eaf9f286b34f509e39106b5b"
     }
   ]
 }
