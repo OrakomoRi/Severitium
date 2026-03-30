@@ -3425,6 +3425,12 @@
       "date": "2026-03-30",
       "comment": "1.9.2+build3 feat: implement version injection for release files",
       "hash": "a757494120e732b7a97b3a98895aed026e1649f1"
+    },
+    {
+      "version": "1.9.2+build4",
+      "date": "2026-03-30",
+      "comment": "1.9.2+build4 fix: update build process for package.json",
+      "hash": "df695b1e3ff7bbd77b588d9f749d2df872db4c4f"
     }
   ]
 }
