@@ -1,11 +1,13 @@
 {
 	"name": "severitium",
+	"version": "1.9.2+build2",
 	"private": true,
 	"type": "module",
 	"scripts": {
 		"build": "NODE_ENV=production rollup -c",
 		"dev": "rollup -c --watch",
-		"manifest": "node scripts/image-manifest/generate-image-manifest.cjs"
+		"manifest": "node scripts/image-manifest/generate-image-manifest.cjs",
+		"prepare": "git config core.hooksPath .githooks"
 	},
 	"devDependencies": {
 		"@rollup/plugin-replace": "^6.0.3",
