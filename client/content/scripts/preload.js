@@ -31,6 +31,9 @@ process.once('loaded', () => {
 			ipcRenderer.invoke('mod:store:set', key, value),
 
 		openExternal: (url) => ipcRenderer.invoke('mod:open-external', url),
+
+		updateMod: (url, filename) =>
+			ipcRenderer.invoke('mod:update-mod', url, filename),
 	};
 
 	window.greenworksBridge = {

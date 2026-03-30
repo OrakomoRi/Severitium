@@ -80,6 +80,17 @@ function setupIPC() {
 	ipcMain.handle('mod:open-external', (event, url) => {
 		shell.openExternal(url);
 	});
+
+	ipcMain.handle('mod:update-mod', async (event, url, filename) => {
+		try {
+			const content = await fetchURL(url, 'text');
+			ensureDir(MODS_DIR);
+			fs.writeFileSync(path.join(MODS_DIR, filename), content, 'utf8');
+			return { success: true };
+		} catch (e) {
+			return { error: e.message };
+		}
+	});
 }
 
 function attachMods(win) {

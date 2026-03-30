@@ -1,9 +1,9 @@
 (function () {
 	'use strict';
 
-	const CLIENT_VERSION = '1.9.2';
+	const CLIENT_VERSION = '1.9.2+build1';
 
-	const isLogging = 1;
+	const isLogging = false;
 
 	function addBlackScreen() { const e = document.createElement("div"); e.style.position = "absolute", e.style.top = "0", e.style.left = "0", e.style.width = "100vw", e.style.height = "100vh", e.style.backgroundColor = "black", e.style.zIndex = "999999", e.style.pointerEvents = "none", e.style.overflow = "hidden", e.className = "severitium-black-screen", e.setAttribute("data-severitium", "black-screen"), document.body.appendChild(e) } function removeBlackScreen() { const e = document.querySelector('.severitium-black-screen[data-severitium="black-screen"]'); e && e.remove() } document.body ? addBlackScreen() : document.addEventListener("DOMContentLoaded", (() => { addBlackScreen() }));
 
@@ -79,10 +79,16 @@
 		window.electronAPI.openExternal(url);
 	});
 
-	window.addEventListener('severitium:update', (event) => {
+	window.addEventListener('severitium:update', async (event) => {
 		const { hash } = event.detail;
-		const updateUrl = `https://github.com/OrakomoRi/Severitium/releases`;
-		window.electronAPI.openExternal(updateUrl);
+		const downloadUrl = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@${hash}/release/severitium.client.js`;
+		const result = await window.electronAPI.updateMod(downloadUrl, 'severitium.client.js');
+		if (result?.error) {
+			console.error('[Severitium] Auto-update failed:', result.error);
+			window.electronAPI.openExternal(`https://github.com/OrakomoRi/Severitium/releases`);
+		} else {
+			window.electronAPI.restart();
+		}
 	});
 
 	const LOADER_URL = 'https://severitium-builds.vercel.app/loader.min.js';
