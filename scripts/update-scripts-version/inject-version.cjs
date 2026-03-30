@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const root = path.join(__dirname, '..');
+const root = path.join(__dirname, '../..');
 const { version } = require(path.join(root, 'package.json'));
 
 const clientFile = path.join(root, 'release', 'severitium.client.js');
