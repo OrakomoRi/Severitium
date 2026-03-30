@@ -158,8 +158,7 @@ jobs:
               --arg version "$VERSION" \
               --arg date    "$COMMIT_DATE" \
               --arg hash    "$COMMIT_HASH" \
-              --arg link    "https://cdn.statically.io/gh/OrakomoRi/Severitium@$COMMIT_HASH/release/severitium.user.js" \
-              '.versions += [{"version":$version,"date":$date,"hash":$hash,"link":$link}]' \
+              '.versions += [{"version":$version,"date":$date,"hash":$hash}]' \
               stable.json > stable_tmp.json && mv stable_tmp.json stable.json
           fi
 
