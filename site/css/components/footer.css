@@ -68,6 +68,7 @@ footer {
 }
 
 .footer-links-list a {
+	text-align: left;
 	font-size: .9rem;
 	color: var(--muted);
 	text-decoration: none;
@@ -150,6 +151,10 @@ footer {
 		align-self: center;
 		justify-self: center;
 		width: fit-content;
+	}
+
+	.footer-links-list a {
+		text-align: center;
 	}
 
 	.footer-bottom {

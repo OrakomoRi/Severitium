@@ -190,3 +190,30 @@
 	text-align: center;
 	padding: 3rem;
 }
+
+.pp-section {
+	margin-bottom: 1.5rem;
+	padding-bottom: 1.5rem;
+	border-bottom: 1px solid var(--border);
+}
+
+.pp-section:last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom: none;
+}
+
+.pp-section-title {
+	font-family: var(--mono);
+	font-size: 1rem;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+	color: var(--accent);
+	margin-bottom: .6rem;
+}
+
+.pp-section-body {
+	font-size: .9rem;
+	color: var(--muted);
+	line-height: 1.7;
+}

@@ -130,12 +130,32 @@
 		"installation": "Installation",
 		"changelog": "Changelog",
 		"mitLicense": "MIT License",
+		"privacy": "Privacy Policy",
 		"madeWith": "Made with",
 		"madeBy": "by OrakomoRi"
 	},
 	"modal": {
 		"changelog": "Changelog",
 		"loading": "Loading changelog...",
-		"error": "Failed to load changelog. Check the GitHub repository."
+		"error": "Failed to load changelog. Check the GitHub repository.",
+		"privacy": "Privacy Policy"
+	},
+	"privacy": {
+		"section1": {
+			"title": "Data We Collect",
+			"body": "When you use the Severitium script, the following data may be collected automatically: your IP address, your browser's User-Agent string, and your in-game language setting."
+		},
+		"section2": {
+			"title": "Purpose of Collection",
+			"body": "This data is used solely for analytics — to understand how the script is used, which browsers and regions are most common, and to improve compatibility and the overall experience."
+		},
+		"section3": {
+			"title": "Data Retention",
+			"body": "Collected data may be retained indefinitely, unless otherwise required by applicable law. No personally identifiable information beyond what is listed above is stored."
+		},
+		"section4": {
+			"title": "Third Parties",
+			"body": "Your data is never sold, rented, or shared with third parties for marketing or any other commercial purpose."
+		}
 	}
 }

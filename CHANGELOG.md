@@ -1,5 +1,36 @@
 # CHANGELOG
 
+## [1.9.2] - 2026-03-30
+
+### Added
+
+- Support for all available languages in `Nuntaria` notifications
+- New default variables are now automatically merged into existing themes
+- User analytics tracking on theme entry
+
+### Changed
+
+- Battle
+  - BattleTab
+    - TabContainer
+- Entrance
+  - EntranceForms
+  - EntranceLinks
+- Settings
+  - ThemeSettings
+
+### Fixed
+
+- Entrance
+  - EntranceForms (fixed "back" button broken since the last update)
+- General
+  - PlayerContextMenu (fixed broken animations; fixed destructive buttons not rendering with the correct highlight style)
+- Cached theme loading logic
+
+### Removed
+
+- Old scripts that are no longer used
+
 ## [1.9.1] - 2026-03-27
 
 ### Changed

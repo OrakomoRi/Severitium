@@ -4,6 +4,7 @@ import ChangelogService from './services/ChangelogService.js';
 import GalleryController from './controllers/GalleryController.js';
 import LanguageController from './controllers/LanguageController.js';
 import ChangelogController from './controllers/ChangelogController.js';
+import PrivacyController from './controllers/PrivacyController.js';
 import QAController from './controllers/QAController.js';
 import InstallTabsController from './controllers/InstallTabsController.js';
 import ScrollController from './controllers/ScrollController.js';
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	new LanguageController(i18nService).init();
 	new GalleryController(galleryService, i18nService).init();
 	new ChangelogController(changelogService).init();
+	new PrivacyController().init();
 	new QAController().init();
 	new InstallTabsController().init();
 	new DownloadController().init();
