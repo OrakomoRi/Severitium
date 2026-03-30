@@ -3413,6 +3413,12 @@
       "date": "2026-03-30",
       "comment": "1.9.1+build22 feat: add new SVG assets for Garage",
       "hash": "2282693c9377a55b9e5e688a3e874013f818500a"
+    },
+    {
+      "version": "1.9.2",
+      "date": "2026-03-30",
+      "comment": "1.9.2",
+      "hash": "6f952c55c1432991a35934446e71cb736dab08ea"
     }
   ]
 }

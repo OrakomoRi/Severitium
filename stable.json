@@ -173,6 +173,12 @@
       "date": "2026-03-27",
       "hash": "20ffb8bd50888e13796725689702d2e75fbedd27",
       "link": "https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@20ffb8bd50888e13796725689702d2e75fbedd27/release/severitium.user.js"
+    },
+    {
+      "version": "1.9.2",
+      "date": "2026-03-30",
+      "hash": "6f952c55c1432991a35934446e71cb736dab08ea",
+      "link": "https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@6f952c55c1432991a35934446e71cb736dab08ea/release/severitium.user.js"
     }
   ]
 }
