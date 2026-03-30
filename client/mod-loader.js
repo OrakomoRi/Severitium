@@ -5,6 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const https = require('https');
 const http = require('http');
+const os = require('os');
 
 const GAME_DIR = path.dirname(app.getPath('exe'));
 const MODS_DIR = path.join(GAME_DIR, 'mods');
@@ -17,7 +18,8 @@ function ensureDir(dir) {
 function fetchURL(url, format = 'text') {
 	return new Promise((resolve, reject) => {
 		const lib = url.startsWith('https') ? https : http;
-		lib.get(url, { headers: { 'User-Agent': 'TankiOnline-ModLoader/1.0' } }, (res) => {
+		const userAgent = `TankiOnline-ModLoader/1.0 (${os.platform()}; ${os.release()}; ${os.arch()}) Electron/${process.versions.electron}`;
+		lib.get(url, { headers: { 'User-Agent': userAgent } }, (res) => {
 			if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
 				return fetchURL(res.headers.location, format).then(resolve).catch(reject);
 			}
