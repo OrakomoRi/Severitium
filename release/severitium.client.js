@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	const CLIENT_VERSION = '1.9.2+build4';
+	const CLIENT_VERSION = '1.9.2+build5';
 
 	const isLogging = false;
 
@@ -81,7 +81,7 @@
 
 	window.addEventListener('severitium:update', async (event) => {
 		const { hash } = event.detail;
-		const downloadUrl = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@${hash}/release/severitium.client.js`;
+		const downloadUrl = `https://cdn.statically.io/gh/OrakomoRi/Severitium@${hash}/release/severitium.client.js`;
 		const result = await window.electronAPI.updateMod(downloadUrl, 'severitium.client.js');
 		if (result?.error) {
 			console.error('[Severitium] Auto-update failed:', result.error);

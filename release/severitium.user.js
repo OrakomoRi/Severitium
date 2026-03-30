@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.9.2+build4
+// @version			1.9.2+build5
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -18,6 +18,7 @@
 // @connect			raw.githubusercontent.com
 // @connect			github.com
 // @connect			cdn.jsdelivr.net
+// @connect			cdn.statically.io
 // @connect			severitium-builds.vercel.app
 // @connect			severitium-builds-server.onrender.com
 
@@ -102,7 +103,7 @@
 
 	window.addEventListener('severitium:update', (event) => {
 		const { hash } = event.detail;
-		const updateUrl = `https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@${hash}/release/severitium.user.js`;
+		const updateUrl = `https://cdn.statically.io/gh/OrakomoRi/Severitium@${hash}/release/severitium.user.js`;
 		GM_openInTab(updateUrl, { active: true });
 	});
 

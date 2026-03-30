@@ -158,7 +158,7 @@ jobs:
               --arg version "$VERSION" \
               --arg date    "$COMMIT_DATE" \
               --arg hash    "$COMMIT_HASH" \
-              --arg link    "https://cdn.jsdelivr.net/gh/OrakomoRi/Severitium@$COMMIT_HASH/release/severitium.user.js" \
+              --arg link    "https://cdn.statically.io/gh/OrakomoRi/Severitium@$COMMIT_HASH/release/severitium.user.js" \
               '.versions += [{"version":$version,"date":$date,"hash":$hash,"link":$link}]' \
               stable.json > stable_tmp.json && mv stable_tmp.json stable.json
           fi
@@ -216,11 +216,14 @@ jobs:
             Stable release built automatically.
 
             **Download:**
-            - [severitium.user.js](https://raw.githubusercontent.com/OrakomoRi/Severitium/${{ env.COMMIT_HASH }}/release/severitium.user.js)
-            - [severitium.client.js](https://github.com/OrakomoRi/Severitium/blob/${{ env.COMMIT_HASH }}/release/severitium.client.js)
-            - [app.asar](https://raw.githubusercontent.com/OrakomoRi/Severitium/${{ env.COMMIT_HASH }}/release/app.asar)
+            - [severitium.user.js](https://statically.io/gh/OrakomoRi/Severitium@${{ env.COMMIT_HASH }}/release/severitium.user.js)
+            - [severitium.client.js](https://github.com/OrakomoRi/Severitium/releases/download/${{ env.VERSION }}/severitium.client.js)
+            - [app.asar](https://github.com/OrakomoRi/Severitium/releases/download/${{ env.VERSION }}/app.asar)
             - [loader.min.js](https://severitium-builds-server.onrender.com/loader.min.js)
             - [script.release.min.js](https://severitium-builds-server.onrender.com/versions/${{ env.STABLE_BASE }}/${{ env.VERSION }}/script.release.min.js)
             - [style.release.min.css](https://severitium-builds-server.onrender.com/versions/${{ env.STABLE_BASE }}/${{ env.VERSION }}/style.release.min.css)
+          files: |
+            release/severitium.client.js
+            release/app.asar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
