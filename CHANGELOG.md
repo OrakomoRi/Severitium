@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## [1.9.3] - 2026-03-31
+
+### Changed
+
+- `app.asar` now supports the new client update logic: clicking "Update" in the alert automatically updates the theme (! user has to update app.asar manually to get this feature !)
+- Versioning logic reworked: version is now only changed in `package.json` during development; a pre-commit hook propagates it to the required files
+- `link` field removed from `stable.json` in the builds branch (deprecated)
+- Improved download/update logic on the project website
+
 ## [1.9.2] - 2026-03-30
 
 ### Added
