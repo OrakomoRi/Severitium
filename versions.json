@@ -3407,6 +3407,12 @@
       "date": "2026-03-29",
       "comment": "1.9.1+build21 feat: update color variables",
       "hash": "c824bbe639fb126061d5b2c03bdaee470593623a"
+    },
+    {
+      "version": "1.9.1+build22",
+      "date": "2026-03-30",
+      "comment": "1.9.1+build22 feat: add new SVG assets for Garage",
+      "hash": "2282693c9377a55b9e5e688a3e874013f818500a"
     }
   ]
 }
