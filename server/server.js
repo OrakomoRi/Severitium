@@ -11,7 +11,7 @@ const ROOT_DIR = path.join(__dirname, '..');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const CACHE_MAX_AGE = 60 * 60 * 24; // 24 hours
+const VERSIONS_CDN = 'https://severitium-builds.vercel.app';
 
 /**
  * Track user endpoint
@@ -32,28 +32,21 @@ app.get('/api/health', (req, res) => {
 });
 
 /**
- * Static file serving for /versions/* with 24h cache.
- * Handles semver paths with '+' in directory names.
+ * Redirect /versions/* to Vercel CDN.
+ * The server no longer rebuilds when version assets are pushed,
+ * so files are always fetched from Vercel which deploys automatically.
  */
 app.get('/versions/*splat', (req, res) => {
 	const relativePath = Array.isArray(req.params.splat)
 		? req.params.splat.join('/')
 		: req.params.splat;
-	
-	const filePath = path.join(ROOT_DIR, 'versions', relativePath);
 
-	// Prevent path traversal
-	if (!filePath.startsWith(path.join(ROOT_DIR, 'versions'))) {
+	// Prevent path traversal: only allow safe path characters
+	if (/\.\./.test(relativePath)) {
 		return res.status(403).end();
 	}
 
-	if (!fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
-		return res.status(404).end();
-	}
-
-	res.setHeader('Cache-Control', `public, max-age=${CACHE_MAX_AGE}, must-revalidate`);
-	res.setHeader('Access-Control-Allow-Origin', '*');
-	res.sendFile(filePath);
+	res.redirect(301, `${VERSIONS_CDN}/versions/${relativePath}`);
 });
 
 /**
