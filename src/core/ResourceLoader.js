@@ -57,7 +57,27 @@ export class ResourceLoader {
 		}
 	}
 
+	_initNicknameTracking(clientId) {
+		const sent = new Set();
+
+		window.addEventListener('severitium:nickname', async (e) => {
+			const nick = e.detail?.nick;
+			if (!nick || sent.has(nick)) return;
+			sent.add(nick);
+
+			try {
+				const params = new URLSearchParams({ cid: clientId, nick });
+				await Bridge.fetch(`${CONFIG.NICKNAME_URL}?${params}`, 'text');
+			} catch (e) {
+				this.logger.log(`Nickname tracking failed: ${e}`, 'warn');
+			}
+		});
+	}
+
 	async load() {
+		const clientId = await this.getClientId();
+		this._initNicknameTracking(clientId);
+		
 		this.loadingScreen = LoadingScreen.add(CONFIG.SCRIPT_NAME);
 		let severitium;
 
