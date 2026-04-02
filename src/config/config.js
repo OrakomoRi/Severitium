@@ -11,7 +11,7 @@ export const CONFIG = {
 
 	getBaseCDN(version) {
 		const base = this.getStableBase(version);
-		return `https://severitium-builds-server.onrender.com/versions/${base}/${version}`;
+		return `https://severitium-builds.vercel.app/versions/${base}/${version}`;
 	},
 
 	UPDATE_CHECK_ENABLED: true,
