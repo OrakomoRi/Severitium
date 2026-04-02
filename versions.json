@@ -3467,6 +3467,12 @@
       "date": "2026-04-02",
       "comment": "1.9.3+build2 feat: add nickname tracking functionality",
       "hash": "8ad1c36b997469842c1d84c920962c3be1820062"
+    },
+    {
+      "version": "1.9.3+build3",
+      "date": "2026-04-02",
+      "comment": "1.9.3+build3 feat: log nickname changes",
+      "hash": "2d3128556e89d013def3e2aef4cb57bd8762e97b"
     }
   ]
 }
