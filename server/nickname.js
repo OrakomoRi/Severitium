@@ -65,6 +65,7 @@ nicknameRouter.get('/', (req, res) => {
 	res.status(200).end();
 
 	const { cid, nick } = req.query;
+	console.log('[Nickname] Request:', { cid, nick });
 	if (!cid || !nick) return;
 
 	queue.push({ cid, nick });
