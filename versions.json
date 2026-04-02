@@ -3479,6 +3479,12 @@
       "date": "2026-04-02",
       "comment": "1.9.3+build4 fix: handle nickname formatting",
       "hash": "0b8c674d7207fca1a7a4ba2e1639c9d328242ba2"
+    },
+    {
+      "version": "1.9.3+build5",
+      "date": "2026-04-02",
+      "comment": "1.9.3+build5 fix: update CDN URL in config",
+      "hash": "9a8915b99d568b865c681df3659e8c49769af49a"
     }
   ]
 }
