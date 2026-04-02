@@ -3455,6 +3455,12 @@
       "date": "2026-03-31",
       "comment": "1.9.3",
       "hash": "6fdb29dd9c0294bbeaafb2cd739cc50399a9ea13"
+    },
+    {
+      "version": "1.9.3+build1",
+      "date": "2026-03-31",
+      "comment": "1.9.3+build1 feat: enhance user agent string for fetch requests",
+      "hash": "4d3e04bf09bf30680d75d812f983e04d271a2f9b"
     }
   ]
 }
