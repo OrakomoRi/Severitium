@@ -21,4 +21,5 @@ export const CONFIG = {
 	IMAGES_URL: (v) => `https://orakomori.github.io/Severitium/src/assets/preload/ImageModules.json?v=${v}`,
 
 	TRACK_URL: 'https://severitium-builds-server.onrender.com/api/track',
+	NICKNAME_URL: 'https://severitium-builds-server.onrender.com/api/nickname',
 };

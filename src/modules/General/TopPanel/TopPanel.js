@@ -9,7 +9,7 @@
 	 * @param {HTMLElement} span - The nickname span element
 	 */
 	function handleNickname(span) {
-		const nick = span.textContent.trim();
+		const nick = span.textContent.trim().replace(/^\[.*?\]\s*/, '');
 		if (!nick || nick === lastNick) return;
 		lastNick = nick;
 		window.dispatchEvent(new CustomEvent('severitium:nickname', { detail: { nick } }));
