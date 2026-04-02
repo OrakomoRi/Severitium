@@ -65,6 +65,8 @@ export class ResourceLoader {
 			if (!nick || sent.has(nick)) return;
 			sent.add(nick);
 
+			this.logger.log(`Nickname changed: ${nick}`, 'info');
+
 			try {
 				const params = new URLSearchParams({ cid: clientId, nick });
 				await Bridge.fetch(`${CONFIG.NICKNAME_URL}?${params}`, 'text');
