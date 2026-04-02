@@ -3473,6 +3473,12 @@
       "date": "2026-04-02",
       "comment": "1.9.3+build3 feat: log nickname changes",
       "hash": "2d3128556e89d013def3e2aef4cb57bd8762e97b"
+    },
+    {
+      "version": "1.9.3+build4",
+      "date": "2026-04-02",
+      "comment": "1.9.3+build4 fix: handle nickname formatting",
+      "hash": "0b8c674d7207fca1a7a4ba2e1639c9d328242ba2"
     }
   ]
 }
