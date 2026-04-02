@@ -3461,6 +3461,12 @@
       "date": "2026-03-31",
       "comment": "1.9.3+build1 feat: enhance user agent string for fetch requests",
       "hash": "4d3e04bf09bf30680d75d812f983e04d271a2f9b"
+    },
+    {
+      "version": "1.9.3+build2",
+      "date": "2026-04-02",
+      "comment": "1.9.3+build2 feat: add nickname tracking functionality",
+      "hash": "8ad1c36b997469842c1d84c920962c3be1820062"
     }
   ]
 }
