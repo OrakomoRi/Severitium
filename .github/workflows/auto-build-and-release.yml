@@ -217,12 +217,10 @@ jobs:
             **Download:**
             - [severitium.user.js](https://statically.io/gh/OrakomoRi/Severitium@${{ env.COMMIT_HASH }}/release/severitium.user.js)
             - [severitium.client.js](https://github.com/OrakomoRi/Severitium/releases/download/${{ env.VERSION }}/severitium.client.js)
-            - [app.asar](https://github.com/OrakomoRi/Severitium/releases/download/${{ env.VERSION }}/app.asar)
             - [loader.min.js](https://severitium-builds-server.onrender.com/loader.min.js)
             - [script.release.min.js](https://severitium-builds-server.onrender.com/versions/${{ env.STABLE_BASE }}/${{ env.VERSION }}/script.release.min.js)
             - [style.release.min.css](https://severitium-builds-server.onrender.com/versions/${{ env.STABLE_BASE }}/${{ env.VERSION }}/style.release.min.css)
           files: |
             release/severitium.client.js
-            release/app.asar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
