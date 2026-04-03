@@ -338,7 +338,6 @@
 	padding: 0 1em;
     font-weight: bold;
     font-size: 1.25em;
-	text-transform: uppercase;
 	letter-spacing: .1rem;
 	text-overflow: ellipsis;
 	border-radius: var(--severitium-border-radius);

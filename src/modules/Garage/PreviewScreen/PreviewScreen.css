@@ -1,0 +1,955 @@
+/* Garage preview content container */
+
+.GarageCommonStyle-positionContent {
+	width: 100%;
+	height: 100%;
+}
+
+/* Garage preview parameters containe */
+
+.GarageMainScreenStyle-blockParameters {
+	box-sizing: border-box;
+}
+
+/* LEFT PARAMETERS BLOCK */
+
+/* Garage parameters block */
+
+.TankParametersStyle-leftParamsContainer {
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	margin-bottom: 2em;
+	padding: 0 .75em;
+	border: .1em solid var(--severitium-gray-color);
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Garage parameters block and all elements inside it */
+
+.TankParametersStyle-leftParamsContainer,
+.TankParametersStyle-leftParamsContainer *:not(:root) {
+	box-sizing: border-box;
+}
+
+/* All direct children of garage parameters block */
+
+.TankParametersStyle-leftParamsContainer > *:not(:root) {
+	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	margin: 0;
+	border: none;
+}
+
+/* Gearscore block */
+
+.TankParametersStyle-leftParamsContainer > .TankParametersStyle-marginBlockGear {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: .5em 0;
+}
+
+/* Gearscore block original icon */
+
+.TankParametersStyle-marginBlockGear > img {
+	display: none;
+}
+
+/* Gearscore block custom icon */
+
+.TankParametersStyle-marginBlockGear::before {
+	content: '';
+	display: block;
+	width: auto;
+	height: 2.5em;
+	aspect-ratio: 2 / 1;
+	background-color: var(--severitium-white-color);
+	-webkit-mask-image: url('data:image/svg+xml,<svg viewBox="0 0 24 12" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.4 2.4 0H12L9.6 2.4H2.4v7.2h7.2V7.2H4.8V4.8h4.8L12 7.2v2.4L9.6 12H2.4L0 9.6zM24 0h-9.6L12 2.4v2.4l2.4 2.4h7.2v2.4h-7.2L12 12h9.6L24 9.6V7.2l-2.4-2.4h-7.2V2.4h7.2z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg viewBox="0 0 24 12" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.4 2.4 0H12L9.6 2.4H2.4v7.2h7.2V7.2H4.8V4.8h4.8L12 7.2v2.4L9.6 12H2.4L0 9.6zM24 0h-9.6L12 2.4v2.4l2.4 2.4h7.2v2.4h-7.2L12 12h9.6L24 9.6V7.2l-2.4-2.4h-7.2V2.4h7.2z"/></svg>');
+	-webkit-mask-size: cover;
+			mask-size: cover;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+}
+
+/* Gearscore number */
+
+.GearScoreStyle-fontSizeDigitGS {
+	margin: 0;
+	font-family: BaseFontRegular, FallbackFontRegular;
+	font-size: 4em;
+	line-height: 1.5;
+}
+
+/* Gear block */
+
+.TankParametersStyle-leftParamsContainer > .TankParametersStyle-parametersBlockGear {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1em;
+	padding: .25em 0;
+}
+
+/* All gear block except the last one */
+
+.TankParametersStyle-parametersBlockGear:not(:last-of-type) {
+	padding-bottom: .35em;
+	border-bottom: .1em solid var(--severitium-gray-color);
+}
+
+/* Gear block title */
+
+.TankParametersStyle-parametersBlockGear > h3 {
+	font-family: BaseFontRegular, FallbackFontRegular;
+	font-size: 1em;
+	line-height: 1.25;
+	color: var(--severitium-white-text-color);
+}
+
+/* Gear block value container */
+
+.TankParametersStyle-parametersBlockGear > div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	gap: .5em;
+}
+
+/* Gear block value text */
+
+.TankParametersStyle-parametersBlockGear > div > span {
+	font-family: BaseFontRegular, FallbackFontRegular;
+	font-size: 1.1em;
+	line-height: 1.25;
+	color: var(--severitium-light-gray-text-color);
+	margin: 0;
+}
+
+/* Gear block value original icon */
+
+.TankParametersStyle-parametersBlockGear > div > img {
+	display: none;
+}
+
+/* Gear block value custom icon */
+
+.TankParametersStyle-parametersBlockGear > div::after {
+	content: '';
+	display: block;
+	height: .75em;
+	aspect-ratio: 2 / 1;
+	background-color: var(--severitium-light-gray-color);
+	-webkit-mask-image: url('data:image/svg+xml,<svg viewBox="0 0 24 12" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.4 2.4 0H12L9.6 2.4H2.4v7.2h7.2V7.2H4.8V4.8h4.8L12 7.2v2.4L9.6 12H2.4L0 9.6zM24 0h-9.6L12 2.4v2.4l2.4 2.4h7.2v2.4h-7.2L12 12h9.6L24 9.6V7.2l-2.4-2.4h-7.2V2.4h7.2z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg viewBox="0 0 24 12" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.4 2.4 0H12L9.6 2.4H2.4v7.2h7.2V7.2H4.8V4.8h4.8L12 7.2v2.4L9.6 12H2.4L0 9.6zM24 0h-9.6L12 2.4v2.4l2.4 2.4h7.2v2.4h-7.2L12 12h9.6L24 9.6V7.2l-2.4-2.4h-7.2V2.4h7.2z"/></svg>');
+	-webkit-mask-size: cover;
+			mask-size: cover;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+}
+
+/* RESISTANCE BLOCK */
+
+/* Outer container */
+
+.TankParametersStyle-leftParamsContainer + div:has(.MountedItemsStyle-resistanceContainer) {
+	position: absolute;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	top: unset;
+	right: unset;
+	left: 0;
+	bottom: 0;
+}
+
+/* Outer container and elements inside it */
+
+.TankParametersStyle-leftParamsContainer + div:has(.MountedItemsStyle-resistanceContainer),
+.TankParametersStyle-leftParamsContainer + div:has(.MountedItemsStyle-resistanceContainer) * {
+	box-sizing: border-box;
+}
+
+/* Inner container */
+
+.TankParametersStyle-leftParamsContainer + div div:has(> .MountedItemsStyle-resistanceContainer) {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
+	margin: 0;
+}
+
+/* Single resistance container */
+
+.MountedItemsStyle-resistanceContainer {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	margin: 0;
+}
+
+/* Resistance inner container */
+
+.MountedItemsStyle-commonForCellResistenceName {
+	width: 4em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	margin: 0;
+	background: none;
+	border: .1em solid var(--severitium-gray-button-border-color);
+	border-radius: var(--severitium-border-radius);
+	transition: border-color .2s ease;
+}
+
+/* Resistance inner container on hover */
+
+.MountedItemsStyle-commonForCellResistenceName:hover {
+	background: none;
+	border-color: var(--severitium-gray-button-border-color-hover);
+}
+
+/* Resistance inner container that has no icon */
+
+.MountedItemsStyle-commonForCellResistenceName:not(:has(> div > img)) {
+	border-style: dashed;
+}
+
+/* Resistance icon container */
+
+.CellResistanceComponentStyle-resistanceIconContainer:not(:root) {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+/* Pseudo-element for icon container that has icon */
+
+.CellResistanceComponentStyle-resistanceIconContainer:not(:root):has(> img)::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background-color: var(--severitium-gray-button-background);
+	opacity: .5;
+}
+
+/* Resistance icon */
+
+.CellResistanceComponentStyle-resistanceIconContainer:not(:root) > img {
+	width: 4em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	margin: 0;
+	-o-object-fit: contain;
+	   object-fit: contain;
+	-o-object-position: center;
+	   object-position: center;
+}
+
+/* Block for discount and upgrade icons */
+
+.TankParametersStyle-leftParamsContainer + div div:has(> span.-discount),
+.TankParametersStyle-leftParamsContainer + div div:has(> img[src*='improvementarrow'i]) {
+	position: relative;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	-ms-grid-row-align: stretch;
+	    align-self: stretch;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	gap: .25em;
+	margin: 0;
+	padding: 0;
+}
+
+/* Discount icon */
+
+.TankParametersStyle-leftParamsContainer + div .-discount {
+	position: relative;
+	top: unset;
+	right: unset;
+	left: unset;
+	bottom: unset;
+	width: auto;
+	height: 1.5em;
+	aspect-ratio: 1 / 1;
+	margin: 0;
+	padding: 0;
+	font-family: BaseFontBold, FallbackFontBold;
+	font-size: 1.5em;
+	line-height: 1;
+	color: var(--severitium-black-text-color);
+	background-color: var(--severitium-red-color);
+	border: none;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Original upgrade arrow icon */
+
+.TankParametersStyle-leftParamsContainer + div img[src*='improvementarrow'i] {
+	display: none;
+}
+
+/* Custom upgrade arrow icon */
+
+.TankParametersStyle-leftParamsContainer + div div:has(> img[src*='improvementarrow'i])::after {
+	display: inline-flex;
+	content: '';
+	width: auto;
+	height: 1.25em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-orange-color);
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 29 29"><path d="M2.5 16.375v-4.5l12-10.5 12 10.5v4.5l-12-10.5z"/><path d="M8.5 21.875v-8.25l6-5.25 6 5.25v8.25l-6-5.25z"/><path d="M8.5 27.625v-3l6-5.25 6 5.25v3l-6-5.25z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 29 29"><path d="M2.5 16.375v-4.5l12-10.5 12 10.5v4.5l-12-10.5z"/><path d="M8.5 21.875v-8.25l6-5.25 6 5.25v8.25l-6-5.25z"/><path d="M8.5 27.625v-3l6-5.25 6 5.25v3l-6-5.25z"/></svg>');
+	-webkit-mask-size: cover;
+			mask-size: cover;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+}
+
+/* PREVIEW MOUNTED ITEMS CONTAINER */
+
+/* Outer container */
+
+.MountedItemsStyle-container {
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	-webkit-backdrop-filter: none;
+	        backdrop-filter: none;
+}
+
+/* Outer container and all elements inside it */
+
+.MountedItemsStyle-container,
+.MountedItemsStyle-container * {
+	box-sizing: border-box;
+}
+
+/* Main container */
+
+.MountedItemsStyle-containerBlockGarage {
+	padding: 0;
+	display: -ms-grid;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	-ms-grid-columns: 1fr .5em 1fr;
+	grid-template-columns: 1fr 1fr;
+	gap: .5em;
+}
+
+/* All direct children of the main container */
+
+.MountedItemsStyle-containerBlockGarage > *:not(:root) {
+	position: relative;
+	box-shadow: none;
+	background: none;
+	background-color: transparent;
+	border: .1em solid var(--severitium-gray-button-border-color);
+	border-radius: var(--severitium-border-radius);
+	-webkit-backdrop-filter: blur(1em);
+	        backdrop-filter: blur(1em);
+	transition: border-color .2s ease, background-color .2s ease;
+}
+
+/* All direct children on hover */
+
+.MountedItemsStyle-containerBlockGarage > *:hover {
+	box-shadow: none;
+	background-color: var(--severitium-gray-button-background);
+	border-color: var(--severitium-gray-button-border-color-hover);
+}
+
+/* All direct children on active */
+
+.MountedItemsStyle-containerBlockGarage > *:active {
+	box-shadow: none;
+	background-color: var(--severitium-gray-button-background);
+	border-color: var(--severitium-gray-button-border-color-hover);
+}
+
+/* Images for blocks */
+
+.MountedItemsStyle-containerBlockGarage > * img.MountedItemsStyle-itemPreview {
+	-o-object-fit: contain;
+	   object-fit: contain;
+	-o-object-position: center;
+	   object-position: center;
+	margin: 0;
+}
+
+/* Block for title */
+
+.MountedItemsStyle-containerBlockGarage > * .MountedItemsStyle-tankPartNameContainer {
+	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+}
+
+/* Titles for blocks */
+
+.MountedItemsStyle-containerBlockGarage > * .MountedItemsStyle-tankPartNameContainer h1 {
+	font-family: BaseFontBold, FallbackFontBold;
+	font-size: 1.1em;
+	line-height: 1.25;
+	text-transform: uppercase;
+	color: var(--severitium-gray-button-color);
+	margin: 0;
+	padding: .25em;
+	text-align: center;
+}
+
+/* Parent block for discount and upgrade icons */
+
+.MountedItemsStyle-containerBlockGarage > * div:has(> span.-discount),
+.MountedItemsStyle-containerBlockGarage > * div:has(> img[src*='improvementarrow'i]) {
+	display: inline-flex;
+	margin: 0;
+	padding: 0;
+}
+
+/* Discount icon */
+
+.MountedItemsStyle-containerBlockGarage > * span.-discount {
+	position: absolute;
+	top: .25em;
+	right: .25em;
+	left: unset;
+	bottom: unset;
+	width: auto;
+	height: 1.25em;
+	aspect-ratio: 1 / 1;
+	font-family: BaseFontBold, FallbackFontBold;
+	font-size: 1.25em;
+	color: var(--severitium-black-text-color);
+	background-color: var(--severitium-red-color);
+	border: none;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Original upgrade arrow icon */
+
+.MountedItemsStyle-containerBlockGarage > * img[src*='improvementarrow'i] {
+	display: none;
+}
+
+/* Custom upgrade arrow icon */
+
+.MountedItemsStyle-containerBlockGarage > * div:has(> img[src*='improvementarrow'i])::after {
+	content: '';
+	position: absolute;
+	right: .25em;
+	bottom: .25em;
+	width: auto;
+	height: 1.5em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-orange-color);
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 29 29"><path d="M2.5 16.375v-4.5l12-10.5 12 10.5v4.5l-12-10.5z"/><path d="M8.5 21.875v-8.25l6-5.25 6 5.25v8.25l-6-5.25z"/><path d="M8.5 27.625v-3l6-5.25 6 5.25v3l-6-5.25z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 29 29"><path d="M2.5 16.375v-4.5l12-10.5 12 10.5v4.5l-12-10.5z"/><path d="M8.5 21.875v-8.25l6-5.25 6 5.25v8.25l-6-5.25z"/><path d="M8.5 27.625v-3l6-5.25 6 5.25v3l-6-5.25z"/></svg>');
+	-webkit-mask-size: cover;
+			mask-size: cover;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+}
+
+/* Drone and grenade blocks */
+
+.MountedItemsStyle-commonBlockDrone:not(:root),
+.MountedItemsStyle-commonBlockGrenades:not(:root) {
+	width: auto;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	margin: 0;
+}
+
+/* Turret and hull blocks */
+
+.MountedItemsStyle-commonBlockForTurretsHulls:not(:root) {
+	width: auto;
+	height: auto;
+	grid-column: 1 / -1;
+	aspect-ratio: 2 / 1;
+	margin: 0;
+}
+
+/* Supply count block */
+
+.MountedItemsStyle-containerBlockGarage .GarageItemComponentStyle-supplyCount {
+	position: absolute;
+	top: unset;
+	right: unset;
+	left: .25em;
+	bottom: .25em;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .1em;
+	font-size: 1em;
+	line-height: 1;
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* Supply count multiplier icon */
+
+.MountedItemsStyle-containerBlockGarage .GarageItemComponentStyle-supplyCount::before {
+	content: '';
+	position: relative;
+	width: auto;
+	height: .5em;
+	margin: 0;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-light-gray-color);
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 612 612"><path d="m444.644 306 138.644-138.644c38.284-38.284 38.284-100.36 0-138.644s-100.359-38.284-138.644 0L306 167.356 167.356 28.713c-38.284-38.284-100.36-38.284-138.644 0s-38.284 100.36 0 138.644L167.356 306 28.713 444.644c-38.284 38.283-38.284 100.36 0 138.644s100.36 38.284 138.644 0L306 444.644l138.644 138.644c38.283 38.284 100.36 38.284 138.644 0s38.284-100.36 0-138.644z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 612 612"><path d="m444.644 306 138.644-138.644c38.284-38.284 38.284-100.36 0-138.644s-100.359-38.284-138.644 0L306 167.356 167.356 28.713c-38.284-38.284-100.36-38.284-138.644 0s-38.284 100.36 0 138.644L167.356 306 28.713 444.644c-38.284 38.283-38.284 100.36 0 138.644s100.36 38.284 138.644 0L306 444.644l138.644 138.644c38.283 38.284 100.36 38.284 138.644 0s38.284-100.36 0-138.644z"/></svg>');
+	-webkit-mask-size: cover;
+			mask-size: cover;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+}
+
+/* Turret and hull block for device and skin */
+
+.MountedItemsStyle-commonBlockForTurretsHulls div:has(> .SkinsIconComponentStyle-cellSkins) {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .25em;
+	margin: 0;
+	padding: .25em;
+}
+
+/* Turret and hull device block */
+
+.MountedItemsStyle-commonBlockForTurretsHulls .MountedItemsStyle-commonBlockIconNotificator:not(:root) {
+	position: relative;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	display: inline-flex;
+	margin: 0;
+}
+
+/* Mounted device icon */
+
+.MountedItemsStyle-commonBlockForTurretsHulls .MountedItemsStyle-commonBlockIconNotificator > img {
+	width: 2em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	margin: 0;
+	-o-object-fit: contain;
+	   object-fit: contain;
+	-o-object-position: center;
+	   object-position: center;
+}
+
+/* Skin and shot color block */
+
+.MountedItemsStyle-commonBlockForTurretsHulls .SkinsIconComponentStyle-cellSkins {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .25em;
+}
+
+/* BOTTOM SUPPLIES & SCREENSHOT BUTTON */
+
+/* Outer container */
+
+.SuppliesComponentStyle-commonBlockSupplies {
+	position: absolute;
+	top: unset;
+	right: unset;
+	left: unset;
+	bottom: 1em;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0;
+}
+
+/* Outer container and all elements inside it */
+
+.SuppliesComponentStyle-commonBlockSupplies,
+.SuppliesComponentStyle-commonBlockSupplies * {
+	box-sizing: border-box;
+}
+
+/* Screenshot button */
+
+.SuppliesComponentStyle-screenShotButtonOpen {
+	position: relative;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	align-self: flex-end;
+	background: none;
+	margin: 0;
+	padding: .5em;
+	border: .1em solid var(--severitium-gray-color);
+	border-radius: var(--severitium-border-radius);
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	transition: border-color .2s ease;
+}
+
+/* Screenshot button on hover */
+
+.SuppliesComponentStyle-screenShotButtonOpen:hover {
+	background: none;
+	border-color: var(--severitium-white-color);
+}
+
+/* Screenshot button icon */
+
+.SuppliesComponentStyle-screenShotButtonOpen::before {
+	content: '';
+	display: block;
+	width: auto;
+	height: 2.5em;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-light-gray-color);
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill-rule="evenodd" clip-rule="evenodd"><path d="M9.976 13.334a2.111 2.111 0 1 1 4.222 0 2.111 2.111 0 0 1-4.222 0m2.11-4.111a4.111 4.111 0 1 0 0 8.222 4.111 4.111 0 0 0 0-8.222m6.223 2.332a1.333 1.333 0 1 0 0-2.666 1.333 1.333 0 0 0 0 2.666"/><path d="M10.22 3a3.69 3.69 0 0 0-3.53 2.667H4.888c-2.064 0-3.667 1.603-3.667 3.666v8C1.22 19.397 2.823 21 4.887 21h14.222c2.063 0 3.667-1.603 3.667-3.667V9.36c.106-2.125-1.648-3.693-3.578-3.693H17.39A3.666 3.666 0 0 0 13.864 3zm0 2c-.892 0-1.667.73-1.667 1.667v1H4.887c-.96 0-1.667.708-1.667 1.666v8c0 .96.708 1.667 1.667 1.667h14.222c.959 0 1.667-.708 1.667-1.667V9.304l.001-.03c.052-.88-.675-1.607-1.58-1.607h-3.666v-1c0-.892-.73-1.667-1.667-1.667z"/></g></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill-rule="evenodd" clip-rule="evenodd"><path d="M9.976 13.334a2.111 2.111 0 1 1 4.222 0 2.111 2.111 0 0 1-4.222 0m2.11-4.111a4.111 4.111 0 1 0 0 8.222 4.111 4.111 0 0 0 0-8.222m6.223 2.332a1.333 1.333 0 1 0 0-2.666 1.333 1.333 0 0 0 0 2.666"/><path d="M10.22 3a3.69 3.69 0 0 0-3.53 2.667H4.888c-2.064 0-3.667 1.603-3.667 3.666v8C1.22 19.397 2.823 21 4.887 21h14.222c2.063 0 3.667-1.603 3.667-3.667V9.36c.106-2.125-1.648-3.693-3.578-3.693H17.39A3.666 3.666 0 0 0 13.864 3zm0 2c-.892 0-1.667.73-1.667 1.667v1H4.887c-.96 0-1.667.708-1.667 1.666v8c0 .96.708 1.667 1.667 1.667h14.222c.959 0 1.667-.708 1.667-1.667V9.304l.001-.03c.052-.88-.675-1.607-1.58-1.607h-3.666v-1c0-.892-.73-1.667-1.667-1.667z"/></g></svg>');
+	-webkit-mask-size: cover;
+			mask-size: cover;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	transition: background-color .2s ease;
+}
+
+/* Screenshot button icon on button hover */
+
+.SuppliesComponentStyle-screenShotButtonOpen:hover::before {
+	background-color: var(--severitium-white-color);
+}
+
+/* Decorative line */
+
+.SuppliesComponentStyle-decorLine {
+	width: 100%;
+	background: none;
+	background: linear-gradient(90deg, transparent, var(--severitium-gray-color));
+}
+
+/* Supplies outer container */
+
+.SuppliesComponentStyle-containersBlocks {
+	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	margin-top: 1em;
+	padding: 0;
+}
+
+/* Supplies inner container */
+
+.SuppliesComponentStyle-blocksCell {
+	position: relative;
+	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	gap: .5em;
+}
+
+/* Single supply block */
+
+.SuppliesComponentStyle-cellAdd {
+	position: relative;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: .25em;
+	flex: 1;
+	margin: 0;
+	padding: .5em;
+	background: none;
+	box-shadow: none;
+	border: .1em solid var(--severitium-gray-button-border-color);
+	border-radius: var(--severitium-border-radius);
+	transition: border-color .2s ease, background-color .2s ease;
+}
+
+/* Single supply block on hover */
+
+.SuppliesComponentStyle-cellAdd:hover {
+	background: none;
+	box-shadow: none;
+	background-color: var(--severitium-gray-button-background);
+	border-color: var(--severitium-gray-button-border-color-hover);
+}
+
+/* Single supply block on active */
+
+.SuppliesComponentStyle-cellAdd:active {
+	background: none;
+	box-shadow: none;
+	background-color: var(--severitium-gray-button-background);
+	border-color: var(--severitium-gray-button-border-color-hover);
+}
+
+/* Supply icon container */
+
+.SuppliesComponentStyle-cell {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	margin: 0;
+}
+
+/* Supply icon */
+
+.SuppliesComponentStyle-cell img {
+	width: 2em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	margin: 0;
+	-o-object-fit: contain;
+	   object-fit: contain;
+	-o-object-position: center;
+	   object-position: center;
+}
+
+/* Supply amount text */
+
+.SuppliesComponentStyle-cellAdd > span {
+	font-family: BaseFontRegular, FallbackFontRegular;
+	font-size: 1.1em;
+	line-height: 1;
+	color: var(--severitium-gray-button-color);
+	margin: 0;
+}
+
+/* Supply discount icon */
+
+.SuppliesComponentStyle-cellAdd .SuppliesComponentStyle-discountLabel {
+	position: absolute;
+	top: .25em;
+	right: .25em;
+	left: unset;
+	bottom: unset;
+	width: auto;
+	height: 1.25em;
+	aspect-ratio: 1 / 1;
+	font-family: BaseFontBold, FallbackFontBold;
+	font-size: 1.25em;
+	color: var(--severitium-black-text-color);
+	background-color: var(--severitium-red-color);
+	border: none;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* SCREENSHOT MODE */
+
+/* Close button */
+
+.GarageCommonStyle-garageContainer > div[class*='backgroundimage'i]:not(:has(> *)) {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	left: unset;
+	bottom: unset;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	box-sizing: border-box;
+	padding: .5em;
+	background: none;
+	background-color: var(--severitium-red-button-background);
+	border: .1em solid var(--severitium-red-button-border-color);
+	border-radius: var(--severitium-border-radius);
+	transition: border-color .2s ease;
+}
+
+/* Close button on hover */
+
+.GarageCommonStyle-garageContainer > div[class*='backgroundimage'i]:not(:has(> *)):hover {
+	background: none;
+	background-color: var(--severitium-red-button-background);
+	border-color: var(--severitium-red-button-border-color-hover);
+}
+
+/* Close button image */
+
+.GarageCommonStyle-garageContainer > div[class*='backgroundimage'i]:not(:has(> *))::before {
+	content: '';
+	width: auto;
+	height: 2em;
+	aspect-ratio: 1 / 1;
+	display: block;
+	box-sizing: border-box;
+	background-color: var(--severitium-red-button-color);
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><path d="m84 0 12 12-48 48-36 36L0 84l36-36L0 12 12 0l36 36z"/><path d="M48 60h24l24 24-12 12z"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><path d="m84 0 12 12-48 48-36 36L0 84l36-36L0 12 12 0l36 36z"/><path d="M48 60h24l24 24-12 12z"/></svg>');
+	-webkit-mask-size: cover;
+			mask-size: cover;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+}
+
+/* Download screenshot button container */
+
+.GarageCommonStyle-garageContainer > div:has(> div[class*='backgroundimage'i]) {
+	position: absolute;
+	top: unset;
+	right: 1em;
+	left: unset;
+	bottom: 1em;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	box-sizing: border-box;
+}
+
+/* Download screenshot button */
+
+.GarageCommonStyle-garageContainer > div > div[class*='backgroundimage'i]:not(:has(> *)) {
+	position: relative;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	box-sizing: border-box;
+	margin: 0;
+	padding: .5em;
+	background: none;
+	background-color: var(--severitium-gray-button-background);
+	border: .1em solid var(--severitium-gray-button-border-color);
+	border-radius: var(--severitium-border-radius);
+	transition: border-color .2s ease;
+}
+
+/* Download screenshot button on hover */
+
+.GarageCommonStyle-garageContainer > div > div[class*='backgroundimage'i]:not(:has(> *)):hover {
+	background: none;
+	background-color: var(--severitium-gray-button-background);
+	border-color: var(--severitium-gray-button-border-color-hover);
+}
+
+/* Download screenshot button icon */
+
+.GarageCommonStyle-garageContainer > div > div[class*='backgroundimage'i]:not(:has(> *))::before {
+	content: '';
+	width: auto;
+	height: 2em;
+	aspect-ratio: 1 / 1;
+	display: block;
+	box-sizing: border-box;
+	background-color: var(--severitium-gray-button-color);
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill-rule="evenodd" d="M12 0h8l4 4h6l2 2v20l-2 2H2l-2-2V6l2-2h6zm4 10-6 6 6 6 6-6z" clip-rule="evenodd"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill-rule="evenodd" d="M12 0h8l4 4h6l2 2v20l-2 2H2l-2-2V6l2-2h6zm4 10-6 6 6 6 6-6z" clip-rule="evenodd"/></svg>');
+	-webkit-mask-size: cover;
+			mask-size: cover;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+}
