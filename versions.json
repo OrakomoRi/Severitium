@@ -3503,6 +3503,12 @@
       "date": "2026-04-03",
       "comment": "1.9.3+build8 feat: add garage preview screen styles and documentation",
       "hash": "031ff283fec0a3a14e3bcd5e8bf4af68f15ccaad"
+    },
+    {
+      "version": "1.9.3+build9",
+      "date": "2026-04-03",
+      "comment": "1.9.3+build9 chore: modify download links",
+      "hash": "74b1676ff76c04e19d0da6c4d2f00ec647efdc98"
     }
   ]
 }
