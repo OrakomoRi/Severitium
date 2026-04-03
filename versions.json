@@ -3509,6 +3509,12 @@
       "date": "2026-04-03",
       "comment": "1.9.3+build9 chore: modify download links",
       "hash": "74b1676ff76c04e19d0da6c4d2f00ec647efdc98"
+    },
+    {
+      "version": "1.9.3+build10",
+      "date": "2026-04-03",
+      "comment": "1.9.3+build10 style: rename CSS class for foreign clan actions",
+      "hash": "02bb1be1727629d058771983ee26019b77393619"
     }
   ]
 }
