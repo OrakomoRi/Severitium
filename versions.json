@@ -3497,6 +3497,12 @@
       "date": "2026-04-03",
       "comment": "1.9.3+build7 chore: remove unused files",
       "hash": "51ce52440f5a928418e369673ce04f5282899e12"
+    },
+    {
+      "version": "1.9.3+build8",
+      "date": "2026-04-03",
+      "comment": "1.9.3+build8 feat: add garage preview screen styles and documentation",
+      "hash": "031ff283fec0a3a14e3bcd5e8bf4af68f15ccaad"
     }
   ]
 }
