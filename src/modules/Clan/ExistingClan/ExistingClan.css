@@ -439,14 +439,16 @@
 
 /* Nicknames */
 
-.FriendListComponentStyle-containerMembers > .ClanCommonStyle-information + .TableComponentStyle-table .TableComponentStyle-tBody .ClanMembersItemComponentStyle-nameCell span {
+.FriendListComponentStyle-containerMembers > .ClanCommonStyle-information + .TableComponentStyle-table .TableComponentStyle-tBody .ClanMembersItemComponentStyle-nameCell span,
+.FriendListComponentStyle-containerMembers > .ClanCommonStyle-information + .TableComponentStyle-table .TableComponentStyle-tBody .ForeignClanMembersItemComponentStyle-nameCell span {
 	color: var(--severitium-white-text-color);
 	transition: color .2s ease;
 }
 
 /* Nicknames on hover */
 
-.FriendListComponentStyle-containerMembers > .ClanCommonStyle-information + .TableComponentStyle-table .TableComponentStyle-tBody .ClanMembersItemComponentStyle-nameCell span:hover {
+.FriendListComponentStyle-containerMembers > .ClanCommonStyle-information + .TableComponentStyle-table .TableComponentStyle-tBody .ClanMembersItemComponentStyle-nameCell span:hover,
+.FriendListComponentStyle-containerMembers > .ClanCommonStyle-information + .TableComponentStyle-table .TableComponentStyle-tBody .ForeignClanMembersItemComponentStyle-nameCell span:hover {
 	color: var(--severitium-main-color);
 }
 
@@ -472,14 +474,16 @@
 
 /* Leader's nickname */
 
-.FriendListComponentStyle-containerMembers > .ClanCommonStyle-information + .TableComponentStyle-table .TableComponentStyle-tBody tr:first-child .ClanMembersItemComponentStyle-nameCell span {
+.FriendListComponentStyle-containerMembers > .ClanCommonStyle-information + .TableComponentStyle-table .TableComponentStyle-tBody tr:first-of-type .ClanMembersItemComponentStyle-nameCell span,
+.FriendListComponentStyle-containerMembers > .ClanCommonStyle-information + .TableComponentStyle-table .TableComponentStyle-tBody tr:first-of-type .ForeignClanMembersItemComponentStyle-nameCell span {
 	color: var(--severitium-blue-text-color);
 	transition: color .2s ease;
 }
 
 /* Leader's nickname on hover */
 
-.FriendListComponentStyle-containerMembers > .ClanCommonStyle-information + .TableComponentStyle-table .TableComponentStyle-tBody tr:first-child .ClanMembersItemComponentStyle-nameCell span:hover {
+.FriendListComponentStyle-containerMembers > .ClanCommonStyle-information + .TableComponentStyle-table .TableComponentStyle-tBody tr:first-of-type .ClanMembersItemComponentStyle-nameCell span:hover,
+.FriendListComponentStyle-containerMembers > .ClanCommonStyle-information + .TableComponentStyle-table .TableComponentStyle-tBody tr:first-of-type .ForeignClanMembersItemComponentStyle-nameCell span:hover {
 	color: var(--severitium-main-color);
 }
 
