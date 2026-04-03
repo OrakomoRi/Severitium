@@ -3491,6 +3491,12 @@
       "date": "2026-04-03",
       "comment": "1.9.3+build6 style: update clan member nickname styles",
       "hash": "81e811f97c07fb79247c3e0888e6b9a442bc09c4"
+    },
+    {
+      "version": "1.9.3+build7",
+      "date": "2026-04-03",
+      "comment": "1.9.3+build7 chore: remove unused files",
+      "hash": "51ce52440f5a928418e369673ce04f5282899e12"
     }
   ]
 }
