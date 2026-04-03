@@ -160,13 +160,13 @@
 
 /* Clan actions container (under description container) */
 
-.ClanInfoComponentStyle-clanForeignActions {
+.ClanInfoComponentStyle-foreignClanActions {
 	height: fit-content;
 	display: flex;
 	align-items: center;
 }
 
-.ClanInfoComponentStyle-clanForeignActions > div:has(> .ClanInfoComponentStyle-clanActionDescription) {
+.ClanInfoComponentStyle-foreignClanActions > div:has(> .ClanInfoComponentStyle-clanActionDescription) {
 	position: relative;
 	height: 100%;
 	display: flex !important;
@@ -226,7 +226,7 @@
 
 /* Clan action text */
 
-.ClanInfoComponentStyle-clanForeignActions > span {
+.ClanInfoComponentStyle-foreignClanActions > span {
 	height: 3em;
 }
 
@@ -234,9 +234,9 @@
 
 /* Button */
 
-.ClanInfoComponentStyle-clanForeignActions > span + div,
-.ClanInfoComponentStyle-clanForeignActions > div:first-child:has(> span),
-.ClanInfoComponentStyle-clanForeignActions > div:last-child > div:has(> span) {
+.ClanInfoComponentStyle-foreignClanActions > span + div,
+.ClanInfoComponentStyle-foreignClanActions > div:first-child:has(> span),
+.ClanInfoComponentStyle-foreignClanActions > div:last-child > div:has(> span) {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -245,9 +245,9 @@
 
 /* Button on hover */
 
-.ClanInfoComponentStyle-clanForeignActions > span + div:hover,
-.ClanInfoComponentStyle-clanForeignActions > div:first-child:has(> span):hover,
-.ClanInfoComponentStyle-clanForeignActions > div:last-child > div:has(> span):hover {
+.ClanInfoComponentStyle-foreignClanActions > span + div:hover,
+.ClanInfoComponentStyle-foreignClanActions > div:first-child:has(> span):hover,
+.ClanInfoComponentStyle-foreignClanActions > div:last-child > div:has(> span):hover {
 	outline: none;
 	box-shadow: none;
 }
@@ -258,41 +258,41 @@
 
 /* Foreign clan's report button */
 
-.ClanInfoComponentStyle-clanForeignActions > div:first-child:has(> span:not(.ClanInfoComponentStyle-clanActionDescription)) {
+.ClanInfoComponentStyle-foreignClanActions > div:first-child:has(> span:not(.ClanInfoComponentStyle-clanActionDescription)) {
 	background: var(--severitium-red-button-background);
 	border: var(--severitium-red-button-border-color) solid .1em;
 }
 
 /* Button on hover */
 
-.ClanInfoComponentStyle-clanForeignActions > div:first-child:has(> span:not(.ClanInfoComponentStyle-clanActionDescription)):hover {
+.ClanInfoComponentStyle-foreignClanActions > div:first-child:has(> span:not(.ClanInfoComponentStyle-clanActionDescription)):hover {
 	background-color: var(--severitium-red-button-background);
 	border: var(--severitium-red-button-border-color-hover) solid .1em;
 }
 
 /* Button text */
 
-.ClanInfoComponentStyle-clanForeignActions > div:first-child:has(> span:not(.ClanInfoComponentStyle-clanActionDescription)) > span {
+.ClanInfoComponentStyle-foreignClanActions > div:first-child:has(> span:not(.ClanInfoComponentStyle-clanActionDescription)) > span {
 	color: var(--severitium-red-button-color);
 }
 
 /* Foreign clan's send request button */
 
-.ClanInfoComponentStyle-clanForeignActions > div:last-child > div:has(> span) {
+.ClanInfoComponentStyle-foreignClanActions > div:last-child > div:has(> span) {
 	background: var(--severitium-gray-button-background);
 	border: var(--severitium-gray-button-border-color) solid .1em;
 }
 
 /* Button on hover */
 
-.ClanInfoComponentStyle-clanForeignActions > div:last-child > div:has(> span):hover {
+.ClanInfoComponentStyle-foreignClanActions > div:last-child > div:has(> span):hover {
 	background-color: var(--severitium-gray-button-background);
 	border: var(--severitium-gray-button-border-color-hover) solid .1em;
 }
 
 /* Button text */
 
-.ClanInfoComponentStyle-clanForeignActions > div:last-child > div:has(> span) > span {
+.ClanInfoComponentStyle-foreignClanActions > div:last-child > div:has(> span) > span {
 	color: var(--severitium-gray-button-color);
 }
 
