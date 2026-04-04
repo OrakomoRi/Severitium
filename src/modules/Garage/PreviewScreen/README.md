@@ -8,8 +8,8 @@ Stylization of the garage preview screen.
 
 #### Old
 
-![](/images/garage/old/previewscreen.png)
+![](/images/garage/old/previewscreen.webp)
 
 #### New
 
-![](/images/garage/new/previewscreen.png)
+![](/images/garage/new/previewscreen.webp)

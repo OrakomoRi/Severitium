@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated": "2026-04-04T13:54:48.312Z",
+  "generated": "2026-04-04T14:49:06.319Z",
   "categories": {
     "battle": {
       "matched": [
@@ -169,6 +169,15 @@
           "baseName": "invitefriends",
           "new": "invitefriends.png",
           "old": "invitefriends.png"
+        }
+      ]
+    },
+    "garage": {
+      "matched": [
+        {
+          "baseName": "previewscreen",
+          "new": "previewscreen.webp",
+          "old": "previewscreen.webp"
         }
       ]
     },

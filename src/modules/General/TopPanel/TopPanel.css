@@ -263,7 +263,7 @@
 /* Text on tancoin button */
 
 .UserScoreComponentStyle-blockRightPanel div:has(> img[src*='coin'i]) > span,
-.BreadcrumbsComponentStyle-rightButtonsContainer div:has(div > img[src*='coin'i]) > span {
+.BreadcrumbsComponentStyle-rightButtonsContainer div:has(> img[src*='coin'i]) > span {
 	margin: 0 1.5em 0 .5em;
 	color: var(--severitium-tancoin-color);
 }
