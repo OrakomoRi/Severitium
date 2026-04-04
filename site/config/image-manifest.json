@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated": "2026-03-09T16:57:01.837Z",
+  "generated": "2026-04-04T13:54:48.312Z",
   "categories": {
     "battle": {
       "matched": [
@@ -263,6 +263,11 @@
           "baseName": "probattlesmodes",
           "new": "probattlesmodes.png",
           "old": "probattlesmodes.png"
+        },
+        {
+          "baseName": "questsicons",
+          "new": "questsicons.webp",
+          "old": "questsicons.webp"
         },
         {
           "baseName": "rangeinput",

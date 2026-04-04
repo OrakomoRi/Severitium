@@ -8,9 +8,9 @@ Replaces some original game icons with new ones, which look better in the theme.
 
 #### Old
 
-![](/images/general/old/questsicons.png)
+![](/images/general/old/questsicons.webp)
 
 #### New
 
-![](/images/general/new/questsicons.png)
+![](/images/general/new/questsicons.webp)
 
