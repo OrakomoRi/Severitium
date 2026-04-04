@@ -3539,6 +3539,12 @@
       "date": "2026-04-04",
       "comment": "1.9.3+build14 fix: update matchBackgroundUrl function",
       "hash": "bf4ac6d9336cbf0637675ca00fc2f0091b6a5623"
+    },
+    {
+      "version": "1.9.3+build15",
+      "date": "2026-04-04",
+      "comment": "1.9.3+build15 feat: update quest icons",
+      "hash": "4afeb09df0777e6dbb151fdbf65d9b08f869b39d"
     }
   ]
 }
