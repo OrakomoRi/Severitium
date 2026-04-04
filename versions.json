@@ -3515,6 +3515,12 @@
       "date": "2026-04-03",
       "comment": "1.9.3+build10 style: rename CSS class for foreign clan actions",
       "hash": "02bb1be1727629d058771983ee26019b77393619"
+    },
+    {
+      "version": "1.9.3+build11",
+      "date": "2026-04-04",
+      "comment": "1.9.3+build11 feat: add XP icon handling functionality",
+      "hash": "02c0c7c549664da32e9798f0105128543312d8c7"
     }
   ]
 }
