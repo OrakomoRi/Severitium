@@ -24,18 +24,18 @@
 		return ((BigInt(high) << 32n) | BigInt(low)).toString();
 	};
 
-	const matchBackgroundUrl = url => {
+	const matchBackgroundUrl = (url, icon) => {
 		const [, path, file] = url.match(/(\d+\/\d+\/\d+\/\d+)\/[^\/]+\/([^\/]+)$/) || [];
 		if (!path || !file) return false;
 		const id = getResourceID(path);
-		return Object.values(ICONS).some(icon => getResourceID(icon.id) === id && icon.file === file);
+		return getResourceID(icon.id) === id && icon.file === file;
 	};
 
 	const processElement = el => {
 		const bg = getComputedStyle(el).backgroundImage;
 		const urlMatch = bg.match(/url\(["']?([^"')]+)["']?\)/);
 		if (!urlMatch) return;
-		const icon = Object.values(ICONS).find(icon => matchBackgroundUrl(urlMatch[1]));
+		const icon = Object.values(ICONS).find(icon => matchBackgroundUrl(urlMatch[1], icon));
 		if (icon) {
 			el.classList.add(icon.className);
 		}
