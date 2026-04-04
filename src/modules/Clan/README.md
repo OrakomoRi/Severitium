@@ -6,6 +6,6 @@ The most important change: the icons in the clan info now match the main theme c
 
 ## :file_folder: Modules
 
-- [Clan modal](/src/Clan/ClanModal/README.md)
-- [Existing clan](/src/Clan/ExistingClan/README.md)
-- [Join clan](/src/Clan/JoinClan/README.md)
+- [Clan modal](/src/modules/Clan/ClanModal/README.md)
+- [Existing clan](/src/modules/Clan/ExistingClan/README.md)
+- [Join clan](/src/modules/Clan/JoinClan/README.md)

@@ -4,7 +4,7 @@ This is where all the modules associated with the elements and events of the log
 
 ## :file_folder: Modules
 
-- [Entrance background](/src/Entrance/EntranceBackground/README.md)
-- [Entrance forms](/src/Entrance/EntranceForms/README.md)
-- [Entrance icons](/src/Entrance/EntranceIcons/README.md)
-- [Entrance links](/src/Entrance/EntranceLinks/README.md)
+- [Entrance background](/src/modules/Entrance/EntranceBackground/README.md)
+- [Entrance forms](/src/modules/Entrance/EntranceForms/README.md)
+- [Entrance icons](/src/modules/Entrance/EntranceIcons/README.md)
+- [Entrance links](/src/modules/Entrance/EntranceLinks/README.md)

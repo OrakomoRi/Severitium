@@ -1,8 +1,21 @@
 (function () {
+	const ICONS = {
+		'STAR': {
+			id: '556/42713/122/201',
+			file: 'image.webp',
+			className: 'BackgroundImageComponentStyle-starIcon'
+		},
+		'XP': {
+			id: '633/135565/247/307',
+			file: 'image.svg',
+			className: 'BackgroundImageComponentStyle-xpIcon'
+		}
+	};
+
 	const getResourceID = path => {
 		const parts = path.replace(/^\/|\/$/g, '').split('/');
 		if (parts.length !== 4)
-			console.error(`Invalid path format "${path}": expected 4 parts (without version)`);
+			return null;
 		const high = parseInt(parts[0], 8);
 		const part1 = parseInt(parts[1], 8);
 		const part2 = parseInt(parts[2], 8);
@@ -11,25 +24,20 @@
 		return ((BigInt(high) << 32n) | BigInt(low)).toString();
 	};
 
-	const XP_ICON_IDS = new Set([
-		getResourceID('633/135565/247/307')
-	]);
-
-	const XP_ICON_FILE = 'image.svg';
-
 	const matchBackgroundUrl = url => {
 		const [, path, file] = url.match(/(\d+\/\d+\/\d+\/\d+)\/[^\/]+\/([^\/]+)$/) || [];
 		if (!path || !file) return false;
 		const id = getResourceID(path);
-		return XP_ICON_IDS.has(id) && file === XP_ICON_FILE;
+		return Object.values(ICONS).some(icon => getResourceID(icon.id) === id && icon.file === file);
 	};
 
 	const processElement = el => {
 		const bg = getComputedStyle(el).backgroundImage;
 		const urlMatch = bg.match(/url\(["']?([^"')]+)["']?\)/);
 		if (!urlMatch) return;
-		if (matchBackgroundUrl(urlMatch[1])) {
-			el.classList.add('BackgroundImageComponentStyle-xpIcon');
+		const icon = Object.values(ICONS).find(icon => matchBackgroundUrl(urlMatch[1]));
+		if (icon) {
+			el.classList.add(icon.className);
 		}
 	};
 

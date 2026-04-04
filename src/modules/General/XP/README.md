@@ -1,6 +1,8 @@
 # :sparkles: XP
 
-Replaces the original XP icon with a custom icon. I find the original one ugly. Also removes the XP icon inside the [top panel](/src/General/TopPanel/README.md).
+Replaces the original XP icon with a custom icon. I find the original one ugly. Also removes the XP icon inside the [top panel](/src/modules/General/TopPanel/README.md).
+
+A part of the replace logic is stored in the [Game icon](/src/modules/General/GameIcon/README.md).
 
 ## :information_source: Design
 

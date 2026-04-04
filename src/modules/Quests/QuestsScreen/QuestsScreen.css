@@ -1010,6 +1010,8 @@
 	padding: 1em .5em;
 	text-align: center;
 	transition: border-color .2s ease;
+
+	display: none;
 }
 
 /* Quest card's completed quest bottom text on button hover */

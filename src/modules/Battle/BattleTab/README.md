@@ -4,8 +4,8 @@ All modules related to battle "Tab" window are stored here.
 
 ## :file_folder: Modules
 
-- [Colorful resists](/src/Battle/BattleTab/ColorfulResists/README.md)
-- [Tab container](/src/Battle/BattleTab/TabContainer/README.md)
+- [Colorful resists](/src/modules/Battle/BattleTab/ColorfulResists/README.md)
+- [Tab container](/src/modules/Battle/BattleTab/TabContainer/README.md)
 
 ## :information_source: Design
 

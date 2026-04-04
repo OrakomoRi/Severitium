@@ -1,4 +1,4 @@
-# :sparkles: Loading Screen
+# :sparkles: Loading screen
 
 Stylizes the loading screen between any game states. For example, when loading after registration/authorization. Or when loading the garage.
 

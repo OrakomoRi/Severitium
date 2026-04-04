@@ -4,9 +4,9 @@ This is where all the logic and styling for store or store-related elements is s
 
 ## :file_folder: Modules
 
-- [Main screen](/src/Shop/MainScreen/README.md)
-- [Payment screen](/src/Shop/PaymentScreen/README.md)
-- [Purchase screen](/src/Shop/PurchaseScreen/README.md)
-- [Section menu](/src/Shop/SectionMenu/README.md)
-- [Shop window](/src/Shop/ShopWindow/README.md)
-- [Successful purchase](/src/Shop/SuccessfulPurchase/README.md)
+- [Main screen](/src/modules/Shop/MainScreen/README.md)
+- [Payment screen](/src/modules/Shop/PaymentScreen/README.md)
+- [Purchase screen](/src/modules/Shop/PurchaseScreen/README.md)
+- [Section menu](/src/modules/Shop/SectionMenu/README.md)
+- [Shop window](/src/modules/Shop/ShopWindow/README.md)
+- [Successful purchase](/src/modules/Shop/SuccessfulPurchase/README.md)

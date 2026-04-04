@@ -4,5 +4,5 @@ This is where all modules related to friend list items and events and inviting a
 
 ## :file_folder: Modules
 
-- [Friends screen](/src/Friends/FriendsScreen/README.md)
-- [Invite screen](/src/Friends/InviteScreen/README.md)
+- [Friends screen](/src/modules/Friends/FriendsScreen/README.md)
+- [Invite screen](/src/modules/Friends/InviteScreen/README.md)

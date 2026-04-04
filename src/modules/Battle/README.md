@@ -6,7 +6,7 @@ The most important changes: changes to the battle "Tab" and the return of the ol
 
 ## :file_folder: Modules
 
-- [Battle chat](/src/Battle/BattleChat/README.md)
-- [Battle end](/src/Battle/BattleEnd/README.md)
-- [Battle pause](/src/Battle/BattlePause/README.md)
-- [Battle tab](/src/Battle/BattleTab/README.md)
+- [Battle chat](/src/modules/Battle/BattleChat/README.md)
+- [Battle end](/src/modules/Battle/BattleEnd/README.md)
+- [Battle pause](/src/modules/Battle/BattlePause/README.md)
+- [Battle tab](/src/modules/Battle/BattleTab/README.md)

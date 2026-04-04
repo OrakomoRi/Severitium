@@ -8,16 +8,16 @@ The lobby is one of the most important screens in the game. It should be elegant
 
 ## :file_folder: Modules
 
-- [Announcements](/src/Lobby/Announcements/README.md)
-- [Battle Select](/src/Lobby/BattleSelect/README.md)
-- [Challenges](/src/Lobby/Challenges/README.md)
-- [Chat window](/src/Lobby/ChatWindow/README.md)
-- [Footer menu](/src/Lobby/FooterMenu/README.md)
-- [Main menu](/src/Lobby/MainMenu/README.md)
-- [Newbie screens](/src/Lobby/NewbieScreens/README.md)
-- [Matchmaiking waiting block](/src/Lobby/MatchmakingWaitBlock/README.md)
-- [News window](/src/Lobby/NewsWindow/README.md)
-- [Play button](/src/Lobby/PlayButton/README.md)
+- [Announcements](/src/modules/Lobby/Announcements/README.md)
+- [Battle Select](/src/modules/Lobby/BattleSelect/README.md)
+- [Challenges](/src/modules/Lobby/Challenges/README.md)
+- [Chat window](/src/modules/Lobby/ChatWindow/README.md)
+- [Footer menu](/src/modules/Lobby/FooterMenu/README.md)
+- [Main menu](/src/modules/Lobby/MainMenu/README.md)
+- [Newbie screens](/src/modules/Lobby/NewbieScreens/README.md)
+- [Matchmaiking waiting block](/src/modules/Lobby/MatchmakingWaitBlock/README.md)
+- [News window](/src/modules/Lobby/NewsWindow/README.md)
+- [Play button](/src/modules/Lobby/PlayButton/README.md)
 
 ## :information_source: Design
 
