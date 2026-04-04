@@ -3545,6 +3545,12 @@
       "date": "2026-04-04",
       "comment": "1.9.3+build15 feat: update quest icons",
       "hash": "4afeb09df0777e6dbb151fdbf65d9b08f869b39d"
+    },
+    {
+      "version": "1.9.3+build17",
+      "date": "2026-04-04",
+      "comment": "1.9.3+build17 style: update button transition effects",
+      "hash": "b24bd5ca5eaed10ce760ba3386b502bb4eb635bb"
     }
   ]
 }
