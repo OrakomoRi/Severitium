@@ -3521,6 +3521,12 @@
       "date": "2026-04-04",
       "comment": "1.9.3+build11 feat: add XP icon handling functionality",
       "hash": "02c0c7c549664da32e9798f0105128543312d8c7"
+    },
+    {
+      "version": "1.9.3+build12",
+      "date": "2026-04-04",
+      "comment": "1.9.3+build12 feat: add custom star and experience icons",
+      "hash": "1dd5f8182f8c76aec42027d18874ba1e7e6246e4"
     }
   ]
 }
