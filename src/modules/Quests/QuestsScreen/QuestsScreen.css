@@ -74,7 +74,7 @@
 	height: 100%;
 	flex-direction: column;
 	align-items: flex-start;
-	justify-content: space-around;
+	justify-content: flex-start;
 }
 
 /* Quest main container for items when there is a supermission */
@@ -87,9 +87,7 @@
 /* Quest main container for items in quests are displayed as cards */
 
 .QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer {
-	width: -webkit-fit-content;
-	width: -moz-fit-content;
-	width: fit-content;
+	width: 100%;
 }
 
 /* Inner container for misson lines */

@@ -227,13 +227,21 @@
 	background: none;
 	border: .1em solid var(--severitium-gray-button-border-color);
 	border-radius: var(--severitium-border-radius);
-	transition: border-color .2s ease;
+	transition: border-color .2s ease, background-color .2s ease;
 }
 
 /* Resistance inner container on hover */
 
 .MountedItemsStyle-commonForCellResistenceName:hover {
 	background: none;
+	border-color: var(--severitium-gray-button-border-color-hover);
+}
+
+/* Resistance inner container on active */
+
+.MountedItemsStyle-commonForCellResistenceName:active {
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
 	border-color: var(--severitium-gray-button-border-color-hover);
 }
 
