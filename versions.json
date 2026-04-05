@@ -3623,6 +3623,12 @@
       "date": "2026-04-05",
       "comment": "1.9.3+build30 feat: enhance style rule inspection",
       "hash": "ae99e4cdc307d7924cce52521c0f4413f8744760"
+    },
+    {
+      "version": "1.9.3+build31",
+      "date": "2026-04-05",
+      "comment": "1.9.3+build31 refactor: enhance style rule inspection logic",
+      "hash": "736c96f3c029aa12fd106482300207aaf4cbe08a"
     }
   ]
 }
