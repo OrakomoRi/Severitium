@@ -3599,6 +3599,12 @@
       "date": "2026-04-05",
       "comment": "1.9.3+build26 feat: enhance style rule inspection",
       "hash": "a181cb31a63ae188aba5098a888205014c41b114"
+    },
+    {
+      "version": "1.9.3+build27",
+      "date": "2026-04-05",
+      "comment": "1.9.3+build27 feat: enhance possible rewards interaction",
+      "hash": "aa978aa485ea30a17225b388ef423df4c1bf1ad1"
     }
   ]
 }
