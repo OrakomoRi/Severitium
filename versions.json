@@ -3605,6 +3605,12 @@
       "date": "2026-04-05",
       "comment": "1.9.3+build27 feat: enhance possible rewards interaction",
       "hash": "aa978aa485ea30a17225b388ef423df4c1bf1ad1"
+    },
+    {
+      "version": "1.9.3+build28",
+      "date": "2026-04-05",
+      "comment": "1.9.3+build28 style: update PossibleRewardsScreen styles",
+      "hash": "bf52af05dd22cc981139488f35407f5a3e8e1977"
     }
   ]
 }
