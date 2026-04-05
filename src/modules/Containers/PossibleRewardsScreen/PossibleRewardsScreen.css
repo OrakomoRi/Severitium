@@ -191,8 +191,13 @@
 	transition: border-color .2s ease, background-color .2s ease;
 }
 
+/* Single item */
 
-
+.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div {
+    box-shadow: none;
+    background-color: var(--severitium-dark-transparent-background2);
+    border-color: var(--severitium-gray-color);
+}
 
 /* Single active item */
 
