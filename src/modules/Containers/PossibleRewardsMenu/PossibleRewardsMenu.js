@@ -1,5 +1,5 @@
 import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
-import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/StyleRuleInspector.js';
+import { findClassByStyleRule } from '../../../libs/modules/StyleRuleInspector/StyleRuleInspector.js';
 
 (function () {
 	// Defines the active color used to determine the current state of the card
@@ -15,6 +15,8 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 	const rewardsContainerSelector = '.ContainerInfoComponentStyle-possibleRewardsContainer';
 	// Flag to track if event listeners are active
 	let eventListenersActive = false;
+	// Cached class name that corresponds to the active button state
+	let activeClass = null;
 
 	/**
 	 * Apply data-state attribute to an element based on its active state
@@ -142,10 +144,13 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 	 */
 	function processElement(element) {
 		if (!element.matches(buttonSelector)) return;
-		applyDataState(element, elementHasStyleRule(element, {
-			properties: ['background', 'background-color'],
-			value: activeColor
-		}));
+		if (!activeClass) {
+			activeClass = findClassByStyleRule({
+				properties: ['background', 'background-color'],
+				value: activeColor
+			});
+		}
+		applyDataState(element, activeClass ? element.classList.contains(activeClass) : false);
 	}
 
 	/**

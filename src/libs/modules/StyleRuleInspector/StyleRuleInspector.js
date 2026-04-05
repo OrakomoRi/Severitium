@@ -45,6 +45,49 @@ export function elementHasStyleRule(element, {
 }
 
 /**
+ * Search all stylesheets for a simple class selector (e.g. `.ksc-772`) whose
+ * declared properties match the given value. Returns the first matching class name.
+ * Only considers plain class selectors to avoid false positives from compound rules.
+ * Useful for identifying which obfuscated class name corresponds to a known style,
+ * so the result can be cached and subsequent checks done via classList.contains().
+ *
+ * @param {object} options
+ * @param {string[]} [options.properties=['background', 'background-color']] - CSS properties to check
+ * @param {'like'|'exact'} [options.match='like'] - Matching mode: 'like' = includes, 'exact' = strict equality
+ * @param {string} options.value - The value to search for
+ * @returns {string|null} The matched class name (without leading dot), or null if not found
+ */
+export function findClassByStyleRule({
+	properties = ['background', 'background-color'],
+	match = 'like',
+	value = ''
+}) {
+	for (const sheet of document.styleSheets) {
+		let rules;
+		try {
+			rules = sheet.cssRules;
+		} catch (e) {
+			continue;
+		}
+
+		for (const rule of rules) {
+			if (!rule.selectorText || !rule.style) continue;
+			const classMatch = rule.selectorText.match(/^\.([\w-]+)$/);
+			if (!classMatch) continue;
+
+			const hasMatch = properties.some(prop => {
+				const val = rule.style.getPropertyValue(prop).trim();
+				if (!val) return false;
+				return match === 'exact' ? val === value : val.includes(value);
+			});
+
+			if (hasMatch) return classMatch[1];
+		}
+	}
+	return null;
+}
+
+/**
  * Find all elements within a scope whose matching stylesheet rules declare
  * one of the specified properties with a value satisfying the match condition.
  * Reads raw CSS declarations, bypassing the cascade — so overrides from other
