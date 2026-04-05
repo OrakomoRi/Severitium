@@ -39,19 +39,17 @@
 	/* background-color: var(--severitium-light-transparent-background3); */
 }
 
+/* Single menu item */
+
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i]) {
+	background: none;
+	background-color: transparent;
+}
+
 /* Active/selected menu item */
 
 .ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active'] {
-	background: none;
-	background-color: transparent;
 	pointer-events: none;
-}
-
-/* Inactive menu item */
-
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='inactive'] {
-	background: none;
-	background-color: transparent;
 }
 
 /* Active/selected menu item based on icon type */

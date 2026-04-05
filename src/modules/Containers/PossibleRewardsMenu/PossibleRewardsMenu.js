@@ -1,4 +1,5 @@
 import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/StyleRuleInspector.js';
 
 (function () {
 	// Defines the active color used to determine the current state of the card
@@ -23,7 +24,11 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 	 * @param {boolean} isActive - Whether the element is active
 	 */
 	function applyDataState(element, isActive) {
-		element.setAttribute('data-state', isActive ? 'active' : 'inactive');
+		if (isActive) {
+			element.setAttribute('data-state', 'active');
+		} else {
+			element.removeAttribute('data-state');
+		}
 
 		if (isActive) {
 			const imgElement = element.querySelector('img');
@@ -62,7 +67,7 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 		if (clickedElement) {
 			const elements = document.querySelectorAll(buttonSelector);
 
-			// Apply inactive state to all elements except the clicked one
+			// Remove active state from all elements except the clicked one
 			for (const element of elements) {
 				const isActive = element === clickedElement;
 				applyDataState(element, isActive);
@@ -132,12 +137,15 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 
 	/**
 	 * Processes added elements to apply `data-state` and attach event listeners
-	 * 
+	 *
 	 * @param {HTMLElement} element - The new element to process
 	 */
 	function processElement(element) {
 		if (!element.matches(buttonSelector)) return;
-		applyDataState(element, window.getComputedStyle(element).backgroundColor.includes(activeColor));
+		applyDataState(element, elementHasStyleRule(element, {
+			properties: ['background', 'background-color'],
+			value: activeColor
+		}));
 	}
 
 	onMutation(mutations => processMutations(mutations));
