@@ -1,13 +1,22 @@
-// Per-class cache: Map<`${className}::${value}`, boolean>
-// Valid for the lifetime of the page — class-to-style mappings never change mid-session.
-const _classRuleCache = new Map();
+// Cache for compound rules: Map<`${selectorText}::${value}`, boolean>
+// Valid for the lifetime of the page — stylesheets don't change mid-session.
+const _selectorRuleCache = new Map();
 
 /**
- * Check whether any stylesheet rule for one of the element's own classes declares
+ * Check whether any stylesheet rule matching the given element declares
  * one of the specified properties with a value that satisfies the match condition.
- * Only considers simple class selectors (e.g. `.ksc-699`) to avoid false positives
- * from compound rules (e.g. Severitium overrides). Results are cached per class name
- * so repeated calls for the same class are O(1).
+ *
+ * Two strategies, applied in order per rule:
+ *  1. Simple class rules (e.g. `.ksc-699`) — matched via classList.contains(), no DOM query.
+ *     Cached per class name.
+ *  2. Compound rules (e.g. `.Foo > div > div`) — matched via element.matches().
+ *     Cached per selector text.
+ *
+ * In both cases, value matching is checked first so element matching is only done
+ * for rules that could actually be relevant.
+ *
+ * Compound selectors from Severitium that override backgrounds are not an issue because
+ * Severitium does not use the game's activeColor value.
  *
  * @param {HTMLElement} element - The element to check
  * @param {object} options
@@ -21,29 +30,47 @@ export function elementHasStyleRule(element, {
 	match = 'like',
 	value = ''
 }) {
-	for (const cls of element.classList) {
-		const cacheKey = `${cls}::${value}`;
-		if (_classRuleCache.has(cacheKey)) {
-			if (_classRuleCache.get(cacheKey)) return true;
+	const simpleClassRe = /^\.([\w-]+)$/;
+
+	for (const sheet of document.styleSheets) {
+		let rules;
+		try {
+			rules = sheet.cssRules;
+		} catch (e) {
 			continue;
 		}
 
-		let found = false;
-		scan: for (const sheet of document.styleSheets) {
-			try {
-				for (const rule of sheet.cssRules) {
-					if (!rule.style || rule.selectorText !== `.${cls}`) continue;
-					const hasMatch = properties.some(prop => {
-						const val = rule.style.getPropertyValue(prop).trim();
-						return val && (match === 'exact' ? val === value : val.includes(value));
-					});
-					if (hasMatch) { found = true; break scan; }
-				}
-			} catch (e) {}
-		}
+		for (const rule of rules) {
+			if (!rule.style || !rule.selectorText) continue;
 
-		_classRuleCache.set(cacheKey, found);
-		if (found) return true;
+			// Check if the rule's value matches before touching the DOM
+			const valueMatches = properties.some(prop => {
+				const val = rule.style.getPropertyValue(prop).trim();
+				return val && (match === 'exact' ? val === value : val.includes(value));
+			});
+			if (!valueMatches) continue;
+
+			const simpleMatch = rule.selectorText.match(simpleClassRe);
+			if (simpleMatch) {
+				// Simple class rule — no DOM query needed
+				if (element.classList.contains(simpleMatch[1])) return true;
+			} else {
+				// Compound rule — cache by selector text, check via element.matches()
+				const cacheKey = `${rule.selectorText}::${value}`;
+				let selectorMatches;
+				if (_selectorRuleCache.has(cacheKey)) {
+					selectorMatches = _selectorRuleCache.get(cacheKey);
+				} else {
+					try {
+						selectorMatches = element.matches(rule.selectorText);
+					} catch (e) {
+						selectorMatches = false;
+					}
+					_selectorRuleCache.set(cacheKey, selectorMatches);
+				}
+				if (selectorMatches) return true;
+			}
+		}
 	}
 	return false;
 }
