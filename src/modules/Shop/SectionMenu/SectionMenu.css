@@ -37,11 +37,13 @@
 .NewShopCommonComponentStyle-commonBlockMenuShop > div > div {
 	position: relative;
 	width: calc(100% - 1em);
+	height: auto;
+	min-height: auto;
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 	gap: 1em;
-	padding: 0 .5em;
+	padding: 1em .5em;
 	border: none;
 	outline: none;
 	box-shadow: none;
@@ -50,19 +52,13 @@
 
 /* Menu item on hover */
 
-.NewShopCommonComponentStyle-commonBlockMenuShop > div > div[data-state='inactive']:hover {
-	width: var(100% - 1em);
+.NewShopCommonComponentStyle-commonBlockMenuShop > div > div:hover {
+	width: calc(100% - 1em);
 	background: none;
 	border: none;
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
-}
-
-/* Inactive menu item */
-
-.NewShopCommonComponentStyle-commonBlockMenuShop > div > div[data-state='inactive'] {
-	background: none;
 }
 
 /* Active menu item */

@@ -17,6 +17,9 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 	// Cache for existing UUIDs to avoid duplicates
 	const existingUUIDs = new Map();
 
+	// Currently active sort element — kept as a reference to avoid querying all elements on click
+	let activeSortElement = null;
+
 	/**
 	 * Generates a unique UUID that is not already used by existing sort elements
 	 * 
@@ -89,15 +92,15 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 
 	/**
 	 * Handles click events on a sort container
-	 * 
-	 * @param {MouseEvent} event - The click event object
+	 *
+	 * @param {HTMLElement} sortElement - The sort container that was clicked
 	 */
 	function handleSortClick(sortElement) {
-		document.querySelectorAll('.TableComponentStyle-commonSort').forEach((el) => {
-			if (el !== sortElement) {
-				el.setAttribute(customProperty, customPropertyStates.neutral);
-			}
-		});
+		// Reset previously active element without querying the whole DOM
+		if (activeSortElement && activeSortElement !== sortElement) {
+			activeSortElement.setAttribute(customProperty, customPropertyStates.neutral);
+		}
+		activeSortElement = sortElement;
 
 		// Toggle the sort state based on the current state
 		const currentState = sortElement.getAttribute(customProperty);

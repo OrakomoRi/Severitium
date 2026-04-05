@@ -243,6 +243,25 @@
 	border-top-left-radius: var(--severitium-border-radius);
 }
 
+/* Item amount block (rubies) */
+
+.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div .RewardCardComponentStyle-imageBlock + div {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	margin: 0;
+	padding: .5em;
+}
+
+/* Item amount text (rubies) */
+
+.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div .RewardCardComponentStyle-imageBlock + div span {
+	font-size: 1.25em;
+	color: var(--severitium-ruby-color);
+	margin: 0;
+}
+
 /* No available reward items */
 
 .ContainerInfoComponentStyle-lootBoxContainer .QuestsComponentStyle-emptyList > h2 {
