@@ -3587,6 +3587,12 @@
       "date": "2026-04-05",
       "comment": "1.9.3+build24 fix: update inject-version logic",
       "hash": "6b4ea424cd7b60a1e110bc93b294ab45fa6cf3d3"
+    },
+    {
+      "version": "1.9.3+build25",
+      "date": "2026-04-05",
+      "comment": "1.9.3+build25 refactor: streamline mutation observation",
+      "hash": "8648a168ef10f37f27fda64df2c1a2ab7ffbc75b"
     }
   ]
 }
