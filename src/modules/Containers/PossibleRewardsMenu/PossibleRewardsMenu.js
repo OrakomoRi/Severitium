@@ -148,8 +148,6 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 		}));
 	}
 
-	onMutation(mutations => processMutations(mutations));
-
 	/**
 	 * Processes mutations efficiently
 	 * 
@@ -191,6 +189,5 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 		});
 	}
 
-	// Set up observation for changes in the document
-	cardsObserver.observe(document.body, { childList: true, subtree: true });
+	onMutation(mutations => processMutations(mutations));
 }) ();
