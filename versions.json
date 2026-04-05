@@ -3635,6 +3635,12 @@
       "date": "2026-04-05",
       "comment": "1.9.3+build32 feat: enhance turret and immunity processing",
       "hash": "5692732e703770e1ac61405006065ebeea4eb319"
+    },
+    {
+      "version": "1.9.3+build33",
+      "date": "2026-04-06",
+      "comment": "1.9.3+build33 feat: enhance UI components and sorting functionality",
+      "hash": "475c3b46d1c4f15f1c8089a22d11612748c5f07f"
     }
   ]
 }
