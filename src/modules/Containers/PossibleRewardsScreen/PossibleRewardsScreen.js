@@ -1,3 +1,5 @@
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+
 (function () {
 	// Defines the active color used to determine the current state of the card
 	const activeColor = 'rgb(191, 213, 255)';
@@ -64,10 +66,7 @@
 		}, 100); // Delay for correct rendering of elements
 	}
 
-	/**
-	 * Creates a new `MutationObserver` instance to track DOM changes
-	 */
-	const observer = new MutationObserver(mutations => {
+	onMutation(mutations => {
 		requestAnimationFrame(() => processMutations(mutations));
 	});
 
@@ -96,6 +95,4 @@
 		});
 	}
 
-	// Set up observation for changes in the document
-	observer.observe(document.body, { childList: true, subtree: true });
 })();

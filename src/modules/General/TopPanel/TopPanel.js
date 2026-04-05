@@ -1,3 +1,5 @@
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+
 (function () {
 	const nicknameSelector = '.UserInfoContainerStyle-containerProgressMainScreen > div:nth-child(1) span';
 
@@ -23,7 +25,7 @@
 		if (span) handleNickname(span);
 	}
 
-	const observer = new MutationObserver((mutations) => {
+	onMutation((mutations) => {
 		const process = () => {
 			mutations.forEach(({ addedNodes }) => {
 				addedNodes.forEach(node => {
@@ -41,8 +43,6 @@
 			process();
 		}
 	});
-
-	observer.observe(document.body, { childList: true, subtree: true });
 
 	checkNickname();
 })();

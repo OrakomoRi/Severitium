@@ -1,3 +1,5 @@
+import { onMutation } from '../../../../libs/modules/MutationHandler/MutationHandler.js';
+
 (function () {
 	// Map for turret icon URLs and initial colors
 	const turretColorMap = new Map([
@@ -148,11 +150,7 @@
 		}
 	}
 
-	/**
-	 * Sets up a MutationObserver to monitor DOM changes and apply styling dynamically.
-	 */
-	const observer = new MutationObserver(updateElements);
-	observer.observe(document.body, { childList: true, subtree: true });
+	onMutation(updateElements);
 
 	// Initial execution to apply styles on page load
 	updateElements();

@@ -1,3 +1,5 @@
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+
 (function () {
 	/**
 	 * Changes the entrance links icon to a new SVG icon and adds a mouseenter event listener to it
@@ -63,8 +65,7 @@
 		return index;
 	}
 
-	// Creates a new MutationObserver instance to track changes in the DOM
-	const observer = new MutationObserver(mutations => {
+	onMutation(mutations => {
 		if (typeof requestAnimationFrame === 'function') {
 			requestAnimationFrame(() => mutations.forEach(processMutation));
 		} else {
@@ -87,7 +88,6 @@
 		});
 	}
 
-	observer.observe(document.body, { childList: true, subtree: true });
 
 	changeEntranceLinksIcon();
 })();

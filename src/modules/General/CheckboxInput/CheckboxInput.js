@@ -1,3 +1,5 @@
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+
 (function () {
 	const processedCheckboxes = new WeakSet();
 
@@ -74,8 +76,7 @@
 	// Initialize existing checkboxes on load
 	document.querySelectorAll('input[type="checkbox"]').forEach(initializeCheckbox);
 
-	// Observe DOM for dynamically added/removed checkboxes
-	const observer = new MutationObserver((mutationsList) => {
+	onMutation((mutationsList) => {
 		for (const mutation of mutationsList) {
 			for (const node of mutation.addedNodes) {
 				if (node.nodeType !== 1) continue;
@@ -98,8 +99,6 @@
 			}
 		}
 	});
-
-	observer.observe(document.body, { childList: true, subtree: true });
 
 	document.body.addEventListener('click', handleClick, true);
 })();

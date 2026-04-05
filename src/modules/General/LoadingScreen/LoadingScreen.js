@@ -1,3 +1,5 @@
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+
 (function () {
 	const progressSelector = '.ApplicationLoaderComponentStyle-loader, .progress, .LobbyLoaderComponentStyle-loaderContainer img, #preloader .progress';
 	const loaderSelector = '.ApplicationLoaderComponentStyle-container, .LobbyLoaderComponentStyle-container';
@@ -166,14 +168,13 @@
 		return parseFloat((Math.random() * (max - min) + min).toFixed(precision));
 	}
 
-	// Creates a new MutationObserver instance to track changes in the DOM
-	const observer = new MutationObserver(mutations => {
+	onMutation(mutations => {
 		if (typeof requestAnimationFrame === 'function') {
 			requestAnimationFrame(() => mutations.forEach(processMutation));
 		} else {
 			mutations.forEach(processMutation);
 		}
-	})
+	});
 
 	/**
 	 * Processes added and removed nodes to manage background animations and progress bars
@@ -207,7 +208,6 @@
 		})
 	}
 
-	observer.observe(document.body, { childList: true, subtree: true })
 
 	// Initial check for progress bars when the script runs
 	const progress = document.querySelector(progressSelector);

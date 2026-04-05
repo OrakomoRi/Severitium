@@ -1,3 +1,5 @@
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+
 (function () {
 	// Set to store already processed range inputs
 	const processedRanges = new WeakMap();
@@ -49,10 +51,7 @@
 	// Initialize existing range inputs on page load
 	document.querySelectorAll('input[type="range"].InputRangeComponentStyle-range').forEach(initializeRangeInput);
 
-	/**
-	 * Observes the DOM for dynamically added and removed range inputs
-	 */
-	const observer = new MutationObserver((mutationsList) => {
+	onMutation((mutationsList) => {
 		for (const mutation of mutationsList) {
 			// Handle added elements
 			for (const node of mutation.addedNodes) {
@@ -77,6 +76,4 @@
 			}
 		}
 	});
-
-	observer.observe(document.body, { childList: true, subtree: true });
 })();

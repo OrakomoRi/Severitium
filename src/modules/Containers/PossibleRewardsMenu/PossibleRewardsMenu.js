@@ -1,3 +1,5 @@
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+
 (function () {
 	// Defines the active color used to determine the current state of the card
 	const activeColor = 'rgba(255, 255, 255, 0.15)';
@@ -138,8 +140,7 @@
 		applyDataState(element, window.getComputedStyle(element).backgroundColor.includes(activeColor));
 	}
 
-	// Create a new instance of MutationObserver
-	const cardsObserver = new MutationObserver(mutations => {
+	onMutation(mutations => {
 		requestAnimationFrame(() => processMutations(mutations));
 	});
 

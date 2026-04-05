@@ -1,3 +1,5 @@
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+
 (function () {
 	'use strict';
 
@@ -1169,9 +1171,9 @@
 		},
 
 		setup() {
-			new MutationObserver(mutations =>
+			onMutation(mutations =>
 				requestAnimationFrame(() => this.processMutations(mutations))
-			).observe(document.body, { childList: true, subtree: true });
+			);
 		}
 	};
 

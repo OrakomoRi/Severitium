@@ -1,3 +1,5 @@
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+
 (function () {
 	/**
 	 * Sets the background-color on hover to elements inside the context menu based on their text color
@@ -117,15 +119,11 @@
 		});
 	}
 
-	// Create a new instance of MutationObserver
-	const observer = new MutationObserver((mutations) => {
+	onMutation((mutations) => {
 		if (typeof requestAnimationFrame === 'function') {
 			requestAnimationFrame(() => processMutations(mutations));
 		} else {
 			processMutations(mutations);
 		}
 	});
-
-	// Start observing mutations in the document body
-	observer.observe(document.body, { childList: true, subtree: true });
 })();

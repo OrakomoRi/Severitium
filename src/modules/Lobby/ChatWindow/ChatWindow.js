@@ -1,3 +1,5 @@
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+
 (function () {
 	// Lobby chat category select selector
 	const chatSelectSelector = '.ChatComponentStyle-channels .ChatComponentStyle-channelsSelect';
@@ -77,13 +79,8 @@
 		});
 	}
 
-	/**
-	 * Create a new instance of MutationObserver with a callback function
-	 * to observe changes in the DOM.
-	 */
-	const observer = new MutationObserver((mutations) => {
+	onMutation((mutations) => {
 		if (typeof requestAnimationFrame === 'function') {
-			// Use requestAnimationFrame to optimize DOM changes processing
 			requestAnimationFrame(() => {
 				mutations.forEach((mutation) => {
 					if (mutation.type === 'childList') {
@@ -99,7 +96,6 @@
 			return;
 		}
 
-		// Fallback: Execute immediately if requestAnimationFrame is not available
 		mutations.forEach((mutation) => {
 			if (mutation.type === 'childList') {
 				mutation.addedNodes.forEach((node) => {
@@ -110,10 +106,4 @@
 			}
 		});
 	});
-
-	// Configuration for the mutation observer
-	const observerConfig = { childList: true, subtree: true };
-
-	// Start observing mutations in the document body
-	observer.observe(document.body, observerConfig);
 })();

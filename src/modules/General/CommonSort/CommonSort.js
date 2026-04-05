@@ -1,3 +1,5 @@
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+
 (function () {
 	// Defines the active color used to determine the current state of the sort arrows
 	const activeColor = 'rgb(118, 255, 51)';
@@ -129,20 +131,13 @@
 		});
 	}
 
-	/**
-	 * Create a new instance of MutationObserver
-	 */
-	const observer = new MutationObserver((mutations) => {
+	onMutation((mutations) => {
 		if (typeof requestAnimationFrame === 'function') {
 			requestAnimationFrame(() => processMutations(mutations));
 		} else {
-			// Fallback: Execute immediately if requestAnimationFrame is not supported
 			processMutations(mutations);
 		}
 	});
-
-	// Set up observation for changes in the document
-	observer.observe(document.body, { childList: true, subtree: true });
 
 	// Add event listener on body to delegate click event for th
 	document.body.addEventListener('click', (event) => {

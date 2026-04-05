@@ -1,3 +1,5 @@
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+
 (function () {
 	/**
 	 * Replaces the visual representation of a checkbox in the DOM with a custom SVG checkbox
@@ -49,17 +51,13 @@
 		});
 	}
 
-	// Creates a new MutationObserver instance to track changes in the DOM
-	const observer = new MutationObserver(mutations => {
+	onMutation(mutations => {
 		if (typeof requestAnimationFrame === 'function') {
 			requestAnimationFrame(() => processMutations(mutations));
 		} else {
 			processMutations(mutations);
 		}
-	})
-
-	// Start observing changes in the document
-	observer.observe(document.body, { childList: true, subtree: true });
+	});
 
 	// Initial processing of already existing checkboxes
 	document.querySelectorAll('.EntranceComponentStyle-checkbox').forEach(replaceEntranceCheckbox);

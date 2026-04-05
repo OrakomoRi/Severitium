@@ -1,3 +1,5 @@
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+
 (function () {
 	// An object named SVGs, where keys are link parts and values are SVG strings
 	var SVGs = {
@@ -67,16 +69,13 @@
 		});
 	}
 
-	// Creates a new MutationObserver instance to track changes in the DOM
-	const observer = new MutationObserver(mutations => {
+	onMutation(mutations => {
 		if (typeof requestAnimationFrame === 'function') {
 			requestAnimationFrame(() => mutations.forEach(processMutation));
 		} else {
 			mutations.forEach(processMutation);
 		}
 	});
-
-	observer.observe(document.body, { childList: true, subtree: true });
 
 	// Initial replacement of icons already present in the DOM
 	document.querySelectorAll('.MainEntranceComponentStyle-container > div, .HeaderComponentStyle-headerLinkBar .SocialNetworksComponentStyle-container > div')

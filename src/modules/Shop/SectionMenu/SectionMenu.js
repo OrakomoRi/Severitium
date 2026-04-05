@@ -1,3 +1,5 @@
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+
 (function () {
 	// Defines the active color used to determine the current state of the menu item
 	const activeColor = 'rgba(255, 204, 0, 0.25)';
@@ -41,10 +43,7 @@
 		menu.addEventListener('click', handleClick);
 	}
 
-	/**
-	 * Creates a new instance of MutationObserver to track changes in the DOM
-	 */
-	const observer = new MutationObserver(mutations => {
+	onMutation(mutations => {
 		if (typeof requestAnimationFrame === 'function') {
 			requestAnimationFrame(() => processMutations(mutations));
 		} else {
@@ -73,6 +72,4 @@
 		});
 	}
 
-	// Starts observing changes in the document
-	observer.observe(document.body, { childList: true, subtree: true });
 })();
