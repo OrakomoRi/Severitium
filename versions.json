@@ -3569,6 +3569,12 @@
       "date": "2026-04-05",
       "comment": "1.9.3+build20 refactor: optimize mutation observer usage",
       "hash": "bd7e2590a9b507624044a13d437d1c4bf3a87c26"
+    },
+    {
+      "version": "1.9.3+build22",
+      "date": "2026-04-05",
+      "comment": "1.9.3+build22 feat: enhance style rule inspection and mutation handling",
+      "hash": "5d33e8ed0f46a1065769b4b2b753dabd772fd52e"
     }
   ]
 }
