@@ -6,6 +6,6 @@ new MutationObserver(mutations => {
 	});
 }).observe(document.body, { childList: true, subtree: true });
 
-function onMutation(fn) {
+export function onMutation(fn) {
 	_mutationHandlers.push(fn);
 }
