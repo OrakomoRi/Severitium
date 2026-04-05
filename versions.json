@@ -3575,6 +3575,12 @@
       "date": "2026-04-05",
       "comment": "1.9.3+build22 feat: enhance style rule inspection and mutation handling",
       "hash": "5d33e8ed0f46a1065769b4b2b753dabd772fd52e"
+    },
+    {
+      "version": "1.9.3+build23",
+      "date": "2026-04-05",
+      "comment": "1.9.3+build23 chore: minor patch",
+      "hash": "0a1cac9fe848f90b93299d63c5d5533e92f70242"
     }
   ]
 }
