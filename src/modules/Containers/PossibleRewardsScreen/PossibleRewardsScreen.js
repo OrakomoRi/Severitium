@@ -1,5 +1,5 @@
 import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
-import { findClassByStyleRule } from '../../../libs/modules/StyleRuleInspector/StyleRuleInspector.js';
+import { findElementsByStyleRule } from '../../../libs/modules/StyleRuleInspector/StyleRuleInspector.js';
 
 (function () {
 	// Defines the active color used to determine the current state of the card
@@ -22,9 +22,7 @@ import { findClassByStyleRule } from '../../../libs/modules/StyleRuleInspector/S
 	let currentActive = null;
 	// Flag to avoid adding event listeners multiple times
 	let eventListenersActive = false;
-	// Cached class name that corresponds to the active card state
-	let activeClass = null;
-
+	
 	/**
 	 * Handle click event on an element
 	 *
@@ -59,18 +57,19 @@ import { findClassByStyleRule } from '../../../libs/modules/StyleRuleInspector/S
 
 	/**
 	 * Finds the card that the game considers active by reading stylesheet rules.
-	 * Scans once to resolve the active class name, then uses a single querySelector.
+	 * Iterates CSS rules (not elements), so performance scales with rule count.
 	 *
 	 * @returns {HTMLElement|null} The active card element, or null if not found
 	 */
 	function findActiveCard() {
-		if (!activeClass) {
-			activeClass = findClassByStyleRule({
-				properties: ['background', 'background-color'],
-				value: activeColor
-			});
-		}
-		return activeClass ? document.querySelector(`${cardSelector}.${activeClass}`) : null;
+		let result = null;
+		findElementsByStyleRule({
+			scope: cardSelector,
+			properties: ['background', 'background-color'],
+			value: activeColor,
+			callback: el => { if (!result) result = el; }
+		});
+		return result;
 	}
 
 	/**

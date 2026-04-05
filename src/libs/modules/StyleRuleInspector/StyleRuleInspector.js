@@ -1,8 +1,13 @@
+// Per-class cache: Map<`${className}::${value}`, boolean>
+// Valid for the lifetime of the page — class-to-style mappings never change mid-session.
+const _classRuleCache = new Map();
+
 /**
- * Check whether any stylesheet rule matching the given element declares
+ * Check whether any stylesheet rule for one of the element's own classes declares
  * one of the specified properties with a value that satisfies the match condition.
- * Reads raw CSS declarations, bypassing the cascade — so overrides from other
- * sources (e.g. Severitium) that change computed values do not interfere.
+ * Only considers simple class selectors (e.g. `.ksc-699`) to avoid false positives
+ * from compound rules (e.g. Severitium overrides). Results are cached per class name
+ * so repeated calls for the same class are O(1).
  *
  * @param {HTMLElement} element - The element to check
  * @param {object} options
@@ -16,82 +21,38 @@ export function elementHasStyleRule(element, {
 	match = 'like',
 	value = ''
 }) {
-	for (const sheet of document.styleSheets) {
-		let rules;
-		try {
-			rules = sheet.cssRules;
-		} catch (e) {
+	for (const cls of element.classList) {
+		const cacheKey = `${cls}::${value}`;
+		if (_classRuleCache.has(cacheKey)) {
+			if (_classRuleCache.get(cacheKey)) return true;
 			continue;
 		}
 
-		for (const rule of rules) {
-			if (!rule.selectorText || !rule.style) continue;
+		let found = false;
+		scan: for (const sheet of document.styleSheets) {
 			try {
-				if (!element.matches(rule.selectorText)) continue;
-			} catch (e) {
-				continue;
-			}
-
-			const hasMatch = properties.some(prop => {
-				const val = rule.style.getPropertyValue(prop).trim();
-				if (!val) return false;
-				return match === 'exact' ? val === value : val.includes(value);
-			});
-
-			if (hasMatch) return true;
+				for (const rule of sheet.cssRules) {
+					if (!rule.style || rule.selectorText !== `.${cls}`) continue;
+					const hasMatch = properties.some(prop => {
+						const val = rule.style.getPropertyValue(prop).trim();
+						return val && (match === 'exact' ? val === value : val.includes(value));
+					});
+					if (hasMatch) { found = true; break scan; }
+				}
+			} catch (e) {}
 		}
+
+		_classRuleCache.set(cacheKey, found);
+		if (found) return true;
 	}
 	return false;
 }
 
 /**
- * Search all stylesheets for a simple class selector (e.g. `.ksc-772`) whose
- * declared properties match the given value. Returns the first matching class name.
- * Only considers plain class selectors to avoid false positives from compound rules.
- * Useful for identifying which obfuscated class name corresponds to a known style,
- * so the result can be cached and subsequent checks done via classList.contains().
- *
- * @param {object} options
- * @param {string[]} [options.properties=['background', 'background-color']] - CSS properties to check
- * @param {'like'|'exact'} [options.match='like'] - Matching mode: 'like' = includes, 'exact' = strict equality
- * @param {string} options.value - The value to search for
- * @returns {string|null} The matched class name (without leading dot), or null if not found
- */
-export function findClassByStyleRule({
-	properties = ['background', 'background-color'],
-	match = 'like',
-	value = ''
-}) {
-	for (const sheet of document.styleSheets) {
-		let rules;
-		try {
-			rules = sheet.cssRules;
-		} catch (e) {
-			continue;
-		}
-
-		for (const rule of rules) {
-			if (!rule.selectorText || !rule.style) continue;
-			const classMatch = rule.selectorText.match(/^\.([\w-]+)$/);
-			if (!classMatch) continue;
-
-			const hasMatch = properties.some(prop => {
-				const val = rule.style.getPropertyValue(prop).trim();
-				if (!val) return false;
-				return match === 'exact' ? val === value : val.includes(value);
-			});
-
-			if (hasMatch) return classMatch[1];
-		}
-	}
-	return null;
-}
-
-/**
  * Find all elements within a scope whose matching stylesheet rules declare
  * one of the specified properties with a value satisfying the match condition.
- * Reads raw CSS declarations, bypassing the cascade — so overrides from other
- * sources (e.g. Severitium) that change computed values do not interfere.
+ * Iterates CSS rules (not elements), so performance scales with rule count,
+ * not element count. Reads raw CSS declarations, bypassing the cascade.
  *
  * @param {object} options
  * @param {string} [options.scope='*'] - CSS selector limiting which elements to consider
@@ -108,7 +69,9 @@ export function findElementsByStyleRule({
 	callback
 }) {
 	const targets = new Set(document.querySelectorAll(scope));
-	const matchedElements = new Set();
+	if (targets.size === 0) return;
+
+	const matched = new Set();
 
 	for (const sheet of document.styleSheets) {
 		let rules;
@@ -123,8 +86,7 @@ export function findElementsByStyleRule({
 
 			const hasMatch = properties.some(prop => {
 				const val = rule.style.getPropertyValue(prop).trim();
-				if (!val) return false;
-				return match === 'exact' ? val === value : val.includes(value);
+				return val && (match === 'exact' ? val === value : val.includes(value));
 			});
 
 			if (!hasMatch) continue;
@@ -136,11 +98,11 @@ export function findElementsByStyleRule({
 				continue;
 			}
 
-			elements.forEach(el => {
-				if (targets.has(el)) matchedElements.add(el);
-			});
+			for (const el of elements) {
+				if (targets.has(el)) matched.add(el);
+			}
 		}
 	}
 
-	matchedElements.forEach(el => callback(el));
+	for (const el of matched) callback(el);
 }
