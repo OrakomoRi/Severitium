@@ -3563,6 +3563,12 @@
       "date": "2026-04-05",
       "comment": "1.9.3+build19 feat: enhance mutation handling",
       "hash": "76871cd2e88564e3206d23bc0d49b253a1aabfbc"
+    },
+    {
+      "version": "1.9.3+build20",
+      "date": "2026-04-05",
+      "comment": "1.9.3+build20 refactor: optimize mutation observer usage",
+      "hash": "bd7e2590a9b507624044a13d437d1c4bf3a87c26"
     }
   ]
 }
