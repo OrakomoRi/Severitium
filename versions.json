@@ -3593,6 +3593,12 @@
       "date": "2026-04-05",
       "comment": "1.9.3+build25 refactor: streamline mutation observation",
       "hash": "8648a168ef10f37f27fda64df2c1a2ab7ffbc75b"
+    },
+    {
+      "version": "1.9.3+build26",
+      "date": "2026-04-05",
+      "comment": "1.9.3+build26 feat: enhance style rule inspection",
+      "hash": "a181cb31a63ae188aba5098a888205014c41b114"
     }
   ]
 }
