@@ -5,7 +5,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const root = path.join(__dirname, '../..');
-const { version } = require(path.join(root, 'package.json'));
+const { version } = JSON.parse(execSync('git show :package.json', { cwd: root }).toString());
 
 const clientFile = path.join(root, 'release', 'severitium.client.js');
 const userFile = path.join(root, 'release', 'severitium.user.js');
