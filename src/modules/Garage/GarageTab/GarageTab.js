@@ -1,5 +1,5 @@
-import { onMutation } from '../../libs/modules/MutationHandler/MutationHandler.js';
-import { elementHasStyleRule } from '../../libs/modules/StyleRuleInspector/StyleRuleInspector.js';
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/StyleRuleInspector.js';
 
 (function () {
 	// Selector for supply purchase buttons in the garage
