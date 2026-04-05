@@ -85,28 +85,32 @@ import { onMutation } from '../../../../libs/modules/MutationHandler/MutationHan
 		}],
 	]);
 
-	/**
-	 * Updates elements related to turrets, modules, and immunities.
-	 * This function is triggered whenever the DOM changes.
-	 */
-	function updateElements() {
-		document.querySelectorAll('.BattleTabStatisticComponentStyle-deviceCell div, .BattleTabStatisticComponentStyle-container div, .BattleTabStatisticComponentStyle-defenceCell div')
-			.forEach(processElement);
-	}
+	// Selector for all candidate elements
+	const candidateSelector = '.BattleTabStatisticComponentStyle-deviceCell div, .BattleTabStatisticComponentStyle-container div, .BattleTabStatisticComponentStyle-defenceCell div';
 
 	/**
 	 * General function to process elements and apply styling based on background or mask image.
+	 * Skips elements that have already been processed.
+	 *
 	 * @param {Element} element - The HTML element to process.
 	 */
 	function processElement(element) {
+		// Skip already processed elements
+		if (element.dataset.severitiumProcessed) return;
+
 		const computedStyle = getComputedStyle(element);
 		const backgroundImage = computedStyle.backgroundImage;
+
+		// Skip elements with no meaningful background image
+		if (!backgroundImage || backgroundImage === 'none') return;
+
 		const maskImage = computedStyle.maskImage;
 
 		// Check turret resistances
 		for (const [key, value] of turretColorMap) {
 			if (backgroundImage.includes(key) || maskImage.includes(key)) {
 				applyStyledElement(element, value, computedStyle, maskImage.includes(key));
+				element.dataset.severitiumProcessed = '1';
 				return;
 			}
 		}
@@ -115,6 +119,7 @@ import { onMutation } from '../../../../libs/modules/MutationHandler/MutationHan
 		for (const [key, value] of immunityColorMap) {
 			if (backgroundImage.includes(key)) {
 				applyStyledElement(element, value);
+				element.dataset.severitiumProcessed = '1';
 				return;
 			}
 		}
@@ -122,6 +127,7 @@ import { onMutation } from '../../../../libs/modules/MutationHandler/MutationHan
 
 	/**
 	 * Applies styles to an element, handling both general styling and module-specific logic.
+	 *
 	 * @param {Element} element - The element to style.
 	 * @param {Object} value - Contains the icon and color data.
 	 * @param {CSSStyleDeclaration} [computedStyle] - Optional computed styles (used for modules).
@@ -150,8 +156,23 @@ import { onMutation } from '../../../../libs/modules/MutationHandler/MutationHan
 		}
 	}
 
-	onMutation(updateElements);
+	/**
+	 * Processes only newly added nodes from mutations instead of re-querying the whole DOM.
+	 *
+	 * @param {MutationRecord[]} mutations - List of mutations
+	 */
+	function processMutations(mutations) {
+		for (const { addedNodes } of mutations) {
+			for (const node of addedNodes) {
+				if (node.nodeType !== Node.ELEMENT_NODE) continue;
+				if (node.matches(candidateSelector)) processElement(node);
+				node.querySelectorAll?.(candidateSelector).forEach(processElement);
+			}
+		}
+	}
+
+	onMutation(processMutations);
 
 	// Initial execution to apply styles on page load
-	updateElements();
+	document.querySelectorAll(candidateSelector).forEach(processElement);
 })();
