@@ -1,6 +1,10 @@
 import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+import { findClassByStyleRule } from '../../../libs/modules/StyleRuleInspector/StyleRuleInspector.js';
 
 (function () {
+	// Defines the active color used to determine the current state of the card
+	const activeColor = 'rgba(255, 255, 255, 0.3)';
+
 	// Card & container selectors:
 	// Possible reward container selector
 	const containerSelector = '.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer';
@@ -18,6 +22,8 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 	let currentActive = null;
 	// Flag to avoid adding event listeners multiple times
 	let eventListenersActive = false;
+	// Cached class name that corresponds to the active card state
+	let activeClass = null;
 
 	/**
 	 * Handle click event on an element
@@ -52,12 +58,31 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 	}
 
 	/**
-	 * Resets the state of the items, making the first one active
+	 * Finds the card that the game considers active by reading stylesheet rules.
+	 * Scans once to resolve the active class name, then uses a single querySelector.
+	 *
+	 * @returns {HTMLElement|null} The active card element, or null if not found
+	 */
+	function findActiveCard() {
+		if (!activeClass) {
+			activeClass = findClassByStyleRule({
+				properties: ['background', 'background-color'],
+				value: activeColor
+			});
+		}
+		return activeClass ? document.querySelector(`${cardSelector}.${activeClass}`) : null;
+	}
+
+	/**
+	 * Syncs data-state with the card the game has already marked as active.
 	 */
 	function updateToZeroState() {
-		setTimeout(() => {
-			document.querySelector(cardSelector)?.click();
-		}, 100); // Delay for correct rendering of elements
+		const activeCard = findActiveCard();
+		if (!activeCard || activeCard === currentActive) return;
+
+		currentActive?.removeAttribute('data-state');
+		activeCard.setAttribute('data-state', 'active');
+		currentActive = activeCard;
 	}
 
 	/**
