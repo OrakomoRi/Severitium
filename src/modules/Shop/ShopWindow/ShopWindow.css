@@ -78,25 +78,35 @@
 	box-shadow: none;
 	-webkit-backdrop-filter: blur(.25em);
 	        backdrop-filter: blur(.25em);
+	background: var(--severitium-tancoin-button-background);
+	border: var(--severitium-tancoin-button-border-color) solid .1em;
 	border-radius: var(--severitium-border-radius);
-	background: var(--severitium-gold-button-background);
-	border: var(--severitium-gold-button-border-color) solid .1em;
 	transition: border .2s ease;
 }
 
 /* Button on hover */
 
 .LargeSingleCardComponentStyle-commonBlock > .-backgroundImageCover + div[class*='center'i]:hover {
-	background-color: var(--severitium-gold-button-background);
+	background-color: var(--severitium-tancoin-button-background);
 	outline: none;
 	box-shadow: none;
-	border: var(--severitium-gold-button-border-color-hover) solid .1em;
+	border: var(--severitium-tancoin-button-border-color-hover) solid .1em;
+}
+
+/* Button on active */
+
+.LargeSingleCardComponentStyle-commonBlock > .-backgroundImageCover + div[class*='center'i]:active {
+	background: none;
+	background-color: var(--severitium-tancoin-button-background);
+	box-shadow: none;
+	border: var(--severitium-tancoin-button-border-color-active) solid .1em;
+	animation: none;
 }
 
 /* Button text */
 
 .LargeSingleCardComponentStyle-commonBlock > .-backgroundImageCover + div[class*='center'i] > span {
-	color: var(--severitium-gold-button-color);
+	color: var(--severitium-tancoin-button-color);
 }
 
 /* Button hotkey container */

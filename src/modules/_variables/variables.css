@@ -87,6 +87,21 @@
 	--severitium-blue-button-border-color: rgba(27, 120, 242, .25);
 	--severitium-blue-button-border-color-hover: rgba(27, 120, 242, .75);
 
+	--severitium-crystal-button-background: rgba(100, 185, 225, .2);
+	--severitium-crystal-button-color: rgb(175, 220, 240);
+	--severitium-crystal-button-border-color: rgba(100, 185, 225, .25);
+	--severitium-crystal-button-border-color-hover: rgba(100, 185, 225, .75);
+
+	--severitium-tancoin-button-background: rgba(225, 190, 85, .2);
+	--severitium-tancoin-button-color: rgb(255, 225, 170);
+	--severitium-tancoin-button-border-color: rgba(225, 190, 85, .25);
+	--severitium-tancoin-button-border-color-hover: rgba(225, 190, 85, .75);
+
+	--severitium-ruby-button-background: rgba(255, 125, 125, .2);
+	--severitium-ruby-button-color: rgb(255, 185, 185);
+	--severitium-ruby-button-border-color: rgba(255, 125, 125, .25);
+	--severitium-ruby-button-border-color-hover: rgba(255, 125, 125, .75);
+
 	/* Theme colors for battle tab */
 
 	--severitium-tab-background: rgba(0, 0, 0, .5);
