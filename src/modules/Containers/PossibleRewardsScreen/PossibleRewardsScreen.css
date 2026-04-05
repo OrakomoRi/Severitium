@@ -191,21 +191,16 @@
 	transition: border-color .2s ease, background-color .2s ease;
 }
 
-/* Styles for the active item */
+
+
+
+/* Single active item */
 
 .ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div[data-state='active'] {
     box-shadow: none;
     background-color: var(--severitium-light-transparent-background3);
     border-color: var(--severitium-light-gray-color);
     pointer-events: none;
-}
-
-/* Styles for inactive item */
-
-.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div[data-state='inactive'] {
-    box-shadow: none;
-    background-color: var(--severitium-dark-transparent-background2);
-    border-color: var(--severitium-gray-color);
 }
 
 /* Item of possible rewards on hover */

@@ -1,9 +1,6 @@
 import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
 
 (function () {
-	// Defines the active color used to determine the current state of the card
-	const activeColor = 'rgb(191, 213, 255)';
-
 	// Card & container selectors:
 	// Possible reward container selector
 	const containerSelector = '.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer';
@@ -17,9 +14,14 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 	const menuFirstHotkeySelector = '.ContainerInfoComponentStyle-rewardsMenu > div[class*="hotkey"i]:first-of-type';
 	const menuLastHotkeySelector = '.ContainerInfoComponentStyle-rewardsMenu > div[class*="hotkey"i]:last-of-type';
 
+	// Currently active card — kept as a reference to avoid querying all cards
+	let currentActive = null;
+	// Flag to avoid adding event listeners multiple times
+	let eventListenersActive = false;
+
 	/**
 	 * Handle click event on an element
-	 * 
+	 *
 	 * @param {MouseEvent} event - The click event
 	 */
 	function handleClick(event) {
@@ -31,22 +33,21 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 		}
 
 		const clickedElement = event.target.closest(cardSelector);
-		if (!clickedElement) return;
+		if (!clickedElement || clickedElement === currentActive) return;
 
-		// Update state for all elements
-		for (const element of document.querySelectorAll(cardSelector)) {
-			element.setAttribute('data-state', element === clickedElement ? 'active' : 'inactive');
-		};
+		currentActive?.removeAttribute('data-state');
+		clickedElement.setAttribute('data-state', 'active');
+		currentActive = clickedElement;
 	}
 
 	/**
 	 * Keystroke handler
+	 *
 	 * @param {KeyboardEvent} event - Keystroke event
 	 */
 	function handleKeydown(event) {
 		if (event.code === 'KeyE' || event.code === 'KeyQ') {
 			updateToZeroState();
-			return;
 		}
 	}
 
@@ -55,22 +56,36 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 	 */
 	function updateToZeroState() {
 		setTimeout(() => {
-			const elements = document.querySelectorAll(cardSelector);
-			if (elements.length === 0) return;
-
-			elements[0].click();
-
-			for (i = 0; i < elements.length; i++) {
-				elements[i].setAttribute('data-state', i === 0 ? 'active' : 'inactive');
-			}
+			document.querySelector(cardSelector)?.click();
 		}, 100); // Delay for correct rendering of elements
+	}
+
+	/**
+	 * Add event listeners for click and keyup events
+	 */
+	function addEventListeners() {
+		if (eventListenersActive) return;
+		document.body.addEventListener('click', handleClick);
+		document.body.addEventListener('keyup', handleKeydown);
+		eventListenersActive = true;
+	}
+
+	/**
+	 * Remove event listeners and reset state
+	 */
+	function removeEventListeners() {
+		if (!eventListenersActive) return;
+		document.body.removeEventListener('click', handleClick);
+		document.body.removeEventListener('keyup', handleKeydown);
+		eventListenersActive = false;
+		currentActive = null;
 	}
 
 	onMutation(mutations => processMutations(mutations));
 
 	/**
 	 * Processes mutations efficiently
-	 * 
+	 *
 	 * @param {MutationRecord[]} mutations - List of mutations
 	 */
 	function processMutations(mutations) {
@@ -78,16 +93,14 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 			addedNodes.forEach(node => {
 				if (node.nodeType !== Node.ELEMENT_NODE) return;
 				if (node.matches?.(containerSelector) || node.querySelector?.(containerSelector)) {
+					addEventListeners();
 					updateToZeroState();
-					document.body.addEventListener('click', handleClick);
-					document.body.addEventListener('keyup', handleKeydown);
 				}
 			});
 			removedNodes.forEach(node => {
 				if (node.nodeType !== Node.ELEMENT_NODE) return;
 				if (node.matches?.(containerSelector) || node.querySelector?.(containerSelector)) {
-					document.body.removeEventListener('click', handleClick);
-					document.body.removeEventListener('keyup', handleKeydown);
+					removeEventListeners();
 				}
 			});
 		});
