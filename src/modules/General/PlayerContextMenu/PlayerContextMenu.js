@@ -119,11 +119,5 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 		});
 	}
 
-	onMutation((mutations) => {
-		if (typeof requestAnimationFrame === 'function') {
-			requestAnimationFrame(() => processMutations(mutations));
-		} else {
-			processMutations(mutations);
-		}
-	});
+	onMutation(mutations => processMutations(mutations));
 })();

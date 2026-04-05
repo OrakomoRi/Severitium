@@ -43,13 +43,7 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 		menu.addEventListener('click', handleClick);
 	}
 
-	onMutation(mutations => {
-		if (typeof requestAnimationFrame === 'function') {
-			requestAnimationFrame(() => processMutations(mutations));
-		} else {
-			processMutations(mutations);
-		}
-	});
+	onMutation(mutations => processMutations(mutations));
 
 	/**
 	 * Processes added and removed nodes efficiently

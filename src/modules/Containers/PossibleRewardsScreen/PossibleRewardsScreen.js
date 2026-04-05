@@ -66,9 +66,7 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 		}, 100); // Delay for correct rendering of elements
 	}
 
-	onMutation(mutations => {
-		requestAnimationFrame(() => processMutations(mutations));
-	});
+	onMutation(mutations => processMutations(mutations));
 
 	/**
 	 * Processes mutations efficiently

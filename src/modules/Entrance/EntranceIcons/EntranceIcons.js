@@ -69,13 +69,7 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 		});
 	}
 
-	onMutation(mutations => {
-		if (typeof requestAnimationFrame === 'function') {
-			requestAnimationFrame(() => mutations.forEach(processMutation));
-		} else {
-			mutations.forEach(processMutation);
-		}
-	});
+	onMutation(mutations => mutations.forEach(processMutation));
 
 	// Initial replacement of icons already present in the DOM
 	document.querySelectorAll('.MainEntranceComponentStyle-container > div, .HeaderComponentStyle-headerLinkBar .SocialNetworksComponentStyle-container > div')

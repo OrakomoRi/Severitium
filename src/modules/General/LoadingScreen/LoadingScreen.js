@@ -168,13 +168,7 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 		return parseFloat((Math.random() * (max - min) + min).toFixed(precision));
 	}
 
-	onMutation(mutations => {
-		if (typeof requestAnimationFrame === 'function') {
-			requestAnimationFrame(() => mutations.forEach(processMutation));
-		} else {
-			mutations.forEach(processMutation);
-		}
-	});
+	onMutation(mutations => mutations.forEach(processMutation));
 
 	/**
 	 * Processes added and removed nodes to manage background animations and progress bars

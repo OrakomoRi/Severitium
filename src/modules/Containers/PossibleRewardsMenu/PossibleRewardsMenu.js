@@ -140,9 +140,7 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 		applyDataState(element, window.getComputedStyle(element).backgroundColor.includes(activeColor));
 	}
 
-	onMutation(mutations => {
-		requestAnimationFrame(() => processMutations(mutations));
-	});
+	onMutation(mutations => processMutations(mutations));
 
 	/**
 	 * Processes mutations efficiently

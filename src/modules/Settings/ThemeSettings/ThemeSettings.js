@@ -1171,9 +1171,7 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 		},
 
 		setup() {
-			onMutation(mutations =>
-				requestAnimationFrame(() => this.processMutations(mutations))
-			);
+			onMutation(mutations => this.processMutations(mutations));
 		}
 	};
 

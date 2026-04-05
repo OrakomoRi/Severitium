@@ -80,22 +80,6 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 	}
 
 	onMutation((mutations) => {
-		if (typeof requestAnimationFrame === 'function') {
-			requestAnimationFrame(() => {
-				mutations.forEach((mutation) => {
-					if (mutation.type === 'childList') {
-						mutation.addedNodes.forEach((node) => {
-							if (node.nodeType === Node.ELEMENT_NODE && (node.matches(chatSelectSelector) || node.querySelector(chatSelectSelector))) {
-								customChatLogic();
-							}
-						});
-					}
-				});
-			});
-
-			return;
-		}
-
 		mutations.forEach((mutation) => {
 			if (mutation.type === 'childList') {
 				mutation.addedNodes.forEach((node) => {

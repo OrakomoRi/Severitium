@@ -26,22 +26,14 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 	}
 
 	onMutation((mutations) => {
-		const process = () => {
-			mutations.forEach(({ addedNodes }) => {
-				addedNodes.forEach(node => {
-					if (node.nodeType !== Node.ELEMENT_NODE) return;
-					if (node.matches(nicknameSelector) || node.querySelector(nicknameSelector)) {
-						checkNickname();
-					}
-				});
+		mutations.forEach(({ addedNodes }) => {
+			addedNodes.forEach(node => {
+				if (node.nodeType !== Node.ELEMENT_NODE) return;
+				if (node.matches(nicknameSelector) || node.querySelector(nicknameSelector)) {
+					checkNickname();
+				}
 			});
-		};
-
-		if (typeof requestAnimationFrame === 'function') {
-			requestAnimationFrame(process);
-		} else {
-			process();
-		}
+		});
 	});
 
 	checkNickname();

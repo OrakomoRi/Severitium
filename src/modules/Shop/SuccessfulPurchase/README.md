@@ -4,7 +4,7 @@ Stylizes a modal window with a notification of a successful in-game purchase.
 
 ## ❗️ Note
 
-This module inherits the styles of the [Modal](/src/General/Modal/README.md) module.
+This module inherits the styles of the [Modal](../../General/Modal/README.md) module.
 
 ## :information_source: Design
 

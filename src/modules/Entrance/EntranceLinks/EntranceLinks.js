@@ -65,13 +65,7 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 		return index;
 	}
 
-	onMutation(mutations => {
-		if (typeof requestAnimationFrame === 'function') {
-			requestAnimationFrame(() => mutations.forEach(processMutation));
-		} else {
-			mutations.forEach(processMutation);
-		}
-	});
+	onMutation(mutations => mutations.forEach(processMutation));
 
 	/**
 	 * Processes added nodes to replace the entrance links icon when necessary
