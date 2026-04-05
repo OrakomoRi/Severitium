@@ -66,23 +66,23 @@
 	--severitium-gray-button-border-color: rgba(255, 255, 255, .25);
 	--severitium-gray-button-border-color-hover: rgba(255, 255, 255, .75);
 
-	--severitium-green-button-background: rgba(27, 242, 67, 0.2);
-	--severitium-green-button-background-hover: rgba(27, 242, 67, 0.4);
+	--severitium-green-button-background: rgba(27, 242, 67, .2);
+	--severitium-green-button-background-hover: rgba(27, 242, 67, .4);
 	--severitium-green-button-color: rgb(112, 232, 114);
 	--severitium-green-button-border-color: rgba(27, 242, 67, .25);
 	--severitium-green-button-border-color-hover: rgba(27, 242, 67, .75);
 
-	--severitium-red-button-background: rgba(242, 27, 27, 0.2);
+	--severitium-red-button-background: rgba(242, 27, 27, .2);
 	--severitium-red-button-color: rgb(255, 148, 148);
 	--severitium-red-button-border-color: rgba(242, 27, 27, .25);
 	--severitium-red-button-border-color-hover: rgba(242, 27, 27, .75);
 
-	--severitium-gold-button-background: rgba(242, 192, 27, 0.2);
+	--severitium-gold-button-background: rgba(242, 192, 27, .2);
 	--severitium-gold-button-color: rgb(255, 226, 169);
 	--severitium-gold-button-border-color: rgba(242, 192, 27, .25);
 	--severitium-gold-button-border-color-hover: rgba(242, 192, 27, .75);
 
-	--severitium-blue-button-background: rgba(27, 120, 242, 0.2);
+	--severitium-blue-button-background: rgba(27, 120, 242, .2);
 	--severitium-blue-button-color: rgb(169, 182, 255);
 	--severitium-blue-button-border-color: rgba(27, 120, 242, .25);
 	--severitium-blue-button-border-color-hover: rgba(27, 120, 242, .75);

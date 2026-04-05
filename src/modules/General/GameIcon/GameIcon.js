@@ -41,7 +41,7 @@
 		}
 	};
 
-	const observer = new MutationObserver(mutations => {
+	onMutation(mutations => {
 		for (const mutation of mutations) {
 			for (const node of mutation.addedNodes) {
 				if (!(node instanceof Element)) continue;
@@ -52,8 +52,6 @@
 			}
 		}
 	});
-
-	observer.observe(document.body, { childList: true, subtree: true });
 
 	document.querySelectorAll('.-backgroundImageContain').forEach(processElement);
 })();
