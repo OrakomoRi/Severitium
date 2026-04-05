@@ -3581,6 +3581,12 @@
       "date": "2026-04-05",
       "comment": "1.9.3+build23 chore: minor patch",
       "hash": "0a1cac9fe848f90b93299d63c5d5533e92f70242"
+    },
+    {
+      "version": "1.9.3+build24",
+      "date": "2026-04-05",
+      "comment": "1.9.3+build24 fix: update inject-version logic",
+      "hash": "6b4ea424cd7b60a1e110bc93b294ab45fa6cf3d3"
     }
   ]
 }
