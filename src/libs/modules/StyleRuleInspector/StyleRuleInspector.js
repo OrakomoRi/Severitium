@@ -23,12 +23,14 @@ const _selectorRuleCache = new Map();
  * @param {string[]} [options.properties=['background', 'background-color']] - CSS property names to check
  * @param {'like'|'exact'} [options.match='like'] - Matching mode: 'like' = includes, 'exact' = strict equality
  * @param {string} options.value - The value to search for
+ * @param {boolean} [options.caseInsensitive=false] - Whether to compare values case-insensitively
  * @returns {boolean} Whether a matching rule was found
  */
 export function elementHasStyleRule(element, {
 	properties = ['background', 'background-color'],
 	match = 'like',
-	value = ''
+	value = '',
+	caseInsensitive = false
 }) {
 	const simpleClassRe = /^\.([\w-]+)$/;
 
@@ -44,9 +46,11 @@ export function elementHasStyleRule(element, {
 			if (!rule.style || !rule.selectorText) continue;
 
 			// Check if the rule's value matches before touching the DOM
+			const needle = caseInsensitive ? value.toLowerCase() : value;
 			const valueMatches = properties.some(prop => {
-				const val = rule.style.getPropertyValue(prop).trim();
-				return val && (match === 'exact' ? val === value : val.includes(value));
+				const raw = rule.style.getPropertyValue(prop).trim();
+				const val = caseInsensitive ? raw.toLowerCase() : raw;
+				return val && (match === 'exact' ? val === needle : val.includes(needle));
 			});
 			if (!valueMatches) continue;
 

@@ -5,9 +5,9 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 	// Selector for supply purchase buttons in the garage
 	const SELECTOR = '.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton';
 
-	// Map of background-image keyword fragments to data-price attribute values
+	// Map of background-image URL keyword fragments to data-price attribute values
 	const ICON_KEYWORDS = {
-		crystalsmall: 'crystal',
+		crystalSmall: 'crystal',
 		ruby: 'ruby',
 	};
 
@@ -23,7 +23,7 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 
 		// Match the icon's stylesheet rule against known currency keyword fragments
 		const key = Object.keys(ICON_KEYWORDS).find(k =>
-			elementHasStyleRule(icon, { properties: ['background-image', 'background'], value: k })
+			elementHasStyleRule(icon, { properties: ['background-image', 'background'], value: k, caseInsensitive: true })
 		);
 		if (key) el.setAttribute('data-price', ICON_KEYWORDS[key]);
 	}
