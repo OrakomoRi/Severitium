@@ -3647,6 +3647,12 @@
       "date": "2026-04-06",
       "comment": "1.9.3+build35 refactor: update import paths in GarageTab.js",
       "hash": "2364c64b3956bd47fd65cdc3f0786af3ccf217fd"
+    },
+    {
+      "version": "1.9.3+build36",
+      "date": "2026-04-06",
+      "comment": "1.9.3+build36 feat: enhance style rule inspection",
+      "hash": "4a185ebb33aabd9a5ec1f009bed512adf6cbb508"
     }
   ]
 }
