@@ -3665,6 +3665,12 @@
       "date": "2026-04-06",
       "comment": "1.9.3+build38 fix: correct rarity color mapping",
       "hash": "193daef133051c60292a6a51cb084788e4838848"
+    },
+    {
+      "version": "1.9.3+build39",
+      "date": "2026-04-07",
+      "comment": "1.9.3+build39 chore: minor patch",
+      "hash": "fdbb8d6d39b29214793233ad2b75154a4c06b17b"
     }
   ]
 }
