@@ -50,10 +50,10 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 	// Map of exact color values to rarity names
 	const RARITY_COLORS = {
 		'rgb(191, 213, 255)': 'common',
-		'rgb(118, 255, 51)':  'uncommon',
-		'rgb(0, 212, 255)':   'rare',
+		'rgb(118, 255, 51)': 'uncommon',
+		'rgb(0, 212, 255)': 'rare',
 		'rgb(170, 128, 255)': 'epic',
-		'rgb(255, 204, 0)':   'legendary',
+		'rgb(255, 204, 0)': 'legendary',
 		'rgb(254, 102, 102)': 'mystic',
 	};
 
@@ -67,8 +67,7 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 		const rarity = Object.keys(RARITY_COLORS).find(color =>
 			elementHasStyleRule(el, { properties: ['color'], value: color, match: 'exact' })
 		);
-		const target = el.closest('.PaintsCollectionComponentStyle-commonBlockDescriptionCollection');
-		if (target) target.setAttribute('data-rarity', rarity ?? '');
+		el.setAttribute('data-rarity', rarity ? RARITY_COLORS[rarity] : '');
 	}
 
 	watchElement(
