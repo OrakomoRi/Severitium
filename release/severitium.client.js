@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	const CLIENT_VERSION = '1.9.3+build38';
+	const CLIENT_VERSION = '1.9.3+build39';
 
 	const isLogging = false;
 
@@ -9,6 +9,22 @@
 
 	if (typeof modAPI === 'undefined') {
 		console.error('[Severitium] No modAPI provided. This script requires TankiOnline ModLoader.');
+
+		function showBlackScreenError() {
+			const screen = document.querySelector('.severitium-black-screen[data-severitium="black-screen"]');
+			if (!screen) return;
+			const msg = document.createElement('p');
+			msg.style.cssText = 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);margin:0;color:#fff;font-family:sans-serif;font-size:1rem;text-align:center;line-height:1.6;pointer-events:none;';
+			msg.textContent = 'Please update the VibeTO mod loader or restore default app.asar.';
+			screen.appendChild(msg);
+		}
+
+		if (document.body) {
+			showBlackScreenError();
+		} else {
+			document.addEventListener('DOMContentLoaded', showBlackScreenError);
+		}
+
 		return;
 	}
 
