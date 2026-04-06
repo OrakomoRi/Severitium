@@ -3659,6 +3659,12 @@
       "date": "2026-04-06",
       "comment": "1.9.3+build37 feat: enhance mutation handling and add SVG assets",
       "hash": "ad50f27416042d910b989bd8938e06b0f305b87d"
+    },
+    {
+      "version": "1.9.3+build38",
+      "date": "2026-04-06",
+      "comment": "1.9.3+build38 fix: correct rarity color mapping",
+      "hash": "193daef133051c60292a6a51cb084788e4838848"
     }
   ]
 }
