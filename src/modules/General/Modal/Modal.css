@@ -935,8 +935,8 @@
 	-webkit-backdrop-filter: blur(.5em);
 	        backdrop-filter: blur(.5em);
 	box-shadow: inset var(--severitium-gray-color) 0 0 0 .1em;
-	border: 0;
-	outline: 0;
+	border: none;
+	outline: none;
 	-webkit-appearance: none;
 	        appearance: none;
 	border-radius: var(--severitium-border-radius);
@@ -2236,6 +2236,11 @@
 	bottom: auto;
 	width: 100%;
 	height: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	gap: .5em;
 }
 
 /* Price inner block */
@@ -2260,6 +2265,23 @@
 
 .SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card .SaleByKitStyle-blockPrice .GarageItemComponentStyle-itemPriceInRubies span {
 	color: var(--severitium-ruby-color);
+}
+
+/* Discount block */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card .SaleByKitStyle-blockPrice .GarageCommonStyle-discountLabel {
+	width: auto;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-family: BaseFontRegular, FallbackFontRegular;
+	font-size: 1em;
+	color: var(--severitium-black-text-color);
+	background-color: var(--severitium-red-color);
+	border: none;
+	border-radius: var(--severitium-border-radius);
 }
 
 /* Original purchased icon */
