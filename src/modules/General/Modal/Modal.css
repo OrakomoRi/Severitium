@@ -2275,13 +2275,21 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	text-align: center;
-	font-family: BaseFontRegular, FallbackFontRegular;
-	font-size: 1em;
-	color: var(--severitium-black-text-color);
+	padding: .1em .25em;
 	background-color: var(--severitium-red-color);
 	border: none;
 	border-radius: var(--severitium-border-radius);
+}
+
+/* Discount text */
+
+.SaleByKitStyle-commonBlockModal div > .SaleByKitStyle-commonCard .SaleByKitStyle-card .SaleByKitStyle-blockPrice .GarageCommonStyle-discountLabel span {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: BaseFontMedium, FallbackFontMedium;
+	font-size: 1em;
+	color: var(--severitium-black-text-color);
 }
 
 /* Original purchased icon */
