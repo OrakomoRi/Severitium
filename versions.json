@@ -3671,6 +3671,12 @@
       "date": "2026-04-07",
       "comment": "1.9.3+build39 chore: minor patch",
       "hash": "fdbb8d6d39b29214793233ad2b75154a4c06b17b"
+    },
+    {
+      "version": "1.9.3+build42",
+      "date": "2026-04-12",
+      "comment": "1.9.3+build42 feat: enhance FriendsScreen styles",
+      "hash": "2835783e0df11ff5c1b9dcbe1b81840edb068a75"
     }
   ]
 }
