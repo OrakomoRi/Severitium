@@ -68,6 +68,7 @@
 
 .InvitationWindowsComponentStyle-usersScroll > div > div > .InvitationWindowsComponentStyle-rankContainer {
 	position: relative;
+	margin: 0;
 }
 
 /* Figure under the rank image */
@@ -103,26 +104,54 @@
 			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path d="M16.29 2.59a.7.7 0 0 0-1 0L6.98 10.9 2.7 6.59a.7.7 0 0 0-1 0L.2 8.09c-.27.27-.27.72 0 1l6.27 6.32c.27.27.72.27 1 0L17.78 5.1a.7.7 0 0 0 0-1l-1.5-1.5Z"/></svg>');
 }
 
+/* Friend's nickname container */
+
+.InvitationWindowsComponentStyle-rankContainer + div {
+	width: auto;
+	height: auto;
+	min-width: auto;
+	min-height: auto;
+	max-width: unset;
+	max-height: unset;
+	flex-grow: 1;
+	margin: 0;
+}
+
 /* Friend's nickname text */
 
-.InvitationWindowsComponentStyle-containerUid span {
+.InvitationWindowsComponentStyle-rankContainer + div span {
 	color: var(--severitium-green-text-color);
 	transition: color .2s ease;
 }
 
 /* Friend's nickname text on container's hover */
 
-.InvitationWindowsComponentStyle-usersScroll > div > div:hover .InvitationWindowsComponentStyle-containerUid span {
+.InvitationWindowsComponentStyle-usersScroll > div > div:hover .InvitationWindowsComponentStyle-rankContainer + div span {
 	color: var(--severitium-main-color);
 }
 
 /* Single friends online container */
 
 .InvitationWindowsComponentStyle-onlineContainer {
+	position: relative;
+	top: unset;
+	left: unset;
+	right: unset;
+	bottom: unset;
 	width: auto;
+	height: auto;
+	min-width: auto;
+	min-height: auto;
+	max-width: unset;
+	max-height: unset;
 	display: flex;
 	flex-direction: column;
+	align-items: flex-end;
+	justify-content: flex-start;
+	align-self: stretch;
 	gap: .25em;
+	margin: 0;
+	margin-top: .25em;
 }
 
 /* Single friends online state */
@@ -130,12 +159,14 @@
 /* Online */
 
 .InvitationWindowsComponentStyle-onlineContainer .InvitationWindowsComponentStyle-onlineLabel {
+	margin: 0;
 	color: var(--severitium-green-text-color);
 }
 
 /* Single friends online date/map */
 
 .InvitationWindowsComponentStyle-onlineContainer .InvitationWindowsComponentStyle-battleLabel {
+	margin: 0;
 	color: var(--severitium-light-gray-text-color);
 }
 
