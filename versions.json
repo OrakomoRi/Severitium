@@ -3677,6 +3677,12 @@
       "date": "2026-04-12",
       "comment": "1.9.3+build42 feat: enhance FriendsScreen styles",
       "hash": "2835783e0df11ff5c1b9dcbe1b81840edb068a75"
+    },
+    {
+      "version": "1.9.3+build43",
+      "date": "2026-04-13",
+      "comment": "1.9.3+build43 style: update Friends and Invite screens",
+      "hash": "3525729314499f26531bdf59b28beadcf7597a6c"
     }
   ]
 }
