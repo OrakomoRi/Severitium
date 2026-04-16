@@ -3683,6 +3683,12 @@
       "date": "2026-04-13",
       "comment": "1.9.3+build43 style: update Friends and Invite screens",
       "hash": "3525729314499f26531bdf59b28beadcf7597a6c"
+    },
+    {
+      "version": "1.9.3+build44",
+      "date": "2026-04-16",
+      "comment": "1.9.3+build44 style: update Garage preview styles",
+      "hash": "5ee8f3df15bbc1d614f3bca29a0ef529b3cf7259"
     }
   ]
 }
