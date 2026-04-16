@@ -509,6 +509,7 @@
 	width: auto;
 	height: auto;
 	aspect-ratio: 1 / 1;
+	display: grid;
 	margin: 0;
 }
 
@@ -520,6 +521,14 @@
 	grid-column: 1 / -1;
 	aspect-ratio: 2 / 1;
 	margin: 0;
+}
+
+/* Drone and grenade block images */
+
+.MountedItemsStyle-commonBlockDrone:not(:root) img.MountedItemsStyle-itemPreview,
+.MountedItemsStyle-commonBlockGrenades:not(:root) img.MountedItemsStyle-itemPreview {
+	align-self: center;
+	justify-self: center;
 }
 
 /* Supply count block */
