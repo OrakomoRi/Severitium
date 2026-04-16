@@ -276,82 +276,142 @@
 				<div class="step">
 					<div class="step-num">01.</div>
 					<div class="step-body">
-						<div class="step-title" data-i18n="install.client.step1.title">Download Tanki Online Client
-						</div>
+						<div class="step-title" data-i18n="install.client.step1.title">Download Tanki Online Client</div>
 						<div class="step-desc">
-							<span data-i18n="install.client.step1.desc">Get the desktop game client from
-							the official Tanki Online website.</span></div>
+							<span data-i18n="install.client.step1.desc">Get the desktop game client from the official Tanki Online website.</span>
+						</div>
 					</div>
 				</div>
 				<div class="step">
 					<div class="step-num">02.</div>
 					<div class="step-body">
-						<div class="step-title" data-i18n="install.client.step2.title">Navigate to Game Directory</div>
+						<div class="step-title" data-i18n="install.client.step2.title">Install VibeTO Mod Loader</div>
+						<div class="step-desc" data-i18n="install.client.step2.desc">Download and run VibeTOInstaller.exe. The installer automatically locates the game directory, downloads components, backs up original files, and patches the game.</div>
+					</div>
+					<div class="step-action">
+						<a href="#" data-download="vibeto" data-file="VibeTOInstaller.exe" class="btn btn-ghost btn--sm">
+							<ion-icon name="download-outline"></ion-icon>
+							<span data-i18n="install.client.step2.btn">Download</span>
+						</a>
+					</div>
+				</div>
+				<div class="step step--warning">
+					<div class="step-num">!</div>
+					<div class="step-body">
+						<div class="step-title" data-i18n="install.client.defender.title">Windows Defender</div>
+						<div class="step-desc" data-i18n="install.client.defender.desc">The installer may be flagged by Windows SmartScreen. Click "More info", then "Run anyway" to proceed.</div>
+					</div>
+				</div>
+				<div class="step step--note">
+					<div class="step-num">~</div>
+					<div class="step-body">
+						<div class="step-title" data-i18n="install.client.fallback.title">Manual Installation</div>
+						<div class="step-desc" data-i18n="install.client.fallback.desc">If the installer does not work, download and place the files below manually.</div>
+					</div>
+					<div class="step-action">
+						<a href="https://github.com/OrakomoRi/VibeTO/blob/main/INSTALL.md" target="_blank" class="btn btn-ghost btn--sm">
+							<ion-icon name="book-outline"></ion-icon>
+							<span data-i18n="install.client.fallback.guide">Full guide</span>
+						</a>
+					</div>
+				</div>
+				<div class="step step--note">
+					<div class="step-num"><ion-icon name="arrow-down-outline"></ion-icon></div>
+					<div class="step-body">
+						<div class="step-title">app.asar</div>
 						<div class="step-desc">
-							<span data-i18n="install.client.step2.desc">Usually located at</span>
-							<span class="step-code">%LOCALAPPDATA%\Programs\Tanki
-								Online</span>
+							<span data-i18n="install.client.fallback.asar.desc">Place at:</span>
+							<div class="step-paths">
+								<div class="step-path">
+									<span class="step-path-os">Windows</span>
+									<span class="step-code">%LOCALAPPDATA%\Programs\Tanki Online\resources\app.asar</span>
+								</div>
+								<div class="step-path">
+									<span class="step-path-os">macOS</span>
+									<span class="step-code">/Applications/Tanki Online.app/Contents/Resources/app.asar</span>
+								</div>
+								<div class="step-path">
+									<span class="step-path-os">Linux</span>
+									<span class="step-code">~/.local/share/TankiOnline/resources/app.asar</span>
+								</div>
+							</div>
 						</div>
+					</div>
+					<div class="step-action">
+						<a href="#" data-download="vibeto" data-file="app.asar" class="btn btn-ghost btn--sm">
+							<ion-icon name="download-outline"></ion-icon>
+							<span data-i18n="install.client.fallback.btn">Download</span>
+						</a>
+					</div>
+				</div>
+				<div class="step step--note">
+					<div class="step-num"><ion-icon name="arrow-down-outline"></ion-icon></div>
+					<div class="step-body">
+						<div class="step-title">mod-loader.js</div>
+						<div class="step-desc">
+							<span data-i18n="install.client.fallback.loader.desc">Place in the VibeTO data folder:</span>
+							<div class="step-paths">
+								<div class="step-path">
+									<span class="step-path-os">Windows</span>
+									<span class="step-code">%APPDATA%\VibeTO\</span>
+								</div>
+								<div class="step-path">
+									<span class="step-path-os">macOS</span>
+									<span class="step-code">~/Library/Application Support/VibeTO/</span>
+								</div>
+								<div class="step-path">
+									<span class="step-path-os">Linux</span>
+									<span class="step-code">~/.config/VibeTO/</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="step-action">
+						<a href="#" data-download="vibeto" data-file="mod-loader.js" class="btn btn-ghost btn--sm">
+							<ion-icon name="download-outline"></ion-icon>
+							<span data-i18n="install.client.fallback.btn">Download</span>
+						</a>
 					</div>
 				</div>
 				<div class="step">
 					<div class="step-num">03.</div>
 					<div class="step-body">
-						<div class="step-title" data-i18n="install.client.step3.title">Backup the Resources Folder</div>
+						<div class="step-title" data-i18n="install.client.step3.title">Create mods Folder</div>
 						<div class="step-desc">
-							<span data-i18n="install.client.step3.desc.part1">Find the</span>
-							<span class="step-code">resources</span>
-							<span data-i18n="install.client.step3.desc.part2">folder. Create a backup before proceeding.</span>
+							<span data-i18n="install.client.step3.desc">Create the VibeTO data directory for your platform:</span>
+							<div class="step-paths">
+								<div class="step-path">
+									<span class="step-path-os">Windows</span>
+									<span class="step-code">%APPDATA%\VibeTO\mods\</span>
+								</div>
+								<div class="step-path">
+									<span class="step-path-os">macOS</span>
+									<span class="step-code">~/Library/Application Support/VibeTO/mods/</span>
+								</div>
+								<div class="step-path">
+									<span class="step-path-os">Linux</span>
+									<span class="step-code">~/.config/VibeTO/mods/</span>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="step">
 					<div class="step-num">04.</div>
 					<div class="step-body">
-						<div class="step-title" data-i18n="install.client.step4.title">Replace app.asar</div>
+						<div class="step-title" data-i18n="install.client.step4.title">Install severitium.client.js</div>
 						<div class="step-desc">
-							<span data-i18n="install.client.step4.desc.part1">Download the modded</span>
-							<span class="step-code">app.asar</span>
-							<span data-i18n="install.client.step4.desc.part2">file and replace the original in the</span>
-							<span class="step-code">resources</span>
-							<span data-i18n="install.client.step4.desc.part3">folder.</span>
-						</div>
-					</div>
-					<div class="step-action">
-						<a href="#" data-download="stable" data-file="release/app.asar" data-platform="client" class="btn btn-ghost btn--sm">
-							<ion-icon name="download-outline"></ion-icon>
-							<span data-i18n="install.client.step4.btn">Download</span>
-						</a>
-					</div>
-				</div>
-				<div class="step">
-					<div class="step-num">05.</div>
-					<div class="step-body">
-						<div class="step-title" data-i18n="install.client.step5.title">Add the mods Folder</div>
-						<div class="step-desc">
-							<span data-i18n="install.client.step5.desc">In the main game directory, create a folder named</span>
-							<span class="step-code">mods</span>
-							<span>.</span>
-						</div>
-					</div>
-				</div>
-				<div class="step">
-					<div class="step-num">06.</div>
-					<div class="step-body">
-						<div class="step-title" data-i18n="install.client.step6.title">Install severitium.client.js
-						</div>
-						<div class="step-desc">
-							<span data-i18n="install.client.step6.desc.part1">Download</span>
+							<span data-i18n="install.client.step4.desc.part1">Download</span>
 							<span class="step-code">severitium.client.js</span>
-							<span data-i18n="install.client.step6.desc.part2">and place it inside the</span>
+							<span data-i18n="install.client.step4.desc.part2">and place it inside the</span>
 							<span class="step-code">mods</span>
-							<span data-i18n="install.client.step6.desc.part3">folder.</span>
+							<span data-i18n="install.client.step4.desc.part3">folder.</span>
 						</div>
 					</div>
 					<div class="step-action">
 						<a href="#" data-download="stable" data-file="release/severitium.client.js" data-platform="client" class="btn btn-primary btn--sm">
 							<ion-icon name="download-outline"></ion-icon>
-							<span data-i18n="install.client.step6.btn">Download</span>
+							<span data-i18n="install.client.step4.btn">Download</span>
 						</a>
 					</div>
 				</div>

@@ -10,6 +10,7 @@ import InstallTabsController from './controllers/InstallTabsController.js';
 import ScrollController from './controllers/ScrollController.js';
 import DownloadController from './controllers/DownloadController.js';
 import HeroGlitchController from './controllers/HeroGlitchController.js';
+import PathCopyController from './controllers/PathCopyController.js';
 import './components/SimpleIcon.js';
 
 
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	new InstallTabsController().init();
 	new DownloadController().init();
 	new HeroGlitchController().init();
+	new PathCopyController().init();
 
 	if (typeof AOS !== 'undefined') {
 		AOS.init({ duration: 450, easing: 'ease-out-quad', once: false, offset: 60 });

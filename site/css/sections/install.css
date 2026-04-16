@@ -71,6 +71,11 @@
 	letter-spacing: .05em;
 }
 
+.step-num ion-icon {
+	font-size: 1rem;
+	vertical-align: middle;
+}
+
 .step-body {
 	/* Grid handles sizing */
 }
@@ -155,6 +160,89 @@
 	color: var(--amber);
 }
 
+.step--note {
+	background-color: rgba(67, 184, 233, .04);
+	border-left: 2px solid var(--cyan);
+}
+
+.step--note .step-num {
+	color: var(--cyan);
+}
+
+.step--note .step-title {
+	color: var(--cyan);
+}
+
+.step-paths {
+	display: flex;
+	flex-direction: column;
+	gap: .35rem;
+	margin-top: .6rem;
+}
+
+.step-path {
+	display: flex;
+	align-items: center;
+	gap: .6rem;
+}
+
+.step-path-os {
+	font-family: var(--mono);
+	font-size: .7rem;
+	color: var(--dim);
+	min-width: 3.5rem;
+	flex-shrink: 0;
+}
+
+.step-path .step-code {
+	position: relative;
+	display: inline-block;
+	padding-right: 1.4em;
+}
+
+.step-path-copy {
+	position: absolute;
+	top: .2em;
+	right: .2em;
+	display: flex;
+	align-items: center;
+	background: none;
+	border: none;
+	color: var(--dim);
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity .15s, color .15s;
+	font-size: .8rem;
+	padding: 0;
+	height: fit-content;
+}
+
+.step-path:hover .step-path-copy {
+	opacity: 1;
+}
+
+.step-path-copy:hover {
+	color: var(--text);
+}
+
+.step-path-copy--done {
+	color: var(--cyan) !important;
+	opacity: 1 !important;
+}
+
+.step-link {
+	display: inline;
+	color: var(--cyan);
+	text-decoration: none;
+	font-size: .9rem;
+	margin-left: .3em;
+	transition: opacity .15s;
+}
+
+.step-link:hover {
+	opacity: .75;
+}
+
 @media (max-width: 900px) {
 	.steps {
 		max-width: 100%;
@@ -179,6 +267,25 @@
 	.step-action {
 		justify-content: center;
 		margin-top: .25rem;
+	}
+
+	.step-paths {
+		gap: .5rem;
+	}
+
+	.step-path {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: .2rem;
+	}
+
+	.step-path-os {
+		min-width: unset;
+	}
+
+	.step-path .step-code {
+		word-break: break-all;
+		max-width: 100%;
 	}
 }
 
