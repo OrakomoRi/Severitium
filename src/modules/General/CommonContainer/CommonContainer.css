@@ -9,6 +9,18 @@
 	z-index: unset;
 }
 
+.-container::before {
+	content: '';
+	display: block;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	background-color: var(--severitium-main-color);
+	opacity: .025;
+}
+
 /* The main container everywhere except the lobby */
 
 .-container:not(:has(> [class*="mainscreen" i])):not(:has(> [class*="garagecontainer" i])) {
