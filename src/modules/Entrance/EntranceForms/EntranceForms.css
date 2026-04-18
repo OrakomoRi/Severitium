@@ -540,6 +540,8 @@
 /* Alert text block's text */
 
 .EntranceComponentStyle-ContainerForm form .RegistrationComponentStyle-containerItem .EntranceComponentStyle-commonBlockMessageError .EntranceComponentStyle-informationWriting > span {
+	width: fit-content;
+	height: fit-content;
 	color: var(--severitium-white-text-color);
 }
 
