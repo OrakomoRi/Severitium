@@ -86,7 +86,7 @@ import { onMutation } from '../../../../libs/modules/MutationHandler/MutationHan
 	]);
 
 	// Selector for all candidate elements
-	const candidateSelector = '.BattleTabStatisticComponentStyle-deviceCell div, .BattleTabStatisticComponentStyle-container div, .BattleTabStatisticComponentStyle-defenceCell div';
+	const candidateSelector = '.BattleTabStatisticComponentStyle-deviceCell div, .BattleTabStatisticComponentStyle-commonBlockScroll + div div, .BattleTabStatisticComponentStyle-defenceCell div, .BattleTabStatisticComponentStyle-defenceLabel div';
 
 	/**
 	 * General function to process elements and apply styling based on background or mask image.
