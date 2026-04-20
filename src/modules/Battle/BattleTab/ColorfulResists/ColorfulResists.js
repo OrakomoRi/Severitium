@@ -100,16 +100,18 @@ import { onMutation } from '../../../../libs/modules/MutationHandler/MutationHan
 
 		const computedStyle = getComputedStyle(element);
 		const backgroundImage = computedStyle.backgroundImage;
-
-		// Skip elements with no meaningful background image
-		if (!backgroundImage || backgroundImage === 'none') return;
-
 		const maskImage = computedStyle.maskImage;
+
+		const hasBg = backgroundImage && backgroundImage !== 'none';
+		const hasMask = maskImage && maskImage !== 'none';
+
+		if (!hasBg && !hasMask) return;
 
 		// Check turret resistances
 		for (const [key, value] of turretColorMap) {
-			if (backgroundImage.includes(key) || maskImage.includes(key)) {
-				applyStyledElement(element, value, computedStyle, maskImage.includes(key));
+			const inMask = hasMask && maskImage.includes(key);
+			if (inMask || (hasBg && backgroundImage.includes(key))) {
+				applyStyledElement(element, value, computedStyle, inMask);
 				element.dataset.severitiumProcessed = '1';
 				return;
 			}
@@ -117,7 +119,7 @@ import { onMutation } from '../../../../libs/modules/MutationHandler/MutationHan
 
 		// Check immunity resistances
 		for (const [key, value] of immunityColorMap) {
-			if (backgroundImage.includes(key)) {
+			if ((hasBg && backgroundImage.includes(key)) || (hasMask && maskImage.includes(key))) {
 				applyStyledElement(element, value);
 				element.dataset.severitiumProcessed = '1';
 				return;
