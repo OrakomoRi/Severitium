@@ -3701,6 +3701,12 @@
       "date": "2026-04-18",
       "comment": "1.9.3+build46 style: adjust error message container dimensions",
       "hash": "deeac55291d2a76649073c7e05fb518d11021cb7"
+    },
+    {
+      "version": "1.9.3+build48",
+      "date": "2026-04-20",
+      "comment": "1.9.3+build48 fix: enhance background and mask image handling",
+      "hash": "6fdd57d344574e8c1f633bd9acced37d8c5b6b27"
     }
   ]
 }
