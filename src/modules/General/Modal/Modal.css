@@ -1518,7 +1518,7 @@
 
 /* Item description modal header hotkey block */
 
-.ItemDescriptionComponentStyle-commonBlockModal > div .-commonBlockForHotKey {
+.ItemDescriptionComponentStyle-commonBlockModal > div[class*='header'i] .-commonBlockForHotKey {
 	display: none;
 }
 
