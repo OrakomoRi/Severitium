@@ -3707,6 +3707,12 @@
       "date": "2026-04-20",
       "comment": "1.9.3+build48 fix: enhance background and mask image handling",
       "hash": "6fdd57d344574e8c1f633bd9acced37d8c5b6b27"
+    },
+    {
+      "version": "1.9.3+build49",
+      "date": "2026-04-24",
+      "comment": "1.9.3+build49 fix: update modal header styling",
+      "hash": "29c07a976f50b84dc3d5ba628c58847919680246"
     }
   ]
 }
