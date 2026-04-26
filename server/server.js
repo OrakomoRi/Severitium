@@ -1,21 +1,11 @@
 import express from 'express';
-import path from 'path';
-import fs from 'fs';
-import { fileURLToPath } from 'url';
 import { KeepAlive } from './keepAlive.js';
 import { trackRouter } from './track.js';
 import { nicknameRouter } from './nickname.js';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT_DIR = path.join(__dirname, '..');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const VERSIONS_CDN = 'https://severitium-builds.vercel.app';
-
-/**
- * Track user endpoint
- */
 app.use('/api/track', trackRouter);
 app.use('/api/nickname', nicknameRouter);
 
@@ -31,45 +21,6 @@ app.get('/api/health', (req, res) => {
 	});
 });
 
-/**
- * Redirect /versions/* to Vercel CDN.
- * The server no longer rebuilds when version assets are pushed,
- * so files are always fetched from Vercel which deploys automatically.
- */
-app.get('/versions/*splat', (req, res) => {
-	const relativePath = Array.isArray(req.params.splat)
-		? req.params.splat.join('/')
-		: req.params.splat;
-
-	// Prevent path traversal: only allow safe path characters
-	if (/\.\./.test(relativePath)) {
-		return res.status(403).end();
-	}
-
-	res.redirect(301, `${VERSIONS_CDN}/versions/${relativePath}`);
-});
-
-/**
- * Serve root-level static files (stable.json, versions.json, loader.min.js).
- */
-app.get('/:file', (req, res) => {
-	const allowed = ['stable.json', 'versions.json', 'loader.min.js'];
-	const { file } = req.params;
-
-	if (!allowed.includes(file)) {
-		return res.status(404).end();
-	}
-
-	const filePath = path.join(ROOT_DIR, file);
-
-	if (!fs.existsSync(filePath)) {
-		return res.status(404).end();
-	}
-
-	res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
-	res.setHeader('Access-Control-Allow-Origin', '*');
-	res.sendFile(filePath);
-});
 
 /**
  * Handles graceful shutdown.
