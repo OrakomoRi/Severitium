@@ -1,9 +1,44 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import { request } from 'https';
 
-export default function handler(req, res) {
-	const data = JSON.parse(readFileSync(join(process.cwd(), 'stable.json'), 'utf-8'));
-	const latest = data.versions[data.versions.length - 1];
+function checkUrl(url) {
+	return new Promise((resolve) => {
+		const req = request(url, { method: 'HEAD' }, (res) => {
+			resolve(res.statusCode >= 200 && res.statusCode < 400);
+		});
+		req.on('error', () => resolve(false));
+		req.end();
+	});
+}
+
+export default async function handler(req, res) {
+	res.setHeader('Access-Control-Allow-Origin', '*');
+
+	let data;
+	try {
+		data = JSON.parse(readFileSync(join(process.cwd(), 'stable.json'), 'utf-8'));
+	} catch {
+		return res.status(500).json({ error: 'Failed to read stable.json' });
+	}
+
+	const versions = data?.versions;
+	if (!Array.isArray(versions) || versions.length === 0) {
+		return res.status(500).json({ error: 'No versions found in stable.json' });
+	}
+
+	const latest = versions[versions.length - 1];
+	if (!latest?.version) {
+		return res.status(500).json({ error: 'Latest version has no version' });
+	}
+
 	const url = `https://github.com/OrakomoRi/Severitium/releases/download/${latest.version}/severitium.client.js`;
-	res.redirect(302, url);
+
+	const exists = await checkUrl(url);
+	if (!exists) {
+		return res.status(404).json({ error: 'Resource not found', url });
+	}
+
+	res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+	return res.redirect(302, url);
 }
