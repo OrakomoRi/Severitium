@@ -30,29 +30,50 @@ See the [changelog](CHANGELOG.md)
 
 ## :bulb: Getting Started
 
-Keep in mind that when you first load or update the script, it takes some time for the interface to load.
+> [!NOTE]
+> Keep in mind that when you first load or update the script, it takes some time for the interface to load.
 
 ### Browser
 
 1. Download [Tampermonkey](https://www.tampermonkey.net/)
 
-2. Add or update [script](https://github.com/OrakomoRi/Severitium/blob/a424bedd85050c111956c655c37be8bacea460d0/release/severitium.user.js) in Tampermonkey
+2. Add or update [script](https://severitium-builds.vercel.app/api/stable/web) in Tampermonkey
 
 ### Client
 
+#### Automatic Installation
+
 1. Download [Tanki Online Client](https://tankionline.com/)
 
-2. Navigate to the game directory (usually `%LOCALAPPDATA%\Programs\Tanki Online`)
+2. Download and run `VibeTOInstaller.exe` from [VibeTO releases](https://github.com/OrakomoRi/VibeTO/releases/latest). The installer automatically locates the game directory, downloads components, backs up original files, patches the game, and creates the `mods` folder.
 
-3. Find there `resources` folder (you may create a backup of it)
+   > **Note:** The installer may be flagged by Windows SmartScreen. Click "More info", then "Run anyway" to proceed.
 
-4. Download modded `app.asar` file from [here](https://github.com/OrakomoRi/Severitium/blob/a424bedd85050c111956c655c37be8bacea460d0/release/app.asar) and replace the original one with it
+3. Download `severitium.client.js` from [here](https://severitium-builds.vercel.app/api/stable/client) and place it in the `mods` folder:
+   - **Windows:** `%APPDATA%\VibeTO\mods\`
+   - **macOS:** `~/Library/Application Support/VibeTO/mods/`
+   - **Linux:** `~/.config/VibeTO/mods/`
 
-5. Return to the main directory
+#### Manual Installation
 
-6. Add `mods` folder
+If the installer does not work, follow these steps manually:
 
-7. Download `severitium.client.js` file from [here](https://github.com/OrakomoRi/Severitium/blob/a424bedd85050c111956c655c37be8bacea460d0/release/severitium.client.js) and place it in `mods` folder
+1. Download `app.asar` and place it at (make a backup of the original first):
+   - **Windows:** `%LOCALAPPDATA%\Programs\Tanki Online\resources\app.asar`
+   - **macOS:** `/Applications/Tanki Online.app/Contents/Resources/app.asar`
+   - **Linux:** `~/.local/share/TankiOnline/resources/app.asar`
+
+2. Download `mod-loader.js` and place it in the VibeTO data folder:
+   - **Windows:** `%APPDATA%\VibeTO\`
+   - **macOS:** `~/Library/Application Support/VibeTO/`
+   - **Linux:** `~/.config/VibeTO/`
+
+3. Create the `VibeTO` data folder and `mods` subfolder for your platform (if they don't exist):
+   - **Windows:** `%APPDATA%\VibeTO\mods\`
+   - **macOS:** `~/Library/Application Support/VibeTO/mods/`
+   - **Linux:** `~/.config/VibeTO/mods/`
+
+4. Download `severitium.client.js` from [here](https://severitium-builds.vercel.app/api/stable/client) and place it in the `mods` folder
 
 
 ## :rocket: Browser Compatibility

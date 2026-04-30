@@ -276,6 +276,24 @@
 	color: var(--severitium-red-button-color);
 }
 
+/* Disabled button */
+
+.ClanInfoComponentStyle-foreignClanActions > div:first-child.ButtonComponentStyle-disabled:not(:root):not(:root) {
+	outline: none;
+	box-shadow: none;
+	border: transparent solid .1em;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-gray-button-background);
+	pointer-events: none;
+}
+
+/* Button's text */
+
+.ClanInfoComponentStyle-foreignClanActions > div:first-child.ButtonComponentStyle-disabled:not(:root):not(:root) > span {
+	color: var(--severitium-gray-button-color);
+	opacity: .5;
+}
+
 /* Foreign clan's send request button */
 
 .ClanInfoComponentStyle-foreignClanActions > div:last-child > div:has(> span) {
