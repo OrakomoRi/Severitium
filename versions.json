@@ -3713,6 +3713,12 @@
       "date": "2026-04-24",
       "comment": "1.9.3+build49 fix: update modal header styling",
       "hash": "29c07a976f50b84dc3d5ba628c58847919680246"
+    },
+    {
+      "version": "1.9.3+build50",
+      "date": "2026-04-30",
+      "comment": "1.9.3+build50 feat: enhance installation instructions and add disabled button styles",
+      "hash": "896bba849e4a541f9e7129c76068f97a853ad5d1"
     }
   ]
 }
