@@ -3719,6 +3719,12 @@
       "date": "2026-04-30",
       "comment": "1.9.3+build50 feat: enhance installation instructions and add disabled button styles",
       "hash": "896bba849e4a541f9e7129c76068f97a853ad5d1"
+    },
+    {
+      "version": "1.9.3+build51",
+      "date": "2026-05-02",
+      "comment": "1.9.3+build51 chore: update build configurations",
+      "hash": "79619b99ebe3552474c4c2dd060642b1a30dc7be"
     }
   ]
 }
