@@ -128,6 +128,20 @@
 	color: var(--severitium-white-text-color);
 }
 
+/* Link inner text */
+
+.NewsComponentStyle-newsItemBody a u {
+	-webkit-text-decoration: none;
+			text-decoration: none;
+}
+
+/* Link inner text on hover */
+
+.NewsComponentStyle-newsItemBody a:hover u {
+	-webkit-text-decoration: none;
+			text-decoration: none;
+}
+
 /* Close area when news window overlays the game */
 
 .NewsComponentStyle-closeArea {
