@@ -3725,6 +3725,12 @@
       "date": "2026-05-02",
       "comment": "1.9.3+build51 chore: update build configurations",
       "hash": "79619b99ebe3552474c4c2dd060642b1a30dc7be"
+    },
+    {
+      "version": "1.9.3+build53",
+      "date": "2026-05-04",
+      "comment": "1.9.3+build53 feat: add link styles for news item body",
+      "hash": "086b98e42dd539eed53f25624061917c945379a2"
     }
   ]
 }
