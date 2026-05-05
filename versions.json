@@ -3731,6 +3731,12 @@
       "date": "2026-05-04",
       "comment": "1.9.3+build53 feat: add link styles for news item body",
       "hash": "086b98e42dd539eed53f25624061917c945379a2"
+    },
+    {
+      "version": "1.9.3+build54",
+      "date": "2026-05-05",
+      "comment": "1.9.3+build54 style: update card styles in BattleMode",
+      "hash": "6816d73b9ff9f8eb986b013d8c2a296b56ffa730"
     }
   ]
 }
