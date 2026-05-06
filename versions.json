@@ -3743,6 +3743,12 @@
       "date": "2026-05-06",
       "comment": "1.9.3+build55 style: update card class selectors",
       "hash": "9beeba61bac0f728c484bc34fc614e7507bcce53"
+    },
+    {
+      "version": "1.9.3+build56",
+      "date": "2026-05-06",
+      "comment": "1.9.3+build56 fix: handle HTTP response status codes",
+      "hash": "90297b607f1238bc2ab6001d625a095ce2e95b61"
     }
   ]
 }
