@@ -1,6 +1,6 @@
 /* Single mode card */
 
-[class*='blockcenter'i] > div > div > div[class*='card'i] {
+[class*='blockcenter0'i] > div > div > div[class*='card'i] {
 	background-color: var(--severitium-dark-transparent-background2);
 	-webkit-backdrop-filter: blur(.2em);
 			backdrop-filter: blur(.2em);
@@ -11,27 +11,27 @@
 
 /* Single link card on hover */
 
-[class*='blockcenter'i] > div > div > div[class*='card'i]:hover {
+[class*='blockcenter0'i] > div > div > div[class*='card'i]:hover {
 	background-color: var(--severitium-dark-transparent-background1);
 	box-shadow: 0 0 .25em .05em var(--severitium-main-color);
 }
 
 /* Header of a card */
 
-[class*='blockcenter'i] > div > div > div[class*='card'i] > div:first-child > h2 {
+[class*='blockcenter0'i] > div > div > div[class*='card'i] > div:first-child > h2 {
 	color: var(--severitium-white-text-color);
 	transition: color .2s ease;
 }
 
 /* Header of a card on card hover */
 
-[class*='blockcenter'i] > div > div > div[class*='card'i]:hover > div:first-child > h2 {
+[class*='blockcenter0'i] > div > div > div[class*='card'i]:hover > div:first-child > h2 {
 	color: var(--severitium-main-color);
 }
 
 /* Icon of a card */
 
-[class*='blockcenter'i] > div > div > div[class*='card'i] > div:nth-child(2) > div {
+[class*='blockcenter0'i] > div > div > div[class*='card'i] > div:nth-child(2) > div {
 	background-color: var(--severitium-white-color);
 	width: 6em;
 	height: 6em;
@@ -40,7 +40,7 @@
 
 /* Icon of a card on card hover */
 
-[class*='blockcenter'i] > div > div > div[class*='card'i]:hover > div:nth-child(2) > div {
+[class*='blockcenter0'i] > div > div > div[class*='card'i]:hover > div:nth-child(2) > div {
 	width: 8em;
 	height: 8em;
 	background-color: var(--severitium-main-color);
@@ -48,6 +48,6 @@
 
 /* Description on bottom side of a card on card hover */
 
-[class*='blockcenter'i] > div > div > div[class*='card'i] > span {
+[class*='blockcenter0'i] > div > div > div[class*='card'i] > span {
 	color: var(--severitium-light-gray-text-color);
 }
