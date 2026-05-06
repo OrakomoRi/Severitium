@@ -3737,6 +3737,12 @@
       "date": "2026-05-05",
       "comment": "1.9.3+build54 style: update card styles in BattleMode",
       "hash": "6816d73b9ff9f8eb986b013d8c2a296b56ffa730"
+    },
+    {
+      "version": "1.9.3+build55",
+      "date": "2026-05-06",
+      "comment": "1.9.3+build55 style: update card class selectors",
+      "hash": "9beeba61bac0f728c484bc34fc614e7507bcce53"
     }
   ]
 }
