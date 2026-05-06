@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.9.3+build55
+// @version			1.9.3+build56
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -122,7 +122,7 @@
 		url: LOADER_URL,
 		nocache: !0,
 		onload: (response) => {
-			if (response.status === 200) {
+			if (response.status === 200 || response.status === 304) {
 				const script = document.createElement('script');
 				script.textContent = response.responseText;
 				if (document.body) {

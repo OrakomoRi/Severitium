@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	const CLIENT_VERSION = '1.9.3+build55';
+	const CLIENT_VERSION = '1.9.3+build56';
 
 	const isLogging = false;
 
@@ -121,7 +121,7 @@
 		try {
 			const response = await modAPI.fetch(LOADER_URL);
 
-			if (!response.ok) {
+			if (!response.ok && response.status !== 304) {
 				throw new Error(`HTTP ${response.status}`);
 			}
 
