@@ -3749,6 +3749,12 @@
       "date": "2026-05-06",
       "comment": "1.9.3+build56 fix: handle HTTP response status codes",
       "hash": "90297b607f1238bc2ab6001d625a095ce2e95b61"
+    },
+    {
+      "version": "1.9.3+build57",
+      "date": "2026-05-08",
+      "comment": "1.9.3+build57 fix: enhance error handling for loader",
+      "hash": "3f209e053b8e2df4204e81825a23542335489c00"
     }
   ]
 }
