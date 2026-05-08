@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	const CLIENT_VERSION = '1.9.3+build56';
+	const CLIENT_VERSION = '1.9.3+build57';
 
 	const isLogging = false;
 
@@ -146,7 +146,8 @@
 
 			console.log('[Severitium] Loader script loaded successfully');
 		} catch (error) {
-			console.error('[Severitium] Failed to load loader.min.js', error);
+			console.error(`[Severitium] Failed to load loader script!\nError: ${error}\nStatus: ${response?.status}\nLoader URL: ${LOADER_URL}`);
+			removeBlackScreen();
 		}
 	}
 
