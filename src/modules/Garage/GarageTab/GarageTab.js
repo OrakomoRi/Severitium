@@ -21,7 +21,10 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 	 */
 	function tagButton(el) {
 		const icon = el.querySelector('.GarageCommonStyle-iconCoinSmall');
-		if (!icon) return;
+		if (!icon) {
+			el.setAttribute('data-price', 'empty');
+			return;
+		}
 
 		// Match the icon's stylesheet rule against known currency keyword fragments
 		const key = Object.keys(ICON_KEYWORDS).find(k =>
