@@ -3755,6 +3755,12 @@
       "date": "2026-05-08",
       "comment": "1.9.3+build57 fix: enhance error handling for loader",
       "hash": "3f209e053b8e2df4204e81825a23542335489c00"
+    },
+    {
+      "version": "1.9.3+build58",
+      "date": "2026-05-10",
+      "comment": "1.9.3+build58 feat: enhance button data-price handling",
+      "hash": "59904026347dfefb6f2d901c60b89934493edd6f"
     }
   ]
 }
