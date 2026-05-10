@@ -2315,8 +2315,8 @@
 			mask-repeat: no-repeat;
 	-webkit-mask-size: contain;
 			mask-size: contain;
-	-webkit-mask-image: url('data:image/svg+xml,<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="m26.862 6 1.982-6H32l-6.673 20.207A5.5 5.5 0 0 1 20.098 24H4v-3h16.098a2.5 2.5 0 0 0 2.377-1.724L22.896 18H4L0 6zM7 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6m16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/></svg>');
-			mask-image: url('data:image/svg+xml,<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="m26.862 6 1.982-6H32l-6.673 20.207A5.5 5.5 0 0 1 20.098 24H4v-3h16.098a2.5 2.5 0 0 0 2.377-1.724L22.896 18H4L0 6zM7 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6m16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/></svg>');
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56"><path d="m46 11-9 24H13v-3h22.125l1.125-3H13l-3-12h30.75L43 11zM19 41a3 3 0 1 1-6 0 3 3 0 0 1 6 0m18 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/></svg>');
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56"><path d="m46 11-9 24H13v-3h22.125l1.125-3H13l-3-12h30.75L43 11zM19 41a3 3 0 1 1-6 0 3 3 0 0 1 6 0m18 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/></svg>');
 }
 
 /* "Purchased" text */
