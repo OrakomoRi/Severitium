@@ -3785,6 +3785,12 @@
       "date": "2026-05-10",
       "comment": "1.9.3+build63 feat: refactor CSS and variables build process",
       "hash": "3de5a9b7c4833e63686be0eebb872dc644ec13b8"
+    },
+    {
+      "version": "1.9.3+build64",
+      "date": "2026-05-10",
+      "comment": "1.9.3+build64 feat: reorganized SVG icons and enhance resource loading",
+      "hash": "0f010dcf97b73a338fe8bf2d786be5f13440a146"
     }
   ]
 }
