@@ -28,6 +28,9 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 			elementHasStyleRule(icon, { properties: ['background-image', 'background'], value: k, caseInsensitive: true })
 		);
 		if (key) el.setAttribute('data-price', ICON_KEYWORDS[key]);
+
+		// If no match was found, set an empty data-price attribute (the button is disabled)
+		else el.setAttribute('data-price', 'empty');
 	}
 
 	onMutation(mutations => {
