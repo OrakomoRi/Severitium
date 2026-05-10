@@ -22,7 +22,7 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 	function tagButton(el) {
 		const icon = el.querySelector('.GarageCommonStyle-iconCoinSmall');
 		if (!icon) {
-			el.setAttribute('data-price', 'empty');
+			el.setAttribute('data-price', 'disabled');
 			return;
 		}
 
@@ -31,7 +31,7 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 			elementHasStyleRule(icon, { properties: ['background-image', 'background'], value: k, caseInsensitive: true })
 		);
 		if (key) el.setAttribute('data-price', ICON_KEYWORDS[key]);
-		else el.setAttribute('data-price', 'empty');
+		else el.setAttribute('data-price', 'disabled');
 	}
 
 	onMutation(mutations => {
