@@ -3803,6 +3803,12 @@
       "date": "2026-05-10",
       "comment": "1.9.3+build66 fix: enhance resource loading error handling",
       "hash": "efce9a558989d82ab6a312155010bff3b6348275"
+    },
+    {
+      "version": "1.9.3+build67",
+      "date": "2026-05-11",
+      "comment": "1.9.3+build67 style: update notificator icon styles",
+      "hash": "d9d48e2be9c23dac4931b3f3d6e4278f47d00f3e"
     }
   ]
 }
