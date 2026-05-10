@@ -55,52 +55,15 @@ jobs:
           cp dist/script.release.min.js /tmp/build-artifacts/script.release.min.js
 
       - name: Build CSS
-        run: |
-          # Libs, core, utils, modules (excluding _variables)
-          find src/libs src/core src/utils -name "*.css" ! -name "*.min.css" 2>/dev/null \
-            | sort | xargs -r cat > /tmp/build-artifacts/style.release.css \
-            || touch /tmp/build-artifacts/style.release.css
-
-          find src/modules -path "src/modules/_variables" -prune \
-            -o -name "*.css" ! -name "*.min.css" -print \
-            | sort | xargs -r cat >> /tmp/build-artifacts/style.release.css
-
-          npx csso /tmp/build-artifacts/style.release.css \
-            -o /tmp/build-artifacts/style.release.min.css
+        run: node scripts/build-css/build-css.cjs
+        env:
+          OUTPUT_DIR: /tmp/build-artifacts
 
       - name: Build variables
-        run: |
-          VARIABLES_CSS="src/modules/_variables/variables.css"
-          if [ ! -f "$VARIABLES_CSS" ]; then
-            echo "No variables.css found, skipping"
-            exit 0
-          fi
-
-          cp "$VARIABLES_CSS" /tmp/build-artifacts/variables.css
-          npx csso /tmp/build-artifacts/variables.css \
-            -o /tmp/build-artifacts/variables.min.css
-
-          node -e "
-            const fs = require('fs');
-            const version = process.env.VERSION;
-            const css = fs.readFileSync('/tmp/build-artifacts/variables.css', 'utf8');
-            const variables = {};
-            const rootMatch = css.match(/:root\s*{([^}]*)}/);
-            if (rootMatch) {
-              const varMatches = rootMatch[1].match(/--[^:;]+:[^;]+;/g);
-              if (varMatches) {
-                varMatches.forEach(match => {
-                  const [prop, val] = match.split(':').map(s => s.trim());
-                  if (prop && val) variables[prop] = val.replace(';', '').trim();
-                });
-              }
-            }
-            fs.writeFileSync('/tmp/build-artifacts/variables.json', JSON.stringify({
-              version: version,
-              timestamp: new Date().toISOString(),
-              variables
-            }, null, 2));
-          " VERSION="$VERSION"
+        run: node scripts/build-variables/build-variables.cjs
+        env:
+          OUTPUT_DIR: /tmp/build-artifacts
+          VERSION: ${{ env.VERSION }}
 
       - name: Publish to builds branch
         run: |
