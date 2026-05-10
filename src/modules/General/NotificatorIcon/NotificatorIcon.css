@@ -233,8 +233,8 @@
 	-webkit-mask-size: contain;
 			mask-size: contain;
 	background-color: var(--severitium-main-color);
-	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><circle cx="15" cy="15" r="8" fill="currentColor"/><circle cx="15" cy="15" r="11.5" stroke="currentColor" stroke-opacity="0.25" stroke-width="7"/></svg>');
-			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><circle cx="15" cy="15" r="8" fill="currentColor"/><circle cx="15" cy="15" r="11.5" stroke="currentColor" stroke-opacity="0.25" stroke-width="7"/></svg>');
+	-webkit-mask-image: var(--severitium-general-status-notificator-icon);
+			mask-image: var(--severitium-general-status-notificator-icon);
 }
 
 /* Common challenges notificator icon */
@@ -265,8 +265,8 @@
 	-webkit-mask-size: contain;
 			mask-size: contain;
 	background-color: var(--severitium-main-color);
-	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><circle cx="15" cy="15" r="8" fill="currentColor"/><circle cx="15" cy="15" r="11.5" stroke="currentColor" stroke-opacity="0.25" stroke-width="7"/></svg>');
-			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><circle cx="15" cy="15" r="8" fill="currentColor"/><circle cx="15" cy="15" r="11.5" stroke="currentColor" stroke-opacity="0.25" stroke-width="7"/></svg>');
+	-webkit-mask-image: var(--severitium-general-status-notificator-icon);
+			mask-image: var(--severitium-general-status-notificator-icon);
 }
 
 /* Garage item notificator icon */
