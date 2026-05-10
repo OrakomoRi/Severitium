@@ -89,6 +89,32 @@ export class SeveritiumInjector {
 		}
 	}
 
+	removeInjectedIcons() {
+		document.querySelectorAll('style[data-resource="SeveritiumIcons"]').forEach(el => el.remove());
+	}
+
+	injectIcons(url, attributes = []) {
+		const style = document.createElement('style');
+		style.textContent = this.Severitium.icons[url];
+		attributes.forEach(attr => style.setAttribute(attr.name, attr.value));
+		document.body.appendChild(style);
+	}
+
+	applyIcons(link = null) {
+		if (!link) return;
+		this.removeInjectedIcons();
+
+		const defaultAttributes = [{ name: 'data-resource', value: 'SeveritiumIcons' }];
+		const normalized = Array.isArray(link) ? link : [{ url: link }];
+
+		for (const { url, attributes = [] } of normalized) {
+			const attrs = attributes.some(a => a.name === 'data-resource')
+				? attributes
+				: [...defaultAttributes, ...attributes];
+			this.injectIcons(url, attrs);
+		}
+	}
+
 	removeInjectedImages() {
 		document.querySelectorAll('style[data-resource="SeveritiumImage"]').forEach(el => el.remove());
 	}

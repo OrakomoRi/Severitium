@@ -102,6 +102,7 @@ export class ResourceLoader {
 				theme: {},
 				CSS: {},
 				JS: {},
+				icons: {},
 				images: {},
 				version: this.version,
 				name: CONFIG.SCRIPT_NAME,
@@ -173,6 +174,7 @@ export class ResourceLoader {
 		severitium.theme = await Bridge.getValue('SeveritiumThemes', { active: 'default', themes: {} });
 		severitium.CSS = await Bridge.getValue('SeveritiumCSS', {});
 		severitium.JS = await Bridge.getValue('SeveritiumJS', {});
+		severitium.icons = await Bridge.getValue('SeveritiumIcons', {});
 		severitium.images = await Bridge.getValue('SeveritiumImages', {});
 
 		if (this._mergeDefaultVars(severitium)) {
@@ -201,6 +203,7 @@ export class ResourceLoader {
 		severitium.theme = await Bridge.getValue('SeveritiumThemes', { active: 'default', themes: {} });
 		severitium.CSS = await Bridge.getValue('SeveritiumCSS', {});
 		severitium.JS = await Bridge.getValue('SeveritiumJS', {});
+		severitium.icons = await Bridge.getValue('SeveritiumIcons', {});
 
 		const imagePromises = this._createImagePromises(severitium);
 		this.loadingScreen.setTotalModules(imagePromises.length);
@@ -223,7 +226,8 @@ export class ResourceLoader {
 		promises.push(
 			this._fetchVariables(severitium, `${BASE_CDN}/variables.json`),
 			this._fetchCSS(severitium, `${BASE_CDN}/style.release.min.css`),
-			this._fetchJS(severitium, `${BASE_CDN}/script.release.min.js`)
+			this._fetchJS(severitium, `${BASE_CDN}/script.release.min.js`),
+			this._fetchIcons(severitium, `${BASE_CDN}/icons.release.min.css`)
 		);
 
 		const imagePromises = this._createImagePromises(severitium);
@@ -250,6 +254,7 @@ export class ResourceLoader {
 		await Bridge.setValue('SeveritiumThemes', severitium.theme);
 		await Bridge.setValue('SeveritiumCSS', severitium.CSS);
 		await Bridge.setValue('SeveritiumJS', severitium.JS);
+		await Bridge.setValue('SeveritiumIcons', severitium.icons);
 		await Bridge.setValue('SeveritiumImages', severitium.images);
 		await Bridge.setValue('SeveritiumVersion', this.version);
 		await Bridge.setValue('SeveritiumSeason', this.season);
@@ -298,6 +303,16 @@ export class ResourceLoader {
 		} catch (error) {
 			this.logger.log(`Failed to load JS: ${error}`, 'error');
 			throw error;
+		}
+	}
+
+	async _fetchIcons(severitium, url) {
+		try {
+			const css = await Bridge.fetch(url, 'text');
+			severitium.icons['main'] = css;
+			this.loadingScreen?.updateProgress();
+		} catch (error) {
+			this.logger.log(`Failed to load icons: ${error}`, 'warn');
 		}
 	}
 

@@ -35,6 +35,7 @@ import { CONFIG } from './config/config.js';
 		if (severitium.theme) localStorage.setItem('SeveritiumThemes', JSON.stringify(severitium.theme));
 
 		if (severitium.CSS['main']) injector.applyCSS('main');
+		if (severitium.icons['main']) injector.applyIcons('main');
 		if (severitium.theme) injector.applyTheme();
 		if (severitium.JS['main']) injector.applyJS('main');
 

@@ -65,6 +65,11 @@ jobs:
           OUTPUT_DIR: /tmp/build-artifacts
           VERSION: ${{ env.VERSION }}
 
+      - name: Build icons
+        run: node scripts/build-icons/build-icons.cjs
+        env:
+          OUTPUT_DIR: /tmp/build-artifacts
+
       - name: Publish to builds branch
         run: |
           COMMIT_HASH=$(git rev-parse HEAD)
@@ -105,6 +110,8 @@ jobs:
           [ -f /tmp/build-artifacts/variables.css ]  && cp /tmp/build-artifacts/variables.css  "versions/$STABLE_BASE/$VERSION/"
           [ -f /tmp/build-artifacts/variables.min.css ] && cp /tmp/build-artifacts/variables.min.css "versions/$STABLE_BASE/$VERSION/"
           [ -f /tmp/build-artifacts/variables.json ] && cp /tmp/build-artifacts/variables.json "versions/$STABLE_BASE/$VERSION/"
+          [ -f /tmp/build-artifacts/icons.release.css ]     && cp /tmp/build-artifacts/icons.release.css     "versions/$STABLE_BASE/$VERSION/"
+          [ -f /tmp/build-artifacts/icons.release.min.css ] && cp /tmp/build-artifacts/icons.release.min.css "versions/$STABLE_BASE/$VERSION/"
 
           if ! grep -q "\"version\": \"$VERSION\"" versions.json; then
             /usr/bin/jq \
