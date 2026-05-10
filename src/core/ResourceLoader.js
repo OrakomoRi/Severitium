@@ -284,9 +284,16 @@ export class ResourceLoader {
 		}
 	}
 
+	_assertNotHTML(content, url) {
+		if (content.trimStart().startsWith('<')) {
+			throw new Error(`Received HTML instead of resource: ${url}`);
+		}
+	}
+
 	async _fetchCSS(severitium, url) {
 		try {
 			const css = await Bridge.fetch(url, 'text');
+			this._assertNotHTML(css, url);
 			severitium.CSS['main'] = css;
 			this.loadingScreen?.updateProgress();
 		} catch (error) {
@@ -298,6 +305,7 @@ export class ResourceLoader {
 	async _fetchJS(severitium, url) {
 		try {
 			const js = await Bridge.fetch(url, 'text');
+			this._assertNotHTML(js, url);
 			severitium.JS['main'] = js;
 			this.loadingScreen?.updateProgress();
 		} catch (error) {
@@ -309,6 +317,7 @@ export class ResourceLoader {
 	async _fetchIcons(severitium, url) {
 		try {
 			const css = await Bridge.fetch(url, 'text');
+			this._assertNotHTML(css, url);
 			severitium.icons['main'] = css;
 			this.loadingScreen?.updateProgress();
 		} catch (error) {
