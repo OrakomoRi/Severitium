@@ -3779,6 +3779,12 @@
       "date": "2026-05-10",
       "comment": "1.9.3+build61 fix: update data-price attribute for disabled buttons",
       "hash": "052557987631b892288f3c109e23684e7439b96c"
+    },
+    {
+      "version": "1.9.3+build63",
+      "date": "2026-05-10",
+      "comment": "1.9.3+build63 feat: refactor CSS and variables build process",
+      "hash": "3de5a9b7c4833e63686be0eebb872dc644ec13b8"
     }
   ]
 }
