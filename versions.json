@@ -3791,6 +3791,12 @@
       "date": "2026-05-10",
       "comment": "1.9.3+build64 feat: reorganized SVG icons and enhance resource loading",
       "hash": "0f010dcf97b73a338fe8bf2d786be5f13440a146"
+    },
+    {
+      "version": "1.9.3+build65",
+      "date": "2026-05-10",
+      "comment": "1.9.3+build65 style: update card styles",
+      "hash": "5567215b5de33f24da517acd5007075b11c87dba"
     }
   ]
 }
