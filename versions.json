@@ -3767,6 +3767,12 @@
       "date": "2026-05-10",
       "comment": "1.9.3+build59 fix: update data-price attribute handling",
       "hash": "bdb077965fdfdc6327b9362e86bd9c83d2940d46"
+    },
+    {
+      "version": "1.9.3+build60",
+      "date": "2026-05-10",
+      "comment": "1.9.3+build60 fix: update button price tagging logic",
+      "hash": "d85052d2337d73e4746e5bbfa73708ed3d8cca3e"
     }
   ]
 }
