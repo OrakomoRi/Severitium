@@ -3797,6 +3797,12 @@
       "date": "2026-05-10",
       "comment": "1.9.3+build65 style: update card styles",
       "hash": "5567215b5de33f24da517acd5007075b11c87dba"
+    },
+    {
+      "version": "1.9.3+build66",
+      "date": "2026-05-10",
+      "comment": "1.9.3+build66 fix: enhance resource loading error handling",
+      "hash": "efce9a558989d82ab6a312155010bff3b6348275"
     }
   ]
 }
