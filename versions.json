@@ -3761,6 +3761,12 @@
       "date": "2026-05-10",
       "comment": "1.9.3+build58 feat: enhance button data-price handling",
       "hash": "59904026347dfefb6f2d901c60b89934493edd6f"
+    },
+    {
+      "version": "1.9.3+build59",
+      "date": "2026-05-10",
+      "comment": "1.9.3+build59 fix: update data-price attribute handling",
+      "hash": "bdb077965fdfdc6327b9362e86bd9c83d2940d46"
     }
   ]
 }
