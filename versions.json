@@ -3773,6 +3773,12 @@
       "date": "2026-05-10",
       "comment": "1.9.3+build60 fix: update button price tagging logic",
       "hash": "d85052d2337d73e4746e5bbfa73708ed3d8cca3e"
+    },
+    {
+      "version": "1.9.3+build61",
+      "date": "2026-05-10",
+      "comment": "1.9.3+build61 fix: update data-price attribute for disabled buttons",
+      "hash": "052557987631b892288f3c109e23684e7439b96c"
     }
   ]
 }
