@@ -3821,6 +3821,12 @@
       "date": "2026-05-11",
       "comment": "1.9.3+build69 feat: update shop item styles",
       "hash": "bd4e94ecdc261332c0bf0b99b98c12ace2a9bd28"
+    },
+    {
+      "version": "1.9.3+build70",
+      "date": "2026-05-11",
+      "comment": "1.9.3+build70 feat: enhance GameIcon processing",
+      "hash": "8883d1d06e9037585dd314b979b325d34c02d667"
     }
   ]
 }
