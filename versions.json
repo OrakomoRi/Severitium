@@ -3809,6 +3809,12 @@
       "date": "2026-05-11",
       "comment": "1.9.3+build67 style: update notificator icon styles",
       "hash": "d9d48e2be9c23dac4931b3f3d6e4278f47d00f3e"
+    },
+    {
+      "version": "1.9.3+build68",
+      "date": "2026-05-11",
+      "comment": "1.9.3+build68 feat: add star icon and update game icon styles",
+      "hash": "6ddff022ec04cbdf913be987a92dca6a9bce429a"
     }
   ]
 }
