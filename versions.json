@@ -3827,6 +3827,12 @@
       "date": "2026-05-11",
       "comment": "1.9.3+build70 feat: enhance GameIcon processing",
       "hash": "8883d1d06e9037585dd314b979b325d34c02d667"
+    },
+    {
+      "version": "1.9.3+build71",
+      "date": "2026-05-11",
+      "comment": "1.9.3+build71 style: update resistance icon styles",
+      "hash": "fee6903ebcc893981762e5ec9fbb1caa1e30785f"
     }
   ]
 }
