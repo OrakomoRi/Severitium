@@ -34,6 +34,9 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 	};
 
 	const processElement = el => {
+		// Skip shop items
+		if (el.closest('.ShopCategoryOfferSectionStyle-containerItem > div > div[class*=\'item\'i]'))
+			return;
 		const bg = getComputedStyle(el).backgroundImage;
 		const urlMatch = bg.match(/url\(["']?([^"')]+)["']?\)/);
 		if (!urlMatch) return;
