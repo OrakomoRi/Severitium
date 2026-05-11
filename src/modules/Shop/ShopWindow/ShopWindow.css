@@ -358,10 +358,10 @@
 
 /* Shop default small card amount text */
 
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] span.ShopItemComponentStyle-amount,
-.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i] span.ShopItemComponentStyle-amount,
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] span.ShopItemComponentStyle-amount {
-	color: var(--severitium-light-gray-text-color);
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] span.ShopItemComponentStyle-amountCategoryItemSpan,
+.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i] span.ShopItemComponentStyle-amountCategoryItemSpan,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] span.ShopItemComponentStyle-amountCategoryItemSpan {
+	color: var(--severitium-extra-light-gray-text-color);
 }
 
 /* Shop default small card bonus amount */
@@ -383,6 +383,20 @@
 .ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i] .ShopItemComponentStyle-containerName > span,
 .ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] .ShopItemComponentStyle-containerName > span {
 	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Shop default small item card icon */
+
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] .-backgroundImageContain,
+.ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i] .-backgroundImageContain,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] .-backgroundImageContain {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+	width: 50%;
+	height: 100%;
 }
 
 /* Price text for real currency */
