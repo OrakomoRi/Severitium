@@ -3815,6 +3815,12 @@
       "date": "2026-05-11",
       "comment": "1.9.3+build68 feat: add star icon and update game icon styles",
       "hash": "6ddff022ec04cbdf913be987a92dca6a9bce429a"
+    },
+    {
+      "version": "1.9.3+build69",
+      "date": "2026-05-11",
+      "comment": "1.9.3+build69 feat: update shop item styles",
+      "hash": "bd4e94ecdc261332c0bf0b99b98c12ace2a9bd28"
     }
   ]
 }
