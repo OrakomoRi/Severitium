@@ -253,7 +253,7 @@
 
 /* Resistance icon container */
 
-.CellResistanceComponentStyle-resistanceIconContainer:not(:root) {
+.MountedItemsStyle-resistanceContainer .CellResistanceComponentStyle-resistanceIconContainer:not(:root) {
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -262,7 +262,7 @@
 
 /* Pseudo-element for icon container that has icon */
 
-.CellResistanceComponentStyle-resistanceIconContainer:not(:root):has(> img)::before {
+.MountedItemsStyle-resistanceContainer .CellResistanceComponentStyle-resistanceIconContainer:not(:root):has(> img)::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -276,7 +276,7 @@
 
 /* Resistance icon */
 
-.CellResistanceComponentStyle-resistanceIconContainer:not(:root) > img {
+.MountedItemsStyle-resistanceContainer .CellResistanceComponentStyle-resistanceIconContainer:not(:root) > img {
 	width: 4em;
 	height: auto;
 	aspect-ratio: 1 / 1;
