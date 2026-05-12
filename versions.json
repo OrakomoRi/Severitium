@@ -3833,6 +3833,12 @@
       "date": "2026-05-11",
       "comment": "1.9.3+build71 style: update resistance icon styles",
       "hash": "fee6903ebcc893981762e5ec9fbb1caa1e30785f"
+    },
+    {
+      "version": "1.9.3+build72",
+      "date": "2026-05-12",
+      "comment": "1.9.3+build72 style: adjust opacity for Garage parameters",
+      "hash": "5f7826bf5604bd8b5454386ca2721e75a9ddc61b"
     }
   ]
 }
