@@ -3839,6 +3839,12 @@
       "date": "2026-05-12",
       "comment": "1.9.3+build72 style: adjust opacity for Garage parameters",
       "hash": "5f7826bf5604bd8b5454386ca2721e75a9ddc61b"
+    },
+    {
+      "version": "1.9.3+build73",
+      "date": "2026-05-12",
+      "comment": "1.9.3+build73 feat: enhance sorting styles",
+      "hash": "475178611a94aae555b83e533a359961845bf8e3"
     }
   ]
 }
