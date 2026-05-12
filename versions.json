@@ -3845,6 +3845,12 @@
       "date": "2026-05-12",
       "comment": "1.9.3+build73 feat: enhance sorting styles",
       "hash": "475178611a94aae555b83e533a359961845bf8e3"
+    },
+    {
+      "version": "1.9.3+build74",
+      "date": "2026-05-13",
+      "comment": "1.9.3+build74 feat: add select SVG icon",
+      "hash": "41a3d7e396204a7af0399a6e0a65bfe5a09f45b0"
     }
   ]
 }
