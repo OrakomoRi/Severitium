@@ -12,6 +12,26 @@ div.TableComponentStyle-commonSort {
 	padding: .5em;
 }
 
+/* Inactive arrow (neutral state, or the arrow opposing the active direction) */
+
+div.TableComponentStyle-commonSort[data-sort-state="neutral"] .TableComponentStyle-sortIndicatorUpDown,
+div.TableComponentStyle-commonSort[data-sort-state="down"] .TableComponentStyle-sortIndicatorUpDown:first-of-type,
+div.TableComponentStyle-commonSort[data-sort-state="up"] .TableComponentStyle-sortIndicatorUpDown:last-of-type {
+	background-color: var(--severitium-light-gray-color);
+}
+
+/* Active sort down */
+
+div.TableComponentStyle-commonSort[data-sort-state="down"] .TableComponentStyle-sortIndicatorUpDown:last-of-type {
+	background-color: var(--severitium-main-color);
+}
+
+/* Active sort up */
+
+div.TableComponentStyle-commonSort[data-sort-state="up"] .TableComponentStyle-sortIndicatorUpDown:first-of-type {
+	background-color: var(--severitium-main-color);
+}
+
 /* Each individual sorting icon (both up & down arrows) */
 
 div.TableComponentStyle-commonSort .TableComponentStyle-sortIndicatorUpDown {

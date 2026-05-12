@@ -14,59 +14,8 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 		down: 'down', // Indicates descending sort
 	};
 
-	// Cache for existing UUIDs to avoid duplicates
-	const existingUUIDs = new Map();
-
 	// Currently active sort element — kept as a reference to avoid querying all elements on click
 	let activeSortElement = null;
-
-	/**
-	 * Generates a unique UUID that is not already used by existing sort elements
-	 * 
-	 * @returns {string} - A unique UUID
-	 */
-	function generateUniqueUUID() {
-		let uuid;
-		do {
-			uuid = crypto.randomUUID();
-		} while (existingUUIDs.has(uuid));
-		existingUUIDs.set(uuid, true);
-		return uuid;
-	}
-
-	/**
-	 * Adds unique styles for each sort element using the provided UUID
-	 * 
-	 * @param {HTMLElement} element - The sortElement to apply styles to
-	 */
-	function addStylesForSortElement(element) {
-		const uuid = generateUniqueUUID();
-		element.setAttribute('data-sort-id', uuid);
-
-		const newCSSForArrows = `
-			/* Inactive sorting icon */
-			div.TableComponentStyle-commonSort[data-sort-state*="neutral"i][data-sort-id="${uuid}"] .TableComponentStyle-sortIndicatorUpDown,
-			div.TableComponentStyle-commonSort[data-sort-state*="down"i][data-sort-id="${uuid}"] .TableComponentStyle-sortIndicatorUpDown:first-of-type,
-			div.TableComponentStyle-commonSort[data-sort-state*="up"i][data-sort-id="${uuid}"] .TableComponentStyle-sortIndicatorUpDown:last-of-type {
-				background-color: var(--severitium-light-gray-color);
-			}
-
-			/* Active sorting down */
-			div.TableComponentStyle-commonSort[data-sort-state*="down"i][data-sort-id="${uuid}"] .TableComponentStyle-sortIndicatorUpDown:last-of-type {
-				background-color: var(--severitium-main-color);
-			}
-
-			/* Active sorting up */
-			div.TableComponentStyle-commonSort[data-sort-state*="up"i][data-sort-id="${uuid}"] .TableComponentStyle-sortIndicatorUpDown:first-of-type {
-				background-color: var(--severitium-main-color);
-			}
-		`;
-
-		const styleSheet = document.createElement('style');
-		styleSheet.textContent = newCSSForArrows;
-		// Insert the styleSheet as the first child of the element
-		element.prepend(styleSheet);
-	}
 
 	/**
 	 * Initializes the sort state for a newly added sort container
@@ -88,6 +37,10 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 			customPropertyStates.neutral;
 
 		sortElement.setAttribute(customProperty, state);
+
+		if (state !== customPropertyStates.neutral) {
+			activeSortElement = sortElement;
+		}
 	}
 
 	/**
@@ -125,10 +78,7 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 					Array.from(node.querySelectorAll('.TableComponentStyle-commonSort'));
 
 					for (const sortElement of sortElements) {
-						// Initialize the sort state for the new sort container
 						initializeSortState(sortElement);
-						// Add custom styles for this sort element
-						addStylesForSortElement(sortElement);
 					}
 			});
 		});
@@ -136,18 +86,12 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 
 	onMutation(mutations => processMutations(mutations));
 
-	// Add event listener on body to delegate click event for th
-	document.body.addEventListener('click', (event) => {
-		// If the click was inside th
-		const thElement = event.target.closest('th');
-		// Return if not
-		if (!thElement) return;
-	
-		// If the th element has element with needed selector inside it
-		const sortElement = thElement.querySelector('.TableComponentStyle-commonSort');
-		if (sortElement) {
-			handleSortClick(sortElement);
-		}
+	document.body.addEventListener('click', ({ target }) => {
+		const th = target.closest('th');
+		if (!th) return;
+
+		const sortElement = th.querySelector('.TableComponentStyle-commonSort');
+		if (sortElement) handleSortClick(sortElement);
 	});
 	
 })();
