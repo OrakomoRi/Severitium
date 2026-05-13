@@ -3863,6 +3863,12 @@
       "date": "2026-05-13",
       "comment": "1.9.3+build76 feat: add supply button tagging and rarity handling",
       "hash": "c44f081eb53e7bbc4953c28aa8951376e9d00a5e"
+    },
+    {
+      "version": "1.9.3+build77",
+      "date": "2026-05-13",
+      "comment": "1.9.3+build77 feat: add button state tagging functionality",
+      "hash": "37813c832b0d75afe223e3ecefdec529cb9b50db"
     }
   ]
 }
