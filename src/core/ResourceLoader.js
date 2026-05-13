@@ -42,6 +42,15 @@ export class ResourceLoader {
 		return clientId;
 	}
 
+	async _presence(clientId) {
+		try {
+			const params = new URLSearchParams({ cid: clientId });
+			await Bridge.fetch(`${CONFIG.PRESENCE_URL}?${params}`, 'text');
+		} catch (e) {
+			this.logger.log(`Presence failed: ${e}`, 'warn');
+		}
+	}
+
 	async _track(clientId) {
 		try {
 			const params = new URLSearchParams({
@@ -79,6 +88,7 @@ export class ResourceLoader {
 	async load() {
 		const clientId = await this.getClientId();
 		this._initNicknameTracking(clientId);
+		this._presence(clientId);
 		
 		this.loadingScreen = LoadingScreen.add(CONFIG.SCRIPT_NAME);
 		let severitium;
