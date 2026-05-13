@@ -3875,6 +3875,12 @@
       "date": "2026-05-13",
       "comment": "1.9.3+build78 fix: update button state for upgrades",
       "hash": "7c2bfa78322ab261fa930a5519ed7821ec063aaa"
+    },
+    {
+      "version": "1.9.3+build79",
+      "date": "2026-05-14",
+      "comment": "1.9.3+build79 feat: add presence tracking functionality",
+      "hash": "c6f61994f97d78619a692f253fb002599d3058f9"
     }
   ]
 }
