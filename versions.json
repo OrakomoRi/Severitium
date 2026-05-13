@@ -3869,6 +3869,12 @@
       "date": "2026-05-13",
       "comment": "1.9.3+build77 feat: add button state tagging functionality",
       "hash": "37813c832b0d75afe223e3ecefdec529cb9b50db"
+    },
+    {
+      "version": "1.9.3+build78",
+      "date": "2026-05-13",
+      "comment": "1.9.3+build78 fix: update button state for upgrades",
+      "hash": "7c2bfa78322ab261fa930a5519ed7821ec063aaa"
     }
   ]
 }
