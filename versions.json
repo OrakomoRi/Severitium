@@ -3857,6 +3857,12 @@
       "date": "2026-05-13",
       "comment": "1.9.3+build75 feat: enhance garage UI components",
       "hash": "26202f2a2d295bae57ed9c739f82d4069edbedb2"
+    },
+    {
+      "version": "1.9.3+build76",
+      "date": "2026-05-13",
+      "comment": "1.9.3+build76 feat: add supply button tagging and rarity handling",
+      "hash": "c44f081eb53e7bbc4953c28aa8951376e9d00a5e"
     }
   ]
 }
