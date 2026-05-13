@@ -3851,6 +3851,12 @@
       "date": "2026-05-13",
       "comment": "1.9.3+build74 feat: add select SVG icon",
       "hash": "41a3d7e396204a7af0399a6e0a65bfe5a09f45b0"
+    },
+    {
+      "version": "1.9.3+build75",
+      "date": "2026-05-13",
+      "comment": "1.9.3+build75 feat: enhance garage UI components",
+      "hash": "26202f2a2d295bae57ed9c739f82d4069edbedb2"
     }
   ]
 }
