@@ -35,11 +35,11 @@ export async function getCountry(ip) {
 	try {
 		const res = await fetch(`http://ip-api.com/json/${ip}?fields=status,countryCode`);
 
-		const rl  = parseInt(res.headers.get('X-Rl')  ?? '45');
+		const rl = parseInt(res.headers.get('X-Rl') ?? '45');
 		const ttl = parseInt(res.headers.get('X-Ttl') ?? '60');
 
 		geoRemaining = rl;
-		geoResetMs   = Date.now() + ttl * 1000;
+		geoResetMs = Date.now() + ttl * 1000;
 
 		const { status, countryCode } = await res.json();
 		const country = status === 'success' ? (countryCode || null) : null;

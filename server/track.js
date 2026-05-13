@@ -52,11 +52,11 @@ async function processQueue() {
 			if (error) throw error;
 
 			await supabase.from('events').insert({
-				user_id:    userId,
+				user_id: userId,
 				ip,
 				user_agent: userAgent,
-				language:   language || null,
-				version:    version  || null,
+				language: language || null,
+				version: version || null,
 				country,
 			});
 		} catch (e) {
@@ -91,8 +91,8 @@ trackRouter.get('/', (req, res) => {
 		cid,
 		ip,
 		userAgent: req.headers['user-agent'] || null,
-		version:   v || null,
-		language:  l || null,
+		version: v || null,
+		language: l || null,
 	});
 
 	processQueue();

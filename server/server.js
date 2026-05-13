@@ -2,12 +2,14 @@ import express from 'express';
 import { KeepAlive } from './keepAlive.js';
 import { trackRouter } from './track.js';
 import { nicknameRouter } from './nickname.js';
+import { presenceRouter } from './presence.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use('/api/track', trackRouter);
 app.use('/api/nickname', nicknameRouter);
+app.use('/api/presence', presenceRouter);
 
 /**
  * Health check endpoint.

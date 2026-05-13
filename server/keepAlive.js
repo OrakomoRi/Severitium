@@ -103,7 +103,7 @@ export class KeepAlive {
 		return new Promise((resolve) => {
 			const url = new URL(`${this.url}/api/health`);
 			const client = this.isHttps ? https : http;
-			
+
 			const req = client.get(url, (res) => {
 				const chunks = [];
 				let totalLength = 0;
