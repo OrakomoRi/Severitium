@@ -7,7 +7,7 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 	// box-shadow checks first — their colors overlap with background-color of other states
 	const BUTTON_STATES = [
 		{ state: 'max', prop: 'box-shadow', value: '118, 255, 51' },
-		{ state: 'need-rank', prop: 'box-shadow', value: '0, 212, 255' },
+		{ state: 'rank', prop: 'box-shadow', value: '0, 212, 255' },
 		{ state: 'locked', prop: 'box-shadow', value: '255, 255, 255' },
 		{ state: 'ruby', prop: 'background-color', value: '255, 102, 102' },
 		{ state: 'crystal', prop: 'background-color', value: '0, 212, 255' },

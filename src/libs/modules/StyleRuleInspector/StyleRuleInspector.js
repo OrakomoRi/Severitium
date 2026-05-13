@@ -1,7 +1,3 @@
-// Cache for compound rules: Map<`${selectorText}::${value}`, boolean>
-// Valid for the lifetime of the page — stylesheets don't change mid-session.
-const _selectorRuleCache = new Map();
-
 /**
  * Check whether any stylesheet rule matching the given element declares
  * one of the specified properties with a value that satisfies the match condition.
@@ -14,9 +10,6 @@ const _selectorRuleCache = new Map();
  *
  * In both cases, value matching is checked first so element matching is only done
  * for rules that could actually be relevant.
- *
- * Compound selectors from Severitium that override backgrounds are not an issue because
- * Severitium does not use the game's activeColor value.
  *
  * @param {HTMLElement} element - The element to check
  * @param {object} options
@@ -59,20 +52,15 @@ export function elementHasStyleRule(element, {
 				// Simple class rule — no DOM query needed
 				if (element.classList.contains(simpleMatch[1])) return true;
 			} else {
-				// Compound rule — cache by selector text, check via element.matches()
-				const cacheKey = `${rule.selectorText}::${value}`;
-				let selectorMatches;
-				if (_selectorRuleCache.has(cacheKey)) {
-					selectorMatches = _selectorRuleCache.get(cacheKey);
-				} else {
-					try {
-						selectorMatches = element.matches(rule.selectorText);
-					} catch (e) {
-						selectorMatches = false;
-					}
-					_selectorRuleCache.set(cacheKey, selectorMatches);
+				// Compound rule — no caching: selectors like `.ksc-176.ksc-176` are
+				// element-specific (each element has a unique hash class), so a cached
+				// result from one element would incorrectly match another.
+				// Value filtering above keeps the number of matches() calls minimal.
+				try {
+					if (element.matches(rule.selectorText)) return true;
+				} catch (e) {
+					// invalid selector — skip
 				}
-				if (selectorMatches) return true;
 			}
 		}
 	}
