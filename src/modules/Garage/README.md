@@ -4,5 +4,6 @@ This is where all the logic and styling for garage or garage-related elements is
 
 ## :file_folder: Modules
 
+- [Description block](./DescriptionBlock/README.md)
 - [Preview screen](./PreviewScreen/README.md)
-- [Garage tab](./GarageTab/README.md)
+- [Upgrades block](./UpgradesBlock/README.md)
