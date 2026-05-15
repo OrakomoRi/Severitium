@@ -134,3 +134,9 @@
 .AnnouncementHomeScreenComponentStyle-selectedNavigationLabelPoint {
 	background-color: var(--severitium-main-color);
 }
+
+/* Opened announcement container */
+
+.AnnouncementComponentStyle-mainContainer {
+	z-index: 1;
+}

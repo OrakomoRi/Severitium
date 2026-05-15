@@ -19,6 +19,7 @@
 	top: 0;
 	background-color: var(--severitium-main-color);
 	opacity: .025;
+	z-index: 0;
 }
 
 /* The main container everywhere except the lobby */
