@@ -50,15 +50,17 @@
 
 /* Card timer container */
 
-.ContractCardComponentStyle-card div:has(> span[id*='timer'i]) {
+.ContractCardComponentStyle-card div:has(> span[id*='timer'i]),
+.ContractCardComponentStyle-card div.ContractCardComponentStyle-timer {
 	background: none;
-	background-color: var(--severitium-timer-color);
+	background-color: var(--severitium-timer-color) !important;
 	border-radius: var(--severitium-border-radius);
 }
 
 /* Card timer text */
 
-.ContractCardComponentStyle-card span[id*='timer'i] {
+.ContractCardComponentStyle-card span[id*='timer'i],
+.ContractCardComponentStyle-card div.ContractCardComponentStyle-timer > span {
 	color: var(--severitium-black-text-color);
 }
 

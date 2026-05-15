@@ -1,15 +1,16 @@
+const _simpleClassRe = /^\.([\w-]+)$/;
+
 /**
  * Check whether any stylesheet rule matching the given element declares
  * one of the specified properties with a value that satisfies the match condition.
  *
- * Two strategies, applied in order per rule:
- *  1. Simple class rules (e.g. `.ksc-699`) — matched via classList.contains(), no DOM query.
- *     Cached per class name.
- *  2. Compound rules (e.g. `.Foo > div > div`) — matched via element.matches().
- *     Cached per selector text.
- *
- * In both cases, value matching is checked first so element matching is only done
+ * Value matching is checked first so element matching is only done
  * for rules that could actually be relevant.
+ *
+ * Simple class rules (e.g. `.ksc-699`) are matched via classList.contains().
+ * Compound rules (e.g. `.Foo > div > div`) are matched via element.matches().
+ * Compound rules are not cached because game-generated hash classes (e.g. `.ksc-176.ksc-176`)
+ * are element-specific — a cached result from one element would incorrectly apply to another.
  *
  * @param {HTMLElement} element - The element to check
  * @param {object} options
@@ -25,7 +26,7 @@ export function elementHasStyleRule(element, {
 	value = '',
 	caseInsensitive = false
 }) {
-	const simpleClassRe = /^\.([\w-]+)$/;
+	const needle = caseInsensitive ? value.toLowerCase() : value;
 
 	for (const sheet of document.styleSheets) {
 		let rules;
@@ -38,8 +39,6 @@ export function elementHasStyleRule(element, {
 		for (const rule of rules) {
 			if (!rule.style || !rule.selectorText) continue;
 
-			// Check if the rule's value matches before touching the DOM
-			const needle = caseInsensitive ? value.toLowerCase() : value;
 			const valueMatches = properties.some(prop => {
 				const raw = rule.style.getPropertyValue(prop).trim();
 				const val = caseInsensitive ? raw.toLowerCase() : raw;
@@ -47,15 +46,10 @@ export function elementHasStyleRule(element, {
 			});
 			if (!valueMatches) continue;
 
-			const simpleMatch = rule.selectorText.match(simpleClassRe);
+			const simpleMatch = rule.selectorText.match(_simpleClassRe);
 			if (simpleMatch) {
-				// Simple class rule — no DOM query needed
 				if (element.classList.contains(simpleMatch[1])) return true;
 			} else {
-				// Compound rule — no caching: selectors like `.ksc-176.ksc-176` are
-				// element-specific (each element has a unique hash class), so a cached
-				// result from one element would incorrectly match another.
-				// Value filtering above keeps the number of matches() calls minimal.
 				try {
 					if (element.matches(rule.selectorText)) return true;
 				} catch (e) {
