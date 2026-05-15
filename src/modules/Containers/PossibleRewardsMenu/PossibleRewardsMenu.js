@@ -53,7 +53,7 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 		if (lowerSrc.includes('rare')) return 'rare';
 		if (lowerSrc.includes('epic')) return 'epic';
 		if (lowerSrc.includes('legendary')) return 'legendary';
-		if (lowerSrc.includes('red')) return 'mystic';
+		if (lowerSrc.includes('mythical')) return 'mythical';
 		return 'all';
 	}
 
@@ -190,4 +190,4 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 	}
 
 	onMutation(mutations => processMutations(mutations));
-}) ();
+})();

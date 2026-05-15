@@ -11,6 +11,22 @@
 	--severitium-ruby-color: rgb(255, 125, 125);
 	--severitium-timer-color: rgb(215, 215, 215);
 
+	/* Rarity colors */
+
+	--severitium-common-color: rgb(150, 150, 150);
+	--severitium-uncommon-color: rgb(100, 255, 100);
+	--severitium-rare-color: rgb(100, 100, 255);
+	--severitium-epic-color: rgb(200, 100, 225);
+	--severitium-legendary-color: rgb(255, 185, 100);
+	--severitium-mythical-color: rgb(255, 100, 100);
+
+	--severitium-common-text-color: rgb(150, 150, 150);
+	--severitium-uncommon-text-color: rgb(100, 255, 100);
+	--severitium-rare-text-color: rgb(100, 100, 255);
+	--severitium-epic-text-color: rgb(200, 100, 225);
+	--severitium-legendary-text-color: rgb(255, 185, 100);
+	--severitium-mythical-text-color: rgb(255, 100, 100);
+
 	/* Theme text colors */
 
 	--severitium-white-text-color: rgb(255, 255, 255);
