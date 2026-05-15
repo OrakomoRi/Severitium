@@ -3941,6 +3941,12 @@
       "date": "2026-05-15",
       "comment": "1.9.3+build89 feat: enhance reward card functionality",
       "hash": "e97668b5e4225ce7aff9297f5bc6dd4284c1a793"
+    },
+    {
+      "version": "1.9.3+build90",
+      "date": "2026-05-16",
+      "comment": "1.9.3+build90 refactor: enhance style rule handling",
+      "hash": "d0cf9bedee7b36a889037874f7f25fa3b4c984b8"
     }
   ]
 }
