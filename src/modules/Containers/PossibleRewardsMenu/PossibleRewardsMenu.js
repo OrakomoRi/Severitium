@@ -53,7 +53,7 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 		if (lowerSrc.includes('rare')) return 'rare';
 		if (lowerSrc.includes('epic')) return 'epic';
 		if (lowerSrc.includes('legendary')) return 'legendary';
-		if (lowerSrc.includes('mythical')) return 'mythical';
+		if (lowerSrc.includes('red')) return 'mythical';
 		return 'all';
 	}
 

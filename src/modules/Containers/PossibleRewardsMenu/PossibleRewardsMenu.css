@@ -79,7 +79,7 @@
 	border-color: var(--severitium-legendary-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='mythical'i]) {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='red'i]) {
 	border-color: var(--severitium-mythical-color);
 }
 
@@ -137,7 +137,7 @@
 	background-color: var(--severitium-legendary-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i]):has(img[src*='mythical'i]):hover::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i]):has(img[src*='red'i]):hover::after {
 	background-color: var(--severitium-mythical-color);
 }
 
@@ -168,7 +168,7 @@
 	background-color: var(--severitium-legendary-color);
 }
 
-.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='mythical'i])::after {
+.ContainerInfoComponentStyle-rewardsMenu > div:not([class*='hotkey'i])[data-state='active']:has(img[src*='red'i])::after {
 	background-color: var(--severitium-mythical-color);
 }
 
