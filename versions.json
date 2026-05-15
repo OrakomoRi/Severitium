@@ -3911,6 +3911,12 @@
       "date": "2026-05-15",
       "comment": "1.9.3+build84 refactor: improve inline style clearing logic",
       "hash": "d87eadcba36613501371e8205febe0c9022a2645"
+    },
+    {
+      "version": "1.9.3+build85",
+      "date": "2026-05-15",
+      "comment": "1.9.3+build85 feat: enhance container styles",
+      "hash": "ad511d04e04927b01d8ec37ca2288bcc6c61b3b9"
     }
   ]
 }
