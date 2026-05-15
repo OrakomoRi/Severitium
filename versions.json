@@ -3887,6 +3887,12 @@
       "date": "2026-05-15",
       "comment": "1.9.3+build80 feat: enhance style rule application",
       "hash": "9861cb46d26c0df58cd922c363ac4f0e1654a3e1"
+    },
+    {
+      "version": "1.9.3+build81",
+      "date": "2026-05-15",
+      "comment": "1.9.3+build81 feat: add purchase state to DOT_STATES_LEAF",
+      "hash": "516ed870d459b7c6be96821e423633c0e1e8b2f8"
     }
   ]
 }
