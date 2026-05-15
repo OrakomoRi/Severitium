@@ -3893,6 +3893,12 @@
       "date": "2026-05-15",
       "comment": "1.9.3+build81 feat: add purchase state to DOT_STATES_LEAF",
       "hash": "516ed870d459b7c6be96821e423633c0e1e8b2f8"
+    },
+    {
+      "version": "1.9.3+build82",
+      "date": "2026-05-15",
+      "comment": "1.9.3+build82 fix: update button state handling",
+      "hash": "484e8b0b0e7cd147c845305c270b626bb526e53b"
     }
   ]
 }
