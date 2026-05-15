@@ -3929,6 +3929,12 @@
       "date": "2026-05-15",
       "comment": "1.9.3+build87 fix: update mythical color references",
       "hash": "a0171a9ab12ef157ce3e23f5a96b5b043ed7d971"
+    },
+    {
+      "version": "1.9.3+build88",
+      "date": "2026-05-15",
+      "comment": "1.9.3+build88 feat: update rarity color handling",
+      "hash": "d13db5f165d1bbbced0bd33ec0b13c66eb105f7f"
     }
   ]
 }
