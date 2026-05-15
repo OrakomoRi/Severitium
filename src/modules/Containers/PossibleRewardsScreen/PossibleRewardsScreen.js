@@ -127,6 +127,7 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 				colors.some(color => elementHasStyleRule(rarityBlock, { properties: ['background', 'background-color'], value: color }))
 			);
 			el.setAttribute('data-rarity', match ? match[0] : '');
+			if (el === currentActive) syncRarityLabel(el.getAttribute('data-rarity'));
 		});
 	});
 
