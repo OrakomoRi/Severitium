@@ -3947,6 +3947,12 @@
       "date": "2026-05-16",
       "comment": "1.9.3+build90 refactor: enhance style rule handling",
       "hash": "d0cf9bedee7b36a889037874f7f25fa3b4c984b8"
+    },
+    {
+      "version": "1.9.3+build91",
+      "date": "2026-05-16",
+      "comment": "1.9.3+build91 fix: synchronize rarity label on active element",
+      "hash": "1143fbd809ffadd5880dae75fb3603eb214e7c31"
     }
   ]
 }
