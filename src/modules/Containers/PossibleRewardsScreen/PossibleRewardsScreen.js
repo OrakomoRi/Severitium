@@ -1,5 +1,5 @@
 import { onMutation, watchElement } from '../../../libs/modules/MutationHandler/MutationHandler.js';
-import { findElementsByStyleRule } from '../../../libs/modules/StyleRuleInspector/StyleRuleInspector.js';
+import { findElementsByStyleRule, elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/StyleRuleInspector.js';
 import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 
 (function () {
@@ -116,33 +116,6 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 
 	const _idle = window.requestIdleCallback ?? (cb => setTimeout(cb, 0));
 
-	// Lazily built on first use: Map<color_fragment → selectorText[]>
-	let _rarityCache = null;
-
-	function getRarityCache() {
-		if (_rarityCache) return _rarityCache;
-		_rarityCache = new Map();
-		const allColors = Object.values(RARITY_COLORS).flat();
-		for (const sheet of document.styleSheets) {
-			let rules;
-			try { rules = sheet.cssRules; } catch { continue; }
-			for (const rule of rules) {
-				if (!rule.style || !rule.selectorText) continue;
-				for (const prop of ['background', 'background-color']) {
-					const val = rule.style.getPropertyValue(prop).trim();
-					if (!val) continue;
-					for (const color of allColors) {
-						if (val.includes(color)) {
-							if (!_rarityCache.has(color)) _rarityCache.set(color, []);
-							_rarityCache.get(color).push(rule.selectorText);
-						}
-					}
-				}
-			}
-		}
-		return _rarityCache;
-	}
-
 	watchElement(cardSelector, el => {
 		const rarityBlock = el.querySelector(':scope > div:not(:has(*))');
 		if (!rarityBlock) return;
@@ -150,12 +123,8 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 		rarityBlock.classList.add('RewardCardComponentStyle-rarityBlock');
 
 		_idle(() => {
-			const cache = getRarityCache();
 			const match = Object.entries(RARITY_COLORS).find(([, colors]) =>
-				colors.some(color => {
-					const selectors = cache.get(color) ?? [];
-					return selectors.some(sel => { try { return rarityBlock.matches(sel); } catch { return false; } });
-				})
+				colors.some(color => elementHasStyleRule(rarityBlock, { properties: ['background', 'background-color'], value: color }))
 			);
 			el.setAttribute('data-rarity', match ? match[0] : '');
 		});
