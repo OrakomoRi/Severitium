@@ -3905,6 +3905,12 @@
       "date": "2026-05-15",
       "comment": "1.9.3+build83 feat: enhance inline style management and UI updates",
       "hash": "20d589f6457b6a7860054cbe878cb64455377774"
+    },
+    {
+      "version": "1.9.3+build84",
+      "date": "2026-05-15",
+      "comment": "1.9.3+build84 refactor: improve inline style clearing logic",
+      "hash": "d87eadcba36613501371e8205febe0c9022a2645"
     }
   ]
 }
