@@ -39,6 +39,7 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 	];
 
 	function tagDot(el) {
+		el.removeAttribute('data-state');
 		if (!el.firstElementChild) {
 			applyAttribute(el, DOT_STATES_LEAF);
 		} else {
