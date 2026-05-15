@@ -18,18 +18,20 @@ export function onMutation(fn) {
 
 /**
  * Watch for elements matching a selector: fires the callback when they first appear in the DOM
- * and whenever their class attribute changes thereafter. Cleans up automatically when
+ * and whenever their observed attributes change thereafter. Cleans up automatically when
  * the element is removed from the DOM.
  *
  * Uses the shared MutationObserver for DOM additions and removals (no extra observer cost),
- * and one dedicated MutationObserver per element scoped only to class attribute changes.
+ * and one dedicated MutationObserver per element scoped to the specified attributes.
  * Disconnecting per-element on removal avoids memory leaks — MutationObserver has no
  * unobserve(), so a shared observer would keep removed nodes alive indefinitely.
  *
  * @param {string} selector - CSS selector for target elements
- * @param {function(HTMLElement): void} callback - Called on appearance and on each class change
+ * @param {function(HTMLElement): void} callback - Called on appearance and on each attribute change
+ * @param {object} [options]
+ * @param {string[]} [options.attributeFilter=['class']] - Attributes to watch for changes
  */
-export function watchElement(selector, callback) {
+export function watchElement(selector, callback, { attributeFilter = ['class'] } = {}) {
 	// Map from element to its dedicated attribute observer for clean disconnect
 	const observers = new Map();
 
@@ -43,7 +45,7 @@ export function watchElement(selector, callback) {
 		});
 
 		observers.set(el, obs);
-		obs.observe(el, { attributes: true, attributeFilter: ['class'] });
+		obs.observe(el, { attributes: true, attributeFilter });
 		callback(el);
 	}
 
@@ -64,7 +66,7 @@ export function watchElement(selector, callback) {
 
 	onMutation(mutations => {
 		for (const { addedNodes, removedNodes } of mutations) {
-			for (const node of addedNodes)   for (const el of collectTargets(node)) attach(el);
+			for (const node of addedNodes) for (const el of collectTargets(node)) attach(el);
 			for (const node of removedNodes) for (const el of collectTargets(node)) detach(el);
 		}
 	});

@@ -43,6 +43,7 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 		if (!el.firstElementChild) {
 			applyAttribute(el, DOT_STATES_LEAF);
 		} else {
+			el.setAttribute('data-state', 'parent');
 			for (const child of el.querySelectorAll(':scope > div')) {
 				if (!child.firstElementChild) applyAttribute(child, DOT_STATES_CHILD);
 			}
