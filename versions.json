@@ -3935,6 +3935,12 @@
       "date": "2026-05-15",
       "comment": "1.9.3+build88 feat: update rarity color handling",
       "hash": "d13db5f165d1bbbced0bd33ec0b13c66eb105f7f"
+    },
+    {
+      "version": "1.9.3+build89",
+      "date": "2026-05-15",
+      "comment": "1.9.3+build89 feat: enhance reward card functionality",
+      "hash": "e97668b5e4225ce7aff9297f5bc6dd4284c1a793"
     }
   ]
 }
