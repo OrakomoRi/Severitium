@@ -39,10 +39,10 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 	});
 
 	function tagRarity(el) {
-		const match = Object.entries(RARITY_COLORS).find(([color]) =>
-			elementHasStyleRule(el, { properties: ['color'], value: `rgb(${color})`, match: 'exact' })
+		const match = Object.entries(RARITY_COLORS).find(([, colors]) =>
+			colors.some(color => elementHasStyleRule(el, { properties: ['color'], value: `rgb(${color})`, match: 'exact' }))
 		);
-		el.setAttribute('data-rarity', match ? match[1] : '');
+		el.setAttribute('data-rarity', match ? match[0] : '');
 	}
 
 	watchElement(

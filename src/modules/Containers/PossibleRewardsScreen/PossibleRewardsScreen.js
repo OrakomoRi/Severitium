@@ -1,5 +1,6 @@
-import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
-import { findElementsByStyleRule } from '../../../libs/modules/StyleRuleInspector/StyleRuleInspector.js';
+import { onMutation, watchElement } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+import { findElementsByStyleRule, elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/StyleRuleInspector.js';
+import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 
 (function () {
 	// Defines the active color used to determine the current state of the card
@@ -22,7 +23,7 @@ import { findElementsByStyleRule } from '../../../libs/modules/StyleRuleInspecto
 	let currentActive = null;
 	// Flag to avoid adding event listeners multiple times
 	let eventListenersActive = false;
-	
+
 	/**
 	 * Handle click event on an element
 	 *
@@ -104,6 +105,18 @@ import { findElementsByStyleRule } from '../../../libs/modules/StyleRuleInspecto
 		eventListenersActive = false;
 		currentActive = null;
 	}
+
+	watchElement(cardSelector, el => {
+		const rarityBlock = el.querySelector(':scope > div:not(:has(*))');
+		if (!rarityBlock) return;
+
+		rarityBlock.classList.add('RewardCardComponentStyle-rarityBlock');
+
+		const match = Object.entries(RARITY_COLORS).find(([, colors]) =>
+			colors.some(color => elementHasStyleRule(rarityBlock, { properties: ['background', 'background-color'], value: color }))
+		);
+		el.setAttribute('data-rarity', match ? match[0] : '');
+	});
 
 	onMutation(mutations => processMutations(mutations));
 

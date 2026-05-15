@@ -258,7 +258,7 @@
 
 .ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div .RewardCardComponentStyle-imageBlock + div span {
 	font-size: 1.25em;
-	color: var(--severitium-ruby-color);
+	color: var(--severitium-extra-light-gray-color);
 	margin: 0;
 }
 

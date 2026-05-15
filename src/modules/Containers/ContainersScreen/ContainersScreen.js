@@ -6,12 +6,14 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 	const REWARD_SELECTOR = '.ContainersComponentStyle-infoPanel .ContainersComponentStyle-possibleRewardsBlock .ContainersComponentStyle-rewards > div';
 
 	watchElement(REWARD_SELECTOR, el => {
-		const icon = el.querySelector(':scope > :first-child');
+		const icon = el.querySelector(':scope > div:first-child');
 		if (!icon) return;
 
-		const match = Object.entries(RARITY_COLORS).find(([color]) =>
-			elementHasStyleRule(icon, { properties: ['background', 'background-color'], value: color })
+		icon.classList.add('RewardCardComponentStyle-rarityBlock');
+
+		const match = Object.entries(RARITY_COLORS).find(([, colors]) =>
+			colors.some(color => elementHasStyleRule(icon, { properties: ['background', 'background-color'], value: color }))
 		);
-		el.setAttribute('data-rarity', match ? match[1] : '');
+		el.setAttribute('data-rarity', match ? match[0] : '');
 	});
 })();
