@@ -3899,6 +3899,12 @@
       "date": "2026-05-15",
       "comment": "1.9.3+build82 fix: update button state handling",
       "hash": "484e8b0b0e7cd147c845305c270b626bb526e53b"
+    },
+    {
+      "version": "1.9.3+build83",
+      "date": "2026-05-15",
+      "comment": "1.9.3+build83 feat: enhance inline style management and UI updates",
+      "hash": "20d589f6457b6a7860054cbe878cb64455377774"
     }
   ]
 }
