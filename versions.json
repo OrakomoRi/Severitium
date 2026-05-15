@@ -3881,6 +3881,12 @@
       "date": "2026-05-14",
       "comment": "1.9.3+build79 feat: add presence tracking functionality",
       "hash": "c6f61994f97d78619a692f253fb002599d3058f9"
+    },
+    {
+      "version": "1.9.3+build80",
+      "date": "2026-05-15",
+      "comment": "1.9.3+build80 feat: enhance style rule application",
+      "hash": "9861cb46d26c0df58cd922c363ac4f0e1654a3e1"
     }
   ]
 }
