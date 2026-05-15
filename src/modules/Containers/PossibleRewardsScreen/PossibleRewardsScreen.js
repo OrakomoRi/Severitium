@@ -1,5 +1,5 @@
 import { onMutation, watchElement } from '../../../libs/modules/MutationHandler/MutationHandler.js';
-import { findElementsByStyleRule, elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/StyleRuleInspector.js';
+import { findElementsByStyleRule } from '../../../libs/modules/StyleRuleInspector/StyleRuleInspector.js';
 import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 
 (function () {
@@ -12,6 +12,8 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 	// Possible reward card selector
 	const cardSelector = '.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div';
 
+	const labelSelector = '.ContainerInfoComponentStyle-lootBoxDescriptionContainer .ContainerInfoComponentStyle-rewardCategoryName > span';
+
 	// Menu selectors:
 	// Menu button
 	const menuButtonSelector = '.ContainerInfoComponentStyle-rewardsMenu > div:not([class*="hotkey"i])';
@@ -19,10 +21,13 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 	const menuFirstHotkeySelector = '.ContainerInfoComponentStyle-rewardsMenu > div[class*="hotkey"i]:first-of-type';
 	const menuLastHotkeySelector = '.ContainerInfoComponentStyle-rewardsMenu > div[class*="hotkey"i]:last-of-type';
 
-	// Currently active card — kept as a reference to avoid querying all cards
 	let currentActive = null;
-	// Flag to avoid adding event listeners multiple times
 	let eventListenersActive = false;
+
+	function syncRarityLabel(rarity) {
+		const label = document.querySelector(labelSelector);
+		if (label) label.setAttribute('data-rarity', rarity ?? '');
+	}
 
 	/**
 	 * Handle click event on an element
@@ -43,6 +48,7 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 		currentActive?.removeAttribute('data-state');
 		clickedElement.setAttribute('data-state', 'active');
 		currentActive = clickedElement;
+		syncRarityLabel(clickedElement.getAttribute('data-rarity'));
 	}
 
 	/**
@@ -83,6 +89,7 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 		currentActive?.removeAttribute('data-state');
 		activeCard.setAttribute('data-state', 'active');
 		currentActive = activeCard;
+		syncRarityLabel(activeCard.getAttribute('data-rarity'));
 	}
 
 	/**
@@ -104,6 +111,36 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 		document.body.removeEventListener('keyup', handleKeydown);
 		eventListenersActive = false;
 		currentActive = null;
+		syncRarityLabel('');
+	}
+
+	const _idle = window.requestIdleCallback ?? (cb => setTimeout(cb, 0));
+
+	// Lazily built on first use: Map<color_fragment → selectorText[]>
+	let _rarityCache = null;
+
+	function getRarityCache() {
+		if (_rarityCache) return _rarityCache;
+		_rarityCache = new Map();
+		const allColors = Object.values(RARITY_COLORS).flat();
+		for (const sheet of document.styleSheets) {
+			let rules;
+			try { rules = sheet.cssRules; } catch { continue; }
+			for (const rule of rules) {
+				if (!rule.style || !rule.selectorText) continue;
+				for (const prop of ['background', 'background-color']) {
+					const val = rule.style.getPropertyValue(prop).trim();
+					if (!val) continue;
+					for (const color of allColors) {
+						if (val.includes(color)) {
+							if (!_rarityCache.has(color)) _rarityCache.set(color, []);
+							_rarityCache.get(color).push(rule.selectorText);
+						}
+					}
+				}
+			}
+		}
+		return _rarityCache;
 	}
 
 	watchElement(cardSelector, el => {
@@ -112,10 +149,16 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 
 		rarityBlock.classList.add('RewardCardComponentStyle-rarityBlock');
 
-		const match = Object.entries(RARITY_COLORS).find(([, colors]) =>
-			colors.some(color => elementHasStyleRule(rarityBlock, { properties: ['background', 'background-color'], value: color }))
-		);
-		el.setAttribute('data-rarity', match ? match[0] : '');
+		_idle(() => {
+			const cache = getRarityCache();
+			const match = Object.entries(RARITY_COLORS).find(([, colors]) =>
+				colors.some(color => {
+					const selectors = cache.get(color) ?? [];
+					return selectors.some(sel => { try { return rarityBlock.matches(sel); } catch { return false; } });
+				})
+			);
+			el.setAttribute('data-rarity', match ? match[0] : '');
+		});
 	});
 
 	onMutation(mutations => processMutations(mutations));
