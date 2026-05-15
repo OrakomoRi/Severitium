@@ -3917,6 +3917,12 @@
       "date": "2026-05-15",
       "comment": "1.9.3+build85 feat: enhance container styles",
       "hash": "ad511d04e04927b01d8ec37ca2288bcc6c61b3b9"
+    },
+    {
+      "version": "1.9.3+build86",
+      "date": "2026-05-15",
+      "comment": "1.9.3+build86 feat: implement rarity color system",
+      "hash": "4b18b01c6fd5d5efe2d95dd0eda663c00adba4f7"
     }
   ]
 }
