@@ -29,6 +29,7 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 	const DOT_STATES_LEAF = [
 		{ state: 'unfilled', properties: BG, value: '118, 255, 51, 0.25' },
 		{ state: 'filled', properties: BG, value: '255, 255, 255' },
+		{ state: 'purchase', properties: BG, value: '255, 204, 0' },
 	];
 
 	const DOT_STATES_CHILD = [
@@ -42,7 +43,7 @@ import { elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/St
 			applyAttribute(el, DOT_STATES_LEAF);
 		} else {
 			for (const child of el.querySelectorAll(':scope > div')) {
-				applyAttribute(child, DOT_STATES_CHILD);
+				if (!child.firstElementChild) applyAttribute(child, DOT_STATES_CHILD);
 			}
 		}
 	}
