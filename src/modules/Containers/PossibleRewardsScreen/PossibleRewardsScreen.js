@@ -24,9 +24,23 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 	let currentActive = null;
 	let eventListenersActive = false;
 
-	function syncRarityLabel(rarity) {
+	function resolveRarity(card) {
+		const cached = card.getAttribute('data-rarity');
+		if (cached) return cached;
+		const rarityBlock = card.querySelector(':scope > div:not(:has(*))');
+		if (!rarityBlock) return '';
+		const match = Object.entries(RARITY_COLORS).find(([, colors]) =>
+			colors.some(color => elementHasStyleRule(rarityBlock, { properties: ['background', 'background-color'], value: color }))
+		);
+		const rarity = match ? match[0] : '';
+		card.setAttribute('data-rarity', rarity);
+		return rarity;
+	}
+
+	function syncRarityLabel(card) {
 		const label = document.querySelector(labelSelector);
-		if (label) label.setAttribute('data-rarity', rarity ?? '');
+		if (!label) return;
+		label.setAttribute('data-rarity', card ? resolveRarity(card) : '');
 	}
 
 	/**
@@ -48,7 +62,7 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 		currentActive?.removeAttribute('data-state');
 		clickedElement.setAttribute('data-state', 'active');
 		currentActive = clickedElement;
-		syncRarityLabel(clickedElement.getAttribute('data-rarity'));
+		syncRarityLabel(clickedElement);
 	}
 
 	/**
@@ -89,7 +103,7 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 		currentActive?.removeAttribute('data-state');
 		activeCard.setAttribute('data-state', 'active');
 		currentActive = activeCard;
-		syncRarityLabel(activeCard.getAttribute('data-rarity'));
+		syncRarityLabel(activeCard);
 	}
 
 	/**
@@ -111,24 +125,40 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 		document.body.removeEventListener('keyup', handleKeydown);
 		eventListenersActive = false;
 		currentActive = null;
-		syncRarityLabel('');
+		syncRarityLabel(null);
 	}
 
-	const _idle = window.requestIdleCallback ?? (cb => setTimeout(cb, 0));
+	const _pendingCards = [];
+
+	function tagCard(el) {
+		const rarityBlock = el.querySelector(':scope > div:not(:has(*))');
+		if (!rarityBlock) return;
+		rarityBlock.classList.add('RewardCardComponentStyle-rarityBlock');
+		const match = Object.entries(RARITY_COLORS).find(([, colors]) =>
+			colors.some(color => elementHasStyleRule(rarityBlock, { properties: ['background', 'background-color'], value: color }))
+		);
+		el.setAttribute('data-rarity', match ? match[0] : '');
+		if (el === currentActive) syncRarityLabel(el);
+	}
+
+	function flushPending(deadline) {
+		while (_pendingCards.length > 0 && (deadline?.timeRemaining() ?? 1) > 0) {
+			tagCard(_pendingCards.shift());
+		}
+		if (_pendingCards.length > 0) scheduleFlush();
+	}
+
+	function scheduleFlush() {
+		if (window.requestIdleCallback) window.requestIdleCallback(flushPending);
+		else setTimeout(() => flushPending(null), 0);
+	}
 
 	watchElement(cardSelector, el => {
 		const rarityBlock = el.querySelector(':scope > div:not(:has(*))');
 		if (!rarityBlock) return;
-
 		rarityBlock.classList.add('RewardCardComponentStyle-rarityBlock');
-
-		_idle(() => {
-			const match = Object.entries(RARITY_COLORS).find(([, colors]) =>
-				colors.some(color => elementHasStyleRule(rarityBlock, { properties: ['background', 'background-color'], value: color }))
-			);
-			el.setAttribute('data-rarity', match ? match[0] : '');
-			if (el === currentActive) syncRarityLabel(el.getAttribute('data-rarity'));
-		});
+		if (_pendingCards.length === 0) scheduleFlush();
+		_pendingCards.push(el);
 	});
 
 	onMutation(mutations => processMutations(mutations));
