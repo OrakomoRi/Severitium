@@ -3953,6 +3953,12 @@
       "date": "2026-05-16",
       "comment": "1.9.3+build91 fix: synchronize rarity label on active element",
       "hash": "1143fbd809ffadd5880dae75fb3603eb214e7c31"
+    },
+    {
+      "version": "1.9.3+build92",
+      "date": "2026-05-16",
+      "comment": "1.9.3+build92 feat: enhance rarity label synchronization",
+      "hash": "a7ada2849633e880f8a7ea68a55b31b73313743b"
     }
   ]
 }
