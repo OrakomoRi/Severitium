@@ -3959,6 +3959,12 @@
       "date": "2026-05-16",
       "comment": "1.9.3+build92 feat: enhance rarity label synchronization",
       "hash": "a7ada2849633e880f8a7ea68a55b31b73313743b"
+    },
+    {
+      "version": "1.9.3+build93",
+      "date": "2026-05-17",
+      "comment": "1.9.3+build93 feat: enhance PossibleRewardsScreen functionality",
+      "hash": "b7f13a0e58487b0c5e2769e1d6989cc022ccde08"
     }
   ]
 }
