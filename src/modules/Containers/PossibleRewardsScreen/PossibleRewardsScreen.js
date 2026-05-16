@@ -23,6 +23,7 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 
 	let currentActive = null;
 	let eventListenersActive = false;
+	const _pendingCards = [];
 
 	function resolveRarity(card) {
 		const cached = card.getAttribute('data-rarity');
@@ -125,10 +126,9 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 		document.body.removeEventListener('keyup', handleKeydown);
 		eventListenersActive = false;
 		currentActive = null;
+		_pendingCards.length = 0;
 		syncRarityLabel(null);
 	}
-
-	const _pendingCards = [];
 
 	function tagCard(el) {
 		const rarityBlock = el.querySelector(':scope > div:not(:has(*))');
@@ -174,7 +174,7 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 				if (node.nodeType !== Node.ELEMENT_NODE) return;
 				if (node.matches?.(containerSelector) || node.querySelector?.(containerSelector)) {
 					addEventListeners();
-					updateToZeroState();
+					requestAnimationFrame(updateToZeroState);
 				}
 			});
 			removedNodes.forEach(node => {
