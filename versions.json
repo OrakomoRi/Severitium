@@ -3965,6 +3965,12 @@
       "date": "2026-05-17",
       "comment": "1.9.3+build93 feat: enhance PossibleRewardsScreen functionality",
       "hash": "b7f13a0e58487b0c5e2769e1d6989cc022ccde08"
+    },
+    {
+      "version": "1.9.3+build94",
+      "date": "2026-05-17",
+      "comment": "1.9.3+build94 refactor: optimize rarity card tagging",
+      "hash": "50714a49fc8a2f7733591a49b5f38c98732be33e"
     }
   ]
 }
