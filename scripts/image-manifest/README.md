@@ -50,6 +50,6 @@ images/
 Files are matched by base name (extension ignored):
 
 ```
-new/button.png  +  old/button.gif  →  matched
-new/icon.png    +  (no old file)   →  unmatchedNew
+new/button.png  +  old/button.gif  ->  matched
+new/icon.png    +  (no old file)   ->  unmatchedNew
 ```
