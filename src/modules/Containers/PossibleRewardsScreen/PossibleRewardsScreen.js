@@ -28,8 +28,6 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 	const ruleWatcher = createRuleWatcher({ values: [...colorToRarity.keys()] });
 
 	function resolveRarity(card) {
-		const cached = card.getAttribute('data-rarity');
-		if (cached) return cached;
 		const rarityBlock = card.querySelector(':scope > div:not(:has(*))');
 		if (!rarityBlock) return '';
 		const color = ruleWatcher.resolveElement(rarityBlock);
@@ -46,12 +44,12 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 
 	function applyRarity(rarityBlock, rarity) {
 		const card = rarityBlock.parentElement;
-		if (!card || card.getAttribute('data-rarity')) return;
+		if (!card) return;
 		card.setAttribute('data-rarity', rarity);
 		if (card === currentActive) syncRarityLabel(card);
 	}
 
-	// CSS rule inserted → tag matching cards already in DOM
+	// CSS rule inserted tag matching cards already in DOM
 	ruleWatcher.onInsert(({ value, selector }) => {
 		if (!eventListenersActive) return;
 		const rarity = colorToRarity.get(value);
@@ -116,8 +114,17 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 
 	/**
 	 * Syncs data-state with the card the game has already marked as active.
+	 * Also re-resolves rarity for all cards in case elements were reused across tab switches.
 	 */
 	function updateToZeroState() {
+		for (const card of document.querySelectorAll(cardSelector)) {
+			const rarityBlock = card.querySelector(':scope > div:not(:has(*))');
+			if (!rarityBlock) continue;
+			const color = ruleWatcher.resolveElement(rarityBlock);
+			const rarity = colorToRarity.get(color) ?? '';
+			if (rarity) card.setAttribute('data-rarity', rarity);
+		}
+
 		const activeCard = findActiveCard();
 		if (!activeCard || activeCard === currentActive) return;
 
