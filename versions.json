@@ -4013,6 +4013,12 @@
       "date": "2026-05-17",
       "comment": "1.9.3+build102 fix: correct rarity color key",
       "hash": "a4071072d78aec2021c51a3d18b6d63f8f324f7d"
+    },
+    {
+      "version": "1.9.3+build103",
+      "date": "2026-05-17",
+      "comment": "1.9.3+build103 fix: correct spelling of 'mythical' in RarityColors.js",
+      "hash": "ac952fd645ccaa40e538a5d080d40482778a08b4"
     }
   ]
 }
