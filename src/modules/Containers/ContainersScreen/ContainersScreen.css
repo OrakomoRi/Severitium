@@ -171,6 +171,10 @@
 	height: 6.5em;
 	margin: 0;
 	padding: .5em;
+	box-shadow: none;
+	outline: none;
+	border: none;
+	box-shadow: 0 0 0 .025em var(--severitium-gray-color);
 	border-radius: var(--severitium-border-radius);
 	background: none;
 	background-color: var(--severitium-light-transparent-background3);
@@ -178,11 +182,56 @@
 
 /* Possible rewards random reward's rarity (on edge) */
 
-.ContainersComponentStyle-infoPanel .ContainersComponentStyle-possibleRewardsBlock .ContainersComponentStyle-rewards > div > div:first-child {
+.ContainersComponentStyle-infoPanel .ContainersComponentStyle-possibleRewardsBlock .ContainersComponentStyle-rewards > div > div.RewardCardComponentStyle-rarityBlock {
 	position: absolute;
 	top: 0;
 	left: 0;
+	right: unset;
+	bottom: unset;
+	width: 1.25em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	border-radius: 0;
 	border-top-left-radius: var(--severitium-border-radius);
+	box-shadow: none;
+}
+
+/* CUSTOM RARITY COLORS */
+
+/* Common */
+
+.ContainersComponentStyle-infoPanel .ContainersComponentStyle-possibleRewardsBlock .ContainersComponentStyle-rewards > div[data-rarity='common'] > div.RewardCardComponentStyle-rarityBlock {
+	background: linear-gradient(135deg, var(--severitium-common-color) 0%, var(--severitium-common-color) 50%, transparent 50%);
+}
+
+/* Uncommon */
+
+.ContainersComponentStyle-infoPanel .ContainersComponentStyle-possibleRewardsBlock .ContainersComponentStyle-rewards > div[data-rarity='uncommon'] > div.RewardCardComponentStyle-rarityBlock {
+	background: linear-gradient(135deg, var(--severitium-uncommon-color) 0%, var(--severitium-uncommon-color) 50%, transparent 50%);
+}
+
+/* Rare */
+
+.ContainersComponentStyle-infoPanel .ContainersComponentStyle-possibleRewardsBlock .ContainersComponentStyle-rewards > div[data-rarity='rare'] > div.RewardCardComponentStyle-rarityBlock {
+	background: linear-gradient(135deg, var(--severitium-rare-color) 0%, var(--severitium-rare-color) 50%, transparent 50%);
+}
+
+/* Epic */
+
+.ContainersComponentStyle-infoPanel .ContainersComponentStyle-possibleRewardsBlock .ContainersComponentStyle-rewards > div[data-rarity='epic'] > div.RewardCardComponentStyle-rarityBlock {
+	background: linear-gradient(135deg, var(--severitium-epic-color) 0%, var(--severitium-epic-color) 50%, transparent 50%);
+}
+
+/* Legendary */
+
+.ContainersComponentStyle-infoPanel .ContainersComponentStyle-possibleRewardsBlock .ContainersComponentStyle-rewards > div[data-rarity='legendary'] > div.RewardCardComponentStyle-rarityBlock {
+	background: linear-gradient(135deg, var(--severitium-legendary-color) 0%, var(--severitium-legendary-color) 50%, transparent 50%);
+}
+
+/* Mythical */
+
+.ContainersComponentStyle-infoPanel .ContainersComponentStyle-possibleRewardsBlock .ContainersComponentStyle-rewards > div[data-rarity='mythical'] > div.RewardCardComponentStyle-rarityBlock {
+	background: linear-gradient(135deg, var(--severitium-mythical-color) 0%, var(--severitium-mythical-color) 50%, transparent 50%);
 }
 
 /* Possible rewards random rewards icon image */

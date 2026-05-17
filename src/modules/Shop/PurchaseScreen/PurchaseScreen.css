@@ -405,5 +405,6 @@
 /* Link on hover */
 
 .BasePaymentComponentStyle-agreementText > a:hover {
+	text-decoration: none;
 	color: var(--severitium-white-text-color);
 }

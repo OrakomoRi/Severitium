@@ -145,10 +145,12 @@ export class ResourceLoader {
 				this.translations.errorMessage,
 				{
 					theme: 'glass',
+					background: 'rgba(0, 0, 0, .75)',
 					position: 'top-right',
 					timer: 5e3
 				}
 			);
+			throw new Error('Critical resources failed to load');
 		}
 
 		return severitium;

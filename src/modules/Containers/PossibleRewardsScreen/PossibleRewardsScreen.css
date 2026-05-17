@@ -27,7 +27,7 @@
 	justify-content: flex-start;
 	gap: 1em;
 	-webkit-backdrop-filter: blur(.5em);
-			backdrop-filter: blur(.5em);
+	backdrop-filter: blur(.5em);
 	background: none;
 	background-color: var(--severitium-dark-transparent-background1);
 	border-right: .1em solid var(--severitium-gray-color);
@@ -54,8 +54,49 @@
 
 .ContainerInfoComponentStyle-lootBoxDescriptionContainer .ContainerInfoComponentStyle-rewardCategoryName > span {
 	margin: 0;
-	font-size: .85em;
-	color: var(--severitium-main-color);
+	font-family: BaseFontBold, FallbackFontBold;
+	font-size: 1em;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	color: var(--severitium-white-text-color);
+}
+
+/* CUSTOM RARITY COLORS */
+
+/* Common */
+
+.ContainerInfoComponentStyle-lootBoxDescriptionContainer .ContainerInfoComponentStyle-rewardCategoryName > span[data-rarity='common'] {
+	color: var(--severitium-common-text-color);
+}
+
+/* Uncommon */
+
+.ContainerInfoComponentStyle-lootBoxDescriptionContainer .ContainerInfoComponentStyle-rewardCategoryName > span[data-rarity='uncommon'] {
+	color: var(--severitium-uncommon-text-color);
+}
+
+/* Rare */
+
+.ContainerInfoComponentStyle-lootBoxDescriptionContainer .ContainerInfoComponentStyle-rewardCategoryName > span[data-rarity='rare'] {
+	color: var(--severitium-rare-text-color);
+}
+
+/* Epic */
+
+.ContainerInfoComponentStyle-lootBoxDescriptionContainer .ContainerInfoComponentStyle-rewardCategoryName > span[data-rarity='epic'] {
+	color: var(--severitium-epic-text-color);
+}
+
+/* Legendary */
+
+.ContainerInfoComponentStyle-lootBoxDescriptionContainer .ContainerInfoComponentStyle-rewardCategoryName > span[data-rarity='legendary'] {
+	color: var(--severitium-legendary-text-color);
+}
+
+/* Mythical */
+
+.ContainerInfoComponentStyle-lootBoxDescriptionContainer .ContainerInfoComponentStyle-rewardCategoryName > span[data-rarity='mythical'] {
+	color: var(--severitium-mythical-text-color);
 }
 
 /* Possible rewards description name block */
@@ -181,39 +222,33 @@
 	width: 15em;
 	height: calc(25% - 1em);
 	margin: 0;
+	box-shadow: none;
 	outline: none;
 	background: none;
 	border-radius: var(--severitium-border-radius);
 	border-width: .1em;
 	border-style: solid;
+	background-color: var(--severitium-dark-transparent-background2);
+	border-color: var(--severitium-gray-color);
 	-webkit-backdrop-filter: blur(.25em);
-			backdrop-filter: blur(.25em);
+	backdrop-filter: blur(.25em);
 	transition: border-color .2s ease, background-color .2s ease;
 }
 
-/* Single item */
-
-.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div {
-    box-shadow: none;
-    background-color: var(--severitium-dark-transparent-background2);
-    border-color: var(--severitium-gray-color);
-}
-
-/* Single active item */
-
-.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div[data-state='active'] {
-    box-shadow: none;
-    background-color: var(--severitium-light-transparent-background3);
-    border-color: var(--severitium-light-gray-color);
-    pointer-events: none;
-}
-
-/* Item of possible rewards on hover */
+/* Item on hover */
 
 .ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div:hover {
 	border-width: .1em;
 	border-style: solid;
 	border-color: var(--severitium-white-color);
+}
+
+/* Active item */
+
+.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div[data-state='active'] {
+	background-color: var(--severitium-light-transparent-background3);
+	border-color: var(--severitium-light-gray-color);
+	pointer-events: none;
 }
 
 /* Item probability block */
@@ -236,11 +271,56 @@
 
 /* Item rarity color (on the corner) */
 
-.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div .RewardCardComponentStyle-probabilityBlock + div {
+.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div .RewardCardComponentStyle-rarityBlock {
 	position: absolute;
 	top: 0;
 	left: 0;
+	right: unset;
+	bottom: unset;
+	width: 1.5em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	border-radius: 0;
 	border-top-left-radius: var(--severitium-border-radius);
+	box-shadow: none;
+}
+
+/* CUSTOM RARITY COLORS */
+
+/* Common */
+
+.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div[data-rarity='common'] .RewardCardComponentStyle-rarityBlock {
+	background: linear-gradient(135deg, var(--severitium-common-color) 0%, var(--severitium-common-color) 50%, transparent 50%);
+}
+
+/* Uncommon */
+
+.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div[data-rarity='uncommon'] .RewardCardComponentStyle-rarityBlock {
+	background: linear-gradient(135deg, var(--severitium-uncommon-color) 0%, var(--severitium-uncommon-color) 50%, transparent 50%);
+}
+
+/* Rare */
+
+.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div[data-rarity='rare'] .RewardCardComponentStyle-rarityBlock {
+	background: linear-gradient(135deg, var(--severitium-rare-color) 0%, var(--severitium-rare-color) 50%, transparent 50%);
+}
+
+/* Epic */
+
+.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div[data-rarity='epic'] .RewardCardComponentStyle-rarityBlock {
+	background: linear-gradient(135deg, var(--severitium-epic-color) 0%, var(--severitium-epic-color) 50%, transparent 50%);
+}
+
+/* Legendary */
+
+.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div[data-rarity='legendary'] .RewardCardComponentStyle-rarityBlock {
+	background: linear-gradient(135deg, var(--severitium-legendary-color) 0%, var(--severitium-legendary-color) 50%, transparent 50%);
+}
+
+/* Mythical */
+
+.ContainerInfoComponentStyle-possibleRewardsContainer .ScrollBarStyle-itemsWrapper .ContainerInfoComponentStyle-itemsContainer > div > div[data-rarity='mythical'] .RewardCardComponentStyle-rarityBlock {
+	background: linear-gradient(135deg, var(--severitium-mythical-color) 0%, var(--severitium-mythical-color) 50%, transparent 50%);
 }
 
 /* Item amount block (rubies) */
@@ -268,7 +348,7 @@
 	background: none;
 	background-color: var(--severitium-light-transparent-background3);
 	-webkit-backdrop-filter: blur(.25em);
-			backdrop-filter: blur(.25em);
+	backdrop-filter: blur(.25em);
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .15em;
 	border-radius: var(--severitium-border-radius);
