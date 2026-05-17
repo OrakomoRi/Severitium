@@ -3995,6 +3995,12 @@
       "date": "2026-05-17",
       "comment": "1.9.3+build98 feat: enhance reward rarity handling",
       "hash": "75fd911b004f7fa5226b01f5b34eb16b03cd8b81"
+    },
+    {
+      "version": "1.9.3+build100",
+      "date": "2026-05-17",
+      "comment": "1.9.3+build100 refactor: optimize rule watcher logic",
+      "hash": "49c376b7d6c79cbbf57804b9dc6ee50436126a42"
     }
   ]
 }
