@@ -1,5 +1,5 @@
-let _proxyInstalled = false;
-const _watchers = [];
+﻿let _proxyInstalled = false;
+const _watchers = new Set();
 
 // Wraps CSSStyleSheet.prototype.insertRule once regardless of how many watchers are created.
 function _installProxy() {
@@ -11,7 +11,7 @@ function _installProxy() {
 	CSSStyleSheet.prototype.insertRule = function (rule, index) {
 		const insertedIndex = _orig.call(this, rule, index);
 
-		if (_watchers.length > 0) {
+		if (_watchers.size > 0) {
 			const cssRule = this.cssRules[insertedIndex];
 			if (cssRule?.selectorText && cssRule?.style) {
 				for (const watcher of _watchers) {
@@ -83,7 +83,7 @@ export function createRuleWatcher({
 	}
 
 	const entry = { _process };
-	_watchers.push(entry);
+	_watchers.add(entry);
 	_installProxy();
 
 	// Scan rules already in the document before this watcher was created
@@ -134,8 +134,7 @@ export function createRuleWatcher({
 		 * The insertRule proxy itself remains installed.
 		 */
 		destroy() {
-			const i = _watchers.indexOf(entry);
-			if (i !== -1) _watchers.splice(i, 1);
+			_watchers.delete(entry);
 		},
 	};
 }

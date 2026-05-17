@@ -1,6 +1,6 @@
 {
 	"name": "severitium",
-	"version": "1.9.3+build98",
+	"version": "1.9.3+build99",
 	"private": true,
 	"type": "module",
 	"scripts": {
@@ -9,6 +9,7 @@
 		"build:vars": "node scripts/build-variables/build-variables.cjs",
 		"build:icons": "node scripts/build-icons/build-icons.cjs",
 		"dev": "rollup -c --watch",
+		"changelog": "node scripts/changelog/generate-changelog.cjs",
 		"manifest": "node scripts/image-manifest/generate-image-manifest.cjs",
 		"prepare": "git config core.hooksPath .githooks"
 	},
