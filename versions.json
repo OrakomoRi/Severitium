@@ -3971,6 +3971,12 @@
       "date": "2026-05-17",
       "comment": "1.9.3+build94 refactor: optimize rarity card tagging",
       "hash": "50714a49fc8a2f7733591a49b5f38c98732be33e"
+    },
+    {
+      "version": "1.9.3+build95",
+      "date": "2026-05-17",
+      "comment": "1.9.3+build95 feat: implement CSS rule watcher for rarity tracking",
+      "hash": "2325e1a38f7d75ef44f5919b1f8613aacb9cde0b"
     }
   ]
 }
