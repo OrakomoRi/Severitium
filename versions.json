@@ -3989,6 +3989,12 @@
       "date": "2026-05-17",
       "comment": "1.9.3+build97 fix: resolve rarity for cards",
       "hash": "48e801f354d273dc17f22279ea3e4736a12f236e"
+    },
+    {
+      "version": "1.9.3+build98",
+      "date": "2026-05-17",
+      "comment": "1.9.3+build98 feat: enhance reward rarity handling",
+      "hash": "75fd911b004f7fa5226b01f5b34eb16b03cd8b81"
     }
   ]
 }
