@@ -4001,6 +4001,12 @@
       "date": "2026-05-17",
       "comment": "1.9.3+build100 refactor: optimize rule watcher logic",
       "hash": "49c376b7d6c79cbbf57804b9dc6ee50436126a42"
+    },
+    {
+      "version": "1.9.3+build101",
+      "date": "2026-05-17",
+      "comment": "1.9.3+build101 feat: add CSS and Icons builders, and changelog generator",
+      "hash": "0116c2f0a48cc5bf3d10e4bb65c0fa8a0953efb9"
     }
   ]
 }
