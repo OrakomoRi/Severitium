@@ -4019,6 +4019,12 @@
       "date": "2026-05-17",
       "comment": "1.9.3+build103 fix: correct spelling of 'mythical' in RarityColors.js",
       "hash": "ac952fd645ccaa40e538a5d080d40482778a08b4"
+    },
+    {
+      "version": "1.9.3+build104",
+      "date": "2026-05-17",
+      "comment": "1.9.3+build104 feat: enhance UI and error handling",
+      "hash": "a9d76af3ba08b3f6174476312eddf5caa67f1009"
     }
   ]
 }
