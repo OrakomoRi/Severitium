@@ -4007,6 +4007,12 @@
       "date": "2026-05-17",
       "comment": "1.9.3+build101 feat: add CSS and Icons builders, and changelog generator",
       "hash": "0116c2f0a48cc5bf3d10e4bb65c0fa8a0953efb9"
+    },
+    {
+      "version": "1.9.3+build102",
+      "date": "2026-05-17",
+      "comment": "1.9.3+build102 fix: correct rarity color key",
+      "hash": "a4071072d78aec2021c51a3d18b6d63f8f324f7d"
     }
   ]
 }
