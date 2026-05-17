@@ -4,5 +4,5 @@ export const RARITY_COLORS = {
 	rare: ['0, 212, 255'],
 	epic: ['170, 128, 255'],
 	legendary: ['255, 204, 0'],
-	mystic: ['254, 102, 102', '255, 51, 51'],
+	mystical: ['254, 102, 102', '255, 51, 51'],
 };
