@@ -1,6 +1,7 @@
 let _proxyInstalled = false;
 const _watchers = [];
 
+// Wraps CSSStyleSheet.prototype.insertRule once regardless of how many watchers are created.
 function _installProxy() {
 	if (_proxyInstalled) return;
 	_proxyInstalled = true;
@@ -37,6 +38,9 @@ function _installProxy() {
  * @param {string|null} [options.scope=null] - Optional CSS selector. When set, only rules whose selector
  *   matches at least one element within this scope are cached. Prevents unrelated rules (e.g. from other
  *   screens using the same color) from accumulating in the cache.
+ *   Warning: only use this when CSS rules are guaranteed to be inserted after the scoped elements are
+ *   in the DOM. If the game inserts CSS before rendering DOM (common), scoped elements won't exist yet
+ *   and valid selectors will be silently rejected.
  * @returns {{
  *   resolveElement: (element: HTMLElement) => string,
  *   onInsert: (callback: (match: { value: string, selector: string }) => void) => void,

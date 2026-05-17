@@ -25,7 +25,7 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 		)
 	);
 
-	const ruleWatcher = createRuleWatcher({ values: [...colorToRarity.keys()], scope: rarityBlockScope });
+	const ruleWatcher = createRuleWatcher({ values: [...colorToRarity.keys()] });
 
 	function resolveRarity(card) {
 		const cached = card.getAttribute('data-rarity');
