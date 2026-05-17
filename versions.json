@@ -3983,6 +3983,12 @@
       "date": "2026-05-17",
       "comment": "1.9.3+build96 fix: update rule watcher configuration",
       "hash": "4241e454367d52726a42a16fb6c8b1a34bfd74ae"
+    },
+    {
+      "version": "1.9.3+build97",
+      "date": "2026-05-17",
+      "comment": "1.9.3+build97 fix: resolve rarity for cards",
+      "hash": "48e801f354d273dc17f22279ea3e4736a12f236e"
     }
   ]
 }
