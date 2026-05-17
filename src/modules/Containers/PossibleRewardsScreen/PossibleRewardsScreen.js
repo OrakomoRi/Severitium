@@ -1,5 +1,6 @@
 import { onMutation, watchElement } from '../../../libs/modules/MutationHandler/MutationHandler.js';
-import { findElementsByStyleRule, elementHasStyleRule } from '../../../libs/modules/StyleRuleInspector/StyleRuleInspector.js';
+import { findElementsByStyleRule } from '../../../libs/modules/StyleRuleInspector/StyleRuleInspector.js';
+import { createRuleWatcher } from '../../../libs/modules/StyleRuleInterceptor/StyleRuleInterceptor.js';
 import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 
 (function () {
@@ -17,18 +18,23 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 
 	let currentActive = null;
 	let eventListenersActive = false;
-	const _pendingCards = [];
+
+	const colorToRarity = new Map(
+		Object.entries(RARITY_COLORS).flatMap(([rarity, colors]) =>
+			colors.map(color => [color, rarity])
+		)
+	);
+
+	const ruleWatcher = createRuleWatcher({ values: [...colorToRarity.keys()], scope: rarityBlockScope });
 
 	function resolveRarity(card) {
 		const cached = card.getAttribute('data-rarity');
 		if (cached) return cached;
 		const rarityBlock = card.querySelector(':scope > div:not(:has(*))');
 		if (!rarityBlock) return '';
-		const match = Object.entries(RARITY_COLORS).find(([, colors]) =>
-			colors.some(color => elementHasStyleRule(rarityBlock, { properties: ['background', 'background-color'], value: color }))
-		);
-		const rarity = match ? match[0] : '';
-		card.setAttribute('data-rarity', rarity);
+		const color = ruleWatcher.resolveElement(rarityBlock);
+		const rarity = colorToRarity.get(color) ?? '';
+		if (rarity) card.setAttribute('data-rarity', rarity);
 		return rarity;
 	}
 
@@ -37,6 +43,26 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 		if (!label) return;
 		label.setAttribute('data-rarity', card ? resolveRarity(card) : '');
 	}
+
+	function applyRarity(rarityBlock, rarity) {
+		const card = rarityBlock.parentElement;
+		if (!card || card.getAttribute('data-rarity')) return;
+		card.setAttribute('data-rarity', rarity);
+		if (card === currentActive) syncRarityLabel(card);
+	}
+
+	// CSS rule inserted → tag matching cards already in DOM
+	ruleWatcher.onInsert(({ value, selector }) => {
+		if (!eventListenersActive) return;
+		const rarity = colorToRarity.get(value);
+		try {
+			for (const el of document.querySelectorAll(rarityBlockScope)) {
+				if (el.matches(selector)) applyRarity(el, rarity);
+			}
+		} catch (e) {
+			// invalid selector — skip
+		}
+	});
 
 	/**
 	 * Handle click event on an element
@@ -120,39 +146,18 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 		document.body.removeEventListener('keyup', handleKeydown);
 		eventListenersActive = false;
 		currentActive = null;
-		_pendingCards.length = 0;
 		syncRarityLabel(null);
-	}
-
-	// One CSS scan per rarity color variant tags all pending cards at once.
-	function flushPending() {
-		if (_pendingCards.length === 0) return;
-		_pendingCards.length = 0;
-
-		for (const [rarity, colors] of Object.entries(RARITY_COLORS)) {
-			for (const color of colors) {
-				findElementsByStyleRule({
-					scope: rarityBlockScope,
-					properties: ['background', 'background-color'],
-					value: color,
-					callback: el => {
-						const card = el.parentElement;
-						if (!card.hasAttribute('data-rarity')) {
-							card.setAttribute('data-rarity', rarity);
-							if (card === currentActive) syncRarityLabel(card);
-						}
-					}
-				});
-			}
-		}
 	}
 
 	watchElement(cardSelector, el => {
 		const rarityBlock = el.querySelector(':scope > div:not(:has(*))');
 		if (!rarityBlock) return;
 		rarityBlock.classList.add('RewardCardComponentStyle-rarityBlock');
-		if (_pendingCards.length === 0) requestAnimationFrame(flushPending);
-		_pendingCards.push(el);
+
+		// DOM appeared after CSS → check cache immediately
+		const color = ruleWatcher.resolveElement(rarityBlock);
+		if (color) applyRarity(rarityBlock, colorToRarity.get(color));
+		// DOM appeared before CSS → handled via ruleWatcher.onInsert
 	});
 
 	onMutation(mutations => processMutations(mutations));
