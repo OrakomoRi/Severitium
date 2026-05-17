@@ -34,9 +34,9 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 
 		icon.classList.add('RewardCardComponentStyle-rarityBlock');
 
-		// DOM appeared after CSS → check cache immediately
+		// DOM appeared after CSS -> check cache immediately
 		const color = ruleWatcher.resolveElement(icon);
 		if (color) el.setAttribute('data-rarity', colorToRarity.get(color));
-		// DOM appeared before CSS → handled via ruleWatcher.onInsert
+		// DOM appeared before CSS -> handled via ruleWatcher.onInsert
 	});
 })();

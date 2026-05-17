@@ -52,8 +52,8 @@ export function createRuleWatcher({
 	properties = ['background', 'background-color'],
 	scope = null,
 }) {
-	// value → Set<selector>: all known selectors associated with each watched value
-	const cache = new Map(values.map(v => [v, new Set()]));
+	// selector -> value: all known selectors and their associated watched value
+	const cache = new Map();
 	const insertListeners = [];
 
 	function _matchesScope(selector) {
@@ -66,18 +66,16 @@ export function createRuleWatcher({
 	}
 
 	function _process(selector, style) {
-		const propText = properties.map(p => style.getPropertyValue(p)).join('\n');
-		const value = values.find(v => propText.includes(v));
-		if (!value) return;
+		if (cache.has(selector)) return;
 
-		const selectors = cache.get(value);
-		if (selectors.has(selector)) return;
+		const value = values.find(v => properties.some(p => style.getPropertyValue(p).includes(v)));
+		if (!value) return;
 
 		// When scope is set: only cache selector if it matches at least one scoped element.
 		// If scope elements aren't in DOM yet, the caller's onInsert handles late arrivals.
 		if (scope && !_matchesScope(selector)) return;
 
-		selectors.add(selector);
+		cache.set(selector, value);
 
 		for (const cb of insertListeners) cb({ value, selector });
 	}
@@ -106,13 +104,11 @@ export function createRuleWatcher({
 		 * @returns {string}
 		 */
 		resolveElement(element) {
-			for (const [value, selectors] of cache) {
-				for (const selector of selectors) {
-					try {
-						if (element.matches(selector)) return value;
-					} catch (e) {
-						// invalid selector — skip
-					}
+			for (const [selector, value] of cache) {
+				try {
+					if (element.matches(selector)) return value;
+				} catch (e) {
+					// invalid selector — skip
 				}
 			}
 			return '';
