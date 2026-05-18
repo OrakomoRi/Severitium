@@ -4055,6 +4055,12 @@
       "date": "2026-05-18",
       "comment": "1.9.3+build109 feat: update navigation icons and styles",
       "hash": "d88cb63f0a7f38dc0e30ba5edaecdda8609117af"
+    },
+    {
+      "version": "1.9.3+build110",
+      "date": "2026-05-18",
+      "comment": "1.9.3+build110 feat: enhance inline style management",
+      "hash": "5a886f4495692dee50090414fadb10fbcbe7d390"
     }
   ]
 }
