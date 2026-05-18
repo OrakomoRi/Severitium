@@ -474,13 +474,14 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 			const handleKeydown = (e) => {
 				if (e.key === 'Escape') {
 					e.stopPropagation();
+					e.stopImmediatePropagation();
 					handleAction('cancel');
 				}
 			};
 
 			// Handlers
 			const handleAction = (action) => {
-				document.removeEventListener('keydown', handleKeydown);
+				document.removeEventListener('keydown', handleKeydown, true);
 				modal.classList.remove('show');
 				setTimeout(() => {
 					modal.remove();
@@ -503,7 +504,7 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 				}
 			});
 
-			document.addEventListener('keydown', handleKeydown);
+			document.addEventListener('keydown', handleKeydown, true);
 		},
 
 		createThemeContent() {

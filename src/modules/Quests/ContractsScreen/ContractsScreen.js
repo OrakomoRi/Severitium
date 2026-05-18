@@ -6,14 +6,16 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 	const CARD = '.ContractCardComponentStyle-card';
 
 	watchElement(`${CARD} > div.-backgroundImageContain + div`, el => {
+		el.classList.add('ContractCardComponentStyle-rarityBlock');
 		const bg = el.style.getPropertyValue('background');
+		if (!bg) return;
 		const match = Object.entries(RARITY_COLORS).find(([, colors]) => colors.some(color => bg.includes(color)));
 		el.closest(CARD)?.setAttribute('data-rarity', match ? match[0] : '');
+		el.removeAttribute('style');
 	}, { attributeFilter: ['class', 'style'] });
 
 	[
 		[CARD, ['background-color']],
-		// [`${CARD} > div.-backgroundImageContain + div`, ['position', 'top', 'left', 'border-top-left-radius']],
 		['.ContractCardComponentStyle-timer', ['background-color']],
 		[`${CARD} > div:has(> span[id*="timer"]) + div`, ['font-size', 'text-transform']],
 		[`${CARD} > div.-flexCenterAlignCenterColumn`, ['position', 'width', 'height']],
