@@ -297,8 +297,9 @@ export class ResourceLoader {
 	}
 
 	_assertNotHTML(content, url) {
-		if (content.trimStart().startsWith('<')) {
-			throw new Error(`Received HTML instead of resource: ${url}`);
+		const trimmed = content.trimStart();
+		if (trimmed.startsWith('<') || trimmed.startsWith('The page could not be found') || trimmed.includes('NOT_FOUND')) {
+			throw new Error(`Received error page instead of resource: ${url}`);
 		}
 	}
 
