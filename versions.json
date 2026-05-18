@@ -4067,6 +4067,12 @@
       "date": "2026-05-18",
       "comment": "1.9.3+build111 feat: enhance contract card functionality",
       "hash": "e18094e7e47f0cae805664931db879463af3d505"
+    },
+    {
+      "version": "1.9.3+build112",
+      "date": "2026-05-18",
+      "comment": "1.9.3+build112 feat: enhance inline style removal functionality",
+      "hash": "1ce8459134280623f5daaa698173e581db14a5e2"
     }
   ]
 }
