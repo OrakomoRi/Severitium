@@ -1,30 +1,30 @@
-import { watchElement } from '../../../libs/modules/MutationHandler/MutationHandler.js';
-import { clearInlineStyle, clearAllInlineStyle } from '../../../libs/modules/InlineStyleRemover/InlineStyleRemover.js';
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+import { singleClearAllInlineStyle } from '../../../libs/modules/InlineStyleRemover/InlineStyleRemover.js';
 import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 
 (function () {
 	const CARD = '.ContractCardComponentStyle-card';
 
-	watchElement(`${CARD} > div.-backgroundImageContain + div`, el => {
-		el.classList.add('ContractCardComponentStyle-rarityBlock');
-		const bg = el.style.getPropertyValue('background');
-		if (!bg) return;
-		const match = Object.entries(RARITY_COLORS).find(([, colors]) => colors.some(color => bg.includes(color)));
-		el.closest(CARD)?.setAttribute('data-rarity', match ? match[0] : '');
-		el.removeAttribute('style');
-	}, { attributeFilter: ['class', 'style'] });
+	function processCard(card) {
+		const rarityBlock = card.querySelector('div.-backgroundImageContain + div');
+		if (rarityBlock) {
+			rarityBlock.classList.add('ContractCardComponentStyle-rarityBlock');
+			const bg = rarityBlock.style.getPropertyValue('background');
+			const match = Object.entries(RARITY_COLORS).find(([, colors]) => colors.some(color => bg.includes(color)));
+			card.setAttribute('data-rarity', match ? match[0] : '');
+		}
 
-	[
-		[CARD, ['background-color']],
-		['.ContractCardComponentStyle-timer', ['background-color']],
-		[`${CARD} > div:has(> span[id*="timer"]) + div`, ['font-size', 'text-transform']],
-		[`${CARD} > div.-flexCenterAlignCenterColumn`, ['position', 'width', 'height']],
-		[`${CARD} > div > img + div`, ['font-size', 'color']],
-		[`${CARD} > div > img + div > [class*="icon"]`, ['background-color']],
-		['.ContractCardComponentStyle-progressBar', ['position', 'display']],
-		['.ContractCardComponentStyle-progressBar > div:first-child', ['position', 'border', 'width', 'height', 'border-radius']],
-		['.ContractCardComponentStyle-progressBar > div:last-child > div', ['border', 'border-radius', 'height', 'transform']],
-		[`${CARD} > div:nth-last-child(2)`, ['width', 'height', 'background-color']],
-		[`${CARD} > div:last-child > span`, ['color']],
-	].forEach(([selector, ]) => clearAllInlineStyle(selector));
+		singleClearAllInlineStyle(card);
+		card.querySelectorAll(':scope *').forEach(el => singleClearAllInlineStyle(el));
+	}
+
+	onMutation(mutations => {
+		for (const { addedNodes } of mutations) {
+			for (const node of addedNodes) {
+				if (node.nodeType !== Node.ELEMENT_NODE) continue;
+				const cards = node.matches(CARD) ? [node] : [...node.querySelectorAll(CARD)];
+				cards.forEach(processCard);
+			}
+		}
+	});
 })();
