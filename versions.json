@@ -4079,6 +4079,12 @@
       "date": "2026-05-19",
       "comment": "1.9.3+build113 refactor: improve card rarity processing",
       "hash": "6a1b7d06c7f12a536ab7b659d8610294bec8993b"
+    },
+    {
+      "version": "1.9.3+build114",
+      "date": "2026-05-19",
+      "comment": "1.9.3+build114 feat: enhance contract card styles",
+      "hash": "e2fa39ef1eff86843fe712d65191baaa03fcb260"
     }
   ]
 }
