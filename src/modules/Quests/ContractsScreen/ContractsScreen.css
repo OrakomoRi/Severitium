@@ -171,7 +171,7 @@
 .ContractCardComponentStyle-card > div > img + div {
 	margin: 0;
 	font-size: 1em;
-	color: var(--severitium-green-text-color);
+	color: var(--severitium-yellow-text-color);
 }
 
 /* Card score icon */
@@ -180,7 +180,7 @@
 	width: 1.5em;
 	height: 1em;
 	background-image: none;
-	background-color: var(--severitium-green-color);
+	background-color: var(--severitium-yellow-color);
 	-webkit-mask-position: center center;
 			mask-position: center center;
 	-webkit-mask-repeat: no-repeat;
@@ -265,7 +265,7 @@
 .ContractCardComponentStyle-card:has([class*='hotkey'i]) > div:last-child > span {
 	font-size: 1em;
 	padding: 1.5em 0;
-	color: var(--severitium-green-text-color);
+	color: var(--severitium-yellow-text-color);
 }
 
 /* Bottom button of an inactive card top line */

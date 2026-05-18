@@ -1,6 +1,6 @@
 {
 	"name": "severitium",
-	"version": "1.9.3+build114",
+	"version": "1.9.3+build115",
 	"private": true,
 	"type": "module",
 	"scripts": {
@@ -16,9 +16,11 @@
 	"devDependencies": {
 		"@rollup/plugin-replace": "^6.0.3",
 		"@rollup/plugin-terser": "^1.0.0",
+		"autoprefixer": "^10.5.0",
 		"csso": "^5.0.5",
 		"csso-cli": "^4.0.2",
 		"glob": "^13.0.6",
+		"postcss": "^8.5.14",
 		"rollup": "^4.60.3"
 	}
 }

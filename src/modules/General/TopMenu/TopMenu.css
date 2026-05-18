@@ -5,8 +5,8 @@
 .ProBattlesComponentStyle-navigationBlock,
 .ContainersComponentStyle-navigationBlockForCategories {
 	width: 100%;
-	-webkit-backdrop-filter: blur(.25em) grayscale(1);
-			backdrop-filter: blur(.25em) grayscale(1);
+	-webkit-backdrop-filter: blur(.25em);
+			backdrop-filter: blur(.25em);
 	border: none;
 	position: relative;
 }
