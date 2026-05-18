@@ -4049,6 +4049,12 @@
       "date": "2026-05-18",
       "comment": "1.9.3+build108 fix: handle HTTP errors in fetch responses",
       "hash": "eeb71fe060c0014db08fe663084936d6f4095469"
+    },
+    {
+      "version": "1.9.3+build109",
+      "date": "2026-05-18",
+      "comment": "1.9.3+build109 feat: update navigation icons and styles",
+      "hash": "d88cb63f0a7f38dc0e30ba5edaecdda8609117af"
     }
   ]
 }
