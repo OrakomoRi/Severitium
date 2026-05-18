@@ -4031,6 +4031,12 @@
       "date": "2026-05-18",
       "comment": "1.9.3+build105 style: update layout for reward description block",
       "hash": "993358abb885fc745937fb45169fc5736cf2469e"
+    },
+    {
+      "version": "1.9.3+build106",
+      "date": "2026-05-18",
+      "comment": "1.9.3+build106 feat: add response style guidelines and repository assistant",
+      "hash": "8bdd7183592edbcc9c0258c2cfe6f67e01e533fd"
     }
   ]
 }
