@@ -2,7 +2,7 @@
 
 // @name			Severitium
 // @namespace		TankiOnline
-// @version			1.9.3+build107
+// @version			1.9.3+build108
 // @description		Custom theme for Tanki Online
 // @author			OrakomoRi
 
@@ -46,6 +46,13 @@
 			url: url,
 			responseType: format === 'base64' ? 'blob' : 'text',
 			onload: (response) => {
+				if (response.status >= 400) {
+					window.dispatchEvent(new CustomEvent('severitium:fetch:response', {
+						detail: { id, error: `HTTP ${response.status}: ${url}` }
+					}));
+					return;
+				}
+
 				let data;
 
 				try {

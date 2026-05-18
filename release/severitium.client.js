@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	const CLIENT_VERSION = '1.9.3+build107';
+	const CLIENT_VERSION = '1.9.3+build108';
 
 	const isLogging = false;
 
@@ -33,6 +33,10 @@
 
 		try {
 			const response = await modAPI.fetch(url);
+
+			if (!response.ok) {
+				throw new Error(`HTTP ${response.status}: ${url}`);
+			}
 
 			let data;
 			if (format === 'json') {
