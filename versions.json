@@ -4043,6 +4043,12 @@
       "date": "2026-05-18",
       "comment": "1.9.3+build107 fix: enhance error handling in ResourceLoader",
       "hash": "a17e1bd4f414bec60f4d347e00b750399d66b3af"
+    },
+    {
+      "version": "1.9.3+build108",
+      "date": "2026-05-18",
+      "comment": "1.9.3+build108 fix: handle HTTP errors in fetch responses",
+      "hash": "eeb71fe060c0014db08fe663084936d6f4095469"
     }
   ]
 }
