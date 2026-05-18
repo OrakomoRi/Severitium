@@ -106,14 +106,33 @@
 		let lastValue = localStorage.getItem(STORAGE_KEY);
 		let lastCheck = 0;
 
+		// Intercept localStorage.setItem for immediate detection
+		const originalSetItem = localStorage.setItem.bind(localStorage);
+
+		localStorage.setItem = function (key, value) {
+			if (key === STORAGE_KEY) {
+				try {
+					const tipsData = JSON.parse(value);
+					if (modifyTipsData(tipsData)) {
+						value = JSON.stringify(tipsData);
+					}
+					lastValue = value;
+				} catch (error) {
+					// Silently handle errors
+				}
+			}
+			return originalSetItem(key, value);
+		};
+
 		/**
-		 * Stops all active monitoring
+		 * Stops all active monitoring and restores localStorage.setItem
 		 */
 		const stopMonitoring = () => {
 			if (rafId !== null) {
 				cancelAnimationFrame(rafId);
 				rafId = null;
 			}
+			localStorage.setItem = originalSetItem;
 		};
 
 		/**
@@ -154,23 +173,6 @@
 				subtree: true
 			});
 		}
-
-		// Intercept localStorage.setItem for immediate detection
-		const originalSetItem = localStorage.setItem;
-
-		localStorage.setItem = function (key, value) {
-			if (key === STORAGE_KEY) {
-				try {
-					const tipsData = JSON.parse(value);
-					if (modifyTipsData(tipsData)) {
-						value = JSON.stringify(tipsData);
-					}
-					lastValue = value;
-				} catch (error) {
-					// Silently handle errors
-				}
-			} return originalSetItem.call(this, key, value);
-		};
 	};
 
 	// Initialize when DOM is ready

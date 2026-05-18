@@ -16,7 +16,8 @@ export class SeveritiumInjector {
 
 	injectTheme(attributes = []) {
 		const active = this.Severitium.theme.active || 'default';
-		const theme = this.Severitium.theme.themes[active].variables || {};
+		const themeData = this.Severitium.theme.themes[active] ?? this.Severitium.theme.themes['default'];
+		const theme = themeData?.variables ?? {};
 
 		let css = ':root {\n';
 		for (const [key, value] of Object.entries(theme)) {

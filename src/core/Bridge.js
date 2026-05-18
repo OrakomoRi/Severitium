@@ -54,11 +54,13 @@ export const Bridge = {
 	 *
 	 * @param {string} key
 	 * @param {*} value
+	 * @returns {Promise<void>}
 	 */
 	setValue(key, value) {
 		window.dispatchEvent(new CustomEvent('severitium:store:set', {
 			detail: { key, value }
 		}));
+		return Promise.resolve();
 	},
 
 	/**

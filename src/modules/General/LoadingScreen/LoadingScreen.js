@@ -79,6 +79,9 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 	 */
 	function animatedBackground(backgroundElement) {
 		if (!backgroundElement) return;
+		if (backgroundElement.dataset.severitiumAnimated) return;
+		backgroundElement.dataset.severitiumAnimated = 'true';
+		resetAnimationState();
 
 		let canvas = document.createElement('canvas');
 		canvas.className = 'severitium-star-canvas';
@@ -128,6 +131,7 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 	 */
 	function animatedBackgroundDelete(backgroundElement) {
 		if (!backgroundElement) return;
+		delete backgroundElement.dataset.severitiumAnimated;
 
 		const animationId = backgroundElement.dataset.animationId;
 		if (animationId) {

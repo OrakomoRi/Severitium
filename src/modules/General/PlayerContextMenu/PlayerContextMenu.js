@@ -74,7 +74,7 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 		const modalRoot = document.getElementById('modal-root');
 		const clonedModal = clonedModals.get(ModalID);
 
-		if (!clonedModal) return;
+		if (!clonedModal || !modalRoot) return;
 
 		modalRoot.appendChild(clonedModal);
 

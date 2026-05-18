@@ -160,6 +160,10 @@ export class LoadingScreen {
 
 	fadeOut() {
 		const banner = document.querySelector(`.${this.name}--loading-banner`);
+		if (!banner) {
+			this.isFading = true;
+			return;
+		}
 		banner.style.animation = `${this.name}--banner-disappear ${1 / this.fadeSpeed}s ease-in-out`;
 		setTimeout(() => {
 			banner.remove();
@@ -198,9 +202,11 @@ export class LoadingScreen {
 		if (this.isFading && this.stars.every(s => s.opacity === 0)) {
 			cancelAnimationFrame(this.animationFrameId);
 			const screen = document.querySelector(`.${this.name}--loading-screen`);
-			screen.style.transition = `opacity ${1 / this.fadeSpeed}s ease-in-out`;
-			screen.style.opacity = '0';
-			setTimeout(() => screen.remove(), 1000 / this.fadeSpeed);
+			if (screen) {
+				screen.style.transition = `opacity ${1 / this.fadeSpeed}s ease-in-out`;
+				screen.style.opacity = '0';
+				setTimeout(() => screen.remove(), 1000 / this.fadeSpeed);
+			}
 			return;
 		}
 

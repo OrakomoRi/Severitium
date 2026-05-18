@@ -317,8 +317,9 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 
 			try {
 				const parsed = JSON.parse(data);
-				// Check if default theme exists
-				return !parsed.themes?.default ? null : parsed;
+				if (!parsed.themes?.default) return null;
+				if (!parsed.themes[parsed.active]) parsed.active = 'default';
+				return parsed;
 			} catch (error) {
 				return null;
 			}
@@ -469,8 +470,14 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 				modal.classList.add('show');
 			});
 
+			// Close on Escape
+			const handleKeydown = (e) => {
+				if (e.key === 'Escape') handleAction('cancel');
+			};
+
 			// Handlers
 			const handleAction = (action) => {
+				document.removeEventListener('keydown', handleKeydown);
 				modal.classList.remove('show');
 				setTimeout(() => {
 					modal.remove();
@@ -492,14 +499,6 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 					handleAction('cancel');
 				}
 			});
-
-			// Close on Escape
-			const handleKeydown = (e) => {
-				if (e.key === 'Escape') {
-					handleAction('cancel');
-					document.removeEventListener('keydown', handleKeydown);
-				}
-			};
 
 			document.addEventListener('keydown', handleKeydown);
 		},
@@ -1120,7 +1119,8 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 
 		addDelegation() {
 			const { menuContainer } = this.getElements();
-			if (!menuContainer) return;
+			if (!menuContainer || menuContainer.dataset.severitiumDelegation) return;
+			menuContainer.dataset.severitiumDelegation = 'true';
 			menuContainer.addEventListener('click', (e) => this.handleMenuClick(e), true);
 		},
 
