@@ -4037,6 +4037,12 @@
       "date": "2026-05-18",
       "comment": "1.9.3+build106 feat: add response style guidelines and repository assistant",
       "hash": "8bdd7183592edbcc9c0258c2cfe6f67e01e533fd"
+    },
+    {
+      "version": "1.9.3+build107",
+      "date": "2026-05-18",
+      "comment": "1.9.3+build107 fix: enhance error handling in ResourceLoader",
+      "hash": "a17e1bd4f414bec60f4d347e00b750399d66b3af"
     }
   ]
 }
