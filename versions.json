@@ -4073,6 +4073,12 @@
       "date": "2026-05-18",
       "comment": "1.9.3+build112 feat: enhance inline style removal functionality",
       "hash": "1ce8459134280623f5daaa698173e581db14a5e2"
+    },
+    {
+      "version": "1.9.3+build113",
+      "date": "2026-05-19",
+      "comment": "1.9.3+build113 refactor: improve card rarity processing",
+      "hash": "6a1b7d06c7f12a536ab7b659d8610294bec8993b"
     }
   ]
 }
