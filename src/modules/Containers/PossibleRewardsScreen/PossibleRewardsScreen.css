@@ -154,8 +154,13 @@
 .ContainerInfoComponentStyle-lootBoxDescriptionContainer .ContainerInfoComponentStyle-rewardDescriptionBlock .ContainerInfoComponentStyle-learnMoreBlock {
 	width: auto;
 	height: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
 	margin: 0;
-	cursor: pointer;
+	cursor: default;
 }
 
 /* Possible rewards hotkey */
@@ -165,6 +170,8 @@
 	color: var(--severitium-dark-white-text-color);
 	border: var(--severitium-gray-color) dashed .1em;
 	border-radius: var(--severitium-border-radius);
+	cursor: default;
+	margin: 0;
 }
 
 /* Possible rewards "read more" text */
@@ -173,6 +180,7 @@
 	color: var(--severitium-extra-light-gray-text-color);
 	margin: 0;
 	padding: 0;
+	cursor: pointer;
 	transition: color .2s ease;
 }
 
