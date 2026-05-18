@@ -4085,6 +4085,12 @@
       "date": "2026-05-19",
       "comment": "1.9.3+build114 feat: enhance contract card styles",
       "hash": "e2fa39ef1eff86843fe712d65191baaa03fcb260"
+    },
+    {
+      "version": "1.9.3+build115",
+      "date": "2026-05-19",
+      "comment": "1.9.3+build115 feat: enhance CSS build process and style adjustments",
+      "hash": "c33f4fb9f97b086813e3a7603e44b08d5310ac08"
     }
   ]
 }
