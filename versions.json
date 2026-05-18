@@ -4025,6 +4025,12 @@
       "date": "2026-05-17",
       "comment": "1.9.3+build104 feat: enhance UI and error handling",
       "hash": "a9d76af3ba08b3f6174476312eddf5caa67f1009"
+    },
+    {
+      "version": "1.9.3+build105",
+      "date": "2026-05-18",
+      "comment": "1.9.3+build105 style: update layout for reward description block",
+      "hash": "993358abb885fc745937fb45169fc5736cf2469e"
     }
   ]
 }
