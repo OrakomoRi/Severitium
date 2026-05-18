@@ -76,8 +76,8 @@
 			mask-repeat: no-repeat;
 	-webkit-mask-size: contain;
 			mask-size: contain;
-	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m474.95,40.5H37.17C16.7,40.5.11,57.09.11,77.55v221.48c0,20.46,16.59,37.05,37.06,37.05h136.06v127.67c0,7.78,5.99,11.56,9.42,5.97,14.82-24.14,38.91-56.39,75.36-83.83,48.3-36.37,94.64-46.49,119.41-49.81h97.53c20.46,0,37.05-16.59,37.05-37.05V77.55c0-20.46-16.59-37.05-37.05-37.05Zm-218.45,112.5c19.61,0,35.5,15.89,35.5,35.5s-15.89,35.5-35.5,35.5-35.5-15.89-35.5-35.5,15.89-35.5,35.5-35.5Zm-134,71c-19.61,0-35.5-15.89-35.5-35.5s15.89-35.5,35.5-35.5,35.5,15.89,35.5,35.5-15.89,35.5-35.5,35.5Zm268,0c-19.61,0-35.5-15.89-35.5-35.5s15.89-35.5,35.5-35.5,35.5,15.89,35.5,35.5-15.89,35.5-35.5,35.5Z" fill="white"/></svg>');
-			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m474.95,40.5H37.17C16.7,40.5.11,57.09.11,77.55v221.48c0,20.46,16.59,37.05,37.06,37.05h136.06v127.67c0,7.78,5.99,11.56,9.42,5.97,14.82-24.14,38.91-56.39,75.36-83.83,48.3-36.37,94.64-46.49,119.41-49.81h97.53c20.46,0,37.05-16.59,37.05-37.05V77.55c0-20.46-16.59-37.05-37.05-37.05Zm-218.45,112.5c19.61,0,35.5,15.89,35.5,35.5s-15.89,35.5-35.5,35.5-35.5-15.89-35.5-35.5,15.89-35.5,35.5-35.5Zm-134,71c-19.61,0-35.5-15.89-35.5-35.5s15.89-35.5,35.5-35.5,35.5,15.89,35.5,35.5-15.89,35.5-35.5,35.5Zm268,0c-19.61,0-35.5-15.89-35.5-35.5s15.89-35.5,35.5-35.5,35.5,15.89,35.5,35.5-15.89,35.5-35.5,35.5Z" fill="white"/></svg>');
+	-webkit-mask-image: var(--severitium-game-menu-chat-icon);
+			mask-image: var(--severitium-game-menu-chat-icon);
 }
 
 /* Chat icon inside the main container (static) */
@@ -251,10 +251,10 @@ div[class*='menucomponent'i] .-buttonQE > span {
 
 /* Arrows (left & right) inside the top menu */
 
-.ContainersComponentStyle-navigationBlock > div > [class*='common-arrow'i],
-.GarageMenuComponentStyle-garageMenuContainer > div > [class*='common-arrow'i],
-.ProBattlesComponentStyle-navigationBlock > div > [class*='common-arrow'i],
-.ContainersComponentStyle-navigationBlockForCategories  > div > [class*='common-arrow'i] {
+.ContainersComponentStyle-navigationBlock > div > [class*='arrow'i],
+.GarageMenuComponentStyle-garageMenuContainer > div > [class*='arrow'i],
+.ProBattlesComponentStyle-navigationBlock > div > [class*='arrow'i],
+.ContainersComponentStyle-navigationBlockForCategories  > div > [class*='arrow'i] {
 	background: none;
 	width: 1.5em;
 	height: 1.5em;
@@ -272,29 +272,29 @@ div[class*='menucomponent'i] .-buttonQE > span {
 
 /* Arrows (left & right) inside the top menu on hover */
 
-.ContainersComponentStyle-navigationBlock > div > [class*='common-arrow'i]:hover,
-.GarageMenuComponentStyle-garageMenuContainer > div > [class*='common-arrow'i]:hover,
-.ProBattlesComponentStyle-navigationBlock > div > [class*='common-arrow'i]:hover,
-.ContainersComponentStyle-navigationBlockForCategories  > div > [class*='common-arrow'i]:hover {
+.ContainersComponentStyle-navigationBlock > div > [class*='arrow'i]:hover,
+.GarageMenuComponentStyle-garageMenuContainer > div > [class*='arrow'i]:hover,
+.ProBattlesComponentStyle-navigationBlock > div > [class*='arrow'i]:hover,
+.ContainersComponentStyle-navigationBlockForCategories  > div > [class*='arrow'i]:hover {
 	background-color: var(--severitium-white-color);
 }
 
 /* Arrow left */
 
-.ContainersComponentStyle-navigationBlock > div > [class*='common-arrow'i][class*='left'i],
-.GarageMenuComponentStyle-garageMenuContainer > div > [class*='common-arrow'i][class*='left'i],
-.ProBattlesComponentStyle-navigationBlock > div > [class*='common-arrow'i][class*='left'i],
-.ContainersComponentStyle-navigationBlockForCategories  > div > [class*='common-arrow'i][class*='left'i] {
-	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 24"><path d="M16 0h-4L0 12l12 12h4L4 12z"/></svg>');
-			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 24"><path d="M16 0h-4L0 12l12 12h4L4 12z"/></svg>');
+.ContainersComponentStyle-navigationBlock > div > .-arrowLeft,
+.GarageMenuComponentStyle-garageMenuContainer > div > .-arrowLeft,
+.ProBattlesComponentStyle-navigationBlock > div > .-arrowLeft,
+.ContainersComponentStyle-navigationBlockForCategories  > div > .-arrowLeft {
+	-webkit-mask-image: var(--severitium-general-nav-arrow-left-icon);
+			mask-image: var(--severitium-general-nav-arrow-left-icon);
 }
 
 /* Arrow right */
 
-.ContainersComponentStyle-navigationBlock > div > [class*='common-arrow'i][class*='right'i],
-.GarageMenuComponentStyle-garageMenuContainer > div > [class*='common-arrow'i][class*='right'i],
-.ProBattlesComponentStyle-navigationBlock > div > [class*='common-arrow'i][class*='right'i],
-.ContainersComponentStyle-navigationBlockForCategories  > div > [class*='common-arrow'i][class*='right'i] {
-	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 24"><path d="M0 0h4l12 12L4 24H0l12-12z"/></svg>');
-			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 24"><path d="M0 0h4l12 12L4 24H0l12-12z"/></svg>');
+.ContainersComponentStyle-navigationBlock > div > .-arrowRight,
+.GarageMenuComponentStyle-garageMenuContainer > div > .-arrowRight,
+.ProBattlesComponentStyle-navigationBlock > div > .-arrowRight,
+.ContainersComponentStyle-navigationBlockForCategories  > div > .-arrowRight {
+	-webkit-mask-image: var(--severitium-general-nav-arrow-right-icon);
+			mask-image: var(--severitium-general-nav-arrow-right-icon);
 }
