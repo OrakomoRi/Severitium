@@ -472,7 +472,10 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 
 			// Close on Escape
 			const handleKeydown = (e) => {
-				if (e.key === 'Escape') handleAction('cancel');
+				if (e.key === 'Escape') {
+					e.stopPropagation();
+					handleAction('cancel');
+				}
 			};
 
 			// Handlers

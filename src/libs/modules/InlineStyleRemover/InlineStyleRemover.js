@@ -10,6 +10,7 @@ import { watchElement } from '../MutationHandler/MutationHandler.js';
 export function clearInlineStyle(selector, properties) {
 	function clear(el) {
 		for (const prop of properties) el.style.removeProperty(prop);
+		if (!el.style.length) el.removeAttribute('style');
 	}
 	watchElement(selector, clear, { attributeFilter: ['class', 'style'] });
 }
