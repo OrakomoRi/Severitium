@@ -201,8 +201,8 @@
 			mask-repeat: no-repeat;
 	-webkit-mask-size: contain;
 			mask-size: contain;
-	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M464 128 240 384l-96-96m0 96-96-96m320-160L232 284"/></svg>');
-			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M464 128 240 384l-96-96m0 96-96-96m320-160L232 284"/></svg>');
+	-webkit-mask-image: var(--severitium-general-action-double-checkmark-outline-icon);
+			mask-image: var(--severitium-general-action-double-checkmark-outline-icon);
 }
 
 /* Quest locked solo card */
@@ -253,8 +253,8 @@
 	width: 1.5em;
 	height: 1.5em;
 	background-color: var(--severitium-red-color);
-	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
-			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
+	-webkit-mask-image: var(--severitium-game-items-lock-icon);
+			mask-image: var(--severitium-game-items-lock-icon);
 	-webkit-mask-size: contain;
 			mask-size: contain;
 	-webkit-mask-position: center;
@@ -364,8 +364,8 @@
 			mask-repeat: no-repeat;
 	-webkit-mask-size: contain;
 			mask-size: contain;
-	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M464 128 240 384l-96-96m0 96-96-96m320-160L232 284"/></svg>');
-			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M464 128 240 384l-96-96m0 96-96-96m320-160L232 284"/></svg>');
+	-webkit-mask-image: var(--severitium-general-action-double-checkmark-outline-icon);
+			mask-image: var(--severitium-general-action-double-checkmark-outline-icon);
 }
 
 /* Quest completed solo line text block */
@@ -650,8 +650,9 @@
 .QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div .MainQuestComponentStyle-iconMission + div .TableMainQuestComponentStyle-backgroundIconTable:has(img[src*='shop'i]) {
 	content: '';
 	width: 1.5em;
-	height: 1.5em;
-	min-width: none;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	min-width: auto;
 	min-height: auto;
 	background-color: var(--severitium-yellow-color);
 	-webkit-mask-position: center center;
@@ -660,8 +661,8 @@
 			mask-repeat: no-repeat;
 	-webkit-mask-size: contain;
 			mask-size: contain;
-	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56"><path d="m46 11-9 24H13v-3h22.125l1.125-3H13l-3-12h30.75L43 11zM19 41a3 3 0 1 1-6 0 3 3 0 0 1 6 0m18 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/></svg>');
-			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56"><path d="m46 11-9 24H13v-3h22.125l1.125-3H13l-3-12h30.75L43 11zM19 41a3 3 0 1 1-6 0 3 3 0 0 1 6 0m18 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/></svg>');
+	-webkit-mask-image: var(--severitium-game-items-cart-icon);
+			mask-image: var(--severitium-game-items-cart-icon);
 	-webkit-transform: scale(1);
 			transform: scale(1);
 	transition: -webkit-transform .2s ease;
@@ -782,8 +783,8 @@
 	width: 1em;
 	aspect-ratio: 1 / 1;
 	background-color: var(--severitium-black-text-color);
-	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
-			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 45"><path fill-rule="evenodd" d="M33.25 15h4.92c.53 0 1.04.21 1.41.59l1.83 1.83c.38.38.59.88.59 1.41v22.34c0 .53-.21 1.04-.59 1.41l-1.83 1.83c-.38.38-.88.59-1.41.59H3.83c-.53 0-1.04-.21-1.41-.59L.59 42.58C.21 42.2 0 41.7 0 41.17V18.83c0-.53.21-1.04.59-1.41l1.83-1.83c.38-.38.88-.59 1.41-.59h4.92c.14 0 .25-.11.25-.25v-2.32C9 5.8 14.18.1 20.81 0S33 5.31 33 12v2.75c0 .14.11.25.25.25m-4.75-.25v-2.44c0-4.11-3.16-7.69-7.27-7.81S13.5 7.78 13.5 12v2.75c0 .14.11.25.25.25h14.5c.14 0 .25-.11.25-.25M17.12 27.88l1.76-1.76a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 0 1 0 4.24l-1.76 1.76a3 3 0 0 1-4.24 0l-1.76-1.76a3 3 0 0 1 0-4.24"/></svg>');
+	-webkit-mask-image: var(--severitium-game-items-lock-icon);
+			mask-image: var(--severitium-game-items-lock-icon);
 	-webkit-mask-size: contain;
 			mask-size: contain;
 	-webkit-mask-position: center;
@@ -1279,8 +1280,8 @@
 			mask-repeat: no-repeat;
 	-webkit-mask-size: contain;
 			mask-size: contain;
-	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path d="M16.29 2.59a.7.7 0 0 0-1 0L6.98 10.9 2.7 6.59a.7.7 0 0 0-1 0L.2 8.09c-.27.27-.27.72 0 1l6.27 6.32c.27.27.72.27 1 0L17.78 5.1a.7.7 0 0 0 0-1l-1.5-1.5Z"/></svg>');
-			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path d="M16.29 2.59a.7.7 0 0 0-1 0L6.98 10.9 2.7 6.59a.7.7 0 0 0-1 0L.2 8.09c-.27.27-.27.72 0 1l6.27 6.32c.27.27.72.27 1 0L17.78 5.1a.7.7 0 0 0 0-1l-1.5-1.5Z"/></svg>');
+	-webkit-mask-image: var(--severitium-general-action-checkmark-icon);
+			mask-image: var(--severitium-general-action-checkmark-icon);
 }
 
 /* Supermisson original icon of a completed one that has gift icon */
@@ -1304,8 +1305,8 @@
 			mask-repeat: no-repeat;
 	-webkit-mask-size: contain;
 			mask-size: contain;
-	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 3.75H5.58a1.83 1.83 0 0 1-1.83-1.83C3.75.287 5.722-.529 6.875.624zm0 0L13.125.625C14.278-.528 16.25.288 16.25 1.919a1.83 1.83 0 0 1-1.83 1.83z"/><path clip-rule="evenodd" d="M0 6.25C0 5.56.56 5 1.25 5h17.5c.69 0 1.25.56 1.25 1.25v2.5c0 .69-.56 1.25-1.25 1.25H1.25C.56 10 0 9.44 0 8.75zm11.25 2.5V5h-2.5v3.75z"/><path d="M18.75 18.75v-7.5h-7.5v7.5h-2.5v-7.5h-7.5v7.5c0 .69.56 1.25 1.25 1.25h15c.69 0 1.25-.56 1.25-1.25"/></svg>');
-			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 3.75H5.58a1.83 1.83 0 0 1-1.83-1.83C3.75.287 5.722-.529 6.875.624zm0 0L13.125.625C14.278-.528 16.25.288 16.25 1.919a1.83 1.83 0 0 1-1.83 1.83z"/><path clip-rule="evenodd" d="M0 6.25C0 5.56.56 5 1.25 5h17.5c.69 0 1.25.56 1.25 1.25v2.5c0 .69-.56 1.25-1.25 1.25H1.25C.56 10 0 9.44 0 8.75zm11.25 2.5V5h-2.5v3.75z"/><path d="M18.75 18.75v-7.5h-7.5v7.5h-2.5v-7.5h-7.5v7.5c0 .69.56 1.25 1.25 1.25h15c.69 0 1.25-.56 1.25-1.25"/></svg>');
+	-webkit-mask-image: var(--severitium-game-items-gift-icon);
+			mask-image: var(--severitium-game-items-gift-icon);
 }
 
 /* Supermisson condition counter */
