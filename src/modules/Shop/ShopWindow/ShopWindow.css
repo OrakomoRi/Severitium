@@ -405,6 +405,23 @@
 	color: var(--severitium-light-gray-color);
 }
 
+/* Discounted price block */
+
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] .ShowcaseItemComponentStyle-commonShowcaseDiscountPrise {
+	position: absolute;
+	top: unset;
+	left: unset;
+	right: .5em;
+	bottom: .5em;
+	width: fit-content;
+	height: fit-content;	
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
+}
+
 /* Price text for ruby currency */
 
 .ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] img[src*='ruby'i] + .ShowcaseItemComponentStyle-priceText,
@@ -440,6 +457,8 @@
 .ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] .ShowcaseItemComponentStyle-discountContainer > p,
 .ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i] .ShowcaseItemComponentStyle-discountContainer > p,
 .ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] .ShowcaseItemComponentStyle-discountContainer > p {
+	margin: 0;
+	padding: .1em .25em;
 	background-color: var(--severitium-red-color);
 	border-radius: var(--severitium-border-radius);
 	color: var(--severitium-white-text-color);

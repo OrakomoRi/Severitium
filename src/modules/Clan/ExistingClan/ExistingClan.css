@@ -20,6 +20,38 @@
 	user-select: text;
 }
 
+/* Clan header icon */
+
+.ClanHeaderComponentStyle-logo {
+	position: relative;
+	top: unset;
+	left: unset;
+	right: unset;
+	bottom: unset;
+	width: 5em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	margin: 0;
+	margin-left: 1em;
+	padding: 0;
+	background: none;
+	background-color: var(--severitium-white-color);
+	-webkit-mask-size: cover;
+			mask-size: cover;
+	-webkit-mask-position: center;
+			mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-image: var(--severitium-general-social-tankionline-small-icon);
+			mask-image: var(--severitium-general-social-tankionline-small-icon);
+}
+
+/* Clan header info container */
+
+.ClanFounderComponentStyle-infoClan {
+	margin: 0;
+}
+
 /* All selected text inside description container */
 
 .ClanInfoComponentStyle-messageClan > *::selection {
@@ -121,7 +153,8 @@
 .ClanStatisticsComponentStyle-clan > div:not(:first-child) > h2::after {
 	content: '';
 	width: 3.5em;
-	height: 3.5em;
+	height: auto;
+	aspect-ratio: 1 / 1;
 	-webkit-mask-size: cover;
 			mask-size: cover;
 	-webkit-mask-position: center;
