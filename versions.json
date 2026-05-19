@@ -4091,6 +4091,12 @@
       "date": "2026-05-19",
       "comment": "1.9.3+build115 feat: enhance CSS build process and style adjustments",
       "hash": "c33f4fb9f97b086813e3a7603e44b08d5310ac08"
+    },
+    {
+      "version": "1.9.3+build116",
+      "date": "2026-05-19",
+      "comment": "1.9.3+build116 feat: enhance clan and shop UI components",
+      "hash": "df38093b2ff8b787dae60ddb3e7a0d5b3c6e8724"
     }
   ]
 }
