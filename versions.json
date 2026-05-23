@@ -4121,6 +4121,12 @@
       "date": "2026-05-23",
       "comment": "1.9.3+build121 style: update shop layout and colors",
       "hash": "a163aa3e5c0e5ddff9d054a46d0f270ddb798729"
+    },
+    {
+      "version": "1.9.3+build122",
+      "date": "2026-05-23",
+      "comment": "1.9.3+build122 feat: add footer styles for shop items",
+      "hash": "9a63caba3bdccbe231e99c1fdaf332b8ab057cbf"
     }
   ]
 }
