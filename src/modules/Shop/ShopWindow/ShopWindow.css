@@ -38,6 +38,8 @@
 	/* background: linear-gradient(var(--severitium-black-color) 0%, transparent 25%); */
 }
 
+/* LARGE CARDS */
+
 /* Large card */
 
 .LargeSingleCardComponentStyle-commonBlock {
@@ -100,7 +102,8 @@
 	background-color: var(--severitium-tancoin-button-background);
 	box-shadow: none;
 	border: var(--severitium-tancoin-button-border-color-active) solid .1em;
-	animation: none;
+	-webkit-animation: none;
+	        animation: none;
 }
 
 /* Button text */
@@ -152,6 +155,8 @@
 	color: var(--severitium-white-color);
 }
 
+/* MEDIUM CARDS */
+
 /* Limited offers container */
 
 .ShopCategoryOfferSectionStyle-containerLimitOffers {
@@ -198,10 +203,18 @@
 /* Single limited offer items container */
 
 .ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem {
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 1fr;
 	grid-template-columns: 1fr;
+	-ms-grid-rows: 1fr;
 	grid-template-rows: 1fr;
 	gap: .25em;
+}
+
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem > *:nth-child(1) {
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
 }
 
 /* Single limited offer item */
@@ -216,13 +229,13 @@
 
 /* 2+ items: 2 columns */
 
-.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(2)) {
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(2)):not(:has(> :nth-of-type(3))) {
 	grid-template-columns: repeat(2, 1fr);
 }
 
 /* 3+ items: 2 rows */
 
-.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(3)) {
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(3)):not(:has(> :nth-of-type(5))) {
 	grid-template-rows: repeat(2, 1fr);
 }
 
@@ -235,12 +248,14 @@
 /* First item spans full height for 3+ item layouts */
 
 .ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(3)) > div:first-of-type {
+	-ms-grid-row-span: 2;
 	grid-row: span 2;
 }
 
 /* First item spans half width for 5-item layout */
 
 .ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(5)) > div:first-of-type {
+	-ms-grid-column-span: 2;
 	grid-column: span 2;
 }
 
@@ -258,27 +273,131 @@
 	color: var(--severitium-light-gray-text-color);
 }
 
+/* Price outer container */
+
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div .ShowcaseItemComponentStyle-commonShowcaseDiscountPrise {
+	position: absolute;
+	top: unset;
+	left: unset;
+	right: .5em;
+	bottom: .5em;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;	
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
+}
+
+/* Price inner container */
+
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div div:not(.ShowcaseItemComponentStyle-discountContainer):not([class*='backgroundimagecontain'i]) {
+	min-width: auto;
+	min-height: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .25em;
+}
+
+/* Original currency icon */
+
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div div:not(.ShowcaseItemComponentStyle-discountContainer) > img {
+	display: none;
+}
+
+/* Custom ruby icon */
+
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div div:has(> img[src*='ruby'i])::before {
+	content: '';
+	display: block;
+	width: 1em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-ruby-color);
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-image: var(--severitium-game-currency-ruby-icon);
+			mask-image: var(--severitium-game-currency-ruby-icon);
+}
+
+/* Custom coin icon */
+
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div div:has(> img[src*='coin'i])::before {
+	content: '';
+	display: block;
+	width: 1.5em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-coin-color);
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-image: var(--severitium-game-currency-tancoin-icon);
+			mask-image: var(--severitium-game-currency-tancoin-icon);
+}
+
+/* Custom crystal icon */
+
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div div:has(> img[src*='crystal'i])::before {
+	content: '';
+	display: block;
+	width: 1em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-crystal-color);
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-image: var(--severitium-game-currency-crystal-icon);
+			mask-image: var(--severitium-game-currency-crystal-icon);
+}
+
 /* Price text for ruby currency */
 
 .ShopCategoryOfferSectionStyle-containerLimitOffers > div img[src*='ruby'i] + .ShowcaseItemComponentStyle-priceText {
+	margin: 0;
+	padding: 0;
 	color: var(--severitium-ruby-color);
 }
 
 /* Price text for coin currency */
 
 .ShopCategoryOfferSectionStyle-containerLimitOffers > div img[src*='coin'i] + .ShowcaseItemComponentStyle-priceText {
+	margin: 0;
+	padding: 0;
 	color: var(--severitium-tancoin-color);
 }
 
 /* Price text for crystal currency */
 
 .ShopCategoryOfferSectionStyle-containerLimitOffers > div img[src*='crystal'i] + .ShowcaseItemComponentStyle-priceText {
+	margin: 0;
+	padding: 0;
 	color: var(--severitium-crystal-color);
 }
 
 /* Discount block */
 
 .ShopCategoryOfferSectionStyle-containerLimitOffers > div .ShowcaseItemComponentStyle-discountContainer > p {
+	margin: 0;
+	padding: .1em .25em;
 	background-color: var(--severitium-red-color);
 	border-radius: var(--severitium-border-radius);
 	color: var(--severitium-white-text-color);
@@ -292,6 +411,8 @@
 	background-color: var(--severitium-red-color);
 	color: var(--severitium-white-color);
 }
+
+/* SMALL CARDS */
 
 /* Shop default small card */
 
@@ -389,7 +510,7 @@
 	color: var(--severitium-light-gray-color);
 }
 
-/* Discounted price block */
+/* Price outer container */
 
 .ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] .ShowcaseItemComponentStyle-commonShowcaseDiscountPrise {
 	position: absolute;
@@ -397,13 +518,97 @@
 	left: unset;
 	right: .5em;
 	bottom: .5em;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
 	height: fit-content;	
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	gap: .5em;
+}
+
+/* Price inner container */
+
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] div:not(.ShowcaseItemComponentStyle-discountContainer):not([class*='backgroundimagecontain'i]),
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] div:not(.ShowcaseItemComponentStyle-discountContainer):not([class*='backgroundimagecontain'i]) {
+	min-width: auto;
+	min-height: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .25em;
+}
+
+/* Original currency icon */
+
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] div:not(.ShowcaseItemComponentStyle-discountContainer) > img,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] div:not(.ShowcaseItemComponentStyle-discountContainer) > img {
+	display: none;
+}
+
+/* Custom ruby icon */
+
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] div:has(> img[src*='ruby'i])::before,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] div:has(> img[src*='ruby'i])::before {
+	content: '';
+	display: block;
+	width: 1em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-ruby-color);
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-image: var(--severitium-game-currency-ruby-icon);
+			mask-image: var(--severitium-game-currency-ruby-icon);
+}
+
+/* Custom coin icon */
+
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] div:has(> img[src*='coin'i])::before,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] div:has(> img[src*='coin'i])::before {
+	content: '';
+	display: block;
+	width: 1.5em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-coin-color);
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-image: var(--severitium-game-currency-tancoin-icon);
+			mask-image: var(--severitium-game-currency-tancoin-icon);
+}
+
+/* Custom crystal icon */
+
+.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] div:has(> img[src*='crystal'i])::before,
+.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] div:has(> img[src*='crystal'i])::before {
+	content: '';
+	display: block;
+	width: 1em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	background-color: var(--severitium-crystal-color);
+	-webkit-mask-position: center center;
+			mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+			mask-size: contain;
+	-webkit-mask-image: var(--severitium-game-currency-crystal-icon);
+			mask-image: var(--severitium-game-currency-crystal-icon);
 }
 
 /* Price text for ruby currency */
@@ -413,6 +618,8 @@
 .ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] img[src*='ruby'i] + .ShowcaseItemComponentStyle-priceText,
 .ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] img[src*='ruby'i] + .ShopItemComponentStyle-footerContent,
 .ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i] img[src*='ruby'i] + .ShowcaseItemComponentStyle-priceText {
+	margin: 0;
+	padding: 0;
 	color: var(--severitium-ruby-color);
 }
 
@@ -423,6 +630,8 @@
 .ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] img[src*='coin'i] + .ShowcaseItemComponentStyle-priceText,
 .ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] img[src*='coin'i] + .ShopItemComponentStyle-footerContent,
 .ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i] img[src*='coin'i] + .ShowcaseItemComponentStyle-priceText {
+	margin: 0;
+	padding: 0;
 	color: var(--severitium-tancoin-color);
 }
 
@@ -433,6 +642,8 @@
 .ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] img[src*='crystal'i] + .ShowcaseItemComponentStyle-priceText,
 .ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] img[src*='crystal'i] + .ShopItemComponentStyle-footerContent,
 .ShopCategoryOfferSectionStyle-containerCoin > div > div[class*='item'i] img[src*='crystal'i] + .ShowcaseItemComponentStyle-priceText {
+	margin: 0;
+	padding: 0;
 	color: var(--severitium-crystal-color);
 }
 
@@ -485,7 +696,7 @@
 	font-size: 1.5em;
 }
 
-/* Promocode input */
+/* PROMOCODE INPUT */
 
 /* Input container */
 
@@ -642,6 +853,8 @@
 	color: var(--severitium-gray-button-color);
 	opacity: .5;
 }
+
+/* SHOP BOTTOM INFO CONTAINER */
 
 /* Shop bottom announcement/bonus container */
 
