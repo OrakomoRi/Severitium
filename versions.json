@@ -4097,6 +4097,12 @@
       "date": "2026-05-19",
       "comment": "1.9.3+build116 feat: enhance clan and shop UI components",
       "hash": "df38093b2ff8b787dae60ddb3e7a0d5b3c6e8724"
+    },
+    {
+      "version": "1.9.3+build117",
+      "date": "2026-05-23",
+      "comment": "1.9.3+build117 feat: update communication style guidelines and shop layout",
+      "hash": "fe4921cc985e90c20dc56d3e716537a719a00a0d"
     }
   ]
 }
