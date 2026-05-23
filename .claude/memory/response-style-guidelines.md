@@ -1,9 +1,4 @@
----
-name: feedback-communication-style
-description: How the user wants Claude to communicate — tone, language, detail level, humor, directness
-metadata:
-  type: feedback
----
+# Feedback: Communication Style Guidelines
 
 ## Communication rules
 

@@ -145,7 +145,7 @@ export class ResourceLoader {
 				this.translations.errorMessage,
 				{
 					theme: 'glass',
-					background: 'rgba(0, 0, 0, .75)',
+					background: 'rgba(0, 0, 0, .5)',
 					position: 'top-right',
 					timer: 5e3
 				}
