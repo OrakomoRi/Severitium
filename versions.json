@@ -4127,6 +4127,12 @@
       "date": "2026-05-23",
       "comment": "1.9.3+build122 feat: add footer styles for shop items",
       "hash": "9a63caba3bdccbe231e99c1fdaf332b8ab057cbf"
+    },
+    {
+      "version": "1.9.3+build123",
+      "date": "2026-05-24",
+      "comment": "1.9.3+build123 style: update discount container styles",
+      "hash": "f9289d96838ef6365799f3f2d50f3f4415ceb0d6"
     }
   ]
 }
