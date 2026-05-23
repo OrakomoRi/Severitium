@@ -504,6 +504,13 @@
 	height: 100%;
 }
 
+/* Shop item footer */
+
+.ShopItemComponentStyle-footerContent {
+	margin: 0;
+	padding: 0;
+}
+
 /* Price text for real currency */
 
 .ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] .ShopItemComponentStyle-footerContent {
