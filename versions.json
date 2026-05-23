@@ -4115,6 +4115,12 @@
       "date": "2026-05-23",
       "comment": "1.9.3+build120 feat: enhance build and release workflow",
       "hash": "3745e7c28b1e0eec49bd41d48f315a25d0f34235"
+    },
+    {
+      "version": "1.9.3+build121",
+      "date": "2026-05-23",
+      "comment": "1.9.3+build121 style: update shop layout and colors",
+      "hash": "a163aa3e5c0e5ddff9d054a46d0f270ddb798729"
     }
   ]
 }
