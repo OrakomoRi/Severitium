@@ -4109,6 +4109,12 @@
       "date": "2026-05-23",
       "comment": "1.9.3+build119 feat: add battle result header styles and shop window functionality",
       "hash": "a4889931ebee3331882b7a3f36d2ab45f9e9de74"
+    },
+    {
+      "version": "1.9.3+build120",
+      "date": "2026-05-23",
+      "comment": "1.9.3+build120 feat: enhance build and release workflow",
+      "hash": "3745e7c28b1e0eec49bd41d48f315a25d0f34235"
     }
   ]
 }
