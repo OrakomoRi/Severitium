@@ -227,9 +227,9 @@
 	border-radius: var(--severitium-border-radius);
 }
 
-/* 2+ items: 2 columns */
+/* 2-4 items: 2 columns */
 
-.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(2)):not(:has(> :nth-of-type(3))) {
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div > .SpecialItemComponentStyle-specialItem:has(> :nth-of-type(2)):not(:has(> :nth-of-type(5))) {
 	grid-template-columns: repeat(2, 1fr);
 }
 
@@ -339,7 +339,7 @@
 	width: 1.5em;
 	height: auto;
 	aspect-ratio: 1 / 1;
-	background-color: var(--severitium-coin-color);
+	background-color: var(--severitium-tancoin-color);
 	-webkit-mask-position: center center;
 			mask-position: center center;
 	-webkit-mask-repeat: no-repeat;
