@@ -130,6 +130,8 @@
 /* Discount container */
 
 .LargeSingleCardComponentStyle-commonBlock > .-backgroundImageCover + div[class*='center'i] .ShopItemComponentStyle-discountContainer {
+	margin: 0;
+	padding: .1em .25em;
 	background-color: var(--severitium-red-color);
 	border-radius: var(--severitium-border-radius);
 }
@@ -336,7 +338,7 @@
 .ShowcaseItemComponentStyle-priceContainer:has(> img[src*='coin'i])::before {
 	content: '';
 	display: block;
-	width: 1.5em;
+	width: 1em;
 	height: auto;
 	aspect-ratio: 1 / 1;
 	background-color: var(--severitium-tancoin-color);
@@ -400,6 +402,22 @@
 	padding: .1em .25em;
 	background-color: var(--severitium-red-color);
 	border-radius: var(--severitium-border-radius);
+	color: var(--severitium-white-text-color);
+}
+
+/* Discount block inside price container */
+
+.ShowcaseItemComponentStyle-priceContainer .ShopItemComponentStyle-discountContainer {
+	margin: 0;
+	padding: .1em .25em;
+	background-color: var(--severitium-red-color);
+	border-radius: var(--severitium-border-radius);
+	color: var(--severitium-white-text-color);
+}
+
+/* Discount text */
+
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div .ShowcaseItemComponentStyle-discountContainer span {
 	color: var(--severitium-white-text-color);
 }
 
