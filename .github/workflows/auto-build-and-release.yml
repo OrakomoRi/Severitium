@@ -12,13 +12,49 @@ permissions:
   contents: write
 
 jobs:
-  build-and-release:
+  prepare:
     runs-on: ubuntu-latest
+    outputs:
+      commits: ${{ steps.find.outputs.commits }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Find commits that changed package.json
+        id: find
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            COMMITS=$(git rev-parse HEAD)
+          else
+            BEFORE="${{ github.event.before }}"
+            AFTER="${{ github.event.after }}"
+            if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+              COMMITS=$(git log --reverse --format="%H" "$AFTER" -- package.json | head -1)
+            else
+              COMMITS=$(git log --reverse --format="%H" "${BEFORE}..${AFTER}" -- package.json)
+            fi
+            if [ -z "$COMMITS" ]; then
+              COMMITS=$(git rev-parse HEAD)
+            fi
+          fi
+          COMMITS_JSON=$(echo "$COMMITS" | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          echo "commits=$COMMITS_JSON" >> $GITHUB_OUTPUT
+
+  build-and-release:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        commit: ${{ fromJson(needs.prepare.outputs.commits) }}
+      max-parallel: 1
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
+          ref: ${{ matrix.commit }}
           fetch-depth: 0
 
       - name: Extract version
@@ -49,8 +85,6 @@ jobs:
         run: |
           npx rollup -c
           mkdir -p /tmp/build-artifacts
-
-          # Copy both bundles
           cp dist/loader.min.js /tmp/build-artifacts/loader.min.js
           cp dist/script.release.min.js /tmp/build-artifacts/script.release.min.js
 
@@ -72,6 +106,8 @@ jobs:
 
       - name: Publish to builds branch
         run: |
+          [ -f release/severitium.client.js ] && cp release/severitium.client.js /tmp/build-artifacts/severitium.client.js
+
           COMMIT_HASH=$(git rev-parse HEAD)
           echo "COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_ENV
           STABLE_BASE=$(echo "$VERSION" | grep -oP '^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)')
@@ -101,10 +137,7 @@ jobs:
 
           mkdir -p "versions/$STABLE_BASE/$VERSION"
 
-          # Copy loader to builds root (always fresh, no version folder)
           cp /tmp/build-artifacts/loader.min.js "loader.min.js"
-
-          # Copy modules bundle to versioned folder
           cp /tmp/build-artifacts/script.release.min.js "versions/$STABLE_BASE/$VERSION/"
           cp /tmp/build-artifacts/style.release.min.css "versions/$STABLE_BASE/$VERSION/"
           [ -f /tmp/build-artifacts/variables.css ]  && cp /tmp/build-artifacts/variables.css  "versions/$STABLE_BASE/$VERSION/"
@@ -191,6 +224,6 @@ jobs:
             - [script.release.min.js](https://severitium-builds-server.onrender.com/versions/${{ env.STABLE_BASE }}/${{ env.VERSION }}/script.release.min.js)
             - [style.release.min.css](https://severitium-builds-server.onrender.com/versions/${{ env.STABLE_BASE }}/${{ env.VERSION }}/style.release.min.css)
           files: |
-            release/severitium.client.js
+            /tmp/build-artifacts/severitium.client.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

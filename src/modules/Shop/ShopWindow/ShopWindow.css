@@ -296,7 +296,7 @@
 
 /* Price inner container */
 
-.ShopCategoryOfferSectionStyle-containerLimitOffers > div div:not(.ShowcaseItemComponentStyle-discountContainer):not([class*='backgroundimagecontain'i]) {
+.ShowcaseItemComponentStyle-priceContainer {
 	min-width: auto;
 	min-height: auto;
 	display: flex;
@@ -308,13 +308,13 @@
 
 /* Original currency icon */
 
-.ShopCategoryOfferSectionStyle-containerLimitOffers > div div:not(.ShowcaseItemComponentStyle-discountContainer) > img {
+.ShowcaseItemComponentStyle-priceContainer > img {
 	display: none;
 }
 
 /* Custom ruby icon */
 
-.ShopCategoryOfferSectionStyle-containerLimitOffers > div div:has(> img[src*='ruby'i])::before {
+.ShowcaseItemComponentStyle-priceContainer:has(> img[src*='ruby'i])::before {
 	content: '';
 	display: block;
 	width: 1em;
@@ -333,7 +333,7 @@
 
 /* Custom coin icon */
 
-.ShopCategoryOfferSectionStyle-containerLimitOffers > div div:has(> img[src*='coin'i])::before {
+.ShowcaseItemComponentStyle-priceContainer:has(> img[src*='coin'i])::before {
 	content: '';
 	display: block;
 	width: 1.5em;
@@ -352,7 +352,7 @@
 
 /* Custom crystal icon */
 
-.ShopCategoryOfferSectionStyle-containerLimitOffers > div div:has(> img[src*='crystal'i])::before {
+.ShowcaseItemComponentStyle-priceContainer:has(> img[src*='crystal'i])::before {
 	content: '';
 	display: block;
 	width: 1em;
@@ -529,86 +529,6 @@
 	align-items: center;
 	justify-content: center;
 	gap: .5em;
-}
-
-/* Price inner container */
-
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] div:not(.ShowcaseItemComponentStyle-discountContainer):not([class*='backgroundimagecontain'i]),
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] div:not(.ShowcaseItemComponentStyle-discountContainer):not([class*='backgroundimagecontain'i]) {
-	min-width: auto;
-	min-height: auto;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	gap: .25em;
-}
-
-/* Original currency icon */
-
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] div:not(.ShowcaseItemComponentStyle-discountContainer) > img,
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] div:not(.ShowcaseItemComponentStyle-discountContainer) > img {
-	display: none;
-}
-
-/* Custom ruby icon */
-
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] div:has(> img[src*='ruby'i])::before,
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] div:has(> img[src*='ruby'i])::before {
-	content: '';
-	display: block;
-	width: 1em;
-	height: auto;
-	aspect-ratio: 1 / 1;
-	background-color: var(--severitium-ruby-color);
-	-webkit-mask-position: center center;
-			mask-position: center center;
-	-webkit-mask-repeat: no-repeat;
-			mask-repeat: no-repeat;
-	-webkit-mask-size: contain;
-			mask-size: contain;
-	-webkit-mask-image: var(--severitium-game-currency-ruby-icon);
-			mask-image: var(--severitium-game-currency-ruby-icon);
-}
-
-/* Custom coin icon */
-
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] div:has(> img[src*='coin'i])::before,
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] div:has(> img[src*='coin'i])::before {
-	content: '';
-	display: block;
-	width: 1.5em;
-	height: auto;
-	aspect-ratio: 1 / 1;
-	background-color: var(--severitium-coin-color);
-	-webkit-mask-position: center center;
-			mask-position: center center;
-	-webkit-mask-repeat: no-repeat;
-			mask-repeat: no-repeat;
-	-webkit-mask-size: contain;
-			mask-size: contain;
-	-webkit-mask-image: var(--severitium-game-currency-tancoin-icon);
-			mask-image: var(--severitium-game-currency-tancoin-icon);
-}
-
-/* Custom crystal icon */
-
-.ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] div:has(> img[src*='crystal'i])::before,
-.ShopCategoryOfferSectionStyle-containerKitOffers > div > div[class*='item'i] div:has(> img[src*='crystal'i])::before {
-	content: '';
-	display: block;
-	width: 1em;
-	height: auto;
-	aspect-ratio: 1 / 1;
-	background-color: var(--severitium-crystal-color);
-	-webkit-mask-position: center center;
-			mask-position: center center;
-	-webkit-mask-repeat: no-repeat;
-			mask-repeat: no-repeat;
-	-webkit-mask-size: contain;
-			mask-size: contain;
-	-webkit-mask-image: var(--severitium-game-currency-crystal-icon);
-			mask-image: var(--severitium-game-currency-crystal-icon);
 }
 
 /* Price text for ruby currency */
