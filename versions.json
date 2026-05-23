@@ -4103,6 +4103,12 @@
       "date": "2026-05-23",
       "comment": "1.9.3+build117 feat: update communication style guidelines and shop layout",
       "hash": "fe4921cc985e90c20dc56d3e716537a719a00a0d"
+    },
+    {
+      "version": "1.9.3+build119",
+      "date": "2026-05-23",
+      "comment": "1.9.3+build119 feat: add battle result header styles and shop window functionality",
+      "hash": "a4889931ebee3331882b7a3f36d2ab45f9e9de74"
     }
   ]
 }
