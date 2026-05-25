@@ -162,6 +162,12 @@
 	color: var(--severitium-crystal-color);
 }
 
+/* Experience text amount on pro-battles card */
+
+.BattlePickComponentStyle-descriptionBattle div:has(> img[src*='xp'i]) > span {
+	color: var(--severitium-green-text-color);
+}
+
 /* Unavailable card lock */
 
 .BattlePickComponentStyle-commonStyleBlock > .BattlePickComponentStyle-blockNotAvailable {
