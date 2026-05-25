@@ -4133,6 +4133,12 @@
       "date": "2026-05-24",
       "comment": "1.9.3+build123 style: update discount container styles",
       "hash": "f9289d96838ef6365799f3f2d50f3f4415ceb0d6"
+    },
+    {
+      "version": "1.9.3+build124",
+      "date": "2026-05-25",
+      "comment": "1.9.3+build124 feat: add experience text styling for pro-battles card",
+      "hash": "a95060ccdac2cd12dcf33be011c87200ee0e8b0f"
     }
   ]
 }
