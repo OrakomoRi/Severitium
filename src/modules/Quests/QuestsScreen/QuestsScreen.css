@@ -499,7 +499,7 @@
 .QuestsComponentStyle-content > .-commonBlock .MainQuestComponentStyle-scrollContainer > div > div > progress::-webkit-progress-value {
 	border-radius: var(--severitium-border-radius);
 	background: none;
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-green-color);
 }
 
 /* Quest line's progress */
@@ -529,7 +529,7 @@
 .QuestsComponentStyle-content > .-commonBlock .-mainQuestBlock > div > div .MainQuestComponentStyle-commonDescriptionProgress > progress::-webkit-progress-value {
 	border-radius: var(--severitium-border-radius);
 	background: none;
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-green-color);
 }
 
 /* Quest card's header */
@@ -538,7 +538,7 @@
 	font-size: 1.25em;
 	font-weight: normal;
 	margin: 0;
-	color: var(--severitium-main-color);
+	color: var(--severitium-green-text-color);
 }
 
 /* Completed quest card's header */
@@ -555,7 +555,7 @@
 	font-weight: normal;
 	margin: 0;
 	padding: 0;
-	color: var(--severitium-main-color);
+	color: var(--severitium-green-text-color);
 }
 
 /* Quest line's progress text of a completed quest */
@@ -1162,7 +1162,7 @@
 	margin: 0;
 	padding: 0;
 	font-size: 1em;
-	color: var(--severitium-main-color);
+	color: var(--severitium-green-text-color);
 }
 
 /* Supermisson conditions outer container */
@@ -1298,7 +1298,7 @@
 	right: 0;
 	width: 1em;
 	height: 1em;
-	background-color: var(--severitium-main-color);
+	background-color: var(--severitium-green-color);
 	-webkit-mask-position: center center;
 			mask-position: center center;
 	-webkit-mask-repeat: no-repeat;
@@ -1321,7 +1321,7 @@
 	font-size: 1em;
 	font-weight: normal;
 	text-align: right;
-	color: var(--severitium-main-color);
+	color: var(--severitium-green-text-color);
 }
 
 /* Supermisson reward and button outer container */
