@@ -361,6 +361,7 @@
 /* "No keys" text when 0 keys */
 
 .ContainersComponentStyle-bottomBlock .DeviceButtonComponentStyle-blockAlterations > h2 {
+	margin: 0;
 	font-size: 1.5em;
 	color: var(--severitium-light-gray-text-color);
 }
