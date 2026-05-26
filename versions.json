@@ -4139,6 +4139,12 @@
       "date": "2026-05-25",
       "comment": "1.9.3+build124 feat: add experience text styling for pro-battles card",
       "hash": "a95060ccdac2cd12dcf33be011c87200ee0e8b0f"
+    },
+    {
+      "version": "1.9.3+build125",
+      "date": "2026-05-26",
+      "comment": "1.9.3+build125 style: update quest component colors",
+      "hash": "6207579d4c00b4a87fd5df4211e4631ab8d9821a"
     }
   ]
 }
