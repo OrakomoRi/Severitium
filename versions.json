@@ -4145,6 +4145,12 @@
       "date": "2026-05-26",
       "comment": "1.9.3+build125 style: update quest component colors",
       "hash": "6207579d4c00b4a87fd5df4211e4631ab8d9821a"
+    },
+    {
+      "version": "1.9.3+build126",
+      "date": "2026-05-26",
+      "comment": "1.9.3+build126 style: adjust margin for device button heading",
+      "hash": "542b2dc73c896016cbd58125fc10e431cdbd5030"
     }
   ]
 }
