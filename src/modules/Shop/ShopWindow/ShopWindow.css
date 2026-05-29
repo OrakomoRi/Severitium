@@ -398,6 +398,8 @@
 /* Discount block */
 
 .ShopCategoryOfferSectionStyle-containerLimitOffers > div .ShowcaseItemComponentStyle-discountContainer > p {
+	width: auto;
+	height: auto;
 	margin: 0;
 	padding: .1em .25em;
 	background-color: var(--severitium-red-color);
@@ -408,6 +410,8 @@
 /* Discount block inside price container */
 
 .ShowcaseItemComponentStyle-priceContainer .ShopItemComponentStyle-discountContainer {
+	width: auto;
+	height: auto;
 	margin: 0;
 	padding: .1em .25em;
 	background-color: var(--severitium-red-color);

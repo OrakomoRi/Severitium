@@ -272,7 +272,20 @@
 /* Garage item notificator icon */
 
 .GarageCommonStyle-positionContent .ItemNotificationMarkerStyle-base:not(:root) {
+	position: absolute;
 	top: .5em;
 	right: .5em;
 	transform: none;
+}
+
+/* Garage preview screen item notificator */
+
+.GarageCommonStyle-positionContent .MountedItemsStyle-commonBlockForTurretsHulls .ItemNotificationMarkerStyle-base:not(:root),
+.GarageCommonStyle-positionContent .MountedItemsStyle-commonBlockDrone .ItemNotificationMarkerStyle-base:not(:root),
+.GarageCommonStyle-positionContent .MountedItemsStyle-commonBlockGrenades .ItemNotificationMarkerStyle-base:not(:root) {
+	width: .75em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	margin: 0;
+	margin-right: 2em;
 }
