@@ -4151,6 +4151,12 @@
       "date": "2026-05-26",
       "comment": "1.9.3+build126 style: adjust margin for device button heading",
       "hash": "542b2dc73c896016cbd58125fc10e431cdbd5030"
+    },
+    {
+      "version": "1.9.3+build127",
+      "date": "2026-05-29",
+      "comment": "1.9.3+build127 feat: enhance notificator styles",
+      "hash": "1956d8113cde24cf6ff8b914b2ba0e92ae7b5fdc"
     }
   ]
 }
