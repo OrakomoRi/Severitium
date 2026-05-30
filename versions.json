@@ -4157,6 +4157,12 @@
       "date": "2026-05-29",
       "comment": "1.9.3+build127 feat: enhance notificator styles",
       "hash": "1956d8113cde24cf6ff8b914b2ba0e92ae7b5fdc"
+    },
+    {
+      "version": "1.9.3+build128",
+      "date": "2026-05-31",
+      "comment": "1.9.3+build128 style: update CSS styles for various components",
+      "hash": "544ecc7b99861a37685e11150e8e292005c8fd64"
     }
   ]
 }
