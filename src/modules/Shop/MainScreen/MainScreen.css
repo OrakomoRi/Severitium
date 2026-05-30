@@ -91,6 +91,7 @@
 
 .ShopSelectedSectionComponentStyle-limitedOffersCommon .TimeLeftComponentStyle-timeLeftContainer .TimeLeftComponentStyle-timeLeft {
 	color: var(--severitium-black-text-color);
+	text-transform: lowercase;
 }
 
 /* Limited section card text */

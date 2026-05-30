@@ -71,6 +71,14 @@
 	border-radius: var(--severitium-border-radius);
 }
 
+/* Timer text */
+
+.LargeSingleCardComponentStyle-commonBlock .TimeLeftComponentStyle-timeLeft:not(:root) {
+	margin: 0;
+	color: var(--severitium-black-text-color);
+	text-transform: lowercase;
+}
+
 /* Purchase button */
 
 .LargeSingleCardComponentStyle-commonBlock > .-backgroundImageCover + div[class*='center'i] {
@@ -131,6 +139,7 @@
 
 .LargeSingleCardComponentStyle-commonBlock > .-backgroundImageCover + div[class*='center'i] .ShopItemComponentStyle-discountContainer {
 	margin: 0;
+	margin-left: .5em;
 	padding: .1em .25em;
 	background-color: var(--severitium-red-color);
 	border-radius: var(--severitium-border-radius);
@@ -139,6 +148,13 @@
 /* Discount text */
 
 .LargeSingleCardComponentStyle-commonBlock > .-backgroundImageCover + div[class*='center'i] .ShopItemComponentStyle-discountContainer > h3 {
+	width: auto;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	font-family: BaseFontBold, FallbackFontBold;
+	font-size: 1em;
 	color: var(--severitium-white-text-color);
 }
 
@@ -200,6 +216,14 @@
 	background-color: var(--severitium-timer-color);
 	color: var(--severitium-black-text-color);
 	border-radius: var(--severitium-border-radius);
+}
+
+/* Timer text */
+
+.ShopCategoryOfferSectionStyle-containerLimitOffers .TimeLeftComponentStyle-timeLeft:not(:root) {
+	margin: 0;
+	color: var(--severitium-black-text-color);
+	text-transform: lowercase;
 }
 
 /* Single limited offer items container */
@@ -395,15 +419,27 @@
 	color: var(--severitium-crystal-color);
 }
 
-/* Discount block */
+/* Discount container */
 
-.ShopCategoryOfferSectionStyle-containerLimitOffers > div .ShowcaseItemComponentStyle-discountContainer > p {
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div .ShowcaseItemComponentStyle-discountContainer {
 	width: auto;
 	height: auto;
 	margin: 0;
 	padding: .1em .25em;
 	background-color: var(--severitium-red-color);
 	border-radius: var(--severitium-border-radius);
+}
+
+/* Discount text */
+
+.ShopCategoryOfferSectionStyle-containerLimitOffers > div .ShowcaseItemComponentStyle-discountContainer > p {
+	width: auto;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	font-family: BaseFontBold, FallbackFontBold;
+	font-size: 1em;
 	color: var(--severitium-white-text-color);
 }
 
@@ -421,8 +457,15 @@
 
 /* Discount text */
 
-.ShopCategoryOfferSectionStyle-containerLimitOffers > div .ShowcaseItemComponentStyle-discountContainer span {
+.ShowcaseItemComponentStyle-priceContainer .ShopItemComponentStyle-discountContainer span {
+	width: auto;
+	height: auto;
+	margin: 0;
+	padding: 0;
 	color: var(--severitium-white-text-color);
+	font-family: BaseFontBold, FallbackFontBold;
+	font-size: 1em;
+	text-transform: uppercase;
 }
 
 /* Disabled text "sold" block */
@@ -431,7 +474,7 @@
 	background: none;
 	border-radius: var(--severitium-border-radius);
 	background-color: var(--severitium-red-color);
-	color: var(--severitium-white-color);
+	color: var(--severitium-white-text-color);
 }
 
 /* SMALL CARDS */
@@ -536,7 +579,7 @@
 /* Price text for real currency */
 
 .ShopCategoryOfferSectionStyle-containerItem > div > div[class*='item'i] .ShopItemComponentStyle-footerContent {
-	color: var(--severitium-light-gray-color);
+	color: var(--severitium-light-gray-text-color);
 }
 
 /* Price outer container */
@@ -615,7 +658,7 @@
 	background-color: var(--severitium-red-color);
 	border-radius: var(--severitium-border-radius);
 	border: none;
-	color: var(--severitium-white-color);
+	color: var(--severitium-white-text-color);
 }
 
 /* PROMOCODES */

@@ -877,6 +877,7 @@
 	color: var(--severitium-black-text-color);
 	font-size: 1.125em;
 	font-weight: normal;
+	text-transform: lowercase;
 }
 
 /* Quest line's timer text */
@@ -1143,6 +1144,7 @@
 	font-size: 1em;
 	font-weight: normal;
 	color: var(--severitium-black-text-color);
+	text-transform: lowercase;
 }
 
 /* Supermisson counter text */
