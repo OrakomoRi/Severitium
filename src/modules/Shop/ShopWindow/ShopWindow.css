@@ -155,7 +155,7 @@
 	text-transform: uppercase;
 	font-family: BaseFontBold, FallbackFontBold;
 	font-size: 1em;
-	color: var(--severitium-white-text-color);
+	color: var(--severitium-black-text-color);
 }
 
 /* Description text */
@@ -440,7 +440,7 @@
 	text-transform: uppercase;
 	font-family: BaseFontBold, FallbackFontBold;
 	font-size: 1em;
-	color: var(--severitium-white-text-color);
+	color: var(--severitium-black-text-color);
 }
 
 /* Discount block inside price container */
@@ -452,7 +452,7 @@
 	padding: .1em .25em;
 	background-color: var(--severitium-red-color);
 	border-radius: var(--severitium-border-radius);
-	color: var(--severitium-white-text-color);
+	color: var(--severitium-black-text-color);
 }
 
 /* Discount text */
@@ -462,7 +462,7 @@
 	height: auto;
 	margin: 0;
 	padding: 0;
-	color: var(--severitium-white-text-color);
+	color: var(--severitium-black-text-color);
 	font-family: BaseFontBold, FallbackFontBold;
 	font-size: 1em;
 	text-transform: uppercase;
@@ -474,7 +474,7 @@
 	background: none;
 	border-radius: var(--severitium-border-radius);
 	background-color: var(--severitium-red-color);
-	color: var(--severitium-white-text-color);
+	color: var(--severitium-black-text-color);
 }
 
 /* SMALL CARDS */
@@ -648,7 +648,7 @@
 	padding: .1em .25em;
 	background-color: var(--severitium-red-color);
 	border-radius: var(--severitium-border-radius);
-	color: var(--severitium-white-text-color);
+	color: var(--severitium-black-text-color);
 }
 
 /* Disabled text "sold" block */
