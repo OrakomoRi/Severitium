@@ -4163,6 +4163,12 @@
       "date": "2026-05-31",
       "comment": "1.9.3+build128 style: update CSS styles for various components",
       "hash": "544ecc7b99861a37685e11150e8e292005c8fd64"
+    },
+    {
+      "version": "1.9.3+build129",
+      "date": "2026-05-31",
+      "comment": "1.9.3+build129 feat: update contract card styles and functionality",
+      "hash": "c4b45da5430a01b8aa479917ebfcfe3a3b353330"
     }
   ]
 }
