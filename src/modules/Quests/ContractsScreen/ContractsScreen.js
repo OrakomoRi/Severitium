@@ -12,6 +12,11 @@ import { RARITY_COLORS } from '../../../libs/modules/constants/RarityColors.js';
 				if (node.nodeType !== Node.ELEMENT_NODE) continue;
 				const cards = node.matches(CARD) ? [node] : [...node.querySelectorAll(CARD)];
 				for (const card of cards) {
+					const cardBg = card.style.getPropertyValue('background-color') || card.style.getPropertyValue('background');
+					if (cardBg.replace(/\s/g, '').includes('118,255,51')) {
+						card.setAttribute('data-state', 'completed');
+					}
+
 					const rarityBlock = card.querySelector('div.-backgroundImageContain + div');
 					if (!rarityBlock) continue;
 					rarityBlock.classList.add('ContractCardComponentStyle-rarityBlock');

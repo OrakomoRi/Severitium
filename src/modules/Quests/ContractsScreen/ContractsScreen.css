@@ -25,13 +25,19 @@
 /* Inactive contract card */
 
 .ContractCardComponentStyle-card:not(:has([class*='hotkey'i])) {
-	background-color: var(--severitium-dark-transparent-background2);
+	background-color: var(--severitium-gray-button-background);
 }
 
 /* Active contract card */
 
 .ContractCardComponentStyle-card:has([class*='hotkey'i]) {
-	background-color: var(--severitium-light-transparent-background3);
+	background-color: var(--severitium-gold-button-background);
+}
+
+/* Completed contract card */
+
+.ContractCardComponentStyle-card:has([class*='hotkey'i].-disabled) {
+	background-color: var(--severitium-green-button-background);
 }
 
 /* Card gradient background mask */
