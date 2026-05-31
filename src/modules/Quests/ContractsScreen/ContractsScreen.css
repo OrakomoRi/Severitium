@@ -36,7 +36,7 @@
 
 /* Completed contract card */
 
-.ContractCardComponentStyle-card:has([class*='hotkey'i].-disabled) {
+.ContractCardComponentStyle-card[data-state='completed'i] {
 	background-color: var(--severitium-green-button-background);
 }
 
