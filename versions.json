@@ -4169,6 +4169,12 @@
       "date": "2026-05-31",
       "comment": "1.9.3+build129 feat: update contract card styles and functionality",
       "hash": "c4b45da5430a01b8aa479917ebfcfe3a3b353330"
+    },
+    {
+      "version": "1.9.3+build130",
+      "date": "2026-05-31",
+      "comment": "1.9.3+build130 fix: update completed contract card styles",
+      "hash": "798b9ac33bf169def49020e76ad0c96b5d2f44d9"
     }
   ]
 }
