@@ -4181,6 +4181,12 @@
       "date": "2026-06-01",
       "comment": "1.9.3+build131 feat: enhance contract card styles",
       "hash": "fd005802d65de366d7ce4ba9e70b7505ef0b2c6f"
+    },
+    {
+      "version": "1.9.3+build132",
+      "date": "2026-06-01",
+      "comment": "1.9.3+build132 style: update cancel button styles",
+      "hash": "b14179acf08b0fd37ff54cf8b16623f57350a4e1"
     }
   ]
 }
