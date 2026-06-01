@@ -4187,6 +4187,12 @@
       "date": "2026-06-01",
       "comment": "1.9.3+build132 style: update cancel button styles",
       "hash": "b14179acf08b0fd37ff54cf8b16623f57350a4e1"
+    },
+    {
+      "version": "1.9.3+build133",
+      "date": "2026-06-01",
+      "comment": "1.9.3+build133 style: update icon styles and layout adjustments",
+      "hash": "5abe925080a10c0ab37dd5a9559a80fab0621dff"
     }
   ]
 }
