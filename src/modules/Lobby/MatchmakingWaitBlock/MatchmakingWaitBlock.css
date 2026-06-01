@@ -93,19 +93,25 @@
 .MatchmakingWaitComponentStyle-cancelButton {
 	margin: 0;
 	width: auto;
-	height: auto;
+	align-self: stretch;
 	border: none;
 }
 
 /* Cancel battle search button text */
 
 .MatchmakingWaitComponentStyle-cancelButton > span {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
 	margin: 0;
 	padding: 1em 2em;
 	font-size: 1.25em;
 	font-weight: bold;
 	color: var(--severitium-white-text-color);
 	transition: color .2s ease;
+	box-sizing: border-box;
 }
 
 /* Cancel battle search button text on button's hover */
