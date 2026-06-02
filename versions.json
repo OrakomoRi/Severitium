@@ -4193,6 +4193,12 @@
       "date": "2026-06-01",
       "comment": "1.9.3+build133 style: update icon styles and layout adjustments",
       "hash": "5abe925080a10c0ab37dd5a9559a80fab0621dff"
+    },
+    {
+      "version": "1.9.3+build134",
+      "date": "2026-06-02",
+      "comment": "1.9.3+build134 style: adjust padding and width in MatchmakingWaitBlock",
+      "hash": "14de5970f8276fe25fea583d902af1da9a12c7e4"
     }
   ]
 }
