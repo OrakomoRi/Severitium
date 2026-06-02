@@ -40,8 +40,8 @@
 	margin: 0;
 	height: auto;
 	width: auto;
-	padding: 1.5em 3em;
-	width: 20em;
+	padding: 1.5em 2.5em;
+	width: 24em;
 	border-right: var(--severitium-main-color) solid .1em;
 }
 
