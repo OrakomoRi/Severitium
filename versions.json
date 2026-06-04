@@ -4199,6 +4199,12 @@
       "date": "2026-06-02",
       "comment": "1.9.3+build134 style: adjust padding and width in MatchmakingWaitBlock",
       "hash": "14de5970f8276fe25fea583d902af1da9a12c7e4"
+    },
+    {
+      "version": "1.9.3+build135",
+      "date": "2026-06-04",
+      "comment": "1.9.3+build135 style: update navigation menu styles",
+      "hash": "9cf5e34a126ad3ac7d818133e792c71569c3affc"
     }
   ]
 }
