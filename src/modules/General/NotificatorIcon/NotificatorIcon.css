@@ -92,7 +92,7 @@
 	transition: opacity .2s ease;
 }
 
-/* Main menu custom icon inner circle when discoun icon appears */
+/* Main menu custom icon inner circle when discount icon appears */
 
 .MainScreenComponentStyle-blockMainMenu > ul > li:has(> .PrimaryMenuItemComponentStyle-notificationIconNewNews):has(span[class*='discount'i]) span[class*='name'i]::before,
 .MainScreenComponentStyle-blockMainMenu > ul > li:has(> .PrimaryMenuItemComponentStyle-notificationIconNewNews):has(span[class*='discount'i]) span[class*='name'i]::after {
@@ -280,12 +280,15 @@
 
 /* Garage preview screen item notificator */
 
-.GarageCommonStyle-positionContent .MountedItemsStyle-commonBlockForTurretsHulls .ItemNotificationMarkerStyle-base:not(:root),
-.GarageCommonStyle-positionContent .MountedItemsStyle-commonBlockDrone .ItemNotificationMarkerStyle-base:not(:root),
-.GarageCommonStyle-positionContent .MountedItemsStyle-commonBlockGrenades .ItemNotificationMarkerStyle-base:not(:root) {
+.GarageCommonStyle-positionContent > div .ItemNotificationMarkerStyle-base:not(:root) {
 	width: .75em;
 	height: auto;
 	aspect-ratio: 1 / 1;
 	margin: 0;
+}
+
+/* Garage preview screen item notificator with active discounts */
+
+.GarageCommonStyle-positionContent > div:has(span.-discount) .ItemNotificationMarkerStyle-base:not(:root) {
 	margin-right: 2em;
 }
