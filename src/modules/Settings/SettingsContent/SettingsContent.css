@@ -7,7 +7,7 @@
 
 /* Navigation menu container */
 
-.SettingsMenuComponentStyle-blockMenuOptions {
+.SettingsComponentStyle-blockContentOptions > ul:has(> .SettingsMenuComponentStyle-menuItemOptions) {
 	height: -webkit-fit-content;
 	height: -moz-fit-content;
 	height: fit-content;
