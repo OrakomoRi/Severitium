@@ -4211,6 +4211,12 @@
       "date": "2026-06-04",
       "comment": "1.9.3+build136 style: correct typo in CSS comment",
       "hash": "969beb7fb15d2efcd73d077a179ae874d77255e7"
+    },
+    {
+      "version": "1.9.3+build137",
+      "date": "2026-06-04",
+      "comment": "1.9.3+build137 style: update background styles in ShopWindow",
+      "hash": "c7414e6449a7544fc063646a837ebdfa2c53b12c"
     }
   ]
 }
