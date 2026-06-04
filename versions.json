@@ -4205,6 +4205,12 @@
       "date": "2026-06-04",
       "comment": "1.9.3+build135 style: update navigation menu styles",
       "hash": "9cf5e34a126ad3ac7d818133e792c71569c3affc"
+    },
+    {
+      "version": "1.9.3+build136",
+      "date": "2026-06-04",
+      "comment": "1.9.3+build136 style: correct typo in CSS comment",
+      "hash": "969beb7fb15d2efcd73d077a179ae874d77255e7"
     }
   ]
 }
