@@ -394,16 +394,30 @@
 
 /* Table header */
 
+/* Table header block */
+
+.ClanInvitationsHeaderStyle-members thead {
+	background: none;
+	margin-bottom: .25em;
+}
+
 /* Table header cell */
 
-.ClanInvitationsListComponentStyle-members thead tr th {
+.ClanInvitationsHeaderStyle-members thead tr th {
 	background-color: var(--severitium-light-transparent-background3);
-	border-radius: 0;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Name and actions header cells */
+
+.ClanInvitationsHeaderStyle-members thead tr th.ClanInvitationsHeaderStyle-nameColumnHeader,
+.ClanInvitationsHeaderStyle-members thead tr th.ClanInvitationsHeaderStyle-actionsColumnHeader {
+	width: calc(50% - (.25em / 2));
 }
 
 /* Table header cell's text */
 
-.ClanInvitationsListComponentStyle-members thead tr th h2 {
+.ClanInvitationsHeaderStyle-members thead tr th h2 {
 	color: var(--severitium-white-text-color);
 }
 
@@ -411,43 +425,51 @@
 
 /* Table body container */
 
-.ClanInvitationsListComponentStyle-members .TableComponentStyle-tBody {
+.ClanInvitationsHeaderStyle-members .TableComponentStyle-tBody {
 	background-color: transparent;
+}
+
+/* Filled and empty rows */
+
+.ClanInvitationsHeaderStyle-members .TableComponentStyle-tBody .ClanCommonStyle-row,
+.ClanInvitationsHeaderStyle-members .TableComponentStyle-tBody .ClanCommonStyle-rowEmpty {
+	margin-bottom: .25em;
+	border-radius: var(--severitium-border-radius);
 }
 
 /* Empty row */
 
-.ClanInvitationsListComponentStyle-members .TableComponentStyle-tBody .ClanCommonStyle-rowEmpty {
+.ClanInvitationsHeaderStyle-members .TableComponentStyle-tBody .ClanCommonStyle-rowEmpty {
 	background-color: transparent;
 	opacity: 1;
 }
 
 /* Filled row */
 
-.ClanInvitationsListComponentStyle-members .TableComponentStyle-tBody .ClanCommonStyle-row {
+.ClanInvitationsHeaderStyle-members .TableComponentStyle-tBody .ClanCommonStyle-row {
 	background-color: var(--severitium-light-transparent-background3);
 	opacity: 1;
 }
 
 /* Texts in a row */
 
-.ClanInvitationsListComponentStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-experienceCell > span,
-.ClanInvitationsListComponentStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-destroyCell > span,
-.ClanInvitationsListComponentStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-lostCell > span,
-.ClanInvitationsListComponentStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-destroyLostKoefCell > span {
+.ClanInvitationsHeaderStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-experienceCell > span,
+.ClanInvitationsHeaderStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-destroyCell > span,
+.ClanInvitationsHeaderStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-lostCell > span,
+.ClanInvitationsHeaderStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-destroyLostKoefCell > span {
 	color: var(--severitium-white-text-color);
 }
 
 /* Nicknames */
 
-.ClanInvitationsListComponentStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-nameCell span {
+.ClanInvitationsHeaderStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-nameCell span {
 	color: var(--severitium-white-text-color);
 	transition: color .2s ease;
 }
 
 /* Nicknames on hover */
 
-.ClanInvitationsListComponentStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-nameCell span:hover {
+.ClanInvitationsHeaderStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-nameCell span:hover {
 	color: var(--severitium-main-color);
 }
 
@@ -455,7 +477,7 @@
 
 /* Button */
 
-.ClanInvitationsListComponentStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-buttonReject {
+.ClanInvitationsHeaderStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-buttonReject {
 	outline: none;
 	box-shadow: none;
 	border-radius: var(--severitium-border-radius);
@@ -466,13 +488,13 @@
 
 /* Button on hover */
 
-.ClanInvitationsListComponentStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-buttonReject:hover {
+.ClanInvitationsHeaderStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-buttonReject:hover {
 	background: var(--severitium-red-button-background);
 	border: var(--severitium-red-button-border-color-hover) solid .1em;
 }
 
 /* Button's text */
 
-.ClanInvitationsListComponentStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-buttonReject > span {
+.ClanInvitationsHeaderStyle-members .TableComponentStyle-tBody .ClanInvitationsItemComponentStyle-buttonReject > span {
 	color: var(--severitium-red-button-color);
 }
