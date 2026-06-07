@@ -194,7 +194,7 @@
 	width: 5em;
 	height: auto;
 	aspect-ratio: 1 / 1;
-	background-color: var(--severitium-light-gray-color);
+	background-color: var(--severitium-green-color);
 	-webkit-mask-position: center center;
 			mask-position: center center;
 	-webkit-mask-repeat: no-repeat;
