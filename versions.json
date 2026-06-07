@@ -4217,6 +4217,12 @@
       "date": "2026-06-04",
       "comment": "1.9.3+build137 style: update background styles in ShopWindow",
       "hash": "c7414e6449a7544fc063646a837ebdfa2c53b12c"
+    },
+    {
+      "version": "1.9.3+build138",
+      "date": "2026-06-06",
+      "comment": "1.9.3+build138 style: update table header styles",
+      "hash": "82a9255dd0835e1025463dd861196b49311d6816"
     }
   ]
 }
