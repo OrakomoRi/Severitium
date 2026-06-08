@@ -4223,6 +4223,12 @@
       "date": "2026-06-06",
       "comment": "1.9.3+build138 style: update table header styles",
       "hash": "82a9255dd0835e1025463dd861196b49311d6816"
+    },
+    {
+      "version": "1.9.3+build139",
+      "date": "2026-06-07",
+      "comment": "1.9.3+build139 feat: change background color in QuestsScreen",
+      "hash": "7d211149184b736d1897252068b7453cfad0b15d"
     }
   ]
 }
