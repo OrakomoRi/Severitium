@@ -4229,6 +4229,12 @@
       "date": "2026-06-07",
       "comment": "1.9.3+build139 feat: change background color in QuestsScreen",
       "hash": "7d211149184b736d1897252068b7453cfad0b15d"
+    },
+    {
+      "version": "1.9.3+build140",
+      "date": "2026-06-08",
+      "comment": "1.9.3+build140 style: update table background colors",
+      "hash": "469212a672a573098fe70dcbbd5b39b415fe6393"
     }
   ]
 }
