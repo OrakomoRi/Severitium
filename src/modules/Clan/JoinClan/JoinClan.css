@@ -222,7 +222,7 @@
 /* Table header cell */
 
 .ClanCommonStyle-members .TableComponentStyle-table thead tr th {
-	background-color: var(--severitium-dark-transparent-background1);
+	background-color: var(--severitium-light-transparent-background3);
 	border-radius: 0;
 }
 
@@ -250,7 +250,7 @@
 /* Filled row */
 
 .ClanCommonStyle-members .TableComponentStyle-tBody .ClanCommonStyle-row {
-	background-color: var(--severitium-dark-transparent-background1);
+	background-color: var(--severitium-light-transparent-background3);
 	opacity: 1;
 }
 
