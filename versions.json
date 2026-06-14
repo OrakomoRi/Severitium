@@ -4235,6 +4235,12 @@
       "date": "2026-06-08",
       "comment": "1.9.3+build140 style: update table background colors",
       "hash": "469212a672a573098fe70dcbbd5b39b415fe6393"
+    },
+    {
+      "version": "1.9.3+build141",
+      "date": "2026-06-14",
+      "comment": "1.9.3+build141 chore: minor patch",
+      "hash": "134d9104a1d0a87b3e55ef10b6c40575382a1230"
     }
   ]
 }
