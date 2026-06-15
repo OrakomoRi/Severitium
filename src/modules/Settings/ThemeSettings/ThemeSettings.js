@@ -42,7 +42,7 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 	// ===== CONSTS =====
 
 	const SELECTORS = {
-		menuContainer: '.SettingsMenuComponentStyle-blockMenuOptions',
+		menuContainer: '> ul',
 		contentContainer: '.SettingsComponentStyle-containerBlock .SettingsComponentStyle-scrollingMenu',
 		menuItem: '.SettingsMenuComponentStyle-menuItemOptions',
 		container: '.SettingsComponentStyle-blockContentOptions',
@@ -1034,8 +1034,9 @@ import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandle
 
 	const MenuIntegration = {
 		getElements() {
+			const container = document.querySelector(SELECTORS.container);
 			return {
-				menuContainer: document.querySelector(SELECTORS.menuContainer),
+				menuContainer: container?.querySelector(':scope ' + SELECTORS.menuContainer),
 				contentContainer: document.querySelector(SELECTORS.contentContainer)
 			};
 		},
