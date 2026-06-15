@@ -4241,6 +4241,12 @@
       "date": "2026-06-14",
       "comment": "1.9.3+build141 chore: minor patch",
       "hash": "134d9104a1d0a87b3e55ef10b6c40575382a1230"
+    },
+    {
+      "version": "1.9.3+build142",
+      "date": "2026-06-15",
+      "comment": "1.9.3+build142 fix: update theme settings selectors",
+      "hash": "01e95c27338183bd1cf55d3ee4570f0a93eae717"
     }
   ]
 }
