@@ -1091,6 +1091,8 @@
 /* User progress scrollbar single item container */
 
 .UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-itemContainer {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	background: none;
 	background-color: var(--severitium-dark-transparent-background1);
 	box-shadow: none;
@@ -1098,6 +1100,12 @@
 	        backdrop-filter: blur(.25em);
 	border: .1em solid var(--severitium-gray-color);
 	border-radius: var(--severitium-border-radius);
+}
+
+/* Item image */
+
+.UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-itemContainer .UserProgressComponentStyle-itemImage {
+	grid-column: 1 / -1;
 }
 
 /* User progress modal items scrolling arrows */
@@ -1108,6 +1116,25 @@
 	width: auto;
 	padding: 0 0 0 2em;
 	transition: opacity .2s ease;
+}
+
+/* Item title block */
+
+.UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-itemContainer .UserProgressComponentStyle-itemNameBlock {
+	margin: 0;
+}
+
+/* Item amount block */
+
+.UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-itemContainer .UserProgressComponentStyle-itemText {
+	position: relative;
+	top: unset;
+	right: unset;
+	bottom: unset;
+	left: unset;
+	margin: 0;
+	font-size: 1em;
+	color: var(--severitium-light-gray-text-color);
 }
 
 /* User progress modal single item title */

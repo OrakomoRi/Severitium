@@ -337,6 +337,8 @@
 	cursor: pointer;
 	background: none;
 	background-color: transparent;
+	margin: 0;
+	margin-top: auto;
 	padding: 1.5em 0;
 	border-top: .1em solid var(--severitium-gray-color);
 	transition: background-color .2s ease;

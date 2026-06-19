@@ -109,7 +109,7 @@
 	background: none;
 	background-color: var(--severitium-tancoin-button-background);
 	box-shadow: none;
-	border: var(--severitium-tancoin-button-border-color-active) solid .1em;
+	border: var(--severitium-tancoin-button-border-color-hover) solid .1em;
 	-webkit-animation: none;
 	        animation: none;
 }
