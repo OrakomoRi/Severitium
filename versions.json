@@ -4253,6 +4253,12 @@
       "date": "2026-06-19",
       "comment": "1.9.3+build143 feat: update challenge styles",
       "hash": "c493d336d75db646aadbb41d5949a5460d3d1eeb"
+    },
+    {
+      "version": "1.9.3+build144",
+      "date": "2026-06-19",
+      "comment": "1.9.3+build144 fix: remove public flag from vercel.json",
+      "hash": "5b46e62ca6917f72b995793607efd9e1bebcbf29"
     }
   ]
 }
