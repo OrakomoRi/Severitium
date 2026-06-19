@@ -4265,6 +4265,12 @@
       "date": "2026-06-19",
       "comment": "1.9.3+build145 style: update challenge icons",
       "hash": "1a931de29efd43ef0ded5d3bdb36a74d98a44e1b"
+    },
+    {
+      "version": "1.9.3+build146",
+      "date": "2026-06-20",
+      "comment": "1.9.3+build146 feat: enhance modal item layout and styling",
+      "hash": "eb081cf85f85fcb5344caac594f8e88bf2ac813f"
     }
   ]
 }
