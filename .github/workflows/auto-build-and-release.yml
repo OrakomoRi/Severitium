@@ -168,7 +168,6 @@ jobs:
           if [ ! -f vercel.json ]; then
             jq -n '{
               version: 2,
-              public: true,
               headers: [
                 {
                   source: "loader.min.js",
