@@ -4247,6 +4247,12 @@
       "date": "2026-06-15",
       "comment": "1.9.3+build142 fix: update theme settings selectors",
       "hash": "01e95c27338183bd1cf55d3ee4570f0a93eae717"
+    },
+    {
+      "version": "1.9.3+build143",
+      "date": "2026-06-19",
+      "comment": "1.9.3+build143 feat: update challenge styles",
+      "hash": "c493d336d75db646aadbb41d5949a5460d3d1eeb"
     }
   ]
 }
