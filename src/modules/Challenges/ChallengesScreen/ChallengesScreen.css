@@ -875,7 +875,7 @@
 
 /* Image when a reward is claimed */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > img[src*='checker'i] + .-backgroundImageContain {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > img[src*='iconchecker'i] + .-backgroundImageContain {
 	opacity: .5;
 }
 
@@ -887,7 +887,7 @@
 
 /* Max tiers free block custom checker icon */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn:first-of-type .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier:has(> img[src*='checker'i])::before {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn:first-of-type .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier:has(> img[src*='iconchecker'i])::before {
 	position: absolute;
 	bottom: .5em;
 	left: .5em;
@@ -908,7 +908,7 @@
 
 /* Max tiers premium block custom checker icon */
 
-.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn:last-of-type .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier:has(> img[src*='checker'i])::before {
+.QuestsChallengesComponentStyle-maxTierBlock > .-flexCenterAlignCenterColumn:last-of-type .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier:has(> img[src*='iconchecker'i])::before {
 	position: absolute;
 	top: .5em;
 	left: .5em;
@@ -994,9 +994,9 @@
 	transition: background-color .2s ease;
 }
 
-/* Block on hover (excluding locked) */
+/* Block on hover (excluding locked and claimed) */
 
-.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div:not(:has(img[src*='iconlock'i])):hover {
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div:not(:has(img[src*='iconlock'i])):not(:has(img[src*='iconchecker'i])):hover {
 	background: none;
 	background-color: var(--severitium-light-transparent-background3);
 }
@@ -1063,7 +1063,7 @@
 
 /* Image when a reward is claimed */
 
-.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > img[src*='checker'i] + .-backgroundImageContain {
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier > img[src*='iconchecker'i] + .-backgroundImageContain {
 	opacity: .5;
 }
 
@@ -1075,7 +1075,7 @@
 
 /* Max tiers free block custom checker icon */
 
-.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier:has(> img[src*='checker'i])::before {
+.QuestsChallengesComponentStyle-containerTiers:has(> div > .QuestsChallengesComponentStyle-eventTier) + .ChallengePurchaseComponentStyle-blockPurchase + div .EventBattlePassLobbyComponentStyle-commonBlockIconCheckerTier:has(> img[src*='iconchecker'i])::before {
 	position: absolute;
 	top: .5em;
 	right: .5em;
