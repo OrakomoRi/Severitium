@@ -4259,6 +4259,12 @@
       "date": "2026-06-19",
       "comment": "1.9.3+build144 fix: remove public flag from vercel.json",
       "hash": "5b46e62ca6917f72b995793607efd9e1bebcbf29"
+    },
+    {
+      "version": "1.9.3+build145",
+      "date": "2026-06-19",
+      "comment": "1.9.3+build145 style: update challenge icons",
+      "hash": "1a931de29efd43ef0ded5d3bdb36a74d98a44e1b"
     }
   ]
 }
