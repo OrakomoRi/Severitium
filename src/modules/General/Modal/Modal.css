@@ -1084,6 +1084,10 @@
 /* User progress scrollbar items container */
 
 .UserProgressComponentStyle-modalWrapper .ScrollBarStyle-itemsContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
 	margin: 0;
 	padding: 0 .25em;
 }
@@ -1093,19 +1097,22 @@
 .UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-itemContainer {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr auto;
 	background: none;
 	background-color: var(--severitium-dark-transparent-background1);
 	box-shadow: none;
 	-webkit-backdrop-filter: blur(.25em);
-	        backdrop-filter: blur(.25em);
+	backdrop-filter: blur(.25em);
 	border: .1em solid var(--severitium-gray-color);
 	border-radius: var(--severitium-border-radius);
+	margin: 0;
 }
 
 /* Item image */
 
 .UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-itemContainer .UserProgressComponentStyle-itemImage {
 	grid-column: 1 / -1;
+	margin: 0;
 }
 
 /* User progress modal items scrolling arrows */
@@ -1121,12 +1128,34 @@
 /* Item title block */
 
 .UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-itemContainer .UserProgressComponentStyle-itemNameBlock {
+	width: fit-content;
+	height: fit-content;
 	margin: 0;
+}
+
+/* User progress modal single item title */
+
+.UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-itemContainer .UserProgressComponentStyle-itemName {
+	display: inline-flex;
+	justify-self: flex-start;
+	font-size: 1em;
+	color: var(--severitium-white-text-color);
+	margin: 0;
+	padding: 0;
+}
+
+/* Item title when there's no item text */
+
+.UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-itemContainer:not(:has(.UserProgressComponentStyle-itemText)) .UserProgressComponentStyle-itemNameBlock,
+.UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-itemContainer:not(:has(.UserProgressComponentStyle-itemText)) .UserProgressComponentStyle-itemName {
+	grid-column: 1 / -1;
 }
 
 /* Item amount block */
 
 .UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-itemContainer .UserProgressComponentStyle-itemText {
+	display: inline-flex;
+	justify-self: flex-end;
 	position: relative;
 	top: unset;
 	right: unset;
@@ -1135,15 +1164,6 @@
 	margin: 0;
 	font-size: 1em;
 	color: var(--severitium-light-gray-text-color);
-}
-
-/* User progress modal single item title */
-
-.UserProgressComponentStyle-modalWrapper .UserProgressComponentStyle-itemContainer .UserProgressComponentStyle-itemName {
-	font-size: 1em;
-	color: var(--severitium-white-text-color);
-	margin: 0;
-	padding: 0;
 }
 
 /* User progress modal items title */
