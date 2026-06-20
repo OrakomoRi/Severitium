@@ -4289,6 +4289,12 @@
       "date": "2026-06-20",
       "comment": "1.9.3+build149 feat: enhance settings support tab",
       "hash": "08cea9ab33508a297ba720b9dbf494dc9c94e145"
+    },
+    {
+      "version": "1.9.3+build150",
+      "date": "2026-06-20",
+      "comment": "1.9.3+build150 feat: enhance settings refresh functionality",
+      "hash": "462a19a1d94c6f4a2c7e99a7c1ba9ec9f2ae031c"
     }
   ]
 }
