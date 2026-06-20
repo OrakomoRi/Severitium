@@ -4277,6 +4277,12 @@
       "date": "2026-06-20",
       "comment": "1.9.3+build147 feat: enhance modal styling and functionality",
       "hash": "b6c03dba65949186a96640a25e00875b058821f4"
+    },
+    {
+      "version": "1.9.3+build148",
+      "date": "2026-06-20",
+      "comment": "1.9.3+build148 feat: enhance modal and XP styles",
+      "hash": "875b48c748db2133edfcf7bb5a274db12b22f537"
     }
   ]
 }
