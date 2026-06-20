@@ -37,5 +37,10 @@ import { watchElement } from '../../../libs/modules/MutationHandler/MutationHand
 			?.classList.add(CLASSES.applyButton);
 	}
 
-	watchElement(SELECTORS.scrollingMenu, tagSupportTab);
+	function refresh() {
+		document.querySelectorAll(SELECTORS.scrollingMenu).forEach(tagSupportTab);
+	}
+
+	watchElement(SELECTORS.scrollingMenu, refresh);
+	watchElement(SELECTORS.menuItem, refresh);
 })();
