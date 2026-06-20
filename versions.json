@@ -4271,6 +4271,12 @@
       "date": "2026-06-20",
       "comment": "1.9.3+build146 feat: enhance modal item layout and styling",
       "hash": "eb081cf85f85fcb5344caac594f8e88bf2ac813f"
+    },
+    {
+      "version": "1.9.3+build147",
+      "date": "2026-06-20",
+      "comment": "1.9.3+build147 feat: enhance modal styling and functionality",
+      "hash": "b6c03dba65949186a96640a25e00875b058821f4"
     }
   ]
 }
