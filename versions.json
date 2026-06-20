@@ -4283,6 +4283,12 @@
       "date": "2026-06-20",
       "comment": "1.9.3+build148 feat: enhance modal and XP styles",
       "hash": "875b48c748db2133edfcf7bb5a274db12b22f537"
+    },
+    {
+      "version": "1.9.3+build149",
+      "date": "2026-06-20",
+      "comment": "1.9.3+build149 feat: enhance settings support tab",
+      "hash": "08cea9ab33508a297ba720b9dbf494dc9c94e145"
     }
   ]
 }
