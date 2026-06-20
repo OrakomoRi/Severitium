@@ -1,4 +1,4 @@
-import { watchElement } from '../../../libs/modules/MutationHandler/MutationHandler.js';
+import { onMutation } from '../../../libs/modules/MutationHandler/MutationHandler.js';
 
 (function () {
 	'use strict';
@@ -38,9 +38,12 @@ import { watchElement } from '../../../libs/modules/MutationHandler/MutationHand
 	}
 
 	function refresh() {
-		document.querySelectorAll(SELECTORS.scrollingMenu).forEach(tagSupportTab);
+		const scrollingMenus = document.querySelectorAll(SELECTORS.scrollingMenu);
+		if (!scrollingMenus.length) return;
+
+		scrollingMenus.forEach(tagSupportTab);
 	}
 
-	watchElement(SELECTORS.scrollingMenu, refresh);
-	watchElement(SELECTORS.menuItem, refresh);
+	onMutation(refresh);
+	refresh();
 })();
