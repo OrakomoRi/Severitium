@@ -1098,6 +1098,7 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: 1fr auto;
+	gap: .25em;
 	background: none;
 	background-color: var(--severitium-dark-transparent-background1);
 	box-shadow: none;

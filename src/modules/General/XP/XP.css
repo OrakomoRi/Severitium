@@ -1,14 +1,14 @@
 /* Original exp icon (as image) */
 
-:not([class*='qr' i][class*='code' i])>img[src*='XP'],
-img[src*='experience' i] {
+:not([class*='qr'i][class*='code'i]) > img[src*='XP']:not([src^='data:'i]),
+img[src*='experience'i]:not([src^='data:'i]) {
 	display: none
 }
 
 /* Custom exp icon */
 
-:not([class*='qr' i][class*='code' i]):has(> img[src*='XP'])::before,
-:not([class*='qr' i][class*='code' i]):has(> img[src*='experience' i])::before {
+:not([class*='qr'i][class*='code'i]):has(> img[src*='XP']:not([src^='data:'i]))::before,
+:not([class*='qr'i][class*='code'i]):has(> img[src*='experience'i]:not([src^='data:'i]))::before {
 	content: '';
 	width: 1em;
 	height: 1em;

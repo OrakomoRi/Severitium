@@ -203,7 +203,7 @@
 
 /* Settings title text */
 
-[class*='settings'i][class*='textheadlineoptions'i]:not(:root) {
+.SettingsComponentStyle-scrollingMenu [class*='settings'i][class*='textheadlineoptions'i]:not(:root) {
 	height: fit-content;
 	font-size: 1.25em;
 	color: var(--severitium-white-color);
@@ -212,6 +212,7 @@
 	letter-spacing: .05em;
 	margin: 0;
 	margin-bottom: 1em;
+	align-self: flex-start;
 }
 
 /* Input label */
