@@ -4295,6 +4295,12 @@
       "date": "2026-06-20",
       "comment": "1.9.3+build150 feat: enhance settings refresh functionality",
       "hash": "462a19a1d94c6f4a2c7e99a7c1ba9ec9f2ae031c"
+    },
+    {
+      "version": "1.9.3+build151",
+      "date": "2026-06-20",
+      "comment": "1.9.3+build151 refactor: update mutation handling in settings",
+      "hash": "d48d28e78a39dca7dd49202e6b20dad3b56eded4"
     }
   ]
 }
