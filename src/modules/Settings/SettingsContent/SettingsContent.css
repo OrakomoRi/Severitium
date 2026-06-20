@@ -1531,3 +1531,39 @@ p.AccountSettingsComponentStyle-textHeadlineOptions:not(:root)[class*='ksc'i] {
 	background-color: var(--severitium-light-transparent-background3);
 	border: var(--severitium-white-color) solid .1em;
 }
+
+/* SUPPORT TAB */
+
+/* Text paragraphs */
+
+.SettingsComponentStyle-scrollingMenu > div .SettingsComponentStyle-textParagraph {
+	font-size: 1em;
+	color: var(--severitium-extra-light-gray-text-color);
+	margin: 0;
+}
+
+/* Apply button */
+
+.SettingsComponentStyle-scrollingMenu > div .SettingsComponentStyle-applyButton {
+	outline: none;
+	box-shadow: none;
+	border-radius: var(--severitium-border-radius);
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color) solid .1em;
+	transition: border .2s ease;
+}
+
+/* Button on hover */
+
+.SettingsComponentStyle-scrollingMenu > div .SettingsComponentStyle-applyButton:hover {
+	outline: none;
+	box-shadow: none;
+	background: var(--severitium-green-button-background);
+	border: var(--severitium-green-button-border-color-hover) solid .1em;
+}
+
+/* Button text */
+
+.SettingsComponentStyle-scrollingMenu > div .SettingsComponentStyle-applyButton > span {
+	color: var(--severitium-green-button-color);
+}
