@@ -1,0 +1,1618 @@
+/* Outer info container */
+
+.TanksPartBaseComponentStyle-tankPartContainer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: .5em;
+	padding: 0;
+}
+
+/* Outer info container and all elements inside */
+
+.TanksPartBaseComponentStyle-tankPartContainer,
+.TanksPartBaseComponentStyle-tankPartContainer * {
+	box-sizing: border-box;
+}
+
+/* Outer left container */
+
+.TanksPartComponentStyle-descriptionContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+	gap: .5em;
+}
+
+/* Inner left container */
+
+.TanksPartComponentStyle-descriptionContainer > div:has(> .ItemDescriptionComponentStyle-descriptionBlockDevice) {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+	gap: .5em;
+}
+
+/* DESCRIPTION BLOCK */
+
+/* Inner block */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+	gap: .5em;
+}
+
+/* Title block */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice .ItemDescriptionComponentStyle-nameItem {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+}
+
+/* Title text */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice .ItemDescriptionComponentStyle-nameItem span {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	font-size: 1.5em;
+	font-weight: normal;
+	color: var(--severitium-white-text-color);
+}
+
+/* Description block */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice .ItemDescriptionComponentStyle-captionDevice {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+	gap: .25em;
+	margin: 0;
+	padding: .5em;
+	background: none;
+	background-color: var(--severitium-dark-transparent-background2);
+	box-shadow: none;
+	border: .1em solid var(--severitium-dark-gray-color);
+	border-radius: var(--severitium-border-radius);
+	cursor: pointer;
+	-webkit-backdrop-filter: blur(.5em);
+	        backdrop-filter: blur(.5em);
+	transition: border-color .2s ease, background-color .2s ease;
+}
+
+/* Description block on hover */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice .ItemDescriptionComponentStyle-captionDevice:hover {
+	background: none;
+	box-shadow: none;
+	background-color: var(--severitium-dark-transparent-background2);
+	border-color: var(--severitium-gray-color);
+}
+
+/* Description block on active */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice .ItemDescriptionComponentStyle-captionDevice:active {
+	background: none;
+	box-shadow: none;
+	background-color: var(--severitium-dark-transparent-background3);
+	border-color: var(--severitium-gray-color);
+}
+
+/* Description text */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice .ItemDescriptionComponentStyle-captionDevice .ItemDescriptionComponentStyle-textClipped {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	font-size: 1em;
+	font-weight: normal;
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* Description text hotkey container */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice .ItemDescriptionComponentStyle-captionDevice div:has(> h3[class*='hotkey'i]) {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .25em;
+	margin: 0;
+}
+
+/* Description text hotkey */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice .ItemDescriptionComponentStyle-captionDevice div > h3[class*='hotkey'i] {
+	top: unset;
+	left: unset;
+	right: unset;
+	bottom: unset;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	min-width: auto;
+	min-height: auto;
+	max-width: none;
+	max-height: none;
+	margin: 0;
+	padding: .1em .25em;
+	background: transparent;
+	font-size: 1em;
+	color: var(--severitium-extra-light-gray-text-color);
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Description text hotkey helper text */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice .ItemDescriptionComponentStyle-captionDevice div .ItemDescriptionComponentStyle-linkToFullDescription {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	margin: 0;
+	font-size: 1em;
+	font-weight: normal;
+	color: var(--severitium-extra-light-gray-text-color);
+	pointer-events: none;
+}
+
+/* AUGMENTS BLOCK */
+
+/* Outer augments block */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div:has(> .DeviceButtonComponentStyle-blockAlterations) {
+	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+	gap: .5em;
+	margin: 0;
+	padding: .5em;
+	background: none;
+	background-color: var(--severitium-dark-transparent-background2);
+	box-shadow: none;
+	border: .1em solid var(--severitium-dark-gray-color);
+	border-radius: var(--severitium-border-radius);
+	-webkit-backdrop-filter: blur(.5em);
+	        backdrop-filter: blur(.5em);
+}
+
+/* Block original discount */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div:has(> .DeviceButtonComponentStyle-blockAlterations) > img[src*='discount'i] {
+	display: none;
+}
+
+/* Block custom discount */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div:has(> .DeviceButtonComponentStyle-blockAlterations):has(> img[src*='discount'i])::before {
+	content: '%';
+	position: absolute;
+	top: .5em;
+	right: .5em;
+	left: unset;
+	bottom: unset;
+	width: auto;
+	height: 1.25em;
+	aspect-ratio: 1 / 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-family: BaseFontBold, FallbackFontBold;
+	font-size: 1.25em;
+	color: var(--severitium-black-text-color);
+	background-color: var(--severitium-red-color);
+	border: none;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Block title */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:first-of-type {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Title hotkey */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:first-of-type > h3[class*='hotkey'i] {
+	top: unset;
+	left: unset;
+	right: unset;
+	bottom: unset;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	min-width: auto;
+	min-height: auto;
+	max-width: none;
+	max-height: none;
+	margin: 0;
+	margin-right: .25em;
+	padding: .1em .25em;
+	background: transparent;
+	font-size: 1em;
+	color: var(--severitium-extra-light-gray-text-color);
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Title text */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:first-of-type > h2 {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	margin: 0;
+	font-size: 1em;
+	font-weight: normal;
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Devices block */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type {
+	width: 100%;
+	height: 4em;
+	max-width: none;
+	max-height: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .25em;
+	margin: 0;
+	padding: 0;
+}
+
+/* Outer skins block */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type div:has(> .SkinsIconComponentStyle-cellSkins) {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: 100%;
+	max-width: none;
+	max-height: none;
+	flex-grow: 2;
+	margin: 0;
+	padding: 0;
+}
+
+/* Inner skins block */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type .SkinsIconComponentStyle-cellSkins {
+	width: 100%;
+	height: 100%;
+	max-width: none;
+	max-height: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .25em;
+	margin: 0;
+	padding: 0;
+}
+
+/* Single device & skin block */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type > div:has(> img.DeviceButtonComponentStyle-deviceIcon),
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type .SkinsIconComponentStyle-cellSkins > div {
+	width: auto;
+	height: 100%;
+	max-width: none;
+	max-height: none;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	border: none;
+	border-radius: var(--severitium-border-radius);
+	transition: background-color .2s ease;
+}
+
+/* Single device & skin block on hover */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type > div:has(> img.DeviceButtonComponentStyle-deviceIcon):hover,
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type .SkinsIconComponentStyle-cellSkins > div:hover {
+	background: none;
+	background-color: var(--severitium-light-transparent-background2);
+}
+
+/* Single device & skin block on active */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type > div:has(> img.DeviceButtonComponentStyle-deviceIcon):active,
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type .SkinsIconComponentStyle-cellSkins > div:active {
+	background: none;
+	background-color: var(--severitium-light-transparent-background2);
+}
+
+/* Single device & skin block locked */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type > div:has(> img.DeviceButtonComponentStyle-deviceIcon):has(> img[src*='lock'i]),
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type .SkinsIconComponentStyle-cellSkins > div:has(> img[src*='lock'i]) {
+	background: none;
+	background-color: transparent;
+	box-shadow: inset 0 0 0 .1em var(--severitium-dark-gray-color);
+	cursor: default;
+	pointer-events: none;
+}
+
+/* Single device & skin block image */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type > div:has(> img.DeviceButtonComponentStyle-deviceIcon) > img,
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type .SkinsIconComponentStyle-cellSkins > div > img {
+	width: auto;
+	height: 2.5em;
+	aspect-ratio: 1 / 1;
+	-o-object-fit: contain;
+	   object-fit: contain;
+	-o-object-position: center;
+	   object-position: center;
+}
+
+/* Single device & skin block locked image */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type > div:has(> img.DeviceButtonComponentStyle-deviceIcon) > img[src*='lock'i],
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type .SkinsIconComponentStyle-cellSkins > div > img[src*='lock'i] {
+	display: none;
+}
+
+/* Single device & skin block locked custom image */
+
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type > div:has(> img.DeviceButtonComponentStyle-deviceIcon):has(> img[src*='lock'i])::before,
+.ItemDescriptionComponentStyle-descriptionBlockDevice + div > .DeviceButtonComponentStyle-blockAlterations:last-of-type .SkinsIconComponentStyle-cellSkins > div:has(> img[src*='lock'i])::before {
+	content: '';
+	width: 2em;
+	aspect-ratio: 1 / 1;
+	display: block;
+	padding: .25em;
+	background-color: var(--severitium-gray-color);
+	-webkit-mask-image: var(--severitium-game-items-lock-icon);
+	        mask-image: var(--severitium-game-items-lock-icon);
+	-webkit-mask-size: cover;
+	        mask-size: cover;
+	-webkit-mask-position: center;
+	        mask-position: center;
+}
+
+/* DESCRIPTION DETAILS */
+
+/* Outer block */
+
+.TanksPartComponentStyle-commonBlockDescriptionDevices {
+	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: flex-start;
+	gap: .5em;
+	margin: 0;
+	padding: .5em;
+	background: none;
+	background-color: var(--severitium-dark-transparent-background2);
+	box-shadow: none;
+	border: .1em solid var(--severitium-dark-gray-color);
+	border-radius: var(--severitium-border-radius);
+	-webkit-backdrop-filter: blur(.5em);
+	        backdrop-filter: blur(.5em);
+	pointer-events: none;
+}
+
+/* Resistance module block */
+
+.TanksPartComponentStyle-blockForImageResistanceModule {
+	width: auto;
+	height: auto;
+	margin: 0;
+	background: none;
+	/* background-color: var(--severitium-light-transparent-background3); */
+	box-shadow: none;
+	border: none;
+	border-radius: var(--severitium-border-radius);
+	pointer-events: all;
+	transition: background-color .2s ease;
+}
+
+/* Resistance module block on hover */
+
+.TanksPartComponentStyle-blockForImageResistanceModule:hover {
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+}
+
+/* Resistance module block on active */
+
+.TanksPartComponentStyle-blockForImageResistanceModule:active {
+	background-color: var(--severitium-light-transparent-background2);
+}
+
+/* Resistance module block icon */
+
+.TanksPartComponentStyle-blockForImageResistanceModule > img {
+	width: 2.5em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	margin: 0;
+	-o-object-fit: contain;
+	   object-fit: contain;
+	-o-object-position: center;
+	   object-position: center;
+}
+
+/* Icon block */
+
+.TanksPartComponentStyle-commonBlockDescriptionDevices > div[class*='maskimage'i] {
+	position: relative;
+	width: 2.5em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	margin: 0;
+	padding: 0;
+	background: none;
+	background-color: var(--severitium-light-gray-color);
+	box-shadow: none;
+	pointer-events: all;
+	transition: background-color .2s ease;
+}
+
+/* Icon block on hover */
+
+.TanksPartComponentStyle-commonBlockDescriptionDevices > div[class*='maskimage'i]:hover {
+	background-color: var(--severitium-extra-light-gray-color);
+}
+
+/* Icon block on active */
+
+.TanksPartComponentStyle-commonBlockDescriptionDevices > div[class*='maskimage'i]:active {
+	background-color: var(--severitium-white-color);
+}
+
+/* Block description container */
+
+.TanksPartComponentStyle-blockDescriptionComponent {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Block description title */
+
+.TanksPartComponentStyle-blockDescriptionComponent > h5 {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	font-weight: normal;
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Block description highlighted text */
+
+.TanksPartComponentStyle-blockDescriptionComponent > span {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	color: var(--severitium-purple-text-color);
+}
+
+/* LEFT-SIDE BUTTONS */
+
+/* Supplies button container */
+
+.GarageSuppliesComponentStyle-containerButtons {
+	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	gap: .5em;
+	margin: 0;
+	padding: 0;
+}
+
+/* Button template */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton {
+	width: 100%;
+	height: 5em;
+	min-width: auto;
+	min-height: auto;
+	max-width: none;
+	max-height: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	box-shadow: none;
+	border-width: .1em;
+	border-style: solid;
+	border-radius: var(--severitium-border-radius);
+	transition: border-color .2s ease;
+}
+
+/* Override original button height */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton:not(:root):not(:root) {
+	height: 5em;
+}
+
+/* Button on hover */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton:hover {
+	background: none;
+	box-shadow: none;
+}
+
+/* Button on active */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton:active {
+	-webkit-animation: none;
+	        animation: none;
+	background: none;
+	box-shadow: none;
+}
+
+/* Crystal button */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton[data-price='crystal'] {
+	background-color: var(--severitium-crystal-button-background);
+	border-color: var(--severitium-crystal-button-border-color);
+}
+
+/* Crystal button on hover */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton[data-price='crystal']:hover {
+	background-color: var(--severitium-crystal-button-background);
+	border-color: var(--severitium-crystal-button-border-color-hover);
+}
+
+/* Crystal button on active */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton[data-price='crystal']:active {
+	background-color: var(--severitium-crystal-button-background);
+	border-color: var(--severitium-crystal-button-border-color-hover);
+}
+
+/* Ruby button */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton[data-price='ruby'] {
+	background-color: var(--severitium-ruby-button-background);
+	border-color: var(--severitium-ruby-button-border-color);
+}
+
+/* Ruby button on hover */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton[data-price='ruby']:hover {
+	background-color: var(--severitium-ruby-button-background);
+	border-color: var(--severitium-ruby-button-border-color-hover);
+}
+
+/* Ruby button on active */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton[data-price='ruby']:active {
+	background-color: var(--severitium-ruby-button-background);
+	border-color: var(--severitium-ruby-button-border-color-hover);
+}
+
+/* Disabled button */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton[data-price='disabled'] {
+	background-color: var(--severitium-gray-button-background);
+	border-color: var(--severitium-gray-button-border-color);
+	pointer-events: none;
+}
+
+/* Disabled button text */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton[data-price='disabled'] div span {
+	margin: 0;
+	padding: .25em .5em;
+	font-size: 1em;
+	color: var(--severitium-gray-button-color);
+	text-transform: uppercase;
+}
+
+/* Button hotkey */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton h3[class*='hotkey'i] {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	margin: 0;
+	padding: .1em .25em;
+	background: transparent;
+	font-size: 1em;
+	color: var(--severitium-extra-light-gray-text-color);
+	border: var(--severitium-gray-color) dashed .1em;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Button original icon */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton > div > [class*='backgroundimage'i] {
+	position: relative;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	background: none;
+}
+
+/* Button custom icon */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton > div > [class*='backgroundimage'i]::before {
+	content: '';
+	width: 2.5em;
+	aspect-ratio: 1 / 1;
+	display: inline-flex;
+	background-color: var(--severitium-gray-color);
+	-webkit-mask-image: var(--severitium-game-items-cart-icon);
+	        mask-image: var(--severitium-game-items-cart-icon);
+	-webkit-mask-size: cover;
+	        mask-size: cover;
+	-webkit-mask-position: center;
+	        mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+	        mask-repeat: no-repeat;
+}
+
+/* Disabled button icon */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton[data-price='disabled'] > div > [class*='backgroundimage'i]::before {
+	background-color: var(--severitium-gray-button-color);
+	-webkit-mask-image: var(--severitium-game-items-lock-icon);
+	        mask-image: var(--severitium-game-items-lock-icon);
+}
+
+/* Button crystal icon */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton[data-price='crystal'] > div > [class*='backgroundimage'i]::before {
+	background-color: var(--severitium-crystal-button-color);
+}
+
+/* Button ruby icon */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton[data-price='ruby'] > div > [class*='backgroundimage'i]::before {
+	background-color: var(--severitium-ruby-button-color);
+}
+
+/* Button right block (price & discount) */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton div:has(> .SquarePriceButtonComponentStyle-paddingPriceStyleButton) {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin: 0;
+	padding: .25em .5em;
+}
+
+/* Button price block */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton .SquarePriceButtonComponentStyle-paddingPriceStyleButton {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .25em;
+	opacity: 1;
+	margin: 0;
+	padding: 0;
+}
+
+/* Button price original icon */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton .GarageCommonStyle-iconCoinSmall {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Button price custom icon */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton .GarageCommonStyle-iconCoinSmall::before {
+	content: '';
+	width: 1em;
+	aspect-ratio: 1 / 1;
+	display: block;
+	background-color: var(--severitium-gray-color);
+	-webkit-mask-image: var(--severitium-general-status-question-mark-icon);
+	        mask-image: var(--severitium-general-status-question-mark-icon);
+	-webkit-mask-size: cover;
+	        mask-size: cover;
+	-webkit-mask-position: center;
+	        mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+	        mask-repeat: no-repeat;
+}
+
+/* Button price custom crystal icon */
+
+.GarageCommonStyle-bigActionButton[data-price='crystal'] .GarageCommonStyle-iconCoinSmall::before {
+	background-color: var(--severitium-crystal-button-color);
+	-webkit-mask-image: var(--severitium-game-currency-crystal-icon);
+	        mask-image: var(--severitium-game-currency-crystal-icon);
+}
+
+/* Button price custom ruby icon */
+
+.GarageCommonStyle-bigActionButton[data-price='ruby'] .GarageCommonStyle-iconCoinSmall::before {
+	background-color: var(--severitium-ruby-button-color);
+	-webkit-mask-image: var(--severitium-game-currency-ruby-icon);
+	        mask-image: var(--severitium-game-currency-ruby-icon);
+}
+
+/* Button price text */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton .SquarePriceButtonComponentStyle-paddingPriceStyleButton span {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* Crystal price text */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton[data-price='crystal'] .SquarePriceButtonComponentStyle-paddingPriceStyleButton span {
+	color: var(--severitium-crystal-button-color);
+}
+
+/* Ruby price text */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton[data-price='ruby'] .SquarePriceButtonComponentStyle-paddingPriceStyleButton span {
+	color: var(--severitium-ruby-button-color);
+}
+
+/* Button discount block */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton .SquarePriceButtonComponentStyle-paddingPriceStyleButton + div:has(> .DisplayPriceComponentStyle-discountTimer) {
+	position: relative;
+	width: auto;
+	height: auto;
+	top: unset;
+	right: unset;
+	left: unset;
+	bottom: unset;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .25em;
+}
+
+/* Button discount timer text */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton .SquarePriceButtonComponentStyle-paddingPriceStyleButton + div .DisplayPriceComponentStyle-discountTimer span {
+	margin: 0;
+	padding: 0;
+	background: none;
+	font-size: 1em;
+	color: var(--severitium-extra-light-gray-text-color);
+	border: none;
+}
+
+/* Button discount amount text */
+
+.GarageSuppliesComponentStyle-containerButtons .GarageCommonStyle-bigActionButton .SquarePriceButtonComponentStyle-paddingPriceStyleButton + div .SquarePriceButtonComponentStyle-discountLabel {
+	position: relative;
+	top: unset;
+	right: unset;
+	left: unset;
+	bottom: unset;
+	width: auto;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-family: BaseFontMedium, FallbackFontMedium;
+	font-size: 1em;
+	color: var(--severitium-black-text-color);
+	background-color: var(--severitium-red-color);
+	border: none;
+	border-radius: var(--severitium-border-radius);
+}
+
+/* RESISTANCES */
+
+/* Left block */
+
+.GarageProtectionsComponentStyle-blockParametersProtection {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: space-between;
+	gap: .5em;
+	background: none;
+}
+
+/* Inner info block */
+
+.GarageProtectionsComponentStyle-aboutDefence {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+	gap: .5em;
+}
+
+/* Title text */
+
+.GarageProtectionsComponentStyle-aboutDefence > h1 {
+	margin: 0;
+	font-size: 1.5em;
+	font-weight: normal;
+	color: var(--severitium-white-text-color);
+}
+
+/* Subtitle text */
+
+.GarageProtectionsComponentStyle-aboutDefence > h3 {
+	margin: 0;
+	font-size: 1em;
+	font-weight: normal;
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Description text */
+
+.GarageProtectionsComponentStyle-aboutDefence > span {
+	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	margin: 0;
+	padding: .5em;
+	background: none;
+	background-color: var(--severitium-dark-transparent-background2);
+	box-shadow: none;
+	border: .1em solid var(--severitium-dark-gray-color);
+	border-radius: var(--severitium-border-radius);
+	-webkit-backdrop-filter: blur(.5em);
+	        backdrop-filter: blur(.5em);
+	font-size: 1em;
+	font-weight: normal;
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* Resistances outer container */
+
+.GarageProtectionsComponentStyle-aboutDefence + div:has(.GarageProtectionsComponentStyle-unequip) {
+	position: relative;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	min-width: auto;
+	min-height: auto;
+	top: unset;
+	left: unset;
+	right: unset;
+	bottom: unset;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: center;
+	gap: 1em;
+	margin-bottom: 4em;
+}
+
+/* Resistances inner container */
+
+div.GarageProtectionsComponentStyle-containerEquipmentCannon {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	background: none;
+}
+
+/* Resistances sub-inner container */
+
+div.GarageProtectionsComponentStyle-containerEquipmentCannon .GarageProtectionsComponentStyle-blockParameterEquip {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: center;
+	gap: .5em;
+	margin: 0;
+}
+
+/* Single resistance container */
+
+div.GarageProtectionsComponentStyle-containerEquipmentCannon .GarageProtectionsComponentStyle-blockParameterEquip > div {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	margin: 0;
+}
+
+/* Single resistance frame container */
+
+.GarageProtectionsComponentStyle-blockParameterEquip > div .GarageProtectionsComponentStyle-equipmentResistance {
+	position: relative;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	margin: 0;
+	background: none;
+	border: none;
+	cursor: default;
+}
+
+/* Single resistance icon container */
+
+.GarageProtectionsComponentStyle-equipmentResistance .GarageProtectionsComponentStyle-resistanceIcon {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+}
+
+/* Single resistance icon inner container */
+
+.GarageProtectionsComponentStyle-resistanceIcon .GarageProtectionsComponentStyle-resistanceIconContainer {
+	position: relative;
+	width: 4em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	border: .1em solid var(--severitium-gray-button-border-color);
+	border-radius: var(--severitium-border-radius);
+	cursor: pointer;
+	transition: border-color .2s ease, background-color .2s ease;
+}
+
+/* Resistance frame container on hover */
+
+.GarageProtectionsComponentStyle-resistanceIcon .GarageProtectionsComponentStyle-resistanceIconContainer:hover {
+	background: none;
+	border-color: var(--severitium-gray-button-border-color-hover);
+}
+
+/* Resistance frame container on active */
+
+.GarageProtectionsComponentStyle-resistanceIcon .GarageProtectionsComponentStyle-resistanceIconContainer:active {
+	background: none;
+	background-color: var(--severitium-light-transparent-background3);
+	border-color: var(--severitium-gray-button-border-color-hover);
+}
+
+/* Resistance active frame container */
+
+.GarageProtectionsComponentStyle-blockParameterEquip > div .GarageProtectionsComponentStyle-equipmentResistance.GarageProtectionsComponentStyle-mountedResistActive .GarageProtectionsComponentStyle-resistanceIconContainer {
+	border-color: var(--severitium-white-color);
+}
+
+/* Resistance empty frame container */
+
+.GarageProtectionsComponentStyle-blockParameterEquip > div .GarageProtectionsComponentStyle-equipmentResistance.GarageProtectionsComponentStyle-freeSlot .GarageProtectionsComponentStyle-resistanceIconContainer {
+	border-style: dashed;
+}
+
+/* Resistance free active frame container */
+
+.GarageProtectionsComponentStyle-blockParameterEquip > div .GarageProtectionsComponentStyle-equipmentResistance.GarageProtectionsComponentStyle-freeSlotActive .GarageProtectionsComponentStyle-resistanceIconContainer {
+	border-color: var(--severitium-white-color);
+	border-style: dashed;
+}
+
+/* Pseudo-element for frame container */
+
+.GarageProtectionsComponentStyle-resistanceIcon .GarageProtectionsComponentStyle-resistanceIconContainer::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	opacity: .25;
+	background-color: transparent;
+	transition: background-color .2s ease;
+}
+
+/* Element has equipped resistance */
+
+.GarageProtectionsComponentStyle-blockParameterEquip > div .GarageProtectionsComponentStyle-equipmentResistance.GarageProtectionsComponentStyle-mountedResist .GarageProtectionsComponentStyle-resistanceIconContainer::before {
+	background-color: var(--severitium-gray-color);
+}
+
+/* Element is active and has equipped resistance */
+
+.GarageProtectionsComponentStyle-blockParameterEquip > div .GarageProtectionsComponentStyle-equipmentResistance.GarageProtectionsComponentStyle-mountedResistActive .GarageProtectionsComponentStyle-resistanceIconContainer::before {
+	background-color: var(--severitium-white-color);
+}
+
+/* Single resistance icon image */
+
+.GarageProtectionsComponentStyle-resistanceIcon .GarageProtectionsComponentStyle-resistanceIconContainer > img {
+	width: 100%;
+	height: 100%;
+	-o-object-fit: contain;
+	   object-fit: contain;
+	-o-object-position: center;
+	   object-position: center;
+}
+
+/* Equip resist icon block */
+
+.GarageProtectionsComponentStyle-resistanceIcon .GarageProtectionsComponentStyle-iconEquipResist {
+	position: relative;
+	top: unset;
+	left: unset;
+	right: unset;
+	bottom: unset;
+	width: 2em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	box-shadow: none;
+	outline: none;
+}
+
+/* Icon block on hover */
+
+.GarageProtectionsComponentStyle-resistanceIcon .GarageProtectionsComponentStyle-iconEquipResist:hover {
+	background: none;
+	border: none;
+	box-shadow: none;
+	outline: none;
+}
+
+/* Icon block on active */
+
+.GarageProtectionsComponentStyle-resistanceIcon .GarageProtectionsComponentStyle-iconEquipResist:active {
+	background: none;
+	border: none;
+	box-shadow: none;
+	outline: none;
+}
+
+/* Equip resist custom icon */
+
+.GarageProtectionsComponentStyle-resistanceIcon .GarageProtectionsComponentStyle-iconEquipResist::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: auto;
+	background-color: var(--severitium-light-gray-color);
+	-webkit-mask-image: var(--severitium-general-action-select-icon);
+	        mask-image: var(--severitium-general-action-select-icon);
+	-webkit-mask-size: cover;
+	        mask-size: cover;
+	-webkit-mask-position: center;
+	        mask-position: center;
+	transition: background-color .2s ease;
+}
+
+/* Custom icon on hover */
+
+.GarageProtectionsComponentStyle-resistanceIcon .GarageProtectionsComponentStyle-iconEquipResist:hover::before {
+	background-color: var(--severitium-green-color);
+}
+
+/* Unequip resist icon block */
+
+.GarageProtectionsComponentStyle-resistanceIcon div:has(> img[src*='icondeleteselect'i]) {
+	position: relative;
+	top: unset;
+	right: unset;
+	left: unset;
+	bottom: unset;
+	width: 2em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	box-shadow: none;
+	outline: none;
+}
+
+/* Icon block on hover */
+
+.GarageProtectionsComponentStyle-resistanceIcon div:has(> img[src*='icondeleteselect'i]):hover {
+	background: none;
+	border: none;
+	box-shadow: none;
+	outline: none;
+}
+
+/* Icon block on active */
+
+.GarageProtectionsComponentStyle-resistanceIcon div:has(> img[src*='icondeleteselect'i]):active {
+	background: none;
+	border: none;
+	box-shadow: none;
+	outline: none;
+}
+
+/* All elements inside the unequip block button */
+
+.GarageProtectionsComponentStyle-resistanceIcon div:has(> img[src*='icondeleteselect'i]) * {
+	display: none;
+}
+
+/* Unequip custom icon */
+
+.GarageProtectionsComponentStyle-resistanceIcon div:has(> img[src*='icondeleteselect'i])::before {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: auto;
+	background-color: var(--severitium-light-gray-color);
+	-webkit-mask-image: var(--severitium-general-action-cross-icon);
+	        mask-image: var(--severitium-general-action-cross-icon);
+	-webkit-mask-size: cover;
+	        mask-size: cover;
+	-webkit-mask-position: center;
+	        mask-position: center;
+	transition: background-color .2s ease;
+}
+
+/* Custom icon on hover */
+
+.GarageProtectionsComponentStyle-resistanceIcon div:has(> img[src*='icondeleteselect'i]):hover::before {
+	background-color: var(--severitium-red-color);
+}
+
+/* Unequip all container */
+
+.GarageProtectionsComponentStyle-blockParametersProtection div:has(> .GarageProtectionsComponentStyle-unequip) {
+	margin: 0;
+}
+
+/* Unequip all button */
+
+.GarageProtectionsComponentStyle-blockParametersProtection .GarageProtectionsComponentStyle-unequip {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: 4em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
+	margin: 0;
+	padding: .25em .5em;
+	cursor: pointer;
+	background-color: var(--severitium-gray-button-background);
+	border: .1em solid var(--severitium-gray-button-border-color);
+	border-radius: var(--severitium-border-radius);
+	transition: border-color .2s ease;
+}
+
+/* Unequip all icon on hover */
+
+.GarageProtectionsComponentStyle-blockParametersProtection .GarageProtectionsComponentStyle-unequip:hover {
+	border-color: var(--severitium-gray-button-border-color-hover);
+}
+
+/* Unequip all disabled button */
+
+.GarageProtectionsComponentStyle-blockParametersProtection .GarageProtectionsComponentStyle-unequip:has(> div.ButtonComponentStyle-disabled) {
+	opacity: .5;
+	border-color: transparent;
+	pointer-events: none;
+}
+
+/* Unequip all icon container */
+
+.GarageProtectionsComponentStyle-blockParametersProtection .GarageProtectionsComponentStyle-unequip > div {
+	position: relative;
+	width: 2.5em;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	box-shadow: none;
+	outline: none;
+}
+
+/* Unequip all icon container on hover */
+
+.GarageProtectionsComponentStyle-blockParametersProtection .GarageProtectionsComponentStyle-unequip > div:hover {
+	background: none;
+	border: none;
+	box-shadow: none;
+	outline: none;
+}
+
+/* Unequip all icon container on active */
+
+.GarageProtectionsComponentStyle-blockParametersProtection .GarageProtectionsComponentStyle-unequip > div:active {
+	background: none;
+	border: none;
+	box-shadow: none;
+	outline: none;
+}
+
+/* Unequip all icon original icon */
+
+.GarageProtectionsComponentStyle-blockParametersProtection .GarageProtectionsComponentStyle-unequip > div > img {
+	display: none;
+}
+
+/* Unequip all icon custom icon */
+
+.GarageProtectionsComponentStyle-blockParametersProtection .GarageProtectionsComponentStyle-unequip > div::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--severitium-gray-button-color);
+	-webkit-mask-image: var(--severitium-general-action-cross-icon);
+	        mask-image: var(--severitium-general-action-cross-icon);
+	-webkit-mask-size: cover;
+	        mask-size: cover;
+	-webkit-mask-position: center;
+	        mask-position: center;
+}
+
+/* Unequip all text */
+
+.GarageProtectionsComponentStyle-blockParametersProtection .GarageProtectionsComponentStyle-unequip > span {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	color: var(--severitium-gray-button-color);
+	text-transform: uppercase;
+	text-align: center;
+}
+
+/* PAINTS */
+
+/* Left & right blocks and all elements inside */
+
+.PaintsCollectionComponentStyle-descriptionBlockCollection,
+.PaintsCollectionComponentStyle-descriptionBlockCollection + .TanksPartComponentStyle-tankPartUpgrades,
+.PaintsCollectionComponentStyle-descriptionBlockCollection *,
+.PaintsCollectionComponentStyle-descriptionBlockCollection + .TanksPartComponentStyle-tankPartUpgrades * {
+	box-sizing: border-box;
+}
+
+/* Left inner block */
+
+.PaintsCollectionComponentStyle-commonBlockDescriptionCollection {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+	gap: .5em;
+}
+
+/* Title block */
+
+.PaintsCollectionComponentStyle-commonBlockDescriptionCollection .PaintsCollectionComponentStyle-headlinePaint {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+}
+
+/* Title text */
+
+.PaintsCollectionComponentStyle-commonBlockDescriptionCollection .PaintsCollectionComponentStyle-headlinePaint > h1 {
+	margin: 0;
+	font-size: 1.5em;
+	font-weight: normal;
+	color: var(--severitium-white-text-color);
+}
+
+/* Subtitle text (rarity) */
+
+.PaintsCollectionComponentStyle-commonBlockDescriptionCollection .PaintsCollectionComponentStyle-headlinePaint > h3 {
+	margin: 0;
+	font-size: 1em;
+	font-weight: normal;
+	color: var(--severitium-extra-light-gray-text-color);
+}
+
+/* Subtitle text - common */
+
+.PaintsCollectionComponentStyle-commonBlockDescriptionCollection .PaintsCollectionComponentStyle-headlinePaint > h3[data-rarity='common'] {
+	color: var(--severitium-common-text-color);
+}
+
+/* Subtitle text - uncommon */
+
+.PaintsCollectionComponentStyle-commonBlockDescriptionCollection .PaintsCollectionComponentStyle-headlinePaint > h3[data-rarity='uncommon'] {
+	color: var(--severitium-uncommon-text-color);
+}
+
+/* Subtitle text - rare */
+
+.PaintsCollectionComponentStyle-commonBlockDescriptionCollection .PaintsCollectionComponentStyle-headlinePaint > h3[data-rarity='rare'] {
+	color: var(--severitium-rare-text-color);
+}
+
+/* Subtitle text - epic */
+
+.PaintsCollectionComponentStyle-commonBlockDescriptionCollection .PaintsCollectionComponentStyle-headlinePaint > h3[data-rarity='epic'] {
+	color: var(--severitium-epic-text-color);
+}
+
+/* Subtitle text - legendary */
+
+.PaintsCollectionComponentStyle-commonBlockDescriptionCollection .PaintsCollectionComponentStyle-headlinePaint > h3[data-rarity='legendary'] {
+	color: var(--severitium-legendary-text-color);
+}
+
+/* Subtitle text - mythical */
+
+.PaintsCollectionComponentStyle-commonBlockDescriptionCollection .PaintsCollectionComponentStyle-headlinePaint > h3[data-rarity='mythical'] {
+	color: var(--severitium-mythical-text-color);
+}
+
+/* Description block */
+
+.PaintsCollectionComponentStyle-commonBlockDescriptionCollection .PaintsCollectionComponentStyle-fullDescriptionPaint {
+	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	max-width: none;
+	max-height: none;
+	margin: 0;
+	padding: .5em;
+	background: none;
+	background-color: var(--severitium-dark-transparent-background2);
+	box-shadow: none;
+	border: .1em solid var(--severitium-dark-gray-color);
+	border-radius: var(--severitium-border-radius);
+	-webkit-backdrop-filter: blur(.5em);
+	        backdrop-filter: blur(.5em);
+}
+
+/* Description text */
+
+.PaintsCollectionComponentStyle-commonBlockDescriptionCollection .PaintsCollectionComponentStyle-fullDescriptionPaint h3 {
+	margin: 0;
+	font-size: 1em;
+	font-weight: normal;
+	color: var(--severitium-light-gray-text-color);
+}
+
+/* ITEM AMOUNT (SCREEN CENTER) */
+
+/* Amount container and all elements inside */
+
+.TanksPartComponentStyle-amountItems,
+.TanksPartComponentStyle-amountItems * {
+	box-sizing: border-box;
+}
+
+/* Amount text container */
+
+.TanksPartComponentStyle-amountItems {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	min-width: auto;
+	min-height: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .25em;
+	margin: 0;
+	margin-top: 2em;
+	padding: .25em .5em;
+	background: none;
+	background-color: var(--severitium-dark-transparent-background2);
+	box-shadow: none;
+	border: .1em solid var(--severitium-dark-gray-color);
+	border-radius: var(--severitium-border-radius);
+}
+
+/* Amount text */
+
+.TanksPartComponentStyle-amountItems > span {
+	margin: 0;
+	padding: 0;
+	background: none;
+	box-shadow: none;
+	font-size: 1.25em;
+	font-weight: normal;
+	color: var(--severitium-white-text-color) !important;
+}
