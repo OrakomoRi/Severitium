@@ -4,12 +4,22 @@ Left-side info panel in the garage, displaying the selected item's name, short d
 
 ## :information_source: Design
 
-### Description block
+### Turrets description block
 
 #### Old
 
-![](/images/garage/old/descriptionblock.png)
+![](/images/garage/old/turretsdescriptionblock.png)
 
 #### New
 
-![](/images/garage/new/descriptionblock.png)
+![](/images/garage/new/turretsdescriptionblock.png)
+
+### Supplies description block
+
+#### Old
+
+![](/images/garage/old/suppliesdescriptionblock.png)
+
+#### New
+
+![](/images/garage/new/suppliesdescriptionblock.png)
