@@ -4301,6 +4301,12 @@
       "date": "2026-06-20",
       "comment": "1.9.3+build151 refactor: update mutation handling in settings",
       "hash": "d48d28e78a39dca7dd49202e6b20dad3b56eded4"
+    },
+    {
+      "version": "1.9.3+build152",
+      "date": "2026-06-21",
+      "comment": "1.9.3+build152 feat: add description block styles",
+      "hash": "ec188736d77e915edf72e6e092b7dfe77b67f0c4"
     }
   ]
 }
