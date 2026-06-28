@@ -4313,6 +4313,12 @@
       "date": "2026-06-22",
       "comment": "1.9.3+build153 feat: update description block in README",
       "hash": "b45559fcfdde50580e0d366b4fbb4b6dcf0544c1"
+    },
+    {
+      "version": "1.9.3+build154",
+      "date": "2026-06-23",
+      "comment": "1.9.3+build154 style: adjust opacity in DescriptionBlock.css",
+      "hash": "89181970dfb866233d6148d0da1b9f2fe76df456"
     }
   ]
 }
