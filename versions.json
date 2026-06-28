@@ -4307,6 +4307,12 @@
       "date": "2026-06-21",
       "comment": "1.9.3+build152 feat: add description block styles",
       "hash": "ec188736d77e915edf72e6e092b7dfe77b67f0c4"
+    },
+    {
+      "version": "1.9.3+build153",
+      "date": "2026-06-22",
+      "comment": "1.9.3+build153 feat: update description block in README",
+      "hash": "b45559fcfdde50580e0d366b4fbb4b6dcf0544c1"
     }
   ]
 }
