@@ -4331,6 +4331,12 @@
       "date": "2026-07-18",
       "comment": "1.9.3+build156 feat: enhance two-factor authentication UI",
       "hash": "fed43b072de8cf116f42b4446358f05feae011d5"
+    },
+    {
+      "version": "1.9.3+build157",
+      "date": "2026-07-18",
+      "comment": "1.9.3+build157 feat: enhance modal styling",
+      "hash": "9b9343dbf4fdbaee4d2859a8517310eae5cbcac5"
     }
   ]
 }
