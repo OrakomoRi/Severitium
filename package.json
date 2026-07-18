@@ -1,6 +1,6 @@
 {
 	"name": "severitium",
-	"version": "1.9.3+build156",
+	"version": "1.9.3+build157",
 	"private": true,
 	"type": "module",
 	"scripts": {

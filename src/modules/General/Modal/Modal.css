@@ -59,6 +59,10 @@
 .ModalStyle-shaded > div:not([class*='battlepick'i]):not(:has(.-spinner)):not(:has(> .ReCaptchaComponentStyle-captchaBlock)),
 .DialogContainerComponentStyle-container {
 	position: relative;
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	gap: .5em;
 	background: var(--severitium-dark-transparent-background1);
 	-webkit-backdrop-filter: blur(.5em);
 			backdrop-filter: blur(.5em);
@@ -147,7 +151,7 @@
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-contentContainer span[class]:not([class*='common'i]),
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .FriendListComponentStyle-commonBlockText span[class]:not([class*='common'i]),
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .PaidRenameDialogComponentStyle-messageBlock > span[class]:not([class*='common'i]),
-.ModalStyle-shaded > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-contentContainer span[class]:not([class*='common'i]),
+.ModalStyle-shaded > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-contentContainer:has() span[class]:not([class*='common'i]),
 .ModalStyle-shaded > div:not([class*='battlepick'i]) .FriendListComponentStyle-commonBlockText span[class]:not([class*='common'i]),
 .ModalStyle-shaded > div:not([class*='battlepick'i]) .PaidRenameDialogComponentStyle-messageBlock > span[class]:not([class*='common'i]) {
 	color: var(--severitium-main-color);
@@ -718,7 +722,18 @@
 	color: var(--severitium-crystal-color);
 }
 
-/* Convert dialog */
+/* CONVERT DIALOG */
+
+/* Convert dialog main content container */
+
+.ConverterDialogComponentStyle-mainContainer {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: .5em;
+}
 
 /* Conversion dialog right panel (balance amount ruby) */
 
@@ -741,6 +756,7 @@
 /* Conversion dialog description container */
 
 .ConverterDialogComponentStyle-mainContainer .ConverterDialogComponentStyle-descriptionContainer {
+	width: 100%;
 	border-bottom: .1em solid var(--severitium-dark-gray-color);
 }
 
