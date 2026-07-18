@@ -4337,6 +4337,12 @@
       "date": "2026-07-18",
       "comment": "1.9.3+build157 feat: enhance modal styling",
       "hash": "9b9343dbf4fdbaee4d2859a8517310eae5cbcac5"
+    },
+    {
+      "version": "1.9.3+build158",
+      "date": "2026-07-18",
+      "comment": "1.9.3+build158 style: update modal styles",
+      "hash": "a4507d918a928eb1ad2b63979e9436a17b4b342a"
     }
   ]
 }
