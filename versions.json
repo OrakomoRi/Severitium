@@ -4325,6 +4325,12 @@
       "date": "2026-06-24",
       "comment": "1.9.3+build155 style: update button background color and opacity",
       "hash": "5ddd4b0dc8eb1165730949b85bf4c70b005f0a79"
+    },
+    {
+      "version": "1.9.3+build156",
+      "date": "2026-07-18",
+      "comment": "1.9.3+build156 feat: enhance two-factor authentication UI",
+      "hash": "fed43b072de8cf116f42b4446358f05feae011d5"
     }
   ]
 }
