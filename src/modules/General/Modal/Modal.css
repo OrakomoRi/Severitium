@@ -148,10 +148,10 @@
 	* Rename modal
 */
 
-.ModalStyle-rootHover > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-contentContainer span[class]:not([class*='common'i]),
+/* .ModalStyle-rootHover > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-contentContainer span[class]:not([class*='common'i]), */
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .FriendListComponentStyle-commonBlockText span[class]:not([class*='common'i]),
 .ModalStyle-rootHover > div:not([class*='battlepick'i]) .PaidRenameDialogComponentStyle-messageBlock > span[class]:not([class*='common'i]),
-.ModalStyle-shaded > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-contentContainer:has() span[class]:not([class*='common'i]),
+/* .ModalStyle-shaded > div:not([class*='battlepick'i]) .DialogContainerComponentStyle-contentContainer span[class]:not([class*='common'i]), */
 .ModalStyle-shaded > div:not([class*='battlepick'i]) .FriendListComponentStyle-commonBlockText span[class]:not([class*='common'i]),
 .ModalStyle-shaded > div:not([class*='battlepick'i]) .PaidRenameDialogComponentStyle-messageBlock > span[class]:not([class*='common'i]) {
 	color: var(--severitium-main-color);
