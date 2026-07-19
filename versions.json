@@ -4343,6 +4343,12 @@
       "date": "2026-07-18",
       "comment": "1.9.3+build158 style: update modal styles",
       "hash": "a4507d918a928eb1ad2b63979e9436a17b4b342a"
+    },
+    {
+      "version": "1.9.3+build159",
+      "date": "2026-07-19",
+      "comment": "1.9.3+build159 style: adjust modal alignment",
+      "hash": "31c4db1b31e18a953f44657b8712e4ed9196531c"
     }
   ]
 }
