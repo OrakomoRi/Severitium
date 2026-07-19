@@ -61,7 +61,7 @@
 	position: relative;
 	display: flex;
 	align-items: stretch;
-	justify-content: space-between;
+	justify-content: center;
 	gap: .5em;
 	background: var(--severitium-dark-transparent-background1);
 	-webkit-backdrop-filter: blur(.5em);
