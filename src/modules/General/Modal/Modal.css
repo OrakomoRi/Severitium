@@ -104,6 +104,22 @@
 	color: var(--severitium-white-text-color);
 }
 
+/* Content container of the modal window */
+
+.ModalStyle-rootHover .-contentContainer,
+.ModalStyle-shaded .-contentContainer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: .5em;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
 /* Text of the modal window */
 
 .DialogContainerComponentStyle-contentContainer span[style*='color'i],
