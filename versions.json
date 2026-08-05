@@ -4349,6 +4349,12 @@
       "date": "2026-07-19",
       "comment": "1.9.3+build159 style: adjust modal alignment",
       "hash": "31c4db1b31e18a953f44657b8712e4ed9196531c"
+    },
+    {
+      "version": "1.9.3+build160",
+      "date": "2026-08-05",
+      "comment": "1.9.3+build160 feat: add content container styles for modal",
+      "hash": "30e056fdfa545a15adce90ef4af3e7f943a11224"
     }
   ]
 }
