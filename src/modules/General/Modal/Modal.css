@@ -592,6 +592,13 @@
 			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill-rule="evenodd" d="M3.652 22.434A2 2 0 0 0 5.604 24h20.792a2 2 0 0 0 1.952-1.566L32 6l-8 6-8-12-8 12-8-6zM16 19a3 3 0 1 1 0-6 3 3 0 0 1 0 6" clip-rule="evenodd"/><path d="M4 26.667c0-.369.298-.667.667-.667h22.666c.369 0 .667.299.667.667v2.666a.667.667 0 0 1-.667.667H4.667A.667.667 0 0 1 4 29.333z"/></svg>');
 }
 
+/* Premium modal container */
+
+.ModalStyle-shaded > .DialogPremiumAccountStyle-mainScreen:not(:root):not(:root):not(:root) {
+	align-items: center;
+	justify-content: center;
+}
+
 /* Premium modal close button */
 
 .DialogPremiumAccountStyle-mainScreen .DialogPremiumAccountStyle-closeButton {
