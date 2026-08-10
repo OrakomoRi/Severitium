@@ -4355,6 +4355,12 @@
       "date": "2026-08-05",
       "comment": "1.9.3+build160 feat: add content container styles for modal",
       "hash": "30e056fdfa545a15adce90ef4af3e7f943a11224"
+    },
+    {
+      "version": "1.9.3+build161",
+      "date": "2026-08-10",
+      "comment": "1.9.3+build161 feat: add premium modal styling",
+      "hash": "d1153de3f35abb3df6b5cc8c937f078510a5600c"
     }
   ]
 }
