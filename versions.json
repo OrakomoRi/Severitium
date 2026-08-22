@@ -4361,6 +4361,12 @@
       "date": "2026-08-10",
       "comment": "1.9.3+build161 feat: add premium modal styling",
       "hash": "d1153de3f35abb3df6b5cc8c937f078510a5600c"
+    },
+    {
+      "version": "1.10.0",
+      "date": "2026-08-22",
+      "comment": "1.10.0",
+      "hash": "311d7ea18b6de98f5562d662290a7154a462ed61"
     }
   ]
 }
