@@ -1,10 +1,10 @@
 {
 	"name": "severitium",
-	"version": "1.9.3+build161",
+	"version": "1.10.0",
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "NODE_ENV=production rollup -c",
+		"build": "rollup -c",
 		"build:css": "node scripts/build-css/build-css.cjs",
 		"build:vars": "node scripts/build-variables/build-variables.cjs",
 		"build:icons": "node scripts/build-icons/build-icons.cjs",
@@ -16,11 +16,11 @@
 	"devDependencies": {
 		"@rollup/plugin-replace": "^6.0.3",
 		"@rollup/plugin-terser": "^1.0.0",
-		"autoprefixer": "^10.5.0",
+		"autoprefixer": "^10.5.4",
 		"csso": "^5.0.5",
 		"csso-cli": "^4.0.2",
 		"glob": "^13.0.6",
-		"postcss": "^8.5.14",
-		"rollup": "^4.60.3"
+		"postcss": "^8.5.26",
+		"rollup": "^4.62.5"
 	}
 }

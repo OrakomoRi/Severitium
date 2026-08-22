@@ -1,5 +1,78 @@
 # CHANGELOG
 
+## [1.10.0] - 2026-08-21
+
+### Added
+
+- Garage
+  - DescriptionBlock
+  - PreviewScreen
+- General
+  - GameIcon
+- A separate, independently buildable CSS file for custom icons :tada:
+- Latest stable version endpoints for web and client :tada:
+
+### Changed
+
+- Battle
+  - BattleTab
+    - ColorfulResists
+- Challenges
+  - ChallengesScreen
+- Clan
+  - ClanModal
+  - ExistingClan
+  - JoinClan
+- Containers
+  - ContainersScreen
+  - PossibleRewardsMenu
+  - PossibleRewardsScreen
+- Entrance
+  - EntranceForms
+- Friends
+  - FriendsScreen
+  - InviteScreen
+- General
+  - CommonContainer
+  - CommonSort
+  - LoadingScreen
+  - Modal
+  - NotificatorIcon
+  - PlayerContextMenu
+  - TopMenu
+  - TopPanel
+  - XP
+- Lobby
+  - Announcements
+  - BattleSelect
+    - BattleMode
+    - BattleType
+  - Challenges
+    - EliteChallenges
+  - FooterMenu
+  - MatchmakingWaitBlock
+  - NewsWindow
+  - PlayButton
+- Quests
+  - ContractsScreen
+  - QuestsScreen
+- Settings
+  - SettingsContent
+  - ThemeSettings
+- Shop
+  - MainScreen
+  - PaymentScreen
+  - PurchaseScreen
+  - SectionMenu
+  - ShopWindow
+  - SuccessfulPurchase
+- All separate `MutationObserver` instances for each module have been replaced with a single global instance to improve performance and reduce memory usage :tada:
+- All icons have been sorted
+
+### Removed
+
+- Modificated client files (now in [VibeTO Repository](https://github.com/OrakomoRi/VibeTO))
+
 ## [1.9.3] - 2026-03-31
 
 ### Changed
