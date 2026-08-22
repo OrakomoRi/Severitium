@@ -66,7 +66,7 @@ jobs:
           fi
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
-          semver_regex='^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$'
+          semver_regex='^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$'
           if [[ "$VERSION" =~ $semver_regex ]]; then
             echo "IS_STABLE=true" >> $GITHUB_ENV
           else

@@ -29,3 +29,7 @@ Thumbs.db
 
 # Database
 database/
+
+# Claude
+CLAUDE.md
+.claude/
