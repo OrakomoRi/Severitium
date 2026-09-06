@@ -4367,6 +4367,12 @@
       "date": "2026-08-22",
       "comment": "1.10.0",
       "hash": "311d7ea18b6de98f5562d662290a7154a462ed61"
+    },
+    {
+      "version": "1.10.0+build1",
+      "date": "2026-09-07",
+      "comment": "1.10.0+build1 style: update modal alignment and resistance container styles",
+      "hash": "b4e4c0bcdba9681ca8e8fea8e3d7b3d7e624d4ed"
     }
   ]
 }
