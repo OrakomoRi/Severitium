@@ -217,9 +217,9 @@
 	margin: 0;
 }
 
-/* Resistance inner container */
+/* Resistance inner container (opened slot) */
 
-.MountedItemsStyle-commonForCellResistenceName {
+.MountedItemsStyle-commonForCellResistenceName:has(.CellResistanceComponentStyle-resistanceIconContainer) {
 	width: 4em;
 	height: auto;
 	aspect-ratio: 1 / 1;
@@ -228,6 +228,19 @@
 	border: .1em solid var(--severitium-gray-button-border-color);
 	border-radius: var(--severitium-border-radius);
 	transition: border-color .2s ease, background-color .2s ease;
+}
+
+/* Resistance inner container (closed slot) */
+
+.MountedItemsStyle-commonForCellResistenceName:not(:has(.CellResistanceComponentStyle-resistanceIconContainer)) {
+	width: 0;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	margin: 0;
+	background: none;
+	border: none;
+	border-radius: 0;
+	pointer-events: none;
 }
 
 /* Resistance inner container on hover */
@@ -247,7 +260,7 @@
 
 /* Resistance inner container that has no icon */
 
-.MountedItemsStyle-commonForCellResistenceName:not(:has(> div > img)) {
+.MountedItemsStyle-commonForCellResistenceName:has(.CellResistanceComponentStyle-resistanceIconContainer):not(:has(> div > img)) {
 	border-style: dashed;
 }
 

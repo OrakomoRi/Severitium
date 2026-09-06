@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	const CLIENT_VERSION = '1.10.0';
+	const CLIENT_VERSION = '1.10.0+build1';
 
 	const isLogging = false;
 
