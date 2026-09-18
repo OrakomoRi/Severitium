@@ -4379,6 +4379,12 @@
       "date": "2026-09-15",
       "comment": "1.10.0+build2 style: adjust padding in EntranceForms",
       "hash": "4f0b12e3cacd07d12ddf3195d8ca8c08b07ffd35"
+    },
+    {
+      "version": "1.10.0+build3",
+      "date": "2026-09-19",
+      "comment": "1.10.0+build3 feat: clean up old Vercel deployments",
+      "hash": "a91c6b718f607e07a7d525cb7ae57b196b6f3f3d"
     }
   ]
 }
