@@ -205,9 +205,6 @@ jobs:
           git commit -m "$VERSION" || echo "No changes for $VERSION"
           git push origin builds
 
-      - name: Clean up old Vercel deployments
-        run: npx vercel remove severitium-builds --safe --yes --scope ${{ secrets.VERCEL_SCOPE }} --token "${{ secrets.VERCEL_TOKEN }}"
-
       - name: Create GitHub release
         if: env.IS_STABLE == 'true'
         uses: softprops/action-gh-release@v3
@@ -229,3 +226,11 @@ jobs:
             /tmp/build-artifacts/severitium.client.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  cleanup:
+    needs: build-and-release
+    if: always() && needs.build-and-release.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clean up old Vercel deployments
+        run: npx vercel remove severitium-builds --safe --yes --scope ${{ secrets.VERCEL_SCOPE }} --token "${{ secrets.VERCEL_TOKEN }}"
