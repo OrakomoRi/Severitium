@@ -4385,6 +4385,12 @@
       "date": "2026-09-19",
       "comment": "1.10.0+build3 feat: clean up old Vercel deployments",
       "hash": "a91c6b718f607e07a7d525cb7ae57b196b6f3f3d"
+    },
+    {
+      "version": "1.10.0+build4",
+      "date": "2026-09-19",
+      "comment": "1.10.0+build4 chore: modify cleanup process",
+      "hash": "4c5c02a18cf214826b14b2b81a80b65a3e2f0a57"
     }
   ]
 }
